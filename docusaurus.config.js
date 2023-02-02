@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: '基岩技术周刊',
+  tagline: 'Minecraft基岩版技术周刊文档站点',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -18,8 +18,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'AbbottMc', // Usually your GitHub org/user name.
+  projectName: 'BedrockTech', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -28,8 +28,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh',
+    locales: ['zh'],
   },
 
   presets: [
@@ -45,6 +45,8 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
+          blogSidebarTitle: '历史周刊文章',
+          blogSidebarCount: 'ALL',
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -64,21 +66,21 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: '基岩技术周刊',
         logo: {
-          alt: 'My Site Logo',
+          alt: '基岩技术周刊Logo',
           src: 'img/logo.svg',
         },
         items: [
+          {to: '/blog', label: '周刊', position: 'left'},
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: '更新日志',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/AbbottMc/BedrockTech',
             label: 'GitHub',
             position: 'right',
           },
@@ -88,16 +90,16 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: '周刊',
             items: [
               {
-                label: 'Tutorial',
+                label: '主页',
                 to: '/docs/intro',
               },
             ],
           },
-          {
-            title: 'Community',
+          /*{
+            title: '社区',
             items: [
               {
                 label: 'Stack Overflow',
@@ -112,22 +114,22 @@ const config = {
                 href: 'https://twitter.com/docusaurus',
               },
             ],
-          },
+          },*/
           {
-            title: 'More',
+            title: '更多',
             items: [
               {
-                label: 'Blog',
+                label: '博客',
                 to: '/blog',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'GitHub仓库',
+                href: 'https://github.com/AbbottMc/BedrockTech',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Bedrock Tech Weekly, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
