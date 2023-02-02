@@ -3,54 +3,34 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 
 type FeatureItem = {
-  title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: JSX.Element;
+  img: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    img: require('@site/static/img/homepage/display_01.png').default,
+    /*Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,*/
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
+    img: require('@site/static/img/homepage/display_02.png').default,
+    /*Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,*/
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
+    img: require('@site/static/img/homepage/display_03.png').default,
+    /* Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,*/
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({img}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img className={styles.featureSvg} src={img} role="img" alt={''}/>
       </div>
-      <div className="text--center padding-horiz--md">
+      {/*<div className="text--center padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
-      </div>
+      </div>*/}
     </div>
   );
 }
@@ -59,6 +39,8 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
+        <h2 style={{textAlign: 'center'}}>您可以在这里做些什么？</h2>
+        <p style={{textAlign: 'center'}}>获取每周最新基岩版开发技术资讯，了解基岩版开发前沿技术</p>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

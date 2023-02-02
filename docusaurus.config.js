@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: '基岩技术周刊',
   tagline: 'Minecraft基岩版技术周刊文档站点',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
@@ -69,7 +69,7 @@ const config = {
         title: '基岩技术周刊',
         logo: {
           alt: '基岩技术周刊Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {to: '/blog', label: '周刊', position: 'left'},
