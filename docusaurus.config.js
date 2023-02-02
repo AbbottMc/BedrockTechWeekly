@@ -125,7 +125,7 @@ const config = {
             title: '更多',
             items: [
               {
-                label: '博客',
+                label: '周刊',
                 to: '/blog',
               },
               {
