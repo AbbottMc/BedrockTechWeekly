@@ -61,7 +61,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
@@ -75,9 +75,15 @@ const config = {
           {to: '/blog', label: '周刊', position: 'left'},
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'official_changelog/intro',
             position: 'left',
-            label: '更新日志',
+            label: '官方日志',
+          },
+          {
+            type: 'doc',
+            docId: 'changelog',
+            position: 'left',
+            label: '站点日志',
           },
           {
             href: 'https://github.com/AbbottMc/BedrockTech',
