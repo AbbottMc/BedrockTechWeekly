@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/logo.png',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: ' https://abbottmc.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/BedrockTechWeekly/',
@@ -86,7 +86,7 @@ const config = {
             label: '站点日志',
           },
           {
-            href: 'https://github.com/AbbottMc/BedrockTech',
+            href: 'https://github.com/AbbottMc/BedrockTechWeekly',
             label: 'GitHub',
             position: 'right',
           },
@@ -100,7 +100,7 @@ const config = {
             items: [
               {
                 label: '主页',
-                to: '/docs/intro',
+                to: '/',
               },
             ],
           },
@@ -130,7 +130,7 @@ const config = {
               },
               {
                 label: 'GitHub仓库',
-                href: 'https://github.com/AbbottMc/BedrockTech',
+                href: 'https://github.com/AbbottMc/BedrockTechWeekly',
               },
             ],
           },
