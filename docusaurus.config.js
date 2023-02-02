@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'AbbottMc', // Usually your GitHub org/user name.
-  projectName: 'BedrockTech', // Usually your repo name.
+  projectName: 'BedrockTechWeekly', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
