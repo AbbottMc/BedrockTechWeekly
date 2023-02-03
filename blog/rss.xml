@@ -4,7 +4,7 @@
         <title>基岩技术周刊 Blog</title>
         <link> https://abbottmc.github.io/BedrockTechWeekly/blog</link>
         <description>基岩技术周刊 Blog</description>
-        <lastBuildDate>Fri, 03 Feb 2023 17:19:04 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 03 Feb 2023 17:24:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[导览]]></title>
             <link> https://abbottmc.github.io/BedrockTechWeekly/blog/welcome</link>
             <guid> https://abbottmc.github.io/BedrockTechWeekly/blog/welcome</guid>
-            <pubDate>Fri, 03 Feb 2023 17:19:04 GMT</pubDate>
+            <pubDate>Fri, 03 Feb 2023 17:24:47 GMT</pubDate>
             <description><![CDATA[基岩技术周刊旨在每周提供Minecraft基岩版技术领域相关内容，让您更方便、快捷的了解基岩版开发领域的实时动态。]]></description>
             <content:encoded><![CDATA[<p><strong>基岩技术周刊</strong>旨在每周提供Minecraft基岩版技术领域相关内容，让您更方便、快捷的了解基岩版开发领域的实时动态。</p><p>本周周刊：</p>]]></content:encoded>
             <category>Minecraft</category>
