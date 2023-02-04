@@ -82,7 +82,7 @@ const config = {
           {
             type: 'doc',
             docId: 'changelog',
-            position: 'left',
+            position: 'right',
             label: '站点日志',
           },
           {
