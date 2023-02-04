@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id> https://abbottmc.github.io/blog</id>
     <title>基岩技术周刊 Blog</title>
-    <updated>2023-02-04T09:55:49.000Z</updated>
+    <updated>2023-02-04T09:58:22.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href=" https://abbottmc.github.io/blog"/>
     <subtitle>基岩技术周刊 Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[2023w02m01a]]></title>
         <id> https://abbottmc.github.io/blog/latest</id>
         <link href=" https://abbottmc.github.io/blog/latest"/>
-        <updated>2023-02-04T09:55:49.000Z</updated>
+        <updated>2023-02-04T09:58:22.000Z</updated>
         <author>
             <name>乾山瑶</name>
             <uri>https://github.com/AbbottMC</uri>
