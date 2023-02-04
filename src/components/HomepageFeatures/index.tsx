@@ -8,15 +8,15 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    img: require('@site/static/img/homepage/display_01.png').default,
+    img: require('@site/static/img/homepage/display_01.jpg').default,
     /*Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,*/
   },
   {
-    img: require('@site/static/img/homepage/display_02.png').default,
+    img: require('@site/static/img/homepage/display_02.jpg').default,
     /*Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,*/
   },
   {
-    img: require('@site/static/img/homepage/display_03.png').default,
+    img: require('@site/static/img/homepage/display_03.jpg').default,
     /* Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,*/
   },
 ];
