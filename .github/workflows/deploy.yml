@@ -11,6 +11,7 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    delete: false
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -38,4 +39,3 @@ jobs:
           # 你可以用自己的用户信息替换它们。
           user_name: abbottmc
           user_email: qian_shan_yao@163.com
-delete: false
