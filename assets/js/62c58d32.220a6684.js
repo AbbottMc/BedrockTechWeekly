@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbedrock_tech=self.webpackChunkbedrock_tech||[]).push([[264],{1444:e=>{e.exports=JSON.parse('{"label":"\u5f00\u53d1","permalink":"/BedrockTechWeekly/blog/tags/\u5f00\u53d1","allTagsPath":"/BedrockTechWeekly/blog/tags","count":1}')}}]);

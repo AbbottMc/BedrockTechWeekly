@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id> https://abbottmc.github.io/BedrockTechWeekly/blog</id>
+    <id> https://abbottmc.github.io/blog</id>
     <title>基岩技术周刊 Blog</title>
-    <updated>2023-02-03T17:24:47.000Z</updated>
+    <updated>2023-02-04T09:31:53.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href=" https://abbottmc.github.io/BedrockTechWeekly/blog"/>
+    <link rel="alternate" href=" https://abbottmc.github.io/blog"/>
     <subtitle>基岩技术周刊 Blog</subtitle>
-    <icon> https://abbottmc.github.io/BedrockTechWeekly/img/logo.png</icon>
+    <icon> https://abbottmc.github.io/img/logo.png</icon>
     <entry>
-        <title type="html"><![CDATA[导览]]></title>
-        <id> https://abbottmc.github.io/BedrockTechWeekly/blog/welcome</id>
-        <link href=" https://abbottmc.github.io/BedrockTechWeekly/blog/welcome"/>
-        <updated>2023-02-03T17:24:47.000Z</updated>
-        <summary type="html"><![CDATA[基岩技术周刊旨在每周提供Minecraft基岩版技术领域相关内容，让您更方便、快捷的了解基岩版开发领域的实时动态。]]></summary>
-        <content type="html"><![CDATA[<p><strong>基岩技术周刊</strong>旨在每周提供Minecraft基岩版技术领域相关内容，让您更方便、快捷的了解基岩版开发领域的实时动态。</p><p>本周周刊：</p>]]></content>
+        <title type="html"><![CDATA[2023w02m01a]]></title>
+        <id> https://abbottmc.github.io/blog/latest</id>
+        <link href=" https://abbottmc.github.io/blog/latest"/>
+        <updated>2023-02-04T09:31:53.000Z</updated>
         <author>
             <name>乾山瑶</name>
             <uri>https://github.com/AbbottMC</uri>
@@ -22,6 +20,8 @@
         <category label="基岩版" term="基岩版"/>
         <category label="开发" term="开发"/>
         <category label="周刊" term="周刊"/>
-        <category label="导览" term="导览"/>
+        <category label="2023年" term="2023年"/>
+        <category label="02月" term="02月"/>
+        <category label="第一周" term="第一周"/>
     </entry>
 </feed>
