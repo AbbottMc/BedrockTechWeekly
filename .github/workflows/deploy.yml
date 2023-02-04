@@ -37,4 +37,5 @@ jobs:
           # The GH actions bot is used by default if you didn't specify the two fields.
           # 你可以用自己的用户信息替换它们。
           user_name: abbottmc
-          user_email: qian_shan_yao@qq.com
+          user_email: qian_shan_yao@163.com
+delete: false
