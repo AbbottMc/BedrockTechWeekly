@@ -1,0 +1,12 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="技术更新">{props.techChangelog}</TabItem>
+  <TabItem value="完整日志">{
+    <div>
+      {props.gameplayChangelog}
+      {props.techChangelog}</div>
+  }
+  </TabItem>
+</Tabs>
