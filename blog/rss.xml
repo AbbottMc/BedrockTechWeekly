@@ -4,7 +4,7 @@
         <title>基岩技术周刊 Blog</title>
         <link> https://abbottmc.github.io/blog</link>
         <description>基岩技术周刊 Blog</description>
-        <lastBuildDate>Sat, 04 Feb 2023 15:47:38 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 05 Feb 2023 11:42:56 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[[2023w02m01a] 命令脚本移除data，脚本接口日常更新]]></title>
             <link> https://abbottmc.github.io/blog/latest</link>
             <guid> https://abbottmc.github.io/blog/latest</guid>
-            <pubDate>Sat, 04 Feb 2023 15:47:38 GMT</pubDate>
+            <pubDate>Sun, 05 Feb 2023 11:42:56 GMT</pubDate>
             <description><![CDATA[本周官方更新了1.19.70.21版本，点击这里查看官方技术更新日志]]></description>
             <content:encoded><![CDATA[<div class="theme-admonition theme-admonition-info alert alert--info admonition_LlT9"><div class="admonitionHeading_tbUL"><span class="admonitionIcon_kALy"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>信息</div><div class="admonitionContent_S0QG"><p>本周官方更新了1.19.70.21版本，<a href="/docs/official_changelog/preview/1.19.70.21">点击这里</a>查看官方技术更新日志</p></div></div><blockquote><p>施工中</p></blockquote>]]></content:encoded>
             <category>Minecraft</category>
