@@ -5,8 +5,11 @@ import TabItem from '@theme/TabItem';
   <TabItem value="技术更新">{props.techChangelog}</TabItem>
   <TabItem value="完整日志">{
     <div>
+      <h2 className="changelog_divider">游戏内容更新</h2>
       {props.gameplayChangelog}
-      {props.techChangelog}</div>
+      <h2 className="changelog_divider">技术更新</h2>
+      {props.techChangelog}
+    </div>
   }
   </TabItem>
 </Tabs>

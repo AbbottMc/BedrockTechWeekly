@@ -1,0 +1,17 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="Technical Update">
+    {props.techChangelog}
+  </TabItem>
+  <TabItem value="Full Changelog">{
+    <div>
+      <h2 className="changelog_divider">Gameplay Update</h2>
+      {props.gameplayChangelog}
+      <h2 className="changelog_divider">Technical Update</h2>
+      {props.techChangelog}
+    </div>
+  }
+  </TabItem>
+</Tabs>

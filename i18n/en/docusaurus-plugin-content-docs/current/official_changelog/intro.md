@@ -2,10 +2,10 @@
 sidebar_position: 1
 ---
 
-# 官方更新日志
+# Official Changelog
 
-这里是Minecraft基岩版技术更新日志。
+Here are Minecraft Bedrock Edition technical update changelogs.
 
-## 预览版
+## Preview
 
 - [1.19.70.21](preview/1.19.70.21.mdx)

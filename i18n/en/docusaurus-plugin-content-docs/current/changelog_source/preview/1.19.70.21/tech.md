@@ -1,80 +1,80 @@
-## 命令
+## **Commands**
 
-- 移除了对1.19.70版本以上的/clone、/execute、/fill、/setblock 和 /testforblock 命令中 "data" 字段的支持。例如：*`/setblock ~ ~ ~ minecraft:wool 1`* 现在需要写成 *`/setblock ~ ~ ~ minecraft:wool ["color":"orange"]`*
-- 体积尺寸参数不再向下取整基准点坐标([MCPE-162237](https://bugs.mojang.com/browse/MCPE-162237))
-- 现在通过体积尺寸（Volume）选择目标时，将选择所有碰撞箱（Hitbox）与指定范围相交的实体。该特性自1.19.70开始实现版本化
-- 之前的行为在低于1.19.70的版本上可正常工作了
-- 选择器的体积尺寸（Volume）参数现在支持浮点数值。([MCPE-163863](https://bugs.mojang.com/browse/MCPE-163863))
+- Removed support for field "data" in commands /clone, /execute, /fill, /setblock and /testforblock beyond version 1.19.70, eg. */setblock ~ ~ ~ minecraft:wool 1*will only have its equivalent */setblock ~ ~ ~ minecraft:wool ["color":"orange"]* supported
+- Volume arguments no longer floor the selector's position ([MCPE-162237](https://bugs.mojang.com/browse/MCPE-162237))
+- Selecting targets by volume will now select all entities whose hitbox collides with the volume box. This is versioned for 1.19.70 and later ([MCPE-162237](https://bugs.mojang.com/browse/MCPE-162237))
+- Previous behavior works as expected on versions less than 1.19.70
+- Volume arguments for selectors (dx, dy, dz) now support float values ([MCPE-163863](https://bugs.mojang.com/browse/MCPE-163863))
 
-## 数据驱动
+## **Data-driven**
 
-- 当格式版本为1.19.70以上时，方块置换中 "condition" 字段的属性值不是一个可用的Molang字符串会导致方块加载失败
-- 当工作台组件默认使用方块名字作为工作台标签（label）时，不再需要添加 "tile."
+- Crafting Table component no longer appends "tile." when defaulting to use block name for crafting table label
+- In JSON formats 1.19.70 and later, blocks fail to load if the "condition" field in Block Permutations is not a valid Molang string
 
-## 脚本API
+## **Script API**
 
-### `@minecraft/server-gametest@1.0.0-beta` 模块
+### **Changed module `@minecraft/server-gametest@1.0.0-beta`**
 
-- 更改了 `Test` 类
+- Changed class `Test`
 
-    - 添加了 `assertEntityInstancePresentInArea` 函数
+    - Added function `assertEntityInstancePresentInArea`
 
       ```typescript
       assertEntityInstancePresentInArea(entity: minecraftserver.Entity, isPresent?: boolean): void      
       ```
 
-    - 更改了 `assertEntityPresent` 函数
+    - Changed function `assertEntityPresent`
 
-        - 添加了 `searchDistance` 参数
+        - Added argument `searchDistance`
 
-### `@minecraft/server@1.1.0-beta` 模块
+### **Changed module `@minecraft/server@1.1.0-beta`**
 
-- 更改了 `BlockAreaSize `类
+- Changed class `BlockAreaSize`
 
-    - 更改了 `constructor` 函数
-        - 更改了参数 `x` 的类型：由 `int32` 改为 `float`
-            - 新签名： `x: number, `
-            - 旧签名： `x: number, `
-        - 更改了参数 `y` 的类型：由 `int32` 改为 `float`
-            - 新签名： `y: number, `
-            - 旧签名： `y: number, `
-        - 更改了参数 `z` 的类型：由 `int32` 改为 `float`
-            - 新签名： `z: number`
-            - 旧签名： `z: number`
+    - Changed function `constructor`
+        - Changed argument `x` type from `int32` to `float`
+            - New Signature: `x: number, `
+            - Old Signature: `x: number, `
+        - Changed argument `y` type from `int32` to `float`
+            - New Signature: `y: number, `
+            - Old Signature: `y: number, `
+        - Changed argument `z` type from `int32` to `float`
+            - New Signature: `z: number`
+            - Old Signature: `z: number`
 
-- 更改了 `ContainerSlot` 类
+- Changed class `ContainerSlot`
 
-    - 移除了函数 `clearItem`
-    - 移除了函数 `clearLore`
+    - Removed function `clearItem`
+    - Removed function `clearLore`
 
-- 更改了 `Entity` 类
+- Changed class `Entity`
 
-    - 添加了 `playAnimation` 函数
-
-      ```typescript
-      playAnimation(animationName: string, options?: PlayAnimationOptions): void      
-      ```
-
-- 更改了 `ItemStack` 类
-
-    - 移除了 `data` 属性
-    - 移除了 `clearLore` 函数
-    - 更改了 `constructor` 函数
-        - 更改了返回类型：由 `ItemStack` 改为 `ItemStack` （可抛出错误）
-        - 更改了参数 `itemType` 的类型：由 `ItemType` 改为 `ItemType | string`
-            - 新签名： `itemType: ItemType | string, `
-            - 旧签名： `itemType: ItemType, `
-        - 移除了参数 `data`
-
-- 更改了类 `Player`
-
-    - 添加了 `playAnimation` 函数
+    - Added function `playAnimation`
 
       ```typescript
       playAnimation(animationName: string, options?: PlayAnimationOptions): void      
       ```
 
-- 添加了 `PlayAnimationOptions` 接口
+- Changed class `ItemStack`
+
+    - Removed property `data`
+    - Removed function `clearLore`
+    - Changed function `constructor`
+        - Changed return type from `ItemStack` to `ItemStack` (throws exceptions)
+        - Changed argument `itemType` type from `ItemType` to `ItemType | string`
+            - New Signature: `itemType: ItemType | string, `
+            - Old Signature: `itemType: ItemType, `
+        - Removed argument `data`
+
+- Changed class `Player`
+
+    - Added function `playAnimation`
+
+      ```typescript
+      playAnimation(animationName: string, options?: PlayAnimationOptions): void      
+      ```
+
+- Added interface `PlayAnimationOptions`
 
   ```typescript
   export interface PlayAnimationOptions {
