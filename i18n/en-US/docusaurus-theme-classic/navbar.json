@@ -1,18 +1,18 @@
 {
   "title": {
-    "message": "基岩技术周刊",
+    "message": "Bedrock Tech Weekly",
     "description": "The title in the navbar"
   },
   "item.label.周刊": {
-    "message": "周刊",
+    "message": "Weekly",
     "description": "Navbar item with label 周刊"
   },
   "item.label.官方日志": {
-    "message": "官方日志",
+    "message": "Official Changelogs",
     "description": "Navbar item with label 官方日志"
   },
   "item.label.站点日志": {
-    "message": "站点日志",
+    "message": "Website Changelogs",
     "description": "Navbar item with label 站点日志"
   },
   "item.label.GitHub": {

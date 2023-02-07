@@ -1,22 +1,22 @@
 {
   "link.title.周刊": {
-    "message": "周刊",
+    "message": "Weekly",
     "description": "The title of the footer links column with title=周刊 in the footer"
   },
   "link.title.更多": {
-    "message": "更多",
+    "message": "More",
     "description": "The title of the footer links column with title=更多 in the footer"
   },
   "link.item.label.主页": {
-    "message": "主页",
+    "message": "Home",
     "description": "The label of footer link with label=主页 linking to /"
   },
   "link.item.label.周刊": {
-    "message": "周刊",
+    "message": "Weekly",
     "description": "The label of footer link with label=周刊 linking to /blog"
   },
   "link.item.label.GitHub仓库": {
-    "message": "GitHub仓库",
+    "message": "GitHub Repository",
     "description": "The label of footer link with label=GitHub仓库 linking to https://github.com/AbbottMc/BedrockTechWeekly"
   },
   "copyright": {
