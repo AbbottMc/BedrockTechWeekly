@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.预览版更新": {
+    "message": "预览版更新",
+    "description": "The label for category 预览版更新 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.预览版更新.link.generated-index.description": {
+    "message": "Minecraft预览版技术更新日志",
+    "description": "The generated-index page description for category 预览版更新 in sidebar tutorialSidebar"
+  }
+}

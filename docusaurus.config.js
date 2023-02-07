@@ -28,10 +28,18 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh',
-    locales: ['zh'],
+    defaultLocale: 'zh-Hans',
+    locales: ['en-US', 'zh-Hans'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en_US'
+      },
+      // 如果你不需要覆盖默认值，你可以忽略这个语言（比如 zh-Hans）
+      zh: {
+        htmlLang: 'zh_Hans'
+      }
+    }
   },
-
   presets: [
     [
       'classic',
@@ -84,6 +92,20 @@ const config = {
             docId: 'changelog',
             position: 'right',
             label: '站点日志',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 0.3rem 0;">',
+              },
+              {
+                href: 'https://github.com/facebook/docusaurus/issues/3526',
+                label: 'Help Us Translate',
+              },
+            ],
           },
           {
             href: 'https://github.com/AbbottMc/BedrockTechWeekly',

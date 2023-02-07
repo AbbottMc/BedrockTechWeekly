@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "基岩技术周刊",
+    "description": "The title in the navbar"
+  },
+  "item.label.周刊": {
+    "message": "周刊",
+    "description": "Navbar item with label 周刊"
+  },
+  "item.label.官方日志": {
+    "message": "官方日志",
+    "description": "Navbar item with label 官方日志"
+  },
+  "item.label.站点日志": {
+    "message": "站点日志",
+    "description": "Navbar item with label 站点日志"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
