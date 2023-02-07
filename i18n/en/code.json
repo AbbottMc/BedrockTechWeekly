@@ -269,5 +269,25 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "homepage.title": {
+    "message": "Bedrock Tech Weekly",
+    "description": "The homepage title"
+  },
+  "homepage.subtitle": {
+    "message": "This site aims to provide relevant content in the field of Minecraft Bedrock Edition technology every week, so that you can understand the real-time developments in the field of Bedrock Edition development more conveniently and quickly.",
+    "description": "The homepage subtitle"
+  },
+  "homepage.checkLatestArticle": {
+    "message": "Check out this week's article 📖",
+    "description": "The homepage check latest article button message"
+  },
+  "homepage.whatCanYouDoHere.title": {
+    "message": "What can you do here?",
+    "description": "The homepage 'what can you do here' title"
+  },
+  "homepage.whatCanYouDoHere.description": {
+    "message": "Get the latest bedrock development technology information every week, and learn about the cutting-edge technology of bedrock development",
+    "description": "The homepage 'what can you do here' description"
   }
 }
