@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbedrock_tech=self.webpackChunkbedrock_tech||[]).push([[8411],{3202:e=>{e.exports=JSON.parse('{"permalink":"/en/blog/tags/month-02","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

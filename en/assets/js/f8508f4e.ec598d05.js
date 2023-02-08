@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbedrock_tech=self.webpackChunkbedrock_tech||[]).push([[9781],{3106:e=>{e.exports=JSON.parse('{"label":"Week 01","permalink":"/en/blog/tags/week-01","allTagsPath":"/en/blog/tags","count":1}')}}]);
