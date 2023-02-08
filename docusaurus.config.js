@@ -33,10 +33,6 @@ const config = {
     localeConfigs: {
       en: {
         htmlLang: 'en'
-      },
-      // 如果你不需要覆盖默认值，你可以忽略这个语言（比如 zh-Hans）
-      zh: {
-        htmlLang: 'zh-Hans'
       }
     }
   },
