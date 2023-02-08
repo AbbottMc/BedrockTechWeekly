@@ -8,8 +8,8 @@
 
 ## **Data-driven**
 
-- Crafting Table component no longer appends "tile." when defaulting to use block name for crafting table label
 - In JSON formats 1.19.70 and later, blocks fail to load if the "condition" field in Block Permutations is not a valid Molang string
+- Crafting Table component no longer appends "tile." when defaulting to use block name for crafting table label
 
 ## **Script API**
 
