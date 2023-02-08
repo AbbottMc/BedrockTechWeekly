@@ -62,30 +62,94 @@ tags: [Minecraft, Bedrock, Dev, Weekly, Year 2023, Month 02, Week 01]
 
 脚本方面主要是 `ItemStack` 类中的 `data` 字段被移除了。
 
-在此之前，如果我们想要创建一个 `ItemStack` 实例，我们可以通过以下方式构造：
+在此之前，如果我们想要创建一个红沙物品堆叠实例，我们需要通过以下方式构造：
 
 ```typescript
 import {MinecraftItemTypes, ItemStack} from '@minecraft/server';
-/**
- * 
- * 
- **/
-const itemStack = new ItemStack(MinecraftItemTypes.apple, 1, 0);
+// 创建一个数量为1的红沙物品堆叠实例
+// 目前基岩版中，沙子与红沙共用一个方块id
+// 沙子的数据值为0，红沙的数据值为1
+const itemStack = new ItemStack(MinecraftItemTypes.sand, 1, 1);
 ```
 
+但在本周的预览版中，官方移除了 `ItemStack` 的 `data` 属性以及其构造函数中的 `data` 参数。在这种情况下，同样是创建一个红沙物品堆叠实例，我们再像上面那样写就不行了。
 
+这时候我们有没有其他方式能创建红沙物品堆叠实例呢？
+
+很遗憾，目前来说，答案是否定的。
+
+红沙目前并未实现 ID 扁平化，且 `MinecraftItemTypes` 类中也没有红沙的物品类型实例，因此在这种情况下，我们想要创建红沙物品堆叠实例是没办法了。
+
+但在与红沙类似的物品的获取或者类似方块的放置这块，依然可以通过其他替代方法来暂时顶一阵子。
+
+比方说，命令。
+
+:::tip 这里我们还是以红沙为例
+```typescript title=物品获取
+player.dimension.runCommandAsync(`/setblock ${player.location.x} ${player.location.y} ${player.location.z} minecraft:sand ["sand_type" : "red"]`);
+```
+
+值得一提的是，`/give` 命令的 `data` 字段在这次更新中并未被移除，至于这是漏网之鱼还是官方刻意为之，我们就不得而知了。
+
+```typescript title=方块放置
+player.dimension.runCommandAsync(`/give ${player.name} sand 1 1`);
+```
+不过目前命令都是异步的且存在每游戏刻执行次数上限（128次/游戏刻），故而在开发过程中大家还得根据实际情况来选用。
+
+:::
+
+
+当然最好的方案自然还是等待官方完善这部分的内容，毕竟是1.19.70版本的第一个预览版，有些不完善也属正常，关键还是在于官方后续会如何更新。
 
 ### 结语
 
-这从某种角度来说，可以说是在扁平化方面向前迈了很大一步，`data`字段的移除，意味着开发者和玩家们必须通过状态参数以及脚本中各个`MinecraftBlockTypes`、`MinecraftItemTypes`类来实现与方块物品的交互。但是，对于这一步说起来可能又没完全迈出去。主要原因
+从某种角度来说，官方这次将 `data` 字段移除可以说是在扁平化方面向前迈了很大一步，这意味着开发者和玩家们现在只能通过状态参数、物品方块的标识符以及脚本中的`MinecraftBlockTypes`、`MinecraftItemTypes`类来实现原生方块物品的获取与操作了。我们也可以从侧面窥见一些官方对基岩版扁平化工作的关注。但在基岩版方块物品ID尚未完全扁平化的当下，在命令与脚本都没有实现相应补全的情况下，就将 `data` 字段移除，从这个角度来说，这次更新似乎又略显仓促......
+
+但不管怎么说，这对社区开发者们后续工作的影响是巨大的，特别是脚本方面，希望官方至少在 1.19.70 正式版更新前能给出一个相对完善的解决方案吧。
+
+## 二、数驱日常小修小补，优化编写体验
+
+在本周的预览版中，官方在数驱方面依旧是小修小补。
+
+在方块数驱方面，当格式版本为1.19.70以上时，如果方块置换中 `"condition"` 字段的属性值不是一个可用的 Molang 字符串，那么我们便会得到一个这样的报错：
 
 
 
-## 二、选择器体积尺寸参数工作机制优化
+同时您的方块也将加载失败。
 
+此外，这次更新还对 `minecraft:crafting_table` 组件做出了修改，当工作台组件使用方块名称作为工作台名称时，本地化键名不再需要添加 "tile."。
 
+这里我们有一个简单的赋命名标识符为：`test:test_block` 自定义方块
 
-## 三、数驱日常小修小补，优化编写体验
+```json
+{
+  "format_version": "1.19.50",
+  "minecraft:block": {
+    "description": {
+      "identifier": "test:test_block"
+    },
+    "components": {
+      "minecraft:crafting_table": {
+        "crafting_tags": ["crafting_table", "custom_crafting_tag"]
+      }
+    }
+  }
+}
+```
 
-## 四、脚本接口更新，函数增删，参数类型更改
+在之前的版本中，当我们打开这个方块的UI界面，得到的是这样的一幅画面：
+
+![旧版工作台组件默认本地化键名](./img/23w02m01a/crafting_table_old.png)
+
+可以看到，其标题键名为 `tile.test:test_block`
+
+如果我们将其适配版本号修改为 `1.19.70` 并在 `1.19.70.21` 版本中加载这个方块，这时候再打开它的 UI 界面会看到这样一幅画面：
+
+![新版工作台组件默认本地化键名](./img/23w02m01a/crafting_table_new.png)
+
+可以看到，其标题键名原先开头的 `tile.` 被移除，变为了 `test:test_block`。
+
+## 三、脚本接口更新，函数增删，参数类型更改
+
+> 待施工
 
