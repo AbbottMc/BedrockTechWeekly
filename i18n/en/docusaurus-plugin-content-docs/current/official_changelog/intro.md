@@ -8,4 +8,5 @@ Here are Minecraft Bedrock Edition technical update changelogs.
 
 ## Preview
 
+- [1.19.70.22](preview/1.19.70.22.mdx)
 - [1.19.70.21](preview/1.19.70.21.mdx)

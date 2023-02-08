@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Translate
             id="homepage.title"
             description="The homepage title">
-            {siteConfig.title}
+            基岩技术周刊
           </Translate>
         </h1>
         {/*<p className="hero__subtitle">{siteConfig.tagline}</p>*/}
