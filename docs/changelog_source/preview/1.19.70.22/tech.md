@@ -1,163 +1,162 @@
-## **Commands**
+## **命令**
 
-- Summon command no longer causes some entities to be spawned in at an angle
+- `/summon` 命令不再导致一些实体以一定角度生成
 
-## **Data-driven**
+## **数据驱动**
 
-- Fixed an issue where Entity Property value changes could be discarded if done by events fired as part of removal of active behaviors caused by other events
+- 修复了实体属性值在由作为被移除的活动行为的一部分来触发的事件更改时可能被废弃的问题
 
+<h2 className="experimental_divider">实验性特性</h2>
 
-<h2 className="experimental_divider">Experimental Technical Features</h2>
+## **脚本 API**
 
-## **Script API**
+### `@minecraft/server@1.1.0-beta` 模块更改
 
-### Changed module `@minecraft/server@1.1.0-beta`
+- `BeforeExplosionEvent` 类更改
 
-- Changed class `BeforeExplosionEvent`
+  - 移除 `impactedBlocks` 属性
 
-  - Removed property `impactedBlocks`
-
-  - Added function `getImpactedBlocks`
+  - 添加 `getImpactedBlocks` 函数
 
     ```typescript
     getImpactedBlocks(): Vector3[]      
     ```
 
-  - Added function `setImpactedBlocks`
+  - 添加 `setImpactedBlocks` 函数
 
     ```typescript
     setImpactedBlocks(blocks: Vector3[]): void      
     ```
 
-- Changed class `BeforeItemUseOnEvent`
+- `BeforeItemUseOnEvent` 类更改
 
-  - Removed property `blockLocation`
+  - 移除 `blockLocation` 属性
 
-  - Added function `getBlockLocation`
+  - 添加 `getBlockLocation` 函数
 
     ```typescript
     getBlockLocation(): Vector3      
     ```
 
-- Changed class `BlockInventoryComponent`
+- `BlockInventoryComponent` 类更改
 
-  - Removed property `location`
+  - 移除 `location` 属性
 
-- Changed class `BlockLavaContainerComponent`
+- `BlockLavaContainerComponent` 类更改
 
-  - Removed property `location`
+  - 移除 `location` 属性
 
-- Changed class `BlockPistonComponent`
+- `BlockPistonComponent` 类更改
 
-  - Removed property `attachedBlocks`
+  - 移除 `attachedBlocks` 属性
 
-  - Removed property `location`
+  - 移除 `location` 属性
 
-  - Added function `getAttachedBlocks`
+  - 添加 `getAttachedBlocks` 函数
 
     ```typescript
     getAttachedBlocks(): Vector3[]      
     ```
 
-- Changed class `BlockPotionContainerComponent`
+- `BlockPotionContainerComponent` 类更改
 
-  - Removed property `location`
+  - 移除 `location` 属性
 
-- Changed class `BlockRecordPlayerComponent`
+- `BlockRecordPlayerComponent` 类更改
 
-  - Removed property `location`
+  - 移除 `location` 属性
 
-- Changed class `BlockSignComponent`
+- `BlockSignComponent` 类更改
 
-  - Removed property `location`
+  - 移除 `location` 属性
 
-- Changed class `BlockSnowContainerComponent`
+- `BlockSnowContainerComponent` 类更改
 
-  - Removed property `location`
+  - 移除 `location` 属性
 
-- Changed class `BlockWaterContainerComponent`
+- `BlockWaterContainerComponent` 类更改
 
-  - Removed property `location`
+  - 移除 `location` 属性
 
-- Changed class `ContainerSlot`
+- `ContainerSlot` 类更改
 
-  - Added property `isStackable`
+  - 添加 `isStackable` 属性
 
     ```typescript
     readonly isStackable: boolean
     ```
 
-  - Added property `keepOnDeath`
+  - 添加 `keepOnDeath` 属性
 
     ```typescript
     keepOnDeath: boolean
     ```
 
-  - Added property `lockMode`
+  - 添加 `lockMode` 属性
 
     ```typescript
     lockMode: ItemLockMode
     ```
 
-  - Added property `maxAmount`
+  - 添加 `maxAmount` 属性
 
     ```typescript
     readonly maxAmount: number
     ```
 
-  - Added property `type`
+  - 添加 `type` 属性
 
     ```typescript
     readonly type: ItemType
     ```
 
-  - Added function `clone`
+  - 添加 `clone` 函数
 
     ```typescript
     clone(): ItemStack      
     ```
 
-  - Added function `isStackableWith`
+  - 添加 `isStackableWith` 函数
 
     ```typescript
     isStackableWith(itemStack: ItemStack): boolean      
     ```
 
-  - Added function `setCanDestroy`
+  - 添加 `setCanDestroy` 函数
 
     ```typescript
     setCanDestroy(blockIdentifiers?: string[]): void      
     ```
 
-  - Added function `setCanPlaceOn`
+  - 添加 `setCanPlaceOn` 函数
 
     ```typescript
     setCanPlaceOn(blockIdentifiers?: string[]): void      
     ```
 
-- Changed class `Entity`
+- `Entity` 类更改
 
-  - Removed property `headLocation`
+  - 移除 `headLocation` 属性
 
-  - Added function `applyImpulse`
+  - 添加 `applyImpulse` 函数
 
     ```typescript
     applyImpulse(vector: Vector3): void      
     ```
 
-  - Added function `applyKnockback`
+  - 添加 `applyKnockback` 函数
 
     ```typescript
     applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void      
     ```
 
-  - Added function `clearVelocity`
+  - 添加 `clearVelocity` 函数
 
     ```typescript
     clearVelocity(): void      
     ```
 
-  - Added function `getHeadLocation`
+  - 添加 `getHeadLocation` 函数
 
     ```typescript
     getHeadLocation(): Vector3      
@@ -165,143 +164,143 @@
 
   - Removed function `setVelocity`
 
-- Changed class `ExplosionEvent`
+- `ExplosionEvent` 类更改
 
-  - Removed property `impactedBlocks`
+  - 移除 `impactedBlocks` 属性
 
-  - Added function `getImpactedBlocks`
+  - 添加 `getImpactedBlocks` 函数
 
     ```typescript
     getImpactedBlocks(): Vector3[]      
     ```
 
-- Changed class `ItemStack`
+- `ItemStack` 类更改
 
-  - Added property `isStackable`
+  - 添加 `isStackable` 属性
 
     ```typescript
     readonly isStackable: boolean
     ```
 
-  - Added property `keepOnDeath`
+  - 添加 `keepOnDeath` 属性
 
     ```typescript
     keepOnDeath: boolean
     ```
 
-  - Added property `lockMode`
+  - 添加 `lockMode` 属性
 
     ```typescript
     lockMode: ItemLockMode
     ```
 
-  - Added property `maxAmount`
+  - 添加 `maxAmount` 属性
 
     ```typescript
     readonly maxAmount: number
     ```
 
-  - Added property `type`
+  - 添加 `type` 属性
 
     ```typescript
     readonly type: ItemType
     ```
 
-  - Added function `clone`
+  - 添加 `clone` 函数
 
     ```typescript
     clone(): ItemStack      
     ```
 
-  - Added function `isStackableWith`
+  - 添加 `isStackableWith` 函数
 
     ```typescript
     isStackableWith(itemStack: ItemStack): boolean      
     ```
 
-  - Added function `setCanDestroy`
+  - 添加 `setCanDestroy` 函数
 
     ```typescript
     setCanDestroy(blockIdentifiers?: string[]): void      
     ```
 
-  - Added function `setCanPlaceOn`
+  - 添加 `setCanPlaceOn` 函数
 
     ```typescript
     setCanPlaceOn(blockIdentifiers?: string[]): void      
     ```
 
-- Changed class `ItemStartUseOnEvent`
+- `ItemStartUseOnEvent` 类更改
 
-  - Removed property `blockLocation`
+  - 移除 `blockLocation` 属性
 
-  - Removed property `buildBlockLocation`
+  - 移除 `buildBlockLocation` 属性
 
-  - Added function `getBlockLocation`
+  - 添加 `getBlockLocation` 函数
 
     ```typescript
     getBlockLocation(): Vector3      
     ```
 
-  - Added function `getBuildBlockLocation`
+  - 添加 `getBuildBlockLocation` 函数
 
     ```typescript
     getBuildBlockLocation(): Vector3      
     ```
 
-- Changed class `ItemStopUseOnEvent`
+- `ItemStopUseOnEvent` 类更改
 
-  - Removed property `blockLocation`
+  - 移除 `blockLocation` 属性
 
-  - Added function `getBlockLocation`
-
-    ```typescript
-    getBlockLocation(): Vector3      
-    ```
-
-- Changed class `ItemUseOnEvent`
-
-  - Removed property `blockLocation`
-
-  - Added function `getBlockLocation`
+  - 添加 `getBlockLocation` 函数
 
     ```typescript
     getBlockLocation(): Vector3      
     ```
 
-- Changed class `NavigationResult`
+- `ItemUseOnEvent` 类更改
 
-  - Removed property `path`
+  - 移除 `blockLocation` 属性
 
-  - Added function `getPath`
+  - 添加 `getBlockLocation` 函数
+
+    ```typescript
+    getBlockLocation(): Vector3      
+    ```
+
+- `NavigationResult` 类更改
+
+  - 移除 `path` 属性
+
+  - 添加 `getPath` 函数
 
     ```typescript
     getPath(): Vector3[]      
     ```
 
-- Changed class `Player`
+- `Player` 类更改
 
-  - Removed property `headLocation`
+  - 移除 `headLocation` 属性
 
-  - Added function `applyImpulse`
+  - 添加 `applyImpulse` 函数
 
     ```typescript
     applyImpulse(vector: Vector3): void      
     ```
 
-  - Added function `applyKnockback`
+  - 添加 `applyKnockback` 函数
 
     ```typescript
     applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void      
     ```
 
-  - Added function `clearVelocity`
+  - 添加 `clearVelocity` 函数
 
     ```typescript
     clearVelocity(): void      
     ```
 
-  - Added function `getHeadLocation`
+  - 添加 `getHeadLocation` 函数
 
     ```typescript
     getHeadLocation(): Vector3      
