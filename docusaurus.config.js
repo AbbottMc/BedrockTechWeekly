@@ -92,7 +92,7 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
-            dropdownItemsAfter: [
+            /*dropdownItemsAfter: [
               {
                 type: 'html',
                 value: '<hr style="margin: 0.3rem 0;">',
@@ -101,7 +101,7 @@ const config = {
                 href: 'https://github.com/facebook/docusaurus/issues/3526',
                 label: 'Help Us Translate',
               },
-            ],
+            ],*/
           },
           {
             href: 'https://github.com/AbbottMc/BedrockTechWeekly',
