@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '基岩技术周刊',
+  title: '基岩技术周刊 | Bedrock Tech Weekly',
   tagline: 'Minecraft基岩版技术周刊文档站点',
   favicon: 'img/logo.png',
 
