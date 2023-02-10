@@ -1,15 +1,11 @@
 import React from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import styles from './index.module.css';
 import Translate from '@docusaurus/Translate'
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <header className="hero noise-bg no-underline-links px-4 pt-16 lg:py-0 heroBanner">
       <div className="container">
@@ -20,7 +16,6 @@ function HomepageHeader() {
             基岩技术周刊
           </Translate>
         </h1>
-        {/*<p className="hero__subtitle">{siteConfig.tagline}</p>*/}
         <p>
           <Translate
             id="homepage.subtitle"
@@ -36,7 +31,7 @@ function HomepageHeader() {
             <Translate
               id="homepage.checkLatestArticle"
               description="The homepage check latest article button message">
-              查看本周周刊
+              查看本周周刊 📖
             </Translate>
           </Link>
         </div>
