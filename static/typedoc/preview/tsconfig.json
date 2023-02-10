@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["es6"],
+    "target": "es6",
+    "noEmit": true,
+    "declaration": true,
+    "paths": {
+      "@minecraft/server": ["./server"],
+      "@minecraft/server-admin": ["./server-admin"],
+      "@minecraft/server-gametest": ["./server-gametest"],
+      "@minecraft/server-net": ["./server-net"],
+      "@minecraft/server-ui": ["./server-ui"]
+    }
+  },
+  "typedocOptions": {
+    "name": "@minecraft",
+    "externalPattern": "",
+    "disableSources": true,
+    "externalSymbolLinkMappings": {
+      "typescript": {
+        "Promise": "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+        "Iterable": "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols",
+        "Iterator": "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols",
+        "IteratorResult": "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols"
+      }
+    }
+  }
+}
