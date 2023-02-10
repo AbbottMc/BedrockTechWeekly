@@ -69,6 +69,17 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        defaultMode: 'dark'
+      },
+      announcementBar: {
+        id: 'welcome',
+        content:
+          '欢迎来到基岩技术周刊！这个站点仍在完善当中，欢迎您的<a href="https://github.com/AbbottMc/BedrockTechWeekly/issues">反馈</a>！',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: true,
+      },
       navbar: {
         title: '基岩技术周刊',
         logo: {
