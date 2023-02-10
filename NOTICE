@@ -1,0 +1,7 @@
+## About Css Files Under Folder `src/css`
+
+These files are referred from [github@dyte-in/docs](https://github.com/dyte-in/docs)/src/css which is open-source with Apache License - 2.0:
+- `api_reference.css`
+- `custom.css`
+
+And file `custom.css` has been modified.

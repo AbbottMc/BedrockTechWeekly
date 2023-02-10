@@ -58,7 +58,10 @@ const config = {
             'https://github.com/AbbottMc/BedrockTechWeekly/tree/master',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+            require.resolve('./src/css/api_reference.css'),
+          ]
         },
       }),
     ],

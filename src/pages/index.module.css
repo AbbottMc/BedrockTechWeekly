@@ -18,6 +18,13 @@
 
 .buttons {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  color: white;
+  align-items: start;
+  justify-content: left;
+}
+
+.homepage-button{
+  background-color: var(--ifm-color-primary-darker);
+  color: white;
+  border: 0;
 }

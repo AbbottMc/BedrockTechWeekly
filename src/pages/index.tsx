@@ -11,7 +11,7 @@ import Translate from '@docusaurus/Translate'
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className="hero noise-bg no-underline-links px-4 pt-16 lg:py-0 heroBanner">
       <div className="container">
         <h1 className="hero__title">
           <Translate
@@ -28,14 +28,15 @@ function HomepageHeader() {
             本站旨在每周提供Minecraft基岩版技术领域相关内容，让您更方便、快捷的了解基岩版开发领域的实时动态。
           </Translate>
         </p>
-        <div className={styles.buttons}>
+        <div className="buttons">
           <Link
-            className="button button--secondary button--lg"
+            className="hero--primary button button--lg"
+            style={{ color: 'white', border: 0}}
             to="/blog/latest">
             <Translate
               id="homepage.checkLatestArticle"
               description="The homepage check latest article button message">
-              查看本周周刊 📖
+              查看本周周刊
             </Translate>
           </Link>
         </div>
