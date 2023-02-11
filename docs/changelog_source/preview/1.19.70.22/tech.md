@@ -306,9 +306,9 @@
     getHeadLocation(): Vector3      
     ```
 
-  - Removed function `setVelocity`
+  - 移除 `setVelocity` 函数
 
-- Added enum `ItemLockMode`
+- 添加 `ItemLockMode` 枚举
 
   ```typescript
   export enum ItemLockMode {
