@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbedrock_tech=self.webpackChunkbedrock_tech||[]).push([[4718],{9704:e=>{e.exports=JSON.parse('{"label":"Minecraft","permalink":"/en/blog/tags/minecraft","allTagsPath":"/en/blog/tags","count":1}')}}]);
