@@ -315,7 +315,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Bedrock Tech Weekly, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Bedrock Tech Weekly, Inc. Built with Docusaurus.<br/>“Minecraft”是 Mojang AB 的商标。本站不以任何方式隶属于 Microsoft 或 Mojang AB`,
       },
       prism: {
         theme: lightCodeTheme,

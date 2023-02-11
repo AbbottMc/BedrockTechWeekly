@@ -20,7 +20,7 @@
     "description": "The label of footer link with label=GitHub仓库 linking to https://github.com/AbbottMc/BedrockTechWeekly"
   },
   "copyright": {
-    "message": "Copyright © 2023 Bedrock Tech Weekly, Inc. Built with Docusaurus.",
+    "message": "Copyright © 2023 Bedrock Tech Weekly, Inc. Built with Docusaurus.<br/>\"Minecraft\" is a trademark of Mojang AB. bedrocktechweekly.top is not affiliated in any way with Microsoft or Mojang AB.",
     "description": "The footer copyright"
   }
 }
