@@ -16,6 +16,7 @@
   "typedocOptions": {
     "name": "@minecraft",
     "externalPattern": "",
+    "excludeProtected": true,
     "disableSources": true,
     "externalSymbolLinkMappings": {
       "typescript": {
