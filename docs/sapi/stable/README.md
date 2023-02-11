@@ -1,8 +1,8 @@
 ---
-sidebar_label: 稳定版脚本API
+sidebar_label: 脚本API（Minecraft稳定版）
 ---
-# 稳定版脚本API
+# 脚本API（Minecraft稳定版）
 
-这里是稳定版脚本api
+这里是适用于最新Minecraft稳定版的脚本API文档
 
 > 待施工

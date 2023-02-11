@@ -1,9 +1,9 @@
 ---
-sidebar_label: 预览版脚本API
+sidebar_label: 脚本API（Minecraft预览版）
 ---
 
-# 预览版脚本API
+# 脚本API（Minecraft预览版）
 
-这里是预览版脚本api
+这里是适用于最新Minecraft预览版的脚本API文档
 
 > 待施工
