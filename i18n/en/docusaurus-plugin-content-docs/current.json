@@ -50,5 +50,45 @@
   "sidebar.sapiStableSidebar.doc.脚本API文档": {
     "message": "Script API Documentation",
     "description": "The label for the doc item 脚本API文档 in sidebar sapiStableSidebar, linking to the doc sapi/stable/README"
+  },
+  "sidebar.sapiPreviewSidebar.category.@minecraft/server": {
+    "message": "@minecraft/server",
+    "description": "The label for category @minecraft/server in sidebar sapiPreviewSidebar"
+  },
+  "sidebar.sapiPreviewSidebar.category.@minecraft/server-ui": {
+    "message": "@minecraft/server-ui",
+    "description": "The label for category @minecraft/server-ui in sidebar sapiPreviewSidebar"
+  },
+  "sidebar.sapiPreviewSidebar.category.@minecraft/server-admin": {
+    "message": "@minecraft/server-admin",
+    "description": "The label for category @minecraft/server-admin in sidebar sapiPreviewSidebar"
+  },
+  "sidebar.sapiPreviewSidebar.category.@minecraft/server-net": {
+    "message": "@minecraft/server-net",
+    "description": "The label for category @minecraft/server-net in sidebar sapiPreviewSidebar"
+  },
+  "sidebar.sapiPreviewSidebar.category.@minecraft/server-gametest": {
+    "message": "@minecraft/server-gametest",
+    "description": "The label for category @minecraft/server-gametest in sidebar sapiPreviewSidebar"
+  },
+  "sidebar.sapiStableSidebar.category.@minecraft/server": {
+    "message": "@minecraft/server",
+    "description": "The label for category @minecraft/server in sidebar sapiStableSidebar"
+  },
+  "sidebar.sapiStableSidebar.category.@minecraft/server-ui": {
+    "message": "@minecraft/server-ui",
+    "description": "The label for category @minecraft/server-ui in sidebar sapiStableSidebar"
+  },
+  "sidebar.sapiStableSidebar.category.@minecraft/server-admin": {
+    "message": "@minecraft/server-admin",
+    "description": "The label for category @minecraft/server-admin in sidebar sapiStableSidebar"
+  },
+  "sidebar.sapiStableSidebar.category.@minecraft/server-net": {
+    "message": "@minecraft/server-net",
+    "description": "The label for category @minecraft/server-net in sidebar sapiStableSidebar"
+  },
+  "sidebar.sapiStableSidebar.category.@minecraft/server-gametest": {
+    "message": "@minecraft/server-gametest",
+    "description": "The label for category @minecraft/server-gametest in sidebar sapiStableSidebar"
   }
 }

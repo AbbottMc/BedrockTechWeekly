@@ -26,12 +26,23 @@ function HomepageHeader() {
         <div className="buttons">
           <Link
             className="hero--primary button button--lg"
-            style={{ color: 'white', border: 0}}
+            style={{color: 'white', border: 0}}
             to="/blog/latest">
             <Translate
               id="homepage.checkLatestArticle"
               description="The homepage check latest article button message">
               查看本周周刊 📖
+            </Translate>
+          </Link>
+        </div>
+        <div className="buttons" style={{marginTop: 24}}>
+          <Link
+            className="homepage-button-secondary hero--primary  button--lg"
+            to="/docs/official_changelog/preview/1.19.70.22">
+            <Translate
+              id="homepage.checkTechChangelog"
+              description="The homepage check tech changelog button message">
+              查看本周预览版更新日志 📜
             </Translate>
           </Link>
         </div>

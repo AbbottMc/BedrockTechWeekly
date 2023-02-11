@@ -289,5 +289,9 @@
   "homepage.whatCanYouDoHere.description": {
     "message": "Get the latest bedrock development technology information every week, and learn about the cutting-edge technology of bedrock development",
     "description": "The homepage 'what can you do here' description"
+  },
+  "homepage.checkTechChangelog": {
+    "message": "Check out the latest preview changelogs 📜",
+    "description": "The homepage check tech changelog button message"
   }
 }
