@@ -1,9 +1,9 @@
 ---
-sidebar_label: Preview Script API
+sidebar_label: Script API (for Minecraft Preview)
 ---
 
-# Preview Script API
+# Script API for Minecraft Preview
 
-Here are the Preview Script API Docs
+Here are the Script API Docs for Minecraft preview version
 
 > WIP

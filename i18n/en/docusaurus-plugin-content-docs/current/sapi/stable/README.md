@@ -1,9 +1,9 @@
 ---
-sidebar_label: Stable Script API
+sidebar_label: Script API (for Minecraft Stable)
 ---
 
-# Stable Script API
+# Script API for Minecraft Stable
 
-Here are the Stable Script API Docs
+Here are the Script API Docs for Minecraft stable version
 
 > WIP
