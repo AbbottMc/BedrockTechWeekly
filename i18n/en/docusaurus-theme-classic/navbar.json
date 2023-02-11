@@ -31,11 +31,11 @@
     "message": "Preview",
     "description": "Navbar item with label 预览版"
   },
-  "item.label.稳定版[1.19.60]": {
+  "item.label.稳定版 [1.19.60]": {
     "message": "Stable [1.19.60]",
     "description": "Navbar item with label 稳定版[1.19.60]"
   },
-  "item.label.预览版[1.19.70.22]": {
+  "item.label.预览版 [1.19.70.22]": {
     "message": "Preview [1.19.70.22]",
     "description": "Navbar item with label 预览版[1.19.70.22]"
   }
