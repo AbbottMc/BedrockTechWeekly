@@ -279,7 +279,7 @@
     "description": "The homepage subtitle"
   },
   "homepage.checkLatestArticle": {
-    "message": "Check out this week's article 📖",
+    "message": "Latest article 📖",
     "description": "The homepage check latest article button message"
   },
   "homepage.whatCanYouDoHere.title": {
@@ -291,7 +291,7 @@
     "description": "The homepage 'what can you do here' description"
   },
   "homepage.checkTechChangelog": {
-    "message": "Check out the latest preview changelogs 📜",
+    "message": "Latest preview changelogs 📜",
     "description": "The homepage check tech changelog button message"
   }
 }

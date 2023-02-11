@@ -1201,7 +1201,7 @@ div[class^='announcementBarContent'] {
     text-align: center;
     user-select: none;
     vertical-align: middle;
-    white-space: nowrap;
+    white-space: normal;
     transition-property: color, background, border-color;
     transition-duration: var(--ifm-button-transition-duration);
     transition-timing-function: var(--ifm-transition-timing-default);

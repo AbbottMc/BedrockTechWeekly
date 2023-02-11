@@ -31,7 +31,7 @@ function HomepageHeader() {
             <Translate
               id="homepage.checkLatestArticle"
               description="The homepage check latest article button message">
-              查看本周周刊 📖
+              本周周刊 📖
             </Translate>
           </Link>
         </div>
@@ -42,7 +42,7 @@ function HomepageHeader() {
             <Translate
               id="homepage.checkTechChangelog"
               description="The homepage check tech changelog button message">
-              查看本周预览版更新日志 📜
+              本周更新日志 📜
             </Translate>
           </Link>
         </div>
