@@ -36,6 +36,139 @@ const config = {
       }
     }
   },
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'preview-server',
+        entryPoints: ['./static/typedoc/preview/server.d.ts'],
+        tsconfig: './static/typedoc/preview/tsconfig.json',
+        out: 'sapi/preview/server',
+        sidebar: {
+          categoryLabel: 'sapiPreviewSidebar',
+          collapsed: false,
+          position: 0,
+          fullNames: true,
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'preview-server-admin',
+        entryPoints: [
+          './static/typedoc/preview/server-admin.d.ts'
+        ],
+        tsconfig: './static/typedoc/preview/tsconfig.json',
+        out: 'sapi/preview/server-admin'
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'preview-server-ui',
+        entryPoints: [
+          './static/typedoc/preview/server-ui.d.ts'
+        ],
+        tsconfig: './static/typedoc/preview/tsconfig.json',
+        out: 'sapi/preview/server-ui'
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'preview-server-net',
+        entryPoints: [
+          './static/typedoc/preview/server-net.d.ts'
+        ],
+        tsconfig: './static/typedoc/preview/tsconfig.json',
+        out: 'sapi/preview/server-net'
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'preview-server-gametest',
+        entryPoints: [
+          './static/typedoc/preview/server-gametest.d.ts',
+        ],
+        tsconfig: './static/typedoc/preview/tsconfig.json',
+        out: 'sapi/preview/server-gametest'
+      },
+    ],
+    // -----------------------------------------------------
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'stable-server',
+        entryPoints: [
+          './static/typedoc/stable/server.d.ts'
+        ],
+        tsconfig: './static/typedoc/stable/tsconfig.json',
+        out: 'sapi/stable/server',
+        sidebar: {
+          categoryLabel: 'sapiStableSidebar',
+          collapsed: false,
+          position: 0,
+          fullNames: true,
+        }
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'stable-server-admin',
+        entryPoints: [
+          './static/typedoc/stable/server-admin.d.ts'
+        ],
+        tsconfig: './static/typedoc/stable/tsconfig.json',
+        out: 'sapi/stable/server-admin'
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'stable-server-ui',
+        entryPoints: [
+          './static/typedoc/stable/server-ui.d.ts'
+        ],
+        tsconfig: './static/typedoc/stable/tsconfig.json',
+        out: 'sapi/stable/server-ui'
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'stable-server-net',
+        entryPoints: [
+          './static/typedoc/stable/server-net.d.ts'
+        ],
+        tsconfig: './static/typedoc/stable/tsconfig.json',
+        out: 'sapi/stable/server-net'
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'stable-server-gametest',
+        entryPoints: [
+          './static/typedoc/stable/server-gametest.d.ts',
+        ],
+        tsconfig: './static/typedoc/stable/tsconfig.json',
+        out: 'sapi/stable/server-gametest'
+      }
+    ]
+  ],
   presets: [
     [
       'classic',
@@ -93,9 +226,24 @@ const config = {
           {to: '/blog', label: '周刊', position: 'left'},
           {
             type: 'doc',
-            docId: 'official_changelog/intro',
+            docId: 'official_changelog/README',
             position: 'left',
             label: '官方日志',
+          },
+          {
+            type: 'dropdown',
+            label: '脚本文档',
+            position: 'left',
+            items: [
+              {
+                to: '/docs/sapi/stable',
+                label: '稳定版 [1.19.60]',
+              },
+              {
+                to: '/docs/sapi/preview',
+                label: '预览版 [1.19.70.22]',
+              }
+            ]
           },
           {
             type: 'doc',

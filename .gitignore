@@ -20,3 +20,13 @@ yarn-debug.log*
 yarn-error.log*
 /package-lock.json
 /.idea/
+/docs/sapi/stable/server/
+/docs/sapi/stable/server-admin/
+/docs/sapi/stable/server-gametest/
+/docs/sapi/stable/server-net/
+/docs/sapi/stable/server-ui/
+/docs/sapi/preview/server/
+/docs/sapi/preview/server-admin/
+/docs/sapi/preview/server-gametest/
+/docs/sapi/preview/server-net/
+/docs/sapi/preview/server-ui/

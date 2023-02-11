@@ -10,5 +10,45 @@
   "sidebar.tutorialSidebar.category.预览版更新.link.generated-index.description": {
     "message": "Minecraft Preview Technical Update Changelog",
     "description": "The generated-index page description for category 预览版更新 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.稳定版更新": {
+    "message": "稳定版更新",
+    "description": "The label for category 稳定版更新 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.稳定版更新.link.generated-index.description": {
+    "message": "Minecraft稳定版技术更新日志",
+    "description": "The generated-index page description for category 稳定版更新 in sidebar tutorialSidebar"
+  },
+  "sidebar.sapiPreviewSidebar.category.类": {
+    "message": "Class",
+    "description": "The label for category 类 in sidebar sapiPreviewSidebar"
+  },
+  "sidebar.sapiPreviewSidebar.category.接口": {
+    "message": "Interface",
+    "description": "The label for category 接口 in sidebar sapiPreviewSidebar"
+  },
+  "sidebar.sapiPreviewSidebar.category.枚举": {
+    "message": "Enumeration",
+    "description": "The label for category 枚举 in sidebar sapiPreviewSidebar"
+  },
+  "sidebar.sapiPreviewSidebar.doc.脚本API文档": {
+    "message": "Script API Documentation",
+    "description": "The label for the doc item 脚本API文档 in sidebar sapiPreviewSidebar, linking to the doc sapi/preview/README"
+  },
+  "sidebar.sapiStableSidebar.category.类": {
+    "message": "Class",
+    "description": "The label for category 类 in sidebar sapiStableSidebar"
+  },
+  "sidebar.sapiStableSidebar.category.接口": {
+    "message": "Interface",
+    "description": "The label for category 接口 in sidebar sapiStableSidebar"
+  },
+  "sidebar.sapiStableSidebar.category.枚举": {
+    "message": "Enumeration",
+    "description": "The label for category 枚举 in sidebar sapiStableSidebar"
+  },
+  "sidebar.sapiStableSidebar.doc.脚本API文档": {
+    "message": "Script API Documentation",
+    "description": "The label for the doc item 脚本API文档 in sidebar sapiStableSidebar, linking to the doc sapi/stable/README"
   }
 }
