@@ -1,0 +1,9 @@
+hr {
+    background-color: #666;
+}
+
+h2 {
+    background-color: var(--ifm-color-primary-darker);
+    padding: 8px 16px;
+    border-radius: 8px;
+}

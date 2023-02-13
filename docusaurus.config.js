@@ -194,6 +194,7 @@ const config = {
           customCss: [
             require.resolve('./src/css/custom.css'),
             require.resolve('./src/css/api_reference.css'),
+            require.resolve('./src/css/sapi_docs.css'),
           ]
         },
       }),
