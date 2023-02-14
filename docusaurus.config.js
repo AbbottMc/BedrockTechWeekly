@@ -195,6 +195,7 @@ const config = {
             require.resolve('./src/css/custom.css'),
             require.resolve('./src/css/api_reference.css'),
             require.resolve('./src/css/sapi_docs.css'),
+            require.resolve('./src/css/article.css')
           ]
         },
       }),
@@ -217,6 +218,11 @@ const config = {
         textColor: '#091E42',
         isCloseable: true,
       },
+     /* docs:{
+        sidebar: {
+          hideable: true,
+        }
+      },*/
       navbar: {
         title: '基岩技术周刊',
         logo: {

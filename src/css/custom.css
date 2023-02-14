@@ -1188,7 +1188,7 @@ div[class^='announcementBarContent'] {
 
 
 .homepage-button-secondary {
-    background-color: rgba(0,128,255,0.16);
+    background-color: rgba(0, 128, 255, 0.16);
     border: 1px solid var(--ifm-color-primary);
     border-radius: var(--ifm-button-border-radius);
     color: white;
@@ -1197,7 +1197,7 @@ div[class^='announcementBarContent'] {
     font-size: calc(0.875rem * var(--ifm-button-size-multiplier));
     font-weight: var(--ifm-button-font-weight);
     line-height: 1.5;
-    padding: calc( var(--ifm-button-padding-vertical) * var(--ifm-button-size-multiplier) ) calc( var(--ifm-button-padding-horizontal) * var(--ifm-button-size-multiplier) );
+    padding: calc(var(--ifm-button-padding-vertical) * var(--ifm-button-size-multiplier)) calc(var(--ifm-button-padding-horizontal) * var(--ifm-button-size-multiplier));
     text-align: center;
     user-select: none;
     vertical-align: middle;

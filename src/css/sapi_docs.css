@@ -2,8 +2,23 @@ hr {
     background-color: #666;
 }
 
-h2 {
+
+[data-theme='dark'] h2.anchor#methods,
+[data-theme='dark'] h2.anchor#properties,
+[data-theme='dark'] h2.anchor#constructors,
+[data-theme='dark'] h2.anchor#hierarchy {
+    background-color: var(--ifm-color-primary-light);
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: white;
+}
+
+[data-theme='light'] h2.anchor#methods,
+[data-theme='light'] h2.anchor#properties,
+[data-theme='light'] h2.anchor#constructors,
+[data-theme='light'] h2.anchor#hierarchy {
     background-color: var(--ifm-color-primary-darker);
     padding: 8px 16px;
     border-radius: 8px;
+    color: white;
 }
