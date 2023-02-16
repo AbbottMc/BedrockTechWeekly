@@ -44,7 +44,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-ui",
- *   "version": "1.0.0-internal.1.19.70-preview.22"
+ *   "version": "1.0.0-internal.1.19.70-preview.23"
  * }
  * ```
  *
@@ -219,11 +219,11 @@ export class ModalFormData {
      * @param defaultValue
      */
     slider(
-        label: string,
-        minimumValue: number,
-        maximumValue: number,
-        valueStep: number,
-        defaultValue?: number,
+      label: string,
+      minimumValue: number,
+      maximumValue: number,
+      valueStep: number,
+      defaultValue?: number,
     ): ModalFormData;
     /**
      * @remarks
