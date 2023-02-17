@@ -1,302 +1,302 @@
-### Changed module `@minecraft/server@1.1.0-beta`
+### `@minecraft/server@1.1.0-beta` 模块更改
 
-- Changed class `BlockPermutation`
+- `BlockPermutation` 类更改
 
-    - Changed function `getAllProperties`
+    - `getAllProperties` 函数更改
 
-        - Changed return type from `IBlockProperty[]` to `Record<string, boolean | number | string>`
+        - 将返回类型从 `IBlockProperty[]` 更改为 `Record<string, boolean | number | string>`
 
-    - Changed function `getProperty`
+    - `getProperty` 函数更改
 
-        - Changed return type from `IBlockProperty` (throws exceptions) to `boolean | number | string`
+        - 将返回类型从 `IBlockProperty` (throws exceptions) 更改为 `boolean | number | string`
 
-    - Added function `matches`
+    - 添加 `matches` 函数
 
       ```typescript
       matches(blockName: string, properties?: Record<string, boolean | number | string>): boolean      
       ```
 
-    - Added function `resolve`
+    - 添加 `resolve` 函数
 
       ```typescript
       static resolve(blockName: string, properties?: Record<string, boolean | number | string>): BlockPermutation      
       ```
 
-    - Added function `withProperty`
+    - 添加 `withProperty` 函数
 
       ```typescript
       withProperty(name: string, value: boolean | number | string): BlockPermutation      
       ```
 
-- Changed class `BlockProperties`
+- `BlockProperties` 类更改
 
-    - Removed constant `active`
+    - 移除 `active` 常量
 
-    - Removed constant `age`
+    - 移除 `age` 常量
 
-    - Removed constant `ageBit`
+    - 移除 `ageBit` 常量
 
-    - Removed constant `allowUnderwaterBit`
+    - 移除 `allowUnderwaterBit` 常量
 
-    - Removed constant `attachedBit`
+    - 移除 `attachedBit` 常量
 
-    - Removed constant `attachment`
+    - 移除 `attachment` 常量
 
-    - Removed constant `bambooLeafSize`
+    - 移除 `bambooLeafSize` 常量
 
-    - Removed constant `bambooStalkThickness`
+    - 移除 `bambooStalkThickness` 常量
 
-    - Removed constant `bigDripleafHead`
+    - 移除 `bigDripleafHead` 常量
 
-    - Removed constant `bigDripleafTilt`
+    - 移除 `bigDripleafTilt` 常量
 
-    - Removed constant `biteCounter`
+    - 移除 `biteCounter` 常量
 
-    - Removed constant `blockLightLevel`
+    - 移除 `blockLightLevel` 常量
 
-    - Removed constant `bloom`
+    - 移除 `bloom` 常量
 
-    - Removed constant `booksStored`
+    - 移除 `booksStored` 常量
 
-    - Removed constant `brewingStandSlotABit`
+    - 移除 `brewingStandSlotABit` 常量
 
-    - Removed constant `brewingStandSlotBBit`
+    - 移除 `brewingStandSlotBBit` 常量
 
-    - Removed constant `brewingStandSlotCBit`
+    - 移除 `brewingStandSlotCBit` 常量
 
-    - Removed constant `buttonPressedBit`
+    - 移除 `buttonPressedBit` 常量
 
-    - Removed constant `candles`
+    - 移除 `candles` 常量
 
-    - Removed constant `canSummon`
+    - 移除 `canSummon` 常量
 
-    - Removed constant `cauldronLiquid`
+    - 移除 `cauldronLiquid` 常量
 
-    - Removed constant `chemistryTableType`
+    - 移除 `chemistryTableType` 常量
 
-    - Removed constant `chiselType`
+    - 移除 `chiselType` 常量
 
-    - Removed constant `clusterCount`
+    - 移除 `clusterCount` 常量
 
-    - Removed constant `color`
+    - 移除 `color` 常量
 
-    - Removed constant `colorBit`
+    - 移除 `colorBit` 常量
 
-    - Removed constant `composterFillLevel`
+    - 移除 `composterFillLevel` 常量
 
-    - Removed constant `conditionalBit`
+    - 移除 `conditionalBit` 常量
 
-    - Removed constant `coralColor`
+    - 移除 `coralColor` 常量
 
-    - Removed constant `coralDirection`
+    - 移除 `coralDirection` 常量
 
-    - Removed constant `coralFanDirection`
+    - 移除 `coralFanDirection` 常量
 
-    - Removed constant `coralHangTypeBit`
+    - 移除 `coralHangTypeBit` 常量
 
-    - Removed constant `coveredBit`
+    - 移除 `coveredBit` 常量
 
-    - Removed constant `crackedState`
+    - 移除 `crackedState` 常量
 
-    - Removed constant `damage`
+    - 移除 `damage` 常量
 
-    - Removed constant `deadBit`
+    - 移除 `deadBit` 常量
 
-    - Removed constant `deprecated`
+    - 移除 `deprecated` 常量
 
-    - Removed constant `direction`
+    - 移除 `direction` 常量
 
-    - Removed constant `dirtType`
+    - 移除 `dirtType` 常量
 
-    - Removed constant `disarmedBit`
+    - 移除 `disarmedBit` 常量
 
-    - Removed constant `doorHingeBit`
+    - 移除 `doorHingeBit` 常量
 
-    - Removed constant `doublePlantType`
+    - 移除 `doublePlantType` 常量
 
-    - Removed constant `dragDown`
+    - 移除 `dragDown` 常量
 
-    - Removed constant `dripstoneThickness`
+    - 移除 `dripstoneThickness` 常量
 
-    - Removed constant `endPortalEyeBit`
+    - 移除 `endPortalEyeBit` 常量
 
-    - Removed constant `explodeBit`
+    - 移除 `explodeBit` 常量
 
-    - Removed constant `extinguished`
+    - 移除 `extinguished` 常量
 
-    - Removed constant `facingDirection`
+    - 移除 `facingDirection` 常量
 
-    - Removed constant `fillLevel`
+    - 移除 `fillLevel` 常量
 
-    - Removed constant `flowerType`
+    - 移除 `flowerType` 常量
 
-    - Removed constant `groundSignDirection`
+    - 移除 `groundSignDirection` 常量
 
-    - Removed constant `growingPlantAge`
+    - 移除 `growingPlantAge` 常量
 
-    - Removed constant `growth`
+    - 移除 `growth` 常量
 
-    - Removed constant `hanging`
+    - 移除 `hanging` 常量
 
-    - Removed constant `headPieceBit`
+    - 移除 `headPieceBit` 常量
 
-    - Removed constant `height`
+    - 移除 `height` 常量
 
-    - Removed constant `honeyLevel`
+    - 移除 `honeyLevel` 常量
 
-    - Removed constant `hugeMushroomBits`
+    - 移除 `hugeMushroomBits` 常量
 
-    - Removed constant `infiniburnBit`
+    - 移除 `infiniburnBit` 常量
 
-    - Removed constant `inWallBit`
+    - 移除 `inWallBit` 常量
 
-    - Removed constant `itemFrameMapBit`
+    - 移除 `itemFrameMapBit` 常量
 
-    - Removed constant `itemFramePhotoBit`
+    - 移除 `itemFramePhotoBit` 常量
 
-    - Removed constant `kelpAge`
+    - 移除 `kelpAge` 常量
 
-    - Removed constant `leverDirection`
+    - 移除 `leverDirection` 常量
 
-    - Removed constant `liquidDepth`
+    - 移除 `liquidDepth` 常量
 
-    - Removed constant `lit`
+    - 移除 `lit` 常量
 
-    - Removed constant `moisturizedAmount`
+    - 移除 `moisturizedAmount` 常量
 
-    - Removed constant `monsterEggStoneType`
+    - 移除 `monsterEggStoneType` 常量
 
-    - Removed constant `multiFaceDirectionBits`
+    - 移除 `multiFaceDirectionBits` 常量
 
-    - Removed constant `newLeafType`
+    - 移除 `newLeafType` 常量
 
-    - Removed constant `newLogType`
+    - 移除 `newLogType` 常量
 
-    - Removed constant `noDropBit`
+    - 移除 `noDropBit` 常量
 
-    - Removed constant `occupiedBit`
+    - 移除 `occupiedBit` 常量
 
-    - Removed constant `oldLeafType`
+    - 移除 `oldLeafType` 常量
 
-    - Removed constant `oldLogType`
+    - 移除 `oldLogType` 常量
 
-    - Removed constant `openBit`
+    - 移除 `openBit` 常量
 
-    - Removed constant `outputLitBit`
+    - 移除 `outputLitBit` 常量
 
-    - Removed constant `outputSubtractBit`
+    - 移除 `outputSubtractBit` 常量
 
-    - Removed constant `persistentBit`
+    - 移除 `persistentBit` 常量
 
-    - Removed constant `pillarAxis`
+    - 移除 `pillarAxis` 常量
 
-    - Removed constant `portalAxis`
+    - 移除 `portalAxis` 常量
 
-    - Removed constant `poweredBit`
+    - 移除 `poweredBit` 常量
 
-    - Removed constant `prismarineBlockType`
+    - 移除 `prismarineBlockType` 常量
 
-    - Removed constant `propaguleStage`
+    - 移除 `propaguleStage` 常量
 
-    - Removed constant `railDataBit`
+    - 移除 `railDataBit` 常量
 
-    - Removed constant `railDirection`
+    - 移除 `railDirection` 常量
 
-    - Removed constant `redstoneSignal`
+    - 移除 `redstoneSignal` 常量
 
-    - Removed constant `repeaterDelay`
+    - 移除 `repeaterDelay` 常量
 
-    - Removed constant `respawnAnchorCharge`
+    - 移除 `respawnAnchorCharge` 常量
 
-    - Removed constant `rotation`
+    - 移除 `rotation` 常量
 
-    - Removed constant `sandStoneType`
+    - 移除 `sandStoneType` 常量
 
-    - Removed constant `sandType`
+    - 移除 `sandType` 常量
 
-    - Removed constant `saplingType`
+    - 移除 `saplingType` 常量
 
-    - Removed constant `seaGrassType`
+    - 移除 `seaGrassType` 常量
 
-    - Removed constant `spongeType`
+    - 移除 `spongeType` 常量
 
-    - Removed constant `stability`
+    - 移除 `stability` 常量
 
-    - Removed constant `stabilityCheck`
+    - 移除 `stabilityCheck` 常量
 
-    - Removed constant `stoneBrickType`
+    - 移除 `stoneBrickType` 常量
 
-    - Removed constant `stoneSlabType`
+    - 移除 `stoneSlabType` 常量
 
-    - Removed constant `stoneSlabType2`
+    - 移除 `stoneSlabType2` 常量
 
-    - Removed constant `stoneSlabType3`
+    - 移除 `stoneSlabType3` 常量
 
-    - Removed constant `stoneSlabType4`
+    - 移除 `stoneSlabType4` 常量
 
-    - Removed constant `stoneType`
+    - 移除 `stoneType` 常量
 
-    - Removed constant `strippedBit`
+    - 移除 `strippedBit` 常量
 
-    - Removed constant `structureBlockType`
+    - 移除 `structureBlockType` 常量
 
-    - Removed constant `structureVoidType`
+    - 移除 `structureVoidType` 常量
 
-    - Removed constant `suspendedBit`
+    - 移除 `suspendedBit` 常量
 
-    - Removed constant `tallGrassType`
+    - 移除 `tallGrassType` 常量
 
-    - Removed constant `toggleBit`
+    - 移除 `toggleBit` 常量
 
-    - Removed constant `topSlotBit`
+    - 移除 `topSlotBit` 常量
 
-    - Removed constant `torchFacingDirection`
+    - 移除 `torchFacingDirection` 常量
 
-    - Removed constant `triggeredBit`
+    - 移除 `triggeredBit` 常量
 
-    - Removed constant `turtleEggCount`
+    - 移除 `turtleEggCount` 常量
 
-    - Removed constant `twistingVinesAge`
+    - 移除 `twistingVinesAge` 常量
 
-    - Removed constant `updateBit`
+    - 移除 `updateBit` 常量
 
-    - Removed constant `upperBlockBit`
+    - 移除 `upperBlockBit` 常量
 
-    - Removed constant `upsideDownBit`
+    - 移除 `upsideDownBit` 常量
 
-    - Removed constant `vineDirectionBits`
+    - 移除 `vineDirectionBits` 常量
 
-    - Removed constant `wallBlockType`
+    - 移除 `wallBlockType` 常量
 
-    - Removed constant `wallConnectionTypeEast`
+    - 移除 `wallConnectionTypeEast` 常量
 
-    - Removed constant `wallConnectionTypeNorth`
+    - 移除 `wallConnectionTypeNorth` 常量
 
-    - Removed constant `wallConnectionTypeSouth`
+    - 移除 `wallConnectionTypeSouth` 常量
 
-    - Removed constant `wallConnectionTypeWest`
+    - 移除 `wallConnectionTypeWest` 常量
 
-    - Removed constant `wallPostBit`
+    - 移除 `wallPostBit` 常量
 
-    - Removed constant `weepingVinesAge`
+    - 移除 `weepingVinesAge` 常量
 
-    - Removed constant `weirdoDirection`
+    - 移除 `weirdoDirection` 常量
 
-    - Removed constant `woodType`
+    - 移除 `woodType` 常量
 
-    - Added function `get`
+    - 添加 `get` 函数
 
       ```typescript
       static get(propertyName: string): BlockPropertyType      
       ```
 
-    - Added function `getAll`
+    - 添加 `getAll` 函数
 
       ```typescript
       static getAll(): BlockPropertyType[]      
       ```
 
-- Added class `BlockPropertyType`
+- 添加 `BlockPropertyType` 类
 
   ```typescript
   export class BlockPropertyType {
@@ -306,44 +306,44 @@
   }
   ```
 
-- Changed class `BlockType`
+- `BlockType` 类更改
 
     - Removed function `createDefaultBlockPermutation`
 
-- Removed class `BoolBlockProperty`
+- 移除 `BoolBlockProperty` 类
 
-- Changed class `DirectionBlockProperty`
+- `DirectionBlockProperty` 类更改
 
     - Removed base class `IBlockProperty`
 
-- Removed class `IBlockProperty`
+- 移除 `IBlockProperty` 类
 
-- Removed class `IntBlockProperty`
+- 移除 `IntBlockProperty` 类
 
-- Changed class `MinecraftBlockTypes`
+- `MinecraftBlockTypes` 类更改
 
-    - Added constant `decoratedPot`
+    - 添加 `decoratedPot` 常量
 
       ```typescript
       static readonly decoratedPot: BlockType
       ```
 
-    - Added constant `suspiciousSand`
+    - 添加 `suspiciousSand` 常量
 
       ```typescript
       static readonly suspiciousSand: BlockType
       ```
 
-    - Added constant `torchflower`
+    - 添加 `torchflower` 常量
 
       ```typescript
       static readonly torchflower: BlockType
       ```
 
-    - Added constant `torchflowerCrop`
+    - 添加 `torchflowerCrop` 常量
 
       ```typescript
       static readonly torchflowerCrop: BlockType
       ```
 
-- Removed class `StringBlockProperty`
+- 移除 `StringBlockProperty` 类
