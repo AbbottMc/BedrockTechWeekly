@@ -1,0 +1,15 @@
+import TechSapiChangelog from './tech_sapi_changelog.md';
+import TechSapi from './tech_sapi.md';
+import Switcher from '../../../components/TechChangelogSwitcher.mdx';
+
+## **Data-driven**
+
+- Released block properties and permutations out of experimental in JSON formats 1.19.70 and higher
+- Added a content warning when loading world with more than 65536 custom block permutations. Custom block permutation counts are logged in debug log
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+## **Script API**
+
+<Switcher techSapi={<TechSapi/>} techSapiChangelog={<TechSapiChangelog/>}/>

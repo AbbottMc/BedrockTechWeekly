@@ -1,4 +1,96 @@
 
-.alert{
+[data-theme='light'] {
+    --ifm-color-divider-light: #f35b39;
+}
+
+
+[data-theme='dark'] {
+    --ifm-color-divider-light: #ec3c19;
+}
+
+
+.alert {
     border-radius: 0;
+}
+
+.changelog_divider {
+    color: white;
+    height: 48px;
+    border-radius: 8px;
+    padding: 16px;
+    line-height: 16px;
+}
+
+[data-theme='dark'] .changelog_divider {
+    background-color: var(--ifm-color-primary-dark);
+}
+
+[data-theme='light'] .changelog_divider {
+    background-color: var(--ifm-color-primary-light);
+}
+
+.experimental_divider {
+    color: black;
+    height: 48px;
+    background-repeat: repeat-x;
+    background-size: 100px 100%;
+    /*animation: exp_anim 2s infinite ;*/
+    background-color: yellow;
+    /*background-image: linear-gradient(-45deg, yellow 33.3%, transparent 33.3%, transparent 66.6%, yellow 66.6%, yellow);*/
+    border-radius: 8px;
+    padding: 16px;
+    line-height: 16px;
+}
+
+@keyframes exp_anim {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: 640px;
+    }
+}
+
+.changelog_sapi_tabs .tabs__item--active {
+    color: white;
+}
+
+.changelog_sapi_tabs {
+    border-radius: var(--ifm-global-radius);
+    border-width: 0 0 0 0;
+    background-color: unset;
+}
+
+.changelog_sapi_tabs .tabs__item {
+    border-radius: var(--ifm-global-radius);
+    margin-right: 8px;
+}
+
+[data-theme='dark'] .changelog_sapi_tabs .tabs__item {
+    background-color: #1c1e21;
+}
+
+[data-theme='light'] .changelog_sapi_tabs .tabs__item {
+    color: black;
+    background-color: #ededed;
+}
+
+[data-theme='dark'] .changelog_sapi_tabs .tabs__item--active {
+    border-bottom-color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='light'] .changelog_sapi_tabs .tabs__item--active {
+    border-bottom-color: var(--ifm-color-primary-lightest);
+}
+
+.changelog_sapi_tabs .tabs__item:hover {
+    border-radius: var(--ifm-global-radius);
+}
+
+[data-theme='dark'] .changelog_sapi_tabs .tabs__item:hover {
+    background-color: #2a2a2a;
+}
+
+[data-theme='light'] .changelog_sapi_tabs .tabs__item:hover {
+    background-color: #dadada;
 }

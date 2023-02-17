@@ -35,23 +35,6 @@
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }*/
 
-.changelog_divider {
-    height: 48px;
-    background-color: var(--ifm-color-primary-darkest);
-    border-radius: 8px;
-    padding: 16px;
-    line-height: 16px;
-}
-
-.experimental_divider {
-    height: 48px;
-    background-color: var(--ifm-color-divider-light);
-    border-radius: 8px;
-    padding: 16px;
-    line-height: 16px;
-}
-
-
 @font-face {
     font-family: 'Inter';
     font-weight: 100 900;
@@ -248,8 +231,6 @@ body {
     --docs-color-background-300: #2e2e2e;
 
     --docs-color-code-background: #1e1e1e;
-
-    --ifm-color-divider-light: #b75e00;
 }
 
 /* Docusaurus Theming */
@@ -297,9 +278,6 @@ html[data-theme='dark'] {
      --ifm-color-primary-lighter: #32d8b4;
      --ifm-color-primary-lightest: #4fddbf;*/
     /*--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);*/
-
-
-    --ifm-color-divider-light: #b75e00;
 
 
     --ifm-link-color: #1a90ff;
