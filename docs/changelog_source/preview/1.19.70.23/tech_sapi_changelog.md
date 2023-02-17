@@ -314,7 +314,7 @@
 
 - `DirectionBlockProperty` 类更改
 
-    - Removed base class `IBlockProperty`
+    - 移除 `IBlockProperty` 基类
 
 - 移除 `IBlockProperty` 类
 
