@@ -322,7 +322,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Bedrock Tech Weekly, Inc. Built with Docusaurus.<br/>“Minecraft”是 Mojang AB 的商标。本站不以任何方式隶属于 Microsoft 或 Mojang AB`,
+        copyright: `基岩技术周刊站点，由<a href="https://space.bilibili.com/15122547">乾山瑶</a>基于Docusaurus搭建.<br/>“Minecraft”是 <a href="https://www.minecraft.net/">Mojang AB</a> 的商标，在中国大陆由<a href="https://mc.163.com/">网易我的世界</a>代理管辖。本站不以任何方式隶属于 Microsoft 、 Mojang AB 或网之易吾世界公司`,
       },
       prism: {
         theme: lightCodeTheme,

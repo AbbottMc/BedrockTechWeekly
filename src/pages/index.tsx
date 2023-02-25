@@ -38,7 +38,7 @@ function HomepageHeader() {
         <div className="buttons" style={{marginTop: 24}}>
           <Link
             className="homepage-button-secondary hero--primary  button--lg"
-            to="/docs/official_changelog/preview/1.19.70.23">
+            to="/docs/official_changelog/preview/1.19.70.24-25">
             <Translate
               id="homepage.checkTechChangelog"
               description="The homepage check tech changelog button message">
