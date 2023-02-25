@@ -1,0 +1,1 @@
+Removed docs of some internal methods that were accidentally released before that were not actually accessible to the public (just a docs change)
