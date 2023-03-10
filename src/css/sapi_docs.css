@@ -22,3 +22,11 @@ hr {
     border-radius: 8px;
     color: white;
 }
+
+html[data-theme='light'] {
+    --doc-sidebar-width: 360px
+}
+
+html[data-theme='dark'] {
+    --doc-sidebar-width: 360px
+}
