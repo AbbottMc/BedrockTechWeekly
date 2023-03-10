@@ -17,7 +17,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-gametest",
- *   "version": "1.0.0-internal.1.19.70-preview.23"
+ *   "version": "1.0.0-internal.1.19.80-preview.20"
  * }
  * ```
  *
@@ -530,15 +530,6 @@ export class SimulatedPlayer extends minecraftserver.Player {
     rotateBody(angleInDegrees: number): void;
     /**
      * @remarks
-     * Applies a test skin to the simulated player.
-     * @param geoData
-     * @param base64ImageData
-     * @param skinResourcePatch
-     * @throws This function can throw errors.
-     */
-    sendTestSkin(geoData: string, base64ImageData: string, skinResourcePatch: string): void;
-    /**
-     * @remarks
      * Causes the simulated player to turn to face the provided
      * angle, relative to the GameTest.
      * @param angleInDegrees
@@ -627,11 +618,11 @@ export class SimulatedPlayer extends minecraftserver.Player {
      * @throws This function can throw errors.
      */
     useItemInSlotOnBlock(
-      slot: number,
-      blockLocation: minecraftserver.Vector3,
-      direction?: minecraftserver.Direction,
-      faceLocationX?: number,
-      faceLocationY?: number,
+        slot: number,
+        blockLocation: minecraftserver.Vector3,
+        direction?: minecraftserver.Direction,
+        faceLocationX?: number,
+        faceLocationY?: number,
     ): boolean;
     /**
      * @remarks
@@ -651,11 +642,11 @@ export class SimulatedPlayer extends minecraftserver.Player {
      * @throws This function can throw errors.
      */
     useItemOnBlock(
-      itemStack: minecraftserver.ItemStack,
-      blockLocation: minecraftserver.Vector3,
-      direction?: minecraftserver.Direction,
-      faceLocationX?: number,
-      faceLocationY?: number,
+        itemStack: minecraftserver.ItemStack,
+        blockLocation: minecraftserver.Vector3,
+        direction?: minecraftserver.Direction,
+        faceLocationX?: number,
+        faceLocationY?: number,
     ): boolean;
 }
 /**
@@ -721,9 +712,9 @@ export class Test {
      * @throws This function can throw errors.
      */
     assertBlockPresent(
-      blockType: minecraftserver.BlockType,
-      blockLocation: minecraftserver.Vector3,
-      isPresent?: boolean,
+        blockType: minecraftserver.BlockType,
+        blockLocation: minecraftserver.Vector3,
+        isPresent?: boolean,
     ): void;
     /**
      * @remarks
@@ -762,9 +753,9 @@ export class Test {
      * @throws This function can throw errors.
      */
     assertCanReachLocation(
-      mob: minecraftserver.Entity,
-      blockLocation: minecraftserver.Vector3,
-      canReach?: boolean,
+        mob: minecraftserver.Entity,
+        blockLocation: minecraftserver.Vector3,
+        canReach?: boolean,
     ): void;
     /**
      * @remarks
@@ -817,12 +808,12 @@ export class Test {
      * ```
      */
     assertEntityHasArmor(
-      entityTypeIdentifier: string,
-      armorSlot: number,
-      armorName: string,
-      armorData: number,
-      blockLocation: minecraftserver.Vector3,
-      hasArmor?: boolean,
+        entityTypeIdentifier: string,
+        armorSlot: number,
+        armorName: string,
+        armorData: number,
+        blockLocation: minecraftserver.Vector3,
+        hasArmor?: boolean,
     ): void;
     /**
      * @remarks
@@ -849,10 +840,10 @@ export class Test {
      * ```
      */
     assertEntityHasComponent(
-      entityTypeIdentifier: string,
-      componentIdentifier: string,
-      blockLocation: minecraftserver.Vector3,
-      hasComponent?: boolean,
+        entityTypeIdentifier: string,
+        componentIdentifier: string,
+        blockLocation: minecraftserver.Vector3,
+        hasComponent?: boolean,
     ): void;
     /**
      * @remarks
@@ -870,9 +861,9 @@ export class Test {
      * @throws This function can throw errors.
      */
     assertEntityInstancePresent(
-      entity: minecraftserver.Entity,
-      blockLocation: minecraftserver.Vector3,
-      isPresent?: boolean,
+        entity: minecraftserver.Entity,
+        blockLocation: minecraftserver.Vector3,
+        isPresent?: boolean,
     ): void;
     /**
      * @remarks
@@ -929,10 +920,10 @@ export class Test {
      * @throws This function can throw errors.
      */
     assertEntityPresent(
-      entityTypeIdentifier: string,
-      blockLocation: minecraftserver.Vector3,
-      searchDistance?: number,
-      isPresent?: boolean,
+        entityTypeIdentifier: string,
+        blockLocation: minecraftserver.Vector3,
+        searchDistance?: number,
+        isPresent?: boolean,
     ): void;
     /**
      * @remarks
@@ -997,9 +988,9 @@ export class Test {
      * ```
      */
     assertEntityState(
-      blockLocation: minecraftserver.Vector3,
-      entityTypeIdentifier: string,
-      callback: (arg: minecraftserver.Entity) => boolean,
+        blockLocation: minecraftserver.Vector3,
+        entityTypeIdentifier: string,
+        callback: (arg: minecraftserver.Entity) => boolean,
     ): void;
     /**
      * @remarks
@@ -1054,10 +1045,10 @@ export class Test {
      * ```
      */
     assertItemEntityCountIs(
-      itemType: minecraftserver.ItemType,
-      blockLocation: minecraftserver.Vector3,
-      searchDistance: number,
-      count: number,
+        itemType: minecraftserver.ItemType,
+        blockLocation: minecraftserver.Vector3,
+        searchDistance: number,
+        count: number,
     ): void;
     /**
      * @remarks
@@ -1078,10 +1069,10 @@ export class Test {
      * @throws This function can throw errors.
      */
     assertItemEntityPresent(
-      itemType: minecraftserver.ItemType,
-      blockLocation: minecraftserver.Vector3,
-      searchDistance?: number,
-      isPresent?: boolean,
+        itemType: minecraftserver.ItemType,
+        blockLocation: minecraftserver.Vector3,
+        searchDistance?: number,
+        isPresent?: boolean,
     ): void;
     /**
      * @remarks
@@ -1159,7 +1150,7 @@ export class Test {
     /**
      * @remarks
      * Returns the direction of the current test - see the {@link
-      * @minecraft/server.Direction} enum for more information on
+     * @minecraft/server.Direction} enum for more information on
      * potential values (north, east, south, west - values 2-5).
      */
     getTestDirection(): minecraftserver.Direction;
@@ -1327,7 +1318,7 @@ export class Test {
      * Location of the fluid container block.
      * @param type
      * Type of fluid to set. See {@link
-      * @minecraft/server-gametest.FluidType} for a list of values.
+     * @minecraft/server-gametest.FluidType} for a list of values.
      * @throws This function can throw errors.
      */
     setFluidContainer(location: minecraftserver.Vector3, type: minecraftserver.FluidType): void;
@@ -1348,7 +1339,7 @@ export class Test {
      * Type of entity to create. If no namespace is provided,
      * 'minecraft:' is assumed. Note that an optional initial spawn
      * event can be specified between less than/greater than signs
-     * (e.g., namespace:entityType\<spawnEvent\>).
+     * (e.g., namespace:entityType<spawnEvent>).
      * @param blockLocation
      * @returns
      * The spawned entity. If the entity cannot be spawned, returns
@@ -1388,7 +1379,7 @@ export class Test {
      * Type of entity to create. If no namespace is provided,
      * 'minecraft:' is assumed. Note that an optional initial spawn
      * event can be specified between less than/greater than signs
-     * (e.g., namespace:entityType\<spawnEvent\>).
+     * (e.g., namespace:entityType<spawnEvent>).
      * @param location
      * @returns
      * The spawned entity. If the entity cannot be spawned, returns
@@ -1432,9 +1423,9 @@ export class Test {
      * @throws This function can throw errors.
      */
     spawnSimulatedPlayer(
-      blockLocation: minecraftserver.Vector3,
-      name?: string,
-      gameMode?: minecraftserver.GameMode,
+        blockLocation: minecraftserver.Vector3,
+        name?: string,
+        gameMode?: minecraftserver.GameMode,
     ): SimulatedPlayer;
     /**
      * @remarks
@@ -1458,8 +1449,8 @@ export class Test {
      * @throws This function can throw errors.
      */
     spawnWithoutBehaviorsAtLocation(
-      entityTypeIdentifier: string,
-      location: minecraftserver.Vector3,
+        entityTypeIdentifier: string,
+        location: minecraftserver.Vector3,
     ): minecraftserver.Entity;
     /**
      * @remarks
@@ -1480,9 +1471,9 @@ export class Test {
      * ```
      */
     spreadFromFaceTowardDirection(
-      blockLocation: minecraftserver.Vector3,
-      fromFace: minecraftserver.Direction,
-      direction: minecraftserver.Direction,
+        blockLocation: minecraftserver.Vector3,
+        fromFace: minecraftserver.Direction,
+        direction: minecraftserver.Direction,
     ): void;
     /**
      * @remarks
@@ -1582,9 +1573,9 @@ export class Test {
      * @throws This function can throw errors.
      */
     succeedWhenBlockPresent(
-      blockType: minecraftserver.BlockType,
-      blockLocation: minecraftserver.Vector3,
-      isPresent?: boolean,
+        blockType: minecraftserver.BlockType,
+        blockLocation: minecraftserver.Vector3,
+        isPresent?: boolean,
     ): void;
     /**
      * @remarks
@@ -1606,10 +1597,10 @@ export class Test {
      * @throws This function can throw errors.
      */
     succeedWhenEntityHasComponent(
-      entityTypeIdentifier: string,
-      componentIdentifier: string,
-      blockLocation: minecraftserver.Vector3,
-      hasComponent: boolean,
+        entityTypeIdentifier: string,
+        componentIdentifier: string,
+        blockLocation: minecraftserver.Vector3,
+        hasComponent: boolean,
     ): void;
     /**
      * @remarks
@@ -1630,9 +1621,9 @@ export class Test {
      * @throws This function can throw errors.
      */
     succeedWhenEntityPresent(
-      entityTypeIdentifier: string,
-      blockLocation: minecraftserver.Vector3,
-      isPresent?: boolean,
+        entityTypeIdentifier: string,
+        blockLocation: minecraftserver.Vector3,
+        isPresent?: boolean,
     ): void;
     /**
      * @remarks
@@ -1758,9 +1749,9 @@ export class Test {
  * ```
  */
 export function register(
-  testClassName: string,
-  testName: string,
-  testFunction: (arg: Test) => void,
+    testClassName: string,
+    testName: string,
+    testFunction: (arg: Test) => void,
 ): RegistrationBuilder;
 /**
  * @remarks
@@ -1779,7 +1770,7 @@ export function register(
  * builder methods.
  */
 export function registerAsync(
-  testClassName: string,
-  testName: string,
-  testFunction: (arg: Test) => Promise<void>,
+    testClassName: string,
+    testName: string,
+    testFunction: (arg: Test) => Promise<void>,
 ): RegistrationBuilder;
