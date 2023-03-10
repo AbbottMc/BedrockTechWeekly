@@ -1339,7 +1339,7 @@ export class Test {
      * Type of entity to create. If no namespace is provided,
      * 'minecraft:' is assumed. Note that an optional initial spawn
      * event can be specified between less than/greater than signs
-     * (e.g., namespace:entityType<spawnEvent>).
+     * (e.g., namespace:entityType\<spawnEvent\>).
      * @param blockLocation
      * @returns
      * The spawned entity. If the entity cannot be spawned, returns
@@ -1379,7 +1379,7 @@ export class Test {
      * Type of entity to create. If no namespace is provided,
      * 'minecraft:' is assumed. Note that an optional initial spawn
      * event can be specified between less than/greater than signs
-     * (e.g., namespace:entityType<spawnEvent>).
+     * (e.g., namespace:entityType\<spawnEvent\>).
      * @param location
      * @returns
      * The spawned entity. If the entity cannot be spawned, returns
