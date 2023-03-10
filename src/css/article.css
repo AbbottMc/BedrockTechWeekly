@@ -15,7 +15,6 @@
 
 .changelog_divider {
     color: white;
-    height: 48px;
     border-radius: 8px;
     padding: 16px;
     line-height: 16px;
@@ -30,16 +29,13 @@
 }
 
 .experimental_divider {
-    color: black;
-    height: 48px;
-    background-repeat: repeat-x;
-    background-size: 100px 100%;
-    /*animation: exp_anim 2s infinite ;*/
-    background-color: yellow;
-    /*background-image: linear-gradient(-45deg, yellow 33.3%, transparent 33.3%, transparent 66.6%, yellow 66.6%, yellow);*/
+    background-color: #ff0;
+    /*background-repeat: repeat-x;*/
     border-radius: 8px;
-    padding: 16px;
-    line-height: 16px;
+    color: #000;
+    line-height: 1em;
+    padding: 12px;
+    height: auto;
 }
 
 @keyframes exp_anim {
