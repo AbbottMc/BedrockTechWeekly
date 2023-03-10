@@ -248,7 +248,7 @@ const config = {
               },
               {
                 to: '/docs/sapi/preview',
-                label: '预览版 [1.19.70.23]',
+                label: '预览版 [1.19.80.20]',
               }
             ]
           },
