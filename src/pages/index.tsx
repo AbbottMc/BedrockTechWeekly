@@ -23,22 +23,23 @@ function HomepageHeader() {
             本站旨在每周提供Minecraft基岩版技术领域相关内容，让您更方便、快捷的了解基岩版开发领域的实时动态。
           </Translate>
         </p>
-        <div className="buttons">
-          <Link
-            className="hero--primary button button--lg"
-            style={{color: 'white', border: 0}}
-            to="/blog/latest">
-            <Translate
-              id="homepage.checkLatestArticle"
-              description="The homepage check latest article button message">
-              本周周刊 📖
-            </Translate>
-          </Link>
-        </div>
+        {/*<div className="buttons">*/}
+        {/*  <Link*/}
+        {/*    className="hero--primary button button--lg"*/}
+        {/*    style={{color: 'white', border: 0}}*/}
+        {/*    to="/blog/latest">*/}
+        {/*    <Translate*/}
+        {/*      id="homepage.checkLatestArticle"*/}
+        {/*      description="The homepage check latest article button message">*/}
+        {/*      本周周刊 📖*/}
+        {/*    </Translate>*/}
+        {/*  </Link>*/}
+        {/*</div>*/}
         <div className="buttons" style={{marginTop: 24}}>
           <Link
-            className="homepage-button-secondary hero--primary  button--lg"
-            to="/docs/official_changelog/preview/1.19.70.24-25">
+            // className="homepage-button-secondary hero--primary  button--lg"
+            className="hero--primary button button--lg"
+            to="/docs/official_changelog/preview/1.19.80.21">
             <Translate
               id="homepage.checkTechChangelog"
               description="The homepage check tech changelog button message">
