@@ -244,7 +244,7 @@ const config = {
             items: [
               {
                 to: '/docs/sapi/stable',
-                label: '稳定版 [1.19.60]',
+                label: '稳定版 [1.19.70]',
               },
               {
                 to: '/docs/sapi/preview',
