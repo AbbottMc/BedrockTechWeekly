@@ -1,0 +1,38 @@
+import TechSapiChangelog from './tech_sapi_changelog.md';
+import TechSapi from './tech_sapi.md';
+import Switcher from '../../../components/TechChangelogSwitcher.mdx';
+
+## **AI Goals**
+
+- Added "cooldown" field to target descriptors in "minecraft:behavior.nearest_attackable_target" goal
+
+## **Blocks**
+
+- Sponges no longer emit water drop particles underwater ([MCPE-122138](https://bugs.mojang.com/browse/MCPE-122138))
+
+## **Commands**
+
+- For worlds using game version 1.19.80 and above, acquiring a custom spawn egg through a command can only succeed with their full name rather than with an aux value, eg. "/give @s namespace:actor_spawn_egg"
+- Removed requirement for blockState argument(s) when using other optional args in /fill /setblock and /clone ([MCPE-167959](https://bugs.mojang.com/browse/MCPE-167959))
+- Implemented the "inputpermission" command, which allows for setting the player's camera or movement as enabled or disabled
+  - Syntax: /inputpermission set <target: player> <permission: camera | movement> <state: enabled | disabled>
+- Implemented the "haspermission" target selector, which allows for selection based on player permission levels
+
+## **General**
+
+- For behavior packs using version 1.19.80 and above, recipes no longer accept a Molang query for the item's data field, instead use the item's full name, eg. use { "item": "namespace:actor_spawn_egg" } instead of { "item": "spawn_egg", "data": "query.get_actor_info_id('namespace:actor')" }
+
+<h2 className="experimental_divider">Experimental Technical Features</h2>
+
+## **Editor**
+
+The Editor is in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Join our Discussion forum, post bugs, view more detailed release notes, and share your creations on [GitHub.](https://github.com/Mojang/minecraft-editor)
+
+- Custom blocks are now listed in the block selector
+- Fixed z-fighting on paste preview over selection volume
+
+## **Script API**
+
+<TechSapi/>
+
+[//]: # (<Switcher techSapi={<TechSapi/>} techSapiChangelog={<TechSapiChangelog/>}/>)
