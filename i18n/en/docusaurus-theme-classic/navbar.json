@@ -35,8 +35,8 @@
     "message": "Stable [1.19.70]",
     "description": "Navbar item with label 稳定版 [1.19.70]"
   },
-  "item.label.预览版 [1.19.80.20]": {
-    "message": "Preview [1.19.80.20]",
-    "description": "Navbar item with label 预览版 [1.19.70.23]"
+  "item.label.预览版 [1.19.80.24]": {
+    "message": "Preview [1.19.80.24]",
+    "description": "Navbar item with label 预览版 [1.19.80.24]"
   }
 }

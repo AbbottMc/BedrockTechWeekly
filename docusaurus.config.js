@@ -167,6 +167,19 @@ const config = {
         tsconfig: './static/typedoc/stable/tsconfig.json',
         out: 'sapi/stable/server-gametest'
       }
+    ],
+    // --------------------------------------
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'test-tenon-server',
+        entryPoints: [
+          './static/typedoc/preview/tenon-server.d.ts',
+        ],
+        tsconfig: './static/typedoc/preview/tsconfig.json',
+        out: 'sapi/preview/tenon-server'
+      }
     ]
   ],
   presets: [
@@ -248,7 +261,7 @@ const config = {
               },
               {
                 to: '/docs/sapi/preview',
-                label: '预览版 [1.19.80.20]',
+                label: '预览版 [1.19.80.24]',
               }
             ]
           },
