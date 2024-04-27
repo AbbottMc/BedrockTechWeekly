@@ -1,7 +1,11 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs className="changelog_sapi_tabs">
-  <TabItem value="更新描述" >{props.techSapi}</TabItem>
-  <TabItem value="接口日志">{props.techSapiChangelog}</TabItem>
-</Tabs>
+  <>{
+    (props.techSapiDiff !== undefined) ?
+      <Tabs className="changelog_sapi_tabs">
+        <TabItem value="更新描述">{props.techSapi}</TabItem>
+        <TabItem value="接口变动">{props.techSapiDiff}</TabItem>
+      </Tabs> : <>{props.techSapi}</>
+  }</>
+
