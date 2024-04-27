@@ -6,11 +6,13 @@
     "noEmit": true,
     "declaration": true,
     "paths": {
+      "@minecraft/common": ["./common"],
       "@minecraft/server": ["./server"],
       "@minecraft/server-admin": ["./server-admin"],
       "@minecraft/server-gametest": ["./server-gametest"],
       "@minecraft/server-net": ["./server-net"],
-      "@minecraft/server-ui": ["./server-ui"]
+      "@minecraft/server-ui": ["./server-ui"],
+      "@minecraft/server-editor": ["./server-editor"]
     }
   },
   "typedocOptions": {

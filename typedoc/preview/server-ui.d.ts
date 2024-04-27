@@ -7,7 +7,6 @@
    Copyright (c) Microsoft Corporation.
    ***************************************************************************** */
 /**
- * @beta
  * @packageDocumentation
  * The `@minecraft/server-ui` module contains types for
  * expressing simple dialog-based user experiences.
@@ -37,38 +36,62 @@
  *     dimension.runCommand("say I like April too!");
  *   }
  * });
- *
  * ```
  *
  * Manifest Details
  * ```json
  * {
  *   "module_name": "@minecraft/server-ui",
- *   "version": "1.0.0-internal.1.20.0-preview.20"
+ *   "version": "1.1.0"
  * }
  * ```
  *
  */
+import * as minecraftcommon from '@minecraft/common';
 import * as minecraftserver from '@minecraft/server';
 export enum FormCancelationReason {
-    userBusy = 'userBusy',
-    userClosed = 'userClosed',
+    UserBusy = 'UserBusy',
+    UserClosed = 'UserClosed',
 }
+
 export enum FormRejectReason {
     MalformedResponse = 'MalformedResponse',
     PlayerQuit = 'PlayerQuit',
     ServerShutdown = 'ServerShutdown',
 }
+
 /**
  * Builds a simple player form with buttons that let the player
  * take action.
+ * @example actionFormAskFavoriteMonth.ts
+ * ```typescript
+ * import { Player } from '@minecraft/server';
+ * import { ActionFormData, ActionFormResponse } from '@minecraft/server-ui';
+ *
+ * function askFavoriteMonth(player: Player) {
+ *     const form = new ActionFormData()
+ *         .title('Months')
+ *         .body('Choose your favorite month!')
+ *         .button('January')
+ *         .button('February')
+ *         .button('March')
+ *         .button('April')
+ *         .button('May');
+ *
+ *     form.show(player).then((response: ActionFormResponse) => {
+ *         if (response.selection === 3) {
+ *             player.sendMessage('I like April too!');
+ *         } else {
+ *             player.sendMessage('Nah, April is the best.');
+ *         }
+ *     });
+ * }
+ * ```
  */
 export class ActionFormData {
     /**
      * @remarks
      * Method that sets the body text for the modal form.
-     *
-     * This function can't be called in read-only mode.
      *
      */
     body(bodyText: minecraftserver.RawMessage | string): ActionFormData;
@@ -76,8 +99,6 @@ export class ActionFormData {
      * @remarks
      * Adds a button to this form with an icon from a resource
      * pack.
-     *
-     * This function can't be called in read-only mode.
      *
      */
     button(text: minecraftserver.RawMessage | string, iconPath?: string): ActionFormData;
@@ -98,17 +119,41 @@ export class ActionFormData {
      * @remarks
      * This builder method sets the title for the modal dialog.
      *
-     * This function can't be called in read-only mode.
-     *
      */
     title(titleText: minecraftserver.RawMessage | string): ActionFormData;
 }
+
 /**
  * Returns data about the player results from a modal action
  * form.
+ * @example actionFormAskFavoriteMonth.ts
+ * ```typescript
+ * import { Player } from '@minecraft/server';
+ * import { ActionFormData, ActionFormResponse } from '@minecraft/server-ui';
+ *
+ * function askFavoriteMonth(player: Player) {
+ *     const form = new ActionFormData()
+ *         .title('Months')
+ *         .body('Choose your favorite month!')
+ *         .button('January')
+ *         .button('February')
+ *         .button('March')
+ *         .button('April')
+ *         .button('May');
+ *
+ *     form.show(player).then((response: ActionFormResponse) => {
+ *         if (response.selection === 3) {
+ *             player.sendMessage('I like April too!');
+ *         } else {
+ *             player.sendMessage('Nah, April is the best.');
+ *         }
+ *     });
+ * }
+ * ```
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class ActionFormResponse extends FormResponse {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Returns the index of the button that was pushed.
@@ -116,11 +161,12 @@ export class ActionFormResponse extends FormResponse {
      */
     readonly selection?: number;
 }
+
 /**
  * Base type for a form response.
  */
 export class FormResponse {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Contains additional details as to why a form was canceled.
@@ -135,15 +181,41 @@ export class FormResponse {
      */
     readonly canceled: boolean;
 }
+
 /**
  * Builds a simple two-button modal dialog.
+ * @example messageFormSimple.ts
+ * ```typescript
+ * import { Player } from '@minecraft/server';
+ * import { MessageFormResponse, MessageFormData } from '@minecraft/server-ui';
+ *
+ * function showMessage(player: Player) {
+ *     const messageForm = new MessageFormData()
+ *         .title({ translate: 'permissions.removeplayer' }) // "Remove player"
+ *         .body({ translate: 'accessibility.list.or.two', with: ['Player 1', 'Player 2'] }) // "Player 1 or Player 2"
+ *         .button1('Player 1')
+ *         .button2('Player 2');
+ *
+ *     messageForm
+ *         .show(player)
+ *         .then((formData: MessageFormResponse) => {
+ *             // player canceled the form, or another dialog was up and open.
+ *             if (formData.canceled || formData.selection === undefined) {
+ *                 return;
+ *             }
+ *
+ *             player.sendMessage(`You selected ${formData.selection === 0 ? 'Player 1' : 'Player 2'}`);
+ *         })
+ *         .catch((error: Error) => {
+ *             player.sendMessage('Failed to show form: ' + error);
+ *         });
+ * }
+ * ```
  */
 export class MessageFormData {
     /**
      * @remarks
      * Method that sets the body text for the modal form.
-     *
-     * This function can't be called in read-only mode.
      *
      */
     body(bodyText: minecraftserver.RawMessage | string): MessageFormData;
@@ -152,16 +224,12 @@ export class MessageFormData {
      * Method that sets the text for the first button of the
      * dialog.
      *
-     * This function can't be called in read-only mode.
-     *
      */
     button1(text: minecraftserver.RawMessage | string): MessageFormData;
     /**
      * @remarks
      * This method sets the text for the second button on the
      * dialog.
-     *
-     * This function can't be called in read-only mode.
      *
      */
     button2(text: minecraftserver.RawMessage | string): MessageFormData;
@@ -182,17 +250,44 @@ export class MessageFormData {
      * @remarks
      * This builder method sets the title for the modal dialog.
      *
-     * This function can't be called in read-only mode.
-     *
      */
     title(titleText: minecraftserver.RawMessage | string): MessageFormData;
 }
+
 /**
  * Returns data about the player results from a modal message
  * form.
+ * @example messageFormSimple.ts
+ * ```typescript
+ * import { Player } from '@minecraft/server';
+ * import { MessageFormResponse, MessageFormData } from '@minecraft/server-ui';
+ *
+ * function showMessage(player: Player) {
+ *     const messageForm = new MessageFormData()
+ *         .title({ translate: 'permissions.removeplayer' }) // "Remove player"
+ *         .body({ translate: 'accessibility.list.or.two', with: ['Player 1', 'Player 2'] }) // "Player 1 or Player 2"
+ *         .button1('Player 1')
+ *         .button2('Player 2');
+ *
+ *     messageForm
+ *         .show(player)
+ *         .then((formData: MessageFormResponse) => {
+ *             // player canceled the form, or another dialog was up and open.
+ *             if (formData.canceled || formData.selection === undefined) {
+ *                 return;
+ *             }
+ *
+ *             player.sendMessage(`You selected ${formData.selection === 0 ? 'Player 1' : 'Player 2'}`);
+ *         })
+ *         .catch((error: Error) => {
+ *             player.sendMessage('Failed to show form: ' + error);
+ *         });
+ * }
+ * ```
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class MessageFormResponse extends FormResponse {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Returns the index of the button that was pushed.
@@ -200,16 +295,46 @@ export class MessageFormResponse extends FormResponse {
      */
     readonly selection?: number;
 }
+
 /**
  * Used to create a fully customizable pop-up form for a
  * player.
+ * @example modalFormSimple.ts
+ * ```typescript
+ * import { Player } from '@minecraft/server';
+ * import { ModalFormData } from '@minecraft/server-ui';
+ *
+ * function showExampleModal(player: Player) {
+ *     const modalForm = new ModalFormData().title('Example Modal Controls for §o§7ModalFormData§r');
+ *
+ *     modalForm.toggle('Toggle w/o default');
+ *     modalForm.toggle('Toggle w/ default', true);
+ *
+ *     modalForm.slider('Slider w/o default', 0, 50, 5);
+ *     modalForm.slider('Slider w/ default', 0, 50, 5, 30);
+ *
+ *     modalForm.dropdown('Dropdown w/o default', ['option 1', 'option 2', 'option 3']);
+ *     modalForm.dropdown('Dropdown w/ default', ['option 1', 'option 2', 'option 3'], 2);
+ *
+ *     modalForm.textField('Input w/o default', 'type text here');
+ *     modalForm.textField('Input w/ default', 'type text here', 'this is default');
+ *
+ *     modalForm
+ *         .show(player)
+ *         .then(formData => {
+ *             player.sendMessage(`Modal form results: ${JSON.stringify(formData.formValues, undefined, 2)}`);
+ *         })
+ *         .catch((error: Error) => {
+ *             player.sendMessage('Failed to show form: ' + error);
+ *             return -1;
+ *         });
+ * }
+ * ```
  */
 export class ModalFormData {
     /**
      * @remarks
      * Adds a dropdown with choices to the form.
-     *
-     * This function can't be called in read-only mode.
      *
      */
     dropdown(
@@ -234,8 +359,6 @@ export class ModalFormData {
      * @remarks
      * Adds a numeric slider to the form.
      *
-     * This function can't be called in read-only mode.
-     *
      */
     slider(
         label: minecraftserver.RawMessage | string,
@@ -245,22 +368,22 @@ export class ModalFormData {
         defaultValue?: number,
     ): ModalFormData;
     /**
+     * @beta
+     */
+    submitButton(submitButtonText: minecraftserver.RawMessage | string): ModalFormData;
+    /**
      * @remarks
      * Adds a textbox to the form.
-     *
-     * This function can't be called in read-only mode.
      *
      */
     textField(
         label: minecraftserver.RawMessage | string,
         placeholderText: minecraftserver.RawMessage | string,
-        defaultValue?: string,
+        defaultValue?: minecraftserver.RawMessage | string,
     ): ModalFormData;
     /**
      * @remarks
      * This builder method sets the title for the modal dialog.
-     *
-     * This function can't be called in read-only mode.
      *
      */
     title(titleText: minecraftserver.RawMessage | string): ModalFormData;
@@ -268,25 +391,58 @@ export class ModalFormData {
      * @remarks
      * Adds a toggle checkbox button to the form.
      *
-     * This function can't be called in read-only mode.
-     *
      */
     toggle(label: minecraftserver.RawMessage | string, defaultValue?: boolean): ModalFormData;
 }
+
 /**
  * Returns data about player responses to a modal form.
+ * @example modalFormSimple.ts
+ * ```typescript
+ * import { Player } from '@minecraft/server';
+ * import { ModalFormData } from '@minecraft/server-ui';
+ *
+ * function showExampleModal(player: Player) {
+ *     const modalForm = new ModalFormData().title('Example Modal Controls for §o§7ModalFormData§r');
+ *
+ *     modalForm.toggle('Toggle w/o default');
+ *     modalForm.toggle('Toggle w/ default', true);
+ *
+ *     modalForm.slider('Slider w/o default', 0, 50, 5);
+ *     modalForm.slider('Slider w/ default', 0, 50, 5, 30);
+ *
+ *     modalForm.dropdown('Dropdown w/o default', ['option 1', 'option 2', 'option 3']);
+ *     modalForm.dropdown('Dropdown w/ default', ['option 1', 'option 2', 'option 3'], 2);
+ *
+ *     modalForm.textField('Input w/o default', 'type text here');
+ *     modalForm.textField('Input w/ default', 'type text here', 'this is default');
+ *
+ *     modalForm
+ *         .show(player)
+ *         .then(formData => {
+ *             player.sendMessage(`Modal form results: ${JSON.stringify(formData.formValues, undefined, 2)}`);
+ *         })
+ *         .catch((error: Error) => {
+ *             player.sendMessage('Failed to show form: ' + error);
+ *             return -1;
+ *         });
+ * }
+ * ```
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class ModalFormResponse extends FormResponse {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * An ordered set of values based on the order of controls
      * specified by ModalFormData.
      *
      */
-    readonly formValues?: any[];
+    readonly formValues?: (boolean | number | string)[];
 }
+
+// @ts-ignore Class inheritance allowed for native defined classes
 export class FormRejectError extends Error {
-    protected constructor();
+    private constructor();
     reason: FormRejectReason;
 }

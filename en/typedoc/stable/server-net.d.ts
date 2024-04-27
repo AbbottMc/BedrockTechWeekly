@@ -17,56 +17,95 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-net",
- *   "version": "1.0.0-beta.1.19.70-stable"
+ *   "version": "1.0.0-beta.1.20.80-stable"
  * }
  * ```
  *
  */
+import * as minecraftcommon from '@minecraft/common';
 import * as minecraftserveradmin from '@minecraft/server-admin';
 export enum HttpRequestMethod {
     /**
+     * @remarks
      * Represents the method for an HTTP HEAD request. HEAD
      * requests are similar to a GET request, but are commonly used
      * to retrieve just the HTTP response headers from the
      * specified URI, and not the body contents.
+     *
      */
-    DELETE = 'DELETE',
+    Delete = 'Delete',
     /**
+     * @remarks
      * Represents the method for an HTTP PUT request. POST requests
      * are commonly used to create a new resource that is a
      * subordinate of the specified URI.
+     *
      */
-    GET = 'GET',
+    Get = 'Get',
     /**
+     * @remarks
      * Represents the method for an HTTP PUT request. GET requests
      * are commonly used to retrieve information about a resource
      * at the specified URI.
+     *
      */
-    HEAD = 'HEAD',
+    Head = 'Head',
     /**
+     * @remarks
      * Represents the method for an HTTP PUT request. GET requests
      * are commonly used to retrieve information about a resource
      * at the specified URI.
+     *
      */
-    POST = 'POST',
+    Post = 'Post',
     /**
+     * @remarks
      * Represents the method for an HTTP PUT request. PUT requests
      * are commonly used to update a single resource that already
      * exists in a resource collection.
+     *
      */
-    PUT = 'PUT',
+    Put = 'Put',
 }
+
+/**
+ * @example simpleHttpRequest.ts
+ * ```typescript
+ * import { HttpRequest, HttpHeader, HttpRequestMethod, http } from '@minecraft/server-net';
+ *
+ * async function updateScore() {
+ *     const req = new HttpRequest('http://localhost:3000/updateScore');
+ *
+ *     req.body = JSON.stringify({
+ *         score: 22,
+ *     });
+ *
+ *     req.method = HttpRequestMethod.Post;
+ *     req.headers = [
+ *         new HttpHeader('Content-Type', 'application/json'),
+ *         new HttpHeader('auth', 'my-auth-token'),
+ *     ];
+ *
+ *     await http.request(req);
+ * }
+ * ```
+ */
 export class HttpClient {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Cancels all pending requests.
-     * @param reason
+     *
+     * This function can't be called in read-only mode.
+     *
      */
     cancelAll(reason: string): void;
     /**
      * @remarks
      * Performs a simple HTTP get request.
+     *
+     * This function can't be called in read-only mode.
+     *
      * @param uri
      * URL to make an HTTP Request to.
      * @returns
@@ -76,53 +115,146 @@ export class HttpClient {
     /**
      * @remarks
      * Performs an HTTP request.
+     *
+     * This function can't be called in read-only mode.
+     *
      * @param config
      * Contains an HTTP Request object with configuration data on
      * the HTTP request.
      * @returns
      * An awaitable promise that contains the HTTP response.
+     * @example simpleHttpRequest.ts
+     * ```typescript
+     * import { HttpRequest, HttpHeader, HttpRequestMethod, http } from '@minecraft/server-net';
+     *
+     * async function updateScore() {
+     *     const req = new HttpRequest('http://localhost:3000/updateScore');
+     *
+     *     req.body = JSON.stringify({
+     *         score: 22,
+     *     });
+     *
+     *     req.method = HttpRequestMethod.Post;
+     *     req.headers = [
+     *         new HttpHeader('Content-Type', 'application/json'),
+     *         new HttpHeader('auth', 'my-auth-token'),
+     *     ];
+     *
+     *     await http.request(req);
+     * }
+     * ```
      */
     request(config: HttpRequest): Promise<HttpResponse>;
 }
+
 /**
  * Represents an HTTP header - a key/value pair of
  * meta-information about a request.
+ * @example simpleHttpRequest.ts
+ * ```typescript
+ * import { HttpRequest, HttpHeader, HttpRequestMethod, http } from '@minecraft/server-net';
+ *
+ * async function updateScore() {
+ *     const req = new HttpRequest('http://localhost:3000/updateScore');
+ *
+ *     req.body = JSON.stringify({
+ *         score: 22,
+ *     });
+ *
+ *     req.method = HttpRequestMethod.Post;
+ *     req.headers = [
+ *         new HttpHeader('Content-Type', 'application/json'),
+ *         new HttpHeader('auth', 'my-auth-token'),
+ *     ];
+ *
+ *     await http.request(req);
+ * }
+ * ```
  */
 export class HttpHeader {
     /**
+     * @remarks
      * Key of the HTTP header.
+     *
+     * This property can't be edited in read-only mode.
+     *
      */
     key: string;
     /**
+     * @remarks
      * Value of the HTTP header.
+     *
+     * This property can't be edited in read-only mode.
+     *
      */
     value: minecraftserveradmin.SecretString | string;
     constructor(key: string, value: minecraftserveradmin.SecretString | string);
 }
+
 /**
  * Main object for structuring a request.
+ * @example simpleHttpRequest.ts
+ * ```typescript
+ * import { HttpRequest, HttpHeader, HttpRequestMethod, http } from '@minecraft/server-net';
+ *
+ * async function updateScore() {
+ *     const req = new HttpRequest('http://localhost:3000/updateScore');
+ *
+ *     req.body = JSON.stringify({
+ *         score: 22,
+ *     });
+ *
+ *     req.method = HttpRequestMethod.Post;
+ *     req.headers = [
+ *         new HttpHeader('Content-Type', 'application/json'),
+ *         new HttpHeader('auth', 'my-auth-token'),
+ *     ];
+ *
+ *     await http.request(req);
+ * }
+ * ```
  */
 export class HttpRequest {
     /**
+     * @remarks
      * Content of the body of the HTTP request.
+     *
+     * This property can't be edited in read-only mode.
+     *
      */
     body: string;
     /**
+     * @remarks
      * A collection of HTTP headers to add to the outbound request.
+     *
+     * This property can't be edited in read-only mode.
+     *
      */
     headers: HttpHeader[];
     /**
+     * @remarks
      * HTTP method (e.g., GET or PUT or PATCH) to use for making
      * the request.
+     *
+     * This property can't be edited in read-only mode.
+     *
      */
     method: HttpRequestMethod;
     /**
+     * @remarks
      * Amount of time, in seconds, before the request times out and
      * is abandoned.
+     *
+     * This property can't be edited in read-only mode.
+     *
      */
     timeout: number;
     /**
+     * @remarks
      * The HTTP resource to access.
+     *
+     * This property can't be edited in read-only mode.
+     *
      */
     uri: string;
     constructor(uri: string);
@@ -130,55 +262,77 @@ export class HttpRequest {
      * @remarks
      * Adds an additional header to the overall list of headers
      * used in the corresponding HTTP request.
-     * @param key
-     * @param value
+     *
+     * This function can't be called in read-only mode.
+     *
      */
     addHeader(key: string, value: minecraftserveradmin.SecretString | string): HttpRequest;
     /**
      * @remarks
      * Updates the content of the body of the HTTP request.
-     * @param body
+     *
+     * This function can't be called in read-only mode.
+     *
      */
     setBody(body: string): HttpRequest;
     /**
      * @remarks
      * Replaces and applies a set of HTTP Headers for the request.
-     * @param headers
+     *
+     * This function can't be called in read-only mode.
+     *
      */
     setHeaders(headers: HttpHeader[]): HttpRequest;
     /**
      * @remarks
      * Sets the desired HTTP method (e.g., GET or PUT or PATCH) to
      * use for making the request.
-     * @param method
+     *
+     * This function can't be called in read-only mode.
+     *
      */
     setMethod(method: HttpRequestMethod): HttpRequest;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     */
     setTimeout(timeout: number): HttpRequest;
 }
+
 /**
  * Main object that contains result information from a request.
  */
 export class HttpResponse {
-    protected constructor();
+    private constructor();
     /**
+     * @remarks
      * Body content of the HTTP response.
+     *
      */
     readonly body: string;
     /**
+     * @remarks
      * A collection of HTTP response headers returned from the
      * request.
+     *
      */
     readonly headers: HttpHeader[];
     /**
+     * @remarks
      * Information that was used to formulate the HTTP response
      * that this object represents.
+     *
      */
     readonly request: HttpRequest;
     /**
+     * @remarks
      * HTTP response code for the request. For example, 404
      * represents resource not found, and 500 represents an
      * internal server error.
+     *
      */
     readonly status: number;
 }
+
 export const http: HttpClient;

@@ -18,11 +18,12 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-admin",
- *   "version": "1.0.0-beta.1.20.0-preview.20"
+ *   "version": "1.0.0-beta.1.21.0-preview.23"
  * }
  * ```
  *
  */
+import * as minecraftcommon from '@minecraft/common';
 /**
  * This represents a placeholder object that represents a
  * secret string. The contents of that string are not available
@@ -31,12 +32,41 @@
 export class SecretString {
     constructor(value: string);
 }
+
 /**
  * A collection of server secrets defined in dedicated server
  * configuration.
+ * @example getPlayerProfile.ts
+ * ```typescript
+ * import { variables, secrets } from "@minecraft/server-admin";
+ * import { http, HttpRequest, HttpRequestMethod, HttpHeader, HttpResponse } from "@minecraft/server-net";
+ *
+ * const serverUrl = variables.get('serverEndpoint');
+ *
+ * function getPlayerProfile(playerId: string): Promise<HttpResponse> {
+ *     const req = new HttpRequest(serverUrl + 'getPlayerProfile');
+ *
+ *     req.body = JSON.stringify({
+ *         playerId,
+ *     });
+ *
+ *     const authTokenSec = secrets.get('authtoken');
+ *
+ *     if (!authTokenSec) {
+ *         throw new Error('authtoken secret not defined.');
+ *     }
+ *
+ *     req.method = HttpRequestMethod.Post;
+ *     req.headers = [new HttpHeader('Content-Type', 'application/json'), new HttpHeader('auth', authTokenSec)];
+ *
+ *     return http.request(req);
+ * }
+ *
+ * getPlayerProfile('dark navi');
+ * ```
  */
 export class ServerSecrets {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * A list of available, configured server secrets.
@@ -55,12 +85,41 @@ export class ServerSecrets {
      */
     get(name: string): SecretString | undefined;
 }
+
 /**
  * A collection of server variables defined in dedicated server
  * configuration.
+ * @example getPlayerProfile.ts
+ * ```typescript
+ * import { variables, secrets } from "@minecraft/server-admin";
+ * import { http, HttpRequest, HttpRequestMethod, HttpHeader, HttpResponse } from "@minecraft/server-net";
+ *
+ * const serverUrl = variables.get('serverEndpoint');
+ *
+ * function getPlayerProfile(playerId: string): Promise<HttpResponse> {
+ *     const req = new HttpRequest(serverUrl + 'getPlayerProfile');
+ *
+ *     req.body = JSON.stringify({
+ *         playerId,
+ *     });
+ *
+ *     const authTokenSec = secrets.get('authtoken');
+ *
+ *     if (!authTokenSec) {
+ *         throw new Error('authtoken secret not defined.');
+ *     }
+ *
+ *     req.method = HttpRequestMethod.Post;
+ *     req.headers = [new HttpHeader('Content-Type', 'application/json'), new HttpHeader('auth', authTokenSec)];
+ *
+ *     return http.request(req);
+ * }
+ *
+ * getPlayerProfile('dark navi');
+ * ```
  */
 export class ServerVariables {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * A list of available, configured server variables.
@@ -77,6 +136,7 @@ export class ServerVariables {
      */
     get(name: string): any | undefined;
 }
+
 /**
  * @remarks
  * A globally available object that returns a list of
