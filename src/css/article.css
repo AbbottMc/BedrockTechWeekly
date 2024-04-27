@@ -2,6 +2,9 @@
     --ifm-global-radius: 1rem;
     --ifm-pre-border-radius: 1rem;
     --ifm-code-border-radius: 0.5rem;
+    --ifm-button-border-width: 2px;
+    --ifm-container-width-xl: 72vw;
+    --bedoc-section-bg: var(--ifm-background-color);
     --bedoc-exp-title-background-color: var(--bedoc-title-background-color);
     --bedoc-exp-title-color: var(--bedoc-title-color);
     --bedoc-changelog-title-background-color: var(--bedoc-title-background-color);
@@ -9,6 +12,7 @@
 }
 
 [data-theme='light'] {
+    --bedoc-section-bg-darker: rgba(223, 223, 223, 0.4);
     --ifm-button-background-color: var(--ifm-color-primary-light);
     --ifm-admonition-content-color: black;
     --ifm-admonition-border: 1px solid rgb(64 64 64 / 0.08);
@@ -23,6 +27,7 @@
 }
 
 [data-theme='dark'] {
+    --bedoc-section-bg-darker: conic-gradient(from 90deg at -10% 100%, #2b303b 0deg, #2b303b 90deg, #16181d 1turn);
     --ifm-button-background-color: var(--ifm-color-primary-dark);
     --ifm-admonition-content-color: white;
     --ifm-admonition-border: none;
@@ -45,20 +50,51 @@ html[data-theme='dark'] {
     --ifm-background-color: rgb(35 39 47);
 }
 
+.section-lighter {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: var(--bedoc-section-bg);
+}
+
+.section-darker {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: var(--bedoc-section-bg-darker);
+    border-top: 2px solid var(--bedoc-section-bg-darker);
+}
+
+/**容器边栏与主体比例设定**/
+.container .row aside {
+    --ifm-col-width: calc(3 / 12 * 100%);
+}
+
+.container .row main {
+    --ifm-col-width: calc(9 / 12 * 100%);
+}
+
 .footer {
     background-color: var(--bedoc-footer-background-color) !important;
 }
-
 
 .footer__link-item {
     color: var(--bedoc-footer-link-item-color) !important;
 }
 
-.button--lg {
-    width: 14rem;
+.header-button-container {
+    display: flex;
+    flex-direction: row;
+    width: 32rem;
+}
+
+.header-container .button--lg {
+    width: 100%;
 }
 
 /**代码块**/
+.theme-code-block {
+    border-radius: var(--ifm-pre-border-radius) !important;
+}
+
 [data-theme='dark'] .prism-code {
     background-color: #16181d !important;
     padding: 0.5rem !important;
@@ -67,7 +103,7 @@ html[data-theme='dark'] {
 [data-theme='light'] .prism-code {
     background-color: white !important;
     padding: 0.5rem !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0.8px 2px rgba(0, 0, 0, .032), 0 2.7px 6.7px rgba(0, 0, 0, .048), 0 12px 30px rgba(0, 0, 0, .08);
 }
 
 /**info告示**/

@@ -290,8 +290,16 @@
     "message": "Get the latest bedrock development technology information every week, and learn about the cutting-edge technology of bedrock development",
     "description": "The homepage 'what can you do here' description"
   },
+  "homepage.whatCanYouDoHere.description.secondary": {
+    "message": "Whether you're an individual developer or part of a development team, the Bedrock Journal Site serves as a trusted ally and valuable tool for your needs. Designed with a developer-friendly approach to documentation content and reading interfaces, it aims to elevate the overall experience of researching and referencing materials for developers.",
+    "description": "The homepage 'what can you do here' secondary description"
+  },
   "homepage.checkTechChangelog": {
     "message": "Latest preview changelogs 📜",
+    "description": "The homepage check tech changelog button message"
+  },
+  "homepage.scriptAPIRef": {
+    "message": "Script API Reference 🔌",
     "description": "The homepage check tech changelog button message"
   }
 }

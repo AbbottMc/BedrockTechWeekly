@@ -39,14 +39,14 @@ function Feature({img}: FeatureItem) {
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
-      <div className="container">
-        <h2>
+      <div className="container" style={{fontSize: '20px'}}>
+        <h1>
           <Translate
             id="homepage.whatCanYouDoHere.title"
             description="The homepage 'what can you do here' title">
             您可以在这里做些什么？
           </Translate>
-        </h2>
+        </h1>
         <p>
           <Translate
             id="homepage.whatCanYouDoHere.description"
@@ -59,6 +59,13 @@ export default function HomepageFeatures(): JSX.Element {
             <Feature key={idx} {...props} />
           ))}
         </div>
+        <p style={{marginTop: '2.4rem'}}>
+          <Translate
+            id="homepage.whatCanYouDoHere.description.secondary"
+            description="The homepage 'what can you do here' secondary description">
+            无论您是个人开发者还是开发团队，基岩文刊站点都是您的好帮手、好工具。基岩文刊站点旨在提供开发者友好的文档内容与阅读界面，提升开发者们的文档查阅体验
+          </Translate>
+        </p>
       </div>
     </section>
   );

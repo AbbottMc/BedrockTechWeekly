@@ -7,8 +7,9 @@ import Translate from '@docusaurus/Translate'
 
 function HomepageHeader() {
   return (
-    <header className="hero noise-bg no-underline-links px-4 pt-16 lg:py-0 heroBanner">
-      <div className="container">
+    <header className="hero section-lighter no-underline-links px-4 pt-16 lg:py-0 heroBanner">
+      <div className="container text--center"
+           style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <h1 className="hero__title">
           <Translate
             id="homepage.title"
@@ -35,10 +36,10 @@ function HomepageHeader() {
         {/*    </Translate>*/}
         {/*  </Link>*/}
         {/*</div>*/}
-        <div className="buttons" style={{marginTop: 24}}>
+        <div className="header-button-container">
           <Link
             // className="homepage-button-secondary hero--primary  button--lg"
-            className="hero--primary button button--lg"
+            className="button button--primary button--lg"
             to="/docs/official_changelog/preview/1.19.80.21">
             <Translate
               id="homepage.checkTechChangelog"
@@ -46,12 +47,10 @@ function HomepageHeader() {
               本周更新日志 📜
             </Translate>
           </Link>
-        </div>
-        <div className="buttons" style={{marginTop: 24}}>
           <Link
             // className="homepage-button-secondary hero--primary  button--lg"
-            className="hero--primary button button--lg"
-            to="/docs/sapi/stable">
+            className="button button--outline button--secondary button--lg"
+            to="/docs/sapi/stable" style={{marginLeft: 24}}>
             <Translate
               id="homepage.scriptAPIRef"
               description="The homepage check tech changelog button message">
@@ -69,7 +68,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout>
       <HomepageHeader/>
-      <main>
+      <main className={'section-darker text--center'}>
         <HomepageFeatures/>
       </main>
     </Layout>

@@ -1,32 +1,28 @@
-hr {
-    background-color: #666;
-}
-
-
-[data-theme='dark'] h2.anchor#methods,
-[data-theme='dark'] h2.anchor#properties,
-[data-theme='dark'] h2.anchor#constructors,
-[data-theme='dark'] h2.anchor#hierarchy {
-    background-color: var(--ifm-color-primary-light);
-    padding: 8px 16px;
-    border-radius: 8px;
-    color: white;
-}
-
-[data-theme='light'] h2.anchor#methods,
-[data-theme='light'] h2.anchor#properties,
-[data-theme='light'] h2.anchor#constructors,
-[data-theme='light'] h2.anchor#hierarchy {
-    background-color: var(--ifm-color-primary-darker);
-    padding: 8px 16px;
-    border-radius: 8px;
-    color: white;
-}
-
 html[data-theme='light'] {
     --doc-sidebar-width: 360px
 }
 
 html[data-theme='dark'] {
     --doc-sidebar-width: 360px
+}
+
+/**Script API文档标题样式**/
+h2.anchor#methods,
+h2.anchor#properties,
+h2.anchor#constructors,
+h2.anchor#hierarchy {
+    padding: 8px 16px;
+    color: var(--bedoc-changelog-title-color);
+    border-radius: var(--ifm-global-radius);
+    background-color: var(--bedoc-changelog-title-background-color);
+    border-bottom: var(--bedoc-changelog-title-border);
+}
+
+/**Script API文档分隔线样式**/
+[data-theme='dark'] hr {
+    background-color: rgb(52 58 70);
+}
+
+[data-theme='light'] hr {
+    background-color: rgb(235 236 240);
 }
