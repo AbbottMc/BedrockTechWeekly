@@ -51,6 +51,10 @@
     "message": "Script API Documentation",
     "description": "The label for the doc item 脚本API文档 in sidebar sapiStableSidebar, linking to the doc sapi/stable/README"
   },
+  "sidebar.sapiPreviewSidebar.category.@minecraft/common": {
+    "message": "@minecraft/common",
+    "description": "The label for category @minecraft/common in sidebar sapiPreviewSidebar"
+  },
   "sidebar.sapiPreviewSidebar.category.@minecraft/server": {
     "message": "@minecraft/server",
     "description": "The label for category @minecraft/server in sidebar sapiPreviewSidebar"
@@ -71,6 +75,14 @@
     "message": "@minecraft/server-gametest",
     "description": "The label for category @minecraft/server-gametest in sidebar sapiPreviewSidebar"
   },
+  "sidebar.sapiPreviewSidebar.category.@minecraft/server-editor": {
+    "message": "@minecraft/server-editor",
+    "description": "The label for category @minecraft/server-editor in sidebar sapiPreviewSidebar"
+  },
+  "sidebar.sapiStableSidebar.category.@minecraft/common": {
+    "message": "@minecraft/common",
+    "description": "The label for category @minecraft/common in sidebar sapiStableSidebar"
+  },
   "sidebar.sapiStableSidebar.category.@minecraft/server": {
     "message": "@minecraft/server",
     "description": "The label for category @minecraft/server in sidebar sapiStableSidebar"
@@ -90,5 +102,9 @@
   "sidebar.sapiStableSidebar.category.@minecraft/server-gametest": {
     "message": "@minecraft/server-gametest",
     "description": "The label for category @minecraft/server-gametest in sidebar sapiStableSidebar"
+  },
+  "sidebar.sapiStableSidebar.category.@minecraft/server-editor": {
+    "message": "@minecraft/server-editor",
+    "description": "The label for category @minecraft/server-editor in sidebar sapiStableSidebar"
   }
 }

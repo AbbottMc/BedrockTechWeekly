@@ -10,11 +10,13 @@
  */
 
 const moduleNames = {
+  'common': ['classes', 'interfaces'],
   'server': ['classes', 'interfaces', 'enums'],
   'server-ui': ['classes', 'enums'],
   'server-admin': ['classes'],
   'server-net': ['classes', 'enums'],
-  'server-gametest': ['classes']
+  'server-gametest': ['classes'],
+  'server-editor': ['classes', 'interfaces', 'enums']
 };
 const genSapiModuleSidebar = function (path, moduleName, moduleParseResultItemNameArr) {
   const ret = {

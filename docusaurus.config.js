@@ -42,6 +42,22 @@ const config = {
       'docusaurus-plugin-typedoc',
       // Plugin / TypeDoc options
       {
+        id: 'preview-common',
+        entryPoints: ['./static/typedoc/preview/common.d.ts'],
+        tsconfig: './static/typedoc/preview/tsconfig.json',
+        out: 'sapi/preview/common',
+        sidebar: {
+          categoryLabel: 'sapiPreviewSidebar',
+          collapsed: false,
+          position: 0,
+          fullNames: true,
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
         id: 'preview-server',
         entryPoints: ['./static/typedoc/preview/server.d.ts'],
         tsconfig: './static/typedoc/preview/tsconfig.json',
@@ -102,7 +118,37 @@ const config = {
         out: 'sapi/preview/server-gametest'
       },
     ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'preview-server-editor',
+        entryPoints: [
+          './static/typedoc/preview/server-editor.d.ts',
+        ],
+        tsconfig: './static/typedoc/preview/tsconfig.json',
+        out: 'sapi/preview/server-editor'
+      },
+    ],
     // -----------------------------------------------------
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'stable-common',
+        entryPoints: [
+          './static/typedoc/stable/common.d.ts'
+        ],
+        tsconfig: './static/typedoc/stable/tsconfig.json',
+        out: 'sapi/stable/common',
+        sidebar: {
+          categoryLabel: 'sapiStableSidebar',
+          collapsed: false,
+          position: 0,
+          fullNames: true,
+        }
+      },
+    ],
     [
       'docusaurus-plugin-typedoc',
       // Plugin / TypeDoc options
@@ -167,6 +213,18 @@ const config = {
         ],
         tsconfig: './static/typedoc/stable/tsconfig.json',
         out: 'sapi/stable/server-gametest'
+      }
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        id: 'stable-server-editor',
+        entryPoints: [
+          './static/typedoc/stable/server-editor.d.ts',
+        ],
+        tsconfig: './static/typedoc/stable/tsconfig.json',
+        out: 'sapi/stable/server-editor'
       }
     ],
     // --------------------------------------
@@ -266,11 +324,11 @@ const config = {
             items: [
               {
                 to: '/docs/sapi/stable',
-                label: '稳定版 [1.19.70]',
+                label: '稳定版 [1.20.80]',
               },
               {
                 to: '/docs/sapi/preview',
-                label: '预览版 [1.19.80.24]',
+                label: '预览版 [1.21.0.23]',
               }
             ]
           },

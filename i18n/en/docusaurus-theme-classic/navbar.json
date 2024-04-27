@@ -31,12 +31,12 @@
     "message": "Preview",
     "description": "Navbar item with label 预览版"
   },
-  "item.label.稳定版 [1.19.70]": {
-    "message": "Stable [1.19.70]",
-    "description": "Navbar item with label 稳定版 [1.19.70]"
+  "item.label.稳定版 [1.20.80]": {
+    "message": "Stable [1.20.80]",
+    "description": "Navbar item with label 稳定版 [1.20.80]"
   },
-  "item.label.预览版 [1.19.80.24]": {
-    "message": "Preview [1.19.80.24]",
-    "description": "Navbar item with label 预览版 [1.19.80.24]"
+  "item.label.预览版 [1.21.0.23]": {
+    "message": "Preview [1.21.0.23]",
+    "description": "Navbar item with label 预览版 [1.21.0.23]"
   }
 }
