@@ -1,7 +1,7 @@
 {
-  "link.title.周刊": {
-    "message": "Weekly",
-    "description": "The title of the footer links column with title=周刊 in the footer"
+  "link.title.文刊": {
+    "message": "Journal",
+    "description": "The title of the footer links column with title=文刊 in the footer"
   },
   "link.title.更多": {
     "message": "More",

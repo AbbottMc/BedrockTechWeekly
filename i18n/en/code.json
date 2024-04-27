@@ -271,11 +271,11 @@
     "description": "The title of the tag list page"
   },
   "homepage.title": {
-    "message": "Bedrock Tech Weekly",
+    "message": "Bedrock Tech Journal",
     "description": "The homepage title"
   },
   "homepage.subtitle": {
-    "message": "This site aims to provide relevant content in the field of Minecraft Bedrock Edition technology every week, so that you can understand the real-time developments in the field of Bedrock Edition development more conveniently and quickly.",
+    "message": "Offering content related to the Minecraft Bedrock Edition technical domain, facilitating more convenient and efficient access to real-time developments within the Bedrock Edition development landscape.",
     "description": "The homepage subtitle"
   },
   "homepage.checkLatestArticle": {

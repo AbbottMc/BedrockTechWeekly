@@ -14,14 +14,14 @@ function HomepageHeader() {
           <Translate
             id="homepage.title"
             description="The homepage title">
-            基岩技术周刊
+            基岩技术文刊
           </Translate>
         </h1>
-        <p>
+        <p style={{fontSize: '20px'}}>
           <Translate
             id="homepage.subtitle"
             description="The homepage subtitle">
-            本站旨在每周提供Minecraft基岩版技术领域相关内容，让您更方便、快捷的了解基岩版开发领域的实时动态。
+            提供Minecraft基岩版技术领域相关内容，更方便、快捷的了解基岩版开发领域的实时动态。
           </Translate>
         </p>
         {/*<div className="buttons">*/}
