@@ -163,23 +163,23 @@
 @layer components {
     .noise-bg {
         background-image: url('/static/img/page/grid_light.svg'),
-        url('/static/img/page/noise_light.png'),
-        linear-gradient(
-                to bottom,
-                transparent 40%,
-                rgb(var(--docs-color-secondary-700))
-        );
+        url('/static/img/page/noise_light.png');
+        /*linear-gradient(*/
+        /*        to bottom,*/
+        /*        transparent 40%,*/
+        /*        rgb(var(--docs-color-secondary-700))*/
+        /*);*/
         background-size: 48px 48px, 100% 100%, 100%;
     }
 
     html[data-theme='dark'] .noise-bg {
         background-image: url('/static/img/page/grid_dark.svg'),
-        url('/static/img/page/noise_dark.png'),
-        linear-gradient(
+        url('/static/img/page/noise_dark.png');
+        /*linear-gradient(
                 to bottom,
                 transparent 40%,
-                rgb(var(--docs-color-secondary-900))
-        );
+                rgb(var(--ifm-color-primary-dark))
+        );*/
     }
 }
 
@@ -225,7 +225,7 @@ body {
     --docs-color-text: #ffffff;
     --docs-color-text-100: #b4b4b4;
 
-    --docs-color-background: #161616;
+    --docs-color-background: #444950;
     --docs-color-background-100: #1c1c1c;
     --docs-color-background-200: #2a2a2a;
     --docs-color-background-300: #2e2e2e;
@@ -289,9 +289,6 @@ html[data-theme='dark'] {
     --ifm-button-background-color: var(--ifm-color-primary-darker);
     --ifm-button-color: white;
 
-    --ifm-footer-background-color: #1c1c1c;
-    --ifm-background-surface-color: #161616;
-    --ifm-background-color: #161616;
     --ifm-toc-border-color: #2e2e2e;
 
     --ifm-color-content: #e7e7e7;
@@ -306,10 +303,6 @@ nav.navbar {
 /*pre.prism-code {*/
 /*    border: 0.5px solid var(--code-border-color);*/
 /*}*/
-
-.theme-code-block {
-    border: 1px solid var(--code-border-color);
-}
 
 .navbar__item,
 .menu__link {

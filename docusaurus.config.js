@@ -29,7 +29,8 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans', 'en'],
+    locales: ['zh-Hans',
+      'en'],
     localeConfigs: {
       en: {
         htmlLang: 'en'
@@ -193,6 +194,10 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/AbbottMc/BedrockTechWeekly/tree/master',
+          admonitions: {
+            keywords: ['info', 'warn'],
+            // extendDefaults: true,
+          },
         },
         blog: {
           blogSidebarTitle: '历史周刊文章',
@@ -231,11 +236,11 @@ const config = {
         textColor: '#091E42',
         isCloseable: true,
       },
-     /* docs:{
-        sidebar: {
-          hideable: true,
-        }
-      },*/
+      /* docs:{
+         sidebar: {
+           hideable: true,
+         }
+       },*/
       navbar: {
         title: '基岩技术周刊',
         logo: {
@@ -243,7 +248,11 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          {to: '/blog', label: '周刊', position: 'left'},
+          {
+            to: '/blog',
+            label: '周刊',
+            position: 'left'
+          },
           {
             type: 'doc',
             docId: 'official_changelog/README',

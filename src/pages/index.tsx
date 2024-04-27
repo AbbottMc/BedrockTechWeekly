@@ -47,6 +47,18 @@ function HomepageHeader() {
             </Translate>
           </Link>
         </div>
+        <div className="buttons" style={{marginTop: 24}}>
+          <Link
+            // className="homepage-button-secondary hero--primary  button--lg"
+            className="hero--primary button button--lg"
+            to="/docs/sapi/stable">
+            <Translate
+              id="homepage.scriptAPIRef"
+              description="The homepage check tech changelog button message">
+              脚本API参考 🔌
+            </Translate>
+          </Link>
+        </div>
       </div>
     </header>
   );
