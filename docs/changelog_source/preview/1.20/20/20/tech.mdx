@@ -1,0 +1,86 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Add-Ons and Script Engine**
+
+-   Render controllers without textures will now result in a content error and be ignored
+-   Added support for the "_allow\_random\_seed_" option in world template manifests
+-   AmethystCluster blocks use state "_minecraft:block\_face_" instead of "_facing\_direction_". "_minecraft:block\_face_" uses string values ("down", "up", "north", "south", "east", "west") 
+-   Slab blocks use state "_minecraft:vertical\_half_" instead of "_top\_slot\_bit_". "_minecraft:vertical\_half_" uses string values ("bottom", "top") 
+
+## **Editor**
+
+The Editor is in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Learn [how to use](https://aka.ms/LearnEditor) the Editor and join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum, post bugs, view more detailed release notes. Tag us on social channels with **#BedrockEditor.**
+
+This week marks the release of **v0.4: The Editor API Update!** While still in early development, we’ve released it with the following support:
+
+-   Editor Extensions [overview article](https://learn.microsoft.com/en-us/minecraft/creator/documents/editorextensionsintroduction) and [API reference documentation](https://aka.ms/EditorAPI) on learn.microsoft.com
+-   [Starter Kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit): Contains the compiler tools and various libraries required to get started making Editor Extensions
+-   [Samples](https://github.com/Mojang/minecraft-editor-extension-samples) created by our team to jump-start your own Extension creations
+
+Additional fixes this week to the general Editor experience:
+
+-   Fixed a bug where number slider thumbs in the tool panes were extending beyond the boundaries of the pane.
+-   Fixed a bug where clicking on the selected tool in the tool rail was not re-opening the closed tool pane.
+-   Fixed an issue where structure void, light, and barrier blocks were only visible when the player was holding them – now they’re always visible in the Editor.
+-   Fixed a bug that caused the player's body to not rotate in third-person view when the simulation is paused.
+-   Improved logging and moved operation chat notifications to the log panel.
+-   Fixed selection gizmo visibility when there is no active selection. Previously, when there was no selection volume, selection arrow gizmos were being rendered at the world origin (0,0,0).
+-   The selected theme will now be correctly applied to external links in the Help tab of the Quick Start panel.
+-   Removed the non-functional hamburger menu button from the Quick Panel tabs.
+
+## **Items**
+
+-   Released the "_minecraft:hand\_equipped_" item component out of experimental in json formats 1.20.20 and higher 
+-   Deprecate "_minecraft:creative\_category_" component in json formats 1.20.20 and higher 
+-   Creative group and command visibility can now be set in the "description" field in json formats 1.20.20 and higher 
+-   Renamed the "_minecraft:foil_" item component to "_minecraft:glint_" and released it out of experimental in json formats 1.20.20 and higher 
+-   Changed fire enchant duration used on projectiles from a _ShooterItemComponent_ to match vanilla behavior 
+-   Released the "_minecraft:use\_duration_" item component out of experimental in json formats 1.20.20 and higher 
+-   Released the "_minecraft:stacked\_by\_data_" item component out of experimental in json formats 1.20.20 and higher 
+
+## **Networking**
+
+-   Linux dedicated server: Ubuntu 20.04 LTS (Focal Fossa) is now the minimum supported version of Ubuntu. Ubuntu 18.04 LTS is no longer supported 
+
+## **Sounds**
+
+-   Sound definitions now accept both float and integer values for _min\_distance_ and _max\_distance_ - please set sound\_definitions.json "_format\_version_" parameter equal to or greater than 1.20.20 to use this functionality ([MCPE-154378](https://bugs.mojang.com/browse/MCPE-154378))
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Commands**
+
+-   Released command _/scriptevent_ out of experimental
+
+## **Items**
+
+-   Fixed issue where items with the "_minecraft:wearable_" component would be duplicating when equipping by using the item ([MCPE-159736](https://bugs.mojang.com/browse/MCPE-159736)) 
+-   Items with the "_minecraft:wearable_" component in non-weapon slots can no longer be stacked ([MCPE-159736](https://bugs.mojang.com/browse/MCPE-159736)) 
+-   Removed the "_minecraft:ignores\_permission_" component 
+-   Removed the "_minecraft:mirrored\_art_" component 
+-   Moved the "_protection_" field from "_minecraft:armor_" component to "_minecraft:wearable_" component in json formats 1.20.20 and higher 
+-   Deprecate "_minecraft:armor_" component in json formats 1.20.20 and higher 
+-   Removed nonfunctional and redundant slot options from "_minecraft:wearable_" component, ie. mainhand, hotbar, inventory, enderchest, and equippable
+-   Items with the "_minecraft:wearable_" component using the "_weapon.offhand_" slot will no longer equip when item is used in hotbar
+-   Equipping custom wearable items trigger generic equip sound
+-   Custom items with "_minecraft:wearable_" component can now be equipped by clicking and dragging in inventory or shift-clicking
+
+## **User Interface**
+
+-   Display a message when the players presses the camera perspective change button but a particular perspective is already set via the camera command

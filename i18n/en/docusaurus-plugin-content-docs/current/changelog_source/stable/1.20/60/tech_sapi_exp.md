@@ -1,0 +1,65 @@
+
+
+-   PlayerPlaceBlockBeforeEvent
+    -   Removed _itemStack: ItemStack_from event
+    -   Added _readonly permutationBeingPlaced: BlockPermutation_to event
+    -   Updating _createExplosion(location: Vector3, radius: number, explosionOptions?: ExplosionOptions)_to return a boolean. True if the explosion is successful and false if the explosion is unsuccessful or is cancelled
+-   Class Player
+-   Added method _spawnParticle(effectName: string, location: Vector3, molangVariables?: MolangVariableMap): void;_
+-   Fixed a bug where the world would sometimes fail to properly shut down and disconnect clients during an unrecoverable script watchdog error
+-   Updated _SimulatedPlayer_ so it can continuously build
+-   Updated _SimulatedPlayer_ so it can Move and look in different directions
+-   ChatSendAfter & ChatSendBeforeEvent
+    -   Changed _message_ and _sender_ to read-only properties
+    -   Removed _setTargets_, _getTargets_, _sendToTargets_and replaced with an optional player list property _targets_
+-   Class ItemDurabilityComponent
+    -   Renamed _unbreaking_ to _unbreakingEnchantmentLevel_
+    -   Renamed _getDamageRange_ to _getDamageChanceRange_
+-   EntityTypes
+    -   Changed _getAll_return type from _EntityTypeIterator_ to _EntityType\[\]_
+-   EntityEquippableComponent
+    -   Fixed an issue where functions _getEquipment_ and _getEquipmentSlot_ could not be called within "before" event handlers
+-   Fixed a bug where an ItemStack could not be stacked after clearing its lore
+-   Added method _eatItem(itemStack: ItemStack): void;_
+-   BlockSignComponent
+    -   Changed signature of function _setWaxed_to _setWaxed(waxed: boolean)_
+    -   Removed event/property _pistonActivate_
+-   Added enum _BlockPistonState export enum BlockPistonState { Expanded = "Expanded", Expanding = "Expanding", Retracted = "Retracted", Retracting = "Retracting" }_
+-   Class BlockPistonComponent
+    -   Removed property _isExpanded_
+    -   Removed property _isExpanding_
+    -   Removed property _isRetracted_
+    -   Removed property _isRetracting_
+    -   Added property _readonly state: BlockPistonState_
+    -   Changed function _getAttachedBlocks_to return type _Block\[\]_
+    -   Added function _getAttachedBlocksLocations(): Vector3\[\]_
+-   Removed class _PistonActivateBeforeEvent_
+-   Removed class _PistonActivateBeforeEventSignal_
+-   Moved _NavigationResult_from _@minecraft/server_ to _@minecraft/server-gametest_
+-   Updated function _addEffect_ to return the added effect (or undefined if it failed)
+    -   This change is in beta and does not affect the currently released versions of this function
+-   Added item dynamic properties
+    -   Added function _clearDynamicProperties(): void_ \- Removes all dynamic properties from the item stack
+    -   Added function _getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined_ \- Returns the value of the dynamic property with the given identifier if it exists, otherwise returns undefined
+    -   Added function _getDynamicPropertyIds(): string\[\]_ \- Returns an array of all dynamic property identifiers on the item stack
+    -   Added function _getDynamicPropertyTotalByteCount(): number_ \- Returns the total byte count of all dynamic properties on the item stack
+    -   Added function _setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void_ \- Sets the value of the dynamic property with the given identifier. If the value is undefined, the dynamic property will be removed
+    -   Added function _clearDynamicProperties(): void_ \- Removes all dynamic properties from the item stack
+    -   Added function _getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined_ \- Returns the value of the dynamic property with the given identifier if it exists, otherwise returns undefined
+    -   Added function _getDynamicPropertyIds(): string\[\]_ \- Returns an array of all dynamic property identifiers on the item stack
+    -   Added function _getDynamicPropertyTotalByteCount(): number_ \- Returns the total byte count of all dynamic properties on the item stack
+    -   Added function _setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void_ \- Sets the value of the dynamic property with the given identifier. If the value is undefined, the dynamic property will be removed
+-   Added class _EntityProjectileComponent_. This component is used to shoot a projectile entity and modify its properties
+-   Added interface _ProjectileShootOptions_. This interface is used with function _shoot_to optionally modify the accuracy of the projectile when shot
+-   _PropertyOutOfBoundsError_
+    -   Added a new _PropertyOutOfBoundsError_ that throws when a property that is bounded is set out of bounds
+-   _ContainerSlot_ APIs now throw an _InvalidContainerSlotError_ if the container slot is invalid, or if a property is set on an empty slot
+-   Property _typeId_ no longer returns undefined for empty slots, but instead throws an _InvalidContainerSlotError_
+-   Added function _hasItem_ \- Returns whether the slot contains an item
+-   Added function _getCanPlaceOn_ \- Returns an array of block identifiers that the item can be placed on
+-   Added function _getCanDestroy_ \- Returns an array of block identifiers that the item can destroy when used
+-   _runJob()_ and _system.clearJob()_
+    -   Added _runJob_ and _clearJob_ for optimizing long running tasks using JavaScript generators. _runJob_ takes a generator function and returns a _jobId_. See documentation for usage examples
+-   _@minecraft/server.BlockPermutation_
+    -   Moved _getState_ and _withStates_ APIs from _beta_ to _stable_
+

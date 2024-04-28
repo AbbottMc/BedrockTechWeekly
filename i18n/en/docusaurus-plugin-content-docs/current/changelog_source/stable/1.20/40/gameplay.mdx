@@ -1,0 +1,170 @@
+**Posted:** October 24, 2023
+
+A new update has been released, bringing several changes to the game! Here are the highlights:
+
+-   Experimental: Rebalanced several Villager trades
+-   Updated and improved several in-game sounds
+-   Tweaked the splash sounds when entering and leaving water
+-   Buckets can no longer pick up liquids for a few ticks after they've been placed
+
+Your thoughts on the game continue to shape new updates so please upvote and report any new bugs at [bugs.mojang.com](https://bugs.mojang.com/) and leave us your feedback at [feedback.minecraft.net](https://feedback.minecraft.net/).
+
+# **Vanilla Parity**
+
+## **Gameplay**
+
+-   Changed the default value of the Respawn Radius in the Advanced Settings to 10
+-   Falling from a great height while in a Boat no longer deals fall damage ([MCPE-152753](https://bugs.mojang.com/browse/MCPE-152753))
+-   Fall damage is now absorbed by the entity that lands on the ground when mounted and passed on to passengers if the mount dies
+-   Goat Horns can now be heard up to 256 blocks away ([MCPE-153254](https://bugs.mojang.com/browse/MCPE-153254))
+-   Tweaked the boss bar HUD color ([MCPE-43591](https://bugs.mojang.com/browse/MCPE-43591))
+-   Flowing Lava and Water mixing mechanics now match Java Edition ([MCPE-41103](https://bugs.mojang.com/browse/MCPE-41103))
+-   Closing the inventory of Boat, Raft, or Minecart with Chest now emits vibrations
+
+## **Mobs**
+
+-   Zombified Villager curing time is now randomized between 3 and 5 minutes, to match Java Edition
+-   Zombified Villagers now have the correct biome overlays ([MCPE-172377](https://bugs.mojang.com/browse/MCPE-172377))
+-   Witches now target players within a 16 block distance
+-   Sheep that have been sheared previously and have since grown back wool will now drop wool on death ([MCPE-99972](https://bugs.mojang.com/browse/MCPE-99972))
+-   Camels can no longer dash while in Lava or Water
+-   Iron Golems no longer spawn naturally in 2-block-high spaces where they would start suffocating ([MCPE-173006](https://bugs.mojang.com/browse/MCPE-173006))
+-   Iron Golems and Snow Golems now have a crumbling-like particle effect when they are created
+-   Cartographers no longer offer exploration maps as a trade item when not in the overworld
+
+## **Audio**
+
+-   Guardians and Elder Guardians now make flopping sounds when on land ([MCPE-26929](https://bugs.mojang.com/browse/MCPE-26929))
+-   Wither Skeletons now have their own unique sounds ([MCPE-174857](https://bugs.mojang.com/browse/MCPE-174857))
+-   Updated the sound that’s played when Wither Skeleton Skulls are placed on top of Note Blocks
+-   The sound for picking up items is now played when using the ‘/give’ command
+-   Stray Cats now play a sound when begging for food
+-   Changes to Bottles ([MCPE-157918](https://bugs.mojang.com/browse/MCPE-157918))
+    -   Bottles now emit sounds when filling from Water Blocks
+    -   Pouring water or potions from a Glass Bottle into a Cauldron emits the appropriate sound
+    -   Filling a Glass Bottle with Water or Potion from a Cauldron now emits the appropriate sound
+    -   Drinking from a Glass Bottle now emits the appropriate sound
+-   Changes to water splash sounds ([MCPE-174524](https://bugs.mojang.com/browse/MCPE-174524))
+    -   The ambient sounds for entering exiting water is now played only when actor is submerged below eye-level in water, matching Java Edition
+    -   The splash sound for entering water has been updated to match Java Edition  
+          
+        
+
+# **Experimental Features**
+
+## **Villager Trade Rebalancing**
+
+This experiment has no effect on normal worlds. If you want to try these changes, you must turn on the Feature Toggle in the Experiments Menu when creating a new world.
+
+Thank you to everyone that has sent in their suggestions and feedback regarding the experimental trade change! We are trying out these changes to rebalance the villager trade system and make it more fair and fun for everyone. However, **these changes are not yet final** and they will stay as experimental features while we continue to work on them. We appreciate your feedback on these changes. Visit [this link](https://aka.ms/VillagerTradingFeedback) to share your thoughts! We have been following the discussions about the previous Librarian and Wandering Trader updates and look forward to seeing the conversation continue.
+
+## **Cartographer**
+
+Before now, Cartographers only sold maps to the Ocean Monument and Woodland Mansion. In this experiment Cartographers can sell seven new maps as well. These new maps each point to a different village or structure and can be used to find seven different biomes. This will help players who want to quickly find a specific location without waiting until they come across it by chance.
+
+Cartographers from different biomes will sell a different selection of maps. Starting from one village, it will be possible to find every other village type by following maps from village to village.
+
+![villager-trades-1.png](https://feedback.minecraft.net/hc/article_attachments/20640447666829)
+
+Cartographers now sell 7 new maps: Desert Village Map, Jungle Explorer Map, Plains Village Map, Savanna Village Map, Snow Village Map, Swamp Explorer Map, and Taiga Village Map.  
+  
+
+## **Armorer**
+
+The Armorer's trades have been updated with many changes.
+
+The biggest change is that buying diamond armor now requires paying a small amount of Diamonds as well as Emeralds. This is meant to make the Armorer's diamond armor trades less useful at the start of the game when players don't have any Diamonds, while still giving a powerful advantage to advanced players who have spent some time collecting Diamonds.
+
+Early-game players will find Armorers useful as a great source of iron armor, Shields, and Emeralds.
+
+Other changes include:
+
+-   Most master-level Armorers buy Iron Blocks (and pay very well for them)
+-   Chainmail armor is exclusively sold by the secret Jungle and Swamp Armorers
+-   The Savanna Armorer sells cursed diamond armor at reduced prices
+-   The Taiga Armorer can swap one piece of diamond armor for another
+
+![villager-trades-2.png](https://feedback.minecraft.net/hc/article_attachments/20640430907149)  
+  
+
+## **Structure Loot**
+
+Certain Enchanted Books now have a high chance of generating in some structures:
+
+-   Ancient Cities: Mending
+-   Mineshafts: Efficiency (I to V)
+-   Pillager Outposts: Quick Charge (I to III)
+-   Desert Temples: Unbreaking (I to III)
+-   Jungle Temples: Unbreaking (I to III)  
+      
+    
+
+# **Fixes and Changes**
+
+## **Performance / Stability**
+
+-   Fixed several crashes that could occur during gameplay
+-   Fixed a crash that could occur when running in the Archold room in the Spellrune Marketplace map
+-   Fixed a crash related to tessellation of water blocks
+-   Fixed an issue where the game would lock up if a mob would move on a block with 0 friction ([MCPE-173073](https://bugs.mojang.com/browse/MCPE-173073))
+
+## **Gameplay**
+
+-   Players are no longer affected by Arrow effects if the Arrow is blocked ([MCPE-52904](https://bugs.mojang.com/browse/MCPE-52904))
+-   Villages in the End and Nether are no longer saved to the Overworld ([MCPE-85954](https://bugs.mojang.com/browse/MCPE-85954))
+-   Players can no longer sometimes clip through blocks when gliding with Elytra into blocks ([MCPE-73307](https://bugs.mojang.com/browse/MCPE-73307))
+-   Buckets can no longer pick up liquids for a few ticks after they've been placed ([MCPE-100598](https://bugs.mojang.com/browse/MCPE-100598))
+    -   This should help make placing and retrieving liquid in a quick succession far more consistent as well as help players that are using a water bucket to quickly avoid fall damage
+-   Fixed an issue where moving slowly on Soul Sand would sometimes cause the player to not receive the Soul Speed movement speed ([MCPE-173155](https://bugs.mojang.com/browse/MCPE-173155))
+-   Players can no longer sometimes clip through blocks when flying in Creative Mode and spamming the sneak button ([MCPE-172785](https://bugs.mojang.com/browse/MCPE-172785))
+
+## **Mobs**
+
+-   Fixed a bug where the Sniffer ended digging as soon as item was created, not at the end of the specified dig duration
+-   Camels no longer appear to slide when walking ([MCPE-169666](https://bugs.mojang.com/browse/MCPE-169666))
+-   Camels no longer move their legs when standing still ([MCPE-172846](https://bugs.mojang.com/browse/MCPE-172846))
+-   Camels no longer dash indefinitely when in Lava ([MCPE-172369](https://bugs.mojang.com/browse/MCPE-172369))
+-   Mobs no longer receive fall damage when falling into a 1 block deep water pool ([MCPE-173094](https://bugs.mojang.com/browse/MCPE-173094))
+-   Rabbits can once again eat partially and fully grown Carrot crops ([MCPE-131980](https://bugs.mojang.com/browse/MCPE-131980))
+
+## **Blocks**
+
+-   Fixed a bug where the wrong side of Signs would sometimes be edited ([MCPE-169067](https://bugs.mojang.com/browse/MCPE-169067))
+-   Fixed an extremely rare bug (~0.000003% chance) that could cause Item Frames to not drop their item when hit or destroyed
+-   Third person camera no longer phases through the lower part of Cauldron ([MCPE-173010](https://bugs.mojang.com/browse/MCPE-173010))
+-   Falling in Powder Snow no longer causes any damage, no matter the height fallen from ([MCPE-174859](https://bugs.mojang.com/browse/MCPE-174859))
+-   Lightweight mobs and entities wearing Leather Boots once again sink into the top layer of Powder Snow when falling from a height of more than two and a half blocks
+-   Sculk Block no longer drops XP when mined with Silk Touch ([MCPE-174656](https://bugs.mojang.com/browse/MCPE-174656))
+
+## **Items**
+
+-   Diagonal Banner patterns no longer get inverted when applied to a Shield ([MCPE-169577](https://bugs.mojang.com/browse/MCPE-169577))
+-   Placing invalid items into offhand slot will no longer cause them to drop
+-   Warped Fungus on a Stick is no longer held backwards in first person view ([MCPE-169765](https://bugs.mojang.com/browse/MCPE-169765))
+-   Updated structure icons on Explorer Maps sold by Cartographers
+
+## **Accessibility**
+
+-   Fixed an issue where text-to-speech did not say how to open chat or use emotes
+-   Text-to-speech message for popup title/description is now played properly
+
+## **User Interface**
+
+-   Added a sprint button for Camels when "sprint using the joystick" option is turned off ([MCPE-172674](https://bugs.mojang.com/browse/MCPE-172674))
+-   Fixed Sneak button partially blocking the D-Pad Up button when using touch controls ([MCPE-38566](https://bugs.mojang.com/browse/MCPE-38566))
+-   Smithing Table no longer shows double overlapping tooltips for some slots ([MCPE-168369](https://bugs.mojang.com/browse/MCPE-168369))
+-   Item names no longer overlaps with the absorption health bar ([MCPE-152131](https://bugs.mojang.com/browse/MCPE-152131))
+-   Item names no longer overlaps with the mount health bar ([MCPE-152130](https://bugs.mojang.com/browse/MCPE-152130))
+-   Item names no longer overlaps with the oxygen bar ([MCPE-152129](https://bugs.mojang.com/browse/MCPE-152129))
+-   Updated Brewing Stand interface to always stay within its background when scaled ([MCPE-154385](https://bugs.mojang.com/browse/MCPE-154385))
+-   Improved disconnect message when trying to join a Realm when not a member
+-   Autocompleting text now moves the caret to end of the line
+
+## **Graphical**
+
+-   Equipped enchanted armor now has an overall weaker glint, however its intensity more noticeably increases and decreases over time
+-   Random lights no longer appear in the world without a source ([MCPE-169001](https://bugs.mojang.com/browse/MCPE-169001))
+-   Splash particles are now emitted at an actor's waist instead of above their head  
+      
+    
+

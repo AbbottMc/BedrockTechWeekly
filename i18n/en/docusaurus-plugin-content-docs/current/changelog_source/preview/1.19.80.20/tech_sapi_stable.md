@@ -1,0 +1,73 @@
+
+
+-   Updated versions to add new APIs to stable:
+    -   Added version 1.1.0 of @minecraft/server
+    -   Added version 1.2.0-beta of @minecraft/server
+    -   Removed version 1.1.0-beta of @minecraft/server
+    -   Moved the following to @minecraft/server stable (1.1.0)
+        -   runTimeout
+        -   runInterval
+        -   clearRun
+        -   currentTick
+        -   Vector3
+        -   BlockPermutation  (only a subset of functionality)
+        -   Block
+        -   getBlock
+        -   sendMessage
+        -   sendMessage  
+              
+            
+    -   Minecraft runtime errors are now fired as JavaScript Error objects instead of strings
+    -   Fixed a number of base class inheritance issues and added several new base classes to certain class types
+    -   /reload works if a script pack references a client RP.
+    -   Fixed a bug where the _BeforeItemUseOnEvent_ function _getBlockLocation_ would return undefined ([MCPE-166945](https://bugs.mojang.com/browse/MCPE-166945))
+    -   The _BeforeItemUseOnEvent_class now inherits from _ItemUseOnEvent_ 
+    -   Moved the following to @minecraft/serverstable (1.0)
+    -   Fixed a bug where _sendMessage_ would fail when the message contains Unicode quotation marks
+    -   Signs
+        -   Added _setText_ to set the text on a sign with a regular string, a _RawMessage_, or a _RawText_
+        -   Added _getText_ to get the string on a sign, will return undefined if _setText_ was called with a _RawMessage_ or a _RawText_
+        -   Added _getRawText_ to get the _RawText_ on a sign, will return undefined if _setText_ was called with a string
+        -   Added _getTextDyeColor_ and _setTextDyeColor_ to read/write the dye of the sign text
+    -   Dyes
+        -   Added _DyeColor_ enum
+    -   sendMessage
+        -   _rawtext_ is now _RawMessage\[\]_ instead of _(string | RawMessage)\[\]_
+    -   RawMessage
+        -   _rawtext_ property on _RawMessage_ is no longer _(string | RawMessage)\[\]_ and is instead _RawMessage\[\]_
+    -   RawText
+        -   Added a _RawText_ class for reading _RawMessage_ like on Signs
+    -   Riding
+        -   Added _getRiders_ to _EntityRideableComponent_ which returns an array of all the entities currently riding this entity
+        -   Added _EntityRidingComponent_\- this component is only on entities that are currently riding on another entity
+            -   Has an _entityRidingOn_ property that returns the entity this entity is currently riding on
+        -   Added function _getEntity(id: string): Entity | undefined_\- Gets an entity. Returns undefined for entities that don't exist or aren't loaded
+    -   Dimension
+        -   getEntities
+            -   Modified return type to _Entity\[\]_
+            -   Modified parameter name _getEntities_ to _options_
+            -   New signature: _getEntities(options?: EntityQueryOptions): Entity\[\]_
+        -   getPlayers
+            -   Modified return type to _Player\[\]_
+            -   Modified parameter name _getPlayers_ to _options_
+            -   New signature: _getPlayers(options?: EntityQueryOptions): Player\[\];_
+        -   @minecraft/server-ui
+            -   When building forms, all read-only user-facing strings (e.g., text labels, dropdown options etc.) now accept _RawMessage_ This affects the following classes:
+                -   _ActionFormData_
+                -   _ModalFormData_
+                -   _MessageFormData_
+            -   Added function _getItemStack(amount?: number, withData?: boolean): ItemStack_\- Gets an item stack of the block. Returns undefined for blocks that don't have a corresponding item (e.g. air)
+        -   BlockPermutation
+            -   Added function _getItemStack(amount?: number): ItemStack_– Creates an item stack of the block permutation. Returns undefined for blocks that don't have a corresponding item (e.g. air)
+            -   Removed data _property_
+        -   BlockComponent
+            -   Added read-only property _block_\- Gets the block that the component is attached to
+        -   Renamed _IEntityComponent_ to _EntityComponent_
+        -   Container
+            -   Replaced classes   
+                _BlockInventoryComponentContainer_, _InventoryComponentContainer_, and _PlayerInventoryComponentContainer_ with _Container_
+            -   function _addItem_ now returns the remainder of the added item stack if the container is full, else _undefined_
+            -   function _transferItem_ no longer takes a destination slot and will now place the given item in the first available slot. The function now returns the remainder of the item stack if the container is full, else _undefined_
+            -   Added function _moveItem(fromSlot: number, to Slot: number, to Container: Container): void_\- Moves an item from one container to another, replacing any item in the destination slot
+            -   Function _swapItems_ can now swap empty slots
+            -   Removed function _clearItem_ - Please _use_ _setItem(undefined)_ instead

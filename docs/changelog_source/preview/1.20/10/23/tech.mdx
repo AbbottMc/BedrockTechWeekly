@@ -1,0 +1,59 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Dedicated Server**
+
+-   Fixed invalid entries in allowlist.json causing crash ([BDS-18133](https://bugs.mojang.com/browse/BDS-18133))
+
+## **Add-Ons and Script Engine**
+
+-   Actually fixed the bug that caused player capes to stop flapping when moving forward but looking sideways in the query.cape\_flap\_amount by switching the rotation used from the player's looking rotation to the player's body rotation ([MCPE-153446](https://bugs.mojang.com/browse/MCPE-153446))
+-   Observer blocks use state "minecraft:facing\_direction" instead of "facing\_direction". "minecraft:facing\_direction" uses string values ("down", "up", "north", "south", "east", "west")
+
+## **Entities**
+
+-   Custom entities are no longer restricted to overriding Vanilla entities released before 1.20. All Vanilla entities can be used in the "identifier" or "runtime\_identifier" field, including Camel and Sniffer.
+
+## **Items**
+
+-   Released the "minecraft:shooter" item component out of experimental in json formats 1.20.10 and higher
+-   Released the "minecraft:throwable" item component out of experimental in json formats 1.20.10 and higher
+-   Released the "minecraft:projectile" item component out of experimental in json formats 1.20.10 and higher
+-   Released the "minecraft:can\_destroy\_in\_creative" item component out of experimental in json formats 1.20.10 and higher
+-   Released the "minecraft:hover\_text\_color" item component out of experimental in json formats 1.20.10 and higher
+
+## **Editor**
+
+The Editor is in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Learn [how to use](https://aka.ms/LearnEditor) the Editor and join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum, post bugs, view more detailed release notes. Tag us on social channels with #BedrockEditor.
+
+-   Fixed a bug where error messages related to initial script loading were not being displayed in the log panel
+-   /scriptEvent command can now be used in the editor without the need to enable the Beta APIs experiments
+-   Fixed a bug where the viewport scaling was not working correctly on devices that use D3D11
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Experimental Cameras**
+
+-   Camera preset JSON now supports an optional bool 'player\_effects' value which causes game rendering to use player effect state (for example night vision) when this preset is active. Added the "example:example\_player\_effects" preset to demonstrate this
+-   Camera command can now take a 'facing' option instead of a 'rot' option with a target entity or position specified
+-   Fixed custom cameras to not use the 'inside block' effect when player head is inside a block ([MCPE-170206](https://bugs.mojang.com/browse/MCPE-170206))
+
+## **Items**
+
+-   Deprecate "minecraft:render\_offsets" component in json formats 1.20.10 and higher
+-   Changed charging action behavior in "minecraft:shooter" to match Vanilla crossbow Changed shooting behavior for a charged "minecraft:shooter" with an empty inventory/offhand to successfully shoot the charged ammunition

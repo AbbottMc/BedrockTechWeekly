@@ -1,0 +1,51 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Add-Ons and Script Engine**
+
+-   Pumpkin blocks use the string type state "minecraft:cardinal\_direction" instead of the int type "direction" state
+
+## **Commands**
+
+-   Has item command selector now correctly detects whether or not an actor has a filled Map or Firework Star in their inventory
+-   The "inputpermission" command now has a description displayed in the command dialogue preview
+
+## **Bedrock Editor**
+
+-   Fixed a bug where the default command permission level of the client differed from what was displayed in a multiplayer session
+-   Tool mode movement will now use the vanilla keyboard controls instead of hardcoded W/A/S/D/Space/Shift keys. Movement bindings can now be customized from the settings menu, but some keys might not be available if they are being used by other editor actions
+
+## **Items**
+
+-   Custom items with 'minecraft:record' show the correct sound description in hover text and on playing in a Jukebox
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Add-Ons**
+
+-   Changed "minecraft:cardinal\_direction" and "minecraft:facing\_direction" states from int to string type.
+    -   "minecraft:cardinal\_direction" has four values \["north", "south", "east", "west"\]
+    -   "minecraft:facing\_direction" has six values \["down", "up", "north", "south", "east", "west"\]
+-   Added a new experimental Cameras toggle to allow for custom camera perspectives
+-   Removed "knockback\_resistance" item component
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Commands**
+
+-   Added /camera command as part of the experimental Cameras toggle
+    -   This command can switch to custom camera perspectives or fade the screen
+-   Use _/help camera_ to get a full list of options

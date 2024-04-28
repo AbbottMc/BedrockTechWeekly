@@ -1,0 +1,186 @@
+
+
+-   Added _Scoreboard.addScore_ and improved _Scoreboard.setScore_ to return the updated score
+-   Using _ScoreboardObjective.removeParticipant_ is now properly synced with clients ([MCPE-172920](https://bugs.mojang.com/browse/MCPE-172920))
+-   ScriptEventCommandMessageAfterEvent
+    -   Made _initiator_, _sourceBlock_, and _sourceEntity_ optional types
+-   Removed _MinecraftEntityTypes_ from @minecraft/server and replaced with version from @minecraft/vanilla-data
+-   Removed _MinecraftItemTypes_ from @minecraft/server and replaced with version from @minecraft/vanilla-data
+-   Exposed _MoonPhase_ and _World.getMoonPhase_ to script
+-   Removed server-authoritative-sound bool from server.properties
+-   Exposed _DimensionType_ to scripting
+-   Converted "_set\_block\_property_" to "_set\_block\_state_" for custom blocks
+-   Added _defineVector_ to _DynamicPropertiesDefinition_
+-   _EntityEquipmentInventoryComponent_
+    -   Implemented slot validation for _setEquipment_, which now returns a boolean indicating whether the item can be equipped to the specified slot
+    -   _EntityEquipmentInventoryComponent_ is currently limited to Players only. However, we hope to reintroduce this component for mobs in a future update
+        -   Moved _getDay()_ to _1.4.0_
+        -   Moved _getTimeOfDay()_ to _1.4.0_
+        -   Moved _setTimeOfDay(timeOfDay: number | TimeOfDay)_ to _1.4.0_
+        -   Moved _getAbsoluteTime()_ to _1.4.0_
+        -   Moved _setAbsoluteTime(absoluteTime: number)_ to _1.4.0_
+-   Moved _TimeOfDay_ to _1.4.0_
+    -   Added length restrictions to _setLore_ - Up to 20 lines with up to 50 characters per line
+    -   Moved function _setLore_ to _1.4.0_
+    -   Moved function _getLore_ to _1.4.0_
+    -   Moved class _SystemAfterEvents_ to _1.4.0_
+    -   Moved class _ScriptEventCommandMessageAfterEvent_ to _1.4.0_
+-   Moved player _onScreenDisplay_ to _1.4.0_
+-   Moved _titleDisplayOptions_ to _1.4.0_
+-   Moved _screenDisplay_ to _1.4.0_
+-   Moved _ProjectileHitBlockAfterEvent_ to _1.5.0_.
+-   Moved _ProjectileHitEntityAfterEvent_ to _1.5.0_.
+-   Moved _ProjectileHitBlockAfterEventSignal_ to _1.5.0_.
+-   Moved _ProjectileHitEntityAfterEventSignal_ to _1.5.0_.
+-   Moved _BlockHitInformation_ to _1.5.0_.
+-   Moved _EntityHitInformation_ to _1.5.0_.
+    -   Moved _spawnParticle(effectName: string, location: Vector3, molangVariables?: MolangVariableMap)_ to _1.5.0_
+    -   Moved _setColorRGB(variableName: string, color: RGB)_ to _1.5.0_
+    -   Moved _setColorRGBA(variableName: string, color: RGBA)_ to _1.5.0_
+    -   Moved _setFloat(variableName: string, number: number)_ to _1.5.0_
+    -   Moved _setSpeedAndDirection(variableName: string, speed: number, direction: Vector3)_ to _1.5.0_
+    -   Moved _setVector3(variableName: string, vector: Vector3)_ to _1.5.0_
+-   RGB
+    -   Moved _RGB_ to _1.5.0_
+    -   Moved _RGBA_ to _1.5.0_
+    -   Moved _triggerEvent(eventName: string)_ to _1.5.0_
+-   Renamed _EntityEquipmentInventoryComponent_ to _EntityEquippableComponent_
+-   Fixed issue where prototype properties are not possible to redefine using _defineProperty_ ([MCPE-174073](https://bugs.mojang.com/browse/MCPE-174073))
+-   ItemStack
+    -   Added _getCanPlaceOn()_ and _getCanDestroy()_
+    -   Added upper maximum limit of 255 to _amount_ property - will throw if exceeds
+-   Entity
+    -   Added function _getProperty(identifier: string): boolean | number | string | undefined_ - Gets an Entity Property
+    -   Added function _setProperty(identifier: string, value: boolean | number | string): void_ - Sets an Entity Property during the next tick
+    -   Added function _resetProperty(identifier: string): boolean | number | string;_ - Resets an Entity Property to its default value during the next tick and returns the default value
+-   world.beforeEvents
+    -   Added event/property _removeEvent_
+-   world.afterEvents
+    -   Renamed event/property _removedEvent_ to _removeEvent_
+-   Class _EntityRemovedAfterEvent_
+    -   Renamed field _removedEntity_ to _removedEntityId_: _removedEntityId: string_
+    -   Added field _typeId: string_
+-   Added class _EntityRemovedBeforeEvent_
+    -   Added field _removedEntity: Entity_
+-   Moved _EquipmentSlot_ to _1.5.0_ and changed enum values to uppercase
+-   Moved _EntityEquippableComponent_ to _1.5.0_
+-   Scoreboard
+    -   _setObjectiveAtDisplaySlot_ return type now correctly set to _ScoreboardObjective_ or undefined
+-   ScoreboardIdentity
+    -   _getEntity_ return type now correctly set to Entity or undefined
+-   _setWeather_ API can now take an optional duration parameter to set the weather duration
+-   Added read-only property _heightRange: NumberRange_ - Gets min/max dimension height limits.
+-   Added _Player.isSleeping_ and _Player.isEmoting_
+-   Changed _Entity.scoreboardIdentity_ to be valid even after the entity has been killed
+-   World Events
+    -   Renamed _BlockBreakAfterEvent_ to _PlayerBreakBlockAfterEvent_
+        -   Added _readonly itemStackAfterBreak?: ItemStack_ (undefined if empty hand)
+        -   Added _readonly itemStackBeforeBreak?: ItemStack_ (undefined if empty hand)
+    -   Renamed _BlockBreakAfterEventSignal_ to _PlayerBreakBlockAfterEventSignal_
+        -   _subscribe_ function now takes _options?: BlockEventOptions_
+    -   Added _PlayerBreakBlockBeforeEvent_ with the following members
+        -   _cancel: boolean_, cancels event from happening
+        -   _itemStack?: ItemStack_, the item stack in use by the player (undefined if empty hand)
+        -   _readonly player: Player_, the player breaking the block
+    -   Added _PlayerBreakBlockBeforeEventSignal_
+    -   Renamed _BlockPlaceAfterEvent_ to _PlayerPlaceBlockAfterEvent_
+    -   Renamed _BlockPlaceAfterEventSignal_ to _PlayerPlaceBlockAfterEventSignal_
+        -   _subscribe_ function now takes _options?: BlockEventOptions_
+    -   Added _PlayerPlaceBlockBeforeEvent_ with the following members
+        -   _cancel: boolean_, cancels event from happening
+        -   _readonly face: Direction_, the face the block is being placed on
+        -   _readonly faceLocation: Vector3_, the location on the face the block was placed on
+        -   _itemStack: ItemStack_, the item stack being used to place the block
+        -   _readonly player: Player_, the player placing the block
+    -   Added _PlayerPlaceBlockBeforeEventSignal_
+    -   Modified _WorldAfterEvents_
+        -   Renamed _blockBreak_ to _playerBreakBlock_
+        -   Renamed _blockPlace_ to _playerPlaceBlock_
+    -   Modified _WorldBeforeEvents_
+        -   Added _playerBreakBlock_
+        -   Added _playerPlaceBlock_
+    -   Added _BlockEventOptions_ with the following members
+        -   _blockTypes?: string\[\]_, names of blocks to be filtered against
+        -   _permutations?: BlockPermutation\[\]_, specific block permutations to be filtered against
+-   Added class _EntityLoadAfterEvent_
+    -   New field _entity: Entity_
+    -   Added class _EntityLoadAfterEventSignal_
+-   Class _EntitySpawnAfterEvent_
+    -   Added property _readonly cause: EntityInitializationCause_\_
+-   Class _WorldAfterEvents_
+    -   Added property _readonly entityLoad: EntityLoadAfterEventSignal_
+-   Added enum _EntityInitializationCause_
+
+Moved the following APIs from beta to stable:
+
+-   Moved _Direction_ to _1.4.0_.
+-   Moved _EntityDamageSource_ to _1.4.0_.
+-   Moved _EntityDieAfterEvent_ to _1.4.0_.
+-   Moved _EntityEventOptions_ to _1.4.0_.
+-   Moved _EntityHitBlockAfterEvent_ to _1.4.0_.
+-   Moved _EntityHitEntityAfterEvent_ to _1.4.0_.
+-   Moved _EntityHurtAfterEvent_ to _1.4.0_.
+-   Moved _EntityHealthChangedAfterEvent_ to _1.4.0_.
+-   Moved _Dimension.getBlockFromRay_ method to _1.4.0_
+-   Moved _Dimension.getEntitiesFromRay_ method to _1.4.0_
+-   Moved _Entity.getBlockFromViewDirection_ method to _1.4.0_
+-   Moved _Entity.getEntitiesFromViewDirection_ method to _1.4.0_
+-   Moved _BlockRaycastHit_ to _1.4.0_
+-   Moved _BlockRaycastOptions_ to _1.4.0_
+-   Moved _EntityRaycastHit_ to _1.4.0_
+-   Moved _EntityRaycastOptions_ to _1.4.0_
+-   Moved _PressurePlatePushEvent_ to _1.4.0_.
+-   Moved _PressurePlatePopEvent_ to _1.4.0_.
+-   Moved _TripWireTripEvent_ to _1.4.0_.
+-   Moved _TargetBlockHitEvent_ to _1.4.0_.
+    -   Made property _id_ accessible even if entity is not valid
+    -   Made property _typeId_ accessible even if entity is not valid
+    -   Changed item event _source_ properties from type _Entity_ to _Player_
+-   Added camera scripting APIs for the following APIs:
+    -   _setCamera()_: to set the camera to a specified preset
+    -   _fade()_: to start a camera fade
+    -   _clear()_: to clear the current settings on the camera
+-   Released Scoreboard API's from beta to V1.4.0
+    -   Updated _Scoreboard.getObjective_, _getObjectiveAtDisplaySlot_, and _clearObjectiveAtDisplaySlot_ to return '| undefined'
+-   Removed _MinecraftBlockTypes_ defined in _@minecraft/server_
+-   Moved _ItemUseBeforeEvent_ to _1.4.0_
+-   Moved _ItemUseOnBeforeEvent_ to _1.4.0_
+-   Moved _ItemUseAfterEvent_ to _1.4.0_
+-   Moved _ItemUseOnAfterEvent_ to _1.4.0_
+-   Moved _ItemStartUseOnAfterEvent_ to _1.4.0_
+-   Moved _ItemStopUseAfterEvent_ to _1.4.0_
+-   Moved _ItemStopUseOnAfterEvent_ to _1.4.0_
+-   Moved _ItemCompleteUseAfterEvent_ to _1.4.0_
+-   Moved _ItemReleaseUseAfterEvent_ to _1.4.0_
+-   Moved _ItemStartUseAfterEvent_ to _1.4.0_
+-   Moved _DimensionLocation_ to _1.4.0_
+-   Renamed _PositionInUnloadedChunkError_ to _LocationInUnloadedChunkError_ and moved it to _1.4.0_
+-   Renamed _PositionOutOfWorldBoundariesError_ to _LocationOutOfWorldBoundariesError_ and moved it to _1.4.0_
+    -   Moved _getSpawnPoint_ to _1.4.0_
+    -   Moved _setSpawnPoint_ to _1.4.0_
+    -   Moved _getDefaultSpawnLocation_ to _1.4.0_
+    -   Moved _setDefaultSpawnLocation_ to _1.4.0_
+-   Released _isValid()_ from Beta to _1.4.0_ for the following classes:
+    -   _Block_
+    -   _Container_
+    -   _Entity_
+    -   _Player_
+    -   _SimulatedPlayer_
+-   WorldAfterEvents
+    -   Removed _projectileHit_
+    -   Added _projectileHitBlock_
+    -   Added _projectileHitEntity_
+-   Added class _ProjectileHitBlockAfterEvent_ export class:  
+    _ProjectileHitBlockAfterEvent { readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getBlockHit(): BlockHitInformation; }_
+-   Added class _ProjectileHitEntityAfterEvent_ export class:  
+    _ProjectileHitEntityAfterEvent { readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getEntityHit(): EntityHitInformation; }_
+-   Fixed a bug where _ContainerSlot_ would not work with certain container types ([MCPE-168805](https://bugs.mojang.com/browse/MCPE-168805))
+-   Fixed a bug where setLore would incorrectly calculate the length of lore strings containing multi-byte characters ([MCPE-173189](https://bugs.mojang.com/browse/MCPE-173189))
+    -   Added function _remove_ - Removes the Entity. This cannot be called on Players but can be used on SimulatedPlayers in Gametest
+-   MolangVariableMap
+    -   Added setFloat function
+    -   Changed return type of setColorRBG, setColorRGBA, setSpeedAndDirection, and setVector3 to void
+    -   Changed the MolangVariableMap property on spawnParticle to be optional: spawnParticle(effectName: string, location: Vector3, molangVariables?: MolangVariableMap): void
+-   Renamed _Color_ interface to _RGBA_
+-   Added interface _RGB_
+

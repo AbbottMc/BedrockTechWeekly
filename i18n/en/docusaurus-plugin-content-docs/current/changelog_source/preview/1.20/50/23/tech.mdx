@@ -1,0 +1,36 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Items
+
+-   Deprecated 'on\_dig' event triggers from 'minecraft:digger' in format versions 1.20.50 and higher 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Gametest
+
+-   Dynamic Properties
+
+-   NBT change: Dynamic properties are now stored using the behavior pack manifest UUID, rather than the module UUID. Existing worlds using dynamic properties will continue to work, and will be migrated to the new format when properties are read or modified

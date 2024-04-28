@@ -1,0 +1,71 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Dedicated Server**
+
+Content logs now show in dedicated server console window with a configurable log level using these new server properties:
+
+-   content-log-level - Sets the minimum level for content logs to output. Allowed values: “verbose”, “info”, “warning”, “error”. Default: info
+    -   Note: This log level also affects content logs written to disk when using content-log-file-enabled=true
+-   content-log-console-output-enabled - Enables or disables content log output to the console window. Default: info
+
+## **Entities**
+
+-   Custom entities with internal-only components or AI goals will fail to load in game
+-   Custom entities are restricted to overriding Vanilla entities released before 1.20. Invalid entities used in the “identifier” or “runtime\_identifier” field will result in content errors
+
+## **Items**
+
+-   Released the “minecraft:display\_name” item component out of experimental in json formats 1.20.0 and higher
+-   Released the “minecraft:durability” item component out of experimental in json formats 1.20.0 and higher
+-   Released the “minecraft:fuel” item component out of experimental in json formats 1.20.0 and higher
+-   Released the “minecraft:entity\_placer” item component out of experimental in json formats 1.20.0 and higher
+-   Released the “minecraft:icon” item component out of experimental in json formats 1.20.0 and higher
+
+## **User Interface**
+
+-   Fixed a graphical issue where a gamepad icon would display over another screen
+
+## **Accessibility**
+
+-   Added new “Chat Message Duration” accessibility setting to change how long chat messages remain on screen (3 seconds by default)
+-   Renamed “Notification Duration” to “Toast Notification Duration” and fixed an issue were the setting had no affect on how long toasts remained on display  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Add-Ons and Script Engine**
+
+-   Added PlacementPosition (“minecraft:placement\_position”) BlockTrait block trait
+    
+    -   Adds states “minecraft:block\_face” and/or “minecraft: vertical\_half”
+    -   “minecraft:block\_face” is a six value string state ("down", "up", "north", "south", "east", "west") that contains info on which block face the player clicked on when the block was placed
+    -   “minecraft:vertical\_half” is a 2 value string state ("bottom", "top") with info on whether the block was placed in the lower or upper half of the block position
+    -   Both of these states are set when the block is placed (onPlayerPlace)
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Items**
+
+-   Items with the ‘minecraft:throwable’ component now trigger the ‘throw’ sound effect when used
+
+## **Scripting**
+
+-   After Events
+    -   All non-before events have been moved from world.events to world.afterEvents
+    -   events has been removed from the world object
+    -   After events do not execute immediately, instead they are deferred until a later point in the tick when they are flushed. It is guaranteed that all events fired in a tick are flushed within a tick

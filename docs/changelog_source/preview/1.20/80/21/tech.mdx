@@ -1,0 +1,49 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Editor**
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Fixes this week:
+
+-   Added a “Reload” button that allows for reloading of the UI when an Ore UI error occurs
+-   Line tool bar icon updated to correct design icon  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Graphical**
+
+-   Reduced the strength of saturation in the Deferred Technical Preview
+-   Fixed a crash that could occur when Point Light Shadows were turned on in the Deferred Technical Preview
+
+## **Commands**
+
+-   Added item text, status effects, and absorption hearts to the hud command’s list of hud elements (Ex: /hud @s hide item\_text)
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

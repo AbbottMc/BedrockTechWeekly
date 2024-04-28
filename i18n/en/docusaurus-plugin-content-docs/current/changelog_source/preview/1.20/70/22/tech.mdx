@@ -1,0 +1,60 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   Fixed 'minecraft:geometry.full\_block' faces not rotating to match transform component
+-   Fixed 'minecraft:geometry.full\_block' blocks not culling faces against some vanilla blocks 
+
+## Components
+
+-   Entities with a "damage\_sensor" component can once again be killed via commands
+-   The "damage\_sensor" component can once again trigger entity events on entities other than the owner 
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Updates this week:
+
+-   Renamed enum ClipboardMirrorAxis to StructureMirrorAxis and moved it to module @minecraft/server
+-   Renamed enum ClipboardRotation to StructureRotation and moved it to module @minecraft/server
+-   Panel booleans can now be represented as a toggleswitch as an alternative to a checkbox
+
+## Molang
+
+-   Released _query.is\_attached_ and _query.has\_player\_rider_ from experimental
+-   Removed experimental Molang queries _query.get\_ride_ and _query.get\_riders_
+-   Deprecated the Molang Features experiment
+-   Released Molang _query.scoreboard_ for use with behavior packs from experimental (resource packs will return 0) 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Fixed a crash on Android devices when entering Deferred Technical Preview worlds 
+-   Fixed a circular visual artifact that could occur when using the new Point Light Shadows feature in the Deferred Technical Preview

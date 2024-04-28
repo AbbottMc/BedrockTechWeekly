@@ -1,0 +1,57 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Blocks using the "minecraft:material\_instances" component with "render\_method" = "alpha\_test\_single\_sided" display properly when in the player's hand
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Updates this week:
+
+-   Fixed incorrect negative sign in Cursor Delta display in the status bar
+-   Added a 'border: true|false' option to the Editor remote pane TextComponent
+-   Added a text component to the Information section in the Playtest dialog
+-   Created a "blockPalette" service in the Extension Context that contains "getSelectedBlockType" and "setSelectedBlockType". This will be used to store the block type that is going to be painted to the world. The Selection, Cube Brush, and Line tools have been updated to use this service!
+-   Added a stateful menu to toggle Overworld weather in World Options.
+
+## Marketplace Server Driven Layouts (SDL)
+
+-   Added the ability for SDL screens to have non scrollable layouts
+-   Added the ability for layouts to contain vertical fill padding
+-   Fixed vertical fill objects not working in vertical factories within the user interface
+
+## Character Creator
+
+-   Added a new model to contain the character creator animation logic
+-   Updated the logic that was done to trigger updating the binds when the animation states have been updated, so we do not run into issues with the binds updating every frame causing a major framerate hit
+
+## Stability and Performance
+
+-   Implemented a fix for the “One Block Skyblock” Marketplace map generating flat world in the distance on the client if the map was uploaded on Realms
+    -   Clients connected to a dedicated server or Realms will no longer improperly generate LevelChunks on the client if one of the following is true:
+        -   The map is a flat world
+        -   It's a Marketplace map
+    -   This overrides server.properties setting client-side-chunk-generation-enabled for dedicated servers
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

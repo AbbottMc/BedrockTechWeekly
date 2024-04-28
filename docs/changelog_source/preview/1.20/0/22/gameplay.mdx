@@ -1,0 +1,102 @@
+**Posted:** 26 April, 2023
+
+**Information on the Minecraft Preview and Beta:** 
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality 
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta)  for detailed instructions
+
+![A Minecraft screenshot of a buried trail ruins site, with various archaeology items around.](https://feedback.minecraft.net/hc/article_attachments/15239777428237)
+
+Greetings, Minecrafters! This week's Minecraft Preview and Beta is here and brings with it a plethora of new and exciting fixes and features. From a set of brand-new music tracks to the introduction of experimental camera commands, there's a lot to test out! We love to hear from you so please send us your [feedback](https://aka.ms/MC120Feedback) and [bug reports](https://bugs.mojang.com/)! So, without further ado, let's dive into the details and see what this latest Minecraft Preview has to offer!
+
+# **Known Issues**
+
+-   Players are unable to connect to LAN sessions hosted by players on Windows or Xbox
+
+# **Features and Bug Fixes**
+
+## **Music**
+
+-   Added the following new music tracks by Aaron Cherof to Cherry Groves, Desert, Jungle, Mesa, and Flower Forest biomes
+    -   A Familiar Room
+    -   Bromeliad
+    -   Crescent Dunes
+    -   Echo in the Wind
+
+## **Suspicious Blocks**
+
+-   Sugar Cane, Cactus, and Dead Bush can now be placed on Suspicious Sand ([MCPE-169142](https://bugs.mojang.com/browse/MCPE-169142)) ([MCPE-169141](https://bugs.mojang.com/browse/MCPE-169141))
+-   Bamboo can now be placed on Suspicious Sand and Gravel ([MCPE-169142](https://bugs.mojang.com/browse/MCPE-169142)) ([MCPE-169141](https://bugs.mojang.com/browse/MCPE-169141))
+-   Sugar Cane and Bamboo can now be placed on Moss Block
+
+## **Archaeology**
+
+-   Adding Sniffer Eggs to loot in warm ocean ruin for suspicious blocks
+-   Trail Ruins no longer generate partially exposed ([MCPE-168869](https://bugs.mojang.com/browse/MCPE-168869))
+-   The loot tables for Suspicious Gravel inside Trail Ruins no longer have duplicate entries for Bricks ([MCPE-168856](https://bugs.mojang.com/browse/MCPE-168856))
+-   Added a new music disc which can be acquired by brushing suspicious blocks in Trail Ruins. When put in a Jukebox, Relic by Aaron Cherof is played
+-   Reworked Trail Ruins structures based on community feedback
+-   Added more structure variants
+-   Sand no longer generates within the structures
+-   Tweaked the amount of Gravel and Dirt that generates within the structures
+-   Tweaked the amount of Suspicious Gravel that generates within the structures
+-   Split the loot tables for the Suspicious Gravel within the structure. There is now a dedicated loot table for Rare loot items (e.g. Pottery Sherds, Smithing Templates), and a dedicated loot table for more common loot drops (e.g. Tinted Glass Pane, Tools, Candles, etc.).
+-   Renamed 'Pottery Shards' to 'Pottery Sherds'
+
+## **Pitcher Plant & Pitcher Crop**
+
+-   Fixed an issue where the plant textures appeared darker
+-   Crafting dye from Pitcher Plant now results in two dyes instead of one ([MCPE-169498](https://bugs.mojang.com/browse/MCPE-169498))
+
+## **Torchflower**
+
+-   Brown Mooshrooms can now eat Torchflowers ([MCPE-169607](https://bugs.mojang.com/browse/MCPE-169607))
+
+## **Sniffer**
+
+-   Sniffer can now be tempted by Torchflower Seeds
+-   Sniffer now rather breeds than search and dig for items or be tempted
+-   Sniffer now creates particles while digging ([MCPE-167193](https://bugs.mojang.com/browse/MCPE-167193))
+-   Sniffer can no longer search and dig in water
+-   Made Sniffer walk cycle smoother
+-   Sniffer Egg emits particles only when placed on Moss block to demonstrate faster hatching
+
+## **Gameplay**
+
+-   Flying is no longer disabled when flying under Stairs ([MCPE-168999](https://bugs.mojang.com/browse/MCPE-168999))
+-   Bees no longer make the player eating sound when eating ([MCPE-169567](https://bugs.mojang.com/browse/MCPE-169567))
+
+## **User Interface**
+
+-   Added new Trails & Tales Update splash screen texts
+-   Coordinates will not show up on the new death screen when the "Show Coordinates" setting is enabled
+    -   The new "You Died!" screen is still in an experimental phase and for now we are removing the coordinates from it while we review the feedback we've had. Please continue to send us you thoughts and feedback [here](https://aka.ms/MinecraftPDScreen)!
+-   Added new Trails & Tales Update loading screen tips
+-   Added exclamation marks to certain splash texts that were missing to match Java Edition ([MCPE-165962](https://bugs.mojang.com/browse/MCPE-165962))
+-   The tooltip for dismounting Camels has been updated to match the one for other rideable mobs
+
+## **Items**
+
+-   Moved Raiser Armor Trim Smithing Template's icon one pixel to the right ([MCPE-168934](https://bugs.mojang.com/browse/MCPE-168934))
+-   Moved Wayfinder Armor Trim Smithing Template's icon one pixel to the right ([MCPE-168934](https://bugs.mojang.com/browse/MCPE-168934))
+-   Fixed a bug where in some situations an item in an item frame would be too small ([MCPE-163399](https://bugs.mojang.com/browse/MCPE-163399))
+
+## **Sculk Sensor Phases**
+
+-   Sculk Sensors and Calibrated Sculk Sensors now have three phases: Inactive, Active, and Cooldown
+-   The default phase is Inactive
+    -   This phase lasts indefinitely until the block receives a vibration
+    -   During this phase, the block is able to listen to nearby vibrations until one has been scheduled
+-   When a scheduled vibration is received, the block switches to the Active phase
+    -   This phase lasts 30 game ticks for Sculk Sensors, and 10 game ticks for Calibrated Sculk Sensors
+    -   During this phase, the block stops listening to nearby vibrations, wiggles its tendrils, and emits a Redstone signal and light
+-   After the Active phase has finished, the block switches to a Cooldown phase
+    -   This phase lasts for 10 game ticks
+    -   During this phase, the block keeps wiggling its tendrils, but no longer emits a Redstone signal nor light
+    -   Finally, once this phase is finished, the block will switch back to the Inactive phase
+-   Previously, these phases had different timings:
+    -   The Active phase lasted 40 game ticks for Sculk Sensors and 20 game ticks for Calibrated Sculk Sensors
+    -   There was no Cooldown phase
+-   These phase timings were tweaked so that it is less common for activated contraptions to recursively activate the Sculk Sensor that powered them
+

@@ -1,0 +1,83 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Add-Ons**
+
+-   Fixed a crash when entity identifier was too complex 
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Editor**
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [**how to use**](https://aka.ms/LearnEditor) the Editor, join the [**GitHub Discussion**](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [**starter kit**](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [**samples**](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Improvements this week:
+
+-   Updated 'Pause Actors' to 'Pause Entities'
+-   Added ‘Time of Day’ settings panel 
+-   Updated block atlas file using different rendering technique 
+-   Updated Line Tool with new functionality and widget support 
+-   Added global block hotbar with updated block picker
+
+## **General**
+
+-   Removed 'server-authoritative-block-breaking' from the default server.properties
+-   Removed 'server-authoritative-sound' from server.properties
+
+## **Items**
+
+-   Fixed a problem where teleporting while using an item with a long use duration could leave it in an unresponsive state until the use duration elapsed
+
+## **Graphical**
+
+-   Changed the default Anti Aliasing setting to "2" instead of "4" for better performance with minimal visual degradation.
+
+## **Molang**
+
+-   Added Molang _state\_time -\> number_for animation controllers, which returns the time in seconds spent in the current controller state (inclusive of blend time). Requires 'Upcoming Creator Features' experimental toggle 
+
+## **Touch Controls**
+
+-   Fixed bug where users could not navigate through inventory using keyboard in touch devices 
+
+## **Trial Spawners**
+
+-   Added optional _equipment\_loot\_table_to the spawn data present in _spawn\_potentials_ of Trial Spawner configs
+    -   If present, rolled items from the specified loot table will be equipped to the mob that spawns
+
+## **User Interface**
+
+-   On touch devices players can once again distribute a selected item stack over multiple slots by dragging it over them 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Graphical**
+
+-   Extended Texture Set support to Particles in the Deferred Technical Preview. See the updated [Getting Started with Deferred Lighting](https://learn.microsoft.com/en-us/minecraft/creator/documents/deferredlighting?view=minecraft-bedrock-stable) article for more details
+-   Fixed banner staffs not being lit while held in hand from first-person view in the Deferred Technical Preview 
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Commands**
+
+-   Fixed hunger element so that its visibility can be changed with the hud command

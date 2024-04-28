@@ -1,0 +1,54 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Removed server-authoritative-sound bool from server.properties 
+-   Exposed _DimensionType_ to scripting
+-   The /camera command no longer requires the experimental cameras toggle 
+    -   Note: The cameras experiment still contains several example preset JSON files for reference
+-   Released the "_minecraft:wearable_" item component out of experimental in json formats 1.20.20 and higher
+-   Exposed the following feature placement rules from behind the data driven biome experimental toggle. This allows creators to attach their custom features to a biome, and to define the rules by which those features are placed
+    -   minecraft:aggregate\_feature
+    -   minecraft:cave\_carver\_feature
+    -   minecraft:fossil\_feature
+    -   minecraft:geode\_feature
+    -   minecraft:growing\_plant\_feature
+    -   minecraft:multiface\_feature
+    -   minecraft:nether\_cave\_carver\_feature
+    -   minecraft:ore\_feature
+    -   minecraft:partially\_exposed\_blob\_feature
+    -   minecraft:scatter\_feature
+    -   minecraft:search\_feature
+    -   minecraft:sequence\_feature
+    -   minecraft:single\_block\_feature
+    -   minecraft:snap\_to\_surface\_feature
+    -   minecraft:structure\_template\_feature
+    -   minecraft:surface\_relative\_threshold\_feature
+    -   minecraft:tree\_feature
+    -   minecraft:underwater\_cave\_carver\_feature
+    -   minecraft:vegetation\_patch\_feature
+    -   minecraft:weighted\_random\_feature
+
+## **Items**
+
+-   Released the "_minecraft:digger_" item component out of experimental in json formats 1.20.20 and higher 
+-   Deprecated "_on\_dig_" parameters from "_minecraft:digger_" item component in formats 1.20.20 and higher 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

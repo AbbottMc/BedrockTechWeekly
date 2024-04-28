@@ -1,0 +1,120 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.20.40 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddonPacks)
+
+## **Stability and Performance**
+
+-   The Sounds definition file sound\_definitions.json will no longer crash the game if the wrong json type is used for a specific sound definition ([MCPE-168913](https://bugs.mojang.com/browse/MCPE-168913))
+
+## **Commands**
+
+-   Re-entering a world no longer breaks command autocomplete after a command using "@e\[type=item\]" was used ([MCPE-164734](https://bugs.mojang.com/browse/MCPE-164734))
+-   The /damage command with the "override" cause now causes damage through post hit invulnerability ([MCPE-160290](https://bugs.mojang.com/browse/MCPE-160290))
+-   The recipe command color has been changed to white instead of blue ([MCPE-173362](https://bugs.mojang.com/browse/MCPE-173362))
+
+## **Mobs**
+
+-   Added a new “_query.is\_in\_lava_” Query Function to Molang, to know if a mob is currently in Lava
+
+## **Molang**
+
+-   Molang updated to version 1.20.40 which replaces "block\_property" and "has\_block\_property" with "block\_state" and "has\_block\_state"
+    -   This is a Molang Versioned Change that only takes effect for Molang expressions in packs that use a min\_engine\_version of 1.20.40 or higher
+
+## **Trade Tables**
+
+-   Trade items now have a "filters" property to determine if a trade should be considered
+-   Trade items no longer support the "biome" property to check villager biome types, the "is\_mark\_variant" filter can be used in the "filters" property instead to check the villager biome type
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Blocks**
+
+-   "minecraft:transformation" now prevents blocks from being transformed past the 30x30x30 pixel limit and "minecraft:unit\_cube" from being translated or scaled. Invalid block will instead display the "update" block ([MCPE-173799](https://bugs.mojang.com/browse/MCPE-173799))
+-   Chest blocks, Trapped Chest blocks, Ender Chest blocks, and Stonecutter blocks now use state "minecraft:cardinal\_direction" instead of "facing\_direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3, 5, 6\]
+
+## **Items**
+
+-   Added a content error when attempting to load a damage sensor with an invalid "cause" value
+-   Allow single value parsing for "minecraft:icon" item component
+-   The Camel mob Dash Component can now be applied to rideable mobs other than Horse, Donkey, and Mule using “minecraft:dash”
+-   Deprecated "minecraft:weapon" component starting in version 1.20.40
+-   Deprecated "minecraft:on\_use" component starting in version 1.20.40
+-   Deprecated "minecraft:on\_use\_on" component starting in version 1.20.40
+
+## **Entity Components**
+
+-   Unlocked “behavior.random\_search\_and\_dig” for creators to use
+-   "target\_blocks" field added. List of blocks that the mob can dig on. Default if "target\_blocks" isn't added is Dirt, Grass, Podzol, Dirt with Roots, Moss, Mud, and Muddy Mangrove Roots
+-   "item\_table" field added. Path to a loot table that specifies what the mob can dig up. "item\_table" takes precedence over "items"
+-   Content errors added if the behavior has trouble reading or finding "item\_table" and if unable to get an item from "items"
+-   'on\_item\_found' event now fires on item found AND digging finished. Before the event firing caused the digging to stop early
+-   The “_behavior.random\_look\_around\_and\_sit_” now has the field “_continue\_sitting\_on\_reload_” exposed for Creators to use. This is how the Camel stays sitting on reload
+-   “_behavior.is\_scenting_” renamed to generic “_behavior.timer\_flag\_1_” and released to creators
+-   “_behavior.is\_rising_” renamed to generic “_behavior.timer\_flag\_2_” and released to creators
+-   “_behavior.is\_feeling\_happy_” renamed to generic “_behavior.timer\_flag\_3_” and released to creators
+-   “_behavior.timer\_flag 1_”: Fires an event when this behavior starts, then waits for a duration before stopping. When stopping due to that timeout or due to being interrupted by another behavior, fires another event. _query.timer\_flag\_1_ will return 1.0 on both the client and server when this behavior is running, and 0.0 otherwise
+-   “_behavior.timer\_flag 2_”: Fires an event when this behavior starts, then waits for a duration before stopping. When stopping due to that timeout or due to being interrupted by another behavior, fires another event. _query.timer\_flag\_2_ will return 1.0 on both the client and server when this behavior is running, and 0.0 otherwise
+-   “_behavior.timer\_flag 3_”: Fires an event when this behavior starts, then waits for a duration before stopping. When stopping due to that timeout or due to being interrupted by another behavior, fires another event. _query.timer\_flag\_3_ will return 1.0 on both the client and server when this behavior is running, and 0.0 otherwise  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Script API**
+
+-   Added function _getWeather_
+-   Added the _chat(message: string)_ method
+-   Changed _ItemTypes.get_ to return _ItemType | undefined_
+-   Changed _source_ on _ItemDefinitionTriggeredAfterEvent_ to be optional
+-   Added the following methods to _Player_
+    -   _above(steps?: number): Block | undefined;_
+    -   _below(steps?: number): Block | undefined;_
+    -   _north(steps?: number): Block | undefined;_
+    -   _east(steps?: number): Block | undefined;_
+    -   _south(steps?: number): Block | undefined;_
+    -   _west(steps?: number): Block | undefined;_
+    -   _offset(offset: Vector3): Block | undefined;_
+    -   _center(): Vector3;_
+    -   _bottomCenter(): Vector3;_
+    -   Made getItemStack function return ItemStack or undefined
+-   BlockStates
+    -   Made get function return BlockStateType or undefined
+-   getSculkSpreader
+    -   Made _getSculkSpreader_ return SculkSpreader or undefined
+-   Updated _ExplosionAfterEvent_ and _ExplosionBeforeEvent_
+    -   _getUpdatedBlocks()_ will now return _Block\[\]_
+    -   _setUpdatesBlocks(blocks: Block\[\])_ now takes in a _Block\[\]_
+-   Added the following methods to _Player_ playMusic(trackId: string, musicOptions?: MusicOptions): void; queueMusic(trackId: string, musicOptions?: MusicOptions): void; stopMusic(): void;
+-   Dynamic Properties
+    -   Property registration is no longer required and _propertyRegistry_ has been removed from the _worldInitialize_ event
+    -   Removed limits on the count and size of properties that can set on an entity or the world
+    -   Default values have been removed. _getProperty_ will now always return undefined for unset properties
+    -   String dynamic property values are now restricted to a length of 32767 bytes
+-   Dynamic Properties
+    -   Removed function _removeDynamicProperty_ - Please use _setDynamicProperty_ with a value of _undefined_ to remove a property
+    -   Added function _getDynamicPropertyIds_ - Returns an array of all dynamic property ids on an entity/world used by the behavior pack
+    -   Added function _getDynamicPropertyTotalByteCount_ - Returns the total number of bytes used by all dynamic properties on an entity/world by the behavior pack
+    -   Added function _clearDynamicProperties_ - Removes all dynamic properties added by this behavior pack from an entity/world
+-   Dynamic Properties
+    -   Dynamic property numbers are now stored with double precision (64 bits)
+-   Adding PlayerInteractWithBlock + PlayerInteractWithEntity before & after events
+-   Adding PlayerDimensionChangeBeforeEvent and PlayerDimensionChangeAfterEvent in beta
+-   Added _matches_ function called on an entity, which takes in _EntityQueryOptions_ and returns true if the entity matches and false otherwise
+-   Added _PlayerLeaveBeforeEvent_ - This event fires when a player leaves the server, before the Player object is removed

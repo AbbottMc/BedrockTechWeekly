@@ -1,0 +1,170 @@
+
+
+-   System Events
+    -   Further separation of events into distinct before\* and after\* handling, with some restrictions on the execution of state updates in a before event:
+    -   All before events moved from _world.events_ into _world.beforeEvents property_. The "before" prefix has been removed. Functions that alter world state are prohibited in before event callbacks. Read-only methods and properties are allowed. Set methods are limited to the event object itself. Any use of restricted methods and properties will throw an exception.
+    -   For example, _system.events.beforeWatchdogTerminate_ is now considered a "before" event. Functions that alter world state are prohibited in before event callbacks. Read-only methods and properties are allowed. Set methods are limited to the event object itself. Any use of restricted methods and properties will throw an exception
+    -   For example, _system.events.scriptEventReceived_ is now considered an "after" event. After event callbacks are executed in a deferred manner. Using _/scriptEvent_ something will queue script to execute at a later point
+-   Renamed Scripting Events
+    -   Before Events renamed to _\*BeforeEvent_ and event signals renamed to _\*BeforeEventSignal_
+        -   Example: _BeforeItemUseEvent_ renamed to _ItemUseBeforeEvent_ and _BeforeItemUseEventSignal_ renamed to _ItemUseBeforeEventSignal_
+    -   Other events renamed to _\*AfterEvent_ and event signals renamed to _\*AfterEventSignal_
+        -   Example: _WeatherChangedEvent_ renamed to _WeatherChangedAfterEvent_ and _WeatherChangedEventSignal_ renamed to _WeatherChangedAfterEventSignal_
+    -   _chat_ event renamed to _chatSend_
+        -   _world.events.beforeCha_t renamed to _world.events.beforeChatSend_
+        -   _world.events.chat_ renamed to _world.events.chatSend_
+        -   _BeforeChatEvent_ renamed to _ChatSendBeforeEvent_
+        -   _BeforeChatEventSignal_ renamed to _ChatSendBeforeEventSignal_
+        -   _ChatEvent_ renamed to _ChatSendAfterEvent_
+        -   _ChatEventSignal_ renamed to _ChatSendAfterEventSignal_
+-   Fixed a bug where _BlockPermutation.resolve()_ would fail to resolve custom block properties
+-   Renamed _Entity.scoreboard_ to _Entity.scoreboardIdentity_
+-   Item Events
+    -   The _ItemStartUseOnEvent_ now only fires for the first block that is interacted with when performing a build action
+    -   The _ItemUseOnEvent_ now only fires if the item is successfully used on a block
+    -   _ItemUseOnEvent_ property _blockLocation: Vec3_ has been changed to _block: Block_
+    -   _ItemStartUseOnEvent_ property _blockLocation: Vec3_ has been changed to _block: Block_
+    -   _ItemStopUseOnEvent_ property _blockLocation: Vec3_ has been changed to _block: Block_
+    -   _ProjectileHitEvent_ property _faceLocation: Vec2_ has been changed to _faceLocation: Vec3_ - This position is relative to the bottom north-west corner of the block
+    -   _ItemUseOnEvent_ property _faceLocation: Vec2_ has been changed to _faceLocation: Vec3_ - This position is relative to the bottom north-west corner of the block
+-   Entity
+    -   Added interface _teleportOptions {dimension?: Dimension, rotation?: Vector2, keepVelocity?: boolean, facingLocation?: Vector3, checkForBlocks?: boolean}_
+    -   Added interface _Vector2 {x: number, y: number}_
+    -   Added function t_ryTeleport(location: Vector3, teleportOptions?: teleportOptions) : boolean_ - Attempts to teleport the entity and returns false if the entity is unable to teleport safely (blocks surrounding teleport location or unloaded chunk)
+    -   Changed function _teleport_ to _teleport(location: Vector3, teleportOptions?: teleportOptions) : void_ - Teleports an entity
+    -   Changed function _setRotation_ to _setRotation(rotation: Vector2) : void_ - Sets the entity's rotation
+    -   Changed function _getRotation_ to _getRotation() : Vector2_ - Gets the entity's rotation
+    -   Updated function _addTag(tag: string): boolean_ - The tag must be less than 256 characters
+    -   Updated method _kill_ to return boolean instead of void. If return value is true, entity can be killed, otherwise false
+-   Added interface _EntityApplyDamageOptions_. Additional options about the source of damage to use as input in Entity._applyDamage_
+-   Added interface _EntityApplyDamageByProjectileOptions_. Additional options about the source of damage to use as input in _Entity.applyDamage_ in case of projectile damage
+    -   Updated method _applyDamage_. Renamed parameter source to options. Parameter type also changed from _EntityDamageSource_ to _EntityApplyDamageOptions | EntityApplyDamageByProjectileOptions_
+-   SimulatedPlayer
+    -   Changed function _getHeadRotation_ to _getHeadRotation() : Vector2_ - Gets the simulated players head rotation
+-   _TitleDisplayOptions_ will now accept floating point values
+-   Added new _WorldSoundOptions_ and _PlayerSoundOptions_ interface types for use with the _world.playSound_ and _player.playSound_ respectively
+    -   _World.playSound_ now requires a _location_ argument
+    -   When calling _playMusic_ and _queueMusic_, an error will now be thrown if _musicOptions.volume_ is less than 0.0
+    -   When calling _playMusic_ and _queueMusic_, an error will now be thrown if _musicOptions.fade_ is less than 0.0
+    -   When calling _playSound_, an error will now be thrown if _soundOptions.pitch_ is less than 0.01
+    -   When calling _playSound_, an error will now be thrown if _soundOptions.volume_ is less than 0.0
+-   Entity objects now persist across dimension changes and chunk reloading. This means that if you have a reference to an invalid Entity, it will become usable once the Entity has been transferred or reloaded. You can check whether an Entity is loaded or unloaded by reading its _lifetimeState_ property
+-   Added read-only property _lifetimeState_ - Returns the lifetime state of the Entity. Valid values include "loaded" and unloaded"
+-   ItemDefinitionTriggeredEvent
+    -   Renamed property _item_ to _itemStack_
+-   ItemStartUseOnEvent
+    -   Renamed property _item_ to _itemStack_
+    -   Replaced function _getBlockLocation_ with read-only property _blockLocation: Vector3_
+    -   Removed function _getBuildBlockLocation_
+-   ItemStopUseOnEvent
+    -   Renamed property _item_ to _itemStack_
+    -   Replaced function _getBlockLocation_ with read-only property _blockLocation: Vector3_
+-   ItemUseEvent
+    -   Renamed property _item_ to _itemStack_
+-   ItemUseOnEvent
+    -   Renamed property _item_ to _itemStack_
+    -   Replaced function _getBlockLocation_ with read-only property _blockLocation: Vector3_
+    -   Replaced properties _faceLocationX_ and _faceLocation_ with read-only property _faceLocation: Vector2_
+-   BlockHitInformation
+    -   Replaced properties _faceLocationX_ and _faceLocation_ with read-only property _faceLocation: Vector2_
+-   After Events
+    -   All non-before events have been moved from _world.event_s to _world.afterEvents_
+    -   _events_ has been removed from the _world_ object
+    -   After events do not execute immediately, instead they are deferred until a later point in the tick when they are flushed. It is guaranteed that all events fired in a tick are flushed within a tick
+-   Fixed a bug where modified equipment and container slots were not being synced to clients
+-   _@minecraft/server_
+    -   Renamed _BlockProperties_ to _BlockStates_
+    -   Renamed _BlockPermutation.getAllProperties_ to _BlockPermutation.getAllStates_
+    -   Renamed _BlockPermutation.getPropert_y to _BlockPermutation.getState_
+-   Added class _EffectTypes_
+    -   Added function _get(identifier: string): EffectType_ - Returns the effect type if it exists
+    -   Added function _getAll(): EffectType\[\]_ - Returns all of the effects
+-   Updated class _Effect_
+    -   Updated _duration_ property. Is the duration of the effect in ticks
+    -   Added property _typeId_. Returns the effect’s type _id_
+-   Added interface _EntityEffectOptions { amplifier?: number, showParticles?: boolean }_
+-   Added function _Entity.removeEffect(effectType: EffectType | string): boolean_ - Removes an effect from an Entity. Returns false if the effect is not found or does not exist
+-   Updated function _Entity.getEffect(effectType: EffectType | string): Effect | undefined_ - Gets the effect if it exists on the entity. Otherwise returns undefined
+-   Updated function _Entity.addEffect(effectType: EffectType | string, duration: number, options?: EntityEffectOptions): boolean_ - Adds an effect to the Entity. Returns false if the effect cannot be added (If the effect does not exist, the duration is negative)
+-   New APIs moved from beta to stable @minecraft/server 1.2.0:
+    -   Moving _applyDamage(amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions): boolea_n to _1.2.0_
+    -   Moving _kill(): boolean_ to _1.2.0_
+    -   Moving _EntityApplyDamageOptions_ to _1.2.0_
+    -   Moving _EntityApplyDamageByProjectileOptions_ to _1.2.0_
+    -   Moving _EntityDamageCause_ to _1.2.0_
+    -   Moving _addTag(tag: string)_ to _1.2.0_
+    -   Moving _removeTag(tag: string)_ to _1.2.0_
+    -   Moving _hasTag(tag: string)_ to _1.2.0_
+    -   Moving _getTags()_ to _1.2.0_
+    -   Moved _Container,_ _BlockInventoryComponent, a_nd _EntityInventoryComponent_ to _1.2.0_
+    -   Moved Music APIs from beta to stable
+    -   Moved Sound APIs from beta to stable
+    -   Moved _ModalFormData_, _MessageFormData_, and _ActionFormData_ to _1.0.0_
+    -   Fixed bug in response of _MessageFormResponse_ where selection was inverted from which button was selected. button1 now refers to the left button and results in a selection of 0 and button2 now refers to the right button and results in a selection of 1
+    -   Moved _ItemStack_ constructor and getter APIs to _1.2.0_
+    -   Moved _EntityItemComponent_, _ItemComponent_, _ItemType_, and _ItemLockMode_ to _1.2.0_
+    -   Moving _applyImpulse(vector: Vector3): void_ to _1.2.0_
+    -   Moving _applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void_ to _1.2.0_
+    -   Moving _clearVelocity(): void_ to _1.2.0_
+    -   Moved _runCommand_ from beta to _1.2.0_
+    -   Moving _getComponent(componentId: string): EntityComponent | undefined_ method to _1.2.0_
+    -   Moving _getComponents(): EntityComponent\[\]_ method to _1.2.0_
+    -   Moving _hasComponent(componentId: string): boolean_ method to _1.2.0_
+    -   Moving _EntityComponent_ class to _1.2.0_
+    -   Moving _EntityBaseMovementComponent_ class to _1.2.0_:
+        -   Moving readonly _maxTurn_: number property to _1.2.0_
+        -   Moving the following additional _EntityBaseMovementComponent_ subclasses to _1.2.0_:
+            -   _EntityMovementAmphibiousComponent_
+            -   _EntityMovementBasicComponent_
+            -   _EntityMovementFlyComponent_
+            -   _EntityMovementGenericComponent_
+            -   _EntityMovementHoverComponent_
+            -   _EntityMovementJumpComponent_
+            -   _EntityMovementSkipComponent_
+    -   Renamed _EntityIsDyableComponent_ class to EntityIsDyeableComponent and moved to _1.2.0_
+    -   Moving the following additional _EntityComponent_ subclasses to _1.2.0_:
+        -   _EntityCanClimbComponent_
+        -   _EntityCanFlyComponent_
+        -   _EntityCanPowerJumpComponent_
+        -   _EntityColorComponent_
+        -   _EntityFireImmuneComponent_
+        -   _EntityFloatsInLiquidComponent_
+        -   _EntityFlyingSpeedComponent_
+        -   _EntityFrictionModifierComponent_
+        -   _EntityGroundOffsetComponent_
+        -   _EntityIsBabyComponent_
+        -   _EntityIsChargedComponent_
+        -   _EntityIsChestedComponent_
+        -   _EntityIsHiddenWhenInvisibleComponent_
+        -   _EntityIsIgnitedComponent_
+        -   _EntityIsIllagerCaptainComponent_
+        -   _EntityIsSaddledComponent_
+        -   _EntityIsShakingComponent_
+        -   _EntityIsShearedComponent_
+        -   _EntityIsStackableComponent_
+        -   _EntityIsStunnedComponent_
+        -   _EntityIsTamedComponent_
+        -   _EntityMarkVariantComponent_
+        -   _EntityPushThroughComponent_
+        -   _EntityScaleComponent_
+        -   _EntitySkinIdComponent_
+        -   _EntityVariantComponent_
+        -   _EntityWantsJockeyComponent_
+-   Enchantments
+    -   Removed MinecraftEnchantmentTypes class. Use MinecraftEnchantmentTypes from @minecraft/vanilla-data module for minecraft version specific information.
+    -   Added support for "strings" in all Enchantment methods for specifying the enchantment type
+-   source on _ExplosionBeforeEvent_ is now an optional property because explosions may not have a source
+-   Tameable Component
+    -   Removed unimplemented _tameEvent_ from _TameableComponent_
+-   Updated API to better handle operations outside of loaded and ticking areas
+-   PositionInUnloadedChunkError: Exception thrown when trying to interact with a Block object that isn't in a loaded and ticking chunk anymore
+-   PositionOutOfWorldBoundariesError: Exception thrown when trying to interact with a position outside of dimension height range
+-   Dimension
+    -   _getBlock_ now returns an optional Block to reflect it might return 'undefined' if asking for a block at an unloaded chunk
+-   Signs
+    -   Added optional _SignSide_ parameter to functions set_T_ext, _getText_, _getRawText_, _setTextDyeColor_, and _getTextDyeColor_ on _BlockSignComponent_ to support getting and setting text and colors on both sides of signs
+    -   Added _isWaxed_ property to _BlockSignComponent_ indicating whether players can edit the sign or not
+    -   Added _setWaxed_ method to _BlockSignComponent_ to block players from editing the sign
+-   _runCommand_ and _runCommandAsync_ on _Dimension_ and _Entity_ can now fail with a _CommandError_
+    -   _runCommand_ can throw a _CommandError_ exception
+    -   _runCommandAsync_ will pass a _CommandError_ into the reject handler

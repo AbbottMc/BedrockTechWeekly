@@ -1,0 +1,85 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   “sapling” block is now split into unique instances: “oak\_sapling”, “spruce\_sapling”, “birch\_sapling”, “jungle\_sapling”, “acacia\_sapling” and “dark\_oak\_sapling”.
+-   “coral\_fan” block is now split into unique instances: “tube\_coral\_fan”, “brain\_coral\_fan”, “bubble\_coral\_fan”, “fire\_coral\_fan” and “horn\_coral\_fan”
+
+## Cameras
+
+-   Added the “extend\_player\_rendering” camera component which allows for players (and any entities they are connected to through riding and leashes) to be rendered even if they are beyond the max entity render distance
+-   Added “extend\_player\_rendering” component to the “minecraft:free” camera
+    -   This component is intended to be an enhancement and improvement to current functionality and as such will be “set to true” by default
+    -   Setting this component to false will remove the added rendering capability. Documentation will be undated prior to release
+-   The server now sends chunks and actors around the camera to the client if that information already exists on the server even when the camera is placed far away from the player
+
+## Components
+
+-   The “interact” component’s fields “equip\_item\_slot” and “drop\_item\_slot” now support both armor and inventory slots:
+    -   Armor slots are specified as ‘slot.armor.head’, ‘slot.armor.chest’, ‘slot.armor.legs’, and ‘slot.armor.feet’
+    -   Inventory slots are specified as positive numbers, now expressed as strings
+    -   This change requires a world version of 1.20.80 or higher
+-   Added “repair\_entity\_item” field to the “interact” component, which allows to repair an item in one of the entity’s inventory or armor slots
+
+## Editor
+
+-   Added support for addImage to property pane
+-   Added icon property to IPropertyItemOptionsButton API to display icons in buttons
+-   Added the concept of WidgetManager and CustomWidget - allowing the server to instantiate in-world widgets which should facilitate manipulation of world tools. We currently only support CustomWidgets (which are server driven Custom Entities)
+-   Adjusted default editor UI scale to optimize screen space
+
+## Entity Filters
+
+-   Added new entity filter “is\_sitting”, which checks if the entity is sitting
+-   Added new entity filter “has\_damaged\_equipment”, which checks if the entity has a certain damaged piece of equipment in the specified slot
+
+## Molang
+
+-   Added new query “query.armor\_slot\_damage”, which returns the damage value of the armor item in the specified slot
+
+## Stability and Performance
+
+-   Removed _FilterTextPacket_  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Blocks
+
+-   Added ‘minecraft:custom\_components’ block component under the Beta APIs feature flag
+
+## Commands
+
+-   Fixed /hud command so that changes only effect the targeted player(s)
+
+## Graphical
+
+-   Partially fixed full block shapes (e.g. Redstone Lamps, Froglights, Glowstone, etc.) that are marked as point lights in resource packs in the Deferred Technical Preview. They can still be turned into point lights, but will not have occlusion/shadows
+-   Added a dedicated quality slider for Point Light Shadows in the Deferred Video Settings menu
+-   Added a new feature to the lighting model in the Deferred Technical Preview: Sub Surface Scattering. This effect approximates rays of light passing through translucent surfaces. For now, this feature is limited to only affect Leaves
+-   Increased the contrast and saturation of the world in the Deferred Technical Preview
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

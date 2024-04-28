@@ -1,0 +1,55 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Fixed some places in documentation generation where elements were accidentally overwritten. This caused a minor amount of documentation to appear or move in the Animations, Blocks, Entities, and Particles files 
+
+## Blocks
+
+-   Updated block geometry to allow uv rotations
+    -   This allows you to rotate the specified uv rect in 90 degree increments before applying it to a block face
+    -   Supported from _minecraft:geometry_format version 1.21.0 and up 
+-   Added pivot for scale in the Block Transformation Component
+-   Added pivot for rotation in the Block Transformation Component 
+
+## Documentation
+
+-   Documentation for version v1.13.0 of "Decoration Features" is now up to date
+
+## Editor
+
+Editor is now in v0.6 with the following new features:
+
+-   New Panel Layout – panels can be toggled, resized, and support auto-hide
+-   Widget Framework – editor extensions can now use custom entities and animations to mark information within the world
+-   Global Block Hotbar + Picker – customize and swap between your most common blocks to build even faster
+-   Brush Shape Framework – use our resizable brush shapes to quickly modify the world or add your own with editor extensions
+-   Summon Tool – quickly create, move, rotate, and delete entities
+-   Line Tool – build parkour maps, bridges, roads with our new line tool
+-   Improved performance, bug fixes, and many more!
+
+See the full changelog for our v0.6 release on the [Editor GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) page!
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Fixed heightmap textures not rendering correctly in the Deferred Technical Preview

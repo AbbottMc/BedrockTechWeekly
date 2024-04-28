@@ -1,0 +1,55 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Blocks**
+
+-   Changing the _brightness\_gamma_ value for blocks now darkens the block correctly ([MCPE-167836](https://bugs.mojang.com/browse/MCPE-167836))
+
+## **Components**
+
+-   Added a "drop\_item\_slot" field to the "interact" component, which allows to specify an inventory slot to remove and drop items from
+
+## **Editor**
+
+-   Tool Test World was moved from toolrail and is now under menu World Options
+
+## **Graphical**
+
+-   Fixed a crash that could occur when players placed or destroyed any block and then Save & Quit with Ray Tracing enabled
+
+## **Stability and Performance**
+
+-   Send "material" for vanilla data-driven blocks in the StartGamePacket blockProperties. "block\_id" is also moved to the "vanilla\_block\_data" object
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Graphical**
+
+-   Adjusted the falloff of point light sources (e.g., torches, lanterns, etc...) to use a square, Manhattan-based distance metric in the Deferred Technical Preview.
+-   Tinted ambient light color with point light color for better multi-colored lighting over large distances in the Deferred Technical Preview
+
+## **Scripting**
+
+-   Fixed issue where _ActionFormData_ buttons could not be clicked if there were more than 255 buttons in the form

@@ -1,0 +1,43 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Converted _"properties"_ to _"states"_ for custom blocks
+-   Fix a crash that could happen when running the _“go\_and\_give\_items\_to\_noteblock”_ goal 
+-   Fixed a crash that could occur when attempting to change a mob’s scale while it was colliding with blocks ([MCPE-170645](https://bugs.mojang.com/browse/MCPE-170645))
+
+## **Dedicated Server** 
+
+-   **Note for Linux users:** Ubuntu 18.04 LTS (Bionic Beaver) will reach End of Standard Support in 2023. Accordingly, the Linux Minecraft Dedicated Server will also raise its minimum target Ubuntu version to 20.04 LTS (Focal Fossa) in a later R20 update (exact release to be determined). Minecraft server operators using Ubuntu are encouraged to prepare for this transition by updating their deployments to 20.04 LTS as soon as possible. 
+
+## **Items**
+
+-   Items with the _"minecraft:block\_placer"_ component will now place blocks with correct orientation 
+-   Released the _"minecraft:max\_stack\_size"_ item component out of experimental in json formats 1.20.10 and higher
+-   Custom items with _"minecraft:block\_placer"_ will no longer place certain blocks in the wrong location 
+-   Released the _"minecraft:block\_placer"_ item component out of experimental in json formats 1.20.10 and higher
+-   Released the _"minecraft:record"_ item component out of experimental in json formats 1.20.10 and higher
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Camera**
+
+-   Limit free cam JSON to not pitch camera beyond plus or minus 90 degrees
+-   Fixed /_camerashake_ command to shake camera without also shaking player
+-   Rendering of experimental minecraft:free camera no longer affected by player state like night vision

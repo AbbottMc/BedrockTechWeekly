@@ -1,0 +1,55 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Blocks**
+
+-   Added the ability for data-driven blocks to remove faces in the geometry when abutting a full and opaque block. A new field has been added to the Block Geometry Component, which references a new Culling .json file (found in the resource pack block\_culling directory) that sets up culling rules for the tessellated geometry 
+
+## **Dimension API**
+
+-   _setWeather_ method argument duration now uses _ArgumentOutOfBoundsError_ Error type
+
+## **Editor**
+
+The Editor and its [corresponding API](https://aka.ms/EditorAPI) are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor**.
+
+Learn [how to use](https://www.aka.ms/LearnEditor) the Editor, join the [GitHub Discussion forum](https://github.com/Mojang/minecraft-editor/discussions) to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Update this week:
+
+-   Fixed a bug where submenu items were incorrectly added to the root level upon refreshing the editor screen
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Commands**
+
+-   Healthbar of mounted rideable mobs is now properly displayed ([MCPE-177696](https://bugs.mojang.com/browse/MCPE-177696))
+-   Execute command now fails when comparing unloaded blocks ([MCPE-177195](https://bugs.mojang.com/browse/MCPE-177195))
+-   Hud command now works as expected – the /hud command allows creators to show/hide each element individually as well as show/hide all. Hiding one element no longer hides 'all' elements.
+
+## **Graphical**
+
+-   Fixed an issue causing caves to appear illuminated by the sun (aka “Light Leaking”) in the Deferred Technical Preview
+-   Volumetric fog is no longer affected by sunlight in enclosed spaces in the Deferred Technical Preview

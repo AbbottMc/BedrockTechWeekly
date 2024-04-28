@@ -1,0 +1,84 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Add-Ons and Script Engine**
+
+-   Added deprecation error message for the _part\_visibility_component (the _bone\_visibility_ field in the geometry component should be used instead, see block documentation for more information)
+-   Fixed an issue where adding a _minecraft:peek_component to a custom entity would cause the game to crash
+
+## **Blocks**
+
+-   Updated the "minecraft:geometry" block component to allow bone visibility to be defined with a Molang expression
+
+## **Commands**
+
+-   Executing the "inputpermission set" command will now output a message to the chat with the results ([MCPE-168368](https://bugs.mojang.com/browse/MCPE-168368))
+-   Executing the "inputpermission set" command will now result in an error if it does not affect any players
+-   Command positions will now use the current position/rotation when running mcfunctions via execute
+-   Fixed issue where some execute commands stopped working on Realms ([MCPE-169974](https://bugs.mojang.com/browse/MCPE-169974))
+-   The "hasitem" target selector argument now counts items held with the cursor ([MCPE-152002](https://bugs.mojang.com/browse/MCPE-152002))
+-   Commands will still work with "concrete", but "concrete" won't be suggested in the command prompt, rather the new names will
+    -   "concrete" block is now split into unique instances, namely "white\_concrete", "orange\_concrete", "magenta\_concrete", "light\_blue\_concrete", "yellow\_concrete", "lime\_concrete", "pink\_concrete", "gray\_concrete", "light\_gray\_concrete", "cyan\_concrete", "purple\_concrete", "blue\_concrete", "brown\_concrete", "green\_concrete", "red\_concrete", and "black\_concrete"
+-   Java Parity: Block states in commands will use equals instead of colon in version 1.20.0 and later. For example using the setblock command: /setblock ~ ~ ~ oak\_log\["pillar\_axis"="x"\] ([MCPE-168056](https://bugs.mojang.com/browse/MCPE-168056))
+-   Block states with equals don't require a space to show autocomplete options ([MCPE-168056](https://bugs.mojang.com/browse/MCPE-168056))
+
+## **Components**
+
+-   Added a content error when _minecraft:balloonable_ is used on _minecraft:player_ to prevent issues as this component is not supported in this way ([MCPE-164495](https://bugs.mojang.com/browse/MCPE-164495))
+
+## **Editor**
+
+The Editor is in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Learn [how to use](https://aka.ms/LearnEditor) the Editor and join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum, post bugs, view more detailed release notes. Tag us on social channels with **#BedrockEditor.**
+
+-   Resolved an issue where the selection cursor was causing the glass block to render invisible
+-   Added Log Panel for Tool mode to display log messages. It can be accessed from the _View_menu or by using the _CTRL+H_ shortcut
+-   Fixed a bug that prevented additional servers to be added from Servers Tab in Editor mode
+-   Fixed a bug that caused the gizmo to be hidden in Crosshair Mode
+
+## **Items**
+
+-   Released the _minecraft:cooldown_ item component out of experimental in json formats 1.20.10 and higher
+-   Released the _minecraft:repairable_ item component out of experimental in json formats 1.20.10 and higher
+
+## **Stability and Performance**
+
+-   Invalid JSON objects within the entity component _"minecraft:behavior.nearest\_attackable\_target"_ will no longer crash the game ([MCPE-168129](https://bugs.mojang.com/browse/MCPE-168129))
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Add-Ons and Script Engine**
+
+-   Camera Presets can now specify _"listener":"player"_ to have the audio system use the player position for audio positioning
+    -   Added _"example:example\_player\_listener"_ Camera Preset to demonstrate this option
+
+## **Items**
+
+-   Items with the "minecraft:block\_placer" component will now place blocks with correct orientation
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Camera**
+
+-   Changed camera command fade color to take integer values from 0 to 255 rather than 0.0 to 1.0 fractional values
+-   Camera fade command now enforces fade duration limits; fade in, hold, and fade out must be between 0 and 10 seconds
+-   Ensuring camera pitch can only be between -90 and 90 degrees when using the /camera command
+-   Fixed an issue where Minecraft Education players could not use the "/give" command to give a Camera item
+
+## **Items**
+
+-   Items in format version 1.20.10 and above with the _”minecraft:throwable”_ component will trigger Item Use events when thrown
+-   Custom items with _"minecraft:block\_placer"_ will no longer place certain blocks in the wrong location
+-   Changed _"minecraft:shooter"_ to only consume ammo when charging the item if _"charge\_on\_draw"_ is set "_true_"

@@ -1,0 +1,56 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Editor**
+
+-   Fixed bug where Editor could be accessed during a regular gameplay session
+
+## **General**
+
+-   Fix "get\_equipped\_item\_name" Molang query not being able to return the old name of some flattened items, eg. red\_wool to wool
+
+## **Entities**
+
+-   Introduced new entity filters "all\_slots\_empty" and "any\_slot\_empty" to allow searching for empty item slots in a designated equipment location ([MCPE-153909](https://bugs.mojang.com/browse/MCPE-153909))
+
+## **Graphical**
+
+-   Fixed a crash when enabling ray tracing in ray tracing compatible content that was loaded into with ray tracing turned off ([MCPE-168894](https://bugs.mojang.com/browse/MCPE-168894))
+
+## **Items**
+
+-   Custom items with 'minecraft:durability' and 'minecraft:repairable' can be combined to repair them without requiring a custom item entry
+
+## **Recipes**
+
+-   Fixed incorrect content warnings for recipes that use the same blocks but with different data ([MCPE-168717](https://bugs.mojang.com/browse/MCPE-168717))
+
+## **Components**
+
+-   Attribute "speed\_multiplier" in the "minecraft:boostable" component is now being parsed correctly from json file. Old behavior is maintained for "format\_version" lower than 1.20 with 1.35 value rather than what the json file specifies ([MCPE-164424](https://bugs.mojang.com/browse/MCPE-164424))
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Add-Ons**
+
+-   Added "minecraft:facing\_direction" state to the "minecraft:placement\_direction" block trait.
+    -   "minecraft:facing\_direction" is a six value integer state (down, up, south, west, north, east)
+    -   Can enable and access this state on blocks through the "minecraft:placement\_direction" trait
+    -   Can access the "minecraft:cardinal\_direction" state on blocks that apply the "minecraft:placement\_direction" trait in block\_property Molang queries and set\_block\_property EventResponses
+-   Pumpkin blocks use state "minecraft:cardinal\_direction" instead of "direction"
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

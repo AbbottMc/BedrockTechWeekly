@@ -1,0 +1,110 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+### **Editor**
+
+-   Added eventing support for _ExtensionContext_ API
+
+-   Added new after event _ModeChangeAfterEvent_ and signal _ModeChangeAfterEventSignal_
+
+-   Fixed a bug where Cube Brush preview wasn't getting cleared when swapping to Crosshair mid-brush painting 
+
+## Add-Ons and Script Engine
+
+-   Improved some of the common scripting error messages to provide better context and information
+
+## Animations
+
+-   Fixed unreliability around _query.is\_alive_ on Server
+
+## Blocks
+
+-   Blocks with the "minecraft:cardinal\_direction", "minecraft:facing\_direction", or "minecraft:block\_face" states as part of the "minecraft:placement\_direction" or "minecraft:placement\_position" BlockTraits are rotated/mirrored properly by Structure Blocks
+-   Structure Void blocks once again prevents interaction with blocks and entities placed behind them ([MCPE-175237](https://bugs.mojang.com/browse/MCPE-175237 "https://bugs.mojang.com/browse/MCPE-175237"))
+-   "planks" block is now split into unique instances "oak\_planks", "spruce\_planks", "birch\_planks", "jungle\_planks", "acacia\_planks", "dark\_oak\_planks"
+-   Commands will still work with "planks", however, "planks" block will not be suggested 
+-   "stone" block is now split into unique instances: "stone", "granite", "polished\_granite", "diorite", "polished\_diorite", "andesite" and "polished\_andesite" 
+
+## Cameras
+
+-   Added a content warning for when the camera is placed outside of the player's chunk radius 
+
+## AI Goal Components
+
+-   Added "minecraft:behavior.melee\_box\_attack" behavior which functions the same as "minecraft:behavior.melee\_attack" but uses bounds based attack reach calculations
+
+-   The _reach\_multiplier_ attribute is removed and replaced with _box\_increase_
+-   Reach is calculated by increasing the bounds of the attacking mobs in the xz-plane by _box\_increase_ blocks to create an "attack box". If the attack box intersects with the target's bounds the attacking mob can reach it
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Components
+
+-   Added "minecraft:can\_join\_raid" component to allow entities to join existing raids
+
+## Items
+
+-   Deprecated the "tag:" legacy item component and released the "minecraft:tags" item component out of experimental in json formats 1.20.50 and higher
+
+## Mobs
+
+-   Fixed an issue preventing mobs from spawning further than 6 chunks away from the nearest player even if the server's simulation range is larger than 6 chunks ([MCPE-102197)](https://bugs.mojang.com/browse/MCPE-102197)
+
+## Molang
+
+-   Fixed animation controller loading to use the pack's _min\_engine\_version_ rather than the file's _format\_version_ to determine the Molang Version. This fix applies to animation controllers in packs with a _min\_engine\_version_ of 1.20.50 or higher 
+-   The following Molang queries are Deprecated and will no longer be available in packs with a _min\_engine\_version_ of 1.20.50 or higher
+    
+    -   Replaced with _query.timer\_flag\_1_, set by _behavior.timer\_flag\_1_
+    
+    -   Replaced with _query.timer\_flag\_2_, set by _behavior.timer\_flag\_2_
+    
+    -   Replaced with _query.timer\_flag\_3_, set by _behavior.timer\_flag\_3_
+    
+    -   It was only used to adjust the head animation of the camel as it came out of dash cooldown
+    -   Camel animation uses _variable.dash\_cooldown\_progress_ in camel.entity.json now
+
+-   _query.is\_scenting_
+-   _query.is\_rising_
+-   _query.is\_feeling\_happy_
+-   _query.dash\_cooldown\_progress_
+
+## Stability and Performance
+
+-   Removed _CraftingEventPacket_
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Changed the Bloom toggle in the Deferred Graphics Video Settings to an intensity slider. The player can now configure bloom intensity to their liking. Bloom can still be disabled by setting the slider to 0
+-   Fixed fullscreen overlays not being displayed when being submerged in Lava and Powdered Snow in the Deferred Technical Preview
+-   Fixed missing Hoppers within Minecarts in the Deferred Technical Preview 
+-   Fixed an issue where certain light emitting blocks (e.g., Sea Lantern, Glowstone, Magma, etc...) could not be turned into point lights in the Deferred Technical Preview 
+-   Fixed the appearance of rain, snow, and other weather effects in the Deferred Technical Preview 
+-   Improved the quality of light sources over large distances in the Deferred Technical Preview 
+-   Balanced the brightness of light emitted from emissive-only blocks in the Deferred Technical Preview 
+
+## Performance and Stability
+
+-   Improved performance of directional lighting and shadows on Android and Xbox in the Deferred Technical Preview

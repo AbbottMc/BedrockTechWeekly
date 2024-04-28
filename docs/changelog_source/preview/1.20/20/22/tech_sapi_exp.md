@@ -1,0 +1,41 @@
+
+
+-   Added camera scripting APIs for the following APIs: 
+    -   _setCamera()_: to set the camera to a specified preset
+    -   _fade()_: to start a camera fade
+    -   _clear()_: to clear the current settings on the camera
+-   Released Scoreboard API's from beta to V1.4.0
+    -   Updated _Scoreboard.getObjective_, _getObjectiveAtDisplaySlot_, and _clearObjectiveAtDisplaySlot_ to return '| undefined'
+-   Removed _MinecraftBlockTypes_ defined in _@minecraft/server_
+-   Moved _ItemUseBeforeEvent_ to _1.4.0_
+-   Moved _ItemUseOnBeforeEvent_ to _1.4.0_
+-   Moved _ItemUseAfterEvent_ to _1.4.0_
+-   Moved _ItemUseOnAfterEvent_ to _1.4.0_
+-   Moved _ItemStartUseOnAfterEvent_ to _1.4.0_
+-   Moved _ItemStopUseAfterEvent_ to _1.4.0_
+-   Moved _ItemStopUseOnAfterEvent_ to _1.4.0_
+-   Moved _ItemCompleteUseAfterEvent_ to _1.4.0_
+-   Moved _ItemReleaseUseAfterEvent_ to _1.4.0_
+-   Moved _ItemStartUseAfterEvent_ to _1.4.0_
+-   Moved _DimensionLocation_ to _1.4.0_
+-   Renamed _PositionInUnloadedChunkError_ to _LocationInUnloadedChunkError_ and moved it to _1.4.0_
+-   Renamed _PositionOutOfWorldBoundariesError_ to _LocationOutOfWorldBoundariesError_ and moved it to _1.4.0_
+    -   Moved _getSpawnPoint_ to _1.4.0_
+    -   Moved _setSpawnPoint_ to _1.4.0_
+    -   Moved _getDefaultSpawnLocation_ to _1.4.0_
+    -   Moved _setDefaultSpawnLocation_ to _1.4.0_
+-   Released _isValid()_ from Beta to _1.4.0_ for the following classes:
+    -   _Block_
+    -   _Container_
+    -   _Entity_
+    -   _Player_
+    -   _SimulatedPlayer_
+-   WorldAfterEvents
+    -   Removed _projectileHit_
+    -   Added _projectileHitBlock_
+    -   Added _projectileHitEntity_
+-   Added class _ProjectileHitBlockAfterEvent_ export class:  
+    ProjectileHitBlockAfterEvent { readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getBlockHit(): BlockHitInformation; }
+-   Added class _ProjectileHitEntityAfterEvent_ export class:  
+    ProjectileHitEntityAfterEvent { readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getEntityHit(): EntityHitInformation; }
+-   Fixed a bug where _ContainerSlot_ would not work with certain container types ([MCPE-172782)](https://bugs.mojang.com/browse/MCPE-172782)

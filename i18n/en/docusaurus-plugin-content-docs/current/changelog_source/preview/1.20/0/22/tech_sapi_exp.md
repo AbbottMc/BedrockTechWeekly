@@ -1,0 +1,42 @@
+
+
+-   New APIs moved from beta to stable @minecraft/server 1.2.0:
+    -   Moving _applyDamage(amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions): boolean_to _2.0_
+    -   Moving _kill(): boolean_to _2.0_
+    -   Moving _EntityApplyDamageOptions_to _2.0_
+    -   Moving _EntityApplyDamageByProjectileOptions_to _2.0_
+    -   Moving _EntityDamageCause_to _2.0_
+    -   Moving _addTag(tag: string)_to _2.0_
+    -   Moving _removeTag(tag: string)_to _2.0_
+    -   Moving _hasTag(tag: string)_to _2.0_
+    -   Moving _getTags()_to _2.0_
+    -   Moved _Container_and _BlockInventoryComponent_ and _EntityInventoryComponent_ to _2.0_
+    -   Moved Music APIs from beta to stable
+    -   Moved Sound APIs from beta to stable
+    -   Moved _ModalFormData_, _MessageFormData_, and _ActionFormData_to _0.0_
+    -   Fixed bug in response of _MessageFormResponse_where _selection_ was inverted from which button was selected. _button1_ now refers to the left button and results in a _selection_ of 0 and _button2_ now refers to the right button and results in a _selection_ of 1
+    -   Moved _ItemStack_constructor and getter APIs to _2.0_
+    -   Moved _EntityItemComponent_, _ItemComponent_, _ItemType_and _ItemLockMode_ to _2.0_
+    -   Moving _applyImpulse(vector: Vector3): void_to _2.0_
+    -   Moving _applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void_to _2.0_
+    -   Moving _clearVelocity(): void_to _2.0_
+    -   Moved _runCommand_from beta to _2.0_
+-   Enchantments
+    -   Removed MinecraftEnchantmentTypes class. Use MinecraftEnchantmentTypes from @minecraft/vanilla-data module for minecraft version specific information.
+    -   Added support for "strings" in all Enchantment methods for specifying the enchantment type
+-   _source_on _ExplosionBeforeEvent_ is now an optional property because explosions may not have a source
+-   Tameable Component
+    -   Removed unimplemented _tameEvent_from _TameableComponent_
+-   Updated API to better handle operations outside of loaded and ticking areas
+-   PositionInUnloadedChunkError: Exception thrown when trying to interact with a Block object that isn't in a loaded and ticking chunk anymore
+-   PositionOutOfWorldBoundariesError: Exception thrown when trying to interact with a position outside of dimension height range
+-   Dimension
+    -   getBlock now returns an optional Block to reflect it might return 'undefined' if asking for a block at an unloaded chunk
+-   Signs
+    -   Added optional _SignSide_parameter to functions _setText_, _getText_, _getRawText_, _setTextDyeColor_, and _getTextDyeColor_ on _BlockSignComponent_ to support getting and setting text and colors on both sides of signs.
+    -   Added _isWaxed_property to _BlockSignComponent_ indicating whether players can edit the sign or not.
+    -   Added _setWaxed_method to _BlockSignComponent_ to block players from editing the sign.
+-   _runCommand_and _runCommandAsync_ on _Dimension_ and _Entity_ can now fail with a _CommandError_
+    -   _runCommand_can throw a _CommandError_ exception
+    -   _runCommandAsync_will pass a _CommandError_ into the reject handler
+

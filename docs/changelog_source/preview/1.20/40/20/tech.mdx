@@ -1,0 +1,88 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Changed the names of the _CameraSetOptions_ options to not include the word 'Script'
+
+## Commands
+
+-   Re-entering a world no longer breaks command autocomplete after a command using "@e\[type=item\]" was used ([MCPE-164734](https://bugs.mojang.com/browse/MCPE-164734))
+-   The /damage command with the "override" cause now causes damage through post hit invulnerability ([MCPE-160290](https://bugs.mojang.com/browse/MCPE-160290))
+-   The recipe command color has been changed to white instead of blue ([MCPE-173362](https://bugs.mojang.com/browse/MCPE-173362))
+
+## Components
+
+-   Added a content error when attempting to load a damage sensor with an invalid "cause" value 
+-   Allow single value parsing for "minecraft:icon" item component
+-   The Camel mob Dash Component can now be applied to rideable mobs other than Horse, Donkey, and Mule using “minecraft:dash”
+
+## Molang
+
+-   Molang updated to version 1.20.40 which replaces "block\_property" and "has\_block\_property" with "block\_state" and "has\_block\_state"
+    -   This is a Molang Versioned Change that only takes effect for Molang expressions in packs that use a min\_engine\_version of 1.20.40 or higher
+
+## Trade Tables
+
+-   Trade items now have a "filters" property to determine if a trade should be considered 
+-   Trade items no longer support the "biome" property to check villager biome types, the "is\_mark\_variant" filter can be used in the "filters" property instead to check the villager biome type
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Script API
+
+-   Added the _chat(message: string)_ method
+-   Changed _get_ to return _ItemType | undefined_
+-   Changed _source_ on _ItemDefinitionTriggeredAfterEvent_ to be optional
+-   Added the following methods to _Player_
+    -   _above(steps?: number): Block | undefined;_
+    -   _below(steps?: number): Block | undefined;_
+    -   _north(steps?: number): Block | undefined;_
+    -   _east(steps?: number): Block | undefined;_
+    -   _south(steps?: number): Block | undefined;_
+    -   _west(steps?: number): Block | undefined;_
+    -   _offset(offset: Vector3): Block | undefined;_
+    -   _center(): Vector3;_
+    -   _bottomCenter(): Vector3;_
+    -   Made getItemStack function return ItemStack or undefined
+-   BlockStates
+    -   Made get function return BlockStateType or undefined
+-   Updated _ExplosionAfterEvent_ and _ExplosionBeforeEvent_
+    -   _getUpdatedBlocks()_ will now return _Block\[\]_
+    -   _setUpdatesBlocks(blocks: Block\[\])_ now takes in a _Block\[\]_
+-   Added the following methods to _Player_ playMusic(trackId: string, musicOptions?: MusicOptions): void; queueMusic(trackId: string, musicOptions?: MusicOptions): void; stopMusic(): void;
+-   Dynamic Properties
+    -   Property registration is no longer required and _propertyRegistry_ has been removed from the _worldInitialize_ event
+    -   Removed limits on the count and size of properties that can set on an entity or the world
+    -   Default values have been removed. _getProperty_ will now always return undefined for unset properties
+    -   String dynamic property values are now restricted to a length of 32767 bytes
+-   Dynamic Properties
+    -   Removed function _removeDynamicProperty_ - Please use _setDynamicProperty_ with a value of _undefined_ to remove a property
+    -   Added function _getDynamicPropertyIds_ - Returns an array of all dynamic property ids on an entity/world used by the behavior pack
+    -   Added function _getDynamicPropertyTotalByteCount_ - Returns the total number of bytes used by all dynamic properties on an entity/world by the behavior pack
+    -   Added function _clearDynamicProperties_ - Removes all dynamic properties added by this behavior pack from an entity/world
+-   Dynamic Properties
+    -   Dynamic property numbers are now stored with double precision (64 bits)
+-   Adding PlayerInteractWithBlock + PlayerInteractWithEntity before & after events
+-   Adding PlayerDimensionChangeBeforeEvent and PlayerDimensionChangeAfterEvent in beta 
+
+## Graphical
+
+-   Soul Torches are now treated as point lights in the Deferred Technical Preview 
+-   Allow data-driving of point lights and their colors for any block via resource packs in the Deferred Technical Preview
+
+## Stability and Performance
+
+-   Improved chunk rendering performance in Deferred Technical Preview 
+
+## User Interface
+
+-   Fixed a bug where "PBR" was not included in HUD while in level using Deferred Technical Preview

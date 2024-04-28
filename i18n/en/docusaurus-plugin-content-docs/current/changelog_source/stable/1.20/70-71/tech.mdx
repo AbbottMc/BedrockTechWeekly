@@ -1,0 +1,129 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.20.70 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddonPacks)
+
+## **General**
+
+-   Implemented a fix for the “One Block Skyblock” Marketplace map generating flat world in the distance on the client if the map was uploaded on Realms
+    -   Clients connected to a dedicated server or Realms will no longer improperly generate LevelChunks on the client if one of the following is true:
+        -   The map is a flat world
+        -   It's a Marketplace map
+    -   This overrides server.properties setting client-side-chunk-generation-enabled for dedicated servers
+-   Removed _ItemFrameDropItemPacket_
+
+## **Commands**
+
+-   Added "has\_property" filter for entity target selector that allows for targeting based on the type and value of properties
+-   The /damage command no longer contains the damage type 'suicide'. It is replaced with 'self\_destruct' ([MCPE-174865](https://bugs.mojang.com/browse/MCPE-174865))
+-   The Command Block's interface will now remove the last error message after successfully compiling a command ([MCPE-114029](https://bugs.mojang.com/browse/MCPE-114029))
+
+## **Add-Ons and Script Engine**
+
+-   Blocks using the "minecraft:material\_instances" component with "render\_method" = "alpha\_test\_single\_sided" display properly when in the player's hand
+
+## **Blocks**
+
+-   Fixed 'minecraft:geometry.full\_block' faces not rotating to match transform component
+-   Fixed 'minecraft:geometry.full\_block' blocks not culling faces against some vanilla blocks
+-   “leaves” block is now split into unique names, “oak\_leaves”, “spruce\_leaves”, “birch\_leaves, and ”jungle\_leaves”
+-   “leaves2” block is now split into “acacia\_leaves” and “dark\_oak\_leaves”
+    -   Commands will still work with “leaves” and “leaves2”, but only new leaves names will be suggested in the command prompt
+-   The “minecraft:grass” block has been renamed to “minecraft:grass\_block”, the old name is still understood from commands and data
+-   “double\_wooden\_slab” block is now split into unique instances "acacia\_double\_slab", "birch\_double\_slab", "dark\_oak\_double\_slab", "jungle\_double\_slab", "oak\_double\_slab", "spruce\_double\_slab"
+    -   Commands will still work with “double\_wooden\_slab”, however, “double\_wooden\_slab” block will not be suggested
+-   “wooden\_slab” block is now split into unique instances “oak\_slab”, “spruce\_slab”, “birch\_slab”, “jungle\_slab”, “acacia\_slab”, “dark\_oak\_slab”
+    -   Commands will still work with “wooden\_slab”, however, “wooden\_slab” block will not be suggested
+-   "wood" block is now split into unique instances: "oak\_wood", "spruce\_wood", "birch\_wood", "jungle\_wood", "acacia\_wood", "dark\_oak\_wood", "stripped\_oak\_wood", "stripped\_spruce\_wood", "stripped\_birch\_wood", "stripped\_jungle\_wood", "stripped\_acacia\_wood", and "stripped\_dark\_oak\_wood"
+
+## **Components**
+
+-   The “entity\_sensor” component’s “range” field now supports two values, the first one for horizontal range and the second one for vertical range
+    -   This requires a “format\_version” of 1.20.70 or higher
+-   The "damage\_sensor" component's "damage\_modifier" and "damage\_multiplier" fields are now properly considered during damage immunity calculations, so that damage adjusted to be lesser or equal to the highest damage received during an entity's immunity period will be accurately ignored
+    -   This requires a world version of 1.20.70 or higher
+
+## **Entity Filters**
+
+-   Added new entity filter “was\_last\_hurt\_by”, which checks if the subject is the last player or mob to have recently attack the entity
+
+## **Items**
+
+-   Custom armor attachables can now be trimmed with vanilla trims, and modified vanilla patterns can be applied to custom armor attachables and items
+    -   Vanilla trim textures can be overridden via the attachable component
+    -   Vanilla trims can be applied to custom geo armor via the attachable component
+    -   Modified vanilla trim patterns (to fit the new geo armor) can be applied via the attachable component
+    -   Armor trim patterns on custom armor requires the 1.20.60+ format version for the attachable and item
+
+## **Molang**
+
+-   Released _is\_attached_ and _query.has\_player\_rider_ from experimental
+-   Removed experimental Molang queries _get\_ride_ and _query.get\_riders_
+-   Deprecated the Molang Features experimental toggle
+-   Released Molang _scoreboard_ for use with behavior packs from experimental (resource packs will return 0)
+-   Removed experimental Molang queries
+    -   biome\_has\_any\_tag
+    -   biome\_has\_all\_tags
+    -   self
+    -   target
+    -   client\_input\_type
+    -   get\_nearby\_entities
+    -   get\_nearby\_entities\_except\_self
+-   Added new Molang APIs that give read access to rider body and head rotations
+    -   rider\_body\_x\_rotation(riderIndex) =\> float
+    -   rider\_body\_y\_rotation(riderIndex) =\> float
+    -   rider\_head\_x\_rotation(riderIndex) =\> float
+    -   rider\_head\_y\_rotation(riderIndex,clampRotation?) =\> float
+    -   ride\_body\_x\_rotation =\> float
+    -   ride\_body\_y\_rotation =\> float
+    -   ride\_head\_x\_rotation =\> float
+    -   ride\_head\_y\_rotation(clampRotation?) =\> float
+-   _surface\_particle\_color_, _query.surface\_particle\_texture\_coordinate_, and _query.surface\_particle\_texture\_size_ are now versioned with 1.20.70 to allow the three queries to see Leaf blocks as the surface texture below the block. Molang versions lower than 1.20.70 will continue to not see the Leaf block below them
+-   This change takes effect for Molang queries in packs that have a manifest.json min\_engine\_version of 1.20.70 or higher.
+
+## **NBT Parsing**
+
+-   Loading of NBT data is now more restrictive. Negative-length arrays, invalid tag ids, and not enough bytes in a payload are now all treated as errors which will prevent a tag loading where before those conditions were sometimes ignored
+
+## **Spawn Rules**
+
+-   “minecraft:spawns\_on\_block\_filter” now supports block descriptors
+-   “minecraft:spawns\_on\_block\_prevented\_filter” now supports block descriptors
+-   “minecraft:spawns\_above\_block\_filter” now supports block descriptors
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Character Creator**
+
+-   Added a new model to contain the character creator animation logic
+-   Updated the logic that was done to trigger updating the binds when the animation states have been updated, so we do not run into issues with the binds updating every frame causing a major framerate hit  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Dimension**
+
+-   _getEntities_ now only returns the entities within the dimension that's being queried

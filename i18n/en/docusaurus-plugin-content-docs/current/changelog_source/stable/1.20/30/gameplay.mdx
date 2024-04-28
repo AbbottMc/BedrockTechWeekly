@@ -1,0 +1,333 @@
+**Posted:** September 19, 2023
+
+A new update has been released, bringing several changes to the game! Here are the highlights:
+
+-   Updated “You died” experience
+-   Players can now crawl under single block gaps
+-   A new "Recipe Unlocked" notification will now tell you when you've found a new crafting material
+-   Increased the amount of Diamond Ore found in the deepest parts of the world
+-   Adjustments to block destroy times and explosion resistance values
+-   Fixes to over 100 community reported issues
+
+Your thoughts on the game continue to shape new updates so please upvote and report any new bugs at [bugs.mojang.com](https://bugs.mojang.com) and leave us your feedback at [feedback.minecraft.net](https://feedback.minecraft.net/).  
+  
+
+# **New Features**
+
+## **Updated “You Died” Experience**
+
+Today we’re making some changes to the screen you see when you die in Minecraft. The camera now zooms out so it’s easier to see why you died, the hotbar is visible at all times, and you can change certain settings before respawning.
+
+![you-died.png](https://feedback.minecraft.net/hc/article_attachments/19671519855117)
+
+These changes are available to everyone, except if you have add-ons applied. Also, the screen has limited text formatting code support, so it might look a bit different. To use the old screen, go to Settings -\> Video, and turn off ‘New “You Died” Screen (Experimental)’.  
+  
+We’d love to hear what you think about this change! Please share your feedback with us [here](https://feedback.minecraft.net/hc/en-us/community/posts/19522618627981-Updated-You-Died-Experience).
+
+## **Crawling**
+
+-   The Crawling experimental toggle has been removed and Crawling under 1 block gaps is now fully implemented into the game
+-   Updated the camera interpolation rate when crawling to match Java Edition ([MCPE-170841](https://bugs.mojang.com/browse/MCPE-170841))
+-   Fixed some scenarios where crawling was not correctly being triggered on the server ([MCPE-171225](https://bugs.mojang.com/browse/MCPE-171225))
+
+## **Recipe Unlocking**
+
+-   Recipe Unlocking is no longer an Experimental Feature, but can still be turned on and off per world
+-   You can now enable Recipe Unlocking on the Create New World screen ([MCPE-172956](https://bugs.mojang.com/browse/MCPE-172956))
+-   The command for unlocking recipes has been updated. The autosuggestion to give a player a recipe now says "player: target" instead of "victim: target" ([MCPE-172402](https://bugs.mojang.com/browse/MCPE-172402))
+-   ‘Recipe unlocked’ message is no longer visible on the pause menu ([MCPE-171112](https://bugs.mojang.com/browse/MCPE-171112))
+-   Stained Glass Pane recipe now gets unlocked when obtaining any dyes ([MCPE-171118](https://bugs.mojang.com/browse/MCPE-171118))
+-   Recipes unlocked notification now fit text in different languages and no longer bleed out of the screen ([MCPE-171141](https://bugs.mojang.com/browse/MCPE-171141))
+-   Command line auto-complete has been added for recipe unlocking. Useful when you want to see what recipes you can unlock ([MCPE-171086](https://bugs.mojang.com/browse/MCPE-171086))
+-   The order of command inputs was changed to be the same as on Java Edition ([MCPE-171098](https://bugs.mojang.com/browse/MCPE-171098))
+-   Recipe Unlocking Game Rule
+    -   Added an optional game rule for limited crafting. The game rule is only relevant when recipe unlocking is enabled. When set to "true" it prevents players from crafting recipes they have not yet unlocked. It is off by default and can only be modified through the "/gamerule" command.
+
+## **Recipe Book Search**
+
+-   The recipe book search has been updated when playing in Survival mode with the following changes:
+    -   The search will only match the beginning of any word in the item's name. For example, searching for "tor" will now show **Tor**ch and Redstone **Tor**ch but not Daylight Detec**tor**)
+    -   Search will now work better together with the Recipe Unlocking system - recipes that haven't been unlocked will show up in search results.
+-   This change will enable experienced players to find items they are looking for (even if it hasn't been unlocked yet) while not overwhelming new players with recipes they aren't yet ready for.
+-   These changes are planned for both Bedrock and Java Edition, but they are still being tweaked and we definitely want to hear your feedback! Send us your thoughts at [aka.ms/MinecraftRecipeSearch](https://aka.ms/MinecraftRecipeSearch)
+
+## **Sleeping Percentage Gamerule**
+
+-   Added the ‘playerssleepingpercentage’ gamerule, allowing night to be skipped when the specified percent of players logged into a world are sleeping ([MCPE-114425](https://bugs.mojang.com/browse/MCPE-114425))
+    -   A zero or a negative value will only require one player to sleep to skip the night
+    -   When set to over 100, the night cannot be skipped  
+          
+        
+
+# **Vanilla Parity**
+
+## **Block Breaking**
+
+-   We have adjusted the breaking times of 188 blocks to match Java Edition and our intended design. Some blocks couldn't be changed yet for technical reasons and Obsidian was left unchanged because we're still deciding what breaking speed it should have. Bringing more blocks to parity makes it easier for our team to keep both versions up to date. We also hope it will be easier for the community to make and share guides that work for all players on all platforms.
+    -   The full list of block breaking times and changes can be found at the very end of this changelog
+
+## **Gameplay**
+
+-   Wandering Trader now trades Cherry Saplings ([MCPE-171521](https://bugs.mojang.com/browse/MCPE-171521))
+-   Villagers are now prevented from gaining a profession when sleeping ([MCPE-81790](https://bugs.mojang.com/browse/MCPE-81790))
+-   Fixed an issue where beginning to swim while hitting the sneak button could cause the sneak button to be held down until swimming ends ([MCPE-130070](https://bugs.mojang.com/browse/MCPE-130070))
+-   Potions are no longer thrown backwards when looking up ([MCPE-138995](https://bugs.mojang.com/browse/MCPE-138995))
+-   Formation of ice and snow is now controlled by random tick
+-   Fence Gate icon model in UI and Item Frames now match the Fence Gate Block ([MCPE-44296](https://bugs.mojang.com/browse/MCPE-44296 "https://bugs.mojang.com/browse/MCPE-44296"))
+-   Pillager Outposts can now generate in Cherry Grove biomes ([MCPE-173323](https://bugs.mojang.com/browse/MCPE-173323 "https://bugs.mojang.com/browse/MCPE-173323"))
+-   Fixed a bug that caused the Raid boss bar to automatically deplete to zero when a village was defeated ([MCPE-161438](https://bugs.mojang.com/browse/MCPE-161438))
+-   Witches now throw healing and regeneration potions at raiders during village raids
+
+## **Blocks**
+
+-   Fixed a bug that caused players to not be able to crawl under Slabs when standing on Top Snow ([MCPE-170994](https://bugs.mojang.com/browse/MCPE-170994))
+-   Top Snow is now in parity with Java Edition and each layer has a different height ([MCPE-60024](https://bugs.mojang.com/browse/MCPE-60024))
+-   Tweaked Shulker Box Redstone signals to match parity with Java Edition
+-   Fence Gate icon model in UI and Item Frames now match the Fence Gate Block ([MCPE-44296](https://bugs.mojang.com/browse/MCPE-44296 "https://bugs.mojang.com/browse/MCPE-44296"))
+
+## **Audio**
+
+-   Missing Thorns damage sound has been added, and is played when appropriate ([MCPE-37335](https://bugs.mojang.com/browse/MCPE-37335))
+-   Anvils now emit the proper sounds when broken, stepped on, fallen onto, etc. ([MCPE-33286](https://bugs.mojang.com/browse/MCPE-33286))
+-   Skeletons and Drowned now play sounds when firing Arrows and Tridents, respectively ([MCPE-50609](https://bugs.mojang.com/browse/MCPE-50609))
+-   Trident Channeling sound is now played when entities are hit ([MCPE-43402](https://bugs.mojang.com/browse/MCPE-43402))
+-   Empty Maps now emit the appropriate sound when players draw them
+-   Nether Portals now emit the Glass breaking sound when their Obsidian frame is broken ([MCPE-94722](https://bugs.mojang.com/browse/MCPE-94722))
+-   Loyalty Tridents returning to players now play their sound at the player's position ([MCPE-43831](https://bugs.mojang.com/browse/MCPE-43831))
+-   Big Dripleaf Blocks now play the correct sound when their tilt is reset ([MCPE-123488](https://bugs.mojang.com/browse/MCPE-123488))
+-   Conduits now play their deactivation sound when deactivated ([MCPE-128117](https://bugs.mojang.com/browse/MCPE-128117))
+-   Respawn Anchor Blocks now correctly play their ambient sounds ([MCPE-136484](https://bugs.mojang.com/browse/MCPE-136484))
+-   Pigs now emit sounds when transformed into Zombified Piglins ([MCPE-169557](https://bugs.mojang.com/browse/MCPE-169557 "https://bugs.mojang.com/browse/MCPE-169557"))
+-   Using Shears to carve Pumpkins now produces a carving sound like in Java Edition
+-   Hoglins now have their own sound when transforming into Zoglins ([MCPE-87379](https://bugs.mojang.com/browse/MCPE-87379 "https://bugs.mojang.com/browse/MCPE-87379"))
+-   Sound is now consistently played when an item is dropped into Lava ([MCPE-96015](https://bugs.mojang.com/browse/MCPE-96015 "https://bugs.mojang.com/browse/MCPE-96015"))
+-   Sound is no longer played sometimes when Netherite items are dropped into Lava ([MCPE-95872](https://bugs.mojang.com/browse/MCPE-95872 "https://bugs.mojang.com/browse/MCPE-95872"))
+-   Snow Golems now play a sound when they throw Snowballs ([MCPE-119083](https://bugs.mojang.com/browse/MCPE-119083 "https://bugs.mojang.com/browse/MCPE-119083"))
+-   Husks now play sounds when converting to Zombies underwater
+-   Player entities now play the appropriate sounds when entering/exiting water ([MCPE-132511](https://bugs.mojang.com/browse/MCPE-132511))  
+      
+    
+
+# **Experimental Features**
+
+## **Experimental Trade Changes**
+
+-   This update includes experimental changes to the Wandering Trader and Librarian Villager trades. You must turn on this experiment in the Experiments Menu if you want to test the new trades.
+-   We are trying out these changes to rebalance the villager trade system and make it more fair and fun for everyone. However, these changes are not yet final, and they will stay as experimental features while we continue to work on them. We still need your feedback to help us improve and decide, so please continue to let us know what you think of the new trades, what you like and dislike, and what suggestions you have at [aka.ms/VillagerTradingFeedback](http://aka.ms/VillagerTradingFeedback).
+
+## **Librarian**
+
+-   Before these changes, players could get any Village enchantment from any Librarian. A novice Librarian could sell the best enchantment in the game! For some players, this felt too random and made trading feel overpowered when compared to using the Enchanting Table or searching for Enchanted Books in structures.
+-   With the new rules, Librarians from different biomes sell different enchantments. Master Librarians are guaranteed to have a special enchantment which is different in each Village biome.
+-   Players will have to work towards getting the best trades instead of relying on random chance. We hope this makes Librarian trading more interesting and skilful, while also revealing some clues about their history of each Village type through the enchantments that are sold there.
+-   Librarians from different biomes now sell different Enchanted Books
+-   Master Librarians with full XP are guaranteed to sell a special enchantment, which is different in each Village biome
+-   This means that players must visit all seven Village biomes to get the full set of Villager enchantments
+-   There are two secret Village biomes where Villages do not generate
+    -   A player must build these Villages to access their trades!
+-   Some enchantments have been removed from Village trading and must be found in other ways
+
+## **Wandering Trader**
+
+-   Some players felt that the Wandering Trader had unfair prices and didn't sell many useful items. We have lowered their prices, added more trades, and increased the amounts available. The Wandering Trader will also now buy useful items from players, so it's possible to help them on their journey by giving them supplies even if you don't feel like buying anything.
+-   As this is an experiment, we would really appreciate your feedback as work continues and to help us decide on the future direction for Villager trades!
+-   Wandering Traders now have lower prices and have a higher amount of each item in stock
+-   Wandering Traders now sell Logs
+-   Wandering Traders can now buy many items, instead of only selling  
+      
+    
+
+# **Fixes and Changes**
+
+## **Diamond Ore Distribution**
+
+-   Increased the amount of Diamond Ore found in the deepest parts of the world. Our goal is to make it more rewarding to mine for Diamonds in the Deepslate layers
+
+## **Performance and Stability**
+
+-   Fixed a crash when entering a world with a corrupted saved chunk ([MCPE-164634](https://bugs.mojang.com/browse/MCPE-164634))
+-   Fixed a crash that could occur when the game lost focus while entering a world
+-   Addressed ‘Out of Storage’ errors and texture corruption on Xbox in large worlds ([MCPE-163050](https://bugs.mojang.com/browse/MCPE-163050))
+-   Fixed missing low disk space warning on Xbox
+-   Fixed an issue with Local Network games not connecting in certain circumstances on Nintendo Switch
+-   Fixed server becoming unresponsive when players were surrounded by Ghasts stuck in lava columns ([MCPE-119093](https://bugs.mojang.com/browse/MCPE-119093))
+-   Placing one item of an item stack into a full stack of the same item no longer causes the game to crash
+-   The game no longer crashes due to running out of rendering resources while entering a world through the End Portal back to the Overworld ([MCPE-139021](https://bugs.mojang.com/browse/MCPE-139021 "https://bugs.mojang.com/browse/MCPE-139021"))
+-   Fixed worlds downloaded from Realms not loading packs correctly
+
+## **Gameplay**
+
+-   Improved mouse input to be more responsive when used on Xbox ([MCPE-163671](https://bugs.mojang.com/browse/MCPE-163671))
+-   Breath meter now refills when swimming with head above water ([MCPE-170969](https://bugs.mojang.com/browse/MCPE-170969))
+-   The third-person camera will no longer clip through terrain when near Water or Lava
+-   Fixed Creative Mode players not being ignited when standing in fire
+-   The player no longer gets forced into sneak or crawl in Spectator Mode ([MCPE-170907](https://bugs.mojang.com/browse/MCPE-170907))
+-   The player now gets forced out of sneak/crawl when riding ([MCPE-170870](https://bugs.mojang.com/browse/MCPE-170870))
+-   The player no longer gets forced into sneak or crawl during the Riptide animation
+-   Entering flight mode in Creative Mode will now correctly cancel Elytra gliding ([MCPE-171797](https://bugs.mojang.com/browse/MCPE-171797))
+-   Projectiles now sink into Top Snow just like mobs do
+-   Third-person camera now passes through Glass, Glass Panes, and Iron Bars ([MCPE-85429](https://bugs.mojang.com/browse/MCPE-85429))
+-   Third person camera no longer clips through Snow, Mud, and Soul Sand, preventing x-ray exploits ([MCPE-168854](https://bugs.mojang.com/browse/MCPE-168854))
+-   Players will no longer enter End Portals when sleeping in a bed immediately below the portals ([MCPE-165062](https://bugs.mojang.com/browse/MCPE-165062))
+-   The discount for curing a Zombie Villager no longer increases when the same Villager is reinfected and cured multiple times
+-   Players can now toggle flying when crawling or sneaking in Creative Mode
+-   Crouch-jumping while aiming forward and holding down the build button will no longer continue to build blocks upwards past where the player is aiming
+
+## **Mobs**
+
+-   Wild Horses, Mules, and Donkeys can now be tempted using a Golden Apple/Carrot or Enchanted Apple. Llamas will be tempted by a player holding a Hay Bale ([MCPE-140814](https://bugs.mojang.com/browse/MCPE-140814))
+-   Zombie Villagers now show correct professions when infected ([MCPE-80924](https://bugs.mojang.com/browse/MCPE-80924))
+-   Villagers killed by players no longer drop items held in their hands
+-   Camels now play the same stepping sound when walking on Red Sand, Suspicious Sand, and Concrete Powder Blocks as they do when walking on regular Sand ([MCPE-163497](https://bugs.mojang.com/browse/MCPE-163497))
+-   Mobs can hold and pick up Illager Banner only in their main hand now ([MCPE-151745](https://bugs.mojang.com/browse/MCPE-151745))
+-   Dolphins, Camels, and Sniffers can now have Balloons attached
+-   The following mobs will now set their target on fire if the mob is on fire when attacking: Drowned, Husk, Zombie, and Zombified Villager ([MCPE-77746](https://bugs.mojang.com/browse/MCPE-77746))
+-   Fixed an issue with Parrots facing a different position than the player when the player is in a Boat
+
+## **Blocks**
+
+-   Falling blocks will now break when falling onto a Boat
+-   Campfires within Trail Ruins are no longer lit by default ([MCPE-170033](https://bugs.mojang.com/browse/MCPE-170033))
+-   Pink Petals can now be fertilized by Dispensers ([MCPE-171560](https://bugs.mojang.com/browse/MCPE-171560))
+-   Shulker Boxes mined without a Pickaxe no longer take a long time to mine
+-   Falling blocks now break and drop their item when falling on a Cocoa Bean
+-   Calibrated Sculk Sensor's amethyst crystal now lights up alongside the rest of the block during its active phase ([MCPE-168813](https://bugs.mojang.com/browse/MCPE-168813)) ([MCPE-169953](https://bugs.mojang.com/browse/MCPE-169953))
+-   Hanging Signs placed with commands now have the proper hitbox ([MCPE-163456](https://bugs.mojang.com/browse/MCPE-163456))
+-   "stained\_hardened\_clay" block is now split into unique instances, namely "white\_terracotta", "orange\_terracotta", "magenta\_terracotta", "light\_blue\_terracotta", "yellow\_terracotta", "lime\_terracotta", "pink\_terracotta", "gray\_terracotta", "light\_gray\_terracotta", "cyan\_terracotta", "purple\_terracotta", "blue\_terracotta", "brown\_terracotta", "green\_terracotta", "red\_terracotta", and "black\_terracotta"
+    -   Commands will still work with "stained\_hardened\_clay", but "stained\_hardened\_clay" won't be suggested in the command prompt, rather the new names will
+-   Third person camera no longer phases through the lower part of the Composter ([MCPE-171213](https://bugs.mojang.com/browse/MCPE-171213))
+
+## **Items**
+
+-   Suspicious Stew no longer shows up in the Creative inventory (a recent unintended change caused it to appear there)
+-   It is once again possible to use Bone Meal underwater on Sand, Dirt, Gravel, and Clay ([MCPE-171383](https://bugs.mojang.com/browse/MCPE-171383))
+-   Fixed held Maps not being centered when playing on narrow aspect ratio screens
+-   The correct broken state of the Elytra is rendered in Item Frames ([MCPE-19700](https://bugs.mojang.com/browse/MCPE-19700))
+-   Stonecutter no longer drops as an item when using the wrong tool ([MCPE-33950](https://bugs.mojang.com/browse/MCPE-33950))
+-   Pickaxe can now quickly mine Pistons and Sticky Pistons ([MCPE-62797](https://bugs.mojang.com/browse/MCPE-62797))
+-   Powering and unpowering a Redstone Repeater or Comparator no longer disrupts water flow ([MCPE-157055](https://bugs.mojang.com/browse/MCPE-157055))
+-   Crossbow loses durability when shooting, not when drawn ([MCPE-46490](https://bugs.mojang.com/browse/MCPE-46490))
+
+## **Sculk Vibrations**
+
+-   Sculk Sensors and Sculk Shriekers no longer risk losing vibrations when receiving them around the simulation distance limit
+-   Vibrations are no longer produced when stopping the use of items while sneaking ([MCPE-171254](https://bugs.mojang.com/browse/MCPE-171254))
+-   Wardens now detect items hitting the ground ([MCPE-160889](https://bugs.mojang.com/browse/MCPE-160889))
+-   Sculk Sensors now send a signal to Sculk Shriekers when detecting items hitting the ground ([MCPE-161165](https://bugs.mojang.com/browse/MCPE-161165))
+-   Throwing an Eye of Ender now emits vibrations
+-   Minecarts now consistently emit vibrations when moving on Rails while empty
+-   Collecting Fish, Axolotls, and Tadpoles with Buckets now emits vibrations
+-   Cleaning items in Cauldrons now emits vibrations
+-   Dying Leather Armor in Cauldrons now emits vibrations
+-   Tipping Arrows in Cauldrons now emits vibrations
+-   Using Dyes to change Cauldrons' water color now emits vibrations
+-   Non-player actors now emit a vibration event when equipping Shields in their off-hand slot
+-   Collecting Fish, Axolotl, and Tadpoles with Buckets now emits vibrations at the right position
+-   Applying a Nametag now emits vibrations
+-   Evokers summoning Vexes or Fangs now emit vibrations
+-   Chickens laying eggs now emit vibrations
+-   Turtles and Frogs laying eggs now emit vibrations
+-   Using Bone Meal now emits vibrations
+-   Sculk Sensors and Sculk Shriekers no longer activate repeatedly when a projectile is stuck in them ([MCPE-172704](https://bugs.mojang.com/browse/MCPE-172704 "https://bugs.mojang.com/browse/MCPE-172704"))
+-   Chiseled Bookshelves now emit vibrations when Books are inserted into them using Hoppers ([MCPE-168887](https://bugs.mojang.com/browse/MCPE-168887 "https://bugs.mojang.com/browse/MCPE-168887"))
+-   Extinguishing fire now emits vibrations
+-   Mounting or dismounting a vehicle now emits vibrations
+-   Rabbits eating Carrot crops now emit vibrations
+-   Foxes eating Sweet Berry Bushes now emit vibrations
+-   Unequipping armor now emits vibrations at a different frequency than equipping it
+-   Placing a Banner now emits vibrations
+-   Placing a Bamboo Sapling now emits vibrations
+-   Placing a Mob Head now emits vibrations
+-   Placing a Lily Pad now emits vibrations
+-   Placing Frogspawn now emits vibrations
+-   Placing or adding Sea Pickles now emits vibrations
+-   Adding a Turtle Egg to already placed ones now emits vibrations of the same frequency as placing a block
+-   Destroying a Turtle Egg now always emits vibrations of the same frequency as destroying a block, regardless of how many Turtle Eggs are left
+-   Turtle Eggs cracking now emit vibrations
+
+## **Realms**
+
+-   Fixed an issue which prevented some worlds from being downloaded from Realms on PlayStation 4
+-   Fixed a bug where repeatedly pressing 'Esc' in Realms settings could remove UI or turn the screen black ([REALMS-11388](https://bugs.mojang.com/browse/REALMS-11388))
+
+## **Accessibility**
+
+-   Fixed an issue where screen narration would read Recipe Book folder items as the first item in the folder
+-   Screen narration now informs the user immediately after they change sliders and toggles
+-   Screen narration will now read the disconnected message in the game menu when opened without an internet connection
+-   Screen narrator will now read out the instruction text as well as the confirm button in the Safe Area menu
+
+## **Touch Controls**
+
+-   Updated menu HUD icons for touch controls
+-   Fixed an issue where the sneak input while flying would not work correctly with interactable blocks ([MCPE-167043](https://bugs.mojang.com/browse/MCPE-167043))
+-   The functionality of long-pressing a crafting output slot on touch input has been returned to rapidly crafting single instances of the item in the output slot ([MCPE-169728](https://bugs.mojang.com/browse/MCPE-169728))
+-   The rate of item crafting when long-pressing a crafting output slot has been slowed to 4 items per second and the time needed to long-press before starting the rapid crafting functionality has been reduced to 700 ms
+
+## **User Interface**
+
+-   Nametags are no longer completely invisible while sneaking with the player still visible ([MCPE-168789](https://bugs.mojang.com/browse/MCPE-168789))
+-   Pick Blocking a Decorated Pot will now produce the correct hover hint in the inventory ([MCPE-171800](https://bugs.mojang.com/browse/MCPE-171800))
+-   Moved "Sync Old Worlds" button to the Settings/Storage screen
+-   Changed Joystick Visibility option to a dropdown menu
+-   Changed Sneak option to a dropdown menu
+-   Added alerts for iOS players who have run out of disk space
+-   Fixed UI flickering on Nintendo Switch
+-   Banners' icons in hotbar and inventory are now properly displayed on Nintendo Switch ([MCPE-169928](https://bugs.mojang.com/browse/MCPE-169928))
+-   The Lapis Lazuli icon in the Enchantment Table now matches the one in the Smithing Table screen
+-   Large enchant labels in the Enchantment Table screen are no longer blocked by overlayed items in the inventory ([MCPE-154428](https://bugs.mojang.com/browse/MCPE-154428))
+-   Fixed various pixel scaling issues on the HUD screen
+-   Added three new user-friendly disconnection error messages and improved two others
+-   iOS only: Fixed a bug in multiline text edits where some text was sometimes deleted when typing after repositioning the caret with spacebar ([MCPE-166152](https://bugs.mojang.com/browse/MCPE-166152))
+-   Changed button text from "Manage" to "Cancel" in Options \> Subscriptions
+-   Fixed layering issue causing the underground vignette effect to draw on top of the hotbar ([MCPE-159217](https://bugs.mojang.com/browse/MCPE-159217))
+-   Adding a button on the new death screen to allow player to go to the game menu to change settings, leave the world, and more
+-   Fixed localization of 'Detected lost connection' connection is lost from other player or server ([MCPE-173028](https://bugs.mojang.com/browse/MCPE-173028))
+-   Fixed textbox text sometimes not updating correctly when holding backspace on Android devices ([MCPE-169840](https://bugs.mojang.com/browse/MCPE-169840))
+-   Fixed 'Full Keyboard Gameplay' support on iOS and Android
+-   Fixed an issue where names with parentheses in them did not display on the inventory/crafting menus in their title ([MCPE-161134](https://bugs.mojang.com/browse/MCPE-161134))
+-   Switching between Book and Quill pages with the gamepad now produces a sound ([MCPE-162253](https://bugs.mojang.com/browse/MCPE-162253))
+-   Added a button to empty the search bar with one click
+-   Pressing Return on the virtual keyboard no longer deletes text after cursor on Xbox ([MCPE-172835](https://bugs.mojang.com/browse/MCPE-172835))
+-   Background now darkens while the Smithing Table UI is open and Pocket UI is enabled
+-   Fixed ZL/ZR icons for Joy-Con and Switch Pro controller on Android
+-   The caret can be re-positioned in text field by taps or mouse clicks ([MCPE-131572](https://bugs.mojang.com/browse/MCPE-131572))
+-   The “Pause menu” has been renamed to “Game menu” in the user interface
+-   Fixed layering issue causing the underground vignette effect to draw on top of all other HUD elements ([MCPE-159217](https://bugs.mojang.com/browse/MCPE-159217))
+
+## **Audio**
+
+-   Strays now play the proper sound when firing bows ([MCPE-172385](https://bugs.mojang.com/browse/MCPE-172385))
+-   Equipment sound is now played when switching between otherwise identical armor pieces, which may have differing enchantments and/or trims applied ([MCPE-171527](https://bugs.mojang.com/browse/MCPE-171527))
+-   The Trails and Tales music tracks now play in the game menu ([MCPE-171489](https://bugs.mojang.com/browse/MCPE-171489))
+-   Shields now play a sound when equipped in the off-hand slot ([MCPE-168039](https://bugs.mojang.com/browse/MCPE-168039))
+
+## **Graphical**
+
+-   Added a new experimental toggle to Video menu for players on Windows which reduces input latency; enabling this setting will increase battery consumption ([MCPE-98861](https://bugs.mojang.com/browse/MCPE-98861))
+-   The horizon no longer changes color when the player is standing under blocks ([MCPE-85888](https://bugs.mojang.com/browse/MCPE-85888 "https://bugs.mojang.com/browse/MCPE-85888"))
+-   Fixed a problem where blocks' rendering was not updating unless the player jumped ([MCPE-173706](https://bugs.mojang.com/browse/MCPE-173706))
+-   Cherry Leaf blocks will now generate particle effects at a relatively large distance based on system performance
+-   Transparent blocks viewed through an End Portal will no longer be visible nor flicker ([MCPE-162061](https://bugs.mojang.com/browse/MCPE-162061))
+-   Fixed bottom face of portal effect so its color and transparency match the other faces
+-   Fixed screen fade when sleeping in a Bed to no longer go fully opaque ([MCPE-171461](https://bugs.mojang.com/browse/MCPE-171461))
+-   Name Tag rendering logic is now based on camera position rather than player position
+-   The underwater fog in Cherry Groves now uses a transition that increases visibility after a while ([MCPE-171822](https://bugs.mojang.com/browse/MCPE-171822))
+
+## **Marketplace**
+
+-   Players will now have a way to send a one-way message to Marketplace creators offering feedback on purchased items. This feedback could be used to improve future content and changes
+
+## **Minimum Supported Mobile Hardware**
+
+As Minecraft grows, so must the operating system and hardware that supports it. For some older Apple devices, you may need to update to **iOS 1****3** or above by February 2024 to continue receiving updates for Minecraft or to access online play.  If you are on the most up-to-date version of iOS already, you have nothing to worry about. Please follow Apple’s guide on how to [update your device](https://support.apple.com/en-us/HT204204). You can also refer to [their list of devices currently compatible with iOS 13/iPadOS13.](https://support.apple.com/en-us/HT210327) 
+
+For Android, as of February 2024, **devices require greater than 1 GB RAM, run OS 8 (Oreo) or above**, and have **OpenGL ES 3.0** **to run Minecraft.**
+
+Please refer to our Minecraft Help Center articles for further details:
+
+-   [iOS Technical Support Issues](https://help.minecraft.net/hc/en-us/articles/4408895540365)
+-   [Android Technical Support FAQ](https://help.minecraft.net/hc/en-us/articles/4408896232461)  
+      
+    
+

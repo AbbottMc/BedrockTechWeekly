@@ -1,0 +1,154 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.20.60 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddonPacks)
+
+## **General**
+
+-   Decorated Pots now support the use of loot tables
+-   Renamed _json_to _water\_splash\_manual.json_ in _resource\_packs\\vanilla\\particles_ ([MCPE-176784](https://bugs.mojang.com/browse/MCPE-176784))
+-   Require _block\_id_ for each block in the _StartGamePacket_ blockProperties
+-   Send "material" for vanilla data-driven blocks in the StartGamePacket blockProperties. "block\_id" is also moved to the "vanilla\_block\_data" object
+-   Containers being cloned over no longer keep their container screens open and no longer cause crashes
+-   Changing the _brightness\_gamma_ value for blocks now darkens the block correctly ([MCPE-167836](https://bugs.mojang.com/browse/MCPE-167836))
+-   Added a "drop\_item\_slot" field to the "interact" component, which allows to specify an inventory slot to remove and drop items from
+-   "behavior.breed" now interrupts navigation on stop for content using engine version 1.20.60 or higher
+-   Updated listed values for the Vanilla "orientation" block state in documentation to no longer be boolean values
+
+## **Commands**
+
+-   _/me_ _/say_ _/title_ _/tell_
+    -   Reduced max length for output message to 512 characters
+-   _/kill_
+    -   Reduced max length for reason message to 512 characters
+
+## **Add-Ons and Script Engine**
+
+-   Added a _Project Through Liquid_property to the 3D Block Cursor
+-   Added a _CursorPropertiesChangeAfterEvent_ to notify Editor script when the cursor properties are changed
+-   Wandering Traders can now correctly display custom entity spawn eggs in their trade menus ([MCPE-170184](https://bugs.mojang.com/browse/MCPE-170184))
+-   The "minecraft:geometry.full\_block" identifier for the "minecraft:geometry" block component has been added
+    -   The "minecraft:geometry.full\_block" identifier provides a centered 1x1x1 cube geometry
+    -   When combined with a _material\_instances_ component with "render\_layer": "opaque", it enables rendering-only capabilities previously included in the "minecraft:unit\_cube" component including:
+        -   Occludes both vanilla and custom neighboring full blocks
+        -   Culls faces that neighbor vanilla and custom neighboring full blocks to improve rendering performance
+    -   Added content error logging to help creators identify content that hits or exceeds the state bit/permutation count per block ([MCPE-177045](https://bugs.mojang.com/browse/MCPE-177045))
+
+## **Biomes**
+
+-   Biome JSON files no longer support inheriting fields from other Biome JSON files. If this affects any content those files should be updated by manually copying the desired JSON text
+-   Biome tags in JSON files are now specified under a "minecraft:tags" component, in a "tags" array, rather than as loose JSON objects, for files with a format\_version of _1.20.60_ or higher
+
+## **Blocks**
+
+-   Added the ability for data-driven blocks to remove faces in the geometry when abutting a full and opaque block. A new field has been added to the Block Geometry Component, which references a new Culling .json file (found in the resource pack block\_culling directory) that sets up culling rules for the tessellated geometry
+
+## **Items**
+
+-   Unrecognized fields in component item JSON will now give a warning to the content log in format versions _1.20.60_ and higher
+
+## **Components**
+
+-   The "entity\_sensor" component now supports multiple "subsensors":
+-   "event", "require\_all", "minimum\_count", "maximum\_count", "range" and "event\_filter" are now individually configurable fields of each subsensor
+-   Subsensors also have a new "cooldown" field, which defines how often each subsensor should sense for entities
+-   All these changes require a "format\_version" of _1.20.60_ or higher
+-   The "interact" component now supports the additional "entity\_act" value for the "vibration" field
+
+## **Entity Components**
+
+-   Entity event response _run\_command_ has been renamed to _queue\_command_ and has been released out of experimental. Commands run via _queue\_command_ may be deferred until the next tick. If the entity is removed before the command is run, the command will not execute. Content using _run\_command_ under experimental will still work for now but the experimental feature is now considered deprecated
+-   Added an "interact\_filters" field to the "ageable" component, which allows to specify conditions on when the actor can be fed
+-   "behavior.follow\_parent" now interrupts navigation on stop for content using engine version _1.20.60_ or higher
+
+## **Entity Filters**
+
+-   Added new entity filter "is\_panicking", which checks if the entity is executing "behavior.panic"
+-   Added new entity filter "is\_sprinting", which checks if the entity is sprinting
+
+## **Entity Event Responses**
+
+-   Added the "emit\_vibration" entity event response, which allows the entity to emit a vibration having the entity itself as its source
+    -   The "vibration" field allows to specify the vibration to be emitted
+    -   The allowed values are "shear", "entity\_act", and "entity\_interact"
+
+## **Molang**
+
+-   Improved the context of content logs when an evaluated Molang expressions results in an error
+-   Released Molang queries from experimental
+    -   _is\_cooldown\_type_
+    -   _cooldown\_time_
+    -   _cooldown\_time\_remaining_
+    -   _relative\_block\_has\_any\_tag_
+    -   _relative\_block\_has\_all\_tags_
+    -   _block\_neighbor\_has\_any\_tag_
+    -   _block\_neighbor\_has\_all\_tags_
+    -   _block\_has\_any\_tag_
+    -   _block\_has\_all\_tags_
+    -   _bone\_orientation\_trs_
+    -   _bone\_orientation\_matrix_
+-   Added content errors that state _remaining\_durability_and _query.max\_durability_ are only to be used with Item contexts
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Commands**
+
+-   The health bar of mounted rideable mobs is now properly displayed ([MCPE-177696](https://bugs.mojang.com/browse/MCPE-177696))
+-   Execute command now fails when comparing unloaded blocks ([MCPE-177195](https://bugs.mojang.com/browse/MCPE-177195))
+-   Added a new command that will hide and reset HUD elements visibility
+    -   /hud hide \<hud element\>
+    -   /hud reset \<hud element\>
+    -   The HUD elements available are:
+        -   paperdoll
+        -   armor
+        -   tooltips
+        -   touch\_controls
+        -   crosshair
+        -   hotbar
+        -   health
+        -   progress\_bar
+        -   hunger
+        -   air\_bubbles
+        -   horse\_health
+        -   all
+    -   To use the command, turn on the Upcoming Creator Features toggle
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Scripting**
+
+-   Fixed issue where _ActionFormData_ buttons could not be clicked if there were more than 255 buttons in the form
+-   The "minecraft:unit\_cube" block component has been deprecated. Using it in content marked 1.20.60 and beyond will provide a content error
+    -   Using content marked prior to 1.20.60 will have their "minecraft:unit\_cube" block component upgraded to a "minecraft:geometry" block component with a "minecraft:geometry.full\_block" identifier, but will maintain backwards compatibility with all behaviors
+-   Added _ScriptBiomeTypes_and _ScriptBiomeType_ to allow Scripting API to enumerate the BiomeRegistry
+-   Added a _findClosestBiome_function to _Dimension_ to find the closest biome of a specified type, to a given position in the world
+-   The block component "minecraft:random\_ticking" is now functional again
+
+## **Molang**
+
+-   Changed cooldown query slot IDs to be required for container slots with more than one index, logging content errors if not provided
+    -   _cooldown\_time(slotName,slotId)_
+    -   _cooldown\_time\_remaining(slotName,slotId)_
+    -   _is\_cooldown\_type(cooldownName,slotName,slotId)_

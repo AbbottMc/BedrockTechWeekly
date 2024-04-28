@@ -1,0 +1,86 @@
+
+
+-   Released _World.getMoonPhase_, _MoonPhase_, and _MoonPhaseCount_ v1.6.0
+-   Camera APIs moved from _beta_ to _1.6.0_
+    -   Camera 
+        -   setCamera
+        -   fade
+        -   clear
+    -   EasingType
+    -   CameraSetRotationOptions
+    -   CameraSetFacingOptions
+    -   CameraSetPostionOptions
+    -   CameraDefaultOptions
+    -   CameraSetLocationOptions
+-   Changed the names of the _CameraSetOptions_ options to not include the word 'Script'
+-   Released Entity.is\* APIs from _beta_ to _1.6.0_
+    -   _isSleeping_
+    -   _isSneaking_
+    -   _isSprinting_
+    -   _isSwimming_
+    -   _isClimbing_
+    -   _isOnGround_
+    -   _isInWater_
+    -   _isFalling_
+-   Released Player level & XP APIs from _beta_ to _1.6.0_
+    -   _addLevels_
+    -   _addExperience_
+    -   _level_
+    -   _getTotalXP_
+    -   _xpEarnedAtCurrentLevel_
+    -   _totalXpNeededForNextLevel_
+    -   _resetLevel_
+-   Released Player.is\* APIs from _beta_ to _1.6.0_
+    -   _isEmoting_
+    -   _isGliding_
+    -   _isJumping_
+    -   _isFlying_
+-   Updated all methods besides show on _ActionFormData_, _MessageFormData_, and _ModalFormData_ to be callable in read-only mode
+-   _BlockInventoryComponent_
+    -   container member variable now correctly reflects it can be a Container or undefined
+-   Fixed a versioning bug preventing @minecraft/server-ui module from working with @minecraft/server above version _1.2.0_
+-   _WeatherType_ moved to _1.6.0_
+    -   Moved function _setWeather_ to _1.6.0_
+    -   Moved event/property _entityRemove_ from _beta_ to _1.6.0_
+    -   Moved event/property _entityRemove_ from _beta_ to _1.6.0_
+-   Moved class _EntityRemovedAfterEvent_ from _beta_ to _1.6.0_
+-   Moved class _EntityRemoveAfterEventSignal_ from _beta_ to _1.6.0_
+-   Moved class _EntityRemovedBeforeEvent_ from _beta_ to _1.6.0_
+-   Moved class _EntityRemoveBeforeEventSignal_ from _beta_ to _1.6.0_
+    -   Moved event/property _entityLoad_ from _beta_ to _1.6.0_
+-   Moved class _EntityLoadAfterEvent_ from _beta_ to _1.6.0_
+-   Moved class _EntityLoadAfterEventSignal_ from _beta_ to _1.6.0_
+    -   Moved event/property _entitySpawn_ from _beta_ to _1.6.0_
+-   Moved enum _EntityInitializationCause_ from _beta_ to _1.6.0_
+-   Moved class _EntitySpawnAfterEvent_ from _beta_ to _1.6.0_
+-   Moved class _EntitySpawnAfterEventSignal_ from _beta_ to _1.6.0_
+    -   Moved event/property _playerBreakBlock_ from _beta_ to _1.6.0_
+    -   Moved event/property _playerBreakBlock_ from _beta_ to _1.6.0_
+-   Moved class _PlayerBreakBlockAfterEvent_ from _beta_ to _1.6.0_
+-   Moved class _PlayerBreakBlockAfterEventSignal_ from _beta_ to _1.6.0_
+-   Moved class _PlayerBreakBlockBeforeEvent_ from _beta_ to _1.6.0_
+-   Moved class _PlayerBreakBlockBeforeEventSignal_ from _beta_ to _1.6.0_
+    -   Moved event/property _playerPlaceBlock_ from _beta_ to _1.6.0_
+-   Moved class _PlayerPlaceBlockAfterEvent_ from _beta_ to _1.6.0_
+-   Moved class _PlayerPlaceBlockAfterEventSignal_ from _beta_ to _1.6.0_
+-   Moved class _BlockEventSignalOptions_ from _beta_ to _1.6.0_
+    -   Move _isAir(): boolean_ from _beta_ to _1.6.0_
+    -   Move _isLiquid(): boolean_ from _beta_ to _1.6.0_
+    -   Moved _amount_ from _beta_ to _1.6.0_
+    -   Moved _keepOnDeath: boolean_ from _beta_ to _1.6.0_
+    -   Moved _lockMode: ItemLockMode_ from _beta_ to _1.6.0_
+    -   Moved _nameTag?: string_ from _beta_ to _1.6.0_
+    -   Moved _clone(): ItemStack_ from _beta_ to _1.6.0_
+    -   Moved _getTags(): string\[\]_ from _beta_ to _1.6.0_
+    -   Moved _hasTag(tag: string): boolean_ from _beta_ to _1.6.0_
+    -   Moved _setCanDestroy(blockIdentifiers?: string\[\]): void_ from _beta_ to _1.6.0_
+    -   Moved _getCanDestroy(): string\[\]_ from _beta_ to _1.6.0_
+    -   Moved _setCanPlaceOn(blockIdentifiers?: string\[\]): void_ from _beta_ to _1.6.0_
+    -   Moved _getCanPlaceOn(): string\[\]_ from _beta_ to _1.6.0_
+    -   Moved function _getProperty_ to _1.6.0_
+    -   Moved function _resetProperty_ to _1.6.0_
+    -   Moved function _setProperty_ to _1.6.0_
+-   Moved _getRotation_ from _beta_ to _1.6.0_
+-   Move _setRotation_ from _beta_ to _1.6.0_
+-   Released _PlayerDimensionChangeAfterEvent_ from _beta_ to _1.6.0_
+

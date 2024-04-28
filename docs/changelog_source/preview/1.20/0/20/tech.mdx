@@ -1,0 +1,68 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Editor**
+
+-   Removed additional deprecated blocks and updated to sort blocks alphabetically
+-   Fixed Molang animation pausing in Editor for Guardian mobs
+-   Fixed Editor player dying in Tool Mode
+-   Fixed disabled command execution for /execute and command block
+-   Closed emoting and achievement loopholes in Editor
+
+## **Commands**
+
+-   When typing a slash command, auto-complete no longer suggests block-states that are already part of the typed command ([MCPE-168055](https://bugs.mojang.com/browse/MCPE-168055))
+-   Improved performance when preparing commands, most noticeable when opening the command window for the first time in a world, but also when loading Command Blocks for old command versions
+-   Commands will still work with "carpet", but only new carpet name will be suggested in the command prompt
+    -   "carpet" block is now split into unique variants of 16 colors, namely "white\_carpet", "orange\_carpet", "magenta\_carpet", "light\_blue\_carpet", "yellow\_carpet", "lime\_carpet", "pink\_carpet", "gray\_carpet", "light\_gray\_carpet", "cyan\_carpet", "purple\_carpet", "blue\_carpet", "brown\_carpet", "green\_carpet", "red\_carpet", "black\_carpet"
+-   Commands will still work with "log", but "log" won't be suggested in the command prompt, rather the new names will
+    -   "log" was split into unique instances, namely "oak\_log", "spruce\_log", "birch\_log" and "jungle\_log"
+    -   "log2" was split into unique instances, namely "acacia\_log" and "dark\_oak\_log"
+-   Commands will still work with "coral", but "coral" won't be suggested in the command prompt, rather the new names will
+    -   "coral" was split into unique instances, namely "tube\_coral", "brain\_coral", "bubble\_coral", "fire\_coral", "horn\_coral", "dead\_tube\_coral", "dead\_brain\_coral", "dead\_bubble\_coral", "dead\_fire\_coral" and "dead\_horn\_coral"
+
+## **Add-Ons**
+
+-   Fixed a bug that caused player capes to stop flapping when moving forward but looking sideways in the _cape\_flap\_amount_ by switching the rotation used from the player's looking rotation to the player's body rotation ([MCPE-153446](https://bugs.mojang.com/browse/MCPE-153446))
+
+## **General**
+
+-   Custom items using JSON formats 1.16.100 and formats past 1.17.0 can be loaded without the Holiday Creator Feature toggle if there are no Holiday components used
+-   The _minecraft:friction_ component is no longer ignored when calculating ground friction
+
+## **Items**
+
+-   Any item use, like using a Brush or Spyglass or eating an Apple now send item interact events that cause vibrations picked up by Sculk Sensors and Wardens
+-   Items with the Entity Placer item component will now successfully create the actor on air blocks if the _"dispense\_on"_ field is empty
+-   Items with the Entity Placer item component can now be used on a Mob Spawner to change the Spawner's actor spawn type. The item must have a format version of at least 1.19.80
+-   Removed the non-functional _'on\_repaired'_ parameter from the _'minecraft:repairable'_ item component
+
+## **Molang**
+
+-   Fixed a crash affecting some Marketplace packs preventing them from loading
+    -   There is now a limit on the amount of nested sub-expressions each Molang expression can have
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Add-Ons and Script Engine**
+
+-   Added experimental support for BlockTraits in block JSON. BlockTraits are a shortcut for creators to add Vanilla BlockStates and setter functions to data-driven blocks
+    -   Can parse PlacementDirection ("minecraft:placement\_direction") BlockTrait (adds the "minecraft:cardinal\_direction" BlockState and onPlayerPlace setter function)
+    -   Can access the "minecraft:cardinal\_direction" state on blocks that apply the "placement\_direction" trait in block\_property Molang queries and set\_block\_property EventResponses
+    -   Note: Use of BlockTraits in JSON is currently behind the "Upcoming Creator Features" toggle
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

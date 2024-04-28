@@ -1,0 +1,43 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Components
+
+-   The default values for the "damage\_sources" field of "behavior.panic" have been updated
+    -   For the complete list of the new default values, refer to the "Vanilla Parity" section of the changelog
+    -   This change only affects entities with a format version of 1.21.0 or higher
+-   Multiple items with the same custom component will now correctly trigger custom component logic
+
+## Editor
+
+-   Selection volumes can no longer be created when they would exceed the world height limits
+-   When filling up a volume and dragging the volume during the filling operation the filling volume would also change. Now the filling operation happens in the original volume
+-   Fixed a bug where camera collision caused third-person view to display inside the player's head in Crosshair mode
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Fixed a bug with volumetric fog shading in the Deferred Technical Preview that was causing fog to be much brighter than it should have been. Volumetric fog in the Deferred Technical Preview now matches the look of volumetric fog in RTX much more closely. Fog definitions in resource packs developed for the Deferred Technical Preview will need to be updated after this change. To maintain a similar look, the values for either "max\_density" or "scattering" should be increased by a factor of 12.

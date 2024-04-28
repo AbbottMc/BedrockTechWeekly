@@ -1,0 +1,79 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## AI Goals
+
+-   "behavior.follow\_parent" now interrupts navigation on stop for content using engine version 1.20.60 or higher 
+
+## Biomes
+
+-   Biome tags in JSON files are now specified under a "minecraft:tags" component, in a "tags" array, rather than as loose JSON objects, for files with a format\_version of 1.20.60 or higher 
+
+## Components
+
+-   The "interact" component now supports the additional "entity\_act" value for the "vibration" field
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) discussion forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Updates this week:
+
+-   Removed addSeparator function from IMenu API 
+-   Fixed issue where resource packs were not being retained during editing and testing - now they are retained!
+-   Added addEntityPicker function to IPropertyPane API for selecting an entity type
+-   Added interface IPropertyItemOptionsDataPicker for both entity and block picker optional properties, removed IPropertyItemOptionsBlocks
+-   Introducing Void World generation! The Flat World toggle found on the Advanced tab of the Create New Project page has been replaced with a drop down, allowing new Editor projects to be created in a Vanilla, Flat, or Void world. The Void world project experience will be iterated on in the coming months. Upon starting a Void world project, swap Selection to Fixed Distance to place blocks to kickstart your build.
+-   Added toolGroupId optional property to IRegisterExtensionOptionalParameters API for organizing tools in custom groups!
+
+## Entity Event Responses
+
+-   Added the "emit\_vibration" entity event response, which allows the entity to emit a vibration having the entity itself as its source
+
+-   The "vibration" field allows to specify the vibration to be emitted
+-   The allowed values are "shear", "entity\_act", and "entity\_interact"
+
+## Molang
+
+-   Added content errors that state _query.remaining\_durability_ and _query.max\_durability_ are only to be used with Item contexts.
+
+## Performance
+
+-   Feature toggle _Enable New Geometry Tessellation Pipeline_ defaults to true
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Add-Ons and Script Engine
+
+-   The block component "minecraft:random\_ticking" is now supported again
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Fixed issue where shadows for alpha tested geometry (doors, leaves, etc.) were no longer rendering in the Deferred Technical Preview 
+-   Banner shields now render when equipped in both left and right hands in the Deferred Technical Preview
+-   Fixed an issue where light emitting items glowed in the player's hand in dark rooms during the day in the Deferred Technical Preview
+-   Improved upscaling stability on Android in the Deferred Technical Preview
+-   On Android, pixelated artifacts are no longer visible on the right half of the screen when upscaling is turned on in the Deferred Technical Preview
+-   Fixed unstable and incorrect light clustering results in the Deferred Technical Preview
+
+## Scripting
+
+-   Added _ScriptBiomeTypes_ and _ScriptBiomeType_ to allow Scripting API to enumerate the BiomeRegistry.
+-   Added a _findClosestBiome_ function to _Dimension_ to find the closest biome of a specified type, to a given position in the world.

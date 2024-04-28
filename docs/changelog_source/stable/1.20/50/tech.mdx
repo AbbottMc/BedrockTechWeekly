@@ -1,0 +1,130 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.20.50 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddonPacks)
+
+## **Performance / Stability**
+
+-   Removed _CraftingEventPacket_
+
+## **Add-Ons and Script Engine**
+
+-   Improved some of the common scripting error messages to provide better context and information
+-   Added a _Clear_ button to the content log screen
+
+## **Animations**
+
+-   Fixed unreliability around _is\_alive_ on Server
+
+## **Blocks**
+
+-   Blocks with the "minecraft:cardinal\_direction", "minecraft:facing\_direction", or "minecraft:block\_face" states as part of the "minecraft:placement\_direction" or "minecraft:placement\_position" BlockTraits are rotated/mirrored properly by Structure Blocks
+-   Structure Void blocks once again prevents interaction with blocks and entities placed behind them ([MCPE-175237](https://bugs.mojang.com/browse/MCPE-175237))
+-   "planks" block is now split into unique instances "oak\_planks", "spruce\_planks", "birch\_planks", "jungle\_planks", "acacia\_planks", "dark\_oak\_planks"
+-   Commands will still work with "planks", however, "planks" block will not be suggested
+-   "stone" block is now split into unique instances: "stone", "granite", "polished\_granite", "diorite", "polished\_diorite", "andesite" and "polished\_andesite"
+
+## **Graphical**
+
+-   When a particle emitter is added to an entity but particles simulate in world, particles now correctly collide with the world
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **API**
+
+-   Added _BlockComponentTypeMap_, _EntityComponentTypeMap_, and _ItemComponentTypeMap_ aliases which map Component IDs to their TypeScript types
+-   Changed _getComponent_, _Entity.getComponent_, and _ItemStack.getComponent_ to return the correct derived Component type
+-   Added _BlockComponentTypes_, _EntityComponentTypes_, and _ItemComponentTypes_ enums that enumerate component ID strings
+-   Moved _PlayerInteractWithBlockAfterEvent_ from _beta_ to _1.7.0_
+-   Moved _PlayerInteractWithBlockBeforeEvent_ from _beta_ to _1.7.0_
+-   Moved _PlayerInteractWithEntityAfterEvent_ from _beta_ to _1.7.0_
+-   Moved _PlayerInteractWithEntityBeforeEvent_ from _beta_ to _1.7.0_
+-   Moved _PlayerLeaveBeforeEvent_ from _beta_ to _1.7.0_
+-   Moved _NumberRange_interface to _minecraft/common_
+    -   Moved _heightRange: NumberRange_ from _beta_ to _1.7.0_
+    -   Moved _matches_from _beta_ to _1.7.0_
+    -   Moved function _clearDynamicProperties_ from _beta_ to _1.7.0_
+    -   Moved function _getDynamicProperties_ from _beta_ to _1.7.0_
+    -   Moved function _getDynamicPropertyIds_ from _beta_ to _1.7.0_
+    -   Moved function _getDynamicPropertyTotalByteCount_ from _beta_ to _1.7.0_
+    -   Moved function _setDynamicProperty_ from _beta_ to _1.7.0_
+    -   Moved function _clearDynamicProperties_ from _beta_ to _1.7.0_
+    -   Moved function _getDynamicProperties_ from _beta_ to _1.7.0_
+    -   Moved function _getDynamicPropertyIds_ from _beta_ to _1.7.0_
+    -   Moved function _getDynamicPropertyTotalByteCount_ from _beta_ to _1.7.0_
+    -   Moved function _setDynamicProperty_ from _beta_ to _1.7.0_
+-   TicksPerSecond
+    -   Moved from _beta_ to _1.7.0_
+    -   Moved _offset_ from _beta_ to _1.7.0_
+    -   Moved _above_ from _beta_ to _1.7.0_
+    -   Moved _below_ from _beta_ to _1.7.0_
+    -   Moved _north_ from _beta_ to _1.7.0_
+    -   Moved _east_ from _beta_ to _1.7.0_
+    -   Moved _south_ from _beta_ to _1.7.0_
+    -   Moved _west_ from _beta_ to _1.7.0_
+    -   Moved _center_ from _beta_ to _1.7.0_
+    -   Moved _bottomCenter_ from _beta_ to _1.7.0_
+-   Added initial NPC support to scripting with the _EntityNpcComponent_
+-   Moved_Entity_._remove_ from _beta_ to _1.7.0_
+
+## **Items**
+
+-   Deprecated the "tag:" legacy item component and released the "minecraft:tags" item component out of experimental in json formats 1.20.50 and higher
+
+## **Mobs**
+
+-   Fixed an issue preventing mobs from spawning further than 6 chunks away from the nearest player even if the server's simulation range is larger than 6 chunks
+-   Added "minecraft:can\_join\_raid" component to allow entities to join existing raids
+
+## **Molang**
+
+-   Fixed animation controller loading to use the pack's _min\_engine\_version_ rather than the file's _format\_version_ to determine the Molang Version. This fix applies to animation controllers in packs with a _min\_engine\_version_ of 1.20.50 or higher
+-   The following Molang queries are Deprecated and will no longer be available in packs with a _min\_engine\_version_ of 1.20.50 or higher
+    -   _is\_scenting_
+        -   Replaced with _timer\_flag\_1_, set by _behavior.timer\_flag\_1_
+    -   _is\_rising_
+        -   Replaced with _timer\_flag\_2_, set by _behavior.timer\_flag\_2_
+    -   _is\_feeling\_happy_
+        -   Replaced with _timer\_flag\_3_, set by _behavior.timer\_flag\_3_
+    -   _dash\_cooldown\_progress_
+        -   It was only used to adjust the head animation of the camel as it came out of dash cooldown
+        -   Camel animation uses _dash\_cooldown\_progress_ in camel.entity.json now
+-   _query.is\_moving_ now detects vertical motion for the player again  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Gametest**
+
+-   _SimulatedPlayer_
+    -   _stopUsingItem_ now returns the item that was being used
+-   Dynamic Properties
+    -   NBT change: Dynamic properties are now stored using the behavior pack manifest UUID, rather than the module UUID. Existing worlds using dynamic properties will continue to work, and will be migrated to the new format when properties are read or modified
+
+## **Script API**
+
+-   Fixed _@minecraft/server-ui_forms not correctly rendering player scoreboard information when embedded in rawtext
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

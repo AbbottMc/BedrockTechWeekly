@@ -1,0 +1,119 @@
+**Posted:** 25 May 2023
+
+**Information on the Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions.
+
+![A Minecraft screenshot featuring a player crawling under a cherry wood trapdoor in a cherry grove, with a villager standing near some planted flowers, and a pair of camels.](https://feedback.minecraft.net/hc/article_attachments/16116940626189)
+
+# **Features and Bug Fixes**
+
+## **Accessibility Features**
+
+-   Improved Xbox On-Screen Keyboard experience including better positioning, updating fields with typed input and no more screen dimming while on screen keyboard is open ([MCPE-156575](https://bugs.mojang.com/browse/MCPE-156575))
+
+## **Sneak and Crawl (Experimental)**
+
+-   Added the ability to crawl behind the Short Sneaking and Crawling Experimental toggle
+-   Created new player crawling animation
+-   Players will now begin crawling when in a 1 block gap, similar to sneaking
+-   Crawling is the same speed as sneaking
+-   Players will automatically stand up or begin sneaking if they leave the 1 block gap
+-   Players will begin swimming if they enter water while crawling, or vice-versa
+-   Player's model is now centered around their hitbox when swimming ([MCPE-54294](https://bugs.mojang.com/browse/MCPE-54294))
+-   Players are no longer able to sneak while riding ([MCPE-170613](https://bugs.mojang.com/browse/MCPE-170613))
+-   Players will now always spawn projectiles from the camera position when sneaking, swimming, or gliding
+-   Players will now spawn particle effects when eating in the correct position if they are sneaking, swimming, or gliding
+-   Loyalty Tridents will always return to the player's camera
+-   Players will no longer suffocate when short sneaking in certain scenarios
+-   Players will no longer suffocate when riding on a Camel in 2 block gaps ([MCPE-166451](https://bugs.mojang.com/browse/MCPE-166451))
+-   Players will no longer be pushed slightly when short sneaking is by being pushed by a block ([MCPE-166411](https://bugs.mojang.com/browse/MCPE-166411))
+-   Fixed many interactions where being forced into sneaking acted the same as holding the sneak button ([MCPE-170610](https://bugs.mojang.com/browse/MCPE-170610))
+
+## **World Generation**
+
+-   Polished Basalt and Chiseled Deepslate can no longer be replaced by Sculk during world generation
+-   Polished Deepslate can now be replaced by Sculk during world generation ([MCPE-160238](https://bugs.mojang.com/browse/MCPE-160238))
+
+## **Villagers**
+
+-   Farmer Villagers will now interact with Torchflower Seeds and Pitcher Pods. They can pick up the seeds and plant them, but they will not harvest the Torchflower or Pitcher Crop ([MCPE-169758](https://bugs.mojang.com/browse/MCPE-169758))
+
+## **Archaeology**
+
+-   Decorated Pots crafted with at least one Sherd now have a hover tooltip displaying the Sherd and Brick ingredients
+
+## **Audio**
+
+-   Camera position is now used for audio system listening and ambient sounds
+    -   Previously the player position and rotation were sometimes used for audio listening
+    -   This effectively flips audio panning when using 'third person front' camera perspective
+
+## **Blocks**
+
+-   Players without permission to open/close containers can no longer interact with Chiseled Bookshelves
+-   Cauldron water texture is now the correct version ([MCPE-170427](https://bugs.mojang.com/browse/MCPE-170427))
+-   Note Block on top of Soul Soil now produces the Harp sound instead of the Snare sound
+-   Shovel can no longer mine Packed Mud as fast as Pickaxe ([MCPE-161207](https://bugs.mojang.com/browse/MCPE-161207))
+-   Placing blocks on Top Snow and Tall Grass while moving side to side will no longer cause them to stack up continuously ([MCPE-162785](https://bugs.mojang.com/browse/MCPE-162785))
+
+## **Graphical**
+
+-   Fixed issues with highlighted blocks and mob shadows appearing through the Pumpkin head overlay on Switch
+-   Rendering of snow or rain is now based on camera position instead of player position
+-   Shields no longer flicker when held in both hands on RTX
+-   Fixed sleep and camera fade effect not covering the screen until after first-person rendering happens
+
+## **Maps**
+
+-   Fixed black pixels being generated on maps when Client-Side Chunk Generation is enabled
+
+## **Mobs**
+
+-   The sound played when a Camel is dashing is no longer played repeatedly ([MCPE-164064](https://bugs.mojang.com/browse/MCPE-164064))
+-   Fixed issue with Jump Boost effect not affecting Magma Cubes ([MCPE-54294](https://bugs.mojang.com/browse/MCPE-54294))
+
+## **User Interface**
+
+-   Added a toggle to all platforms enabling extra-large GUI scaling beyond what the GUI slider allows
+-   Changed the Pause Menu disconnection text to be platform agnostic
+-   Fixed an issue that caused the inventory to get locked up after auto placing ([MCPE-46795](https://bugs.mojang.com/browse/MCPE-46795))
+-   Imported worlds now get their last played date modified to the time they were imported
+
+## **Vanilla Parity**
+
+-   Items dropped by storage entities are now centered inside the nearest block ([MCPE-160189](https://bugs.mojang.com/browse/MCPE-160189))
+-   Shovel has been removed from Boat recipe
+    -   The Bamboo Raft recipe has not been updated yet
+-   Barrel recipe has been modified to use planks instead of Sticks
+-   The Cobweb to String recipe has been removed
+-   Fixed a bug where Zombie Villager did not drop given item after curing ([MCPE-163670](https://bugs.mojang.com/browse/MCPE-163670))
+-   Wild Horses, Mules, and Donkeys can now be tempted using a Golden Apple/Carrot or Enchanted Apple. Llamas will be tempted by a player holding a Hay Bale ([MCPE-140814](https://bugs.mojang.com/browse/MCPE-140814))
+
+## **Vibrations**
+
+-   Placing, rotating, or removing an item in an Item Frame or in a Glow Item Frame now emits vibrations ([MCPE-166741](https://bugs.mojang.com/browse/MCPE-166741))
+-   Charging a Respawn Anchor now emits vibrations ([MCPE-157409](https://bugs.mojang.com/browse/MCPE-157409))
+-   Scraping or applying wax to blocks of the Copper block set now emits vibrations
+-   Switching a Daylight Detector to an Inverted Daylight Detector, or vice-versa, now emits vibrations
+-   Adding food to a Campfire now emits vibrations
+-   Adding or removing a Music Disc to a Jukebox now emits vibrations
+-   Mud turning into Clay now emits vibrations
+-   Harvesting Sweet Berries now emits vibrations
+-   Placing an Eye of Ender in an End Portal Frame now emits vibrations ([MCPE-155372](https://bugs.mojang.com/browse/MCPE-155372))
+-   Bees now emit vibrations when entering or exiting a Beehive or a Bee Nest ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Interacting with a Composter now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Attaching or detaching a Lead from a Fence now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Attaching or detaching a Lead from a mob now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Dying a Sheep now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Picking Glow Berries now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Farmland turning into Dirt now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Using a Spawn Egg on a Monster Spawner now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Silverfish merging with blocks now emit vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Using a Hoe on Rooted Dirt now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Using a Shovel to create Dirt Paths now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Placing a Door now emits vibrations
+-   Planting seeds in Farmland now emits vibrations
+

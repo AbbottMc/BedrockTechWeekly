@@ -1,0 +1,72 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Commands**
+
+-   Updated /titleraw and /tellraw to include support for rendering input key glyphs
+
+## **Mobs**
+
+-   Added spawn categories to Bedrock. They will be used in the future for mob spawning. Spawn categories have been enabled in entity behavior pack files, but are not yet functional
+-   Fixed an issue where _should\_update\_bones\_and\_effects\_offscreen_ and _should\_update\_effects\_offscreen_ were being ignored  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Graphical**
+
+-   Improved texture filtering for renderchunks to smooth the transition between LODs
+-   Added a new feature to the Deferred Technical Preview: **Sky Reflections**. This new effect will reflect the sky on surfaces depending on their roughness and other surface properties. See the updated [Getting Started with Deferred Lighting](https://learn.microsoft.com/en-us/minecraft/creator/documents/deferredlighting?view=minecraft-bedrock-stable) article on the Learning Portal for more information. Note that since these are reflections of the sky, reflections will not be visible when in caves, indoors or the Nether. Reflections for these scenarios and of other objects such as the terrain and entities will be added in future updates.
+
+![reflections-b_before.png](https://feedback.minecraft.net/hc/article_attachments/24982320663565)
+
+![reflections-b_after.png](https://feedback.minecraft.net/hc/article_attachments/24982312392205)
+
+![reflections-a_before.png](https://feedback.minecraft.net/hc/article_attachments/24982320686221)
+
+![reflections-a_after.png](https://feedback.minecraft.net/hc/article_attachments/24982320700813)
+
+## **Editor**
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Improvements this week:
+
+-   Added three classes: the IBlockPaletteItem interface and the ProbabilityBlockPaletteItem and SimpleBlockPaletteItem concrete classes. These classes will be used in the later implementation of the Block Palette
+-   Tool mode screen layout will now be using a fixed drawer system rather than floating window panels. Drawers panels support drag to resize, expand/collapse, and show/hide behaviors
+-   _bindPropertyPane_ API function will now only bind a single pane to the tool. Bound pane will be displayed in the layout drawer next to the tool rail on tool activation. It is recommended to update the pane state once it’s associated with the tool to ensure it’s displayed correctly
+-   Changed top level menus to show up only when they contain items
+-   Added _uniqueId_ property to _IMenuCreationParams_ API which will replace _IMenu_ id on creation
+-   Added _menubar: IMenuContainer_ property _to IPlayerUISession_. _IMenuContainer_ will manage menu related operations
+    -   Added _getMenu_ method to _IMenuContainer_ to return an existing menu item. Predefined editor menus can be retrieved with the new _CoreMenuType_ enum
+    -   Moved _createMenu_ from _IPlayerUISession_ to _IMenuContainer_
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Commands**
+
+-   Improved performance for the /give and /replaceitemcommands. No server lag if there is no target ([MCPE-162190](https://bugs.mojang.com/browse/MCPE-162190))
+-   Fixed the /hud command so that changes do not persist between sessions ([MCPE-179153](https://bugs.mojang.com/browse/MCPE-179153))

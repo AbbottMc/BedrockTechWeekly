@@ -1,0 +1,42 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Editor**
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels withed **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) discussion forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Fixes this week:
+
+-   Minor updates to the Reload button to Tool mode for reloading scripts and refreshing the UI
+-   IPropertyPane
+    -   Added property _collapsed_ to check if the pane is expanded or collapsed
+    -   Added functions _collapse_ and _expand_ to control _collapsed_ state
+
+## **Items**
+
+-   Released the "minecraft:food" item component out of experimental in json formats 1.20.30 and higher 
+-   Added "minecraft:interact\_button" item component to enable and set text on the interact button in json formats 1.20.30 and above 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Graphical**
+
+-   Fixed lighting of items in hand in the Deferred Technical Preview 
+-   Optimization and fixes for point light contributions

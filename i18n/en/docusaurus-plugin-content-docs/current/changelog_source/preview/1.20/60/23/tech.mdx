@@ -1,0 +1,97 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   The "minecraft:geometry.full\_block" identifier for the "minecraft:geometry" block component has been added
+    -   The "minecraft:geometry.full\_block" identifier provides a centered 1x1x1 cube geometry
+    -   When combined with a _material\_instances_ component with "render\_layer": "opaque", it enables rendering-only capabilities previously included in the "minecraft:unit\_cube" component including:
+        -   Occludes both vanilla and custom neighboring full blocks
+        -   Culls faces that neighbor vanilla and custom neighboring full blocks to improve rendering performance
+-   Add content error logging to help creators identify content that hits or exceeds the state bit/permutation count per block ([MCPE-177045](https://bugs.mojang.com/browse/MCPE-177045))
+
+## General
+
+-   Updated listed values for the Vanilla "orientation" block state in documentation
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Components
+
+-   Added an "interact\_filters" field to the "ageable" component, which allows to specify conditions on when the actor can be fed
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) discussion forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Updates this week:
+
+-   Default block for BlockType in Selection tool is now 'grass'.
+-   Scripted property panes will now be scrollable once they reach a certain height.
+-   Editor Playtest pane now supports setting time of day and weather when testing levels, as well as minor tweaks to the layout. Time in the Playtest pane supports either Minecraft time (0-23999) or 24hr time (00:00-23:59). 
+-   Added new bindings and support for scripts to be able to push a TypeScript object as a payload on to the transaction stack, and register a set of handler functions which will receive the payload when the transaction system receives an undo or redo event
+-   A Navigation record system has been added to Editor. View the GitHub release notes for more details on features and functionality. 
+-   Added an export for stringFromExtension so that it can be used in both internal and external Creator extensions
+-   A new line tool is added to the Editor. View the GitHub release notes for more details on features and functionality. 
+-   Editor UI now scales according to the screen resolution rather than the game window size.
+-   Property options in the play/test pane retain their values when the game reloads. 
+
+This week we are officially closing the v0.4.X semantic iterations and considering our work towards v0.5 done. View release notes in GitHub for additional details and an aggregate summary of all v0.4.X iteration updates.
+
+## Molang
+
+-   Released Molang queries from experimental
+    -   _query.is\_cooldown\_type_
+    -   _query.cooldown\_time_
+    -   _query.cooldown\_time\_remaining_
+    -   _query.relative\_block\_has\_any\_tag_
+    -   _query.relative\_block\_has\_all\_tags_
+    -   _query.block\_neighbor\_has\_any\_tag_
+    -   _query.block\_neighbor\_has\_all\_tags_
+    -   _query.block\_has\_any\_tag_
+    -   _query.block\_has\_all\_tags_
+    -   _query.bone\_orientation\_trs_
+    -   _query.bone\_orientation\_matrix_ 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Add-Ons and Script Engine
+
+-   The "minecraft:unit\_cube" block component has been deprecated. Using it in content marked 1.20.60 and beyond will provide a content error
+    -   Using content marked prior to 1.20.60 will have their "minecraft:unit\_cube" block component upgraded to a "minecraft:geometry" block component with a "minecraft:geometry.full\_block" identifier, but will maintain backwards compatibility with all behaviors
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Molang
+
+-   Changed cooldown query slot IDs to be required for container slots with more than one index, logging content errors if not provided
+    -   _query.cooldown\_time(slotName,slotId)_
+    -   _query.cooldown\_time\_remaining(slotName,slotId)_
+    -   _query.is\_cooldown\_type(cooldownName,slotName,slotId)_
+
+## Graphical
+
+-   The player's body will now cast a shadow in first person mode in the Deferred Technical Preview. Note that some held items will still not cast shadows
+-   The loading screen will no longer turn black on Android when entering a PBR-capable world with the Deferred Technical Preview enabled
+-   Hoppers in Minecarts no longer exhibit ghosting artifacts during camera motion when the Deferred Technical Preview is enabled
+-   The game no longer crashes when exiting a world with the Deferred Technical Preview enabled

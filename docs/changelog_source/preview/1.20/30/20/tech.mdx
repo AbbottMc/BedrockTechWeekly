@@ -1,0 +1,131 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Removed _MinecraftItemTypes_ from @minecraft/server and replaced with version from @minecraft/vanilla-data
+
+## **Add-Ons and Script Engine**
+
+-   Added Script Binding functions to get/set the _CompoundBlockVolume_origin
+-   Added additional params to some methods to query the children of _CompoundBlockVolume_for their positional relativity to the parent
+-   Added additional params to some methods to freeze positional relativty when origin changes are submitted
+-   Big Dripleaf blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\]
+-   Small Dripleaf blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\]
+-   Pink Petals blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\] 
+-   End Portal Frame blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\] 
+-   Lectern blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\] 
+-   Anvil blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\] 
+-   Campfire blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\] 
+-   Soul Campfire blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\]
+-   Calibrated Sculk Sensor blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\] 
+-   Powered Comparator blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\] 
+-   Unpowered Comparator blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\] 
+-   Powered Repeater blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\]
+-   Unpowered Repeater blocks use state "minecraft:cardinal\_direction" instead of "direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3\] 
+-   BlastFurnace blocks use state "minecraft:cardinal\_direction" instead of "facing\_direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3, 5, 6\]
+-   Furnace blocks use state "minecraft:cardinal\_direction" instead of "facing\_direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3, 5, 6\]
+-   LitBlastFurnace blocks use state "minecraft:cardinal\_direction" instead of "facing\_direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3, 5, 6\]
+-   LitFurnace blocks use state "minecraft:cardinal\_direction" instead of "facing\_direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3, 5, 6\]
+-   LitSmoker blocks use state "minecraft:cardinal\_direction" instead of "facing\_direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3, 5, 6\]
+-   Smoker blocks use state "minecraft:cardinal\_direction" instead of "facing\_direction", this state uses string values \["south", "west", "north", and "east"\] instead of \[0, 1, 2, 3, 5, 6\]
+
+## **AI Goals**
+
+-   "cooldown" field for target descriptors now properly work in "minecraft:behavior.nearest\_prioritized\_attackable\_target" goal 
+
+## **Editor**
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) discussion forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Fixes this week:
+
+-   Fixed a bug where the position of the selection cursor was not being recalculated upon block updates
+-   Vec3 component minimum limit will now default to Number.MAX\_SAFE\_INTEGER
+-   Player count added to status bar
+-   Editor API updates - documentation to follow:
+    -   Fixed bugs caused by CompoundBlockVolume relativity
+    -   Normalize the use of CompoundBlockVolume instead of Selection
+    -   Updated CompoundBlockVolume to maintain internal volume list as relative
+        -   Converted CompoundBlockVolume to be a list of relative volumes to an origin.
+        -   Added a CompoundBlockVolumeRelativeType to signal volume push operations as relative or absolute
+        -   Added set/get Origin functions and a translate function
+
+## **Items**
+
+-   Released the "minecraft:enchantable" item component out of experimental in json formats 1.20.30 and higher
+-   Deprecated "minecraft:mining\_speed" in json formats 1.20.30 and higher. Use "minecraft:digger" instead to achieve the same functionality
+
+## **Mobs**
+
+-   Entity names beginning with a number will now result in a content error
+
+## **Item Frames**
+
+-   The correct broken state of the Elytra is rendered in Item Frames ([MCPE-19700](https://bugs.mojang.com/browse/MCPE-19700))
+
+## **Script API**
+
+-   Converting the _CompoundBlockVolume_container to use relative coordinates to an internal origin
+-   Normalize the use of _CompoundBlockVolume_instead of Selection across Editor API
+
+## **User Interface**
+
+-   Fixed localization of 'Detected lost connection' connection is lost from other player or server ([MCPE-173028](https://bugs.mojang.com/browse/MCPE-173028))
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Render Dragon Features for Creators**
+
+Introducing new experimental cross-platform graphics features for creators. We are making these available early as a technical preview to get feedback as we develop. Performance and visual fidelity will improve over time.
+
+Features included in this first technical preview include:
+
+-   PBR materials – blocks and entities
+-   Primary lighting
+-   Shadows (sun & moon)
+-   Bloom
+-   Tone mapping
+-   Atmospheric Scattering
+
+For now, these features are available in Preview/Beta on:
+
+-   Windows PC
+-   Xbox
+-   Android
+
+For more information and guides on how to get started using these features, check out our post here: [aka.ms/deferredPreview](https://aka.ms/deferredPreview)
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Blocks**
+
+-   Custom blocks will now only transmit Redstone power if they are a unit cube and all materials are opaque ([MCPE-168998](https://bugs.mojang.com/browse/MCPE-168998)) 
+
+## **Items**
+
+-   Fixed an issue where items with format version 1.20.20 and above using the 'menu\_category' field in a world with the 'Holiday Creator Features' toggle enabled would not load
+-   Removed "minecraft:requires\_interact" component
+
+### _INFORMATION ON THE MINECRAFT PREVIEW AND BETA:_ 
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+As always, you can check out the latest full changelog at [aka.ms/MinecraftBeta](https://aka.ms/MinecraftBeta). Good luck and enjoy the Minecraft Preview update!

@@ -1,0 +1,80 @@
+**Posted:** 31 January 2024
+
+## **Information on the Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A Minecraft scene of a trial chamber. There is a vault block in the front, with a trial key beside it. In the background are two breeze mobs.](https://feedback.minecraft.net/hc/article_attachments/23693972746253)
+
+In this week’s Bedrock Preview and Beta we’re bringing you three things I am _particularly_ excited about. Grudge-bearing armadillos! (Now they’ll _remember_ who hit them last and view that player as a threat.)  Breeze vs. iron golem battles! (The one we’ve all been waiting for) And finally a brand new block: the vault! The vault is especially exciting for those who like playing multiplayer, as it makes it far more rewarding for everyone in your party – literally. That’s because the vault (unlike chests) can be unlocked and looted by multiple players (although _only once per player_). So no more crying over empty chests! Now you only need to cry if you accidentally hit an armadillo – because they’ll remember. For 10 whole seconds!
+
+Here’s a list of what’s new. As always, we love to hear your feedback, so please let us know what you think [here](https://aka.ms/mcvaultsfeedback), and report any bugs you may encounter at [bugs.mojang.com](https://bugs.mojang.com/).
+
+# Experimental Features
+
+## Vault
+
+-   A block that holds locked treasure and loot - find the right key to eject its rewards
+    -   Found throughout Trial Chambers, containing the structures' most valuable loot
+    -   Vaults in Trial Chambers require a Trial Key to be unlocked
+-   Can be unlocked by an unlimited amount of players
+    -   After a player has unlocked a Vault, they cannot unlock that Vault again
+    -   If a player has not unlocked that Vault before, an orange stream of particles will flow from the player to the Vault when nearby
+-   Has a keyhole that will be open or closed depending on the players nearby
+    -   If any nearby player has not unlocked that Vault, the keyhole will be open
+    -   If all nearby players have unlocked that Vault, the keyhole will be closed
+-   Within its cage, it will cycle through and display items which are possible to eject from its loot table
+-   The rewards it ejects are randomized from its loot table each time it is unlocked
+-   Vaults currently reuse the same loot table that reward chests previously used in the Trial Chambers
+    -   This loot table is temporary and will be completely revised as development continues
+-   Cannot be crafted or obtained in Survival mode, and does not drop anything when mined
+-   Explosion-resistant and cannot be moved
+
+## Armadillo
+
+-   All sounds emitted by Armadillos are now audible even when the player is facing away 
+    -   Armadillos now keeps track of the last player who hit them, regarding them as a threat for 10 seconds
+-   Hurt sounds emitted by rolled-up Armadillos have been updated 
+
+## Breeze
+
+-   Breeze is now aggressive toward Iron Golems, in addition to players
+-   Breeze no longer retaliates against attacks from the following mobs: Skeletons, Strays, Zombies, Husks, Spiders, Cave Spiders, and Slimes
+    -   The above mobs don't retaliate when hurt by the Breeze's Wind Charge projectile
+-   Fixed the Breeze's run particles to pick up particle color/texture from Leaf blocks if that's the block immediately below the Breeze
+
+# Features and Bug Fixes
+
+## Commands
+
+-   Added "has\_property" filter for entity target selector that allows for targeting based on the type and value of properties
+-   The /damage command no longer contains the damage type 'suicide'. It is replaced with 'self\_destruct' ([MCPE-174865](https://bugs.mojang.com/browse/MCPE-174865))
+
+## Items
+
+-   In Realms, attempting destruction of one Sea Turtle Egg on a stack of more than one in Creative no longer destroys two at once ([REALMS-10477](https://bugs.mojang.com/browse/REALMS-10477))
+-   Spawn Eggs are now called "\[Mob\] Spawn Egg" instead of "Spawns \[Mob\]" so that players can more easily search for them in the Creative inventory
+
+## Marketplace
+
+-   Fixed a bug that could cause the loading screen to get stuck for some time at 41% ([MCPE-175550](https://bugs.mojang.com/browse/MCPE-175550)) 
+
+## Mobs
+
+-   When fed, baby mobs now emit both sound and particles 
+-   All sounds emitted by Phantoms are now audible even when the player is facing away ([MCPE-133125](https://bugs.mojang.com/browse/MCPE-133125))
+-   All sounds emitted by Wardens are now audible even when the player is facing away ([MCPE-159481](https://bugs.mojang.com/browse/MCPE-159481))
+
+## Realms
+
+-   Added a new story type called "Realm Events". These new stories are automatically posted to the feed when interesting events happen on your Realm. The more you play, the more you'll find.
+-   Fixed an issue with time stamps on Stories being centered instead of displaying in the top right corner.
+-   Fixed a crash caused by Realms Stories pagination.
+-   Fixed a crash that could occur when using a gamepad to go back from the Members tab in Realms Stories 
+-   Fixed issue with time blocks not rendering correctly after changing the time zone on PlayStation.
+-   Fixed an issue with the screen reader narrating unavailable Realms pages.
+-   Fixed an issue where GUI scaling being turned off caused most of Realms Plus PDP text to be missing.
+-   Fixed an issue where user would get an error message incorrectly displaying on the "Choose a Preview Realm" screen after they had backed out of the "Choose a Subscription" screen.
+

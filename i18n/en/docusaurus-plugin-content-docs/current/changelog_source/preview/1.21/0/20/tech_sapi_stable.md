@@ -1,0 +1,38 @@
+
+
+-   ScreenDisplay
+    -   Moved _getHiddenHudElements(): HudElements\[\]_from _beta_ to _11.0_
+    -   Moved _isForcedHidden(hudElement: HudElements): boolean_from _beta_ to _11.0_
+    -   Moved _resetHudElements(): void_from _beta_ to _11.0_
+    -   Moved _setHudVisibility(visible: HudVisibility, hudElements?: HudElements\[\]): void_from _beta_ to _11.0_
+    -   Moved _hideAllExcept(hudElements?: HudElements\[\]): void_from _beta_ to _11.0_
+-   HudElement
+    -   Moved _HudElement_enum from _beta_ to _11.0_
+    -   Moved _HudElementsCount_from _beta_ to _11.0_
+-   HudVisibility
+    -   Moved _HudVisibility_enum from _beta_ to _11.0_
+    -   Moved _HudVisibilityCount_from _beta_ to _11.0_
+-   Moved _WeatherChangeBeforeEvent_from _beta_ to _11.0_ 
+-   BlockPermutation
+    -   Removed function _clone_
+-   Creator Settings UI
+    -   Watchdog settings
+    -   Increase script hang threshold
+    -   Disable/Enable slow script warnings and adjust threshold
+    -   Disable/Enable script spike warnings and adjust threshold
+    -   Removed _disableWatchdog_method
+    -   Added _disableWatchdogTimingWarnings_to disable spike and slow warnings per behavior pack
+-   Released _ItemEnchantableComponent_from _beta_ to _11.0_ 
+-   Released Enchantment APIs from _beta_to _11.0_
+    -   interface _Enchantment_
+    -   enum _EnchantmentSlot_
+    -   class _EnchantmentType_
+    -   class _EnchantmentTypes_
+-   Added new interface _EntityFilter_with many of the existing options from _EntityRaycastOptions_
+-   _EntityRaycastOptions_now inherits from _EntityFilter_
+-   _EntityQueryOptions_now inherits from _EntityFilter_
+-   Removed property _blockFilter_(and several others, now moved to _EntityFilter_) from _BlockRaycastOptions_
+-   _BlockRaycastOptions_now inherits from _BlockFilter_
+-   Released _BlockFilter_to _4.0_
+-   Released _volume_from _beta_ to _v1.11.0_
+

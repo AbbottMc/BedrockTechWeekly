@@ -1,0 +1,72 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Blocks
+
+-   "double\_wooden\_slab" block is now split into unique instances "oak\_double\_slab", "spruce\_double\_slab", "birch\_double\_slab", "jungle\_double\_slab", "acacia\_double\_slab", "dark\_oak\_double\_slab"
+    -   This requires a "format\_version" of 1.20.70 or higher
+
+## Components
+
+-   "damage\_sensor" component's "damage\_modifier" and "damage\_multiplier" fields are now properly considered during damage immunity calculations, so that damage adjusted to be lesser or equal to the highest damage received during an entity's immunity period will be accurately ignored ([MCPE-167651](https://bugs.mojang.com/browse/MCPE-167651))
+    -   This requires a world version of 1.20.70 or higher
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Fixes this week:
+
+-   Fixed a bug where the reload modal failed to appear when pressing the button with multiple connected players
+
+## Entity Filters
+
+-   Added new entity filter "was\_last\_hurt\_by", which checks if the subject is the last player or mob to have recently attacked the entity
+
+## Items
+
+-   Custom armor attachables can now be trimmed with vanilla trims, and modified vanilla patterns can be applied to custom armor attachables and items  
+    -   Vanilla trim textures can be overridden via the attachable component
+    -   Vanilla trims can be applied to custom geo armor via the attachable component
+    -   Modified vanilla trim patterns (to fit the new geo armor) can be applied via the attachable component
+    -   Armor trim patterns on custom armor requires the 1.20.60+ format version for the attachable and item
+
+## Molang
+
+-   _surface\_particle\_color_, _query.surface\_particle\_texture\_coordinate_, and _query.surface\_particle\_texture\_size_ are now versioned with 1.20.70 to allow the three queries to see leaf blocks as the surface texture below the block. Molang versions lower than 1.20.70 will continue to not see the leaf block below them
+-   This change takes effect for Molang queries in packs that have a manifest.json min\_engine\_version of 1.20.70 or higher.
+
+## Stability and Performance
+
+-   Removed _ItemFrameDropItemPacket_ 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Dimension
+
+-   _Dimension.getEntities_ now only returns the entities within the dimension that's being queried
+
+## Graphical
+
+-   Enabled the Deferred Technical Preview for iOS devices
+-   Added Point Light Shadows to the Deferred Technical Preview. This new feature allows light sources such as torches and lanterns to cast shadows
+    -   Note that depending on your current Shadows Quality setting, this feature may be disabled by default. A new label and tooltip have been added to the Deferred Graphics section in Video Settings to indicate if point light shadows are currently on/off.
+    -   Some instability may arise when using this new feature in tandem with "Ultra" settings for other features. If you experience crashes, then lowering some visual settings may help alleviate the issue until it is resolved.
+-   Fixed the lighting of the Allay in Deferred Technical Preview

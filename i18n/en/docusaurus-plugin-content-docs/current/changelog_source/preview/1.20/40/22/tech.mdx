@@ -1,0 +1,29 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Stability and Performance**
+
+-   The Sounds definition file sound\_definitions.json will no longer crash the game if the wrong json type is used for a specific sound definition ([MCPE-168913](https://bugs.mojang.com/browse/MCPE-168913))  
+      
+    
+
+# **Experimental Technical**
+
+## **API**
+
+-   Added function _getWeather_
+
+## **Stability and Performance**
+
+-   Fixed a crash on certain Android devices (e.g. Mali GPUs) while loading into worlds with the Deferred Technical Preview enabled ([MCPE-173934](https://bugs.mojang.com/browse/MCPE-173934))
+-   Disabled the Deferred Technical Preview on some Android devices that don’t support our current requirements for compute shaders (GL\_MAX\_COMPUTE\_WORK\_GROUP\_INVOCATIONS \>= 256)
+

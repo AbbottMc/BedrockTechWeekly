@@ -1,0 +1,113 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.20.10 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddonPacks)
+
+## **Dedicated Server**
+
+-   **Note for Linux users:** Ubuntu 18.04 LTS (Bionic Beaver) will reach End of Standard Support in 2023. Accordingly, the Linux Minecraft Dedicated Server will also raise its minimum target Ubuntu version to 20.04 LTS (Focal Fossa) in a later 1.20 update (exact release to be determined). Minecraft server operators using Ubuntu are encouraged to prepare for this transition by updating their deployments to 20.04 LTS as soon as possible.
+-   Fixed invalid entries in allowlist.json causing a crash ([BDS-18133](https://bugs.mojang.com/browse/BDS-18133))
+
+## **Stability and Performance**
+
+-   Invalid JSON objects within the entity component _"minecraft:behavior.nearest\_attackable\_target"_ will no longer crash the game ([MCPE-168129](https://bugs.mojang.com/browse/MCPE-168129))
+-   Fixed a crash that could occur when running the _“go\_and\_give\_items\_to\_noteblock”_ goal
+-   Fixed a crash that could occur when attempting to change a mob’s scale while it was colliding with blocks ([MCPE-170645](https://bugs.mojang.com/browse/MCPE-170645))
+
+## **Add-Ons and Script Engine**
+
+-   Added deprecation error message for the _part\_visibility_ component (the _bone\_visibility_ field in the geometry component should be used instead, see block documentation for more information)
+-   Fixed an issue where adding a _minecraft:peek_ component to a custom entity would cause the game to crash
+
+## **Commands**
+
+-   _/time query_ command will now return the correct day and time of day when the absolute time is negative
+-   Executing the "_inputpermission set_" command will now output a message to the chat with the results ([MCPE-168368](https://bugs.mojang.com/browse/MCPE-168368))
+-   Executing the "_inputpermission set_" command will now result in an error if it does not affect any players
+-   Command positions will now use the current position/rotation when running mcfunctions via execute
+-   Fixed issue where some execute commands stopped working on Realms ([MCPE-169974](https://bugs.mojang.com/browse/MCPE-169974)) 
+-   The "_hasitem_" target selector argument now counts items held with the cursor ([MCPE-152002](https://bugs.mojang.com/browse/MCPE-152002))
+-   Commands will still work with "concrete", but "concrete" won't be suggested in the command prompt, rather the new names will
+    -   "concrete" block is now split into unique instances, namely "white\_concrete", "orange\_concrete", "magenta\_concrete", "light\_blue\_concrete", "yellow\_concrete", "lime\_concrete", "pink\_concrete", "gray\_concrete", "light\_gray\_concrete", "cyan\_concrete", "purple\_concrete", "blue\_concrete", "brown\_concrete", "green\_concrete", "red\_concrete", and "black\_concrete"
+-   Java Parity: Block states in commands will use equals instead of colon in version 1.20.0 and later. For example using the setblock command: /setblock ~ ~ ~ oak\_log\["pillar\_axis"="x"\] ([MCPE-168056](https://bugs.mojang.com/browse/MCPE-168056))
+-   Block states with equals don't require a space to show autocomplete options ([MCPE-168056](https://bugs.mojang.com/browse/MCPE-168056))
+
+## **Components**
+
+-   Added a content error when _minecraft:balloonable_ is used on _minecraft:player_ to prevent issues as this component is not supported in this way ([MCPE-164495](https://bugs.mojang.com/browse/MCPE-164495))
+
+## **Entities**
+
+-   Custom entities are no longer restricted to overriding Vanilla entities released before 1.20. All Vanilla entities can be used in the "_identifier_" or "_runtime\_identifier_" field, including Camel and Sniffer
+
+## **Blocks**
+
+-   Updated the "_minecraft:geometry_" block component to allow bone visibility to be defined with a Molang expression
+-   Changed _minecraft:block_ JSON schema so what was previously called "_properties_" is now called "_states_". This change takes effect for files where format\_version is 1.20.10 or higher. Previous content is unaffected
+
+## **Items**
+
+-   Released the _minecraft:cooldown_ item component out of experimental in json formats 1.20.10 and higher
+-   Released the _minecraft:repairable_ item component out of experimental in json formats 1.20.10 and higher
+-   Items with the _"minecraft:block\_placer"_ component will now place blocks with correct orientation
+-   Released the _"minecraft:max\_stack\_size"_ item component out of experimental in json formats 1.20.10 and higher
+-   Custom items with _"minecraft:block\_placer"_ will no longer place certain blocks in the wrong location
+-   Released the _"minecraft:block\_placer"_ item component out of experimental in json formats 1.20.10 and higher
+-   Released the _"minecraft:record"_ item component out of experimental in json formats 1.20.10 and higher
+-   Released the "_minecraft:can\_destroy\_in\_creative_" item component out of experimental in json formats 1.20.10 and higher
+-   Released the "_minecraft:hover\_text\_color_" item component out of experimental in json formats 1.20.10 and higher  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Add-Ons and Script Engine**
+
+-   Camera Presets can now specify _"listener":"player"_ to have the audio system use the player position for audio positioning
+    -   Added _"example:example\_player\_listener"_ Camera Preset to demonstrate this option
+-   Actually fixed the bug that caused player capes to stop flapping when moving forward but looking sideways in the _query.cape\_flap\_amount_ by switching the rotation used from the player's looking rotation to the player's body rotation ([MCPE-153446](https://bugs.mojang.com/browse/MCPE-153446))
+-   Observer blocks use state "_minecraft:facing\_direction_" instead of "_facing\_direction_". "_minecraft:facing\_direction_" uses string values ("down", "up", "north", "south", "east", "west")
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Camera**
+
+-   Changed camera command fade color to take integer values from 0 to 255 rather than 0.0 to 1.0 fractional values
+-   Camera fade command now enforces fade duration limits; fade in, hold, and fade out must be between 0 and 10 seconds
+-   Ensuring camera pitch can only be between -90 and 90 degrees when using the /camera command
+-   Camera preset JSON now supports an optional bool '_player\_effects_' value which causes game rendering to use player effect state (for example night vision) when this preset is active. Added the "_example:example\_player\_effects_" preset to demonstrate this
+-   Camera command can now take a 'facing' option instead of a 'rot' option with a target entity or position specified
+-   Fixed custom cameras to not use the 'inside block' effect when player head is inside a block ([MCPE-170206](https://bugs.mojang.com/browse/MCPE-170206))
+-   Limit free cam JSON to not pitch camera beyond plus or minus 90 degrees
+-   Fixed /_camerashake_ command to shake camera without also shaking player
+-   Rendering of experimental _minecraft:free_ camera no longer affected by player state like night vision
+
+## **Items**
+
+-   Items in format version 1.20.10 and above with the _”minecraft:throwable”_ component will trigger Item Use events when thrown
+-   Custom items with _"minecraft:block\_placer"_ will no longer place certain blocks in the wrong location
+-   Changed _"minecraft:shooter"_ to only consume ammo when charging the item if _"charge\_on\_draw"_ is set "_true_"
+-   Items with the "_minecraft:block\_placer_" component will now place blocks with correct orientation
+-   Deprecated "_minecraft:render\_offsets_" component in json formats 1.20.10 and higher
+-   Changed charging action behavior in "_minecraft:shooter_" to match Vanilla crossbow
+-   Changed shooting behavior for a charged "_minecraft:shooter_" with an empty inventory/offhand to successfully shoot the charged ammunition
+-   Released the "_minecraft:shooter_" item component out of experimental in json formats 1.20.10 and higher
+-   Released the "_minecraft:throwable_" item component out of experimental in json formats 1.20.10 and higher
+-   Released the "_minecraft:projectile_" item component out of experimental in json formats 1.20.10 and higher
+-   Released the "_minecraft:can\_destroy\_in\_creative_" item component out of experimental in json formats 1.20.10 and higher
+-   Released the "_minecraft:hover\_text\_color_" item component out of experimental in json formats 1.20.10 and higher

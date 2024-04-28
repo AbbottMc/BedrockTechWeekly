@@ -1,0 +1,56 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [**how to use**](https://aka.ms/LearnEditor) the Editor, join the [**GitHub Discussion**](https://github.com/Mojang/minecraft-editor/discussions) discussion forum to engage with the team, and get started building extensions via the [**starter kit**](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [**samples**](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Updates this week:
+
+-   Fixed editor screen freeze bug caused by CTRL+TAB shortcut. 
+-   New API! Simulation paused state is now available for editor scripting via the editor global object's simulation property. 
+-   Menu items now have a checked property, of type boolean | undefined. If the value is defined, the menu will show a checkmark if the value is true.
+-   Added an \`all\` optional parameter to the \`/reload\` slash command when running in Editor mode which enables a full warm reload of the entire Editor. 
+
+## Entity Components
+
+-   Entity event response run\_command has been renamed to queue\_command and has been released out of experimental. Commands run via queue\_command may be deferred until the next tick. If the entity is removed before the command is run, the command will not execute. Content using run\_command under experimental will still work for now but the experimental feature is now considered deprecated
+
+## Items
+
+-   Unrecognized fields in component item jsons will now give a warning to the content log in format versions 1.20.60 and higher
+
+## Loot Tables
+
+-   Decorated Pots now support the use of loot tables
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Graphical
+
+-   Improved performance by fixing a GPU resource allocation bug that resulted in constant reallocations every frame in the Deferred Technical Preview
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

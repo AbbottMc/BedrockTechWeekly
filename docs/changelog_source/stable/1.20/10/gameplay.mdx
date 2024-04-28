@@ -1,0 +1,178 @@
+**Posted:** July 11, 2023
+
+A new Minecraft update is ready to play! Since releasing the Trails & Tales update, the team has been hard at work on even more improvements to the game. Here are just a few of the highlights:
+
+-   Players can now sneak under 1.5 block gaps
+-   Shovels are no longer needed to craft Boats
+-   Many more actions now emit vibrations detected by Sculk Sensors
+-   Fixes to over 50 community-reported issues
+
+## **NOTE:** This update will appear as version 1.20.11 on Xbox
+
+Your thoughts on the game continue to shape new updates so please upvote and report any new bugs at [bugs.mojang.com](https://bugs.mojang.com) and leave us your feedback at [feedback.minecraft.net](https://feedback.minecraft.net/).
+
+![patchnotes_r20u1.png](https://feedback.minecraft.net/hc/article_attachments/17381830429709)
+
+## **Vanilla Parity**
+
+## **Short Sneaking**
+
+-   Player’s hitbox height now reduces to 1.5 blocks while sneaking
+    -   Sneaking will automatically be initiated while stuck in a gap of less than 1.8 blocks
+    -   Sneaking will lower the player camera height respective of these changes
+    -   Sneaking now requires enough space to stand in order to exit sneaking
+    -   Players will transition from swimming to sneaking if they are unable to stand up but would be able to sneak
+-   Players are no longer able to sneak while riding ([MCPE-170613](https://bugs.mojang.com/browse/MCPE-170613))
+-   Players will no longer suffocate when short sneaking in certain scenarios
+-   Players will no longer suffocate when riding on a Camel in 2 block gaps ([MCPE-166451](https://bugs.mojang.com/browse/MCPE-166451)) 
+-   Players will no longer be pushed slightly when short sneaking is by being pushed by a block ([MCPE-166411](https://bugs.mojang.com/browse/MCPE-166411))
+-   Fixed many interactions where being forced into sneaking acted the same as holding the sneak button ([MCPE-170610](https://bugs.mojang.com/browse/MCPE-170610))
+
+## **Other Changes**
+
+-   Items dropped by storage entities are now centered inside the nearest block ([MCPE-160189](https://bugs.mojang.com/browse/MCPE-160189))
+-   Shovel has been removed from Boat recipe
+-   Barrel recipe has been modified to use Planks instead of Sticks
+-   The Cobweb to String recipe has been removed
+-   Fixed a bug where Zombie Villager did not drop given item after curing ([MCPE-163670](https://bugs.mojang.com/browse/MCPE-163670))
+
+## **Experimental Features**
+
+## **Crawling**
+
+-   Added the ability to crawl behind the Short Sneaking and Crawling Experimental toggle
+-   Created new player crawling animation
+-   Players will now begin crawling when in a 1 block gap, similar to sneaking
+-   Crawling is the same speed as sneaking
+-   Players will automatically stand up or begin sneaking if they leave the 1 block gap
+-   Players will begin swimming if they enter water while crawling, or vice-versa
+-   Player's model is now centered around their hitbox when swimming ([MCPE-122663](https://bugs.mojang.com/browse/MCPE-122663))
+-   Players will now always spawn projectiles from the camera position when sneaking, swimming, or gliding
+-   Players will now spawn particle effects when eating in the correct position if they are sneaking, swimming, or gliding
+-   Loyalty Tridents will always return to the player's camera
+-   Players will no longer be stuck inside Cauldrons or Composters when crawling inside with a Trapdoor ([MCPE-170836](https://bugs.mojang.com/browse/MCPE-170836))
+-   The paper doll will now show up properly when crawling
+-   Fixed an issue where gliding or swimming could sometimes give the player an incorrect bounding box ([MCPE-170882](https://bugs.mojang.com/browse/MCPE-170882))
+
+## **Recipe Unlocking**
+
+-   Recipe unlocking – now in Bedrock!
+    -   Added recipe unlocking as an experiment
+    -   Collect materials to unlock relevant recipes
+    -   A notification will tell you when you've found a new crafting material
+    -   Picking up an item teaches you how to craft that item. Great for when a friend gives you a tool you haven’t crafted before
+    -   We’d love to hear what you think of this feature, so please send us your feedback at [aka.ms/MCRecipeUnlocks](https://aka.ms/MCRecipeUnlocks)  
+          
+        
+
+## **Fixes and Changes**
+
+## **General**
+
+-   Fixed the "Communication Error" message appearing when leaving a Local Network game as the host on Nintendo Switch
+-   Reduce cases where players might see 'Unable to connect' errors due to 'Expired Auth from Discovery' ([MCPE-170814](https://bugs.mojang.com/browse/MCPE-170814))
+
+## **Gameplay**
+
+-   Camera position is now used for audio system listening and ambient sounds
+    -   Previously the player position and rotation were sometimes used for audio listening
+    -   This effectively flips audio panning when using 'third person front' camera perspective
+
+## **Mobs**
+
+-   Farmer Villagers will now interact with Torchflower Seeds and Pitcher Pods. They can pick up the seeds and plant them, but they will not harvest the Torchflower or Pitcher Crop ([MCPE-169758](https://bugs.mojang.com/browse/MCPE-169758))
+-   The sound played when a Camel is dashing is no longer played repeatedly ([MCPE-164064](https://bugs.mojang.com/browse/MCPE-164064))
+-   Fixed issue with Jump Boost effect not affecting Magma Cubes ([MCPE-54294](https://bugs.mojang.com/browse/MCPE-54294))
+-   Fixed Boats on Ice disappearing when Client-Side Chunk-Generation was enabled ([MCPE-169313](https://bugs.mojang.com/browse/MCPE-169313))
+-   Mobs are back to normal despawn rate during night ([MCPE-170208](https://bugs.mojang.com/browse/MCPE-170208))
+-   Camels now play a walking animation when taking damage while standing still ([MCPE-166566](https://bugs.mojang.com/browse/MCPE-166566))
+-   Sniffer can no longer dig up seeds in the air
+-   Mobs no longer continue to freeze without Powder Snow if there is a Powder Snow block near the west and north side ([MCPE-169453](https://bugs.mojang.com/browse/MCPE-169453))
+
+## **Blocks**
+
+-   Polished Basalt and Chiseled Deepslate can no longer be replaced by Sculk during world generation
+-   Polished Deepslate can now be replaced by Sculk during world generation ([MCPE-160238](https://bugs.mojang.com/browse/MCPE-160238))
+-   Decorated Pots crafted with at least one Sherd now have a hover tooltip displaying the Sherd and Brick ingredients
+-   Players without permission to open/close containers can no longer interact with Chiseled Bookshelves
+-   The correct sound effect is now played when removing an enchanted Book from Chiseled Bookshelf ([MCPE-168119](https://bugs.mojang.com/browse/MCPE-168119))
+-   Chiseled Bookshelf slot interactions are now symmetrical ([MCPE-164801](https://bugs.mojang.com/browse/MCPE-164801))
+-   Cauldron water texture is now the correct version ([MCPE-170427](https://bugs.mojang.com/browse/MCPE-170427))
+-   Note Block on top of Soul Soil now produces the Harp sound instead of the Snare sound
+-   Shovel can no longer mine Packed Mud as fast as Pickaxe ([MCPE-161207](https://bugs.mojang.com/browse/MCPE-161207))
+-   Placing blocks on Top Snow and Tall Grass while moving side to side will no longer cause them to stack up continuously ([MCPE-162785](https://bugs.mojang.com/browse/MCPE-162785))
+-   Suspicious Gravel and Suspicious Sand blocks now display correctly on Maps
+-   Mushrooms are now able to spawn on fallen tree trunks ([MCPE-138333](https://bugs.mojang.com/browse/MCPE-138333))
+-   Conduit now has the correct lighting when placed on ground ([MCPE-169732](https://bugs.mojang.com/browse/MCPE-169732))
+
+## **Items**
+
+-   Fixed black pixels being generated on maps when Client-Side Chunk Generation was enabled
+-   Shield no longer clips inside the Armor Stand model while in the riposte pose
+
+## **Sculk Vibrations**
+
+-   Placing, rotating, or removing an item in an Item Frame or in a Glow Item Frame now emits vibrations ([MCPE-166741](https://bugs.mojang.com/browse/MCPE-166741))
+-   Charging a Respawn Anchor now emits vibrations ([MCPE-157409](https://bugs.mojang.com/browse/MCPE-157409))
+-   Scraping or applying wax to blocks of the Copper block set now emits vibrations
+-   Switching a Daylight Detector to an Inverted Daylight Detector, or vice-versa, now emits vibrations
+-   Adding food to a Campfire now emits vibrations
+-   Adding or removing a Music Disc to a Jukebox now emits vibrations
+-   Mud turning into Clay now emits vibrations
+-   Harvesting Sweet Berries now emits vibrations
+-   Placing an Eye of Ender in an End Portal Frame now emits vibrations ([MCPE-155372](https://bugs.mojang.com/browse/MCPE-155372))
+-   Bees now emit vibrations when entering or exiting a Beehive or a Bee Nest ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Interacting with a Composter now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Attaching or detaching a Lead from a Fence now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Attaching or detaching a Lead from a mob now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Dying a Sheep now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Picking Glow Berries now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Farmland turning into Dirt now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Using a Spawn Egg on a Monster Spawner now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Silverfish merging with blocks now emit vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Using a Hoe on Rooted Dirt now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Using a Shovel to create Dirt Paths now emits vibrations ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Placing a Door now emits vibrations
+-   Planting seeds in Farmland now emits vibrations
+
+## **Realms**
+
+-   Updated the contrast ratio of the close button in realms feed menu
+-   Updated the contrast ratio of the New Post header banner
+-   An error message is now shown when attempting to upload a cross-platform restricted world to Realms, instead of uploading a corrupted world
+-   The focus indicator no longer auto selects the Find Friend button when the Members tab is selected
+
+## **Accessibility**
+
+-   Improved the Xbox on-screen keyboard experience, including better positioning, updating fields with typed input, and no more screen dimming while on screen keyboard is open ([MCPE-156575](https://bugs.mojang.com/browse/MCPE-156575))
+-   Added a toggle to all platforms enabling extra-large GUI scaling beyond what the GUI slider allows
+-   Text-to-speech now reads item names when selecting items in the hotbar
+
+## **User Interface**
+
+-   Added support for detecting Brazilian Portuguese as the preferred system language on Nintendo Switch
+-   Horse and Donkey jump bar, and camel dash bar, now scale properly to the experience bar ([MCPE-156444](https://bugs.mojang.com/browse/MCPE-156444))
+-   Changed the Pause Menu disconnection text to be platform agnostic
+-   Fixed an issue that caused the inventory to get locked up after auto placing ([MCPE-46795](https://bugs.mojang.com/browse/MCPE-46795))
+-   Imported worlds now get their last played date modified to the time they were imported
+-   Reordered the gamepad tooltips for UI screens so that the buttons align with the same side as a controller
+
+## **Mouse Input**
+
+-   Default chat duration is now set to 10 seconds while default toast notification duration remains at 3 seconds
+-   Improved handling of simultaneous mouse clicks, triggering each individual associated action/response
+-   Fixed issues with unresponsive or laggy input when using mouse together with a controller ([MCPE-167447](https://bugs.mojang.com/browse/MCPE-167447))
+-   Text-to-speech now reads "Slash button" when hovering over the "/" button in the chat screen
+
+## **Graphical**
+
+-   Fixed issues with highlighted blocks and mob shadows appearing through the Pumpkin head overlay on Switch
+-   Rendering of snow or rain is now based on camera position instead of player position
+-   Shields no longer flicker when held in both hands on RTX
+-   Fixed sleep and camera fade effect not covering the screen until after first-person rendering happens
+-   Underwater and fog effects are now based on camera position rather than player position
+-   Fancy Leaves setting is now applied immediately and will no longer cause x-ray effect ([MCPE-123608](https://bugs.mojang.com/browse/MCPE-123608))
+-   Fixed player capes not properly flapping when moving forward but looking sideways (fixed for real this time!) ([MCPE-153446](https://bugs.mojang.com/browse/MCPE-153446))  
+      
+    
+

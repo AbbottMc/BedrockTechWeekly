@@ -1,0 +1,113 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.20 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddonPacks)
+
+## **General**
+
+-   Fixed "get\_equipped\_item\_name" Molang query not being able to return the old name of some flattened items, eg. red\_wool, to wool
+-   Introduced new entity filters "all\_slots\_empty" and "any\_slot\_empty" to allow searching for empty item slots in a designated equipment location ([MCPE-153909](https://bugs.mojang.com/browse/MCPE-153909))
+-   The minecraft:friction component is no longer ignored when calculating ground friction
+-   Added spawn\_item\_event event to minecraft:spawn\_entity component. This event is called when an item is spawned
+-   Attribute "speed\_multiplier" in the "minecraft:boostable" component is now being parsed correctly from json file. Old behavior is maintained for "format\_version" lower than 1.20 with 1.35 value rather than what the json file specifies ([MCPE-164424](https://bugs.mojang.com/browse/MCPE-164424))
+-   Fixed incorrect content warnings for recipes that used the same blocks but with different data ([MCPE-168717](https://bugs.mojang.com/browse/MCPE-168717))
+-   Fixed custom textures that override vanilla blocks with aux metadata as a list of textures
+
+## **Dedicated Server**
+
+-   **Note for Linux users:** Ubuntu 18.04 LTS (Bionic Beaver) will reach End of Standard Support in 2023. Accordingly, the Linux Minecraft Dedicated Server will also raise its minimum target Ubuntu version to 20.04 LTS (Focal Fossa) in a later R20 update (exact release to be determined). Minecraft server operators using Ubuntu are encouraged to prepare for this transition by updating their deployments to 20.04 LTS as soon as possible.
+-   Content logs now show in dedicated server console window with a configurable log level using these new server properties:
+    -   _content-log-level_ - Sets the minimum level for content logs to output. Allowed values: “verbose”, “info”, “warning”, “error”. Default: info
+        -   Note: This log level also affects content logs written to disk when using _content-log-file-enabled=true_
+    -   _content-log-console-output-enabled_ - Enables or disables content log output to the console window. Default: info
+
+## **Commands**
+
+-   Has item command selector now correctly detects whether or not an actor has a filled Map or Firework Star in their inventory
+-   The "inputpermission" command now has a description displayed in the command dialogue preview
+-   When typing a slash command, auto-complete no longer suggests block-states that are already part of the typed command ([MCPE-168055](https://bugs.mojang.com/browse/MCPE-168055))
+-   Improved performance when preparing commands, most noticeable when opening the command window for the first time in a world, but also when loading Command Blocks for old command versions
+-   "carpet" block is now flattened into unique variants of 16 colors, namely "white\_carpet", "orange\_carpet", "magenta\_carpet", "light\_blue\_carpet", "yellow\_carpet", "lime\_carpet", "pink\_carpet", "gray\_carpet", "light\_gray\_carpet", "cyan\_carpet", "purple\_carpet", "blue\_carpet", "brown\_carpet", "green\_carpet", "red\_carpet", "black\_carpet"
+    -   Commands will still work with "carpet", but only new carpet name will be suggested in the command prompt
+-   "coral" was split into unique instances, namely "tube\_coral", "brain\_coral", "bubble\_coral", "fire\_coral", "horn\_coral", "dead\_tube\_coral", "dead\_brain\_coral", "dead\_bubble\_coral", "dead\_fire\_coral" and "dead\_horn\_coral"
+    -   Commands will still work with "coral", but "coral" won't be suggested in the command prompt, rather the new names will
+-   Experience Orbs now merge when spawned with the summon command ([MCPE-167247](https://bugs.mojang.com/browse/MCPE-167247))
+
+## **Entities**
+
+-   Custom entities with internal-only components or AI goals will fail to load in game
+-   Custom entities are restricted to overriding Vanilla entities released before 1.20. Invalid entities used in the “identifier” or “runtime\_identifier” field will result in content errors
+
+## **Items**
+
+-   Custom items using JSON formats 1.16.100 and formats past 1.17.0 can be loaded without the Holiday Creator Feature toggle if there are no Holiday components used
+-   Custom items with 'minecraft:record' now show the correct sound description in hover text and on playing in a Jukebox
+-   Custom items with 'minecraft:durability' and 'minecraft:repairable' can be combined to repair them without requiring a custom item entry
+-   Items with the Entity Placer item component will now successfully create the actor on air blocks if the "dispense\_on" field is empty
+-   Items with the Entity Placer item component can now be used on a Mob Spawner to change the Spawner's actor spawn type. The item must have a format version of at least 1.19.80
+-   Removed the non-functional 'on\_repaired' parameter from the 'minecraft:repairable' item component
+-   Released the “minecraft:display\_name” item component out of experimental in json formats 1.20.0 and higher
+-   Released the “minecraft:durability” item component out of experimental in json formats 1.20.0 and higher
+-   Released the “minecraft:fuel” item component out of experimental in json formats 1.20.0 and higher
+-   Released the “minecraft:entity\_placer” item component out of experimental in json formats 1.20.0 and higher
+-   Released the “minecraft:icon” item component out of experimental in json formats 1.20.0 and higher
+
+## **Add-Ons**
+
+-   Fixed an issue that prevented custom entity spawn eggs from being supported in trade tables ([MCPE-170184](https://bugs.mojang.com/browse/MCPE-170184))
+
+## **Molang**
+
+-   Fixed a crash affecting some Marketplace packs preventing them from loading
+    -   There is now a limit on the amount of nested sub-expressions each Molang expression can have  
+          
+        
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Camera Command**
+
+-   Added _/camera_ command as part of the experimental Cameras toggle
+    -   This command can switch to custom camera perspectives or fade the screen
+    -   Use _/help camera_ to get a full list of options
+-   Added a new experimental Cameras toggle to allow for custom camera perspectives
+
+## **Items**
+
+-   Items with the _‘minecraft:throwable’_ component now trigger the ‘throw’ sound effect when used
+
+## **Add-Ons**
+
+-   Added _PlacementDirection_ and _PlacementPosisition_ BlockTraits
+    -   The PlacementDirection trait can enable the "minecraft:cardinal\_direction" and/or "minecraft:facing\_direction" states on a block.
+        -   "minecraft:cardinal\_direction" is a four value string state \["north", "south", "east", "west"\] that describes what cardinal direction the player was facing when they placed the block.
+        -   "minecraft:facing\_direction" is a six value string state \["down", "up", "north", "south", "east", "west"\] that describes what direction the player was facing when they placed the block.
+        -   Values for these states are set when the block is placed.
+    -   The PlacementPosition trait can enable the "minecraft:block\_face" and/or "minecraft:vertical\_half" states on a block.
+        -   "minecraft:block\_face" is a six value string state \["down", "up", "north", "south", "east", "west"\] that describes what face the block was placed on.
+        -   "minecraft:vertical\_half" is a two value string state \["bottom", "top"\] that describes whether the block was placed in the upper or lower half of a block position.
+        -   Values for these states are set when the block is placed.
+    -   Can access all states associated with BlockTraits through the "block\_property" Molang queries and "set\_block\_property" event responses.
+    -   Note: Use of BlockTraits in JSON is currently behind the "Upcoming Creator Features" toggle
+-   Removed "knockback\_resistance" item component
+-   Pumpkin blocks use the string type state "minecraft:cardinal\_direction" instead of the int type "direction" state
+-   Removed "dye\_powder" item component
+-   Items using the minimum duration for the “minecraft:fuel” component now work in the Blast Furnace and Smoker
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

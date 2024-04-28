@@ -1,0 +1,82 @@
+
+
+-   Entity Components
+    -   Added _EntityTypeFamilyComponent_ with functions _getTypeFamilies(): string\[\]_ and _hasTypeFamily(typeFamily: string): boolean_
+-   Item
+    -   Moved _ItemFoodComponent_ from _beta_ to _1.9.0_
+    -   Added function _matches(itemName: string, states?: Record\<string, boolean | number | string\>): boolean_
+-   Removed class _BlockVolumeUtils_. Moving utility functions onto _BlockVolumeBase_and _BlockVolume_
+-   Added class _BlockVolumeBase_. Is the base class from which block volumes will extend
+-   BlockVolume
+    -   **Breaking Change:**Converted _BlockVolume_ from an interface to a class, which extends _BlockVolumeBase_
+-   _@minecraft/server.Entity.playAnimation_
+    -   Moved Entity.playAnimation from _beta_ to _stable_
+-   Moved enum _BlockPistonState_ from _beta_ to _1.9.0_
+-   Moved class _BlockPistonComponent_ from _beta to 1.9.0_
+-   Moved class _PistonActivateAfterEvent_ from _beta_ to _1.9.0_
+-   Moved class _PistonActivateAfterEventSignal_ from _beta to 1.9.0_
+-   ItemComponents
+    -   Added _isCooldownCategory(cooldownCategory: string) : boolean_ to _ItemCooldownComponent_
+    -   Added _getCooldownTimeRemaining(player: Player) : number_ to _ItemCooldownComponent_
+    -   Added _MinecraftCooldownCategoryTypes_ to _@minecraft/vanilla-data_
+        -   Added _getHiddenHudElements(): HudElements\[\]_
+        -   Added _isForcedHidden(hudElement: HudElements): Boolean_
+        -   Added _resetHudElements(): void_
+        -   Added _setHudVisibility(visible: HudVisibility, hudElements?: HudElements\[\]): void_
+        -   Added _hideAllExcept(hudElements?: HudElements\[\])_
+    -   Added interface _BlockFilter_. Used to include / exclude blocks by tag, type and permutation
+    -   BlockRaycastOptions
+        -   Added optional member _BlockFilter_
+        -   Updated _getBlockFromRay(location: Vector3, direction: Vector3, options?: BlockRaycastOptions): BlockRaycastHit | undefined_ to throw if the BlockFilter include / exclude types cannot be resolved inside _BlockRaycastOptions_
+        -   Moved _ItemDurabilityComponent_ from _beta_ to _1.9.0_
+    -   Debug Utilities
+        -   Started publishing the debug utilities type information
+        -   Added a _disableWatchdog_ method that lets you disable and enable the scripting watchdog in your scripts
+        -   Added function _playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): void_ - Plays a sound at a specified location for all players in the dimension
+        -   Moved _getAllStates_ API from _beta_ to _stable_
+            -   _clearJob(jobId: number)_ - Will now clear iterations in the current tick as well as any scheduled for future ticks. Previously would only clear iterations in future ticks
+        -   @minecraft/server.WeatherChangeAfterEvent
+            -   Moved _WeatherChangeAfterEvent_ from _beta_ to _stable_
+            -   Moved _setOnFire_ from _beta_ to _1.9.0_
+            -   Moved _extinguishFire_ from _beta_ to _1.9.0_
+        -   Moved _EntityOnFireComponent_ from _beta_ to _1.9.0_
+            -   Moved _getEquipmentSlot_ from _beta_ to _1.9.0_
+        -   Moved _BlockStateType_ from _beta_ to _1.9.0_
+        -   Moved _BlockStates_ from _beta_ to _1.9.0_
+        -   Moved _BlockSignComponent_ from _beta_ to _1.9.0_
+        -   Moved _DyeColor_ from _beta_ to _1.9.0_
+        -   Moved _SignSide_ from _beta_ to _1.9.0_
+        -   Moved _ContainerSlot_ from _beta_ to _1.9.0_
+        -   Moved _InvalidContainerSlotError_ from _beta_ to _1.9.0_
+            -   Moved _getSlot_ from _beta_ to _1.9.0_
+        -   Moved _EffectTypes_ from _beta_ to _1.9.0_
+        -   Moved _RawText_ from _beta_ to _1.9.0_
+        -   Moved _createExplosion_ from _beta_ to _1.9.0_
+        -   Moved _ExplosionOptions_ from _beta_ to _1.9.0_
+        -   Moved _DimensionType_ from _beta_ to _1.9.0_
+        -   Moved _DimensionTypes_ from _beta_ to _1.9.0_
+        -   Moved _setDynamicProperty_ from _beta_ to _1.9.0_
+        -   Moved _getDynamicProperty_ from _beta_ to _1.9.0_
+        -   Moved _getDynamicPropertyIds_ from _beta_ to _1.9.0_
+        -   Moved _getDynamicPropertyTotalByteCount_ from _beta_ to _1.9.0_
+        -   Moved _clearDynamicProperties_ from _beta_ to _1.9.0_
+        -   Added _structureManager_ \- A _StructureManager_ instance that allows you to create, load and place structures in the world
+        -   StructureManager
+            -   Added function _createEmpty(identifier: string, size: Vector3, saveMode?: StructureSaveMode): StructureTemplate_ \- Creates a new empty structure
+            -   Added function _createFromWorld(identifier: string, dimension: Dimension, blockVolume: BlockVolume, options?: StructureCreateOptions): StructureTemplate_ \- Creates a new structure from blocks in the world
+            -   Added function _delete(structure: string | StructureTemplate): boolean_ \- Deletes the structure
+            -   Added function _get(identifier: string): StructureTemplate | undefined_ \- Gets the structure with the specified identifier
+            -   Added function _place(structure: string | StructureTemplate, dimension: Dimension, location: Vector3, options?: StructurePlaceOptions)_ \- Places a structure in the world
+        -   StructureTemplate
+            -   Added read-only property _id: string_\- Returns the name of the structure
+            -   Moved _effectAdd_ from _beta_ to _1.9.0_
+        -   Fixed a bug where item dynamic properties could sometimes be applied to items with a stack size greater than 1
+            -   Removing function _triggerEvent()_
+        -   WorldBeforeEvents
+            -   Removing property _itemDefinitionEvent_
+        -   WorldAfterEvents
+            -   Removing property _itemDefinitionEvent_
+            -   Moved _explosion_ from _beta_ to _1.9.0_
+        -   WorldBeforeEvents
+            -   Moved _explosion_ from _beta_ to _1.9.0_
+

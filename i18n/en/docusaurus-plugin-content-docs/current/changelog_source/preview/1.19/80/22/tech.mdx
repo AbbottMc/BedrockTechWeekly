@@ -1,0 +1,32 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Editor**
+
+-   Fixed issues with UI not scaling properly when the resolution or game window size is updated.
+-   Item drops have been disabled in Editor. This allows for Undo/Redo and Cut/Copy/Paste to work properly.  Items will no longer be left floating in the world.
+-   Fixed a bug where Tool mode would use the 3rd person camera if it was the active camera. when switching from Crosshair mode. The 1st person camera is always used in Tool mode.
+-   Fixed issues where camera control was disabled when using a Nether or End Portal in Crosshair mode.
+-   Removed the old stonecutter and Nether reactor core from the block picker.
+
+## **Graphical**
+
+-   Changed the debug HUD text available in Preview & Beta builds to append "RTX" to the renderer information only when RTX content is being played instead of when the GPU is capable of running RTX content. As a consequence, the DXR-capable D3D12 backend will now report itself as "D3D12+"
+
+# **Technical Experimental Features**
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **GameTest Framework**
+
+-   Added two new commands:
+    -   /gametest stopall used to manually stop all tests while they are running
+    -   /gametest runsetuntilfail used to run a set of tests but will automatically stop if any of the tests fail
+

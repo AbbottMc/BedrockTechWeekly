@@ -1,0 +1,37 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## General
+
+-   Fixed an issue with upgrading loaded values that have multiple string names
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Graphical**
+
+-   Enhanced the bloom pipeline to utilize HDR scene information to more naturally emphasize bright pixels in the Deferred Technical Preview
+-   Fixed an issue where shadows from non-existent mobs would be rendered in the Deferred Technical Preview 
+-   Fixed a crash that could occur when switching Dimensions in the Deferred Technical Preview 
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

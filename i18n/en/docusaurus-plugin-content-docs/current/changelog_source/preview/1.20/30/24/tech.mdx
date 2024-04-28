@@ -1,0 +1,40 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Items**
+
+-   Fixed an issue where content errors for items at the latest format version would appear for other items 
+
+## **Mobs**
+
+-   Exposed new data parameter "can\_spread\_on\_fire" for the "minecraft:behavior.melee\_attack" component to specify if the mob should set its target on fire when attacking if the attacking mob is on fire ([MCPE-77746](https://bugs.mojang.com/browse/MCPE-77746)) 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Graphical**
+
+-   Disabling Beautiful Skies or Smooth Lighting no longer affects visuals while using Deferred or Ray Tracing in the Deferred Technical Preview
+-   Moved Smooth Lighting and Beautiful Skies buttons to only appear in the Simple and Fancy graphics menus in the Deferred Technical Preview
+-   Bloom option removed from Simple, Fancy, and Ray Tracing menus in the Deferred Technical Preview

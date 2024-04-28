@@ -1,0 +1,74 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Cameras
+
+-   Added a content warning for when the camera is placed outside of the player's chunk radius 
+
+## Add-Ons and Script Engine
+
+-   Added a _Clear_ button to the content log screen
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) discussion forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Updates this week:
+
+-   Added API class SettingsManager which will contain settings categories as properties.
+
+-   Added property settings: SettingsManager to ExtensionContext API.
+
+-   Added API class GraphicsSettings with get, getAll, set and setAll functions to manage graphics settings properties.
+-   Added API enum GraphicsSettingsProperty and type GraphicsSettingsPropertyTypeMap for available graphics settings properties.
+-   Updated Grapple “Quick Teleport” functionality to use Camera API. Grapple to fast teleport to a target block using “G.” Grapple to frame up a Selection using “F.”
+
+## Graphical
+
+-   When a particle emitter is added to an entity but particles simulate in world, particles now correctly collide with the world
+
+## Items
+
+-   Renamed "minecraft:use\_duration" to "minecraft:use\_modifiers" and added a "movement\_modifier" parameter in json format versions 1.20.50 and higher 
+-   Deprecated "minecraft:chargeable" in json format versions 1.20.50 and higher. Use "minecraft:use\_modifiers" instead for "movement\_modifier" behavior
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Gametest
+
+-   _SimulatedPlayer_
+
+-   _stopUsingItem_ now returns the item that was being used
+
+## Graphical
+
+-   Fixed heightmaps appearing inverted in the deferred technical preview 
+
+## Script API
+
+-   Fixed _@minecraft/server-ui_ forms not correctly rendering player scoreboard information when embedded in rawtext
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

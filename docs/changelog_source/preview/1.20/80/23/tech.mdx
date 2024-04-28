@@ -1,0 +1,113 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Fixed an issue where the primary user login was not resolved before launching the world when performing a protocol launch using _connect?localLevelId=_ _or_ _connect?localWorld=_ ([MCL-24096](https://bugs.mojang.com/browse/MCL-24096))
+-   Fixed a bug that prevented custom features in behavior packs from loading
+-   Fixed a crash during the load process of localization strings
+
+## **Commands**
+
+-   Moved the /hud command out of Upcoming Creator Features experimental toggle.
+
+## **Add-Ons and Script Engine**
+
+-   Blocks using custom tags in the “crafting\_tags” field of their custom blocks with a “minecraft:crafting\_table” component now support custom unlockable recipes ([MCPE-175555](https://bugs.mojang.com/browse/MCPE-175555))
+    -   This fixed a bug where some recipes did not show up when recipe unlocking was on
+
+## **Entity Components**
+
+-   Added the “minecraft:body\_rotation\_blocked” component, which prevents an entity from visually rotating their body to match their own facing direction
+-   The durations and cooldowns of “behavior.timer\_flag\_1,” “behavior.timer\_flag\_2,” and “behavior.timer\_flag\_3” are now correctly randomized on both start and stop, rather than only on spawn
+
+## **Recipes**
+
+-   Added _assume\_symmetry_ boolean property for Shaped Recipes to allow for symmetrical shaped recipes with different outputs
+
+## **Blocks**
+
+-   “red\_flower” block is now split into unique instances: “poppy”, “blue\_orchid”, “allium”, “azure\_bluet”, “red\_tulip”, “orange\_tulip”, “white\_tulip”, “pink\_tulip”, “oxeye\_daisy”, “cornflower”, and “lily\_of\_the\_valley”
+-   “coral\_fan\_dead” block is now split into unique instances: “dead\_tube\_coral\_fan”, “dead\_brain\_coral\_fan”, “dead\_bubble\_coral\_fan”, “dead\_fire\_coral\_fan” and “dead\_horn\_coral\_fan”  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Editor**
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Improvements this week:
+
+-   Hovering over tool rail will now expand modal tool drawer if it’s not locked
+-   Updated Quick Start panel information
+
+## **General**
+
+-   Added an optional _SpawnEntityOptions_ with a boolean _initialPersistence_ field to the _spawnEntity(…)_ function to support persistent entities in Editor tooling
+-   _StructureManager.place_ now places rotated structures the same way as the /structure command ([MCPE-179447](https://bugs.mojang.com/browse/MCPE-179447))
+-   Moved _getItemStack(amount?: number, withData?: boolean): ItemStack | undefined_ from _beta_ to _1.10.0_
+-   Moved _getItemStack(amount?: number): ItemStack | undefined_ from _beta_ to _1.10.0_
+-   EntityAgeableComponent
+    -   Added property _transformToItem_ to _beta_
+-   EntityDefinitionFeedItem
+    -   Updated property _item_ to return name with namespace in _beta_
+-   Moved _EntityTypeFamilyComponent_ from _beta_ to _1.10.0_
+-   Added _BlockComponentTickEvent_ for _beta_
+    -   Added ‘onTick’
+-   Added _BlockComponentEntityFallOnEvent_ for _beta_
+    -   Added ‘onEntityFallOn’
+-   Added _BlockComponentPlayerPlaceBeforeEvent_ for _beta_
+    -   Added ‘beforeOnPlayerPlace’
+-   Added _BlockComponentPlayerInteractEvent_ for _beta_
+    -   Added ‘onPlayerInteract’
+-   Added _BlockComponentPlayerDestroyEvent_ for _beta_
+    -   Added ‘onPlayerDestroy’
+-   Added _BlockComponentOnPlaceEvent_ for _beta_
+    -   Added ‘onPlace’
+-   Added _ItemComponentRegistry_ for _beta_
+-   Added _ItemCustomComponent_ for _beta_
+-   Added _ItemComponentUseEvent_ for _beta_
+    -   Moved _structureManager_ from _beta_ to _1.10.0_
+-   Structure Manager
+    -   Moved _createEmpty_ from _beta_ to _1.10.0_
+    -   Moved _delete_ from _beta_ to _1.10.0_
+    -   Moved _get_ from _beta_ to _1.10.0_
+    -   Moved _place_ from _beta_ to _1.10.0_
+    -   Moved _id_ from _beta_ to _1.10.0_
+    -   Moved _getBlockPermutation_ from _beta_ to _1.10.0_
+    -   Moved _getIsWaterlogged_ from _beta_ to _1.10.0_
+    -   Moved _isValid_ from _beta_ to _1.10.0_
+-   Moved _StructureSaveMode_ from _beta_ to _1.10.0_
+-   Moved _StructureRotation_ from _beta_ to _1.10.0_
+-   Moved _StructureAnimationMode_ from _beta_ to _1.10.0_
+-   Moved _StructureMirrorAxis_ from _beta_ to _1.10.0_
+-   Removed _StructureReadOptions_
+-   Moved _StructureCreateOptions_ from _beta_ to _1.10.0_
+-   Moved _StructurePlaceOptions_ from _beta_ to _1.10.0_
+-   Moved _InvalidStructureError_ from _beta_ to _1.10.0_
+
+## **Blocks**
+
+-   Added ‘minecraft:entity\_fall\_on’ block component behind the Beta API experiment
+-   Added ‘minecraft:tick’ block component behind the Beta API experiment
+
+## **Entity Components**
+
+-   Added property _passengerMaxWidth_ to _EntityRideableComponent_
+-   Added property _seatRotation_ to _Seat_
+
+## **Items**
+
+-   Added ‘minecraft:custom\_components’ item component under the Beta APIs feature flag

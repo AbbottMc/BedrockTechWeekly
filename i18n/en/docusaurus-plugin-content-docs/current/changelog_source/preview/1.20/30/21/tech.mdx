@@ -1,0 +1,58 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Graphics**
+
+-   Added a new experimental toggle to Video menu for players on Windows which reduces input latency; enabling this setting will increase battery consumption
+
+## **Editor**
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) discussion forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Fixes this week:
+
+-   Fixed infinite gizmo drag and bugs around gizmo drag size, setting it as a limit to 100 units. How this works: Total volume of 100x100x100. Ability to create multiple selections within the bounds of the 100x100x100 total volumes.
+
+## **Stability and Performance**
+
+-   The game no longer crashes when it tries to place an invalid custom feature 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Events**
+
+-   ScriptEventCommandMessageAfterEvent
+    -   Made _initiator_, _sourceBlock_, and _sourceEntity_ optional types
+
+## **Graphical**
+
+-   Fixed a crash in the Deferred Technical Preview that could occur while generating terrain 
+
+## **Blocks**
+
+-   Updated _isSolid_, _isLiquid_, and _isAir_ to be properties instead of methods 
+
+## **Items**
+
+-   Fixed issue with content errors occurring with the Holiday Creator Features toggle turned on when using a json object version of "max\_stack\_size", "can\_destroy\_in\_creative", "hover\_text\_color" 
+
+## **Scripting**
+
+-   Using _removeParticipant_ is now properly synced with clients ([MCPE-172920](https://bugs.mojang.com/browse/MCPE-172920))

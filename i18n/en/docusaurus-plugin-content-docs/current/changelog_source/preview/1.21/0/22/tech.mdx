@@ -1,0 +1,72 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine 
+
+-   Deprecated the Free Creator Camera experiment 
+    
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Editor 
+
+-   Implemented a Simple Tool Wrapper framework to simplify the boilerplate implementation of setting up an editor tool, and manage the window visibility and lifecycle of the tool components. 
+    
+-   Editor Export API can now export a playable world  
+    
+-   Fixed the UI layout drawer content to respond properly to changes in the visibility of the PropertyPane API 
+    
+-   Fixed bug for when a player switched to Test World while in the Nether/End the worlds dimension incorrectly changed to the Overworld 
+    
+-   Updated [Editor Extension Starter Kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit/) to include samples for custom brushes and Simple Tool Wrapper 
+    
+-   Fixed bug that caused crashes during deletion of Script Widget Groups 
+    
+
+## Entities 
+
+-   Updated entity geometry to allow UV rotations. This allows you to rotate the specified UV rect in 90 degree increments before applying it to a cube face of an entity model. Supported from minecraft:geometry format version 1.21.0 and up 
+    
+
+## Split Screen 
+
+-   Fixed mob animations not playing when mobs were unloaded in split screen 
+    
+
+## Items 
+
+-   Unlocking requirements are now sent to clients for "minecraft:recipe\_shapeless" and "minecraft:recipe\_shaped"
+    
+
+-   -   It allows the UI to suggest recipes that are always unlocked when the game rule "dolimitedcrafting" is ON 
+        
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical 
+
+-   Added a new feature to the Deferred Technical Preview: Color Grading and Tone Mapping. This new capability allows resource packs to define their own color post processing for conveying distinct moods and themes. See the updated [Getting Started with Deferred Lighting](https://learn.microsoft.com/en-us/minecraft/creator/documents/deferredlighting?view=minecraft-bedrock-stable) article for full information 
+    
+-   New experimental toggle added in Video settings menu to remove texture limit and load textures instead of using the "pink texture" called "Remove Texture Limit". Textures will continue to load until the system exhausts all available graphics memory 
+    
+-   Added light pre-exposure to the Deferred Technical Preview. This new feature is enabled by default and cannot be disabled. While this won’t result in any immediate visual difference for players, creators now have the freedom to specify sun or atmospheric intensities with values larger than 65,000. Previously, larger values like these would cause visual corruption on certain mobile devices ([MCPE-173919](https://bugs.mojang.com/browse/MCPE-173919))

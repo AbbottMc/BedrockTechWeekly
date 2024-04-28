@@ -1,0 +1,1752 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+-   Updated Aux-Value to Block-State table in the documentation to account for data upgrade since inception
+-   Added server-authoritative-sound bool to server.properties
+-   Removed MinecraftEntityTypes from @minecraft/server and replaced with version from @minecraft/vanilla-data
+-   Exposed MoonPhase and World.getMoonPhase to script
+
+## **Add-Ons**
+
+-   Display a warning message when camera perspective option is changed in the settings menu but a camera command is active
+-   Move PlacementDirection ("_minecraft:placement\_direction_") and PlacementPosition ("_minecraft:placement\_position_") block traits out of experimental. These traits can be used for blocks with "_format\_version_" \>= "1.20.20"
+
+## **Commands**
+
+-   Fixed issue where the controllers right/left d-pad autocompletes commands when the text box wasn’t selected, which also selected different UI elements on the screen
+-   "stained\_glass" block is now split into unique instances, namely "white\_stained\_glass", "orange\_stained\_glass", "magenta\_stained\_glass", "light\_blue\_stained\_glass", "yellow\_stained\_glass", "lime\_stained\_glass", "pink\_stained\_glass", "gray\_stained\_glass", "light\_gray\_stained\_glass", "cyan\_stained\_glass", "purple\_stained\_glass", "blue\_stained\_glass", "brown\_stained\_glass", "green\_stained\_glass", "red\_stained\_glass", and "black\_stained\_glass"
+    -   Commands will still work with "stained\_glass", but "stained\_glass" won't be suggested in the command prompt, rather the new names will
+-   "stained\_glass\_pane" block is now split into unique instances, namely "white\_stained\_glass\_pane", "orange\_stained\_glass\_pane", "magenta\_stained\_glass\_pane", "light\_blue\_stained\_glass\_pane", "yellow\_stained\_glass\_pane", "lime\_stained\_glass\_pane", "pink\_stained\_glass\_pane", "gray\_stained\_glass\_pane", "light\_gray\_stained\_glass\_pane", "cyan\_stained\_glass\_pane", "purple\_stained\_glass\_pane", "blue\_stained\_glass\_pane", "brown\_stained\_glass\_pane", "green\_stained\_glass\_pane", "red\_stained\_glass\_pane", and "black\_stained\_glass\_pane"
+    -   Commands will still work with "stained\_glass\_pane", but "stained\_glass\_pane" won't be suggested in the command prompt, rather the new names will
+
+## **Editor**
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Fixes this week:
+
+-   Fixed a bug where Tool mode UI failed to refresh upon executing the /reload command
+-   Number input fields will now adjust valid number values to the closest limit if they fall outside of the defined range
+-   Fixed an issue where UI text was exceeding the boundaries of panes and containers, resulting in improper alignment and visual inconsistencies.
+-   Selection volumes and gizmos can now be seen through blocks
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **API**
+
+Moved the following APIs from beta to stable:
+
+-   Moved _Direction_ to _1.4.0_
+-   Moved _EntityDamageSource_ to _1.4.0_
+-   Moved _EntityDieAfterEvent_ to _1.4.0_
+-   Moved _EntityEventOptions_ to _1.4.0_
+-   Moved _EntityHitBlockAfterEvent_ to _1.4.0_
+-   Moved _EntityHitEntityAfterEvent_ to _1.4.0_
+-   Moved _EntityHurtAfterEvent_ to _1.4.0_
+-   Moved _EntityHealthChangedAfterEvent_ to _1.4.0_
+-   Moved _Dimension.getBlockFromRay_ method to _1.4.0_
+-   Moved _Dimension.getEntitiesFromRay_ method to _1.4.0_
+-   Moved _Entity.getBlockFromViewDirection_ method to _1.4.0_
+-   Moved _Entity.getEntitiesFromViewDirection_ method to _1.4.0_
+-   Moved _BlockRaycastHit_ to _1.4.0_
+-   Moved _BlockRaycastOptions_ to _1.4.0_
+-   Moved _EntityRaycastHit_ to _1.4.0_
+-   Moved _EntityRaycastOptions_ to _1.4.0_
+-   Moved _PressurePlatePushEvent_ to _1.4.0_
+-   Moved _PressurePlatePopEvent_ to _1.4.0_
+-   Moved _TripWireTripEvent_ to _1.4.0_
+-   Moved _TargetBlockHitEvent_ to _1.4.0_
+    -   Made property _id_ accessible even if entity is not valid
+    -   Made property _typeId_ accessible even if entity is not valid
+    -   Changed item event _source_ properties from type _Entity_ to _Player_
+
+## **Items**
+
+-   Removed the "_minecraft:animates\_in\_toolbar_" component
+-   Removed the "_minecraft:explodable_" component
+-   Extra damage hover text now appears on all component items that have an applied sharpness enchantment
+-   The "_minecraft:shooter_" component now supports the Quick Charge enchantment with "_minecraft:enchantable_" when "_charge\_on\_draw_" is true
+-   Added support for efficiency enchantment for data driven items using the "_minecraft:digger_" component
+-   Remove nonfunctional entity slot options from "_minecraft:wearable_" component, ie. saddle, entity armor, and chest.
+-   Custom items with "_minecraft:wearable_" component auto-equip when dropped from a dispenser, matching parity with Vanilla armor items
+
+## **Block Destroy Time Changes - Full List**
+
+## **Bedrock ID**
+
+## **Bedrock Name**
+
+## **Destroy Time**
+
+## **Explosion Resistance**
+
+activator\_rail
+
+Activator Rail
+
+0.5 → 0.7
+
+0.5 → 0.7
+
+ancient\_debris
+
+Ancient Debris
+
+ 
+
+720 → 1200
+
+andesite\_stairs
+
+Andesite Stairs
+
+2 → 1.5
+
+ 
+
+bamboo
+
+Bamboo
+
+2 → 1
+
+2 → 1
+
+bamboo\_block
+
+Block of Bamboo
+
+ 
+
+3 → 2
+
+bamboo\_sapling
+
+Bamboo Shoot
+
+0 → 1
+
+0 → 1
+
+bee\_nest
+
+Bee Nest
+
+ 
+
+2.7 → 0.3
+
+beehive
+
+Beehive
+
+ 
+
+5.4 → 0.6
+
+bell
+
+Bell
+
+1 → 5
+
+3 → 5
+
+big\_dripleaf
+
+Big Dripleaf
+
+0 → 0.1
+
+0 → 0.1
+
+campfire
+
+Campfire
+
+5 → 2
+
+5 → 2
+
+chain
+
+Chain
+
+ 
+
+3 → 6
+
+chiseled\_deepslate
+
+Chiseled Deepslate
+
+ 
+
+3.6 → 6
+
+cobbled\_deepslate
+
+Cobbled Deepslate
+
+ 
+
+3.6 → 6
+
+cobbled\_deepslate\_double\_slab
+
+Cobbled Deepslate Slab (Double)
+
+ 
+
+3.6 → 6
+
+cobbled\_deepslate\_slab
+
+Cobbled Deepslate Slab
+
+ 
+
+3.6 → 6
+
+cobbled\_deepslate\_stairs
+
+Cobbled Deepslate Stairs
+
+ 
+
+3.6 → 6
+
+cobbled\_deepslate\_wall
+
+Cobbled Deepslate Wall
+
+ 
+
+3.6 → 6
+
+composter
+
+Composter
+
+2 → 0.6
+
+2 → 0.6
+
+copper\_block
+
+Block of Copper
+
+ 
+
+3.6 → 6
+
+copper\_ore
+
+Copper Ore
+
+ 
+
+1.8 → 3
+
+coral\_block
+
+Coral Block (10 blocks)
+
+7 → 1.5
+
+0.9 → 6
+
+coral\_fan
+
+Coral Fan (5 blocks)
+
+ 
+
+0.9 → 0
+
+coral\_fan\_dead
+
+Dead Coral Fan (5 blocks)
+
+ 
+
+0.9 → 0
+
+coral\_fan\_hang
+
+Coral Wall Fan (2 blocks)
+
+ 
+
+0.9 → 0
+
+coral\_fan\_hang2
+
+Coral Wall Fan (2 blocks)
+
+ 
+
+0.9 → 0
+
+coral\_fan\_hang3
+
+Coral Wall Fan (1 block)
+
+ 
+
+0.9 → 0
+
+cracked\_deepslate\_bricks
+
+Cracked Deepslate Bricks
+
+ 
+
+3.6 → 6
+
+cracked\_deepslate\_tiles
+
+Cracked Deepslate Tiles
+
+ 
+
+3.6 → 6
+
+crimson\_hyphae
+
+Crimson Hyphae
+
+0.3 → 2
+
+0.3 → 2
+
+crimson\_stem
+
+Crimson Stem
+
+ 
+
+0.3 → 2
+
+cut\_copper
+
+Cut Copper
+
+ 
+
+3.6 → 6
+
+cut\_copper\_slab
+
+Cut Copper Slab
+
+ 
+
+3.6 → 6
+
+cut\_copper\_stairs
+
+Cut Copper Stairs
+
+ 
+
+3.6 → 6
+
+deepslate
+
+Deepslate
+
+ 
+
+3.6 → 6
+
+deepslate\_brick\_double\_slab
+
+Deepslate Brick Slab (Double)
+
+ 
+
+3.6 → 6
+
+deepslate\_brick\_slab
+
+Deepslate Brick Slab
+
+ 
+
+3.6 → 6
+
+deepslate\_brick\_stairs
+
+Deepslate Brick Stairs
+
+ 
+
+3.6 → 6
+
+deepslate\_brick\_wall
+
+Deepslate Brick Wall
+
+ 
+
+3.6 → 6
+
+deepslate\_bricks
+
+Deepslate Bricks
+
+ 
+
+3.6 → 6
+
+deepslate\_coal\_ore
+
+Deepslate Coal Ore
+
+ 
+
+1.8 → 3
+
+deepslate\_copper\_ore
+
+Deepslate Copper Ore
+
+ 
+
+1.8 → 3
+
+deepslate\_diamond\_ore
+
+Deepslate Diamond Ore
+
+ 
+
+1.8 → 3
+
+deepslate\_gold\_ore
+
+Deepslate Gold Ore
+
+ 
+
+1.8 → 3
+
+deepslate\_iron\_ore
+
+Deepslate Iron Ore
+
+ 
+
+1.8 → 3
+
+deepslate\_lapis\_ore
+
+Deepslate Lapis Lazuli Ore
+
+ 
+
+1.8 → 3
+
+deepslate\_redstone\_ore
+
+Deepslate Redstone Ore
+
+ 
+
+1.8 → 3
+
+deepslate\_tile\_double\_slab
+
+Deepslate Tile Slab (Double)
+
+ 
+
+3.6 → 6
+
+deepslate\_tile\_slab
+
+Deepslate Tile Slab
+
+ 
+
+3.6 → 6
+
+deepslate\_tile\_stairs
+
+Deepslate Tile Stairs
+
+ 
+
+3.6 → 6
+
+deepslate\_tile\_wall
+
+Deepslate Tile Wall
+
+ 
+
+3.6 → 6
+
+deepslate\_tiles
+
+Deepslate Tiles
+
+ 
+
+3.6 → 6
+
+diorite\_stairs
+
+Diorite Stairs
+
+2 → 1.5
+
+ 
+
+double\_cut\_copper\_slab
+
+Cut Copper Slab (Double)
+
+ 
+
+3.6 → 6
+
+dragon\_egg
+
+Dragon Egg
+
+ 
+
+3 → 9
+
+dried\_kelp\_block
+
+Dried Kelp Block
+
+ 
+
+0.5 → 2.5
+
+end\_brick\_stairs
+
+End Stone Brick Stairs
+
+2 → 3
+
+6 → 9
+
+end\_bricks
+
+End Stone Bricks
+
+0.8 → 3
+
+0.8 → 9
+
+exposed\_cut\_copper\_slab
+
+Exposed Cut Copper Slab
+
+ 
+
+3.6 → 6
+
+exposed\_copper
+
+Exposed Copper
+
+ 
+
+3.6 → 6
+
+exposed\_cut\_copper
+
+Exposed Cut Copper
+
+ 
+
+3.6 → 6
+
+exposed\_cut\_copper\_stairs
+
+Exposed Cut Copper Stairs
+
+ 
+
+3.6 → 6
+
+exposed\_double\_cut\_copper\_slab
+
+Exposed Cut Copper Slab (Double)
+
+ 
+
+3.6 → 6
+
+granite\_stairs
+
+Granite Stairs
+
+2 → 1.5
+
+ 
+
+infested\_deepslate
+
+Infested Deepslate
+
+ 
+
+1.8 → 0.75
+
+jukebox
+
+Jukebox
+
+0.8 → 2
+
+0.8 → 6
+
+lantern
+
+Lantern
+
+5 → 3.5
+
+5 → 3.5
+
+lectern
+
+Lectern
+
+2 → 2.5
+
+2 → 2.5
+
+light\_block
+
+Light Block
+
+ 
+
+3600000 → 3600000.8
+
+light\_gray\_candle
+
+Light Gray Candle
+
+0 → 0.1
+
+0 → 0.1
+
+lightning\_rod
+
+Lightning Rod
+
+ 
+
+3.6 → 6
+
+lodestone
+
+Lodestone
+
+2 → 3.5
+
+2 → 3.5
+
+magma
+
+Magma Block
+
+ 
+
+1.5 → 0.5
+
+monster\_egg
+
+Infested blocks (5 blocks, missing Infested Cobblestone)
+
+ 
+
+1.8 → 0.75
+
+mossy\_stone\_brick\_stairs
+
+Mossy Stone Brick Stairs
+
+2 → 1.5
+
+ 
+
+mud\_bricks
+
+Mud Bricks
+
+2 → 1.5
+
+2 → 3
+
+mud\_brick\_slab
+
+Mud Brick Slab
+
+2 → 1.5
+
+6 → 3
+
+mud\_brick\_double\_slab
+
+Mud Brick Slab (Double)
+
+2 → 1.5
+
+6 → 3
+
+mud\_brick\_stairs
+
+Mud Brick Stairs
+
+2 → 1.5
+
+6 → 3
+
+mud\_brick\_wall
+
+Mud Brick Wall
+
+2 → 1.5
+
+6 → 3
+
+netherite\_block
+
+Block of Netherite
+
+ 
+
+720 → 1200
+
+oxidized\_cut\_copper
+
+Oxidized Cut Copper
+
+ 
+
+3.6 → 6
+
+oxidized\_cut\_copper\_slab
+
+Oxidized Cut Copper Slab
+
+ 
+
+3.6 → 6
+
+oxidized\_cut\_copper\_stairs
+
+Oxidized Cut Copper Stairs
+
+ 
+
+3.6 → 6
+
+oxidized\_copper
+
+Oxidized Copper
+
+ 
+
+3.6 → 6
+
+oxidized\_double\_cut\_copper\_slab
+
+Oxidized Cut Copper Slab (Double)
+
+ 
+
+3.6 → 6
+
+piston
+
+Piston
+
+0.5 → 1.5
+
+0.5 → 1.5
+
+piston\_arm\_collision
+
+Piston Head (Normal)
+
+0.5 → 1.5
+
+0.5 → 1.5
+
+pointed\_dripstone
+
+Pointed Dripstone
+
+ 
+
+1.8 → 3
+
+polished\_andesite\_stairs
+
+Polished Andesite Stairs
+
+2 → 1.5
+
+ 
+
+polished\_blackstone
+
+Polished Blackstone
+
+1.5 → 2
+
+ 
+
+polished\_blackstone\_stairs
+
+Polished Blackstone Stairs
+
+1.5 → 2
+
+ 
+
+polished\_blackstone\_wall
+
+Polished Blackstone Wall
+
+1.5 → 2
+
+ 
+
+polished\_deepslate
+
+Polished Deepslate
+
+ 
+
+3.6 → 6
+
+polished\_deepslate\_double\_slab
+
+Polished Deepslate Slab (Double)
+
+ 
+
+3.6 → 6
+
+polished\_deepslate\_slab
+
+Polished Deepslate Slab
+
+ 
+
+3.6 → 6
+
+polished\_deepslate\_stairs
+
+Polished Deepslate Stairs
+
+ 
+
+3.6 → 6
+
+polished\_deepslate\_wall
+
+Polished Deepslate Wall
+
+ 
+
+3.6 → 6
+
+polished\_diorite\_stairs
+
+Polished Diorite Stairs
+
+2 → 1.5
+
+ 
+
+polished\_granite\_stairs
+
+Polished Granite Stairs
+
+2 → 1.5
+
+ 
+
+reinforced\_deepslate
+
+Reinforced Deepslate
+
+ 
+
+720 → 1200
+
+respawn\_anchor
+
+Respawn Anchor
+
+ 
+
+720 → 1200
+
+scaffolding
+
+Scaffolding
+
+0.6 → 0
+
+0.9 → 0
+
+sculk
+
+Sculk
+
+0.6 → 0.2
+
+0.6 → 0.2
+
+sculk\_catalyst
+
+Sculk Catalyst
+
+ 
+
+1.8 → 3
+
+sculk\_shrieker
+
+Sculk Shrieker
+
+ 
+
+1.8 → 3
+
+shulker\_box
+
+Shulker Box (16 blocks)
+
+2.5 → 2
+
+2.5 → 2
+
+smooth\_quartz\_stairs
+
+Smooth Quartz Stairs
+
+0.8 → 2
+
+0.8 → 6
+
+smooth\_stone
+
+Smooth Stone
+
+1.5 → 2
+
+ 
+
+sniffer\_egg
+
+Sniffer Egg
+
+0.4 → 0.5
+
+0.4 → 0.5
+
+soul\_campfire
+
+Soul Campfire
+
+5 → 2
+
+5 → 2
+
+soul\_lantern
+
+Soul Lantern
+
+5 → 3.5
+
+5 → 3.5
+
+soul\_soil
+
+Soul Soil
+
+1 → 0.5
+
+1 → 0.5
+
+sticky\_piston
+
+Sticky Piston
+
+0.5 → 1.5
+
+0.5 → 1.5
+
+sticky\_piston\_arm\_collision
+
+Piston Head (Sticky)
+
+0.5 → 1.5
+
+0.5 → 1.5
+
+stripped\_bamboo\_block
+
+Block of Stripped Bamboo
+
+ 
+
+3 → 2
+
+stripped\_crimson\_hyphae
+
+Stripped Crimson Hyphae
+
+0.3 → 2
+
+0.3 → 2
+
+stripped\_crimson\_stem
+
+Stripped Crimson Stem
+
+ 
+
+0.3 → 2
+
+stripped\_warped\_hyphae
+
+Stripped Warped Hyphae
+
+0.3 → 2
+
+0.3 → 2
+
+stripped\_warped\_stem
+
+Stripped Warped Stem
+
+ 
+
+0.3 → 2
+
+sweet\_berry\_bush
+
+Sweet Berry Bush
+
+0.2 → 0
+
+0.2 → 0
+
+turtle\_egg
+
+Turtle Egg
+
+0.4 → 0.5
+
+0.4 → 0.5
+
+undyed\_shulker\_box
+
+Shulker Box
+
+2.5 → 2
+
+2.5 → 2
+
+warped\_hyphae
+
+Warped Hyphae
+
+0.3 → 2
+
+0.3 → 2
+
+warped\_stem
+
+Warped Stem
+
+ 
+
+0.3 → 2
+
+waxed\_cut\_copper
+
+Waxed Cut Copper
+
+ 
+
+3.6 → 6
+
+waxed\_cut\_copper\_slab
+
+Waxed Cut Copper Slab
+
+ 
+
+3.6 → 6
+
+waxed\_cut\_copper\_stairs
+
+Waxed Cut Copper Stairs
+
+ 
+
+3.6 → 6
+
+waxed\_copper
+
+Waxed Block of Copper
+
+ 
+
+3.6 → 6
+
+waxed\_double\_cut\_copper\_slab
+
+Waxed Cut Copper Slab (Double)
+
+ 
+
+3.6 → 6
+
+waxed\_exposed\_copper
+
+Waxed Exposed Copper
+
+ 
+
+3.6 → 6
+
+waxed\_exposed\_cut\_copper
+
+Waxed Exposed Cut Copper
+
+ 
+
+3.6 → 6
+
+waxed\_exposed\_cut\_copper\_slab
+
+Waxed Exposed Cut Copper Slab
+
+ 
+
+3.6 → 6
+
+waxed\_exposed\_cut\_copper\_stairs
+
+Waxed Exposed Cut Copper Stairs
+
+ 
+
+3.6 → 6
+
+waxed\_exposed\_double\_cut\_copper\_slab
+
+Waxed Exposed Cut Copper Slab (Double)
+
+ 
+
+3.6 → 6
+
+waxed\_oxidized\_copper
+
+Waxed Oxidized Copper
+
+ 
+
+3.6 → 6
+
+waxed\_oxidized\_cut\_copper
+
+Waxed Oxidized Cut Copper
+
+ 
+
+3.6 → 6
+
+waxed\_oxidized\_cut\_copper\_stairs
+
+Waxed Oxidized Cut Copper Stairs
+
+ 
+
+3.6 → 6
+
+waxed\_oxidized\_cut\_copper\_slab
+
+Waxed Oxidized Cut Copper Slab
+
+ 
+
+3.6 → 6
+
+waxed\_oxidized\_double\_cut\_copper\_slab
+
+Waxed Oxidized Cut Copper Slab (Double)
+
+ 
+
+3.6 → 6
+
+waxed\_weathered\_cut\_copper
+
+Waxed Weathered Cut Copper
+
+ 
+
+3.6 → 6
+
+waxed\_weathered\_cut\_copper\_slab
+
+Waxed Weathered Cut Copper Slab
+
+ 
+
+3.6 → 6
+
+waxed\_weathered\_cut\_copper\_stairs
+
+Waxed Weathered Cut Copper Stairs
+
+ 
+
+3.6 → 6
+
+waxed\_weathered\_copper
+
+Waxed Weathered Copper
+
+ 
+
+3.6 → 6
+
+waxed\_weathered\_double\_cut\_copper\_slab
+
+Waxed Weathered Cut Copper Slab (Double)
+
+ 
+
+3.6 → 6
+
+weathered\_copper
+
+Weathered Copper
+
+ 
+
+3.6 → 6
+
+weathered\_cut\_copper
+
+Weathered Cut Copper
+
+ 
+
+3.6 → 6
+
+weathered\_cut\_copper\_slab
+
+Weathered Cut Copper Slab
+
+ 
+
+3.6 → 6
+
+weathered\_cut\_copper\_stairs
+
+Weathered Cut Copper Stairs
+
+ 
+
+3.6 → 6
+
+weathered\_double\_cut\_copper\_slab
+
+Weathered Cut Copper Slab (Double)
+
+ 
+
+3.6 → 6
+
+## **Remaining Parity Breaks**[](#_msocom_1)
+
+## **DT - destroy time**  
+## **ER - explosion resistance**
+
+## **Bedrock ID**
+
+## **Bedrock name**
+
+## **DT Bedrock**
+
+## **DT Java**
+
+## **ER Bedrock**
+
+## **ER Java**
+
+cobblestone\_wall
+
+Granite Wall
+
+2
+
+1.5
+
+ 
+
+ 
+
+cobblestone\_wall
+
+Sandstone Wall
+
+2
+
+0.8
+
+6
+
+0.8
+
+cobblestone\_wall
+
+Prismarine Wall
+
+2
+
+1.5
+
+ 
+
+ 
+
+cobblestone\_wall
+
+Diorite Wall
+
+2
+
+1.5
+
+ 
+
+ 
+
+cobblestone\_wall
+
+Andesite Wall
+
+2
+
+1.5
+
+ 
+
+ 
+
+cobblestone\_wall
+
+End Stone Brick Wall
+
+2
+
+3
+
+6
+
+9
+
+cobblestone\_wall
+
+Stone Brick Wall
+
+2
+
+1.5
+
+ 
+
+ 
+
+cobblestone\_wall
+
+Mossy Stone Brick Wall
+
+2
+
+1.5
+
+ 
+
+ 
+
+cobblestone\_wall
+
+Red Sandstone Wall
+
+2
+
+0.8
+
+6
+
+0.8
+
+stone\_block\_slab2
+
+Prismarine Brick Slab
+
+2
+
+1.5
+
+ 
+
+ 
+
+stone\_block\_slab2
+
+Dark Prismarine Slab
+
+2
+
+1.5
+
+ 
+
+ 
+
+stone\_block\_slab2
+
+Prismarine Slab
+
+2
+
+1.5
+
+ 
+
+ 
+
+double\_stone\_block\_slab2
+
+Prismarine Brick Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+double\_stone\_block\_slab2
+
+Dark Prismarine Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+double\_stone\_block\_slab2
+
+Prismarine Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+stone\_block\_slab3
+
+Andesite Slab
+
+2
+
+1.5
+
+ 
+
+ 
+
+stone\_block\_slab3
+
+End Stone Brick Slab
+
+2
+
+3
+
+6
+
+9
+
+stone\_block\_slab3
+
+Polished Andesite Slab
+
+2
+
+1.5
+
+ 
+
+ 
+
+stone\_block\_slab3
+
+Polished Diorite Slab
+
+2
+
+1.5
+
+ 
+
+ 
+
+stone\_block\_slab3
+
+Granite Slab
+
+2
+
+1.5
+
+ 
+
+ 
+
+stone\_block\_slab3
+
+Diorite Slab
+
+2
+
+1.5
+
+ 
+
+ 
+
+stone\_block\_slab3
+
+Polished Granite Slab
+
+2
+
+1.5
+
+ 
+
+ 
+
+double\_stone\_block\_slab3
+
+Andesite Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+double\_stone\_block\_slab3
+
+End Stone Brick Slab (Double)
+
+2
+
+3
+
+6
+
+9
+
+double\_stone\_block\_slab3
+
+Polished Andesite Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+double\_stone\_block\_slab3
+
+Polished Diorite Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+double\_stone\_block\_slab3
+
+Granite Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+double\_stone\_block\_slab3
+
+Diorite Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+double\_stone\_block\_slab3
+
+Polished Granite Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+stone\_block\_slab4
+
+Mossy Stone Brick Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+double\_stone\_block\_slab4
+
+Mossy Stone Brick Slab (Double)
+
+2
+
+1.5
+
+ 
+
+ 
+
+crying\_obsidian
+
+Crying Obsidian
+
+35
+
+50
+
+ 
+
+ 
+
+monster\_egg
+
+Infested Cobblestone
+
+0.75
+
+1
+
+ 
+
+ 
+
+obsidian
+
+Obsidian
+
+35
+
+50
+
+ 
+
+ 
+
+quartz\_block
+
+Smooth Quartz
+
+0.8
+
+2
+
+0.8
+
+6
+
+red\_sandstone
+
+Smooth Red Sandstone
+
+0.8
+
+2
+
+0.8
+
+6
+
+sandstone
+
+Smooth Sandstone
+
+0.8
+
+2
+
+0.8
+
+6
+

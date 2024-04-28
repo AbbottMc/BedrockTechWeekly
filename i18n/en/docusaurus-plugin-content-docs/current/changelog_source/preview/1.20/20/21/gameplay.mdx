@@ -1,0 +1,90 @@
+**Posted:** 12 July 2023
+
+**Information on the Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions.
+
+![A Minecraft screenshot of a villager sleeping in a bed, in a room with a furnace and a chest. There is a pickaxe and a block of cobble deepslate placed in item frames.](https://feedback.minecraft.net/hc/article_attachments/17540657849869)
+
+It’s time for a new Minecraft Preview and Beta! Here’s a list of the fixes and features in this update. Please continue to send us your [feedback](https://aka.ms/MC120Feedback) and [bug reports](https://bugs.mojang.com/), and have fun!
+
+# **Features and Bug Fixes**
+
+## **Recipe Book Search**
+
+-   The recipe book search has been updated when playing in Survival, with the following changes:
+    -   The search will only match the beginning of any word in the item's name. For example, searching for "tor" will now show **Tor**ch and Redstone **Tor**ch but not Daylight Detec**tor**)
+    -   Search will now work better together with the Recipe Unlocking system - recipes that haven't been unlocked will show up in search results.
+-   This change will enable experienced players to find items they are looking for (even if it hasn't been unlocked yet) while not overwhelming new players with recipes they aren't yet ready for.
+-   These changes are planned for both Bedrock and Java Edition, but they are still being tweaked and we definitely want to hear your feedback! Send us your thoughts at [aka.ms/MinecraftRecipeSearch](https://aka.ms/MinecraftRecipeSearch)
+
+## **Recipe Unlocking**
+
+-   Recipe Unlocking is no longer an Experimental Feature, but can still be turned on and off per world
+    -   Known issue: The recipe unlock option toggle is missing from the Create New World screen, but can be found and enabled in the Edit World screen after a world has been created. We hope to have this issue addressed soon!
+-   ‘Recipe unlocked’ message is no longer visible on the pause menu ([MCPE-171112](https://bugs.mojang.com/browse/MCPE-171112))
+-   Stained Glass Pane recipe now gets unlocked when obtaining any dyes ([MCPE-171118](https://bugs.mojang.com/browse/MCPE-171118))
+-   Recipes unlocked notification now fit text in different languages and no longer bleed out of the screen ([MCPE-171141](https://bugs.mojang.com/browse/MCPE-171141))
+
+## **Accessibility** **Features**
+
+-   Fixed an issue where screen narration would read Recipe Book folder items as the first item in the folder
+-   Screen narration now informs the user immediately after they change sliders and toggles
+
+## **Mobs**
+
+-   Camels now play the same stepping sound when walking on Red Sand, Suspicious Sand, and Concrete Powder Blocks as they do when walking on regular Sand ([MCPE-163497](https://bugs.mojang.com/browse/MCPE-163497))
+
+## **Block Breaking**
+
+-   We have adjusted the breaking times of 188 blocks to match Java Edition and our intended design. Some blocks couldn't be changed yet for technical reasons and Obsidian was left unchanged because we're still deciding what breaking speed it should have. Bringing more blocks to parity makes it easier for our team to keep both versions up to date. We also hope it will be easier for the community to make and share guides that work for all players on all platforms. 
+    -   The full list of block breaking times and changes can be found at the end of this changelog [here](#h_01H558MYHH7RM2ZVYE58YYZQB6)
+
+## **Gameplay**
+
+-   Added the playerssleepingpercentage gamerule ([MCPE-114425](https://bugs.mojang.com/browse/MCPE-114425)) 
+    -   A zero or a negative value will only require one player to sleep to skip the night
+    -   When set to over 100, the night cannot be skipped
+-   Fixed held Map not being centered when playing on narrow aspect ratio screens
+-   It is once again possible to use Bone Meal underwater on Sand, Dirt, Gravel, and Clay ([MCPE-171383](https://bugs.mojang.com/browse/MCPE-171383))
+-   Fixed an issue where beginning to swim while hitting the sneak button could cause the sneak button to be held down until swimming ends ([MCPE-130070](https://bugs.mojang.com/browse/MCPE-130070))
+-   Potions are no longer thrown backwards when looking up ([MCPE-138995](https://bugs.mojang.com/browse/MCPE-138995))
+-   Campfires within Trail Ruins are no longer lit by default ([MCPE-170033](https://bugs.mojang.com/browse/MCPE-170033))
+-   Pink Petals can now be fertilized by Dispensers ([MCPE-171560](https://bugs.mojang.com/browse/MCPE-171560))
+-   Shulker Boxes mined without a Pickaxe no longer take a long time to mine
+-   Falling blocks now break and drop their item when falling on a Cocoa Bean
+-   Projectiles now sink into Top Snow just like mobs do
+
+## **Graphical**
+
+-   Fixed screen fade when sleeping in a Bed to no longer go fully opaque ([MCPE-171461](https://bugs.mojang.com/browse/MCPE-171461))
+-   Name Tag rendering logic is now based on camera position rather than player position
+
+## **Player**
+
+-   Fixed an issue where players would disappear temporarily when joining a game for the first time
+
+## **Stability and Performance**
+
+-   Added alerts for iOS users who have run out of disk space
+-   Fixed crash in blocks JSON loading on iOS
+-   Fixed a crash that could occur when the game lost focus while entering a world
+
+## **Storage**
+
+-   Addressed ‘Out of Storage’ errors and texture corruption on Xbox in large worlds ([MCPE-163050](https://bugs.mojang.com/browse/MCPE-163050))
+
+## **User Interface**
+
+-   The Lapis Lazuli icon in the Enchantment Table now matches the one in the Smithing Table screen
+-   Large enchant labels in the Enchantment Table screen are no longer blocked by overlayed items in the inventory ([MCPE-154428](https://bugs.mojang.com/browse/MCPE-154428))
+
+## **Vibrations**
+
+-   Sculk Sensors and Sculk Shriekers no longer risk losing vibrations when receiving them around the simulation distance limit
+-   Vibrations are no longer produced when stopping the use of items while sneaking ([MCPE-171524](https://bugs.mojang.com/browse/MCPE-171524))
+-   Wardens now detect items hitting the ground ([MCPE-160889](https://bugs.mojang.com/browse/MCPE-160889))
+-   Sculk Sensors now send a signal to Sculk Shriekers when detecting items hitting the ground ([MCPE-161165](https://bugs.mojang.com/browse/MCPE-161165))
+

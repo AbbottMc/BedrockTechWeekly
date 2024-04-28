@@ -1,0 +1,81 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Added a _Project Through Liquid_property to the 3D Block Cursor
+-   Added a _CursorPropertiesChangeAfterEvent_to notify Editor script when the cursor properties are changed
+-   Wandering Traders can now correctly display custom entity spawn eggs in their trade menus ([MCPE-170184](https://bugs.mojang.com/browse/MCPE-170184))
+
+## AI Goals
+
+-   "behavior.breed" now interrupts navigation on stop for content using engine version 1.20.60 or higher
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Biomes
+
+-   Biome JSON files no longer support inheriting fields from other Biome JSON files. If this affects any content those files should be updated by manually copying the desired JSON text
+
+## Components
+
+-   The "entity\_sensor" component now supports multiple "subsensors":
+-   "event", "require\_all", "minimum\_count", "maximum\_count", "range" and "event\_filter" are now individually configurable fields of each subsensor
+-   Subsensors also have a new "cooldown" field, which defines how often each subsensor should sense for entities
+-   All these changes require a "format\_version" of 1.20.60 or higher
+
+## Editor
+
+-   Fix in _CompoundBlockVolumeIterator_ that removes the addition of an extra block location in certain _CompoundBlockVolume_ configurations
+-   Update Pause Actors in world options menu using stateful menus
+-   Added tool grouping support to Tool Rail
+-   Added _toolGroupId_property to _ExtensionOptionalParameters_ API for organizing tools created in an extension
+-   Added _name_, _description_, _notes_and _defaultToolGroupId_ properties to _Extension_ API
+-   Added _extensionInfo: Extension_property to _ExtensionContext_ API and removed _extensionName_ property
+
+## Entity Filters
+
+-   Added new entity filter "is\_panicking", which checks if the entity is executing "behavior.panic"
+-   Added new entity filter "is\_sprinting", which checks if the entity is sprinting
+
+## General
+
+-   Renamed _water\_spash\_manual.__json_ to _water\_splash\_manual.json_ in _resource\_packs\\vanilla\\particles_ ([MCPE-176784](https://bugs.mojang.com/browse/MCPE-176784))
+
+## Molang
+
+-   Improved the context of content logs when an evaluated Molang expressions results in an error
+
+## Performance and Stability
+
+-   Require block\_id for each block in the StartGamePacket blockProperties
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## ![Picture2.jpg](https://feedback.minecraft.net/hc/article_attachments/21755225955725)
+
+## Graphical
+
+-   Fixed texture z-fighting issues in Deferred Technical Preview
+-   Added Volumetric Fog and Light Shafts to the Deferred Technical Preview. This new feature works by approximating the scattering that occurs as light rays travel through the air, resulting in more realistic fog and a greater sense of scene depth. It also plugs into existing data-driving capabilities in Resource Packs for fog and volumes, so that Creators can customize the look and feel of fog under a variety of conditions; see the updated [Getting Started with Deferred Lighting](https://learn.microsoft.com/en-us/minecraft/creator/documents/deferredlighting?view=minecraft-bedrock-stable) article on the Minecraft Creator Portal for more information
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

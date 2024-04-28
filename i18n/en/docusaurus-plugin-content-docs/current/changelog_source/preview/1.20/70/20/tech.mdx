@@ -1,0 +1,69 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Components**
+
+-   The “entity\_sensor” component’s “range” field now supports two values, the first one for horizontal range and the second one for vertical range
+-   This requires a “format\_version” of 1.20.70 or higher
+
+## **Editor**
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Updates this week:
+
+-   The PropertyPane.addDropdown function now returns an IDropdownPropertyItem that can be used to call the new “updateDropdownItems” to change the Dropdown items in an existing Dropdown and optionally set a new currently-selected index. “updateDropdownItems” calls the corresponding “onChange” function but passes -1 in for the oldValue because the list is changing entries
+-   Added Cursor delta relative to Player position and the name of the block at the cursor position to the Player position status bar entry
+-   Vector3 panes now have a default “minX/Y/Z” of “MIN\_SAFE\_INTEGER”, allowing negative values to be used
+    -   The player will now correctly spawn at the current location when the “Spawn at current location” option is checked in the test world property pane
+-   Viewport in the editor is no longer incorrectly offset while in a world with deferred graphics enabled
+
+## **Entity Filters**
+
+-   Added new entity filter “was\_last\_hurt\_by”, which checks if the subject is the last player or mob to have recently attack the entity
+
+## **Molang**
+
+-   Removed experimental Molang queries
+    -   biome\_has\_any\_tag
+    -   biome\_has\_all\_tags
+    -   self
+    -   target
+    -   client\_input\_type
+    -   get\_nearby\_entities
+    -   get\_nearby\_entities\_except\_self
+-   Added new Molang API’s that give read access to rider body and head rotations
+    -   rider\_body\_x\_rotation(riderIndex) =\> float
+    -   rider\_body\_y\_rotation(riderIndex) =\> float
+    -   rider\_head\_x\_rotation(riderIndex) =\> float
+    -   rider\_head\_y\_rotation(riderIndex,clampRotation?) =\> float
+    -   ride\_body\_x\_rotation =\> float
+    -   ride\_body\_y\_rotation =\> float
+    -   ride\_head\_x\_rotation =\> float
+    -   ride\_head\_y\_rotation(clampRotation?) =\> float
+
+## **NBT Parsing**
+
+-   Loading of NBT data is now more restrictive. Negative-length arrays, invalid tag ids, and not enough bytes in a payload are now all treated as errors which will prevent a tag loading where before those conditions were sometimes ignored
+
+## **Preview Realms**
+
+-   Fixed a bug where pressing the back button at the Choose a Subscription screen would cause the “Preview Realms couldn’t load” message under some circumstances
+
+## **Spawn Rules**
+
+-   “minecraft:spawns\_on\_block\_filter” now supports block descriptors
+-   “minecraft:spawns\_on\_block\_prevented\_filter” now supports block descriptors
+-   “minecraft:spawns\_above\_block\_filter” now supports block descriptors
+

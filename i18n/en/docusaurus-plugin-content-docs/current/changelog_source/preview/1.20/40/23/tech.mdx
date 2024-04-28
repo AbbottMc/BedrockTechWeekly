@@ -1,0 +1,45 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## EDU Features
+
+-   Fixed a bug that prevented summon NPC commands from working if the users did not have worldbuilder permissions where the base version of the world was before 1.19.80
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) discussion forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Fixed this week:
+
+-   Fixed a bug that prevented the Origin Vector3 item in the Selection pane from updating when the movement gizmo was dragged.
+
+## Entity Components
+
+-   Unlocked “behavior.random\_search\_and\_dig” for creators to use
+-   "target\_blocks" field added. List of blocks that the mob can dig on. Default if "target\_blocks" isn't added is Dirt, Grass, Podzol, Dirt with Roots, Moss, Mud, and Muddy Mangrove Roots
+-   "item\_table" field added. Path to a loot table that specifies what the mob can dig up. "item\_table" takes precedence over "items"
+-   Content errors added if the behavior has trouble reading or finding "item\_table" and if unable to get an item from "items"
+-   'on\_item\_found' event now fires on item found AND digging finished. Before the event firing caused the digging to stop early
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   High emissive values (\> 0.25) no longer obscure surface detail in the Deferred Technical Preview

@@ -1,0 +1,33 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   "minecraft:transformation" now prevents blocks from being transformed past the 30x30x30 pixel limit and "minecraft:unit\_cube" from being translated or scaled. Invalid block will instead display the "update" block ([MCPE-173799](https://bugs.mojang.com/browse/MCPE-173799))
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Graphical
+
+-   Fixed an issue where particles were not consistently lit while in the Deferred Technical Preview
+
+## Items
+
+-   Deprecated "minecraft:weapon" component starting in version 1.20.40
+-   Deprecated "minecraft:on\_use" component starting in version 1.20.40
+-   Deprecated "minecraft:on\_use\_on" component starting in version 1.20.40

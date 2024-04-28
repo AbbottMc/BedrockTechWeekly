@@ -1,0 +1,190 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 19.80 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks  
+    ](https://aka.ms/MCAddOnPacks)
+
+## **General**
+
+-   For behavior packs using version 1.19.80 and above, recipes no longer accept a Molang query for the item's data field, instead use the item's full name, eg. use { "item": "namespace:actor\_spawn\_egg" } instead of { "item": "spawn\_egg", "data": "query.get\_actor\_info\_id('namespace:actor')" }
+-   Fixed an issue that caused the InteractComponent to not work correctly while sneaking ([MCPE-168449](https://bugs.mojang.com/browse/MCPE-168449))
+
+## **Commands**
+
+-   The /execute command now displays an appropriate error message when there is an error in the second or subsequent subcommand target selector ([MCPE-164304](https://bugs.mojang.com/browse/MCPE-164304))
+-   Provide auto-complete support for block states
+-   Added two new overloads to the summon command:
+    -   /summon \[spawnPos : x y z\] facing \<position: x y z\> \[spawnEvent: string\] \[nametag: string\]
+    -   /summon \[spawnPos : x y z\] facing \<lookAtEntity: target\> \[spawnEvent: string\] \[nametag: string\]
+-   Fixed an issue where the paste button in the Command Block UI would remember extra presses from failed pastes ([MCPE-163705](https://bugs.mojang.com/browse/MCPE-163705))
+-   For worlds using game version 1.19.80 and above, acquiring a custom spawn egg through a command can only succeed with their full name rather than with an aux value, eg. "/give @s namespace:actor\_spawn\_egg"
+-   "fence" block is now split into unique names, "oak\_fence", "acacia\_fence", "birch\_fence", "dark\_oak\_fence", "jungle\_fence", and "spruce\_fence"
+-   Commands will still work with "fence", but only new fence name will be suggested in the command prompt
+-   Removed requirement for blockState argument(s) when using other optional args in /fill /setblock and /clone ([MCPE-167959](https://bugs.mojang.com/browse/MCPE-167959))
+-   Implemented the "inputpermission" command, which allows for setting the player's camera or movement as enabled or disabled
+    -   Syntax: /inputpermission set \<target: player\> \<permission: camera | movement\> \<state: enabled | disabled\>
+-   Implemented the "haspermission" target selector, which allows for selection based on player permission levels
+
+## **Game Events**
+
+-   _item\_interact\_finish_ game event now has a vibration frequency of 2 instead of 14
+-   _item\_interact\_start_ is no longer considered a detectable vibration
+-   Reeling a fishing rod now emits _projectile\_shoot_ vibration
+
+## **Data-Driven Components**
+
+-   Added "lose\_target" field to projectile data to specify if an entity should unselect its target after shooting the projectile
+-   Added a new Transformation component for blocks to support rotation, scaling and translation. The component can be added to the whole block, and/or to individual block permutations. Eg.
+
+"minecraft:transformation": {  
+                "translation": \[0.0, 0.1, -0.1\],  
+                "scale": \[0.5, 1, 1.5\],  
+      "rotation": \[90, 180, 0\]  
+}
+
+-   Transformed geometries still have the same restrictions that non-transformed geometries have, eg. a maximum size of 30/16 units
+
+## **Add-Ons and Script Engine**
+
+-   Chance information types used in tree feature JSONs for some trunks and foliage now allow 0 as the chance (values like 0.0001 were allowed, but not 0)
+-   Form promises are now rejected using typed errors, vs. strings as used previously
+
+## **Entity Filters**
+
+-   Created new entity filter "is\_raider" to determine if subject is part of a raid
+
+## **AI Goals**
+
+-   Added "cooldown" field to target descriptors in "minecraft:behavior.nearest\_attackable\_target" goal
+
+## **Blocks**
+
+-   Deprecated _minecraft:part\_visibility_ block component
+-   Added _bone\_visibility_ behavior to _minecraft:geometry_ block component
+
+## **ItemStack**
+
+-   Added function _getTags(): string\[\]_ - Returns all tags for the item
+-   Added function _hasTag(tag: string): boolean_ - Returns true if the item has the specified tag
+
+## **EntityEquipmentInventoryComponent**
+
+-   This component is used to manipulate the equipment of mobs and players. To use it, call _getComponent('equipment\_inventory')_
+-   Added function _getEquipment(equipmentSlot: EquipmentSlot): ItemStack | undefined_ _-_ Returns the item in the given equipment slot
+-   Added function _getEquipmentSlot(equipmentSlot: EquipmentSlot): ContainerSlot_ - Returns the container slot for the given equipment slot
+-   Added function _setEquipment(equipmentSlot: EquipmentSlot, itemStack?: ItemStack): void_ - Sets the item in the given equipment slot
+
+## **ItemDurabilityComponent**
+
+-   The ItemDurabilityComponent now works with all damageable items, not just custom items
+-   Removed property _damageRange_
+-   Setting damage will now throw an exception if it is outside of the range \[0, maxDurability\]
+
+## **Marketplace**
+
+-   In the map WDW Magic Kingdom, the carts on the Big Thunder Mountain, Snow White and the Seven Dwarves, and Space Mountain rides now properly align with the invisible Minecart they are attached to
+
+## **Servers**
+
+-   Blocks can now optionally (via a setting in StartGamePacket) use a hashed value for their network IDs. This hashed value is independent of all other blocks and remains stable across future releases
+
+## **GameTest Framework**
+
+-   Updated specific GameTest exceptions to be thrown as GameTestError error objects
+-   Added two new commands:
+    -   /gametest stopall - Used to manually stop all tests while they are running
+    -   /gametest runsetuntilfail - Used to run a set of tests but will automatically stop if any of the tests fail
+
+## **API (Experimental)**
+
+-   Updated versions to add new APIs to stable:
+    -   Added version 1.1.0 of @minecraft/server
+    -   Added version 1.2.0-beta of @minecraft/server
+    -   Removed version 1.1.0-beta of @minecraft/server
+    -   Moved the following to @minecraft/server stable (1.1.0)
+        -   system.runTimeout
+        -   system.runInterval
+        -   system.clearRun
+        -   system.currentTick
+        -   Vector3
+        -   BlockPermutation  (only a subset of functionality)
+        -   Block
+        -   Dimension.getBlock
+        -   World.sendMessage
+        -   Player.sendMessage
+        -   Entity.dimension
+        -   Entity.typeId
+        -   Entity.getVelocity()
+        -   Entity.location
+        -   Entity.getHeadLocation()
+        -   Entity.nameTag
+        -   Entity.id
+        -   Entity.getViewDirection()
+        -   Dimension.getEntities
+        -   Dimension.getEntitiesAtBlockLocation
+        -   Dimension.getPlayers
+        -   EntityQueryOptions
+        -   EntityQueryScoreOptions
+        -   GameType
+        -   World.getPlayers
+    -   Minecraft runtime errors are now fired as JavaScript Error objects instead of strings
+    -   Fixed a number of base class inheritance issues and added several new base classes to certain class types
+    -   /reload works if a script pack references a client resource pack
+    -   Fixed a bug where the _BeforeItemUseOnEvent_ function _getBlockLocation_ would return undefined ([MCPE-166945](https://bugs.mojang.com/browse/MCPE-166945))
+    -   The _BeforeItemUseOnEvent_ class now inherits from _ItemUseOnEvent_
+    -   Fixed a bug where _sendMessage_ would fail when the message contains Unicode quotation marks
+    -   Signs
+        -   Added _setText_ to set the text on a sign with a regular string, a _RawMessage_, or a _RawText_
+        -   Added _getText_ to get the string on a sign, will return undefined if _setText_ was called with a _RawMessage_ or a _RawText_
+        -   Added _getRawText_ to get the _RawText_ on a sign, will return undefined if _setText_ was called with a string
+        -   Added _getTextDyeColor_ and _setTextDyeColor_ to read/write the dye of the sign text
+    -   Dyes
+        -   Added _DyeColor_ enum
+    -   sendMessage
+        -   _rawtext_ is now _RawMessage\[\]_ instead of _(string | RawMessage)\[\]_
+    -   RawMessage
+        -   _rawtext_ property on _RawMessage_ is no longer _(string | RawMessage)\[\]_ and is instead _RawMessage\[\]_
+    -   RawText
+        -   Added a _RawText_ class for reading _RawMessage_ like on Signs
+    -   Riding
+        -   Added _getRiders_ to _EntityRideableComponent_ which returns an array of all the entities currently riding this entity
+        -   Added _EntityRidingComponent_ - this component is only on entities that are currently riding on another entity
+            -   Has an _entityRidingOn_ property that returns the entity this entity is currently riding on
+        -   Added function _getEntity(id: string): Entity | undefined_ - Gets an entity. Returns undefined for entities that don't exist or aren't loaded
+    -   Dimension
+        -   getEntities
+            -   Modified return type to _Entity\[\]_
+            -   Modified parameter name _getEntities_ to _options_
+            -   New signature: _getEntities(options?: EntityQueryOptions): Entity\[\]_
+        -   getPlayers
+            -   Modified return type to _Player\[\]_
+            -   Modified parameter name _getPlayers_ to _options_
+            -   New signature: _getPlayers(options?: EntityQueryOptions): Player\[\];_
+        -   @minecraft/server-ui
+            -   When building forms, all read-only user-facing strings (e.g., text labels, dropdown options etc.) now accept _RawMessage_ This affects the following classes:
+                -   _ActionFormData_
+                -   _ModalFormData_
+                -   _MessageFormData_
+            -   Added function _getItemStack(amount?: number, withData?: boolean): ItemStack_ - Gets an item stack of the block. Returns undefined for blocks that don't have a corresponding item (e.g. air)
+        -   BlockPermutation
+            -   Added function _getItemStack(amount?: number): ItemStack_ – Creates an item stack of the block permutation. Returns undefined for blocks that don't have a corresponding item (e.g. air)
+            -   Removed data _property_
+        -   BlockComponent
+            -   Added read-only property _block_ - Gets the block that the component is attached to
+        -   Renamed _IEntityComponent_ to _EntityComponent_
+        -   Container
+            -   Replaced classes  
+                _BlockInventoryComponentContainer_, _InventoryComponentContainer_, and _PlayerInventoryComponentContainer_ with _Container_
+            -   function _addItem_ now returns the remainder of the added item stack if the container is full, else _undefined_
+            -   function _transferItem_ no longer takes a destination slot and will now place the given item in the first available slot. The function now returns the remainder of the item stack if the container is full, else _undefined_
+            -   Added function _moveItem(fromSlot: number, toSlot: number, toContainer: Container): void_ - Moves an item from one container to another, replacing any item in the destination slot
+            -   Function _swapItems_ can now swap empty slots
+            -   Removed function _clearItem_ - Please _use_ _setItem(undefined)_ instead
+        -   Signs
+            -   Fixed an issue where text set on Signs using _setText_ wasn't reflected on Signs on the client until the Sign was reloaded
+            -   _getComponent('minecraft:sign')_ now works with Hanging Signs
+
