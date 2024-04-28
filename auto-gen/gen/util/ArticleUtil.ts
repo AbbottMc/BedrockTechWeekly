@@ -2,7 +2,7 @@ import {Config} from '../Config'
 import {ArticleObject, ArticleSection, ArticleSections} from '../ArticleTypes'
 import {StringBuilder} from '../misc/StringBuilder'
 
-interface BedrockArticleSplitResult {
+export interface BedrockArticleSplitResult {
   gameplayContent: string;
   techUpdatesContent?: string;
   techUpdatesTitleLine?: string;
@@ -14,7 +14,7 @@ interface BedrockArticleSplitResult {
   expSapiTitleLine?: string;
 }
 
-interface SapiArticleSplitResult {
+export interface SapiArticleSplitResult {
   stableSapiContent?: string;
   stableSapiTitleLine?: string;
   expSapiContent?: string;
@@ -40,10 +40,30 @@ export class ArticleUtil {
     if (!this.isBedrockArticle(article)) return undefined;
     const title = article.title;
     if (title.includes(Config.bedrockPreviewVersionSplitter)) {
-      return title.split(Config.bedrockPreviewVersionSplitter)[1].replace('/', '-').trim()
+      return title.split(Config.bedrockPreviewVersionSplitter)[1].replace('/', '-').split('(')[0].trim()
     } else {
       const versionPos = title.includes('&') ? 2 : 1;
-      return title.split('-')[versionPos].replace('/', '-').split('(')[0].trim();
+      return title.split('-')[versionPos].replace('/', '-').split('(')[0].split('(')[0].trim();
+    }
+  }
+
+  static getMajorVersion(version: string) {
+    const versionSplit = version.split('.');
+    return versionSplit[0] + '.' + versionSplit[1];
+  }
+
+  static getMainVersion(version: string) {
+    const versionSplit = version.split('.');
+    return versionSplit[0] + '.' + versionSplit[1] + '.' + versionSplit[2];
+  }
+
+  static separateVersion(version: string) {
+    const versionSplit = version.split('.');
+    return {
+      mainVersion: versionSplit[0] + '.' + versionSplit[1] + '.' + versionSplit[2],
+      majorVersion: versionSplit[0] + '.' + versionSplit[1],
+      minorVersion: versionSplit[2],
+      patchVersion: versionSplit[3]
     }
   }
 

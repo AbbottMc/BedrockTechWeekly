@@ -7,6 +7,7 @@ export interface OutputPaths {
 }
 
 export interface OutputFolder {
+  docsPath: string;
   preview: OutputPaths;
   stable: OutputPaths;
 }
@@ -14,8 +15,10 @@ export interface OutputFolder {
 export interface OutputNames {
   gameplay: string;
   tech: string;
-  techSapi: string,
-  techSapiDiff: string;
+  techSapiStable: string,
+  techSapiExp: string,
+  techSapiStableDiff: string,
+  techSapiExpDiff: string,
 }
 
 export interface LocaleMap {
@@ -90,6 +93,7 @@ export const Config = {
   output: {
     folder: {
       ['en']: {
+        docsPath: enDocsFolder,
         preview: {
           changelogSource: enDocsFolder + '/changelog_source/preview',
           officialChangelog: enDocsFolder + '/official_changelog/preview'
@@ -100,6 +104,7 @@ export const Config = {
         }
       },
       ['zh-hans']: {
+        docsPath: docsFolder,
         preview: {
           changelogSource: docsFolder + '/changelog_source/preview',
           officialChangelog: docsFolder + '/official_changelog/preview'
@@ -113,8 +118,10 @@ export const Config = {
     names: {
       gameplay: 'gameplay',
       tech: 'tech',
-      techSapi: 'tech_sapi',
-      techSapiDiff: 'tech_sapi_diff',
+      techSapiStable: 'tech_sapi_stable',
+      techSapiExp: 'tech_sapi_exp',
+      techSapiStableDiff: 'tech_sapi_stable_diff',
+      techSapiExpDiff: 'tech_sapi_exp_diff',
     },
     techUpdateMdxFileImport: {
       stable: ['TechSapiStable', 'tech_sapi_stable'],

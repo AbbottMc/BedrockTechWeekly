@@ -3,21 +3,17 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.预览版更新": {
+  "sidebar.changelogSidebar.doc.官方更新日志": {
+    "message": "Official Changelog",
+    "description": "The label for doc 官方更新日志 in sidebar changelogSidebar"
+  },
+  "sidebar.changelogSidebar.category.预览版更新": {
     "message": "Preview Update",
-    "description": "The label for category 预览版更新 in sidebar tutorialSidebar"
+    "description": "The label for category 预览版更新 in sidebar changelogSidebar"
   },
-  "sidebar.tutorialSidebar.category.预览版更新.link.generated-index.description": {
-    "message": "Minecraft Preview Technical Update Changelog",
-    "description": "The generated-index page description for category 预览版更新 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.稳定版更新": {
+  "sidebar.changelogSidebar.category.稳定版更新": {
     "message": "Stable Update",
-    "description": "The label for category 稳定版更新 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.稳定版更新.link.generated-index.description": {
-    "message": "Minecraft稳定版技术更新日志",
-    "description": "The generated-index page description for category 稳定版更新 in sidebar tutorialSidebar"
+    "description": "The label for category 稳定版更新 in sidebar changelogSidebar"
   },
   "sidebar.sapiPreviewSidebar.category.类": {
     "message": "Class",
