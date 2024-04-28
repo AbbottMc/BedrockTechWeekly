@@ -64,13 +64,13 @@ html[data-theme='dark'] {
 }
 
 /**容器边栏与主体比例设定**/
-.container .row aside {
-    --ifm-col-width: calc(3 / 12 * 100%);
-}
+/*.container .row aside {*/
+/*    --ifm-col-width: calc(3 / 12 * 100%);*/
+/*}*/
 
-.container .row main {
-    --ifm-col-width: calc(9 / 12 * 100%);
-}
+/*.container .row main {*/
+/*    --ifm-col-width: calc(9 / 12 * 100%);*/
+/*}*/
 
 .footer {
     background-color: var(--bedoc-footer-background-color) !important;
@@ -135,6 +135,14 @@ html[data-theme='dark'] {
     /*box-shadow: var(--bedoc-exp-divider-shadow);*/
     border-bottom: var(--bedoc-exp-title-border);
     border-radius: var(--ifm-global-radius);
+}
+
+img[loading='lazy'] {
+    border-radius: var(--ifm-global-radius);
+    width: 90%;
+    height: fit-content;
+    margin-left: 5%;
+    box-shadow: 0 2.4px 2px rgba(0, 0, 0, .032), 0 2.7px 6.7px rgba(0, 0, 0, .048), 0 12px 30px rgba(0, 0, 0, .08);
 }
 
 @keyframes exp_anim {

@@ -25,7 +25,10 @@ export interface LocaleMap {
 
 export interface Config {
   apiUrl: string;
-  startSidebarPosition: number;
+  startSidebarPosition: {
+    preview: number;
+    stable: number;
+  };
   startPage: number;
   endPage?: number;
   startVersion: string;
@@ -35,7 +38,7 @@ export interface Config {
   endVersion?: string;
   titles: {
     technicalUpdates: string,
-    scriptAPI: string;
+    scriptAPI: string[];
     expTechUpdates: string[];
     ignore: string[];
   }
@@ -71,15 +74,18 @@ interface ResultTemplateOptions {
 
 export const Config = {
   apiUrl: 'https://feedback.minecraft.net/api/v2/help_center/en-us/articles',
-  startSidebarPosition: 99999993,
-  startPage: 4,
-  endPage: 1,
+  startSidebarPosition: {
+    preview: 99999993,
+    stable: 99999997
+  },
+  startPage: 1,
+  endPage: 4,
   startVersion: '1.19.80.22',
   titles: {
     technicalUpdates: 'Technical Updates',
-    scriptAPI: 'API',
-    expTechUpdates: ['Experimental Technical Updates', 'Technical Experimental Updates'],
-    ignore: ['**Posted', '**Information']
+    scriptAPI: ['API', 'Scripting'],
+    expTechUpdates: ['Experimental Technical Updates', 'Technical Experimental Updates', 'Experimental Technical Features'],
+    ignore: ['**Posted', '**Information', '**Update on ']
   },
   output: {
     folder: {
@@ -118,7 +124,7 @@ export const Config = {
     }
   },
   bedrock: 'Bedrock',
-  java: '"Java"',
+  java: 'Java',
   bedrockPreviewVersionSplitter: 'Preview -',
   techUpdateSplitter: 'Technical Updates',
   genChangelog() {

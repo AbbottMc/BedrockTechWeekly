@@ -28,7 +28,8 @@ export class ArticleUtil {
   }
 
   static isBedrockArticle(article: ArticleObject) {
-    return !article.title.includes(Config.java);
+    const javaEditionKeywords = [Config.java, "Snapshot", "Candidate", "Pre "]
+    return javaEditionKeywords.every(keyword => !article.title.includes(keyword));
   }
 
   static isPreviewArticle(article: ArticleObject) {
@@ -39,10 +40,19 @@ export class ArticleUtil {
     if (!this.isBedrockArticle(article)) return undefined;
     const title = article.title;
     if (title.includes(Config.bedrockPreviewVersionSplitter)) {
-      return title.split(Config.bedrockPreviewVersionSplitter)[1].trim()
+      return title.split(Config.bedrockPreviewVersionSplitter)[1].replace('/', '-').trim()
     } else {
-      return title.split('-')[1].trim();
+      const versionPos = title.includes('&') ? 2 : 1;
+      return title.split('-')[versionPos].replace('/', '-').split('(')[0].trim();
     }
+  }
+
+  private static getArticleSection(titles: string[], articleSections: ArticleSections) {
+    for (const title of titles) {
+      const ret = articleSections[title];
+      if (ret) return ret;
+    }
+    return undefined;
   }
 
   private static replaceSapiContent(techContent: string, sapiContent: string, sapiVarName: string, sapiDiffVarName?: string) {
@@ -82,7 +92,7 @@ export class ArticleUtil {
   }
 
   private static splitSapiContent(articleSections: ArticleSections, stableContent?: string, expContent?: string): SapiArticleSplitResult {
-    const sapiSection = articleSections[Config.titles.scriptAPI];
+    const sapiSection = this.getArticleSection(Config.titles.scriptAPI, articleSections);
     if (!sapiSection) return {} as SapiArticleSplitResult;
     const sapiContentMap = new Map(sapiSection.map((s) => {
         const tag = s.tags?.[0] ?? 'untagged';
@@ -153,7 +163,7 @@ export class ArticleUtil {
       currentSection.titleLine = line;
       currentSection.previousSectionTitle = previousSection?.title;
       currentSection.previousSectionTitleLine = previousSection?.titleLine;
-      if (line.includes(Config.titles.scriptAPI)) {
+      if (Config.titles.scriptAPI.some((t) => line.includes(t))) {
         currentSection.tags ??= [];
         currentSection.tags.push(isExperimental ? 'experimental' : 'stable');
       }
@@ -178,7 +188,7 @@ export class ArticleUtil {
       gameplayContent
     };
     const techUpdatesAllContent = fixedArticleContent.substring(fixedArticleContent.indexOf(techUpdatesTitleLine));
-    const expTechUpdatesSection = articleSections[Config.titles.expTechUpdates[0]] ?? articleSections[Config.titles.expTechUpdates[1]];
+    const expTechUpdatesSection = this.getArticleSection(Config.titles.expTechUpdates, articleSections);
     if (!expTechUpdatesSection) {
       const {
         stableSapiContent, stableSapiTitleLine
@@ -196,7 +206,7 @@ export class ArticleUtil {
     const techUpdatesContent = techUpdatesAllContent;
     // expTechUpdatesContent = expTechUpdatesContent.replace(expTechUpdatesSection[0].titleLine, '');
     // techUpdatesContent = techUpdatesContent.replace(techUpdatesTitleLine, '');
-    const sapiSection = articleSections[Config.titles.scriptAPI];
+    const sapiSection = this.getArticleSection(Config.titles.scriptAPI, articleSections);
     if (!sapiSection) return {
       gameplayContent,
       techUpdatesContent,
@@ -218,5 +228,14 @@ export class ArticleUtil {
       expSapiContent,
       expSapiTitleLine
     };
+  }
+
+  static processSharpBracket(result: BedrockArticleSplitResult): BedrockArticleSplitResult {
+    return Object.fromEntries(Object.entries(result).map(([key, value]) => {
+      if (typeof value === 'string') {
+        return [key, value.replaceAll('<', '\\<').replaceAll('>', '\\>')];
+      }
+      return [key, value];
+    })) as BedrockArticleSplitResult;
   }
 }
