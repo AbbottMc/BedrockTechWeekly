@@ -84,6 +84,31 @@ html[data-theme='dark'] {
     display: flex;
     flex-direction: row;
     width: 32rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-button-secondary {
+    margin-left: 1rem;
+}
+
+@media screen and (max-width: 996px) {
+    .header-button-container {
+        flex-direction: column;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .header-button {
+        /*width: 100% !important;*/
+        margin-top: 1rem;
+    }
+
+    .header-button-secondary {
+        /*width: 100% !important;*/
+        margin-left: unset;
+        margin-top: 1.5rem;
+    }
 }
 
 .header-container .button--lg {

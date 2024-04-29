@@ -39,7 +39,7 @@ function HomepageHeader() {
         <div className="header-button-container">
           <Link
             // className="homepage-button-secondary hero--primary  button--lg"
-            className="button button--primary button--lg"
+            className="header-button button button--primary button--lg"
             to="/docs/official_changelog/preview/1.21/0/23">
             <Translate
               id="homepage.checkTechChangelog"
@@ -49,8 +49,8 @@ function HomepageHeader() {
           </Link>
           <Link
             // className="homepage-button-secondary hero--primary  button--lg"
-            className="button button--outline button--secondary button--lg"
-            to="/docs/sapi/stable" style={{marginLeft: 24}}>
+            className="header-button-secondary button button--outline button--secondary button--lg"
+            to="/docs/sapi/stable">
             <Translate
               id="homepage.scriptAPIRef"
               description="The homepage check tech changelog button message">
