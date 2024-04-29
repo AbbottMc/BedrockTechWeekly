@@ -240,10 +240,14 @@ export class ArticleUtil {
     };
   }
 
-  static processSharpBracket(result: BedrockArticleSplitResult): BedrockArticleSplitResult {
+  static processContent(result: BedrockArticleSplitResult): BedrockArticleSplitResult {
     return Object.fromEntries(Object.entries(result).map(([key, value]) => {
       if (typeof value === 'string') {
-        return [key, value.replaceAll('<', '\\<').replaceAll('>', '\\>')];
+        // sharp bracket replace
+        const sharpBracketHandled = value.replaceAll('<', '\\<').replaceAll('>', '\\>');
+        // official site link redirect
+        const officialSiteLinkHandled = sharpBracketHandled.replaceAll('[aka.ms/JoinMCBeta](%20aka.ms/JoinMCBeta)', '[aka.ms/JoinMCBeta](https://feedback.minecraft.net/hc/en-us/articles/%20aka.ms/JoinMCBeta)');
+        return [key, officialSiteLinkHandled];
       }
       return [key, value];
     })) as BedrockArticleSplitResult;

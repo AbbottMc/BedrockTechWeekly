@@ -160,7 +160,7 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
 
   separateArticle() {
     if (this._isBedrock) {
-      return ArticleUtil.processSharpBracket(ArticleUtil.splitBedrockArticle(this._content));
+      return ArticleUtil.processContent(ArticleUtil.splitBedrockArticle(this._content));
     }
     return {} as BedrockArticleSplitResult;
   }
