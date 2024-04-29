@@ -246,7 +246,10 @@ export class ArticleUtil {
         // sharp bracket replace
         const sharpBracketHandled = value.replaceAll('<', '\\<').replaceAll('>', '\\>');
         // official site link redirect
-        const officialSiteLinkHandled = sharpBracketHandled.replaceAll('[aka.ms/JoinMCBeta](%20aka.ms/JoinMCBeta)', '[aka.ms/JoinMCBeta](https://feedback.minecraft.net/hc/en-us/articles/%20aka.ms/JoinMCBeta)');
+        let officialSiteLinkHandled = sharpBracketHandled.replaceAll('(%20aka.ms/JoinMCBeta)', '(https://aka.ms/JoinMCBeta)');
+        officialSiteLinkHandled = officialSiteLinkHandled.replaceAll('(aka.ms/minecraftaddons)', '(https://aka.ms/minecraftaddons)');
+        officialSiteLinkHandled = officialSiteLinkHandled.replaceAll('(bugs.mojang.com)', '(https://bugs.mojang.com)');
+        officialSiteLinkHandled = officialSiteLinkHandled.replaceAll('(MCPE-83616)', '(https://bugs.mojang.com/browse/MCPE-83616)');
         return [key, officialSiteLinkHandled];
       }
       return [key, value];
