@@ -1,0 +1,28 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Stability and Performance**
+
+-   Fixed a crash that could occur when using the _hasItem_ selector and specifying a negative value for the item's data ([MCPE-152314](https://bugs.mojang.com/browse/MCPE-152314))
+
+# **Experimental Features**
+
+## **Commands**
+
+-   Implemented the "/execute facing " and "/execute facing entity " commands
+-   Implemented the "/execute align " command
+
+## **Data Driven Blocks**
+
+-   "minecraft:direction" is no longer exposed as a data-driven blockProperty. Blocks throw a content error when the "minecraft" namespace is used
+
+## **GameTest Framework**
+
+-   Removed built-in GameTest Behavior Packs
+
+## **General**
+
+-   Added flag _is\_hidden\_in\_commands_ in _menu\_category_ to control whether or not a block can be used in commands
+

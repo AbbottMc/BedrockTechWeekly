@@ -1,0 +1,123 @@
+**Posted:** April 14, 2022
+
+## **Information on the Minecraft Preview and Beta:** 
+
+-   Beta Version: 1.19.0.24 | Preview Version: 1.19.0.25
+-   While the version numbers between Preview and Beta are different, there is no difference in game content
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Xbox, Windows 10/11, and Android (Google Play). To join or leave the beta, see [ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions 
+
+![A Minecraft screenshot, shoiwng the Ancient City, and a new compass!](https://feedback.minecraft.net/hc/article_attachments/5540422782989/beta19_2_16x9.jpg)
+
+Here's a list of what is new in this week's Beta! As always, please search and report any bugs you may find at [bugs.mojang.com](http://bugs.mojang.com/) and send us [your feedback](https://aka.ms/MinecraftBetaFeedback).  
+  
+
+# **Minecraft Preview on Xbox**
+
+-   Xbox Series X|S players may receive an error message (code 0x8b050033) when launching Minecraft Preview.
+-   Uninstall and reinstall Minecraft Preview to complete the update and resolve the error.
+
+# **Spectator Mode**
+
+Some of our more eagle-eyed players might have noticed that last week’s beta and preview contained early functionality supporting the spectator gamemode, which was accidentally made available in the game. We know that this is a top feature request for the Bedrock Edition of Minecraft, and our developers have been working hard to bring you this feature.
+
+We are currently working on developing the first iteration of spectator mode to get your feedback to plan for the next iteration. However, we still have a lot of work to do! The first iteration will not be finished in time for 1.19, so we will be moving it to an Experimental Toggle in an upcoming beta. Until we have a more polished version for you, please consider that any content or maps built on this feature will not be supported as this feature will change and evolve. We won't be accepting bug reports related to spectator mode until our first iteration is released, as the feature is likely to change during development.
+
+# **Features and Bug Fixes**
+
+## **Recovery Compass**
+
+-   A new Recovery Compass can be crafted with Echo Shards which can only be found and are unique to Ancient City chests\*
+    -   Unlike a normal Compass, the Recovery Compass will point to the last place you died
+    -   If you are not in the dimension where you last died, or you haven't died yet in your world, it will randomly spin
+    -   It can be crafted with 1 Compass surrounded by 8 Echo Shards
+    -   \*Echo Shards will be available as loot in Ancient Cities in a future update
+
+### **Sculk Shrieker**
+
+-   Tweaked the Shrieking particles of the Sculk Shrieker ([MCPE-153007](https://bugs.mojang.com/browse/MCPE-153007))
+-   Sculk Shriekers should not be triggered by Redstone activation
+-   Added can\_summonblockstate to Sculk Shriekers that determines whether a Shrieker can trigger a Warden to spawn. Only Sculk Shriekers placed during world generation in the Deep Dark and Ancient Cities will have this state set to true ([MCPE-153801](https://bugs.mojang.com/browse/MCPE-153801))
+-   Running away from a Sculk Shrieker during shrieking is no longer a viable way of preventing the summoning of a Warden
+-   The Sculk Shrieker no longer attempts to spawn the Warden in Peaceful mode
+-   The Sculk Shrieker now spreads the highest threat level amongst players in the vicinity, not the threat level of the closest player
+
+### **Warden**
+
+-   Warden now has a hurt animation when taking damage ([MCPE-153575](https://bugs.mojang.com/browse/MCPE-153575))
+-   Fixed a bug where the Warden's ribcage UVs were overlapping their right tendril UVs ([MCPE-153797](https://bugs.mojang.com/browse/MCPE-153797))
+-   Warden will now prioritize players over mobs when angry
+-   Improved Warden suspect tracking gameplay behavior, and increased the Warden’s ‘sniff’ range
+-   Spawning a Warden in Creative mode no longer applies the Darkness effect to the player ([MCPE-153536](https://bugs.mojang.com/browse/MCPE-153536))
+
+## **Reinforced Deepslate**
+
+-   Reinforced Deepslate can no longer be pushed by Pistons ([MCPE-153548](https://bugs.mojang.com/browse/MCPE-153548))
+
+## **Mangrove Swamps**
+
+-   Mangrove Swamp biome generation is now at parity with Java Edition
+
+## **Frog**
+
+-   Froglight and Frogspawn blocks now have new sounds ([MCPE-153195](https://bugs.mojang.com/browse/MCPE-153195), [MCPE-153193](https://bugs.mojang.com/browse/MCPE-153193))
+-   Frog Spawn is now called Frogspawn ([MCPE-153210](https://bugs.mojang.com/browse/MCPE-153210))
+
+## **Goat Horn (Experimental)**
+
+-   Goat Horn sound is now instant
+-   Added Goat Horn variations to the Pillager outposts
+-   Removed Copper Horn. Although community feedback was mostly positive, the Copper Horn was a fun experiment that didn't quite live up to our design goals, so we decided to remove it. We understand people might be sad, but to be able to try out new and interesting things we need to be able to remove experimental features sometimes. This leaves space for even better features in the future!
+
+## **Touch Controls**
+
+-   Player can now change hotbar item slot while in a Boat ([MCPE-153762](https://bugs.mojang.com/browse/MCPE-153762))
+
+## **Allay**
+
+-   Fixed a crash that could occur if a non-owner player takes an item from the Allay while it was chasing its owner
+-   The Allay now regenerates two health each second
+
+## **Boat with Chest**
+
+-   The group of Boats with Chests now has the correct translation in inventory ([MCPE-153345](https://bugs.mojang.com/browse/MCPE-153345))
+-   Mangrove Boat with Chest now has a crafting recipe ([MCPE-153738](https://bugs.mojang.com/browse/MCPE-153738))
+
+## **Mud Bricks**
+
+-   Crafting Mud Bricks now correctly gives four Mud Bricks from one craft
+
+## **Gameplay**
+
+-   Set stack limit for brewing station result slot to 1, as to avoid getting input stacks being overwritten when the brew is complete
+-   Fix crash in block\_placer component when the block parameter is an unknown block
+-   Blocks affected by gravity now fall correctly on replaceable blocks ([MCPE-152937](https://bugs.mojang.com/browse/MCPE-152937))
+-   Slabs can now be placed continuously ([MCPE-151887](https://bugs.mojang.com/browse/MCPE-151887))
+
+## **General**
+
+-   Fixed an issue where clicking on the top row of pixels of a button in the new Create New World screen didn't properly trigger its action ([MCPE-153239](https://bugs.mojang.com/browse/MCPE-153239))
+
+## **Graphical**
+
+-   Fixed a bug causing the fire animation to flicker when the player is standing in a lava Cauldron while in creative mode ([MCPE-148999](https://bugs.mojang.com/browse/MCPE-148999))
+
+## **Items**
+
+-   Fixed incorrect names for White Dye, Black Dye, Brown Dye, and Blue Dye ([MCPE-153522](https://bugs.mojang.com/browse/MCPE-153522))
+
+## **Stability and Performance**
+
+-   Fixed enchantment option on Pocket UI Profile not being displayed
+
+## **Vanilla Parity**
+
+### **Blending**
+
+-   Several improvements to level chunk blending
+
+## **Command Blocks**
+
+-   When a Command Block clones itself twice with the /clone command, the cloned command block will now activate on the first try ([MCPE-122188](https://bugs.mojang.com/browse/MCPE-122188))
+

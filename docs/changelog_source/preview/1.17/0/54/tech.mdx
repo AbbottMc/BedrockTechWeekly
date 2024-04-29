@@ -1,0 +1,38 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+### New Experimental Feature: Volumes! 
+
+-   Create volumes in your world: simply create a "volumes" folder in a saved world, and put json files in there - 1 json file per volume. More information can be found on the beta behaviour pack documentation 
+-   Currently, you can attach a fog - minecraft or your own custom fog - to a volume. When the player enters the volume, the fog will take effect 
+
+General
+
+-   Added AddVolumeEntityPacket that contains information of a volume entity including its net ID and NBT containing information about the volume's definition and components, which will be added to the client's registry
+-   Added RemoveVolumeEntityPacket that contains a volume entity's net ID to remove it from the client's registry
+
+### Mobs
+
+-   Added a new optional flag "use\_simplified\_breeding" to "minecraft:genetics" component. When this flag is set to true, the offspring never inherits hidden alleles of parents as main alleles and main as hidden. This allows to implement simple breeding logic easier
+
+### GameTest Framework
+
+-   Components
+    -   \[Removed\] function setColor(color : Number)
+    -   property value : Number - Gets or sets the color of the entity
+
+-   Added additional component interfaces. movement, navigation, healable, breathable, ageable, and tameable components can be referenced via entity.getComponent(componentName : string).
+-   minecraft:color
+
+-   Container - New interface for interacting with entity containers. Can be referenced via entity.getComponent("inventory").container
+
+-   function setItem(slot : Number, itemStack : ItemStack) - Adds itemStack to the container at the given slot
+-   function getItem(slot : Number) : ItemStack - Gets the itemStack at the given slot
+-   function addItem(itemStack : ItemStack) - Adds the given itemStack to the first available slot of the container
+-   function transferItem(fromSlot : Number, toSlot : Number, toContainer : Container) - Transfers an ItemStack from fromSlot of the container to toSlot of toContainer
+-   function swapItems(slot : Number, otherSlot : Number, otherContainer : Container) - Swaps ItemStacks between slot of the container and otherSlot of otherContainer
+-   function worldLocation(relativeLocation : BlockLocation) - Transforms the coordinates of given GameTest location to its corresponding world location
+-   function relativeLocation(worldLocation : BlockLocation) - Transforms the coordinates of given world location to its corresponding GameTest location
+

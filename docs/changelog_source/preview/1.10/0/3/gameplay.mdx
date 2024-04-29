@@ -1,0 +1,240 @@
+## **30 January 2019**
+
+PLEASE READ before participating in the Minecraft Beta: 
+
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta. Featured servers may also be unavailable 
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [](http://aka.ms/JoinMCBeta)[aka.ms/JoinMCBeta](http://aka.ms/JoinMCBeta) for detailed instructions 
+-   Beta builds will likely be unstable and are not representative of final version quality. Please backup your Worlds before joining the beta 
+-   Finished releases may not include all new features, changes, and fixes from the beta to preserve stability and may slip to a later release 
+
+## **Experimental Gameplay:** (Only available when Experimental Gameplay is enabled in world settings) 
+
+-   Wandering Trader 
+    -   The Wandering Trader is a villager mob that will appear at a village's gathering site periodically and stays for a period of 2-3 game days. This trader offers items from a wide variety of different biomes, random dyes, and other rare materials 
+    -   Accompanied by a fancy custom Llama!
+
+-   Illager Beast
+    -   We’ve added the basic mob, additional behavior and tweaks will be added in a future update 
+
+-   New blocks - we've added in the basic blocks to this beta, which can be used for decoration for now.  Future functionality will be added at a later date! 
+    -   Composter  
+    -   New Stonecutter 
+    -   Campfire  
+    -   Cooking and smoke particles will be added in a future update! 
+-   Sweet Berries and Sweet Berry Bushes 
+    -   Can be found in Taiga biomes 
+-   Pillager Outposts! 
+    -   Outposts generate in the same biomes as villages, and Pillagers will respawn around the tower  
+-   Villages have a new look!
+-   Added Village job sites  
+-   Added crafting recipes for the following blocks:  
+    -   Grindstone 
+    -   Smoker 
+    -   Blast Furnace 
+    -   Cartography table 
+    -   Smithing Table 
+    -   Fletching Table   
+    -   Lantern 
+    -   Barrel 
+    -   Composter 
+-   New Villager behavior: 
+    -   Implemented some of the new Villager schedule behaviors  
+    -   Implemented new Villager sleep behaviors  
+    -   Villagers may wander to the village outskirts  
+    -   Villagers will attempt to find a door when it rains during the day, but will navigate to their bed at night 
+    -   Updated and improved Villager pathfinding  
+    -   Villagers now have a visual based trading system, and will hold up an item they wish to trade  
+    -   Villagers have new clothing to indicate their level, profession, and biome  
+    -   Villagers will now mingle together around job sites in the Village  
+    -   Librarians will inspect bookshelves 
+-   Added Mason and Green robed villagers
+
+## **New Features:** 
+
+-   Shields! 
+    -   Sneaking activates the shield when equipped in either hand  
+
+Sneaking activates the shield when equipped in either hand   
+
+-   Lectern
+    -   Place a Book and Quill or Written Book on the lectern, which will allow multiple players to read it together 
+    -   A Book and Quill can be read, but not edited when placed on a lectern 
+    -   Redstone functionality coming in a later update! 
+-   Banner patterns can now be crafted using the Loom block  
+-   Added new loom sounds 
+-   Pressing help button links to the relevant how to play section 
+-   Added new Wood blocks and Stripped Wood blocks: 
+    -   Known to many as bark blocks! 
+    -   Existing wood blocks have been renamed to Logs and Stripped Logs 
+-   Added Jellie, the Minecraft community cat contest winner! 
+-   Script Engine updates:  
+    -   Players without scripting enabled now see an appropriate message if they try and join an incompatible server that has scripting enabled  
+    -   Updating a player's position with scripting now correctly syncs with the player 
+    -   Creating actors via script now avoids the spawning logic. This prevents hard coded logic like ocelots spawning along with baby ocelots
+    -   Improved the message wording for players who get disconnected due to unsupported scripts 
+    -   Allow events to fire without a defined event data object. This will get patched back in during a later refactor in 1.10
+    -   Renaming Views to Actor/Entity Queries 
+    -   Added sound events to the scripting API  
+    -   Add Event Data to load\_ui  
+-   Custom UIs can now be made like regular in game UI screens 
+-   Added 'Global Objects' to the scripting API  
+-   Refactored JavaScript object registration 
+-   Added ability to enable and disable scripting error and warning logging 
+-   Added further data-driven animation changes:  
+    -   Refactored the animation system to support hierarchical animation, and treat animations and animation controllers as 'animations' 
+    -   Updated JSON with new animation support, upgraded schema for actor definition, and included upgrades for animation controllers and actor definitions 
+    -   Converted sheep and pigs to the new animation system 
+    -   Move locators to bones 
+    -   Blend state transitions 
+    -   Removed cod lead locator 
+    -   Renamed ActorAnimation to ActorSkeletalAnimation 
+    -   Initial poly mesh support 
+    -   Added TextureMesh geometry 
+    -   Various fixes to the texture tessellator 
+    -   Bug fixes for pig, sheep, and slimes 
+    -   Fix to not rebuild all mob meshes every frame 
+    -   Fixes for non-data-driven materials where they use a colour in the vertex format for the base skinning material already 
+    -   Flipping data driven entities test to enable new entities to use 'bind\_pose\_rotation' 
+    -   Events now have defined data objects containing all event data 
+    -   Added new villager animations  
+
+## **Changes:** 
+
+-   Crossbows are no longer behind the experimental toggle 
+-   Placing a wet sponge in the nether immediately dries it out
+-   Decaying leaves now have a chance of dropping sticks
+-   Chorus Fruit Flowers now break when struck via an arrow 
+-   Added Dead Bush as a furnace fuel 
+-   Rabbit Stew and Beetroot Soup now have shapeless crafting recipes  
+-   Creepers now drop music discs when killed by strays and skeletons  
+-   Dispensers with shears can now shear sheep
+-   Undyed glass panes white carpet can now be dyed directly in the crafting table 
+-   Zombie Villagers now have biome-specific and profession skin layers
+-   Mob events and behavior can be scheduled using JSON 
+-   Improvements to the Op status and permission settings, with the added option to enable cheats or not  
+-   Particles can now be edited using standard JSON formatting 
+-   Improved and added Bell placement features 
+-   Resource packs are now separate from world templates and can be updated independently in existing worlds 
+-   Data driven model changes - Added default parenting to the Evoker nose, in line with over villager-derived mobs 
+-   Add entity scripting function is no longer behind experimental features 
+-   Pillager is no longer under the experimental features toggle 
+-   Updated the 'How to Play' section 
+-   Added new Pillager sounds (MCPE-39111) 
+-   Lanterns can now be attached to the bottom of slabs
+-   The new vanilla textures are now set as the default pack
+
+## **Fixes:** 
+
+-   Fixed several crashes that occurred during gameplay 
+-   Fixed a crash that could occur when repeatedly attempting to cancel joining a multiplayer game 
+-   Resource packs that are nested in an extra folder no longer cause the game to crash 
+-   Stacking slabs to make a double slab no longer crashes the game  
+-   Fixed a crash when trying to launch the marketplace packs "City Cars" and "Mineville Film Studios" on mobile devices  
+-   Worlds no longer show single player only warning message when multiplayer is enabled ([MCPE-39194](https://bugs.mojang.com/browse/MCPE-39194)) 
+-   Player position is now accurately saved when exiting and rejoining a world
+-   Removing ticking areas from the game now correctly frees up used memory
+-   The descend button now works correctly when underwater and using touch controls 
+-   Turtles no longer levitate above the ground 
+-   Optimized particles to improve performance 
+-   Players are now informed if they are disconnected from Xbox Live when the Xbox console is resumed from standby
+-   Looping UI animations no longer increase memory usage over time ) 
+-   Damage cooldown no longer hinders other mob attacks
+-   Colored beacon beam textures no longer appear compressed
+-   Wither skeletons and Vex mobs can be renamed with nametags ([MCPE-20701](https://bugs.mojang.com/browse/MCPE-20701)) 
+-   Horizontal scaffolding extensions can now be placed over non-solid blocks correctly ([MCPE-39296](https://bugs.mojang.com/browse/MCPE-39296))  
+-   Fixed the head rotation of Pigmen when non-standard texture packs are used ([MCPE-40629](https://bugs.mojang.com/browse/MCPE-40629)) 
+-   'Monster Egg' blocks are now named 'Infested blocks', to match the Java edition  
+-   Infested Bricks mined with silk touch now drop as its non-infested variant.  
+-   Texture packs applied to a freshly created world are now displayed in the active list.  
+-   Players are prompted to redownload packs if they have been applied to a world but removed from the cache  
+-   Armor stands can now hold unloaded crossbows ([MCPE-39094](https://bugs.mojang.com/browse/MCPE-39094)) 
+-   It is now possible to climb through snow layers placed on top of scaffolding ([MCPE-39324](https://bugs.mojang.com/browse/MCPE-39324)) 
+-   Pandas eating bamboo now show correctly colored food particles ([MCPE-38285](https://bugs.mojang.com/browse/MCPE-38285)) 
+-   Strongholds now generate with the correct stair variants again ([MCPE-39380](https://bugs.mojang.com/browse/MCPE-39380)) 
+-   Weapons held by armor stands are now the correct size ([MCPE-39064](https://bugs.mojang.com/browse/MCPE-39064)) 
+-   Food held by pandas is now sized and positioned correctly ([MCPE-39061](https://bugs.mojang.com/browse/MCPE-39061)) 
+-   Fixed a bug where players could respawn some distance away from their beds ([MCPE-39261](https://bugs.mojang.com/browse/MCPE-39261)) 
+-   Fixed a bug where lava could hurt a player through block corners ([MCPE-37726](https://bugs.mojang.com/browse/MCPE-37726)) 
+-   Fixed the pathfinding for zombies chasing villagers inside buildings ([MCPE-37424](https://bugs.mojang.com/browse/MCPE-37424)) 
+-   Hanging banners no longer show as floor standing banner variants ([MCPE-39507](https://bugs.mojang.com/browse/MCPE-39507)) 
+-   Scaffolding no longer gets left hanging unsupported when being placed rapidly ([MCPE-38338](https://bugs.mojang.com/browse/MCPE-38338)) 
+-   Snow layers generate around grass and flowers again in snow biomes ([MCPE-38018](https://bugs.mojang.com/browse/MCPE-38018)) 
+-   The correct amount of white terracotta now generates in Mesa biomes 
+-   Skeletons once again attack iron golems 
+-   Mobs no longer spawn with heart particles
+-   Added correct biome shading for water in bamboo jungles 
+-   Cats can now be healed by feeding them fish  
+-   Fixed a crash that could happen after running scripts for a long period of time  
+-   The Re-center button on Minecraft VR has been mapped to Y now instead of X 
+-   Chest minecarts now drop their contents if destroyed with the /kill command  
+-   Global resource packs no longer show in the active packs list if they are not applied to a specific world  
+-   Fixed a z-fighting texture issue on the Grindstone block  
+-   The new dye types can now be used to dye Shulker mobs ([MCPE-40279](https://bugs.mojang.com/browse/MCPE-40279)) 
+-   Fixed the Wither's ranged and swoop attacks ([MCPE-39773](https://bugs.mojang.com/browse/MCPE-39773)) 
+-   Multiple commands run from Functions now run from the correct point of execution ([MCPE-38983](https://bugs.mojang.com/browse/MCPE-38983) / [MCPE-39785](https://bugs.mojang.com/browse/MCPE-39785)) 
+-   The 'Unlock Template World Options' popup no longer has a placeholder type message 
+-   Packs missing 'experimental\_custom\_ui' don't allow loading UI any more  
+-   'minecraft:look\_at' component now has consistent naming between scripting and JSON 
+-   Upside-down Shulkers now have the correct opening animation ([MCPE-40110](https://bugs.mojang.com/browse/MCPE-40110)) 
+-   Fixed the texture of food being eaten by pandas 
+-   Menu buttons no longer stay highlighted after being selected ([MCPE-37640](https://bugs.mojang.com/browse/MCPE-37640)) 
+-   Fixed an issue related to scoreboard not showing the correct entries 
+-   Passive mobs now spawn on the correct block types ([MCPE-39727](https://bugs.mojang.com/browse/MCPE-39727)) 
+-   Mutated Birch Forest biomes now generate with extra tall Birch trees again ([MCPE-29698](https://bugs.mojang.com/browse/MCPE-29698)) 
+-   Players can no longer receive command feedback with cheats disabled ([MCPE-39590](https://bugs.mojang.com/browse/MCPE-39590)) 
+-   Trapdoors in shipwrecks are now correctly rotated 
+-   Cats now spawn correctly in previously generated villages
+-   Fixed the issue with wrongly scaled textures that affected some Windows 10 users ([MCPE-39081](https://bugs.mojang.com/browse/MCPE-39081)) 
+-   Fixed a bug that could cause the wrong description for Marketplace bundles 
+-   "New" banner now shows correctly on all new marketplace items 
+-   Fixed Skeleton melee attack animation 
+-   Fixed the bug that caused the FPS value in the beta header information to always read 0.0 ([MCPE-30536](https://bugs.mojang.com/browse/MCPE-30536)) 
+-   Fixed a crash that could occur when rejoining the game in the End dimension 
+-   Fixed a bug that prevented the game from launching correctly on some devices ([MCPE-39877](https://bugs.mojang.com/browse/MCPE-39877)) 
+-   Fix a crash that could sometimes occur when copying a large world on Switch 
+-   Partially copied worlds will now show up in settings storage tab only 
+-   Fixed a crash that could occur when using a jukebox on Nintendo Switch 
+-   Fixed the spider leg animation in the Dwarven Mining Company marketplace map  
+-   Fixed an issue on Xbox one that would disable LAN games when the user does not have multiplayer permissions 
+-   Fix issue of region filters not working if inside a custom spawn event  
+-   Various fixes and improvements to the randomTickSpeed function
+-   Graphics no longer become corrupted when disabling Texel Anti-Aliasing on Nintendo Switch ([MCPE-34820](https://bugs.mojang.com/browse/MCPE-34820)) 
+-   Fixed a crash that could sometimes occur when loading the game 
+-   Various fixes and improvements to the Marketplace sorting and search results 
+-   Fixed an issue with screenshots taken in VR-mode 
+-   Fixed an issue that could cause the user to get stuck on the 'Converting World' screen if the game is suspended
+-   Players who are disconnected while downloading a multiplayer pack no longer get stuck on the saving world screen  
+-   Fixed sleep goal so mobs can get in beds that have blocks on the sides 
+-   Charging a crossbow with a firework rocket no longer briefly shows an arrow being loaded ([MCPE-40745](https://bugs.mojang.com/browse/MCPE-40745)) 
+-   Fixed a crash that could occur on Xbox if a user was not signed in correctly 
+-   Tags that start with a percentage now display correctly
+-   Cornflowers now render correctly in item frames  
+-   Enabling 'Touch only affects the hotbar' on Nintendo Switch now works as expected: ([MCPE-38614](https://bugs.mojang.com/browse/MCPE-38614)) 
+    -   Controller sensitivity setting (touching the screen no longer interferes with controller movement)​ 
+    -   Removed increased build distance in creative including place/mine tooltips​ 
+
+-   When last hotbar slot selected, touching the screen no longer switches to 8th slot 
+-   Fixed an issue that could cause a crash when downloading a large world on Nintendo Switch 
+-   Fixed a bug where kelp would grow in horizontal flowing water ([MCPE-37155](https://bugs.mojang.com/browse/MCPE-37155)) 
+-   Fixed a crash that could occur when entering a portal on some servers  
+-   Fixed an issue that could cause lighting issues in chunks when flying around 
+-   Cats are no longer tempted by food when they are too far from the player  
+-   Fixed Wither Skeleton model geometry issue that was affecting some marketplace content 
+-   Using scoreboard selectors no longer adds extra characters to player names
+-   Fixed animations for cow and parrot mobs 
+-   Ender dragon attacks now show a particle trail  
+-   Mobs can no longer destroy paintings if mob griefing is disabled ([MCPE-38916](https://bugs.mojang.com/browse/MCPE-38916)) 
+-   Script queries no longer show error messages when detecting dropped item entities ([MCPE-40437](https://bugs.mojang.com/browse/MCPE-40437)) 
+-   Fixed a bug with converted worlds on Nintendo Switch that prevented cross platform multiplayer ([MCPE-34641](https://bugs.mojang.com/browse/MCPE-34641)) 
+-   Renamed ‘player\_attacked\_actor’ scripting event to ‘player\_attacked’ 
+-   Scripting can now be used to attach particles to mobs correctly
+-   Fixed a crash that could occur when loading large world templates 
+-   Reduced the number of Drowned mob spawning ([MCPE-34032](https://bugs.mojang.com/browse/MCPE-34032)) 
+-   Firework Stars no longer appear black in Creative inventory 
+-   The scripting event 'entity\_created' will now fire correctly 
+-   Fixed an issue with the scripting event 'isValidEntity' not working as expected  
+-   Fixed the 'damage\_sensor' scripting component that was not working as expected
+-   Existing armor stands no longer turn white 
+-   Fixed an issue with the black and pink missing texture icon that would sometimes appear in the marketplace  
+-   Fixed a bug that could cause missing textures if the player suspended the game while it is still loading 
+-   Fixed an issue with the sword held by the Vex mob

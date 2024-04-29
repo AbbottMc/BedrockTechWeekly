@@ -1,0 +1,54 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **AI Goals**
+
+-   Exposed new data parameter "calculate\_new\_path\_radius" for the Go Home Goal. This is for specifying a distance in blocks that the mob is considered close enough to the end of the current path. A new path will then be calculated to continue toward home
+-   Added Knockback Height Cap value to Knockback Roar Goal
+
+## **Animation**
+
+-   Fixed a bug where timeline events at 0.0 would sometimes not run in looping animations
+
+## **Mobs**
+
+-   Fixed command block failing to summon mob in Extreme Speed Runner Marketplace map
+
+# **Technical Experimental Features**
+
+-   Due to engine limitations, "minecraft:geometry" data used for blocks with the Holiday Creator Features experimental toggle are now restricted to only allow geometry in the \[0,0,0\] to \[15,15,15\] space. Any blocks loaded from behavior packs that exceed this limit will render as the info\_update block and show a content error in the log.
+
+##   
+## **GameTest Framework**
+
+-   Exposed the following components for Actors. Each of these has a valueproperty that contains the data of the component.
+    -   minecraft:variant
+    -   minecraft:skin\_id
+    -   minecraft:mark\_variant
+    -   minecraft:friction\_modifier
+    -   minecraft:ground\_offset
+    -   minecraft:scale
+    -   minecraft:push\_through
+
+## **mojang-gametest module:**
+
+-   Removed radiusargument from command /gametest clearall
+-   Modified the behavior of function attack()to make the simulated player swing even when no target is found
+
+## **mojang-minecraft module:**
+
+-   Added event entityHit(entityHitEvent: EntityHitEvent, options?: EntityEventOptions)- Fires when an entity or block is hit by another entity
+-   function playSound(soundID : String, soundOptions : SoundOptions) - plays a sound for a player, cannot be heard by entities other than that specific player  
+      
+    
+
+## **Interact Component**
+
+-   Now have two new fields, GiveItem and TakeItem, specifying if it is possible to give/take items from an entities main hand slot. Taking the item also drops the inventory of the mob
+
+## **Items**
+
+-   Weapon events are correctly applied when the Weapons are used by Mobs ([MCPE-118692](https://bugs.mojang.com/browse/MCPE-118692))
+

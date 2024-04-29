@@ -1,0 +1,32 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Stability and Performance**
+
+-   Reduced memory and load times for ticking areas
+
+## **GameTest Framework (Experimental)**
+
+-   Added function setVelocity(velocity: Vector): bool- Sets the velocity of this entity
+-   Added property viewVector: Vector- Represents the direction that the entity is looking, as a vector
+-   Added property headLocation: Location- Represents the location of the head of the entity
+-   Added property bodyRotation: number- Represents the body rotation of the entity as a float (in degrees)
+
+## **Animation**
+
+-   Fixed a bug where animation events, sound effect events, and particle events would not trigger if the event time specified was equal to the total "animation\_length"
+-   Fixed an issue where event times were not considered within the animation length calculation that happens when "animation\_length" is not explicitly specified
+
+## **General**
+
+-   Fixed an issue that caused format\_versions that are declared as numerical values rather than strings to be parsed properly
+-   When creating a flat world from a template that has a base game version from before the Caves and Cliffs update, the layers will no longer be 64 blocks in the air
+
+## **Molang**
+
+-   Added alland query.any to check if a value matches all or any of the following values
+-   Added in\_rangeto check if a value is in the (inclusive) range between a min and max value
+-   Added query.in\_range to check if a value is in the (inclusive) range between a min and max value
+

@@ -1,0 +1,43 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Renamed minecraft:block\_collisionblock component to minecraft:collision\_box 
+-   Renamed the 'minecraft:block\_light\_filter' component to 'minecraft:light\_dampening' and added appropriate versioning
+-   Renamed the 'part visibility' component's field 'rules' to 'conditions' and added appropriate versioning
+-   Renamed the 'crafting\_table' component's field 'custom\_description' to 'table\_name' and added appropriate versioning
+-   Updated documentation for "minecraft:map\_color" and "minecraft:material\_instances"
+
+## **Items**
+
+-   Fixed minecraft:block\_placeritem component to correctly trigger block component minecraft:on\_player\_placing 
+
+## **Actors**
+
+-   Direction facing will now be preserved through a transformation from one actor type to another
+
+## **Commands**
+
+-   Autocomplete suggestions now show only valid parameters
+
+## **Gameplay**
+
+-   Fixed interaction priority when using a Bucket on a waterlogged and interactable block, eg. Lever ([MCPE-154221](https://bugs.mojang.com/browse/MCPE-154221))
+
+## **Mobs**
+
+-   The Trader Llama is now its own dedicated mob instead of being a normal Llama with specific component groups
+
+# **Technical Experimental Features**
+
+## **Commands**
+
+-   New execute command functionality is now available via the "Upcoming Creator Features" experimental toggle
+
+## **GameTest Framework**
+
+-   Added argument keepVelocity: bool to functions teleport and teleportFacing - If true, preserves velocity when teleporting the Entity
+

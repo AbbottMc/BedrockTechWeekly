@@ -13,9 +13,10 @@ const processPage = async function (pageNumber = 1) {
   const articles = page.articles.reverse();
   for (const articleObj of articles) {
     if (!ArticleUtil.isBedrockArticle(articleObj)) continue
-    const article = new Article(articleObj);
+    const canSortPreview = ArticleUtil.canSortPreview(articleObj, startSort);
+    if (canSortPreview) startSort = true;
+    const article = new Article(articleObj, {isOldVersion: !canSortPreview});
     if (!article.canStart(started)) continue;
-    if (!article.canSortPreview(startSort)) continue;
     started = true;
     article.generate();
     const isContinue = article.canContinue();

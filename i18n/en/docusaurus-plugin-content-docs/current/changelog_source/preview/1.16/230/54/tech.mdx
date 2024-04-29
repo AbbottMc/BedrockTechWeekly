@@ -1,0 +1,25 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+ **GameTest** **Framework** 
+
+ **Updated** **I****nterfaces****:** 
+
+-   assertContainerContains - ItemIdentifier parameter changed to ItemStack 
+-   assertItemEntityNotPresent and assertItemEntityPresent APIs - ItemStack parameter changed to ItemType  
+
+## **Added** **N****ew** **I****nterfaces****:** 
+
+-   assertEntityNotTouching(entityIdentifier: string, position : Location) - Asserts that there is no entity of the given type at the given position 
+-   assertEntityTouching(entityIdentifier: string, position : Location) - Asserts that there is an entity of the given type at the given position 
+-   assertItemEntityCountIs(itemType : ItemType, position : BlockLocation, searchDistance : number, count : number) - Asserts that the entity item count in the given search area matches the expected count 
+-   pulseRedstone(position : BlockLocation, duration : number) - Creates a Redstone block at the given position and destroys it after "duration" ticks 
+
+ **Known Issues in this Beta** 
+
+-   Parts of Villages' generate underground  
+-   Axolotl doesn't spawn naturally  
+-   Glow Squid does not spawn naturally
+

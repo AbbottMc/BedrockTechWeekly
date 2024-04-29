@@ -1,0 +1,41 @@
+**Posted:** 11th March 2021
+
+**PLEASE READ before participating in the Minecraft Beta:** 
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft 
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them 
+-   Beta builds can be unstable and are not representative of final version quality 
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+In this week's beta, we have fixed some important bugs! You can still test out the exciting new Caves and Cliffs features by enabling the "Experimental Features" toggle on your worlds! (You can find out more about using the toggles at [aka.ms/MCExperimentalToggle](https://aka.ms/MCExperimentalToggle).) You can leave us your feedback for these features in the threads at [aka.ms/CavesCliffsFeedback](https://aka.ms/CavesCliffsFeedback), and search and reports any new bugs you may encounter at [bugs.mojang.com](https://bugs.mojang.com/).
+
+![mountains_1280_720.jpg](https://feedback.minecraft.net/hc/article_attachments/360088994311/mountains_1280_720.jpg)
+
+# Bug Fixes
+
+-   Sounds of ditching / collecting Powder Snow with bucket are now assigned to the correct sound categories ([MCPE-111739](https://bugs.mojang.com/browse/MCPE-111739))
+-   Player no longer constantly emits particles when on fire after exiting Powder Snow ([MCPE-111679](https://bugs.mojang.com/browse/MCPE-111679))
+-   Powder Snow block is no longer present in Creative Menu ([MCPE-105407](https://bugs.mojang.com/browse/MCPE-105407))
+-   Fixed Drowned holding tridents backwards during attack ([MCPE-118213](https://bugs.mojang.com/browse/MCPE-118213))
+-   Enabled "Find Friends" button on Xbox
+
+## **Performance and Stability**
+
+-   Improved input latency on Windows 10 when VSYNC is enabled ([MCPE-98861](https://bugs.mojang.com/browse/MCPE-98861))
+
+## **Accessibility**
+
+-   Fixed a bug where UI screen reader didn't read out default controller focus and checkbox state on the Online Play is not Rated pop-up
+
+## **Technical Fixes and Changes**
+
+-   Renamed all references of Actor to Entity
+-   Renamed BlockPos to BlockLocation
+-   Added startSequence in GameTest which allows finer control over advanced test sequences
+-   GameTest sequence callbacks no longer take testas a parameter as the initial test object now lives as long as the whole test
+-   Updated behavior packs to require explicit module dependencies when using other native modules
+-   Identifiers within "render\_controllers" will now be considered content errors if there is no render controller matching that name
+-   Entity json before version 1.16.100 will no longer give a content error for the deprecated field "minecraft:foot\_size"
+-   modified condition in "animation\_controllers.json" to allow mobs to enter "wield\_third\_person\_raise" ([MCPE-118213](https://bugs.mojang.com/browse/MCPE-118213))
+-   Fixed an issue where loading into a world would cause continuous molang errors around "unhandled request for unknown variable"

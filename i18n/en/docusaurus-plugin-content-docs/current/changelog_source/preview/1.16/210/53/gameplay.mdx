@@ -1,0 +1,77 @@
+**Posted:** 17 December, 2020
+
+**PLEASE READ before participating in the Minecraft Beta:**
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them
+-   Beta builds can be unstable and are not representative of final version quality
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+This week's beta is extra cool as we've made some changes to powder snow, along with some important bug fixes! Powder snow and goats are both Caves and Cliffs features that can be accessed by using the Experimental Features toggle in the world settings in this beta. For more information about the toggle, please head over to [aka.ms/MCExperimentalToggle](https://aka.ms/MCExperimentalToggle).
+
+## **Experimental Caves and Cliffs Features**
+
+![Screen_Shot_12-15-20_at_02.50_PM_002.JPG](https://feedback.minecraft.net/hc/article_attachments/360079858472/Screen_Shot_12-15-20_at_02.50_PM_002.JPG)  
+  
+
+## **Powder Snow**
+
+-   The powder snow block now emits particles when an entity is moving inside of it, or landing on it
+-   A freezing effect is gradually applied to the player and any mobs that are inside powder snow blocks
+-   Freezing effect is removed from any mobs or players that catch fire
+-   Players in survival mode can now turn damage from freezing effect on/off using game rule, e.g: "/gamerule freezedamage false"
+-   Mobs that have sunk into powder snow now can navigate through it
+-   Entities on fire now have their fires extinguished when stepping into powder snow
+-   Redstone dust, torches and item frames can no longer be placed on powder snow
+-   Gravity blocks no longer break when landing on powder snow
+-   While within powder snow blocks third person camera is no longer pushed to the inside of the character's head
+-   Mobs spawned inside Powder Block no longer have a risk of spawning underground
+-   Powder snow block is not present in Creative Inventory anymore ([MCPE-105407](https://bugs.mojang.com/browse/MCPE-105407))
+-   Powder snow no longer stops projectiles in Bedrock ([MCPE-104940](https://bugs.mojang.com/browse/MCPE-104940))
+-   Lightweight mobs now can climb and navigate through powder snow blocks
+-   Rabbits, silverfish and Endermites don't fall through powder snow blocks
+-   It is now possible to specify a list of blocks that an entity should avoid
+-   Goats are smart enough to avoid powder snow blocks when pathing
+-   An entity walking through powder snow will make the correct step sound regardless of which block is being walked on
+-   Wearing Leather Boots now allows entities to climb powder snow Blocks ([MCPE-105410](https://bugs.mojang.com/browse/MCPE-105410))
+-   Powder snow Blocks have unique interaction sounds
+-   When the camera is inside a powder snow block fog is rendered around it and an overlay texture is rendered on it
+-   Buckets can be used to pick up and place powder snow
+-   Powder snow blocks have a slightly different texture than regular Snow blocks
+-   Entities can enter powder snow blocks, but their movement is slowed down while inside
+    -   Fall damage is ignored
+-   Leather boots make it easier for players to traverse powder snow
+-   Fixed occlusion for powder snow; adjacent blocks no longer appear transparent when inside powder snow
+
+## **Nether Ambient Sounds**
+
+-   Mobile players now experience ambient sounds in The Nether ([MCPE-74756](https://bugs.mojang.com/browse/MCPE-74756))
+-   Be sure to update the Minecraft Original Music Pack via the Marketplace to hear these new sounds!
+
+## **General**
+
+-   Shulker Boxes no longer lose their inventory when undyed in cauldrons ([MCPE-108196](https://bugs.mojang.com/browse/MCPE-108196))
+-   Added new logic for mobs dismounting rideables
+    -   This also introduces a more fine grained entity height check allowing different dismount places for entities of different heights
+-   The player will no longer dismount into liquids (lava or water) from rideables such as boats
+-   Added F11 as a keyboard shortcut for full screen mode
+-   Sign in failures now have a more helpful error message and provide error codes
+
+## **Gameplay**
+
+-   In all worlds created with the same seed, the same chest will now always generate the same content in the same order ([MCPE-72432](https://bugs.mojang.com/browse/MCPE-72432))
+-   Double Chests placed at chunk borders don't become partially invisible and don't crash the title when they are opened ([MCPE-106030](https://bugs.mojang.com/browse/MCPE-106030))
+-   Golden Apple and Enchanted Apple now have colored hotbar text when selecting them ([MCPE-64427](https://bugs.mojang.com/browse/MCPE-64427))
+
+## **Technical**
+
+-   Added new slash command options for '/setblock', '/fill', and '/clone' commands for passing in a list of block states to set on the block being spawned
+-   Changing 'RideableComponent' property "rotate\_rider\_by" to function for custom mobs
+
+## **Graphics**
+
+-   Added Fog Documentation
+-   Added the "fogs" folder to the Resource Pack template
+    -   Resource Pack Template: [aka.ms/MinecraftBetaResources](https://aka.ms/MinecraftBetaResources)
+    -   Behavior Pack Template: (Includes documentation): [aka.ms/MinecraftBetaBehaviors](https://aka.ms/MinecraftBetaBehaviors)

@@ -1,0 +1,47 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Reduced the number of network packets sent with the subchunk request system and packet optimizations
+
+## **Graphics**
+
+-   Testing RenderDragon on all Android devices
+
+## **Items**
+
+-   Added 9 new shapeless recipe JSON files, replacing hard-coded Smithing Table crafting recipes
+
+## **Molang**
+
+-   Add non-experimental is\_name\_any, is\_item\_name\_any, and is\_owner\_identifier\_any queries
+-   Fixed relative\_block\_has\_all\_tags block\_neighbor\_has\_all\_tags and biome\_has\_all\_tags queries to require all tags rather than just any tags
+-   Fixed nested conditional (ternary) operator parsing to go right-to-left instead of left-to-right
+    -   This is a Molang Versioned Change that only takes effect for Molang expressions in packs that use a min\_engine\_version of 1.18.10 or higher
+    -   Previously nested conditional expressions like A?B:C?D:Ewould evaluate as (A?B:C)?D:E, now they evaluate as A?B:(C?D:E)
+
+# **Experimental Features  
+## **
+
+## **GameTest Framework**
+
+              Added new entity query capabilities in the form of new methods on Dimension and World.
+
+-   World object
+    -   Replaced function getPlayers : Player\[\] with function getPlayers(options: EntityQueryOptions = undefined) : EntityIterator- Returns an iterator to a collection containing all players in the dimension. Optionally, options can be used to filter the result
+    -   Added optional argument to events.addEffect. This argument will limit the callback to only fire for specific entities (see EntityEventOptions)
+-   Dimension object
+    -   Added function getPlayers(options: EntityQueryOptions = undefined) : EntityIterator- Returns an iterator to a collection containing all players. Optionally, options can be used to filter the result
+    -   Added function getEntities(options: EntityQueryOptions = undefined) : EntityIterator- Returns an iterator to a collection containing all entities in the dimension. Optionally, options can be used to filter the result
+-   EntityQueryOptions
+    -   Added class EntityQueryOptions- Provides additional filtering options when calling getEntities and getPlayers
+-   EntityQueryScoreOptions
+    -   Added class EntityQueryScoreOptions- Used with EntityQueryOptions to provide scoreboard filtering
+-   EntityEventOptions
+    -   Used to filter events that fire on entities to restrict the callback to only certain ones.
+    -   Property entity: Entity\[\] - If specified, will restrict to just this entity
+    -   Property entityTypes: string\[\] - If specified, will restrict to entities with the specified type (e.g., minecraft:creeper)
+

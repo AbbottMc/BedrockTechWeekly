@@ -1,0 +1,32 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **GameTest Framework (Experimental)**
+
+-   Entity
+    -   Added function teleport(location: Location, dimension: Dimension, xRotation (optional): float, yRotation (optional): float)
+    -   Added function teleportFacing(location: Location, dimension: Dimension, facingLocation: Location)
+-   Added registerAsyncmethod to register and properly track the state of GameTests using async functions
+
+## **General**
+
+-   Reapplied changes to use "allowlist" instead of "whitelist" ([BDS-14119](https://bugs.mojang.com/browse/BDS-14119))
+
+## **JumpToBlockGoal**
+
+-   JumpToBlockGoal now correctly searches the same distance upwards and downwards when looking for jumpblockcandidates, allowing a mobs that use the goal to jump equally high as low
+
+## **Blocks**
+
+-   Added support for blocks having the same name as long as they belong to different namespaces
+
+## **Animations**
+
+-   Fixed animation controller recursion checks from falsely disallowing normal repeat usage of a controller
+
+## **User-Interface**
+
+-   Fixed issue where up and down arrow buttons in the Resource Pack Settings screen became bigger when highlighted ([MCPE-147708](https://bugs.mojang.com/browse/MCPE-147708))
+

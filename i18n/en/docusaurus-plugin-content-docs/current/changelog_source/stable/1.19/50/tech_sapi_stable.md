@@ -1,0 +1,29 @@
+
+
+-   Initial APIs are releasing out of beta and will be usable without an experimental flag
+-   The first module to release is _@minecraft/server_ as version 1.0.0. The APIs included with this are listed below:
+    -   Non-beta APIs like those included in the _@minecraft/server_0.0 module do not require the Beta APIs experiment to be turned on, and will be more stable over time
+    -   This initial API set is narrow, but we intend to add more APIs into non-beta modules over the coming months
+-   _@minecraft/server_ will continue to develop in Beta and those Beta APIs have been incremented in version to 1.1.0-beta; if you wish to continue to use Beta _@minecraft/server_ APIs, manifest.json references will need to be updated to 1.1.0-beta
+-   APIs included in the _@minecraft/server_ version 1.0.0 release:
+    -   System type (Exposed via systemglobal instance)
+        -   run() - runs a function on the next tick (can be used to maintain a game loop tick over tick)
+    -   World type (exposed via worldglobal instance)
+        -   getDimension()
+        -   getAllPlayers()
+    -   MinecraftDimensionTypes type
+        -   nether
+        -   overworld
+        -   theEnd
+    -   Dimension type
+        -   id
+        -   runCommandAsync()
+    -   CommandResult type
+        -   commandResult
+    -   Entity type
+        -   id
+        -   typeId
+        -   dimension
+        -   runCommandAsync()
+    -   Player type
+        -   name

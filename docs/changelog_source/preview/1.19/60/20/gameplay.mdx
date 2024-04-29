@@ -1,0 +1,150 @@
+**Posted:** November 23, 2022
+
+**NOTE:** This week's Preview version is not available on iOS. We apologize for the inconvenience and are working to resolve the issue.  
+  
+
+**Information on the Minecraft Preview and Beta:** 
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A Minecraft screenshot, featuring some of the things in the 1.19.60 Previews, such as the piglin head on a note block.](https://feedback.minecraft.net/hc/article_attachments/10826705409549)
+
+# **Experimental Features**
+
+### **Mob Heads on Note Blocks**
+
+-   When placing a Mob Head on a Note Block, that Note Block will now play one of the ambient sounds of that mob when played by a player or powered by Redstone!
+
+## **Piglin Mob Head**
+
+-   Piglins will now drop their heads when killed by a charged Creeper!
+-   Placing the Piglin Head on a Note Block will play one of the Piglin's ambient sounds
+-   The Piglin Head will flap its ears when powered by Redstone on worn by a player!
+
+## **Bamboo Woodset and Raft**
+
+-   Added Block of Bamboo, which can be crafted from 9 Bamboo
+-   Added Stripped Block of Bamboo, which can be obtained by using an Axe on a Block of Bamboo
+-   Both Block of Bamboo and Stripped Block of Bamboo can be crafted into 2 Bamboo Planks
+-   Bamboo Hanging Sign is now crafted out of 6 Stripped Blocks of Bamboo and 2 Chains
+-   Rotated the texture of Bamboo Planks to better match the style of other Planks blocks
+-   Updated Bamboo Raft and Bamboo Raft with Chest item Icons
+-   Bamboo Fence now shows in the correct color on the map
+-   Recolored the Scaffolding texture to match Bamboo Woodset colors
+
+### **Chiseled Bookshelf**
+
+-   Unique sounds added for the Chiseled Bookshelf
+-   Introduced the tag "minecraft:bookshelf\_books" to filter what type of items are storable in the Chiseled Bookshelf
+-   Chiseled Bookshelf now fills when dropping Books into a connected Hopper ([MCPE-164023](https://bugs.mojang.com/browse/MCPE-164023))
+-   When a Chiseled Bookshelf is connected to a Hopper, only Books are transferred
+
+### **Hanging Signs**
+
+-   Hanging Sign map colors now match Sign map colors
+-   Hanging Sign now uses the correct texture for its jungle variant
+-   Fixed an issue where Hanging Signs and other blocks could not be placed under Chest, Enchanting Table, Candle, Brewing Stand, Mob heads (when aligned to the bottom of the block), or End Portal Frame
+-   Jungle Hanging Sign iron chain added in texture
+
+## **Camel**
+
+-   Camel Texture is up to parity with the Java Edition texture ([MCPE-163350](https://bugs.mojang.com/browse/MCPE-163350))
+-   Sitting Camel with Lead attached now stands up and follows the player when moving away from it
+-   The player can now sprint when riding a Camel, even if they have low hunger
+-   Players riding a Camel while it does its standing up animation do not sink into it anymore
+-   Players riding a Camel now sit in the correct position
+-   Camels now have a smaller collision when sitting
+-   Baby Camels are now slightly smaller
+-   Changed the colors of the dash cooldown bar to match Java Edition
+-   Sculk Sensors can now detect Camels sitting down or standing up
+
+# **Features and Bug Fixes**
+
+## **Spawn Eggs**
+
+-   Added new Spawn Egg items for Ender Dragon, Iron Golem, Snow Golem, and Wither mobs in Creative Mode
+    -   Ender Dragon and Wither Spawn Eggs will only be available through commands\* to prevent accidental destruction of player builds
+        -   \* These are currently in the Creative inventory but will be removed at a later stage
+    -   Polar Bear Spawn Egg colors have changed to distinguish it from the Ghast Spawn Egg
+
+## **Android**
+
+-   Device screen will no longer automatically turn off while a world is loaded
+-   Updated splash screen to be consistent between Android 12+ devices and older devices ([MCPE-151413](https://bugs.mojang.com/browse/MCPE-151413))
+-   Fixed controller input sometimes getting stuck when a controller disconnected
+
+## **Blocks**
+
+-   Entities no longer get pushed out by Doors activated by Redstone signals ([MCPE-158971](https://bugs.mojang.com/browse/MCPE-158971))
+-   Using the Pick Block functionality on Fern and Grass now selects the correct item in the inventory instead of the first one between them
+-   Using the Pick Block functionality on Acacia and Dark Oak Leaves now selects the correct item in the inventory instead of the first one between them
+
+## **Gameplay**
+
+-   Bamboo plant placements now behave the same way as in Java Edition; it will no longer grow by clicking on the side of a bamboo plant with a bamboo item in hands ([MCPE-99587](https://bugs.mojang.com/browse/MCPE-99587))
+-   All mobs are now able to path through Wither Roses ([MCPE-159212](https://bugs.mojang.com/browse/MCPE-159212))
+-   Stone Walls are now placed correctly in a line when continuously placing them
+-   When teleporting a group of leashed mobs using "/tp @e" a far enough distance away to unleash them, all mobs get properly unleashed ([MCPE-159617](https://bugs.mojang.com/browse/MCPE-159617))
+
+## **Graphical**
+
+-   Fixed albedo color arrays in texture sets ([MCPE-163622](https://bugs.mojang.com/browse/MCPE-163622))
+
+## **Mobs**
+
+-   Axolotls no longer tick their dry out timer when unloaded ([MCPE-131041](https://bugs.mojang.com/browse/MCPE-131041))
+-   Tropical Fish no longer use surface density limit when spawning underground ([MCPE-157485](https://bugs.mojang.com/browse/MCPE-157485))
+-   Husks can now fit in a two blocks high space and baby Husks in a one-high space ([MCPE-105369](https://bugs.mojang.com/browse/MCPE-105369))
+
+### **Villager**
+
+-   Villagers will now take damage from lightning bolts on Peaceful difficulty, like other mobs
+-   Villagers will now ensure that rain can pass through the block above them before launching Fireworks when celebrating after a raid victory ([MCPE-152386](https://bugs.mojang.com/browse/MCPE-152386))
+
+## **Particle Effects**
+
+-   Fixed bug causing particles with collision and "expire\_on\_contact" to not expire when collided
+-   Added support for mixed color blending on particle effects
+
+## **Player**
+
+-   Fixed a bug causing players to desync from multiplayer games if they save and quit after dying and then rejoin
+
+## **Stability**
+
+-   Fixed multiple crashes that could occur when players died while affected with Withering
+
+## **Text Fields**
+
+-   Text fields are no longer deselected with second click on them once they are selected
+
+## **Touch Controls**
+
+-   The pressing direction of the build button in touch controls will now be visually clicked down instead of up when being pressed
+-   Fixed an issue where players could not remove items by clicking on the inventory items in Classic profile
+-   The touch focus circle has been reactivated with the new touch controls (not in Crosshair mode)
+
+## **User Interface**
+
+-   Added a missing error screen that displays when attempting to create a world with too little available disk space
+-   Fixed the quality of the Mojang Studios logo loading screen on Xbox ([MCPE-163036](https://bugs.mojang.com/browse/MCPE-163036))
+-   Removed extra space around the "open chat" message that appears when entering a world ([MCPE-162700](https://bugs.mojang.com/browse/MCPE-162700))
+-   Fixed an issue that caused the Wandering Trader's trade window to show a profession ([MCPE-162576](https://bugs.mojang.com/browse/MCPE-162576))
+
+## **Vanilla Parity**
+
+### **Blocks**
+
+-   Pumpkins and Melons can now grow on Mycelium and Moss blocks ([MCPE-125932](https://bugs.mojang.com/browse/MCPE-125932))
+
+### **Graphical**
+
+-   Beacon effect particles are now transparent ([MCPE-17679](https://bugs.mojang.com/browse/MCPE-17679))
+-   Conduit effect particles are now transparent ([MCPE-93728](https://bugs.mojang.com/browse/MCPE-93728))
+
+## **Commands**
+
+-   Executing the ‘/say’ command via the new execute syntax now displays the entity’s name that produced the message ([MCPE-161450](https://bugs.mojang.com/browse/MCPE-161450))
+

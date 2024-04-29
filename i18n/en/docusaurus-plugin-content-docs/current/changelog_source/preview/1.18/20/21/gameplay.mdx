@@ -1,0 +1,103 @@
+**Posted:** 27 January 2022
+
+**PLEASE READ before participating in the Minecraft Beta:**
+
+-   Joining the beta will replace your game with a work-in-progress version of Minecraft
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game, so please make copies of worlds to prevent losing them
+-   Beta builds can be unstable and are not representative of final version quality
+-   The beta is available only on Xbox, Windows, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![Create_New_World.png](https://feedback.minecraft.net/hc/article_attachments/4423164039309/Create_New_World.png)
+
+Here's a list of what is new in this week's Beta! We're excited to show off the shiny new Create New World screen too, which will be optionally available for some of our beta players. We would love to hear your feedback on it in [this post](http://aka.ms/MCCreateNewWorldUI)! And as always please search and report any bugs you may find at [bugs.mojang.com](http://bugs.mojang.com/).
+
+# **Experimental Features**
+
+## **Frog**
+
+-   Frogs now jump more frequently
+-   Frog Eggs renamed to Frog Spawn
+-   The time for Frog Spawn to hatch into Tadpoles has been increased
+-   Tadpole hitbox is now larger
+-   Frog Spawn has a new texture
+-   Frogs in Meadow biomes are now of the temperate variant
+
+## **Animation Tweaks**
+
+-   Tweaked Frog's jump and tongue animations
+-   Cleaned up the animation, entity and controller files
+-   Changed _water_ and swim animations from linear to smooth
+
+# **Non-Experimental Features and Bug Fixes**
+
+## **Create New World**
+
+-   The _Create New World_screen has been given a new design that is now available for some players. We would love to hear your feedback on it in [this post](http://aka.ms/MCCreateNewWorldUI)!
+
+## **Vanilla Parity**
+
+-   Worlds can now be created with 64-bit seeds (-9223372036854775808 to 9223372036854775807) and those can be copied between Bedrock and Java to produce the same world ([MCPE-144994](https://bugs.mojang.com/browse/MCPE-144994)) ([MCPE-148168](https://bugs.mojang.com/browse/MCPE-148168))
+-   Non-numeric seed UI inputs now produce the same seeds as Java Edition
+-   Player's arm no longer twitches while charging a bow ([MCPE-148486](https://bugs.mojang.com/browse/MCPE-148486))
+-   Falling blocks have full-block hitbox again
+-   Fixed an error where Journeymen Clerics would offer Glowstone Dust instead of Glowstone Blocks ([MCPE-57524](https://bugs.mojang.com/browse/MCPE-57524))
+-   Untamed Wolves can now be leashed ([MCPE-82050](https://bugs.mojang.com/browse/MCPE-82050))
+
+## **Blocks**
+
+-   TNT blocks now correctly move in a random X/Z direction once lit
+-   Fixed an issue with resource drops occasionally remaining black after breaking and placing a block quickly in its place
+-   Top Snow no longer clips with the block beneath when falling
+
+## **Commands**
+
+-   Added the "hasitem" filter for target selector of entities. This allows the player to target entities based on the items that have in their inventory or are wearing
+
+## **Gameplay**
+
+-   Fixed Fangs from the Illager spells not being spawnable in blocks with no bounding boxes
+-   Water and Lava Buckets can now be used on underwater blocks cohabitating with water, such as Light Blocks or Big Dripleaves ([MCPE-148392](https://bugs.mojang.com/browse/MCPE-148392))
+-   Players in Visitor Mode can no longer break Paintings and Minecarts ([MCPE-132869](https://bugs.mojang.com/browse/MCPE-132869))
+-   Teleporting vertically beyond the visibility distance now loads the terrain correctly ([MCPE-150021](https://bugs.mojang.com/browse/MCPE-150021))
+-   Improved accuracy of damage calculations
+-   Fixed an issue where interacting with the Bell while holding a chargeable item would not continuously ring it ([MCPE-56968](https://bugs.mojang.com/browse/MCPE-56968))
+-   Fixed a bug where the player could switch to gliding when riding in certain scenarios ([MCPE-147904](https://bugs.mojang.com/browse/MCPE-147904))
+
+## **Mobs**
+
+-   Mobs are now able to path over Azalea blocks ([MCPE-129373](https://bugs.mojang.com/browse/MCPE-129373))
+-   Mobs are now able to path over Dripleaf blocks and properly pathfind on top of them, when not fully tilted 
+-   Mobs are now able to path over Pointed Dripstone blocks and properly pathfind on top of them ([MCPE-133270](https://bugs.mojang.com/browse/MCPE-133270))
+-   Mobs can now move properly on top of solid partial blocks, like Bells, Brewing Stands, and Enchanting Tables
+-   Mobs can now jump from high enough solid partial blocks to full ones at a higher position 
+-   Mobs can now jump over fences if they are standing on an adjacent slab or on another block high enough
+-   Mobs can now move through less than half-block tall Top Snow even when the ceiling, if any, is as tall as the mobs themselves ([MCPE-148355](https://bugs.mojang.com/browse/MCPE-148355))
+-   Mobs can now move through Coral and Coral Fans, as they do not consider them as solid obstacles anymore ([MCPE-128687](https://bugs.mojang.com/browse/MCPE-128687))
+-   Fixed an issue where players could not access a Villager's trades while holding a spawn egg ([MCPE-76153](https://bugs.mojang.com/browse/MCPE-76153))
+-   Fixed an issue where Witches spawned during Village raids could despawn during the raid ([MCPE-149883](https://bugs.mojang.com/browse/MCPE-149883))
+-   Cod, Salmon, Pufferfish, Tropical Fish, and Dolphins once again spawn in deep variants of ocean biomes ([MCPE-150191](https://bugs.mojang.com/browse/MCPE-150191))
+
+## **Stability and Performance**
+
+-   Fixed a crash that could occur upon leaving the Zooming menu in the Dressing Room
+
+## **User Interface**
+
+-   Default tabs changed to "Craftable" on left side and to "Crafting" on right side of the Pocket UI inventory screen
+-   Removed the question mark button on the Pocket UI inventory screen
+-   Items requiring 3x3 recipes are no longer shown when the Crafting Table is not used
+-   Players can now use auto-move to take off or equip armor in Crafting Table's menu while in Pocket UI ([MCPE-148970](https://bugs.mojang.com/browse/MCPE-148970))
+-   Updated generic controller face button icons on mobile
+-   Control + Backspace will now erase the whole word before the caret
+-   Control + Delete will now erase the whole word after the caret
+-   Control + Left Arrow will now move the caret to the beginning of the word before the caret
+-   Control + Right Arrow will now move the caret to the beginning of the next word after the caret
+
+### **Villagers**
+
+-   Updated Villager trade tables for Armorer, Cleric, Fisherman, Shepherd, Toolsmith, and Weaponsmith to match Java Edition
+-   Fixed an issue where Villagers did not hold the item they would trade when presented with Emeralds by the player ([MCPE-150303](https://bugs.mojang.com/browse/MCPE-150303))
+-   Villagers no longer avoid Zombified Piglins ([MCPE-94102](https://bugs.mojang.com/browse/MCPE-94102))
+-   Villagers no longer share Seeds and Beetroot Seeds
+

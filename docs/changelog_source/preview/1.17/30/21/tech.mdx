@@ -1,0 +1,37 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Data Driven Blocks - Experimental Features 
+
+-   Adds BlockPartVisibilityComponent  
+    -   Allows creators to specify Molang conditions for each “bone” listed in the geometry JSON that turn on/off bones based on the block state 
+    -   Must have experimental toggle on to use 
+
+## Molang 
+
+-   Fixed experimental query.bone\_orientation\_trs to have correct translation Y and scale results  
+-   Adds experimental block\_neighbor\_has\_any\_tags and block\_neighbor\_has\_all\_tags MoLang queries  
+    -   Takes a block relative position and a set of tags 
+    -   Returns 0/1 
+    -   Must have experimental toggle on to use 
+
+## Graphics 
+
+-   Added DragonFX materials to support rasterized g-buffer prepass of raytracing resources  
+
+## Data Driven Items 
+
+-   Updated documentation for DamageableItemComponent  
+
+## Molang 
+
+-   Crash will no longer occur when entering a world with a custom resource pack that contains query.armor\_color\_slot ([MCPE-106437](https://bugs.mojang.com/browse/MCPE-106437))  
+-   Moved experimental Molang queries (other than those related to Actor Properties) to a new 'Experimental Molang Features' toggle  
+
+## User Interface 
+
+-   Fixed controller support when editing NPC dialog  
+-   Parsing of UI json field "ignored" now throws a content\_error if it is invalid
+

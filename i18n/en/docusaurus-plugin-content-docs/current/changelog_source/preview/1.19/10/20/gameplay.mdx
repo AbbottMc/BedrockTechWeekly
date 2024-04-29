@@ -1,0 +1,180 @@
+## **Information on the Minecraft Preview and Beta:** 
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions 
+
+![A Minecraft screenshot, featuring a frog in a mangrove swamp!](https://feedback.minecraft.net/hc/article_attachments/6465718765709/beta19U1_1_16x9.jpg)
+
+Here's a list of what is new in this week's Beta! As always, please search and report any bugs you may find at [bugs.mojang.com](http://bugs.mojang.com/) and send us [your feedback](https://aka.ms/MinecraftBetaFeedback).
+
+# **Known Issues**
+
+-   Potion effects of differing strengths do not stack correctly. We hope to have this addressed in a future beta/preview update.
+
+# **Minecraft Beta**
+
+-   Minecraft Beta players on Windows and Xbox will need to install the latest Minecraft Preview version to test out the latest pre-release features. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+
+## **Warden**
+
+-   Warden can now path through lava ([MCPE-153582](https://bugs.mojang.com/browse/MCPE-153582))
+-   Warden can now pass through water ([MCPE-153602](https://bugs.mojang.com/browse/MCPE-153602))
+-   Warden is no longer pushable while emerging or digging
+-   If the Warden is in liquid when attempting to despawn, it will not do the digging animation, instead it will just despawn without any animation/sound ([MCPE-155706](https://bugs.mojang.com/browse/MCPE-155706))
+-   Warden now always chases a nuisance after it roars at it
+-   Warden now increases its anger towards an attacking nuisance by 100 anger for each attack
+
+## **Sculk Sensor**
+
+-   The Sculk Sensor now correctly detects when a Big Dripleaf block changes its tilting state ([MCPE-153115](https://bugs.mojang.com/browse/MCPE-153115))
+-   The Sculk Sensor now correctly detects when a Grass, Grass Path, Dirt, Coarse Dirt, or Rooted Dirt Block is tilled with a Hoe ([MCPE-153734](https://bugs.mojang.com/browse/MCPE-153734))
+-   Sculk Sensors cannot detect a player equipping a handheld item anymore ([MCPE-153971](https://bugs.mojang.com/browse/MCPE-153971))
+
+## **Allay**
+
+-   Taking a stackable item from an Allay now correctly adds this item to existing stacks ([MCPE-153540](https://bugs.mojang.com/browse/MCPE-153540))
+-   Taking a stackable item from an Allay no longer cause item duplication
+-   Allay pickup range is changed from 64 to 32 blocks to match Java Edition ([MCPE-156022](https://bugs.mojang.com/browse/MCPE-156022))
+
+### **Sculk Vein**
+
+-   A Sculk Vein block now drops as many items as its number of faces when mined with Silk Touch
+
+### **Sculk Catalyst**
+
+-   Sculk Catalyst can now spread Sculk through Mud and Muddy Mangrove Roots ([MCPE-153924](https://bugs.mojang.com/browse/MCPE-153924))
+
+### **Sculk Shrieker**
+
+-   Sculk Shriekers now scan for Wardens in a box with side 48 blocks, not 96 blocks
+-   Sculk Shriekers now apply Darkness effect to players with threat level 3 or 4
+-   Sculk Shrieker now detects player when riding any type of entity ([MCPE-153814](https://bugs.mojang.com/browse/MCPE-153814))
+-   Sculk Shriekers now activate repeatedly while players are standing on them (50%) ([MCPE-153818](https://bugs.mojang.com/browse/MCPE-153818))
+-   Sculk Shriekers now implicate the player that provokes it from afar
+
+## **Mangrove**
+
+-   Mangrove Propagules are no longer blocked to grow by leaves ([MCPE-154982](https://bugs.mojang.com/browse/MCPE-154982))
+
+## **Mangrove log**
+
+-   Mangrove Log is now included in Bonus Chest loot tables ([MCPE-153924](https://bugs.mojang.com/browse/MCPE-153924))
+
+## **Mangrove Swamp**
+
+-   Villagers now spawn as Swamp Villagers in Mangrove Swamp ([MCPE-153731](https://bugs.mojang.com/browse/MCPE-153731))
+-   Clay patches now correctly generate in Mangrove Swamps
+
+## **Touch Controls**
+
+-   Player can now continuously jump while holding down the jump button ([MCPE-117045](https://bugs.mojang.com/browse/MCPE-117045))
+-   Player can now descend from the top of Scaffolding with the new touch controls ([MCPE-154309](https://bugs.mojang.com/browse/MCPE-154309))
+-   Updated the visual style of the touch control joystick
+
+## **Vanilla Parity**
+
+-   Mobs equipping items in armor slots now produce sounds ([MCPE -46939](https://bugs.mojang.com/browse/MCPE-46939))
+-   Campfires can now provide full-faced bottom support to other blocks
+-   Lecterns can now provide full-faced bottom support to other blocks
+-   Weeping Vines can now be placed underneath all blocks which can provide full-faced bottom support ([MCPE-153083](https://bugs.mojang.com/browse/MCPE-153083)) ([MCPE-104717](https://bugs.mojang.com/browse/MCPE-104717))
+-   Breaking a Boat with Chest or minecart with chest will now anger nearby piglins ([MCPE-153393](https://bugs.mojang.com/browse/MCPE-153393))
+-   Structure Blocks can no longer be waterlogged ([MCPE-59566](https://bugs.mojang.com/browse/MCPE-59566))
+-   Relative positioning of entities exiting Nether portals no longer have their placement snapped to a block position coordinate ([MCPE-139835](https://bugs.mojang.com/browse/MCPE-139835))
+-   Fixed a visual bug where liquids could have unexpected heights in the corners depending on diagonally-adjacent blocks ([MCPE-152995](https://bugs.mojang.com/browse/MCPE-152995))
+
+### **Spectator Mode**
+
+-   Player in Spectator mode can now breathe anywhere
+-   Player in Spectator mode cannot be pushed by Piston
+-   Spectator will be ignored for sleeping rules to skip the night
+-   Moving around as a Spectator will no longer affect player's hunger level
+-   Spectators no longer broadcast self-made sounds; such as footsteps, climbing, watersplash, etc.
+-   Player's insomnia timer stops ticking once the player switches to Spectator mode
+-   Render only head for players in Spectator mode
+-   Render players in Spectator semi-transparently
+-   Projectiles such as Arrows, Tridents, Fireballs will now shoot through Spectators
+-   Spectators playing with gamepad no longer are shown unusable tooltips
+
+## **Blocks**
+
+-   Advanced Pick Block now copies the items inside when used on a Boat with Chest ([MCPE-153410](https://bugs.mojang.com/browse/MCPE-153410))
+-   Nether Sprouts and Fungi can now be placed on Mud and Muddy Mangrove Roots
+-   Mangrove Leaves are no longer collected into separate stacks when using shears
+
+## **Commands**
+
+-   Chests with loot tables no longer drop items when removed with '/clone', '/fill' or '/setblock' ([MCPE-151876](https://bugs.mojang.com/browse/MCPE-151876))
+
+## **EDU**
+
+-   Small changes to size, button layout, and photo removal behavior in Book & Quill to make it function better on mobile devices
+
+## **Frog**
+
+-   Tadpoles now grow up into Temperate Frog in Meadow and Stony Peak, and into Cold Frog in Deep Dark
+
+## **Froglight**
+
+-   Froglight walk sound volume is now more similar as other blocks walk sound volume ([MCPE-154879](https://bugs.mojang.com/browse/MCPE-154879))
+
+## **Gameplay**
+
+-   Players are no longer pushed by Doors as they close ([MCPE-154734](https://bugs.mojang.com/browse/MCPE-154734))
+-   Items now stack properly in the offhand when inventory is full ([MCPE-34959](https://bugs.mojang.com/browse/MCPE-34959))
+-   Equipping items in armor slots through inventory screen now produces sounds ([MCPE-46939](https://bugs.mojang.com/browse/MCPE-46939))
+-   Players can now hear each other equipping items in armor slots ()
+-   Fixed an issue where entities loaded by Structure Blocks and commands would cause the despawn of the original mob used to save the structure and any mobs from previous loads of the structure ([MCPE-155036](https://bugs.mojang.com/browse/MCPE-155036))
+-   Fixed an issue where after 1.18.30 teleporting an entity to a chunk that has not been loaded since before 1.18.30 would result in the loss of that entity
+-   Fixed a bug where Slimes would no longer spawn in flat worlds made before 1.18 ([MCPE-119396](https://bugs.mojang.com/browse/MCPE-119396))
+-   Fixed a bug where failed Slime spawn attempts would reduce the spawning rates of other mobs ([MCPE-153502](https://bugs.mojang.com/browse/MCPE-153502))
+
+## **General**
+
+-   Fixed a bug causing riding passengers to stop riding when reloaded if they were across chunk borders
+-   Fixed a bug which reset the player's vertical camera angle upon entering a boat ([MCPE-152762](https://bugs.mojang.com/browse/MCPE-152762))
+-   Fixed a bug where players could take fall damage when walking around on Scaffolding at certain heights (even when not actually falling) ([MCPE-154779](https://bugs.mojang.com/browse/MCPE-154779))
+-   Fixed a bug where upgrading old worlds could result in water columns below y=0
+
+## **Goat**
+
+-   Goat Horn now correctly drops when Goats ram Mangrove Logs ([MCPE-154912](https://bugs.mojang.com/browse/MCPE-154912))
+
+## **Graphical**
+
+-   Items in off-hand are not rendered black anymore
+-   Fixed a visual issue where Barrier Blocks would show a red texture/overlay when being viewed from the inside ([MCPE-98938](https://bugs.mojang.com/browse/MCPE-98938))
+
+## **Mobile Controls**
+
+-   Added Bluetooth mouse and keyboard support on iOS
+
+## **Mobs**
+
+-   The Trader Llama now has its own spawn egg
+-   The Trader Llama now has the correct name displayed when opening its inventory ([MCPE-47165](https://bugs.mojang.com/browse/MCPE-47165))
+
+## **Music**
+
+-   Music is now included in the iOS app and is no longer needed to be downloaded from the Marketplace
+
+## **Shield**
+
+-   Shields that are disabled when struck by an Axe or by Warden now plays broken item sound ([MCPE-153315](https://bugs.mojang.com/browse/MCPE-153315))
+
+## **Stability and Performance**
+
+-   Fixed a crash that could occur when Boats are unloaded from the world
+-   Fixed a crash that could occur when a Wither is loaded into the world
+
+## **User Interface**
+
+-   Added settings to change duration of notifications
+-   Friendly Fire game rule toggle has been moved to the Multiplayer tab on the Create New World screen
+-   On mobile devices, the experience bar is centered over the entire length of the hotbar, including the ellipis at the end
+-   Added copy coordinate control panel to the chat screen
+
+### **Blocks**
+
+-   Mob Spawners now drop XP only when destroyed by a Pickaxe ()
+

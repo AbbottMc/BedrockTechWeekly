@@ -1,0 +1,75 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.19.30 with new resources, behaviors, and documentation, are available to download at [aka.ms/MCAddonPacks  
+    ](https://aka.ms/MCAddOnPacks)
+
+## **Copy Coordinates**
+
+-   Added keyboard shortcuts that allow players to copy either their current coordinates or the coordinates of a block
+    -   Control + Alt + C is the default for copying current coordinates
+    -   Control + Alt + X is the default for copying coordinates of selected block
+    -   Needs the "Enable Copy Coordinate UI" enabled in Creator settings
+
+## **General**
+
+-   Numerical actor properties (float and integer) will now always clamp their values into the range of values specified
+-   _minecraft:instant\_despawn_ no longer affects players
+-   Command selector now gets the same position for the player that the command origin player position gets
+-   Fixed a bug where the text-to-speech feature would read the entire "My Content" page, both highlighted and non-highlighted items
+-   Non-Parrot mobs on a player's shoulder will now adjust their position when the player crouches ([MCPE-153996](https://bugs.mojang.com/browse/MCPE-153996))
+-   Enables creators to add geometry up to 0.875 units outside of the regular block unit cube on any one side
+-   Fixed a bug where some custom items (from Creator Features packs), after being used, were duplicated upon player's death ([MCPE-128897](https://bugs.mojang.com/browse/MCPE-128897))
+-   Added server property ‘disable-custom-skins’ to block untrusted skins on a server wide level
+-   Text to Speech no longer ignores the volume setting on startup
+-   Clarified the documentation for _equipment\_count_ to indicate it only counts equipped armor, and how to query for held items ([MCPE-136134](https://bugs.mojang.com/browse/MCPE-136134))
+-   Limit which queries can be used in Actor Property-related Molang expressions. Property defaults can only use query.had\_component\_group and _set\_property_ can only use _property_ and _query.has\_property_
+-   _BlockDisplayNameComponent_ will no longer append 'tile.' and '.name' to given display names and in turn, will display their given raw strings if no appropriate localization can be found
+
+## **Commands**
+
+-   Added a paste button to the Command Block screen
+-   Added a waterlog field to the _/structure_ command and the load tab of Structure Blocks to allow players to properly waterlog a structure when it's being placed under water
+-   The "/execute at" command now properly executes filters from the specified 'at' position ([MCPE-156283](https://bugs.mojang.com/browse/MCPE-156283))
+-   The "/execute if block" command now displays integer values for block positions ([MCPE-156285](https://bugs.mojang.com/browse/MCPE-156285))
+-   Fixed a bug where a "%" was prepended to player names in the chat output of "/scoreboard players reset" ([MCPE-151389](https://bugs.mojang.com/browse/MCPE-151389))
+    
+-   Attempting to kill a player in Creative Mode using the "/kill" command now displays a message informing the player that it cannot be done ([MCPE-16732](https://bugs.mojang.com/browse/MCPE-16732))
+    
+
+## **GameTest Framework**
+
+-   Fixed a bug where function length would return undefined
+-   Added function lengthSquared - Returns the squared length of the vector
+-   Added stackOverflow as a possible WatchdogTerminateReason for the beforeWatchdogTerminate event
+-   IRawMessage - Interface object representing a message
+-   rawtext : (string | IRawMessage)\[\] - (optional) A list of text objects used to build a message
+-   text : string - (optional) A string containing plain text to display directly. Only valid when used as a sub member in a parent rawtext or with member
+-   translate : string - (optional) String representing a translation identifier to translate text in the player's selected language
+-   with : (string | IRawMessage)\[\] - (optional) A list of text object arguments used to fill values in the translate text. Ignored when translate is not present
+-   say(string | IRawMessage) - Used to broadcast a message to all players
+-   tell(string | IRawMessage) - Send a message to a player
+-   Fixed a bug where Dynamic Properties would not persist when using worlds hosted on Bedrock Dedicated Server or Realms
+-   Pack dependencies on native modules can be declared using the module name without the need to specify a UUID, using the “module\_name” attribute. The module name matches the import statement (e.g., “mojang-minecraft”)
+-   Removed mojang-gametest module version 0.1.0; packs using "mojang-gametest" specific APIs must be updated to use GameTest version 1.0.0-beta
+-   The "mojang-gametest" module 1.0.0-beta requires "mojang-minecraft" module 1.0.0-beta
+-   Removed usage of minecraft:unwalkable block component and added block creative group and category to the block description
+-   setVelocity will now throw an exception when called on player types
+-   Renamed class Items to ItemTypes
+-   Add a content error when default or set\_property expressions include side-effects, such as Molang variable assignment
+-   Commands
+    -   Added new sub-command _/script watchdog exportstats_ \- Exports a file containing memory usage and object handle statistics
+    -   Can now switch hotbar slots while targeting a block while in a Boat ([MCPE-156814](https://bugs.mojang.com/browse/MCPE-156814))
+    -   The '/execute at' and '/execute as' commands will now execute at the correct relative rotation ([MCPE-156277](https://bugs.mojang.com/browse/MCPE-156277))
+    -   '/execute at @e run kill @e' no longer crashes the game when there are items on the ground
+    -   Added chat output when entities are skipped by "/ride summon\_ride no\_ride\_change" ([MCPE-129486](https://bugs.mojang.com/browse/MCPE-129486))
+    -   Added function getAll(): ItemTypeIterator - Returns an iterator of all available item types
+-   Memory Watchdog
+    -   script-watchdog-memory-warning - Produces a content log warning when the combined memory usage exceeds the given threshold (in megabytes). Setting this value to 0 disables the warning. (default = 100)
+    -   script-watchdog-memory-limit - Saves and shuts down the world when the combined memory usage exceeds the given threshold (in megabytes). Setting this value to 0 disables the limit. (default = 250)
+    -   Increased slow code warning threshold from 2 ms to 6 ms
+

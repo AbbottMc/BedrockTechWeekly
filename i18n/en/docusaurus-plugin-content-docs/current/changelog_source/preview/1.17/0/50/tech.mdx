@@ -1,0 +1,24 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+### Actors
+
+-   Internal state flag CAN\_RIDE\_TARGET that was stopping interactions with items will be properly set/cleared when looking at a mob that cannot be ridden
+
+### General
+
+-   Added two new variables to the biomes\_client.json file: "remove\_all\_prior\_fog" and "inherit\_from\_prior\_fog",which control fog merging and/or inheritance
+-   "remove\_all\_prior\_fog", when true, will clear all previous fog definitions stored on the stack, making the current pack the new "starting point" for fogs
+-   "inherit\_from\_prior\_fog", when true, will merge a biome's fog definition with matching biomes on the stack then create a new merged definition for it
+-   transparentattachable tag should only affect rendering in first person camera perspective
+
+### Scoreboards
+
+-   Fixed a crash that sometimes happened when an entity with a scoreboard value was removed from the level
+
+### Stability and Performance
+
+-   Added content warnings for invalid map item parent id caused by the outdated Marketplace world templates
+

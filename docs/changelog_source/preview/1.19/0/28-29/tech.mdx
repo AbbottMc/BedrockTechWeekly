@@ -1,0 +1,33 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Content errors for data driven blocks improved to log resource pack, file, and block identifier
+-   Limit length of the minecraft:geometryfield of BlockGeometryComponent to 256 characters
+
+## **Graphical**
+
+-   Device recovery on Xbox will now reinitialize with the same values used on initial creation
+
+## **Molang**
+
+-   Avoid clearing temp Molang variables during hand rendering
+
+## **GameTest Framework (Experimental)**
+
+-   Entity
+    -   Added function setRotation(degreesX: number, degreesY: number)- Sets the rotation of the Entity
+    -   Added read-only property rotation: XYRotation- Gets the rotation of the Entity
+    -   Removed property bodyRotation- Note: Use Entity.rotation.y instead  
+          
+        
+-   Events
+    -   Added event 'buttonPushEvent' - fires when a button is pushed
+-   XYRotation
+    -   Renamed class PitchYawRotationto XYRotation
+    -   Renamed property pitchto x
+    -   Renamed property yaw to y
+

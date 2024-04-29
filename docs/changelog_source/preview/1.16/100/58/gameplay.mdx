@@ -1,0 +1,46 @@
+**Posted:** 30 September 2020
+
+**PLEASE READ before participating in the Minecraft Beta:**
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them
+-   Beta builds can be unstable and are not representative of final version quality
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+## **Performance and Stability**
+
+-   Fixed several crashes that could occur during gameplay
+-   Fixed a crash that occurred when rendering
+-   Fixed a crash that could occur when a stunned entity loaded into the world
+-   Fixed a crash that could occur in certain Marketplace layouts, and ensured the carousel is always populated correctly
+
+## **Gameplay**
+
+-   Fixed an issue with tall plants (bamboo, sugar cane, and cactus) breaking instantly ([MCPE-98111](https://bugs.mojang.com/browse/MCPE-98111))
+-   Fixed a bug that prevented lava buckets from being used as fuel ([MCPE-100405](https://bugs.mojang.com/browse/MCPE-100405))
+
+## **General**
+
+-   Fixed an issue where animations in the achievement screen could be played backwards
+-   Fixed missing translation loading screen tip ([MCPE-100308](https://bugs.mojang.com/browse/MCPE-100308))
+
+## **Technical Changes**
+
+-   Removed legacy fall damage packet from client
+-   Made some small changes around how we calculate the spawn position of dropped items from a player that dies from falling
+-   Added support for the music command, allowing creators to play and control custom music
+-   Changed LegacyCubemap from opaque to transparent ([MCPE-94275](https://bugs.mojang.com/browse/MCPE-94275))
+-   Fog Definition identifier cannot use the "minecraft" namespace unless it's from a vanilla resource pack
+-   Blocks that have ticking components will now clear their pending ticks from the ticking queue upon removal
+    -   Added the on\_player\_destroyed trigger component
+
+## **DataDrivenBlocks**
+
+-   Middle click on non-default permutations of data driven blocks no longer throws an assert. Middle click now adds the default permutation of the block to your inventory
+-   Added a fix for blocks computing ambient occlusion to behave more like vanilla by only contributing ambient occlusion if it's an opaque unit cube
+-   Made data driven blocks with disabled collision pathable 
+
+## **Documentation**
+
+-   Added documentation for block event responses and re-organized block documentation

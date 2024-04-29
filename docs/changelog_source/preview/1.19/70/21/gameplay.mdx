@@ -1,0 +1,59 @@
+**Posted:** 1 February, 2023
+
+**NOTE:** This week's Android Beta version may be delayed. We apologize for the inconvenience and are working to resolve the issue.
+
+**Information on the Minecraft Preview and Beta:** 
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A Minecraft screenshot of a village, featuring a villager standing by two noteblocks with a dragon and a piglin head on top. There is an iron golem, two camels, and a cat in the scene also.
+](https://feedback.minecraft.net/hc/article_attachments/12738753624461)
+
+Here's a list of what is new in this week's Minecraft Preview and Beta! Just a note about armor trims: These are available to test out in the [Java Edition snapshot](https://www.minecraft.net/en-us/article/minecraft-snapshot-23w04a), but they are not _quite_ ready for the Bedrock Edition Beta and Preview just yet. We will let you know as soon as they are so you can experiment with them, so keep your eyes on [Minecraft.net](https://www.minecraft.net/) for the latest updates!
+
+As always, you can send us all your feedback and ideas at [aka.ms/MC120Feedback](http://aka.ms/MC120Feedback) and report any bugs to [bugs.mojang.com](http://bugs.mojang.com/).
+
+# **Experimental Features**
+
+## **Blocks**
+
+-   Piglin and Dragon Head blocks no longer animate in the hotbar or inventory ([MCPE-164535](https://bugs.mojang.com/browse/MCPE-164535), [MCPE-32654](https://bugs.mojang.com/browse/MCPE-32654))
+
+# **Features and Bug Fixes**
+
+## **Gameplay**
+
+-   Players are now able to place top Slabs in blocks that are only partially blocked by an entity ([MCPE-155016](https://bugs.mojang.com/browse/MCPE-155016))
+-   Players can no longer see through partial blocks when sneaking or riding in third person ([MCPE-156273](https://bugs.mojang.com/browse/MCPE-156273))
+-   Error messages about building outside the world height limits no longer appear when simply interacting with blocks at the world height limits from certain angles ([MCPE-152935](https://bugs.mojang.com/browse/MCPE-152935))
+-   Players are now able to interact with functional blocks while sneaking in a gap without the sneak button held
+
+## **Vanilla Parity**
+
+-   Fixed bug where Zombified Piglins would spawn in the Nether in light levels above 11
+-   Minecarts can now eject mobs into liquid blocks ([MCPE-120078](https://bugs.mojang.com/browse/MCPE-120078))
+
+## **Touch Controls**
+
+-   Allowed left and right D-pad buttons to keep input when the forward button is pressed
+-   Added the leave Boat button when the player falls from a height within in the boat.
+-   Fixed an issue that prevented players from removing equipped armor by tapping on an item or block in the Creative inventory ([MCPE-165790](https://bugs.mojang.com/browse/MCPE-165790))
+
+## **Performance and Stability**
+
+-   Fixed an issue where simultaneously pressing the "Mine" and "Place" button on any input device while targeting a Structure Block could cause the game to crash ([MCPE-155689](https://bugs.mojang.com/browse/MCPE-155689))
+
+## **Marketplace**
+
+-   Navigating right with controller left stick on sidebar now collapses it
+
+## **Commands**
+
+-   Removed support for field "data" in commands /clone, /execute, /fill, /setblock and /testforblock beyond version 1.19.70, eg. _/setblock ~ ~ ~ minecraft:wool 1_will only have its equivalent _/setblock ~ ~ ~ minecraft:wool \["color":"orange"\]_ supported
+-   Volume arguments no longer floor the selector's position ([MCPE-162237](https://bugs.mojang.com/browse/MCPE-162237))
+-   Selecting targets by volume will now select all entities whose hitbox collides with the volume box. This is versioned for 1.19.70 and later ([MCPE-162237](https://bugs.mojang.com/browse/MCPE-162237))
+-   Previous behavior works as expected on versions less than 1.19.70
+-   Volume arguments for selectors (dx, dy, dz) now support float values ([MCPE-163863](https://bugs.mojang.com/browse/MCPE-163863))
+

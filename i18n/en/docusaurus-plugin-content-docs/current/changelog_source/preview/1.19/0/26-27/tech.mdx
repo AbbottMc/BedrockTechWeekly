@@ -1,0 +1,36 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **JSON**
+
+-   Fixed an issue that caused weights to not be used for Music
+
+## **GameTest Framework (Experimental)**
+
+-   Updated the GameTest Framework interface to add read-only scoreboard support
+-   World
+    -   scoreboard : Scoreboard - Access world's scoreboard
+-   Entity
+    -   scoreboard : ScoreboardIdentity - Access the entities scoreboard identity
+-   Scoreboard - Object representing the scoreboard data
+    -   getObjective(objectiveId : String) : ScoreboardObjective - Method to get a specific objective (by id)
+    -   getObjectives : ScoreboardObjective\[\] - Method to get all objectives
+    -   getParticipants : ScoreboardIdentity\[\] - Method to get all scoreboard identities
+-   ScoreboardObjective - Object representing a scoreboard objective
+    -   id : String - (read-only) scoreboard identifier
+    -   displayName : String - (read-only) scoreboard display name
+    -   getParticipants : ScoreboardIdentity\[\] - Method to get all objective participant identities
+    -   getScores : ScoreboardScoreInfo\[\] - Method to get the score info for all participants
+    -   getScore(participant : ScoreboardIdentity) : Int - Method to get the score value of a participant
+-   ScoreboardIdentity - Object representing a scoreboard participant
+    -   type : ScoreboardIdentityType - (read-only) enum representing the type of identity
+    -   id : Int - (read-only) Unique identifier for the identity
+    -   displayName : String - (read-only) display name for the identity
+    -   getEntity : ScriptActor - get the ScriptActor handle associated with the identity
+-   ScoreboardIdentityType - Enum representing identity types : .Entity - An entity .FakePlayer - A fake identity .Player - A player
+-   ScoreboardScoreInfo - Score-Identity pair for an objective
+    -   participant : ScoreboardIdentity - (read-only) The participant
+    -   score : Int - (read-only) The score
+

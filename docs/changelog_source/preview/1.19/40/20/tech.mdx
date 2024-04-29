@@ -1,0 +1,33 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Data-Driven Items**
+
+-   Custom Items, tags and block tags now work correctly with minecraft:digger component ([MCPE-155786](https://bugs.mojang.com/browse/MCPE-155786))
+
+## **Actors**
+
+-   Implemented new "is\_baby" actor filter that returns true when the subject entity is a baby
+
+## **AI Goals**
+
+-   Fixed an issue with Iron Golems that prevented mobs with the "minecraft:take\_flower" AI behavior to use the goal
+-   Exposed new data parameters for the "minecraft:play" AI behavior to specify such things as the duration the goal stays active, the chance to start the goal, the range to search for a friend, and the follow distance to stay within when playing with a friend
+
+## **Entity Documentation**
+
+-   Fixed and updated documentation for entity events
+
+## **GameTest Framework (Experimental)**
+
+-   Entity
+    -   Updated _target_property to be read-only,
+    -   Fixed an issue where UI forms would not mark their _canceled_ field correctly
+-   Converted EntityQueryScoreOptions to an interface
+-   Converted EntityRaycastOptions to an interface
+-   Converted ExplosionOptions to an interface
+-   Converted MusicOptions to an interface
+-   Converted SoundOptions to an interface
+

@@ -1,0 +1,35 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Animation**
+
+-   Fixed a bug that caused animations to be restarted when changing render controllers
+
+## **Graphical**
+
+-   Fixed text on Signs losing their formatting when new lines or word-wrapping are encountered. Formatting will now persist until the reset code or an overriding code is found. This is not retroactive and previously created Signs will not be changed
+
+## **Graphics**
+
+-   As part of continued testing, removed RenderDragon engine on Android devices (ARMv7)
+
+## **Molang**
+
+-   Molang expressions that contain capital letters are properly evaluated now
+-   'query.get\_equipped\_item\_name' will now recognize Sea Lantern ([MCPE-67893](https://bugs.mojang.com/browse/MCPE-67893))
+-   Add new compile errors for expressions like 1 + (9 10), which were previously ignored (This is a Versioned Change as of engine version 1.17.40)
+
+## **GameTest Framework (Experimental)**
+
+-   Updated the GameTest Framework interface and added a new SimulatedPlayer capability:
+    -   Added 'SimulatedPlayer'class to GameTest. This class enables GameTest to simulate a variety of player behaviors such as movement, using items, and interacting with blocks and entities. See the [GameTest API](https://docs.microsoft.com/en-us/minecraft/creator/scriptapi/mojang-gametest/mojang-gametest) reference documentation for more details.
+        -   Added function spawnSimulatedPlayer(blockLocation: BlockLocation, name: string): SimulatedPlayer
+        -   Added function   
+            removeSimulatedPlayer(simulatedPlayer: SimulatedPlayer): void
+    -   mojang-gametest.Test type
+        -   Changed signature of function assertEntityInstancePresent(entity: Entity, blockLocation: BlockLocation, isPresent: boolean = true)
+    -   mojang-minecraft components
+        -   Component inventorynow works with Player inventories
+

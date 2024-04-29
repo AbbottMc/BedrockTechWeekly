@@ -1,0 +1,126 @@
+**Posted:** 4th March 2021
+
+**PLEASE READ before participating in the Minecraft Beta:** 
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft 
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them 
+-   Beta builds can be unstable and are not representative of final version quality 
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions 
+
+## **New Experimental Features:**
+
+In this week's beta we have some exciting new Caves and Cliffs features that are accessible by enabling the "Experimental Features" toggle on your worlds! (You can find out more about using the toggles at [aka.ms/MCExperimentalToggle](https://aka.ms/MCExperimentalToggle).)
+
+## **Please note:** The blending between the old generation and the new generation in this beta is not finalized yet. We want to make sure we respect players' old worlds being upgraded to the new world generation and are working hard to improve the biome blending for the full Caves and Cliffs release!
+
+You can leave us your feedback for these features in the threads at [aka.ms/CavesCliffsFeedback](https://aka.ms/CavesCliffsFeedback), and search and reports any new bugs you may encounter at [bugs.mojang.com](https://bugs.mojang.com/).
+
+![img_752.JPG](https://feedback.minecraft.net/hc/article_attachments/360088354971/img_752.JPG)
+
+## **Mountains**
+
+-   Introducing the new mountain sub biomes: Lofty Peaks, Snow Capped Peaks, Snowy Slopes, Mountain Grove, and Mountain Meadow!
+-   To accommodate the new Mountains we are raising the world height from 256 to 320 blocks with new Mountain generation up to a maximum of 256 blocks height
+-   For true alpinists: Iron, Coal and Emerald ores are generated in mountains
+-   Updated textures for Iron, Coal, Emerald, Diamond, Gold, Lapis, Copper, and Redstone ores
+-   Mountain terrain will now generate as part of Overworld world generation
+-   Move goat spawn from Extreme Hills to Snowy Slopes and allow rabbits to spawn in Mountain Grove
+
+## **Glow Squid**
+
+-   The glow squid has been reintroduced to the beta!
+-   Glow Squid now emits glow colored ink particles when hurt ([MCPE-117500](https://bugs.mojang.com/browse/MCPE-117500))
+-   Players can now use dye to color sign text
+-   Squid's model is no longer offset in the -Y direction ([MCPE-114253](https://bugs.mojang.com/browse/MCPE-114253))
+-   Added Glow Squid, Glow Ink Sacs and Glow Item Frames
+
+# **Bug Fixes**
+
+## **Dripstone Fixes:**
+
+-   Placing Pointed Dripstone blocks in water no longer results in the water being removed
+-   When hanging Pointed Dripstones start falling their position now has the correct offset
+-   Tweaked the visual shape of Pointed Dripstone to match Java
+-   Crouching while placing pointed dripstone prevents the opposing stalactite and stalagmite to merge
+-   Standing on a Stalagmite and jumping will cause half heart fall damage when landing
+-   Pointed Dripstone now has the correct hitbox
+-   Pointed Dripstone blocks are no longer destroyed by flowing lava
+-   Pointed Dripstone now has the correct size and rotation when held in hand
+-   Stalactite death message is no longer ending with a dot
+-   Falling stalactite now deals correct fall damage
+-   Pointed Dripstone drips only lava in the Nether ([MCPE-115393](https://bugs.mojang.com/browse/MCPE-115393))
+-   Being killed by dripstone now displays correct death message
+-   Correct sounds are now played for Dripstone and Pointed Dripstone blocks ([MCPE-115283](https://bugs.mojang.com/browse/MCPE-115283))
+-   Cauldrons can now fill up with water or lava when below stalactites that are dripping one of those liquids ([MCPE-115363](https://bugs.mojang.com/browse/MCPE-115363))
+-   Throwing a trident on a pointed dripstone block breaks it ([MCPE-115281](https://bugs.mojang.com/browse/MCPE-115281))
+-   Added Dripstone block. It can be crafted from four Pointed Dripstones
+
+## **Performance and Stability:**
+
+-   Fixed several crashes that could occur during gameplay
+-   Fixed a crash that could occur when trying to rename a map on anvil while having its second slot occupied ([MCPE-112905](https://bugs.mojang.com/browse/MCPE-112905))
+
+## **General:**
+
+-   Powder Snow can no longer be placed in positions that already contain other blocks, such as Fence Posts or Iron Bars
+-   Glow signs are no longer unlit on DX11 and Mobile platforms ([MCPE-117524](https://bugs.mojang.com/browse/MCPE-117524))
+-   Actor selectors no longer allow self selection with cheats disabled ([MCPE-92635](https://bugs.mojang.com/browse/MCPE-92635))
+-   Projectiles now pass through Structure Void blocks ([MCPE-103579](https://bugs.mojang.com/browse/MCPE-103579))
+-   Zombie, Zombie Villager, Husk, Pillager, Vindicator use correct bone to attach shields ([MCPE-98606](https://bugs.mojang.com/browse/MCPE-98606))
+-   Mobs that pick up Shield now place it to their off-hand
+-   Visitors now drop inventory on death ([MCPE-47563](https://bugs.mojang.com/browse/MCPE-47563))
+-   Improved placement rules for placing blocks on sides of Stair, Slab and Top Snow block
+-   Controllers are now able to select the "Button Mode" toggle in the Advanced Settings NPC screen in the Jurassic World pack ([MCPE-66446](https://bugs.mojang.com/browse/MCPE-66446))
+
+## **Commands**
+
+-   Command block in a command block chain will list the correct amount of ticking areas when a new ticking area is added before listing
+-   Title command no longer duplicates % symbols in message ([MCPE-51033](https://bugs.mojang.com/browse/MCPE-51033))
+-   Using teleport with execute command now uses the dimension of the origin for its operations ([MCPE-44104](https://bugs.mojang.com/browse/MCPE-44104))
+
+## **Marketplace**
+
+-   The "Results" field for search within the marketplace inventory now updates properly between different sections within the screen
+
+## **Accessibility**
+
+-   Enabled screen narration with touch input on the new achievements screen
+-   Fixed a bug where Text-to-speech read the wrong text while using VR
+
+## **Villages**
+
+-   Villagers are no longer able to go through walls to sleep in a bed if the bed is adjacent to them
+
+## **Technical Fixes and Changes**
+
+## **Various updates to GameTest Framework:**
+
+-   Updated Blocks shorthand helpers to be camelCase
+-   Updated Blocks shorthand to only include vanilla blocks
+-   Added Blocks.get to fetch a block and return null if it doesn't exist
+-   Added BlockStates to enumerate all block states
+-   Added setState to Block to update its block state
+-   Added BlockPos class
+-   Added ItemStack class GameTest Module:
+-   Added Tags to enumerate all built-in tags
+-   Updated all methods that took x, y, z position to take a BlockPos
+-   Exposed padding when registering game test
+-   Fixed issue where previous failed GameTest markers still show up in new worlds
+
+## **Movement prediction**
+
+-   Fixed projectiles on 3rd-party servers ignoring server movement packets
+-   The server will adjust the player's fall distance to take into account the client player's position when a player movement correction or anomaly is detected
+
+## **Other:**
+
+-   Changed the way GameTest packs are loaded. Additional files are referenced by the primary file as specified by the 'entry' field in the manifest.json
+-   A black screen no longer covers the player icon in the pause menu in some worlds. Content creators no longer need to override both focus\_border\_frame.png and pause\_screen\_border.png for correct behavior
+-   Assertion is changed to content log error for the missing textures caused by the outdated resource packs of the Marketplace world templates
+-   Items can now have the "transparentattachable" tag applied to make attachable items not render for the player wearing them in the first person perspective
+-   Fixed an issue where V2 Villagers were not properly updating their molang variables on initialization
+
+## **Network Packets**
+
+-   Changed cipher algorithm to AESGCM256 for UDP stream

@@ -1,0 +1,132 @@
+**Posted:** 18th March 2021
+
+**PLEASE READ before participating in the Minecraft Beta:** 
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft 
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them 
+-   Beta builds can be unstable and are not representative of final version quality 
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![lush2_1170_500.jpg](https://feedback.minecraft.net/hc/article_attachments/360089909011/lush2_1170_500.jpg)
+
+# New Experimental Features!
+
+In this week's beta we have some exciting new Caves and Cliffs features that are accessible by enabling the "Experimental Features" toggle on your worlds! (You can find out more about using the toggles at [aka.ms/MCExperimentalToggle](https://aka.ms/MCExperimentalToggle).)
+
+You can leave us your feedback for these features in the threads at [aka.ms/CavesCliffsFeedback](https://aka.ms/CavesCliffsFeedback), and search and reports any new bugs you may encounter at [bugs.mojang.com](https://bugs.mojang.com/).
+
+## **World Generation Changes**
+
+-   Generation range and build limits have been expanded by 64 blocks up and 64 blocks down, to a total range of 384 blocks
+-   Underground features, structures, and caves generate all the way down to y -64
+
+## **New Lush Cave Blocks!**
+
+Please note: We have added several new blocks that will generate in the lush caves - but the caves themselves will not be generated in the world yet!
+
+-   Added Spore Blossom block
+-   Introducing Moss Block and Moss Carpet
+    -   Random vegetation can grow on Moss Blocks when they are fertilized
+    -   Moss Carpet is a Lush Caves vegetation that looks like wool carpets
+    -   The Hoe is the most efficient tool to dig Moss Blocks and moss carpets
+-   Added Azalea and Flowering Azalea blocks
+-   Adding Cave Vines:
+    -   Use Glow Berries to place Cave Vines on the underside of other blocks
+    -   Cave Vines have a random chance of growing from time to time
+    -   When Cave Vines grow, they have a chance of containing Glow Berries
+    -   Interacting with a Cave Vine that has Glow Berries results in the Glow Berries popping
+    -   When a Cave Vine that doesn't have Glow Berries is fertilized, it gets Glow Berries
+    -   A Cave Vine block that has Glow Berries emits light
+    -   Cave Vines are climbable
+-   Introducing Glow Berries:
+    -   Use them to lure and breed foxes
+    -   They can be eaten and are as nutritious as sweet berries
+    -   Glow Berries can also be planted on the bottom of most solid, cube-shaped blocks to place cave vines underneath them
+-   Added the following blocks:
+    -   Azalea Leaves
+    -   Flowered Azalea Leaves
+    -   Rooted Dirt
+    -   Moss
+    -   Hanging Roots
+    -   Spore Blossom
+    -   Glow Berries
+    -   Cave Vines
+    -   Big Dripleaf
+-   Moss Carpet is a carpet-like block made out of moss
+-   Bonemeal rooted dirt gives hanging roots below
+-   Tilling rooted dirt with a hoe turns block to dirt and pop out a roots item
+-   Azalea and Flowering Azalea can now be used as furnace fuel
+-   Added Dripleaf Blocks
+-   Big Dripleaf Block is a platforming block in Lush Caves. Entities on top of the block will cause the block to tilt, and drop the entity
+-   Small Dripleaf Block is a decorative block in Lush Caves. Bone-mealing it creates a Big Dripleaf Block
+
+# Bug Fixes and Tweaks
+
+## **Copper and Lightning Rod**
+
+-   Copper ore Block textures are oriented correctly ([MCPE-116068](https://bugs.mojang.com/browse/MCPE-116068))
+-   Copper Ingots can now only be crafted from unoxidized copper blocks on the crafting table ([MCPE-116091](https://bugs.mojang.com/browse/MCPE-116091))
+-   The block state ambiguity concerning the states 'dripstone\_thickness' and 'copper\_oxidation' is resolved ([MCPE-116756](https://bugs.mojang.com/browse/MCPE-116756))
+-   Copper Blocks, Slabs, and Stairs are registered using separate BlockIDs ([MCPE-116754](https://bugs.mojang.com/browse/MCPE-116754))
+-   Sound of walking/running on Copper blocks is now assigned to 'Players' audio category
+-   Waxed Copper blocks can now be cut in Stonecutter
+-   Weathered Cut Copper Block cannot be cut into slabs in Stonecutter has been resolved
+-   Crafting Slabs from Copper blocks in a Stonecutter will now yield two slabs
+-   Copper Blocks, Stairs, and Slabs now have correct map colors
+-   Lightning strikes target entities and blocks in the same priority order as Java
+-   Copper Oxidation now using Random Tick to change state, parity with Java
+-   Stonecutter can be used to get cut, slab, and stair variants using Copper Block or Cut Copper Block
+-   Right clicking on Copper while holding an Axe will de-wax copper, scraping off patina one step at a time
+-   Waxed copper block variants cannot be de-waxed using furnaces or blast furnaces
+-   Particles get emitted around Copper Block when:
+
+-   Waxed by the player
+-   Waxed by a dispenser
+-   Waxing off by player
+-   Scraping off patina layer
+-   Hit by lightning
+
+-   Lightning Rods struck by lightning will decrement the oxidation age of nearby copper blocks
+-   Leaves surrounded by blocks no longer turn opaque when a lightning rod is placed on top of them ([MCPE-116256](https://bugs.mojang.com/browse/MCPE-116256))
+-   Lightning Rods no longer connect to fences or walls ([MCPE-116150](https://bugs.mojang.com/browse/MCPE-116150))
+-   Lightning Rods are now waterloggable, which in turn solves a culling issue with water ([MCPE-116541](https://bugs.mojang.com/browse/MCPE-116541))
+-   The lightning rod emits particles during a thunder storm if there is nothing above it
+-   Players can interact with other blocks when holding a Lightning Rod in hand ([MCPE-116074](https://bugs.mojang.com/browse/MCPE-116074))
+
+## **General**
+
+-   Sign Text is no longer invisible on older worlds ([MCPE-119628](https://bugs.mojang.com/browse/MCPE-119628))
+-   Ink Sacs and Dyes now make sounds when used on signs ([MCPE-117944](https://bugs.mojang.com/browse/MCPE-117944))
+-   Selecting featured offer on Profile Screen will properly redirect user to complete list of featured offers
+-   Fixed non-guest split-screen players' lost data on Xbox ([MCPE-55815](https://bugs.mojang.com/browse/MCPE-55815))
+-   Made the sign-in buttons text fit the button in Portuguese-BR
+-   Use lighter color for text in Storage menu on Settings screen
+-   Fixed an issue where button textures were scaled wrong when applying Resource Packs
+-   Enabled navigating to the back button using only keyboard in some screens where it was not possible
+-   Fixed bug where switching between profile causes all other previewed profiles to be overridden by the initial one
+-   /clear command will apply the correct "data" argument for the sapling item ([MCPE-117889](https://bugs.mojang.com/browse/MCPE-117889))
+-   /clear command will no longer remove an additional item from player's off-hand slot ([MCPE-116857](https://bugs.mojang.com/browse/MCPE-116857))
+-   Fixed a bug where if the view bobbing setting was disabled the player's hand would still bob ([MCPE-79380](https://bugs.mojang.com/browse/MCPE-79380))
+-   Fixed HudCursor not rendering inverted colors ([MCPE-58826](https://bugs.mojang.com/browse/MCPE-58826))
+-   Piston and Sticky Piston are no longer appear black when Outline Selection is disabled ([MCPE-53858](https://bugs.mojang.com/browse/MCPE-53858))
+-   Fixed fog in Nether biomes not rendering properly in some resource packs ([MCPE-111680](https://bugs.mojang.com/browse/MCPE-111680))
+-   Glitchy lines are no longer visible on Signs with text ([MCPE-110321](https://bugs.mojang.com/browse/MCPE-110321))
+-   Fixed barrier bug where non full blocks were flashing due to barrier not writing the depth ([MCPE-116767](https://bugs.mojang.com/browse/MCPE-116767))
+-   Non-persistent mobs no longer despawn immediately after loading into the Nether
+-   Drowned will now swing their arm when throwing tridents
+-   Fixed crash when entering a Nether Portal and throwing a Bottle o' Enchanting at the same time ([MCPE-114793](https://bugs.mojang.com/browse/MCPE-114793))
+
+## **Character Creator**
+
+-   Steve pants no longer color the bottom of appearance's feet when no footwear is equipped
+-   Users in multiplayer games should no longer see other players using pieces on their appearance that they do not own as Steve
+-   Changing skins while in splitscreen should now properly save for all local users and update properly for remote users
+-   Alex shirt no longer looks corrupted when equipped with different pants
+-   "Hooray!" emote will now display in the emotes section if already owned ([MCPE-111165](https://bugs.mojang.com/browse/MCPE-111165))
+
+## **VR**
+
+-   The death screen is now visible when behind full-screen effects (on fire, standing in a portal, etc) in VR
+-   Fixed translucent rendering of occluded UI elements, including when viewing menus near blocks
+-   Item aliases do not show up in autocomplete for duplicate items but commands can still succeed if the user runs the command with aliases

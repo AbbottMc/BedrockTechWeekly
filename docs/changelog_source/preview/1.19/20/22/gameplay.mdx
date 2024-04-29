@@ -1,0 +1,125 @@
+**Posted:** 13th July 2022
+
+## **Information on the Minecraft Preview and Beta:** 
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions 
+
+![A Minecraft screenshot showing allays and bees flying near bamboo](https://feedback.minecraft.net/hc/article_attachments/7647827631117/beta19U2_2_1600x900.jpg)
+
+Here's a list of what is new in this week's Minecraft Preview and Beta! As always, please search and report any bugs you may find at [bugs.mojang.com](http://bugs.mojang.com/) and send us [your feedback](https://aka.ms/MinecraftBetaFeedback).
+
+# **Features and Bug Fixes**
+
+### **Spectator Mode (Experimental)**
+
+-   Removed emotes functionality while in Spectator Mode
+-   Spectators’ heads are now properly rendered as semi-transparent
+-   Character Creator head items (hats, hoods, helmets, etc.) are now properly rendered semi-transparent while in Spectator mode
+-   Capes and animated back items are no longer rendered while in Spectator mode ([MCPE-156929](https://bugs.mojang.com/browse/MCPE-156929))
+-   Spectators can no longer use or get affected by portals ([MCPE-156684](https://bugs.mojang.com/browse/MCPE-156684))
+
+## **Allay**
+
+-   Allays can now pick up and drop items at their owner when in a Boat ([MCPE-156183](https://bugs.mojang.com/browse/MCPE-156183))
+-   Allay can now always pick up dropped Scaffolding blocks ([MCPE-157512](https://bugs.mojang.com/browse/MCPE-157512))
+-   Allay now correctly stops dancing when music from Jukebox ends
+-   Allays now look at targets such as players ([MCPE-158222](https://bugs.mojang.com/browse/MCPE-158222))
+
+## **Blocks**
+
+-   Bells can no longer catch on fire or be destroyed by fire
+-   Sculk Catalysts now play the blooming sound effect when blooming ([MCPE-153562](https://bugs.mojang.com/browse/MCPE-153562))
+-   Sculk Catalysts do not spread Sculk anymore on players' death if the Keep Inventory gamerule is set to True ([MCPE-157884](https://bugs.mojang.com/browse/MCPE-157884))
+-   Sculk Catalysts do not get covered in Sculk Veins anymore if a mob dies on top of them
+
+## **Commands**
+
+-   Improved the performance of the locate biome command to mitigate stalls on the server while searching for a biome that is far away ([MCPE-157609](https://bugs.mojang.com/browse/MCPE-157609))
+
+## **Deep Dark**
+
+### **Ancient Cities**
+
+-   The secret door that leads to the Redstone room in the center of an Ancient City now opens/closes properly ([MCPE-156718](https://bugs.mojang.com/browse/MCPE-156718))
+
+## **EDU**
+
+-   Fixed a crash that occurred when swapping inputs to the Material Reducer by disabling input swapping. Players must now remove input before adding new input
+
+## **Fireball Entity**
+
+-   Modified the _json_ entity file so that it also contains projectile damage in addition to the explosion and fire damage ([MCPE-153740](https://bugs.mojang.com/browse/MCPE-153740))
+
+## **Gameplay**
+
+-   Fixed x-ray vision when Top Snow falls on top of player so it now behaves as a solid block when Top Snow covers player's vision ([MCPE-150709](https://bugs.mojang.com/browse/MCPE-150709))
+
+## **General**
+
+-   Fixed the Add Server feature not saving IPV6 addresses ([MCPE-66233](https://bugs.mojang.com/browse/MCPE-66233))
+
+## **Items**
+
+-   Lava in Buckets will no longer disappear when failing to be placed or dispensed into partial blocks ([MCPE-50664](https://bugs.mojang.com/browse/MCPE-50664))
+-   Items with the _item\_lock_component can no longer be placed in Item Frames or Armor Stands ([MCPE-138479](https://bugs.mojang.com/browse/MCPE-138479))
+-   Fixed an issue where some items with durability would fail to be created from the Creative inventory
+
+## **Marketplace**
+
+-   Implemented new Marketplace error screen art and messaging
+
+## **Mobile Controls**
+
+-   Fixed an issue where players were not able to hover over UI elements inside a scroll view if a portion of it fell outside of the view when using mouse + keyboard on iOS. This was a result of the scroll view auto focusing onto the nearest non-clipped element
+-   Fixed a crash that could occur when a connected devices, like gamepads, were missing
+
+## **Mobs**
+
+-   Allays and Bees no longer get stuck in non-full blocks ([MCPE-155777](https://bugs.mojang.com/browse/MCPE-155777))
+-   Fish do not shake anymore when placed in an isolated water block
+-   Fixed a bug that caused Wolves to spawn red when summoned with _entity\_born_ or _on\_tame_ events
+-   Fixed an issue where enchantments on ranged weapons on mobs were not being applied ([MCPE-113623](https://bugs.mojang.com/browse/MCPE-113623))
+
+### **Witch**
+
+-   Fixed a bug that could cause Witches to stop spawning. The Witch Hut structure is now set as a surface spawner for Witches ([MCPE-60552](https://bugs.mojang.com/browse/MCPE-60552))
+
+## **Performance and Stability**
+
+-   Fixed a crash that was caused by a Villager changing its profession while trading. The Trade screen will now close if the Villager changes professions mid trade
+
+## **Sculk Sensor**
+
+-   Sculk Sensors can now also detect Bees, Chickens, Allays, Phantoms, and Ender Dragons flying ([MCPE-153725](https://bugs.mojang.com/browse/MCPE-153725), [MCPE-154055](https://bugs.mojang.com/browse/MCPE-154055))
+-   Sculk Sensors can now emit the whole range of Redstone signal strengths, based on the distance a vibration has been emitted at. Previously, the output was either 1, 15 or even
+-   Vibration particles are now always oriented towards the target Sculk Sensor ([MCPE-156648](https://bugs.mojang.com/browse/MCPE-156648))
+
+## **Stability and Performance**
+
+-   Timeout when connecting to a multiplayer game has been reduced from 180 to 90 seconds
+-   Fixed a crash that could occur when Pistons were extending or retracting near moveable blocks and Arrows
+
+## **User Interface**
+
+-   Hover text for _can\_place\_on_ blocks for items in inventory is now in a consistent order between game saves ([MCPE-153516](https://bugs.mojang.com/browse/MCPE-153516))
+-   Removed the controller settings tab for Oculus
+
+## **Vanilla Parity**
+
+-   Sounds of the Smithing Table when a Villager is working are now the same as sounds when the player uses the table ([MCPE-79716](https://bugs.mojang.com/browse/MCPE-79716))
+-   Fixed volume level of Amethyst step chime sound when walked on by a mob
+
+### **Blocks**
+
+-   Amethyst Block has been renamed to "Block of Amethyst" ([MCPE-125821](https://bugs.mojang.com/browse/MCPE-125821))
+
+### **Mobs**
+
+-   The Ender Dragon can no longer destroy Crying Obsidian, Respawn Anchor, Light, Deny, Allow, Border, and Jigsaw blocks ([MCPE-158343](https://bugs.mojang.com/browse/MCPE-158343))
+
+### **Sculk Sensor**
+
+-   Sculk Sensors no longer detect Boats staying still in water ([MCPE-155368](https://bugs.mojang.com/browse/MCPE-155368))
+

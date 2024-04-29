@@ -1,0 +1,51 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Actor Properties**
+
+-   Actor Properties are no longer experimental (this includes Molang queries and property filters, but not Permutations)
+
+## **Add-Ons and Script Engine**
+
+-   Fixed an issue where changing the subpack of Resource Packs that have subpacks, would not apply changes until the game was restarted ([MCPE-162002](https://bugs.mojang.com/browse/MCPE-162002))
+
+## **AI Goals**
+
+-   Exposed new data parameters for the "minecraft:offer\_flower" AI behaviour to specify such things as the time that the mob offers the flower for, the chance that the goal will start, and the dimensions of the AABB used to search for a mob to offer a flower to
+-   The "minecraft:offer\_flower" AI behavior can now be used by any mob, not just the Iron Golem
+-   The "minecraft:offer\_flower" AI behavior will now search through all mobs in the specified range rather than just the closest one, meaning that this goal has the potential to be used more consistently than before
+-   Exposed new data parameters for the "minecraft:take\_flower" AI behavior to specify such things as the conditions to be met to start the goal, the min and max wait times before taking the flower, and the dimensions of the AABB used to search for a mob to take a flower from
+-   The "minecraft:take\_flower" AI behavior can now be used by any mob, not just baby Villagers
+
+## **Stability and Performance**
+
+-   Fixed a crash that would occur if Education Edition items were rendered without the Education Edition toggle turned on ([MCPE-161587](https://bugs.mojang.com/browse/MCPE-161587))
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **Commands**
+
+-   As a preview of upcoming potential changes to how commands run, new experimental functionality within the Upcoming Creator Features experiment causes all command execution to run at the end of the current tick
+
+## **General**
+
+-   Removed the functionality of the 'minecraft:breathability' component. Component will have no effect on the custom defined block
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Known Issues**
+
+-   We have a known issue in this Preview update that may cause a crash when travelling through portals in multiplayer. We are working on a fix for this and hope to have it addressed as soon as possible, thank you for your patience!

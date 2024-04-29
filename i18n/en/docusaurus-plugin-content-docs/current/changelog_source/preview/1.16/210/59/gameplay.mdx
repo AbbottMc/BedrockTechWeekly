@@ -1,0 +1,83 @@
+**Posted:** 11 February, 2021
+
+**PLEASE READ before participating in the Minecraft Beta:**
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them
+-   Beta builds can be unstable and are not representative of final version quality
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+## **New Experimental Features:** 
+
+In this week's beta we have some more exciting new Caves and Cliffs features, that are accessible by enabling the "Experimental Features" toggle on your worlds. (You can find out more about using the toggles at [aka.ms/MCExperimentalToggle](https://aka.ms/MCExperimentalToggle).) Please remember these features are not yet complete as they are work in progress. You can leave us your feedback for these features in the threads at [aka.ms/CavesCliffsFeedback](https://aka.ms/CavesCliffsFeedback), and search and reports any new bugs you may encounter at [bugs.mojang.com](https://bugs.mojang.com/).  
+
+![glow_squid1.gif](https://feedback.minecraft.net/hc/article_attachments/360085784972/glow_squid1.gif)
+
+## **Glow Squid** 
+
+-   Glow squid do not spawn naturally in the world yet, but can be spawned using a spawn egg  
+-   When killed, glow squid will drop glow ink sacs 
+
+## **Glow Item Frame** 
+
+-   Craft a glow item frame by combining a glow ink sac with an item frame in a crafting table. Any item in a glow item frame is perfectly illuminated, even at night!  
+
+## **Other Changes** 
+
+-   Players can now use dye to colour sign text  
+-   Use a glow ink sac on signs to make the text glow! 
+-   Use a regular ink sac to remove the glow effect  
+
+## **Ray Tracing** 
+
+-   As of version 1.16.200, ray tracing is now available on Windows 10 devices with compatible hardware. If you were enrolled in the RTX beta, you are now enrolled in the standard Minecraft beta and will continue to receive the latest beta version, including ray tracing features.  
+
+## **Bug Fixes** 
+
+## **Accessibility** 
+
+-   The screen reader now announces the names of the A/B Button Swap and X/Y Button Swap options correctly  
+-   Fixed an issue where the screen reader would intermittently fail to announce some button names  
+
+## **Performance and Stability** 
+
+-   Fixed a number of crashes that could occur during gameplay 
+-   Fixed a crash that could occur when leaving a world  
+-   Fixed a crash that occasionally occurred on dedicated servers around villages ([BDS-10666](https://bugs.mojang.com/browse/BDS-10666))  
+-   Fixed a crashing issue related to corrupted biomes during world load for various Marketplace worlds     
+
+## **General** 
+
+-   Command blocks no longer censor numbers ([MCPE-106296](https://bugs.mojang.com/browse/MCPE-106296))  
+-   Fixed inability to resume mining with touch controls after being interrupted ([MCPE-115507](https://bugs.mojang.com/browse/MCPE-115507))  
+-   Fixed an issue where crafting a bed with the recipe book unlocked the "Change of Sheets" trophy  
+-   Minecarts now properly update their effects (looping sound, player coordinates) when the minecart is not being rendered for the rider ([MCPE\-104044](https://bugs.mojang.com/browse/MCPE-104044))  
+-   Fixed Skin Preview navigation when using a controller  
+-   Fixed arrows getting stuck in the air after hitting a player with high latency  
+-   Fixed template tabs overlapping in Create New menu  
+-   Fixed missing Incompatible button on the Marketplace Inventory screen  
+-   Fixed an issue that allowed in-game patch notes to show more than once  
+-   Fixed some interface issues with scrolling and clearing store filters  
+
+## **Graphics** 
+
+-   Fog once again correctly displays in the Nether ([MCPE-111680](https://bugs.mojang.com/browse/MCPE-111680))   
+
+## **Cloud Storage (Xbox)** 
+
+-   Resolved an issue where, in certain cases, a world could not be properly synced to the cloud (Xbox only). If you are having trouble syncing worlds, please try opening the world on the original Xbox, save/quit, then wait a few moments while the world is re-synced into the cloud  
+
+## **Technical** **Fixes and** **Changes** 
+
+-   Fixed an issue with animating structures when chunks were unloaded and the animation not continuing  
+-   Attachable items created in 1.16.2 and before will not render for their player in first person. Attachable items created after 1.16.2 will render for their player in first person unless they are armor 
+-   Custom blocks now can only drop default state when broken, even with Silk Touch  
+-   Fixed validation of 'render\_offset' as string in component item JSON schema  
+-   The '/schedule' command will once again execute from the entity it originated from if the area was already loaded
+
+## **Bedrock Dedicated Server**
+
+-   On server side, added protection from semicolon usage in server-name parameter in 'server.properties' config file. If semicolon symbol(s) are used by the user in server-name parameter then any semicolon(s) will be removed to provide correct client-server interactions. Additional comments are added to 'server.properties', which are not allow to use semicolon symbol(s) in server-name parameter 
+-   On server side , added protection from semicolon and symbols illegal for file name usage in level-name parameter in 'server.properties' config file. If semicolon or symbols illegal for file name are used by user in level-name parameter then those symbols will be removed to provide correct client-server interactions and correct level-name parameter usage on server side. Additional comments are added to 'server.properties', which are not allow semicolon or symbols illegal for file name usage in level-name parameter 
+-   On client side, added additional verification and correction for Unconnected Pong packet data to prevent incorrect server parameters parsing and inability of the client to connect to the server as result of that. Unit-tests are added for parsing, additional verification and correction of Unconnected Pong packet data ([BDS-6825](https://bugs.mojang.com/browse/BDS-6825))

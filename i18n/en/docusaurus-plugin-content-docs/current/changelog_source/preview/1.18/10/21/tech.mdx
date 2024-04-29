@@ -1,0 +1,53 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Stability and Performance**
+
+-   Improved performance when executing commands
+
+## **Animation**
+
+-   Fixed an issue where animation controller events defined in the default state would get skipped if the controller immediately transitioned to another state (This is a versioned change that will only be applied for animation controllers starting at format\_version 1.18.10)
+
+## **Commands**
+
+-   Order of function calls triggered by /execute inside a function are now consistent ([MCPE-111849](https://bugs.mojang.com/browse/MCPE-111849))
+-   Added /loot command with spawn loot overload
+
+## **JumpToBlockGoal**
+
+-   JumpToBlockGoal can no longer be used when the mob is in water
+
+# **Experimental Features**
+
+## **GameTest Framework**
+
+### **mojang-minecraft**
+
+-   World
+    -   Added blockBreak and blockPlace events, which are called when a player breaks or places a block in the world
+-   BlockExplodeEvent
+    -   Renamed destroyedBlock to block
+-   Player
+    -   Added method startItemCooldown(itemCategory : string, durationTicks : int) - Starts or resets a cooldown on an item category (e.g., ender\_pearl) for the given duration in ticks
+    -   Added method getItemCooldown(itemCategory : string) - Returns the remaining duration in ticks that this player has of the given item category. If no cooldown is present, returns 0.
+-   ItemCooldownComponent
+    -   Added ItemCooldownComponent (item.getComponent("minecraft:cooldown"))
+    -   Read-only property cooldownCategory : string - Represents the cooldown category of this item.
+    -   Read-only property cooldownTicks : int - Represents the cooldown time in ticks for this item if cooldown is enabled
+    -   method startCooldown(player : Player) - Starts or resets a cooldown for this item on the given player if cooldown is enabled for this item
+-   ItemType
+    -   Removed getName method and added read-only property .id
+
+### **mojang-gametest**
+
+-   Test
+    -   Added gameMode: GameModeparameter to spawnSimulatedPlayer method
+-   SimulatedPlayer
+    -   Renamed destroyBlockto breakBlock
+    -   Renamed stopDestroyingBlockto stopBreakingBlock
+    -   Removed selectSlot method
+    -   Added property selectedSlot : int - Gets or sets the currently selected hotbar slot for the player
+

@@ -1,0 +1,90 @@
+**Posted:** 3 March 2022
+
+## Information on the Minecraft Preview and Beta: 
+
+-   Preview Version: 1.18.30.21 | Beta Version: 1.18.30.20
+-   While the version numbers between Preview and Beta are different, there is no difference in game content
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Xbox, Windows 10/11, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A Minecraft Village scene with armour stands](https://feedback.minecraft.net/hc/article_attachments/4577434378125/beta18U3_1_16x9_resized.jpg)
+
+There is a lot of preparation that goes into any move. You need to make sure that there’s enough space for the furniture you want to bring in, make room for new pieces, and make sure that the lighting is always at its most flattering. Luckily, this move is going quite smoothly. I can still move quickly and most importantly, loudly, because we are only bringing in Sculk blocks at this stage and don’t need to worry about waking the Warden yet. So take the opportunity to get familiar with the Sculk block family in peace thanks to this Beta. But don’t get too comfortable. The Warden will be joining the Deep Dark eventually. Here's a list of what is new in this week's beta! As always please search and report any bugs you may find at [bugs.mojang.com](http://bugs.mojang.com/).
+
+# **Experimental Features**
+
+### **Deep Dark**
+
+-   Implemented Shrieker tweaks in preparation for the Warden, which will be added at a later date!
+    -   Sculk Shrieker now listens to Sculk Sensor tendril clicking
+    -   The threat level which will cause the Warden to spawn in the future now decreases over time
+
+# **Non-Experimental Features and Bug Fixes**
+
+## **Stability and Performance**
+
+-   Fixed several crashes that could occur during gameplay
+-   Fixed possible crashes on Android when suspending or resuming the app
+
+## **Gameplay**
+
+-   Vertical field of view is no longer halved in horizontal split screen, making items such as Book & Quill easier to view when playing in split screen
+-   Tweaked surrounding terrain for structures such as Villages during world generation ([MCPE-145659](https://bugs.mojang.com/browse/MCPE-145659))
+-   TNT no longer disappears when ignited with the 'TNT Explodes' game rule disabled and the 'Fire Spreads' game rule enabled ([MCPE-82485](https://bugs.mojang.com/browse/MCPE-82485))
+-   Gravity affected blocks now fall on Top Snow when placed above it instead of hovering over it ([MCPE-151407](https://bugs.mojang.com/browse/MCPE-151407))
+
+## **Vanilla Parity**
+
+-   Players flying in Creative mode are no longer pushed by liquid current ([MCPE-84592](https://bugs.mojang.com/browse/MCPE-84592))
+-   Farmer Villagers can now use Bone Meal on crops and can turn excess Seeds into Bone Meal at their Composter ([MCPE-74079](https://bugs.mojang.com/browse/MCPE-74079))
+-   Protection Enchantment now properly works on most damage types ([MCPE-40651](https://bugs.mojang.com/browse/MCPE-40651))
+-   Fixed a desync issue that could sometimes cause health to regenerate only visually
+-   Landing on a Stalagmite is now properly considered fall damage ([MCPE-151192](https://bugs.mojang.com/browse/MCPE-151192))
+-   Fixed some issues in where damage invulnerability wasn't properly being applied
+-   Fixed an issue where the Protection enchantments mitigated too much damage. This has been changed to match Java Edition ([MCPE-113191](https://bugs.mojang.com/browse/MCPE-113191))
+-   Absorption Hearts no longer stay yellow while under the Wither effect ([MCPE-131852](https://bugs.mojang.com/browse/MCPE-131852))
+-   Added armor toughness
+-   Diamond Armor and Netherite Armor now have a toughness value of 2 and 3 respectively
+-   Tweaked armor reduction calculation to account for toughness
+-   Netherite Armor will now reduce more damage than Diamond Armor
+-   Lowered the amount of knockback resistance granted by Netherite Armor ([MCPE-109408](https://bugs.mojang.com/browse/MCPE-109408))
+-   Punching deals less damage now, to better match the Java Edition ([MCPE-152713](https://bugs.mojang.com/browse/MCPE-152713))
+
+## **Graphical**
+
+-   Fixed a bug in the Glow Squid's texture where the glow map in the alpha channel was incorrect, causing patches of non-glowing texture to be seen ([MCPE-117507](https://bugs.mojang.com/browse/MCPE-117507))
+-   Fixed the crosshair disappearing when Outline Selection for blocks is disabled
+-   Players that are on fire now render fire in front of the player on the inventory screen regardless of in-game camera perspective ([MCPE-147777](https://bugs.mojang.com/browse/MCPE-147777))
+-   Fixed a highlight effect on Leather Armor appearing on paperdolls ([MCPE-75321](https://bugs.mojang.com/browse/MCPE-75321))
+
+## **Items**
+
+-   Bucket of Tropical Fish no longer displays the incorrect name after catching a fish
+
+## **Marketplace**
+
+-   The skin equip warning prompt once again appears when equipping a skin from a product page
+
+## **Mobs**
+
+-   The Ravager now targets and attacks the Wandering Trader ([MCPE-44606](https://bugs.mojang.com/browse/MCPE-44606))
+-   Mobs spawned from a Dispenser are now persistent ([MCPE-110521](https://bugs.mojang.com/browse/MCPE-110521))
+-   Shulkers no longer like to occupy the same block as another Shulker ([MCPE-43972](https://bugs.mojang.com/browse/MCPE-43972))
+-   Shulkers now prioritize attaching to neighboring block faces before trying to teleport away
+-   Shulkers now stay attached to the current attached blockface if it is valid, instead of switching to upright position
+
+## **User Interface**
+
+-   Fixed text in certain languages not being correctly rendered in the new Create New World screen ([MCPE-151948](https://bugs.mojang.com/browse/MCPE-151948))
+
+### **Villagers**
+
+-   Cartographers now always unlock Woodland Explorer Map trade ([MCPE-152725](https://bugs.mojang.com/browse/MCPE-152725))
+
+## **Commands**
+
+-   Correct error output is now displayed when attempting to use the /loot spawn command passing in the position of an unloaded area and there is 0 loot to drop
+-   Added '/loot ' command insert loot and insert kill overload
+-   Title commands fired before a client was done joining will now show instead of being ignored
+

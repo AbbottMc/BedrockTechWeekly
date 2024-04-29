@@ -1,0 +1,44 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Commands**
+
+-   Order of function calls triggered by '/execute' inside a function are now consistent ([MCPE-111849](https://bugs.mojang.com/browse/MCPE-111849))
+
+## **General**
+
+-   Added caching support for subchunk requests and fixed issues with holes in the terrain
+-   Fixed a rendering error that could occur when attempting to render a Vanilla mob in a base game version prior to the version that mob was introduced through JSON files
+-   Most content errors and warnings will now only display once per world ([MCPE-135153](https://bugs.mojang.com/browse/MCPE-135153))
+
+## **Item Scripting**
+
+Implemented first past of Item Script Components
+
+-   ItemStack
+    -   Exposed interfaces for accessing script-enabled ItemComponents on ItemStack
+    -   hasComponent(componentId: string) - returns true if the ItemStack has the component \[componentId\] attached to it
+    -   getComponent(componentId: string) - returns a handle to the component attached to this ItemStack. Returns an undefined handle if the component does not exist or if the component is yet to be exposed to script
+    -   getComponents() - returns an array of all attached script-enabled components on this ItemStack
+-   NumberRange
+    -   A class to describe a random value between a min and max number
+    -   Property min - the minimum value in the range
+    -   Property max - the maximum value in the range
+    -   next() - returns a random number between min and max
+-   Items Registry
+    -   Added Items registry class to get all Items by name
+    -   get(itemId: string) - returns a handle to an ItemType if a type by the given name exists
+-   Script enabled Item components
+    -   minecraft:food
+        -   Read-only property nutrition - number that describes how much nutrition this food item gives the player when eaten
+        -   Read-only property saturationModifier - number that is the saturation modifier used to apply the saturation buff when eaten
+        -   Read-only property canAlwaysEat - if true the player can always eat this item (even when not hungry)
+        -   Read-only property usingConvertsTo - string name of the Item this will be converted to when eaten. If empty, the item will not convert to anything else
+    -   minecraft:durability
+        -   Read-only property maxDurability - the number amount of damage this item can take before breaking
+        -   Read-only property damageRange - a NumberRange describing the chance of the item losing durability
+        -   Property damage - gets or sets the current damage on the ItemStack
+    -   getDamageChance(unbreaking: number = 0) - gets the maximum chance that this item would be damaged using the damageRange property if given an unbreaking level. Incoming unbreaking parameter must be greater than 0
+

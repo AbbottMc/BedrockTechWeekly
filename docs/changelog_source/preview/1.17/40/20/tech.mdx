@@ -1,0 +1,74 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Data Driven Items**
+
+-   Updated documentation for Block Rotation Component
+-   Added required toggles to documentation and to content error for block components
+
+## **Commands**
+
+-   Command blocks with 'Needs Redstone' and a non-zero 'Delay in Ticks' will now execute only if they remain powered for the delay duration ([MCPE-74281](https://bugs.mojang.com/browse/MCPE-74281))
+-   Fix alignment of the sidebar display from the /scoreboard command when text length changes
+
+## **Data Driven Blocks**
+
+-   Updated documentation for BlockExplosionResistance
+
+## **Graphics**
+
+-   Fixed failure to render leash when attached to a mob outside of viewport ([MCPE-63931](https://bugs.mojang.com/browse/MCPE-63931))
+-   Added a content error for using a material but not providing the required number of textures to the render controller
+-   Testing RenderDragon engine across subset of Android devices (ARMv7)
+
+## **Mobs**
+
+-   Fixed ability to summon experience orbs via /summon command ([MCPE-130835](https://bugs.mojang.com/browse/MCPE-130835))
+-   Fixed display only entity destruction in chunk discard scenarios
+
+## **Molang**
+
+-   Fixed query.item\_remaining\_use\_duration having improperly scaled or inverted results (This fix is a Versioned Change as of engine version 1.17.30)
+-   Add new compile errors for expressions like 'text' + 3, which were previously ignored (This is a Versioned Change as of engine version 1.17.40)
+
+## **User Interface**
+
+-   Added an ImGUI window for easier viewing of content errors
+
+## **GameTest Framework (Experimental)**
+
+-   Renamed method succeedWhenBlockTypePresent to succeedWhenBlockPresent
+-   Fixed a bug where property idwould return "Unknown" for custom entities ([MCPE-137786](https://bugs.mojang.com/browse/MCPE-137786))
+-   Identifier strings returned from property idnow include the item's namespace
+
+     **GameTestSequence**
+
+-   Removed method thenWaitWithDelay
+-   Added method thenWaitAfter(delayTicks: number, callback: () =\> undefined) - After a delay, executes the given callback every tick until it succeeds. Exceptions thrown within the callback will end sequence execution
+
+## **Player**
+
+-   Fixed a bug where the location property would return an incorrect height for players
+-   Added property id
+
+## **Block**
+
+-   Replaced method getLocationwith property location
+-   Replaced method getPermutationwith property permutation
+-   Replaced method getTypewith property type
+-   Replaced methods isWaterloggedand setWaterlogged with property isWaterlogged
+-   Replaced method getBlockDatawith property permutation
+-   Replaced method isEmptywith property isEmpty
+-   Removed property canBeWaterlogged
+
+## **BlockType**
+
+-   Replaced method getNamewith property id
+-   Replaced method canBeWaterloggedwith property canBeWaterlogged
+
+## **BlockPermutation**
+
+-   Replaced method getTypewith property type
+

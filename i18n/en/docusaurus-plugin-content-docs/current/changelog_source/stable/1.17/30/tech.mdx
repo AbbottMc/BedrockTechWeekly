@@ -1,0 +1,129 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.17.30 are available for download with new resources, behaviors, and documentation
+    -   Resource Pack Template: [aka.ms/ResourcePackTemplate](https://aka.ms/ResourcePackTemplate)
+    -   Behavior Pack Template (Includes documentation): [aka.ms/BehaviorPackTemplate](https://aka.ms/BehaviorPackTemplate)
+
+## **Gameplay**
+
+-   Data-driven blocks can now be added to the Creative menu
+-   New chemistry material reductions for Education Edition can now be defined in the JSON files
+-   "potion.prefix" and "potion._.postfix"_ potion string resources have been renamed to _"potion._.name"
+-   Potion name string resources have been changed so there are separate "Splash" and "Lingering" string resources
+-   The old style of using "potion.prefix" and "potion.\*.postfix" is still supported
+-   UI bind objects can now utilize the 'ignore' field
+-   Attachables that are visible in first person view will no longer render backwards
+
+## **Fixes**
+
+-   Fixed a bug where an entity might fail to initialize its tag component
+-   Sky no longer renders through walls of a large enclosed area when using fog
+-   Updated documentation formatting for item components and how they work within Resource Packs and Behavior Packs
+-   Using Water Buckets to collect fish has been version locked to prevent breaking old world templates
+-   Fixed controller support when editing NPC dialog ([MCPE-135175](https://bugs.mojang.com/browse/MCPE-135175))
+-   'behavior.knockback\_roar' now has a vertical and horizontal strength value
+-   Adjusted padding for HD Textures in mipmaps level 1 in texture atlas to fix texture bleeding
+-   Killing a custom mob with an unknown loot table entry type will no longer cause a crash, and will now throw a content error ([MCPE-129006](https://bugs.mojang.com/browse/MCPE-129006))
+-   Rabbit with initialEvent specified now scales properly to adult rabbit size ([MCPE-76643](https://bugs.mojang.com/browse/MCPE-76643))
+-   Similar to the spawns\_on\_block\_filter, the spawns\_above\_block\_filter specifies a list of blocks and a distance. The mob can then spawn only if the nearest block within the specified distance below the desired spawnpoint is in that list (water and air not included). "minecraft:spawns\_above\_block\_filter": { "blocks": "minecraft:stone", "distance": 10 }
+-   Improved documentation for 'DamageableItemComponent'
+-   Fixed the ability to add launch point positional offset for projectiles spawned with the 'spawn\_entity' component
+-   Fixed the ability to add angular offset to launch vector for projectiles spawned with the 'spawn\_entity' component
+-   Fixed offset not working for projectiles summoned through an interaction
+-   Fixed projectile 'angleoffset' value only reflected if shooter is riding another entity
+-   Fixed rotation of projectile launch point around a mob when projectile offset specified
+-   Parsing of UI json field "ignored" now throws a content error if it is invalid
+-   Fixed movement prediction interpolating with invalid data in even more scenarios ([MCPE-108568](https://bugs.mojang.com/browse/MCPE-108568))
+-   Removed the "replace" element from 'sound\_definitions.json' for being ambiguous in its usage (and was never used) ([MCPE-99304](https://bugs.mojang.com/browse/MCPE-99304))
+
+## **Commands**
+
+-   Commands ran through animations now will run in the order defined in animation files on all platforms, including Realms
+-   Animations and events defined in Behavior Packs can now run commands that require cheats without the player enabling cheats (such as setting certain rules with the '/gamerule' command)
+-   Target selectors ry and rym now support wrapping around north
+-   The '/particle' command position argument is now optional ([MCPE-128379](https://bugs.mojang.com/browse/MCPE-128379))
+-   The '/particle' command will now output on success ([MCPE-80348](https://bugs.mojang.com/browse/MCPE-80348))
+-   The '/particle' command no longer shows an error when run successfully through '/execute' ([MCPE-129001](https://bugs.mojang.com/browse/MCPE-129001))
+-   The '/clone' command now copies signal strength for Levers and Redstone Dust
+-   The '/structure' command can now specify a \<to: x y z\> position argument with y below 0 as long as it is equal or above the minimum height for that dimension
+-   Added functionality for Intellisense options: "d" and "default" in the gamemode command selector ([MCPE-92198](https://bugs.mojang.com/browse/MCPE-92198))
+-   Minecart with Command Block can now use the self selector (@s) in its commands to target itself ([MCPE-60126](https://bugs.mojang.com/browse/MCPE-60126))
+-   The "/time set" command now sets the correct time and day when specifying a time above 24000 or below the current time (e.g. "/time set 0" sets the day to 0, "/time set 28000" sets the day to 1), and "/time" can now set or add to a negative world time ([MCPE-43394](https://bugs.mojang.com/browse/MCPE-43394))
+-   The '/spawnpoint' command can now be used while the player is sleeping and outputs success when setting to the player's existing spawnpoint ([MCPE-106720](https://bugs.mojang.com/browse/MCPE-106720))
+-   The camera shake command no longer shakes every player's screen when "@s" is used as the selector ([MCPE-120383](https://bugs.mojang.com/browse/MCPE-120383))
+
+## **GameTest Framework (Experimental)** 
+
+-   Renamed module "Minecraft" to "mojang-minecraft"
+-   Renamed module "GameTest" to "mojang-gametest"
+-   GameTest (now mojang-gametest)
+    -   Added helper method spawnAtLocation(location : Location) : Entity - Spawns an entity at the given Location
+    -   Added helper method walkToLocation(mob : Entity, location : Location, speedModifier : number) - Commands an entity to move to the given Location
+    -   Added method assertCanReachLocation(mob : Entity, location : BlockLocation, bool canReach) - Asserts that the given mob can reach the target block location
+    -   Renamed helper method worldLocation(location : BlockLocation) to worldBlockLocation(location : BlockLocation)
+    -   Renamed helper method relativeLocation(location : BlockLocation) to relativeBlockLocation(location : BlockLocation)
+    -   Added helper method worldLocation(relativeLocation : Location) : Location - From a Location with coordinates relative to the GameTest structure block, returns a new Location with coordinates relative to the world
+    -   Added helper method relativeLocation(worldLocation : Location) : Location - From a Location, returns a new Location with coordinates relative to the current GameTest structure block
+    -   Added helper method spawnWithoutBehaviorsAtLocation(entityIdentifier : string, location : Location) : Entity - Spawns an entity at a location without any AI behaviors
+    -   Added helper method rotateDirection(direction : Direction) : Direction - Rotates the given direction relative to the GameTest structure rotation
+    -   Added helper method getTestDirection() : Direction - Returns the direction the GameTest is facing based on its structure rotation
+    -   Renamed function assertBlockTypePresent to assertBlockPresent
+    -   Renamed function assertEntityData to assertEntityState
+    -   Removed function assertBlockTypeNotPresent (added boolean isPresent to assertBlockPresent instead)
+    -   Removed function assertEntityNotPresent (added boolean to assertEntityPresent instead)
+    -   Removed function assertEntityNotPresentInArea (added boolean to assertEntityPresentInArea instead)
+    -   Removed function assertEntityNotTouching (added boolean to assertEntityTouching)
+    -   Removed function succeedWhenEntityNotPresent (added boolean to succeedWhenEntityPresent)
+    -   Modified signature of function assertBlockState(blockLocation: BlockLocation, callback: (Block) =\> boolean)
+    -   Modified signature of function assertBlockPresent(blockType: BlockType, blockLocation: BlockLocation, isPresent: boolean)
+    -   Modified signature of function assertEntityPresent(entityTypeIdentifier: string, blockLocation: BlockLocation, isPresent: boolean)
+    -   Modified signature of function assertEntityPresentInArea(entityTypeIdentifier: string, isPresent: boolean)
+    -   Modified signature of function assertEntityTouching(entityTypeIdentifier: string, location: Location, isTouching: boolean)
+    -   Modified signature of function succeedWhenEntityPresent(entityTypeIdentifier: string, location: Location, isPresent: boolean)
+-   Minecraft (now mojang-minecraft)
+    -   Renamed BlockTypes class to MinecraftBlockTypes
+    -   Renamed Effects class to MinecraftEffectTypes
+    -   Renamed Items class to MinecraftItemTypes
+-   Events
+    -   Added event World.events.beforeExplosion - Fires before an explosion occurs
+    -   Added event World.events.explosion - Fires when an explosion occurs
+    -   Added event World.events.explodeBlock - Fires when a block breaks due to an explosion
+    -   Added event World.event.beforeActivatePiston - Fires before a piston is activated
+    -   Added event World.event.activatePiston - Fires when a piston is activated
+    -   Added read-only property currentTick to tick event - Returns the current server tick
+    -   Renamed event createEntity to entityCreate
+    -   Renamed event addEffect to effectAdd
+    -   Renamed event activatePiston to pistonActivate
+    -   Renamed event beforeActivatePiston to beforePistonActivate
+    -   Renamed event explodeBlock to blockExplode
+    -   Renamed event changeWeather to weatherChange
+-   Block
+    -   Added method getDimension() : Dimension
+-   Added BlockPistonComponent
+
+## **Molang**
+
+-   Added experimental queries for item cooldowns: 'query.is\_cooldown\_type', 'query.cooldown\_time', and 'query.cooldown\_time\_remaining'
+-   Updated many Molang content errors to specify which operator or query was involved
+-   'min\_engine\_version' from Resource Pack and Behavior Pack manifests is now passed into Molang expression parsing. This allows for future breaking changes tied to a specific engine version
+-   Added 'BlockPartVisibilityComponent'
+    -   Allows creators to specify Molang conditions for each “bone” listed in the geometry JSON that turn on/off bones based on the block state
+    -   Must have the Experimental toggle enabled to use
+-   Fixed experimental 'query.bone\_orientation\_trs' to have correct translation Y and scale results
+-   Added experimental 'block\_neighbor\_has\_any\_tags' and 'block\_neighbor\_has\_all\_tags' Molang queries
+    -   Takes a block relative position and a set of tags
+    -   Returns 0/1
+    -   Must have the Experimental toggle enabled to use
+-   Fixed a crash that could occur when entering a world with a custom Resource Pack that contained 'query.armor\_color\_slot' ([MCPE-106437](https://bugs.mojang.com/browse/MCPE-106437))
+-   Fixed 'query.item\_remaining\_use\_duration' having improperly scaled or inverted results (This is to fix a Versioned Change as of engine version 1.17.30)
+-   Added 'query.facing\_target\_to\_range\_attack', which returns whether or not the queried actor's 'minecraft:behavior.ranged\_attack' goal is currently running
+-   Moved experimental Molang queries (other than those related to Actor Properties) to a new 'Experimental Molang Features' toggle
+-   Improved Molang documentation related to experiments
+    -   Experimental queries and language expressions now list which experiment(s) they require to be available
+-   Versioned Changes are now detailed in the documentation, starting with the 'query.item\_remaining\_use\_duration' fix
+

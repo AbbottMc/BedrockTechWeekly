@@ -1,0 +1,246 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.18.30 with new resources, behaviors, and documentation, are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddOnPacks)
+
+## **RenderDragon**
+
+-   With the release of RenderDragon for Android, iOS, Nintendo Switch, and Win10 UWP x86, HAL will no longer be available on these platforms. We know the community has found ways to build shaders on top of HAL and with this change, these shaders will no longer function. We understand that this is a valuable feature for players and the creator community, and we are working on how we may be able to deliver this sort of creative capability to players and creators in an officially supported way. While we have nothing to share right now, look out for more details in the future.
+
+## **Additional Modding Capabilities Experiment/JavaScript APIs**
+
+-   **Important!** In this release, we are removing the Additional Modding Capabilities experiment. This experiment contained experimental JavaScript APIs launched in 2018 – and with this removal, JavaScript within worlds associated with this API will no longer function. GameTest Framework – a separate JavaScript API – should not be impacted, nor should behavior pack/resource pack type add-ons more broadly.
+-   You can read more about this [via this article](https://aka.ms/mcamc).
+
+## **Changes**
+
+-   A world with "StorageVersion" 8 or lower will be increased to 9 and have its "RandomSeed" upgraded from using only the lower 32 bits of a 64-bit number to using the full 64-bit range while still representing the same number. This is only relevant for negative 32-bit seeds, which need a sign bit extension
+-   The world loading screen now shows progress when loading ticking areas marked for preload
+-   Experimental: Volume definitions are now stored and read from Behavior Packs instead of being part of the level directory
+-   Experimental: Added an optional "mob\_amount" parameter to the Damage Event Response that specifies a unique damage amount when used by mobs
+-   Due to engine limitations, "minecraft:geometry" data used for blocks with the Holiday Creator Features experimental toggle are now restricted to only allow geometry in the \[0,0,0\] to \[15,15,15\] space. Any blocks loaded from Behavior Packs that exceed this limit will render as the info\_update block and show a content error in the log
+-   The Interact component now has two new fields, GiveItem and TakeItem, specifying if it is possible to give/take items from an entities main hand slot. Taking the item also drops the inventory of the mob
+-   Removed _preventsjumping_component from data-driven blocks
+-   Removed _BlockImmovable_, _BlockBreakOnPush_, and _BlockOnlyPistonPush_ components from data-driven blocks
+-   Limited the number of elements in the _crafting\_tags_field of _CraftingTableComponent_ to 64
+
+## **Fixes**
+
+-   Biome-specific fog settings can once again be defined
+-   Fixed actor definition identifiers not being recognized if the item or block name contains "."
+-   Mobs that are riding a boat, for example, can no longer use JumpToBlockGoal ([MCPE-150750](https://bugs.mojang.com/browse/MCPE-150750))
+-   Custom mobs with a format version lower than 1.18.20 and using the _minecraft:behavior.knockback\_roar_component will parse like before if it contains an extra field that the engine didn't expect
+-   Fixed an issue in the Knockback goal where the incorrect owner was being passed into the filter evaluate function
+-   Weapon events are now correctly applied when the weapons are used by mobs ([MCPE-118692](https://bugs.mojang.com/browse/MCPE-118692))
+-   JumpToBlock behavior is now correctly affected by JumpBoost mob effect ([MCPE-137432](https://bugs.mojang.com/browse/MCPE-137432))
+-   Fixed a case where experimental BlockCollisionComponents did not allow partial specification
+-   Rotation when riding a mob that has a locked rotation will no longer unexpectedly snap to one side when that mob is rotating
+
+## **Commands**
+
+-   Fixed an issue that would cause commands to affect players in all dimensions ([MCPE-152218](https://bugs.mojang.com/browse/MCPE-152218))
+-   Added the "hasitem" filter for target selector of entities. This allows the player to target entities based on the items that have in their inventory or are wearing
+-   Added '/tickingarea' command preload overload
+-   The '/tickingarea' command no longer modifies areas from entities with the _tick\_world_ component
+-   Entities must now be loaded for an area to be considered fully loaded and ticking
+-   Added a new '/volumearea ' command to create, remove, and list volumes in the world
+-   Using '/playanimation' command now properly plays animations on the paper doll and inventory character ([MCPE-137353](https://bugs.mojang.com/browse/MCPE-137353))
+-   Correct error output is now displayed when attempting to use the '/loot' spawn command when passing in the position of an unloaded area and there is 0 loot to drop
+-   Added '/loot ' command insert loot and insert kill overload
+
+## **AI Goals**
+
+-   Exposed new data parameter "calculate\_new\_path\_radius" for GoHomeGoal. This is for specifying a distance in blocks that the mob is considered close enough to the end of the current path. A new path will then be calculated to continue toward home
+-   Added Knockback Height Cap value to KnockbackRoarGoal
+
+## **WebSocket**
+
+-   JSON format for events sent from websocket server and Code Builder APIs updated to hierarchical JSON format instead of flat format
+-   Less useful properties removed with block and item IDs moved to newer name-based format instead of numerical format
+-   Agent-based commands in websockets moved to new "action:agent" format, and all commands are now queued and include unique ids to correlate responses
+-   Any future breaking changes to websocket and Code Builder APIs will now result in the "protocolVersion" being incremented
+
+## **Molang**
+
+-   Molang expressions inside animation scripts for actor resource definition (pre\_animation and initialize) that contain capital letters are properly evaluated now with format\_version 1.18.20 or higher
+-   Clarified documentation for query.is\_item\_name\_any that the slot index is required when there is more than one slot, i.e. the hotbar
+-   Fixed Logical AND to evaluate before Logical OR, and for comparison operators to evaluate before equality operators
+    -   This is a Molang Versioned Change that only takes effect for Molang expressions in packs that use a min\_engine\_version of 1.18.20 or higher
+    -   For example, _A && B || C_now evaluates as _(A && B) || C_ and _A \< B == C \> D_ now evaluates as _(A \< B) == (C \> D)_
+
+## **GameTest Framework (Experimental)**
+
+New Module! We added a **mojang-minecraft-ui** module with API structures for creating simple dialog boxes:
+
+-   _Added_ _ActionFormData/ModalFormData/MessageFormData_ types in the mojang-minecraft-ui namespace. Documentation is available on [the Minecraft Creator documentation site](https://docs.microsoft.com/minecraft/creator/scriptapi/mojang-minecraft-ui/mojang-minecraft-ui).
+-   Removed 'Minecraft' and 'GameTest' imports; please use 'mojang-minecraft' and 'mojang-gametest'
+
+## **mojang-minecraft module updates:**
+
+-   World
+    -   Changed return type of function _getPlayers__to_ _PlayerIterator_
+    -   Added function _playSound(soundName: String, soundOptions: SoundOptions): void_\- plays a sound specified by the sound name, at a location, pitch, or volume as optionally specified in the SoundOptions argument
+    -   Added _queueMusic(trackName : string, musicOptions : MusicOptions)_
+    -   Added _playMusic(trackName : string, musicOptions : MusicOptions)_
+    -   Added _stopMusic()_
+    -   Added MusicOptions JS class with _volume__,_ _fadeSeconds_ and _loop_ properties  
+          
+        
+-   Dimension
+    -   Added _id_property
+    -   Added _MinecraftDimensionTypes_with constants for built-in dimension IDs
+    -   Added _spawnItem_to spawn an ItemStack in the dimension  
+          
+        
+-   Player
+    -   Added function _playSound(soundID : String, soundOptions : SoundOptions)_ - Plays a sound for a player, cannot be heard by entities other than that specific player  
+          
+        
+-   Events
+    -   Updated property _direction_to _blockFace_ in world.events.beforeItemUseOn and world.events.itemUseOn
+    -   Added event _beforeDataDrivenEntityTriggerEvent_ \- Fires before the data driven trigger is applied
+    -   Added event _dataDrivenEntityTriggerEvent_ - Fires after the data driven trigger is applied
+    -   Added _event_ _entityHit(entityHitEvent: EntityHitEvent, options?: EntityEventOptions)_ - Fires when an entity or block is hit by another entity
+    -   Added event _entityHurt(entityHurtEvent: EntityHurtEvent, options?: EntityEventOptions)_\- Fires when an entity takes damage
+    -   Added event _leverActivate_ - fires when a lever is toggled
+    -   BlockExplodeEvent - Removed property destroyedBlockPermutation  
+          
+        
+-   DefinitionModifier - Added
+    -   read only property _componentGroupsToAdd__: string\[\]_ - List of component groups that will be added as part of this modifier
+    -   read only property _componentGroupsToRemove__: string\[\]_ - List of component groups that will be removed as part of this modifier
+    -   property _triggers__: Trigger\[\]_ - List of triggers that will fire as part of this modifier  
+          
+        
+-   Trigger - Added
+    -   property _eventName__: string_ - Event name of the trigger  
+          
+        
+-   DataDrivenEntityTriggerEvent - Added
+    -   read only property _entity__: Entity_ - Entity that the event triggered on
+    -   read only property _id__: string_ - name of the event  
+          
+        
+-   BeforeDataDrivenEntityTriggerEvent - Added
+    -   read only property _entity__: Entity_ - Entity that the event triggered on
+    -   read only property _id__: string_ - name of the event
+    -   property _modifiers__: DefinitionModifier\[\]_ - List of modifiers that will be applied when the event triggers
+    -   _property_ _cancel__: bool_ - If true, the event will not be triggered  
+          
+        
+-   EntityDataDrivenTriggerEventOptions - Added and inherited from EntityEventOptions
+    -   property _eventTypes__: string\[\]_ \- If specified, will restrict to events with the specified name (i.e., _minecraft:ageable\_grow\_up_)  
+          
+        
+-   EntityType
+    -   Added read-only property _id: string_\- The identifier for the entity type  
+          
+        
+-   EntityTypes
+    -   Added function _get(identifier: string): EntityType_\- Returns the corresponding EntityType for the given identifier
+    -   Added function _getAll(): EntityTypeIterator_\- Returns an iterator containing all registered entity types  
+          
+        
+-   MinecraftEntityTypes
+    -   Provides EntityType constants for each standard Minecraft entity type  
+          
+        
+-   EnchantmentType - Added
+    -   Read-only property i_d__: string_ - The name of the enchantment type
+    -   Read-only property _maxLevel__: int_ - The maximum level this type of enchantment can have  
+          
+        
+-   EnchantentInstance - Added
+    -   _Constructor_ _EnchantmentInstance(type: EnchantmentType, level : int)_
+    -   Read-only property _type__: EnchantmentType_ - The enchantment type of this instance
+    -   Property _level__: int_ - The level of this enchantment instance  
+          
+        
+-   EnchantmentSlot - Added
+    -   Represents the item slot or type that an enchantment can be applied to  
+          
+        
+-   EnchantmentList - Added
+    -   Represents a collection of enchantments that can be applied to an item
+    -   Constructor _EnchantmentList(slot : EnchantSlot)_
+    -   Read-only property _slot__: EnchantSlot_ - The item slot/type that this collection is applied to
+    -   Read-only property _allEnchantments__: EnchantmentInstance\[\]_ - All enchantments as part of this enchantment collection
+    -   Method _canAddEnchantment(instance : EnchantmentInstance)__: bool_ - Returns whether or not the provided EnchantmentInstance can be added to this collection
+    -   Method _addEnchantment(instance : EnchantmentInstance)__: bool_ - Attempts to add the enchantment to this collection. Returns true if successful
+    -   Method _removeEnchantment(type : EnchantmentType)_\- Removes an EnchantmentInstance with type type from this collection if present
+    -   Method _hasEnchantment(type : EnchantmentType)__: int_ - If this collection has an EnchantmentInstance with type type, returns the level of the enchantment. Returns 0 if not present  
+          
+        
+-   ItemStack
+    -   Added function _setLore(loreList: string\[\]): void_\- Sets the lore text for the item
+    -   Added function _getLore(): string\[\]_\- Gets the lore text for the item
+    -   Added _nameTag_property  
+          
+        
+-   ItemEnchantmentComponent - Added
+    -   Property _enchantments__: EnchantmentList_ - Gets a copy of the current set of enchantments on this ItemStack. Or allows the user to set the EnchantmentList for the ItemStack
+    -   Method _removeAllEnchantments_\- Removes any enchantments that might be present on this ItemStack  
+          
+        
+-   Vector - Added numerous new helper functions
+    -   Added function _length(): number_\- Returns the length of this vector
+    -   Added function _normalized(): Vector_\- Returns this as a normalized vector
+    -   Added static function _distance(a:Vector, b:Vector): number_\- Returns distance between two vectors
+    -   Added static function _lerp(a:Vector, b:Vector, t: number): Vector_\- Returns the linear interpolation between a and b using t as the control
+    -   Added static function _slerp(a:Vector, b:Vector, s: number): Vector_\- Returns the spherical linear interpolation between a and b using s as the control
+    -   Added static function _cross(a:Vector, b:Vector): Vector_\- Returns the cross product of these two vectors
+    -   Added static function _add(a:Vector, b:Vector): Vector_\- Returns the addition of these vectors
+    -   Added static function _subtract(a:Vector, b:Vector): Vector_\- Returns the subtraction of these vectors
+    -   Added static function _multiply(a:Vector, b:Vector): Vector_\- Returns the component-wise product of these vectors
+    -   Added static function _divide(a:Vector, b:Vector): Vector_\- Returns the component-wise division of these vectors
+    -   Added static function _multiply(a:Vector, b:number): Vector_\- Returns the product of this vector and a scalar
+    -   Added static function _divide(a:Vector, b:number): Vector_\- Returns the division of this vector and a scalar
+    -   Added static _function_ _min(a:Vector, b:Vector): Vector_\- Returns a vector that is made from the smallest components of two vectors.
+    -   Added static function _max(a:Vector, b:Vector): Vector_\- Returns a vector that is made from the largest components of two vectors  
+          
+        
+-   EntityItemComponent
+    -   Added component _EntityItemComponent_that can be used to obtain an ItemStack from an item entity – e.g., _getComponent(“item”).itemStack  
+          
+        _
+-   BlockInventoryComponent
+    -   Fixed accessing items in a double chest crashing/being inconsistent  
+          
+        
+-   Exposed the following components for Entities:
+    -   _minecraft:can\_climb_
+    -   _minecraft:can\_fly_
+    -   _minecraft:can\_power\_jump_
+    -   _minecraft:fire\_immune_
+    -   _minecraft:floats\_in\_liquid_
+    -   _minecraft:is\_dyable_
+    -   _minecraft:is\_baby_
+    -   _minecraft:is\_charged_
+    -   _minecraft:is\_chested_
+    -   _minecraft:is\_hidden\_when\_invisible_
+    -   _minecraft:is\_ignited_
+    -   _minecraft:is\_illager\_captain_
+    -   _minecraft:is\_saddled_
+    -   _minecraft:is\_shaking_
+    -   _minecraft:is\_sheared_
+    -   _minecraft:is\_stackable_
+    -   _minecraft:is\_stunned_
+    -   _minecraft:is\_tamed_
+    -   _minecraft:wants\_jockey_
+    -   _minecraft:variant_
+    -   _minecraft:skin\_id_
+    -   _minecraft:mark\_variant_
+    -   _minecraft:friction\_modifier_
+    -   _minecraft:ground\_offset_
+    -   _minecraft:scale_
+    -   _minecraft:push\_through_
+
+## **mojang-gametest module:**
+
+-   Removed _radius_argument from command _/gametest clearall_
+-   Modified the behavior of function _attack()_to make the simulated player swing even when no target is found
+

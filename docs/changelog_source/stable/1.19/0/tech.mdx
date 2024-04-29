@@ -1,0 +1,171 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.19.0 with new resources, behaviors, and documentation, are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddOnPacks)
+
+## **Performance / Stability**
+
+-   Fixed a crash when loading a Behavior Pack with non-JSON object in entity components, component\_groups, and "add"/"remove" events ([MCPE-151377](https://bugs.mojang.com/browse/MCPE-151377), [MCPE-151380](https://bugs.mojang.com/browse/MCPE-151380))
+-   Fixed a crash that could occur when attempting to render blocks that rely on biome data
+-   Fixed a crash when attempting to access a null entity
+-   Fixed a crash in _variant_ related to thrown potions and invalid potion IDs
+-   Avoid crashes on certain devices when parsing Molang expressions with many OR or AND operators
+
+## **General**
+
+-   Volume instances are now stored in the world, persisting between play sessions
+-   Limit path strings and localized ID strings in data-driven blocks to 256 characters
+-   Limit the length of crafting tag strings in _CraftingTableComponent_ to 64 characters
+-   Limit the number of elements in the _material\_instances_field of the _BlockMaterialInstancesComponent_ to 64
+-   Limit the number of elements in the conditionsand block\_filter fields of the _BlockPlacementFieldComponent_ to 64
+-   Updated documentation for originand size fields of the _minecraft:block\_collision_ and _minecraft:aim\_collision_ components
+-   Set stack limit for brewing station result slot to 1, as to avoid getting input stacks being overwritten when the brew is complete
+-   Tied consume animation to consume duration
+-   Content errors for data-driven blocks improved to log resource pack, file, and block identifier
+-   Limit length of the _minecraft:geometry_field of _BlockGeometryComponent_ to 256 characters
+-   Updated documentation for specific string types "Localization String", "Path String", and "Identifier String"
+
+## **Commands**
+
+-   The '/spreadplayers' command will now avoid more hazardous locations
+-   Reload command will now discover new function and script files
+-   When a Command Block clones itself twice with the '/clone' command, the cloned Command Block will now activate on the first try ([MCPE-122188](https://bugs.mojang.com/browse/MCPE-122188))
+-   Command selectors now correctly identify players by name instead of their name tag
+-   Title commands fired before a client was done joining will now show instead of being ignored
+-   Added the 'replace entity' overload to the '/loot' command
+-   Fixed an issue with teleporting an entity to a chunk that has not been loaded since before 1.18.30 would result in the loss of that entity
+
+## **Dedicated Server**
+
+-   Enabled the Windows Dedicated Server console to read UTF-16 encoded Unicode input ([BDS-3791](https://bugs.mojang.com/browse/BDS-3791))
+
+## **Mobs**
+
+-   Entities that use _KnockbackRoarGoal_ can once again properly use entity filters to determine damage
+-   Actor properties can now be applied to player entities. Updated network protocol version to support this ([MCPE-129628](https://bugs.mojang.com/browse/MCPE-129628))
+-   Actors using movement prediction will once again teleport smoothly
+-   Added in a check to prevent an actor that is a passenger from being ridden by the vehicle it is on, preventing an infinite loop looking for the root vehicle ([MCPE-133774](https://bugs.mojang.com/browse/MCPE-133774))
+-   Exposed new data parameter "can\_sleep\_while\_riding" for "minecraft.behavior.sleep". If set to false, the goal will not start if the mob is riding
+-   The _is\_moving_ filter now returns the correct value when an actor is moving
+-   Added a _target\_block\_filters_ to "_behavior.move\_to\_block_" and "_is\_waterlogged_" filter test to prevent mobs from moving to blocks underwater ([MCPE-153783](https://bugs.mojang.com/browse/MCPE-153783))
+
+## **Fog**
+
+-   Updated fog JSON schema to allow distance fog settings to use negative value as 'fog\_start'. Allowing nearby blocks to also be tinted with fog color
+-   Added adjustable fog effect that can expand or shrink over time. Users will get the sense of eyes adjusting when going into water
+
+## **Item Components**
+
+-   Added new data-driven Item component _minecraft:chargeable_\- Allows the item to be charged (like Apples or Bows) when the use action button is held _on\_complete_ - Trigger executed when the items use duration has been completed
+
+## **Molang**
+
+-   Avoid clearing temp Molang variables during hand rendering
+
+## **GameTest Framework**
+
+## **IMPORTANT BREAKING CHANGE**
+
+GameTest module type changed from "javascript" to "script" in manifest.json. Added an optional attribute “language” which has only one supported value – javascript.
+
+New JavaScript modules in manifest.json should look as follows:  
+  
+  _"modules": \[_  
+    _{_  
+      _"description": "JavaScript module code",_  
+      _"language": "javascript",_  
+      _"type": "script",_  
+      _"uuid": "\<your UUID\>",_  
+      _"version": \[0, 0, 1\],_  
+      _"entry": "scripts/main.js"_  
+    _}_  
+  _\],_
+
+## **mojang-gametest module**: Test
+
+-   Added function _rotateVector_\- Rotates a vector relative to the GameTest structure rotation
+-   Removed constraint on maximum travel distance from GameTest structure for SimulatedPlayer.
+
+## **mojang-minecraft module**
+
+-   Entity
+    -   Added function _setRotation(degreesX: number, degreesY: number)_\- Sets the rotation of the Entity
+    -   Added read-only property _rotation: XYRotation_\- Gets the rotation of the Entity
+    -   Removed property _bodyRotation_\- Note: Use _rotation.y_ instead
+-   XYRotation
+    -   Renamed class _PitchYawRotation_to _XYRotation_
+    -   Renamed property _pitch_to _x_
+    -   Renamed property _yaw_to _y_
+-   New events:
+    -   Added event _buttonPushEvent_ - fires when a button is pushed
+    -   Added event _events.projectileHit_\- Fires when a projectile hits a Block or Entity
+    -   Added event _events.itemStartUseOn_\- Sent when the player first interacts with a block
+    -   Added event _events.itemStopUseOn_\- Sent when fire if the block is successfully interacted with and the block has changed - such as when grass is turned to a path with a Shovel
+    -   Added event _events.itemStartCharge_– Sent when the player first starts using a charging/animated item
+    -   Added event _events.itemCompleteCharge_\- Sent when the item has completed its charge action
+    -   Added event _events.itemReleaseCharge_\- Sent when the user has finished using the item and released the build action
+    -   Added event _events.itemStopCharge_\- Sent either when the player has finished an items use cycle or when the player has released the use action with the item
+    -   _ItemStartUseOnEvent_ Added read only property _buildBlockLocation_\- The result build block position. Useful for determining where a block was placed
+    -   Added member _player?: Player_to the _LeverActivate_ event - The player that activated the lever
+
+New property on Player_: onScreenDisplay : ScreenDisplay_ - exposes a new interface to trigger on screen content.
+
+-   ScreenDisplay Type
+    -   _setTitle(title : String, options? : TitleDisplayOptions)_ - cause a title to show up on the player's HUD, optionally specifying the subtitle and fade in, stay and fade out times
+    -   _clearTitle()_ - clear title and subtitle
+    -   _updateSubtitle(subtitle : String)_ - update the subtitle (but not the title)
+    -   _setActionBar(text : String)_ - set the action bar text
+-   TitleDisplayOptions object
+    -   _subtitle? : String_ - optional subtitle
+    -   _fadeInSeconds : Int_ - number of seconds to fade in new title and subtitle
+    -   _staySeconds : Int_ - number of seconds to have the title and subtitle stay on screen
+    -   _fadeOutSeconds : Int_ - number of seconds to fade out title and subtitle
+
+Support of dynamic properties that script can use to persist data per-World or per-Entity. Note that properties must be registered using the propertyRegistry in the new WorldInitialize event.
+
+-   DynamicPropertiesDefinition
+    -   Added function _defineNumber(identifier: string): void_\- Defines a dynamic number property
+    -   Added function _defineString(identifier: string, maxLength: number): void_\- Defines a dynamic string property
+    -   Added function _defineBoolean(identifier: string): void_\- Defines a dynamic boolean property
+    -   Added event _worldInitialize(worldInitializeEvent: WorldInitializeEvent)_\- Fires during world load and contains the property registry used for declaring dynamic properties
+-   PropertyRegistry
+    -   Added function _registerEntityTypeDynamicProperties(propertiesDefinition: DynamicPropertiesDefinition, entityType: EntityType)_\- Registers dynamic property definitions for the given EntityType
+    -   Added function _registerWorldDynamicProperties(propertiesDefinition: DynamicPropertiesDefinition)_\- Registers property definitions for the world
+-   World object/Entity object additions:
+    -   Added function _setDynamicProperty(identifier: string, value: boolean | string | number)_\- Adds a dynamic property to the world/entity
+    -   Added _function_ _getDynamicProperty(identifier: string): boolean | string | number_\- Gets a dynamic property from the world/entity if it exists, otherwise returns undefined
+    -   Added function _removeDynamicProperty(identifier: string): boolean_\- Removes a dynamic property value from the world/entity
+
+Updated the GameTest Framework interface to add read-only scoreboard support.
+
+-   World
+    -   _scoreboard : Scoreboard_ - Access world's scoreboard
+-   Entity
+    -   _scoreboard : ScoreboardIdentity_ - Access the entities scoreboard identity
+-   Scoreboard - Object representing the scoreboard data
+    -   _getObjective(objectiveId : String) : ScoreboardObjective_ - Method to get a specific objective (by id)
+    -   _getObjectives : ScoreboardObjective\[\]_ - Method to get all objectives
+    -   _getParticipants : ScoreboardIdentity\[\]_ - Method to get all scoreboard identities
+-   _ScoreboardObjective_ \- Object representing a scoreboard objective
+    -   _id : String_ - (read-only) scoreboard identifier
+    -   _displayName : String_ - (read-only) scoreboard display name
+    -   _getParticipants : ScoreboardIdentity\[\]_ - Method to get all objective participant identities
+    -   _getScores : ScoreboardScoreInfo\[\] -_ Method to get the score info for all participants
+    -   _getScore(participant : ScoreboardIdentity) : Int_ - Method to get the score value of a participant
+-   _ScoreboardIdentity_ \- Object representing a scoreboard participant
+    -   _type : ScoreboardIdentityType_ - (read-only) enum representing the type of identity
+    -   _id : Int_ - (read-only) Unique identifier for the identity
+    -   _displayName : String_ - (read-only) display name for the identity
+    -   _getEntity : Entity_ \- get the Entity handle associated with the identity
+-   _ScoreboardIdentityType_ - Enum representing identity _types : .Entity_ - An entity .FakePlayer - A fake identity .Player - A player
+-   _ScoreboardScoreInfo_ - Score-Identity pair for an objective
+    -   _participant : ScoreboardIdentity_ - (read-only) The participant
+    -   _score : Int_ - (read-only) The score
+-   Commands
+    -   Added _/script profiler_command to create GameTest script performance traces. Script profiles should be written to the Minecraft logging folder. See [this article](https://docs.microsoft.com/minecraft/creator/documents/scriptdevelopertools) for more information on the Script Profiler.
+-   Dedicated Server has been updated to allow servers to explicitly list which script modules they want loaded when running scripts. A default configuration file is located at _/config/default/permissions.json_. Without this new file, all script modules are disabled by default. See [this article](https://aka.ms/mcserverscripts) for more information on usage of scripts plus servers.
+

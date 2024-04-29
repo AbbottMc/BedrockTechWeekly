@@ -1,0 +1,35 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Fixes** 
+
+-   'behavior.knockback\_roar' now has a vertical and horizontal strength value   
+
+## **Data-Driven Items** 
+
+-   Added required toggle to component item documentation, and to content error  
+
+## **GameTest Framework (Experimental)** 
+
+-   GameTest 
+    -   Added helper method spawnAtLocation(location : Location) : Entity - Spawns an entity at the given Location 
+    -   Added helper method walkToLocation(mob : Entity, location : Location, speedModifier : number) : Commands an entity to move to the given Location 
+    -   Added method assertCanReachLocation(mob : Entity, location : BlockLocation, bool canReach) - Asserts that the given mob can reach the target block location 
+-   Events 
+    -   Added event World.events.beforeExplosion - Fires before an explosion occurs 
+    -   Added event World.events.explosion - Fires when an explosion occurs 
+    -   Added event World.events.explodeBlock - Fires when a block breaks due to an explosion 
+    -   Added event World.event.beforeActivatePiston - Fires before a piston is activated 
+    -   Added event World.event.activatePiston - Fires when a piston is activated 
+-   Block 
+    -   Added method getDimension() : Dimension 
+-   BlockPistonComponent 
+    -   Read-only property attachedBlocks - Returns an array containing the BlockLocation of each block attached to the piston 
+    -   Read-only property isMoving - Returns true if the piston is expanding or retracting 
+    -   Read-only property isExpanded - Returns true if the piston is fully expanded 
+    -   Read-only property isExpanding - Returns true if the piston is expanding 
+    -   Read-only property isRetracting - Returns true if the piston is retracting 
+    -   Read-only property isRetracted - Returns true if the piston is fully retracted
+

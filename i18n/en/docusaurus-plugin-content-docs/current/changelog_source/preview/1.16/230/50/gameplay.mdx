@@ -1,0 +1,100 @@
+**Posted:** 25th March 2021
+
+**PLEASE READ before participating in the Minecraft Beta:** 
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft 
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them 
+-   Beta builds can be unstable and are not representative of final version quality 
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+# **New Experimental Features!** 
+
+In this week's Caves and Cliffs beta we have added Glow Lichen, and fixed several bugs! You will need to enable the Caves and Cliffs Experimental Features Toggle to check out the features in your beta worlds. (You can find out more about using the toggles at [aka.ms/MCExperimentalToggle](https://aka.ms/MCExperimentalToggle).)  
+
+You can leave us your feedback for these features in the threads at [aka.ms/CavesCliffsFeedback](https://aka.ms/CavesCliffsFeedback), and search and reports any new bugs you may encounter at [bugs.mojang.com](https://bugs.mojang.com/).
+
+![glow_lichen_1170_500.jpg](https://feedback.minecraft.net/hc/article_attachments/360090673492/glow_lichen_1170_500.jpg)
+
+## **Glow Lichen** 
+
+-   A dim light source that generates in caves 
+-   It can be waterlogged 
+-   Use shears to pick it up 
+-   Use bonemeal to spread it along block surfaces 
+-   Glow lichen can be composted 
+
+## **Bug Fixes and Tweaks**
+
+## **Android** 
+
+-   Added mouse and keyboard support for Android devices that support it (Oreo and newer) 
+-   Certain Android devices no longer fail to perform multilingual input  
+-   Crosshair placement is no longer offset on certain Android devices  
+-   The game will no longer fail to properly shutdown on certain Android devices  
+-   Fixed resolution issues on certain Android devices  
+-   Fixed networking issues on certain Android devices  
+-   Going underwater on certain Android devices no longer makes the screen go pitch-black  
+-   Structure blocks can now be exported on Android  
+
+## **General** 
+
+-   Powder Snow Block no longer drops when destroyed by an explosion ([MCPE-118666](https://bugs.mojang.com/browse/MCPE-118666))  
+-   Fixed issue where smelting behavior for several fuel sources was broken ([MCPE-121863](https://bugs.mojang.com/browse/MCPE-121863))  
+-   First person eating animation is now centered in the frame ([MCPE-116678](https://bugs.mojang.com/browse/MCPE-116678))  
+-   First person main hand blocking animation now plays properly ([MCPE-115536](https://bugs.mojang.com/browse/MCPE-115536))  
+-   First person main hand and off-hand shields are now symmetrical ([MCPE-116736](https://bugs.mojang.com/browse/MCPE-116736))  
+-   Fixed an issue where patterns in the loom with different resolutions than Vanilla assets would not display correctly  
+-   Crafting (Waxed) Weathered Cut Copper Slabs in the Stonecutter now yields two slabs instead of one ([MCPE-121695](https://bugs.mojang.com/browse/MCPE-121695))  
+-   Leads now correctly attach to Goats ([MCPE-104161)](https://bugs.mojang.com/browse/MCPE-104161)
+
+## **Lush** **C****ave** **Blocks** 
+
+-   Azalea leaves and flowering azalea leaves now correctly dropped when sheared  
+-   Moss blocks can now correctly be fertilized using dispensers  
+-   Hanging roots can now correctly be composted  
+-   Small dripleaf now drops as an item when sheared  
+-   Placing a big dripleaf on another big dripleaf increases its height by one  
+-   Using shovel on rooted dirt creates a grass path block  
+-   Bees consider flowering azalea and flowering azalea leaves as flowers  
+-   Using Pick Block function on Cave Vines or breaking them with Silk Touch-enchanted tool now yields Glow Berries  
+
+## **User Interface** 
+
+-   Fixed an issue where cancelling joining a world while generating it caused the user to get stuck in the progress screen ([MCPE-114776](https://bugs.mojang.com/browse/MCPE-114776))  
+
+##  **Technical Fixes and Changes** 
+
+## **GameTest** **Framework** 
+
+-   Added Dimension class 
+-   Added World.getDimension 
+-   Updated the GameTest Framework interface. See the list below for specific changes: 
+    -   function assertEntityPresentInArea(entityIdentifier : string) - Throws an Error if an entity matching the given identifier does not exist in the test region 
+    -   function print(text : string) - Prints the given text to the chat 
+    -   function assertEntityInstancePresent(entity : Entity, position : BlockLocation) - Throws an Error if the given entity is not present in the given block location 
+    -   \[Removed\] function setEntityTamed(entityIdentifier : string, position : BlockLocation) - Replaced by component function setTamed(showParticles : bool) 
+-   Entity 
+    -   function getComponents() - Returns an array of supported components 
+    -   function getComponent(componentIdentifier : string) - Returns the component matching the given identifier 
+    -   function hasComponent(componentIdentifier : string) - Returns true if the given component exists on the entity and is supported 
+    -   function getName() - Returns the name of the entity (e.g. "Horse") 
+    -   Components for color, health, leashable, and tamemount were added 
+    -   function kill() - Kills the entity 
+-   World 
+    -   addEventListener(eventName : string, callback : function(entity : Entity)) - Registers an event listener for entity events Supported Events: 
+        -   "onEntityCreated" - Fires when an entity is created 
+        -   "onEntityDefinitionTriggered" - Fires when an entity definition event is triggered 
+-   Renamed /gametest runall to /gametest runset 
+-   The default value for the tag parameter is now "suite:default"  
+
+## **Actors** 
+
+-   Several enums in ActorDataIDs were added by mistake, and are now being removed (DEFINE\_PROPERTIES, UPDATE\_PROPERTIES) 
+-   Catmull-Rom animations will no longer glitch if the time for a keyframe matches its value  
+-   All functions run using the /schedule command now run from the origin they are supposed to, instead of from the server  
+
+## **Other Fixes** 
+
+-   Replaced "Whitelist" language use to "AllowList". Dedicated server command "whitelist" changed to "allowlist". Dedicated server "whitelist.json" file changed to "allowlist.json" file. JSON format remains the same. Modified instructions are found in bedrock\_server\_how\_to.html  
+-   Fixed query.is\_in\_ui so that it is available to use when a data-driven mob is rendering in the UI (query.is\_in\_ui returns true when the mob is rendering in the UI, such as in the inventory window)

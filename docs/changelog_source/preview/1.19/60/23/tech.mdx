@@ -1,0 +1,32 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Components**
+
+-   Expanded "minecraft:shooter" component to define multiple projectiles that can specify different projectile definitions and condition filters
+-   Exposed more fields to shooter component to allow for more projectile customization such as throw power, sounds, and whether the attack is a magic attack
+
+## **Molang**
+
+-   Fixed a bug where dividing any value in Molang by a dynamically determined negative variable resulted in a division by a positive (absolute) value instead
+    -   This is a Molang Versioned Change that only takes effect for Molang expressions in packs that use a min\_engine\_version of 1.19.60 or higher
+
+## **Projectile**
+
+### **Component**
+
+-   Projectiles that teleport their owner will no longer do so while their owner is sleeping ([MCPE-161189](https://bugs.mojang.com/browse/MCPE-161189))
+
+## **API (Experimental)**
+
+-   Added method setOnFire(seconds: number, useEffects?: boolean = true): boolean)which sets an entity on fire (if it is not in water or rain).
+-   Added method extinguishFire(useEffects?: boolean = true): void which extinguishes the fire.
+-   If an entity is on fire, you can call getComponent('minecraft:onfire')on it, which returns an object of type EntityOnFireComponent, which has a property onFireTicksRemaining.
+-   Fixed a bug where viewDirectionwould return the direction from the previous tick
+-   Fixed a bug where getEntitiesFromViewDirectionwould use the direction from the previous tick
+-   Fixed a bug where getBlockFromViewDirectionwould use the direction from the previous tick
+-   Fixed a bug where headLocationwould return the location from the previous tick
+-   Renamed ScriptScriptCommandMessageEvent to ScriptEventCommandMessageEvent
+

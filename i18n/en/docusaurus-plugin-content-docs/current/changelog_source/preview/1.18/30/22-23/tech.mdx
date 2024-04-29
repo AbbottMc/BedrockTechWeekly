@@ -1,0 +1,34 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Components**
+
+-   The trade screen will no longer open if the owner of the "minecraft:economy\_trade\_table" component is on fire
+
+## **General**
+
+-   Changed block (Cactus, ChorusFlower, Crop, Grass, PointedDripstone, Sapling) tick rates to match Java Edition ([MCPE-145612](https://bugs.mojang.com/browse/MCPE-145612))
+-   Random tick positions will no longer be chosen below the world
+
+## **Molang**
+
+-   Clarified documentation for query.is\_item\_name\_any that the slot index is required when there is more than one slot, i.e. the hotbar
+
+## **Technical Experimental**
+
+## **GameTest Framework**
+
+-   EntityType
+    -   Added read-only property id: string- The identifier for the entity type
+-   EntityTypes
+    -   Added function get(identifier: string): EntityType- Returns the corresponding EntityType for the given identifier
+    -   Added function getAll(): EntityTypeIterator- Returns an iterator containing all registered entity types
+-   MinecraftEntityTypes
+    -   Provides EntityType constants for each standard Minecraft entity type
+
+##  **General**
+
+-   Removed BlockImmovable, BlockBreakOnPushand BlockOnlyPistonPush components from data-driven blocks
+

@@ -1,0 +1,52 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Min/Max distance values in sound events now only affect the sound event and not all events using the same sound ([MCPE-154376](https://bugs.mojang.com/browse/MCPE-154376))
+-   Added client-side-chunk-generation-enabled toggle to server.properties
+
+## **Networking**
+
+-   Added server property 'enable-lan-visibility' to disable the explicit LAN discovery by clients. This will prevent unexpected port conflicts when running multiple dedicated servers on a single host. Clarified port use in server logs and made error messaging more clear ([BDS-1094](https://bugs.mojang.com/browse/BDS-1094))
+
+## **Stability and Performance**
+
+-   Fixed a crash that would occur if the _texture\_index_ of a spawn egg was out of bounds. Now a content log error will be presented instead
+-   Added null ptr check when retrieving actor ref in CameraAPI to prevent crashing
+-   Fixed an issue where game would crash when Ender Dragon breath attack hadn't hit blocks or fell into the void ([MCPE-161204](https://bugs.mojang.com/browse/MCPE-161204))
+-   Fixed a crash that could occur when navigating down in the Villager screen with the keyboard
+
+# **Experimental Features**
+
+## **General**
+
+-   Crafting Table UI updates when a block changes to a permutation with a different _minecraft:crafting\_table_block component  
+      
+    
+
+## **Scripting, APIs, and GameTest Framework**
+
+-   Fixed wireframes still rendering after using the /gametest clearall for distant gametest structures command
+-   Entity
+    -   Removed function _runCommand_. Consider _runCommandAsync_ as an alternative
+-   Dimension
+    -   Removed function _runCommand_. Consider _runCommandAsync_ as an alternative
+-   Converted BlockRaycastOptions to an interface
+-   Converted EntityEventOptions to an interface
+-   Converted ScoreboardObjectiveDisplayOptions to an interface
+    -   Location type updated to IVec3
+-   Vector
+    -   add - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   cross - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   distance - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   divide - updated _a_argument to accept an IVec3 interface type
+    -   lerp - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   max - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   min - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   multiply - updated _a_argument to accept an IVec3 interface type
+    -   slerp - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   subtract - updated _a_ and _b_ arguments to accept an IVec3 interface type
+

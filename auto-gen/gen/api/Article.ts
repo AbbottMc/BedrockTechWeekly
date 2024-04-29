@@ -40,7 +40,7 @@ export class Article {
   private _handledExpSapiContent!: string;
 
   constructor(articleObj: ArticleObject, options?: ArticleOptions) {
-    const isOldVersion = options?.isOldVersion ?? this.forceSortPreview() ?? false;
+    const isOldVersion = (options?.isOldVersion ?? false) ? true : (ArticleUtil.forceSortPocket(articleObj) ?? false);
     this._articleObj = articleObj;
     this._isBedrock = ArticleUtil.isBedrockArticle(articleObj);
     this._isOldVersion = isOldVersion;
@@ -57,19 +57,19 @@ export class Article {
       this._majorVersion = majorVersion;
       this._patchVersion = patchVersion;
       this._minorVersion = minorVersion;
-      this._sourceOutputPathPieces = [this.majorVersion, this.minorVersion];
+      this._sourceOutputPathPieces = this._minorVersion ? [this.majorVersion, this.minorVersion] : [this.majorVersion];
       if (this.patchVersion) this._sourceOutputPathPieces.push(this.patchVersion);
       this._changelogOutputPathPieces = {
-        preview: [this.majorVersion, this.minorVersion],
+        preview: this.minorVersion ? [this.majorVersion, this.minorVersion] : [this.majorVersion],
         stable: [this.majorVersion],
         pocket: []
       };
     } else {
-      this._sourceOutputPathPieces = [];
+      this._sourceOutputPathPieces = [ArticleUtil.handleArticleTitle(this._articleObj.title)];
       this._changelogOutputPathPieces = {
         preview: [],
         stable: [],
-        pocket: []
+        pocket: [ArticleUtil.handleArticleTitle(this._articleObj.title)]
       };
     }
     this._articleSeparateResult = this.separateArticle();
@@ -236,14 +236,6 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
     return this.version !== Config.endVersion;
   }
 
-  canSortPreview(startSort: boolean) {
-    return startSort || this.title === Config.startSortFromTitle;
-  }
-
-  forceSortPreview() {
-    return Config.forceSortTitleParts?.some(titlePart => this.title.includes(titlePart));
-  }
-
   generate() {
     const enSourcePath = this.getSourceOutputPath('en');
     const sourcePath = this.getSourceOutputPath('zh-hans');
@@ -284,8 +276,8 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
     const enChangelogMdx = this.genChangelogMdx({
       isChinese: false, sidebarPos: Config.startSidebarPosition[this._versionTypeKeyword]
     });
-    FileUtil.createFileSync(this.getEndVersionNumber() + '.mdx', changelogPath, changelogMdx, 'utf8');
-    FileUtil.createFileSync(this.getEndVersionNumber() + '.mdx', enChangelogPath, enChangelogMdx, 'utf8');
+    FileUtil.createFileSync((this.getEndVersionNumber() ?? 'README') + '.mdx', changelogPath, changelogMdx, 'utf8');
+    FileUtil.createFileSync((this.getEndVersionNumber() ?? 'README') + '.mdx', enChangelogPath, enChangelogMdx, 'utf8');
     Config.startSidebarPosition[this._versionTypeKeyword]--;
   }
 }

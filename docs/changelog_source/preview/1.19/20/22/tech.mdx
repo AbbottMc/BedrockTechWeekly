@@ -1,0 +1,26 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Account Suspensions**
+
+-   Fixed a bug where suspended accounts could not play local worlds or navigate the menus on Xbox platforms
+
+## **Actor Properties**
+
+-   Added new Molang _had\_component\_group_ to allow calculating appropriate default values from previously saved entity data
+-   Renamed _'actor\_property'_ and _'has\_actor\_property'_ Molang queries to _'property'_ and _'has\_property'_. Also renamed _'set\_actor\_property'_ to _'set\_property'_
+-   Update _'set\_property'_ to only allow changing properties on the local actor rather than some other target
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **General**
+
+-   Blocks with _their_ _render\_method_component set to _double\_sided_ now have their back faces properly rendered

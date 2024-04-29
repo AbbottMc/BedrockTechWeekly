@@ -1,0 +1,31 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+-   Fixed issue with Simburbia world where standing next to a windows shutter block would obscure the view with the "update" texture   
+-   Fixed a crash that occurred when using the '/stopsound' command to stop the elytra.loop sound ([MCPE-120336](https://bugs.mojang.com/browse/MCPE-120336)) 
+
+### Graphical 
+
+-   Fixed a crash on Windows 10 that can occur in ray tracing mode due to a stale pointer reference  
+-   Fixed various cases when ray tracing textures would not be reloaded (resolution switching, upscaling mode switching, ray tracing on/off toggling)  
+-   Fixed Enchanted Bow's textures being too dark ([MCPE-119701](https://bugs.mojang.com/browse/MCPE-119701)) 
+
+### Summon Prefix Fixes 
+
+-   Fixed a merge bug when loading json definitions for Vanilla mobs 
+-   Fixed a bug with the summonable property of overridden vanilla mobs pre JSON version 1.8.0, which caused Bees to not be summonable ([MCPE-58557](https://bugs.mojang.com/browse/MCPE-58557))    
+
+### Items 
+
+-   The "has\_equipment" filter will now properly evaluate custom entity spawn eggs   
+
+### Projectiles 
+
+-   The "ImpactDamageSubcomponent" will again only prevent damage from being dealt to fire immune mobs if the 'catchFire' field is true and the projectile is on fire    
+
+### Dedicated Server 
+
+-   The dedicated server log will now list all Experiments enabled in a world when loading it
+

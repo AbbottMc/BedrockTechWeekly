@@ -1,0 +1,26 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Components**
+
+-   Added "inventory" as a possible "domain" value for the "has\_equipment" filter, which allows to check for items stored in the actor's inventory
+-   Added an "equip\_item\_slot" field to the "interact" component
+    -   If set, an item held by the player will be equipped to the specified slot upon successful interaction
+    -   If an item is already present in the specified slot, it will be moved to the player's inventory
+    -   Equipping an item removes it from the player's inventory, unless the player is in Creative Mode
+
+# **Technical Experimental Features**
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **General**
+
+-   Ensure Block Permutation Conditions cannot have side effects (i.e. 'math.random', 'math.random\_integer', and variable assignment)
+

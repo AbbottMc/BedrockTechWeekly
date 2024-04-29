@@ -1,0 +1,35 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Experimental**
+
+## **GameTest Framework**
+
+-   BlockExplodeEvent
+    -   Removed property destroyedBlockPermutation
+-   World additions for music management:
+    -   queueMusic(trackName : string, musicOptions : MusicOptions)
+    -   playMusic(trackName : string, musicOptions : MusicOptions)
+    -   stopMusic()
+    -   Added MusicOptions JS class with volume, fadeSeconds and loop properties
+-   Added event entityHurt(entityHurtEvent: EntityHurtEvent, options?: EntityEventOptions)- Fires when an entity takes damage
+-   Removed 'Minecraft' and 'GameTest' imports; please use 'mojang-minecraft' and 'mojang-gametest'
+
+## **General**
+
+-   Removed "preventsjumpingcomponent" from data-driven blocks
+
+## **Graphics**
+
+-   Testing RenderDragon on all Android and iOS devices
+
+## **JumpToBlock Behavior**
+
+-   JumpToBlock behavior is now correctly affected by JumpBoost mob effect ([MCPE-137432](https://bugs.mojang.com/browse/MCPE-137432))
+
+## **Block Components**
+
+-   Fixed a case where experimental BlockCollisionComponents did not allow partial specification
+

@@ -1,0 +1,73 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.19.10 with new resources, behaviors, and documentation, are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddOnPacks)
+
+## **General**
+
+-   Fixed a crash that could occur if a mob had the _flocking_ component
+-   Fixed a bug where Soul Campfire was using the wrong tag, resulting in cases where some custom recipes for Campfires were not working correctly ([MCPE-98305](https://bugs.mojang.com/browse/MCPE-98305))
+-   Fixed interaction priority when using a Bucket on a waterlogged and interactable block, eg. Lever ([MCPE-154221](https://bugs.mojang.com/browse/MCPE-154221))
+-   The Trader Llama is now its own dedicated mob instead of being a normal Llama with specific component groups
+-   Ensured content errors are not ignored when loading entity JSON schemas with invalid value types for following fields: The "Runtime\_Identifier", "Is\_Spawnable" and "Is\_Summonable" fields for "description", the "component\_groups" field and the "event" field for "events" ([MCPE-151381](https://bugs.mojang.com/browse/MCPE-151381))
+
+## **Commands**
+
+-   Fixed an issue where, after 1.18.30, teleporting an entity to a chunk that has not been loaded since before 1.18.30 would result in the loss of that entity
+-   Fixed an issue in the teleport command where a "facing" argument would calculate an incorrect vertical orientation ([MCPE-144870](https://bugs.mojang.com/browse/MCPE-144870))
+-   Teleporting entities into unloaded chunks no longer deletes them
+-   Autocomplete suggestions now show only valid parameters
+-   New execute command functionality is now available via the "Upcoming Creator Features" experimental toggle
+-   Chests with loot tables no longer drop items when removed with '/clone', '/fill' or '/setblock' ([MCPE-151876](https://bugs.mojang.com/browse/MCPE-151876))
+-   Fixed an issue where entities loaded by Structure Blocks and commands would cause the despawn of the original mob used to save the structure and any mobs from previous loads of the structure ([MCPE-155036](https://bugs.mojang.com/browse/MCPE-155036))
+-   Pillagers and Vindicator Captains spawned with commands are once again hostile by default ([MCPE-116971](https://bugs.mojang.com/browse/MCPE-116971))
+
+## **Blocks**
+
+-   Renamed _minecraft:block\_collision_ block component to _minecraft:collision\_box_
+-   Renamed the _minecraft:block\_light\_filter_ component to _minecraft:light\_dampening_ and added appropriate versioning
+-   Renamed the _'part visibility'_ component's field '_rules'_ to _'conditions'_ and added appropriate versioning 
+-   Renamed the _'crafting\_table'_ component's field _'custom\_description'_ to _'table\_name'_ and added appropriate versioning
+-   Renamed the _'minecraft:block\_light\_filter'_ component to _'minecraft:light\_dampening'_
+-   Renamed the _'part visibility'_ component's field _'rules'_ to _'conditions'_
+-   Renamed the _'crafting\_table'_ component's field _'custom\_description'_ to _'table\_name'_
+-   Blocks with _'__block\_light\_absorption'_ component of value 16 no longer fail to load
+-   Renamed the component _'minecraft:ticking' to_ _'minecraft:queued\_ticking'_
+-   Renamed the _'minecraft:ticking'_ component's field _'range'_ to _'interval\_range'_, which is now described in ticks rather than seconds
+-   Renamed the '_minecraft:flammable'_ block component fields _'flame\_odds'_ and _'burn\_odds'_ to _'catch\_chance\_modifier'_ and _'destroy\_chance\_modifier'_
+-   Added ability to set _'minecraft:flammable'_ block component using booleans for default flammable or nonflammable values
+-   Updated documentation for _minecraft:map\_color_ and _minecraft:material\_instances_
+-   Cake blocks now emit _Block\_Change_ game events when slices are eaten
+
+## **Items**
+
+-   Fixed _'minecraft:block\_placer'_ item component to correctly trigger block component _'minecraft:on\_player\_placing'_
+-   Hunger Exhaustion component now uses new correct default values ([MCPE-154238](https://bugs.mojang.com/browse/MCPE-154238))
+    -   Please note, add-on packs that alter 'player.json' may need to ensure that the player saturation rate is set correctly to match the default values, if required
+
+## **Actors**
+
+-   Added _'minecraft:drink\_milk'_ behavior, which allows a mob to drink Milk based on specified environment conditions
+-   Actor properties will now save and load correctly across multiple clients and entities
+-   Direction facing will now be preserved through a transformation from one actor type to another
+-   Fixed an issue where projectiles with an offset weren't spawned based on the player's rotation ([MCPE-153880](https://bugs.mojang.com/browse/MCPE-153880))
+-   Fixed a bug that prevented the owner of the _'minecraft:angry'_ component from broadcasting anger to its friends if it has no target. A mob with this component will now be able to get angry if it both does not have a target and the component's _'filters'_ list is empty ([MCPE-94996](https://bugs.mojang.com/browse/MCPE-94996))
+-   Mobs can now be hit by projectile when their hitboxes are outside the mob's bounds
+-   Replaced _'values'_ field with _'range'_ field, which only supports array JSON types. Added required _'type'_ JSON field for actor properties with supported values _'int'_, _'float'_, _'bool'_, and _'enum'_. The _'default'_ and _'range'_ fields on the property must match the type specified in the new _'type'_ field
+
+## **Graphical**
+
+-   Fog setting with negative fog start will no longer cause flames on player model in UI to get tainted by fog color
+-   “particles\_blend” material is no longer culled
+-   Fixed the issue where water fog expanding speed did not match value specified in _'midPercentage'_ field ([MCPE-153864](https://bugs.mojang.com/browse/MCPE-153864))
+-   Fixed issue where under water fog transition between biomes is not smooth while affected by eye adapting effect
+
+## **GameTest Framework (Experimental)**
+
+-   Added argument _keepVelocity: bool_ to functions _teleport_ and _teleportFacing_ - If true, preserves velocity when teleporting the Entity
+-   The _/script profiler_ command now includes native API calls its trace call stacks
+

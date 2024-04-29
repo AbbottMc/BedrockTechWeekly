@@ -1,0 +1,110 @@
+**Posted:** 9 March 2022
+
+## Information on the Minecraft Preview and Beta:  
+
+-   Preview Version: 1.18.30.23 (iOS: 1.18.30.24) | Beta Version: 1.18.30.22  
+-   While the version numbers between Preview and Beta are different, there is no difference in game content  
+-   These work-in-progress versions can be unstable and may not be representative of final version quality  
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)  
+-   The beta is available on Xbox, Windows 10/11, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+  ![A Minecraft screenshot showing the new mob, the Allay!](https://feedback.minecraft.net/hc/article_attachments/4675726978061/allay_beta16x9_resize.jpg)
+
+Here's a list of what is new in this week's Beta! As always please search and report any bugs you may find at [bugs.mojang.com](http://bugs.mojang.com/). We would love to hear what you think of the Allay, and you can send us your feedback [here](https://aka.ms/AllayBetaFeedback).
+
+# **Experimental Features**
+
+## **Allay**
+
+-   Allay can collect the same items from the world as it holds in its hand
+-   If an Allay holds an item it got from a player, it will follow that player
+-   The Allay is able to drop items at nearby Note Blocks
+-   When playing a Note Block near an Allay, that Note Block becomes the Allays favourite Note Block for 30 seconds, and the Allay will attempt to drop off items at the Note Block rather than at the player
+-   If an Allay has items in its inventory, it will attempt to give them to its owner
+-   The Allay sometimes spawns in cages next to Pillager Outposts (similar to Iron Golem), and inside Woodland Mansions
+
+###  Known Issues
+
+-   The Allay may get stuck in a loop collecting and delivering one item from its inventory, especially when similar block types are used (such as regular and red sand)
+
+## **Deep Dark**
+
+### Sculk
+
+## **Please note:** The Warden hasn’t made its way into the game yet, but it’s getting ready for its big debut!
+
+-   Changed Sculk Catalyst block to match recent redesign which is described below:
+    -   A mysteriously soul-emitting block that blooms when mobs die within an 8-block radius
+    -   Mobs that perish in the presence of the catalyst will not drop their experience
+    -   Instead, a bubbling charge will be created at the place the mob perished
+    -   This charge from mobs will spread through Sculk Veins and Sculk blocks in random directions until they find a valid substrate that they can convert into Sculk
+        -   The value of the charge is directly proportional to the amount of XP the perished mob would have dropped, and each time a block is converted into Sculk, it will remove 1 value from that charge
+        -   This charge in the Sculk blocks and Sculk Veins will eventually decay, but it will decay much, much slower in the close vicinity of the Sculk Catalyst, and much faster away from its host
+        -   If the charge decays 4 blocks away from the catalyst, it has a chance of growing a Sculk Sensor or a Sculk Shrieker
+        -   Charges and their values also merge when they move to the same position
+-   Made some changes to Sculk Sensors to be at parity with Java Edition
+    -   They now make no activation sound when waterlogged
+    -   Vibrations are now also occluded by Wool blocks
+
+### Darkness Effect
+
+-   A new mob effect unique to the Warden and Sculk Shrieker, which will afflict players with the effect when nearby
+-   Lowers the gamma down at an equivalent of “Moody” while having this effect
+-   In periodic pulses, will lower the overall brightness of the world so that the darkness creeps up against light sources
+-   When the Warden is around, torches will be more important than ever!
+
+# **Features and Bug Fixes**
+
+![A Minecraft screenshot showing updated mobile touch controls](https://feedback.minecraft.net/hc/article_attachments/4675716512141/preview_beta_crosshair.png)
+
+## **Updated Touch Controls**
+
+-   Enables preview of new touch control schemes for players on mobile devices
+-   These can be enabled by navigating to Settings \> Touch \> Enable New Touch Control Schemes
+-   Please let us know what you think [here](https://aka.ms/MinecraftBetaFeedback)!
+
+## **Gameplay**
+
+-   Changed the spawning logic for Iron Golems and Cats to make it easier for them to spawn in roofed areas, like underground villages ([MCPE-142292](https://bugs.mojang.com/browse/MCPE-142292))
+-   Scaffolding can no longer be placed without support on y=0 ([MCPE-150765](https://bugs.mojang.com/browse/MCPE-150765))
+-   Fire that exists before the Fire Tick game rule is enabled will continue to spread again ([MCPE-140396](https://bugs.mojang.com/browse/MCPE-140396))
+
+### **Vanilla Parity**
+
+-   Shulkers now have a chance to spawn another Shulker when hit by a Shulker projectile ([MCPE-104826](https://bugs.mojang.com/browse/MCPE-104826))
+-   When a mob picks up an item, the item can be seen slightly "pulled" towards the mob right as it picks it up. This matches the behavior of Java Edition
+-   Blaze Fireball will deal knockback on impact
+-   Acacia Trees now grow Leaves on every branch below Y = 0 ([MCPE-151386](https://bugs.mojang.com/browse/MCPE-151386))
+-   Mobs can no longer spawn on Campfires ([MCPE-152770](https://bugs.mojang.com/browse/MCPE-152770))
+
+## **Blocks**
+
+-   Glow Lichen does not generate hanging in the air inside Strongholds anymore ([MCPE-123448)](https://bugs.mojang.com/browse/MCPE-123448)
+-   Glow Lichen now correctly checks for the face of the block they are attached to be full
+-   Glow Lichen can now be attached to Leaves
+-   Blocks such as Glow Lichen, Torches, and Redstone can no longer be placed on or attached to Brewing Stands 
+-   Blocks such as Glow Lichen, Torches, and Redstone can now be placed on or attached to Trapdoors, depending on their state
+-   Azaleas and Lily Pads are now broken by flowing water ([MCPE-152040](https://bugs.mojang.com/browse/MCPE-152040))
+
+## **Commands**
+
+-   Fixed an issue that would cause commands to affect players in all dimensions ([MCPE-152218](https://bugs.mojang.com/browse/MCPE-152218))
+
+## **Graphical**
+
+-   Fixed lighting bug where light level 1 incorrectly dropped to 0 when placing blocks in light level 1 with multiple light sources ([MCPE-151266](https://bugs.mojang.com/browse/MCPE-151266))
+-   Sculk Sensors and Magma Blocks are now visible in the darkness
+
+## **Items**
+
+-   Observers placed facing Double Chests no longer send out a Redstone pulse when reloading/re-entering a chunk
+
+## **User Interface**
+
+-   Fixed a bug where the "Invite" button was disabled incorrectly for clients
+-   Added Seed Templates to the advanced tab in the new Create New World screen ([MCPE-151930)](https://bugs.mojang.com/browse/MCPE-151930)
+
+### **Villagers**
+
+-   Villagers are no longer able to trade while on fire
+

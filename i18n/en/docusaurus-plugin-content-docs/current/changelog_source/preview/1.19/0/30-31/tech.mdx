@@ -1,0 +1,41 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+-   Updated documentation for specific string types "Localization String", "Path String", and "Identifier String"
+
+## **Mobs**
+
+-   Added a _target\_block\_filters_ to "_behavior.move\_to\_block_" and "_is\_waterlogged_" filter test to prevent mobs from moving to blocks underwater ([MCPE-153783](https://bugs.mojang.com/browse/MCPE-153783))
+
+## **Stability and Performance**
+
+-   Fixed a crash when attempting to access a null entity
+-   Game no longer crashes when creating a world from Cruise Ship Roleplay template (3P)
+
+## **GameTest Framework (Experimental)**
+
+-   **IMPORTANT BREAKING CHANGE**  
+      
+    GameTest module type changed from "javascript" to "script" in manifest.json. Added an optional attribute “language” which has only one supported value – javascript.
+
+New JavaScript modules in manifest.json should look as follows:
+
+  
+  "modules": \[  
+    {  
+      "description": "JavaScript module code",  
+      "language": "javascript",  
+      "type": "script",  
+      "uuid": "\<your UUID\>",  
+      "version": \[0, 0, 1\],  
+      "entry": "scripts/main.js"  
+    }  
+  \],  
+  
+
+-   Commands
+    -   Added _/script profiler_command to create GameTest script performance traces. Script profiles should be written to the Minecraft logging folder.
+-   Removed constraint on maximum travel distance from GameTest structure for SimulatedPlayer
+

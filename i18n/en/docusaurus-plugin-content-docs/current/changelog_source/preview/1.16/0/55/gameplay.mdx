@@ -1,0 +1,77 @@
+**PLEASE READ before participating in the Minecraft Beta:**
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them
+-   Beta builds can be unstable and are not representative of final version quality
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+**NOTE:** This beta is a work in progress version of the full Nether Update. Some features seen in Java Edition snapshots may not yet be present.
+
+## **Known Issues in this beta:**
+
+-   Thumbnail icons in the Marketplace are currently not loading in correctly
+
+# **Fixes:**
+
+## **Crashes and Stability**
+
+-   Fixed several crashes that could occur during gameplay
+-   Fixed a crash that could occur when creating a new world on iOS 
+-   Fixed a crash that could occur when exiting a world with particles present 
+-   Fixed several crash issues related to the player entering water 
+-   Fixed a crash that could happen when a mob's state changed 
+
+## **General**
+
+-   Light propagation now works correctly, fixing hostile mob spawning ([MCPE-49616](https://bugs.mojang.com/browse/MCPE-49616))
+-   Chunks should no longer fail to load properly in +250MB worlds ([MCPE-58514](https://bugs.mojang.com/browse/MCPE-58514))
+-   Fixed a bug with light persisting after a block change
+-   Ticking areas can no longer be removed on the same tick they are created ([MCPE-36769](https://bugs.mojang.com/browse/MCPE-36769)) 
+-   Lighting now propagates correctly through chunk/subchunk borders ([MCPE-58182](https://bugs.mojang.com/browse/MCPE-58182)) 
+-   Fixed an issue that could cause areas to show lighting errors on servers 
+-   Added new overload for /replaceitem with an option for destroy (the old behavior) or keep (the command will return an error if an item occupies that slot)
+-   The smooth camera option (from full keyboard gameplay) is no longer jittery, and is smooth again ([MCPE-54969](https://bugs.mojang.com/browse/MCPE-54969)) 
+-   The screen no longer twitches when the player dies in the Nether or End
+
+## **Gameplay**
+
+-   Water can now be collected from bubble columns using a bucket ([MCPE-37571](https://bugs.mojang.com/browse/MCPE-37571))
+-   Casting a fishing rod will no longer attach itself to a Parrot mounted on the player’s shoulder ([MCPE-60361](https://bugs.mojang.com/browse/MCPE-60361))
+-   Fully grown Sweet Berry bushes can now be harvested when holding bone meal ([MCPE-54206](https://bugs.mojang.com/browse/MCPE-54206))
+-   Parity: Carrot on a stick, shield, and shovel now lose durability consistently in Bedrock 
+-   Fire charges are now consumed after lighting a tnt block ([MCPE-42938](https://bugs.mojang.com/browse/MCPE-42938))
+-   Player icons no longer appear as white square on locator maps
+
+## **Blocks**
+
+-   Wall signs attached to doors are no longer left floating after the bottom half of the door is broken ([MCPE-43748](https://bugs.mojang.com/browse/MCPE-43748)) 
+
+## **Mobs**
+
+-   Creepers no longer lose aggro immediately after losing sight of its target ([MCPE-32815](https://bugs.mojang.com/browse/MCPE-32815)) 
+-   Ghast hitbox now matches its rendering ([MCPE-44326](https://bugs.mojang.com/browse/MCPE-44326))
+-   Fixed the "MeleeAttackGoal" to allow entities to hit target entities beneath them
+-   The Iron Golem's legs don't swing as far anymore 
+
+## **Graphics and Rendering**
+
+-   Experience Orbs have been data driven 
+-   Fireballs have been data driven 
+-   NPC geometry and animations have been data driven 
+-   Items no longer flash green when being removed from a furnace
+-   Fixed a bug where glass and water could be drawn incorrectly when close to each other 
+-   Fixed the custom glint texture issue when added to compasses 
+
+## **Scripting and Add-ons**
+
+-   Removed type property from “minecraft:shooter” as it was never used
+-   Updated “minecraft:spawn\_entity” to have an internal entities object or array
+-   Updated the “minecraft:behavior.circle\_around\_anchor”behaviour
+-   Added “attack\_chance” to the “minecraft:behavior.defend\_village\_target” goal
+-   Fixed removed or destroyed entities querying as valid in script 
+-   Invalid items in the "spawn\_item" field of a "minecraft:spawn\_entity" now display an error 
+-   “StompEggGoal” no longer uses “search\_count” as it now searches all blocks in the specified area 
+-   Fixed “navigation.walk” to handle the case where it is used on a flying entity, so that the flying entity will not cause lag while it is touching the ground 
+-   The “minecraft:density\_limit” component is now documented in the Spawn Rules documentation section ([MCPE-61126](https://bugs.mojang.com/browse/MCPE-61126))
+-   A content error will now show up if you provide an invalid item name to “minecraft:interact” in the “transform\_to\_item” field

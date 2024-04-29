@@ -1,0 +1,34 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Commands**
+
+-   Removed the unintended ability to set the _with_property of a raw text JSON object to an array of JSON objects
+
+## **Mobs**
+
+-   The "minecraft:variable\_max\_auto\_step" component has a new property "controlled\_value"
+    -   This property will override "base\_value" when a mob with "minecraft:input\_ground\_controlled" is being controlled by the player
+    -   The "jump\_prevented\_value" will have precedence over both other values
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Commands**
+
+-   Fixed a bug where the @initiator selector would not work with the Upcoming Creator Features experiment enabled ([MCPE-164727](https://bugs.mojang.com/browse/MCPE-164727))
+-   As a preview of upcoming potential changes to how commands run, new experimental functionality within the Upcoming Creator Features experiment causes all behavior pack animation events to run at the end of the current tick

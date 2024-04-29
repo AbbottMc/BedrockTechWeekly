@@ -1,0 +1,58 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Experimental Features**
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Major breaking change to experimental JavaScript APIs:**
+
+All script modules have been renamed to follow a new convention.  
+
+-   _mojang-gametest_\-\> _@minecraft/server-gametest_
+-   _mojang-minecraft_\-\> _@minecraft/server_
+-   _mojang-minecraft-ui_\-\> _@minecraft/server-ui_
+-   _mojang-minecraft-server-admin_\-\> _@minecraft/server-admin_
+-   _mojang-net_\-\> _@minecraft/server-net_
+
+For example, rather than using:
+
+import \* as mc from “mojang-minecraft”;
+
+Use
+
+import \* as mc from “@minecraft/server”;
+
+-   Use of script eval()and Function() must be explicitly enabled in  json 
+    -   To do this, set script\_evalin capabilities
+
+"capabilities": \[  "script\_eval"\]
+
+-   Root path for imports has changed; scripts/prefix are no longer allowed.
+-   For imports, use import "./source.js" or import "source.js"
+-   Deprecated use of import "scripts/source.js"
+
+## **Actor Properties**
+
+-   Fixed "bool\_property" filters that didn't specify a "value"
+
+## **Commands**
+
+-   Temporarily disabled the rotation for the /summon command while a bug is worked on
+-   Fixed a rotation issue when a Command Block executes 'execute facing' and 'execute rotated' ([MCPE-162256](https://bugs.mojang.com/browse/MCPE-162256))
+-   Implemented the '/execute in' command
+-   Implemented the ‘/execute anchored \<eyes|feet\>’ command
+
+## **General**
+
+-   Release BlockGeometryComponent out of experimental in JSON formats 1.19.40 and higher
+-   Release BlockMaterialInstancesComponent out of experimental in JSON formats 1.19.40 and higher
+-   Renamed _minecraft:block\_light\_filter_component to _minecraft:light\_dampening_
+

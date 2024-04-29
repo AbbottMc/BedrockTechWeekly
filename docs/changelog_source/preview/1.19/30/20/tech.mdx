@@ -1,0 +1,49 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Actor Properties**
+
+-   Numerical actor properties (float and integer) will now always clamp their values into the range of values specified
+
+## **Add-Ons and Script Engine**
+
+-   _minecraft:instant\_despawn_ no longer affects players
+
+## **Commands**
+
+-   Command selector now gets the same position for the player that the command origin player position gets
+
+## **Marketplace**
+
+-   Fixed a bug where the text-to-speech feature would read the entire "My Content" page, both highlighted and non-highlighted items
+
+# **Experimental Features**
+
+## **Commands**
+
+-   The "/execute if block" command now displays integer values for block positions ([MCPE-156285](https://bugs.mojang.com/browse/MCPE-156285))
+
+## **GameTest Framework**
+
+-   Vector
+    -   Fixed a bug where _function_ length would return undefined
+    -   Added function _lengthSquared_\- Returns the squared length of the vector
+    -   Added _stackOverflow_ as a possible _WatchdogTerminateReason_ for the _beforeWatchdogTerminate_ event
+-   IRawMessage - Interface object representing a message
+    -   rawtext : (string | IRawMessage)\[\] - (optional) A list of text objects used to build a message
+    -   text : string - (optional) A string containing plain text to display directly. Only valid when used as a sub member in a parent _rawtext_ or _with_ member
+    -   translate : string - (optional) String representing a translation identifier to translate text in the player's selected language
+    -   with : (string | IRawMessage)\[\] - (optional) A list of text object arguments used to fill values in the _translate_ text. Ignored when _translate_ is not present
+    -   say(string | IRawMessage) - Used to broadcast a message to all players
+    -   tell(string | IRawMessage) - Send a message to a player
+-   Fixed a bug where Dynamic Properties would not persist when using worlds hosted on Bedrock Dedicated Server or Realms
+-   Pack dependencies on native modules can be declared using the module name without the need to specify a UUID, using the “module\_name” attribute. The module name matches the import statement (e.g., “mojang-minecraft”)
+-   Removed mojang-gametest module version 0.1.0; packs using "mojang-gametest" specific APIs must be updated to use GameTest version 1.0.0-beta
+-   The "mojang-gametest" module 1.0.0-beta requires "mojang-minecraft" module 1.0.0-beta
+
+## **General**
+
+-   Removed usage of _minecraft:unwalkable_ block component and added block creative group and category to the block description
+

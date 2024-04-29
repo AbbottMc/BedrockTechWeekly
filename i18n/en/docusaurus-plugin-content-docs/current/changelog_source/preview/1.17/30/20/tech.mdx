@@ -1,0 +1,42 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **EDU / Chemistry**
+
+-   New chemistry material reductions can be defined in the JSON files
+-   Chalkboards now appear consistently when being placed
+
+## **Commands**
+
+-   The '/clone' command now copies signal strength for Levers and Redstone Dust
+-   The '/structure' command can now specify a \<to: x y z\> position argument with y below 0 as long as it is equal or above the minimum height for that dimension
+-   Added functionality for Intellisense options: "d" and "default" in the gamemode command selector
+-   Minecart with Command Block can now use the self selector (@s) in its commands to target itself ([MCPE-60126](https://bugs.mojang.com/browse/MCPE-60126))
+-   The "/time set" command now sets the correct time and day when specifying a time above 24000 or below the current time (e.g. "/time set 0" sets the day to 0, "/time set 28000" sets the day to 1), and "/time" can now set or add to a negative world time ([MCPE-43394](https://bugs.mojang.com/browse/MCPE-43394))
+
+## **Items**
+
+-   Updated documentation formatting for item components
+-   Using water buckets to collect fish has been version locked to prevent breaking old world templates
+
+## **Mob**
+
+-   Fixed the ability to add launch point positional offset for projectiles spawned with the 'spawn\_entity' component
+-   Fixed the ability to add angular offset to launch vector for projectiles spawned with the 'spawn\_entity' component
+-   Fixed offset not working for projectiles summoned through an interaction
+-   Fixed projectile 'angleoffset' value only reflected if shooter is riding another entity
+-   Fixed rotation of projectile launchpoint around a mob when projectile offset specified
+
+## **Molang**
+
+-   Fixed 'query.item\_remaining\_use\_duration' having improperly scaled or inverted results (This is to fix a Versioned Change as of engine version 1.17.30)
+-   Added 'query.facing\_target\_to\_range\_attack', which returns whether or not the queried actor's 'minecraft:behavior.ranged\_attack' goal is currently running
+
+## **Molang Documentation**
+
+-   Improved Molang documentation related to experiments
+    -   Experimental queries and language expressions now list which experiment(s) they require to be available
+-   Versioned Changes are now detailed in the documentation, starting with the 'query.item\_remaining\_use\_duration' fix
+

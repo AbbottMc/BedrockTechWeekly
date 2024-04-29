@@ -1,0 +1,218 @@
+## PLEASE READ before participating in the Minecraft Beta:
+
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta. Featured servers may also be unavailable
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [ms/JoinMCBeta](http://aka.ms/JoinMCBeta) for detailed instructions
+-   Beta builds will likely be unstable and are not representative of final version quality. Please backup your Worlds before joining the beta
+-   Finished releases may not include all new features, changes, and fixes from the beta to preserve stability and may slip to a later release
+
+### **Known Issues:**
+
+-   In this Beta there is a known issue with dragging and splitting stacks of items in the crafting grid and inventory. We are aware of the issue and a fix will be included in the next beta - in the meantime stacks can still be split in half using right click, or long-press for touch screen users.
+
+### **Experimental Gameplay:**
+
+(Work in progress features that are only available when Experimental Gameplay is enabled in world settings)
+
+-   New Villager Trade UI for Classic and Pocket UI profiles
+-   Pillager Raids  - Added some of the base features in preparation for Raids to be fully implemented in a future update!
+    -   New base mob effects for the raid: Bad Omen and Hero of the Village effects (Currently available only through commands)
+    -   Illagers and Ravagers do not kill baby villagers 
+    -   Placeholder 'horn' sound 
+    -   Placeholder explosion sound to indicate successful raid defense
+    -   Adding the dweller component to raiders
+-   Villagers in existing worlds now convert to new Villagers (if they are not part of a marketplace template world)
+-   Various Villager bug fixes and changes:
+    -   Farmers choose their profession based on composter blocks rather than farmland blocks
+    -   Farmers and Librarians properly go to work
+    -   Work goal is properly cleaned up between schedule changes
+    -   Fixed work goal to have a cooldown, max active time, and better ranges
+    -   Fixed preferred job sites being lost after reloading worlds
+    -   Increased job site goal distances
+    -   Villagers no longer get launched from their beds
+    -   Village structures no longer generate on top of one another ([MCPE-41220](https://bugs.mojang.com/browse/MCPE-41220))
+-   Various Village generation bug fixes:
+    -   Village chests now all have loot ([MCPE-41235](https://bugs.mojang.com/browse/MCPE-41235))
+    -   Grass, bell, and trapdoor placement fixes
+    -   Village town centres now generate at or above water level
+    -   Sand blocks now have supportive sandstone blocks underneath
+    -   Fixed a bug causing some Village elements to be buried underground
+    -   Balanced the number of job sites generated in villages
+    -   Flowing water is no longer generated in villages 
+    -   Lava in Blacksmiths is no longer a fire hazard!
+    -   Animals can spawn in Villages again
+    -   Fixed rotation of terracotta blocks
+    -   Balanced sea pickle generation
+    -   Bell block and crop block fixes 
+    -   Fixed an issue with snow layer generation
+    -   Fixed an issue with ravines near desert Villages
+-   Renamed Illager Beast to Ravager 
+-   Ravagers now tread more carefully around blocks that can inflict damage, such as berry bushes
+-   Added Ravager Stun and Roar attacks
+-   Added Ravager Bite Attack 
+-   Ravagers can be ridden by Pillagers and Vindicators. 
+-   Ravager Environment Interaction
+    -   When running, the Ravager will break all of the following blocks around it, similar to how the Wither works:
+        -   Berry Bushes
+        -   Dead Bushes
+        -   Leaf Blocks
+        -   Melons
+        -   Pumpkins (including Carved/Lit)
+        -   Beetroot
+        -   Wheat
+        -   Potatoes
+        -   Carrots
+        -   Stem Blocks
+        -   Sugarcane/Reeds
+        -   Bamboo
+        -   Chorus Plants
+        -   Chorus Flowers/Fruits
+        -   Tall Grass
+        -   Ferns
+        -   Vines
+        -   Lily Pads
+        -   Turtle Eggs
+        -   Mushrooms
+        -   Flowers
+        -   Top Snow/Snow Layers
+        -   Saplings (including Bamboo)
+    -   Added Ravager Sounds 
+    -   Illager Captain
+        -   Pillager Outposts now spawn Captains 
+        -   Implemented Illager Captain Banner 
+        -   Added Illager Captain Banner to creative menu
+    -   Iron Golem no longer generates outside of its cage in Pillager Outpost
+    -   Pillager Outpost now no longer generate embedded in the ground too much
+    -   Reduced the number of Pillager Outposts
+    -   Added Village new economy supply and demand system
+        -   The Supply of trades is only restored when the Villager is given the opportunity to work at their Work Station. (This feature is not complete in this beta, but villagers can access a resupply using the command /resupply)
+        -   When the Villager's trades are restored to full, it takes whatever Supply was used up (number of trades), and converts that into a price increase called Demand. Demand goes up by the number of Supply used, and down by the number of Supply not used
+        -   When villagers make trades, they gain experience. When they gain enough experience, they level up. Levelling up unlocks new trades, which are locked until the Villager is at the appropriate level (currently one trade equals one level up, this will be changed in a future update)
+        -   The economy system is still in development and more features and changes will be added later on
+    -   Villagers no longer teleport through walls or get stuck in walls when trying to sleep
+
+### **New Features:**
+
+-   Pillager Patrols now spawn in the world 
+-   Added basic Composter functionality, sounds, and particles
+    -   Hopper functionality will be added at a later date
+-   Added Grindstone UI, functionality, and sounds
+-   Added Bell functionality
+    -   New bell sounds
+    -   Bell is no longer behind experimental features
+    -   Bells ring when players interact with them or they are powered by redstone
+    -   Bells break when pushed by a piston
+    -   Arrows bounce off Bells
+-   Added more campfire functionality!
+    -   Campfire Cooking!
+    -   Added particles and sounds
+    -   Campfires smoke when they are extinguished
+    -   Campfires produce more smoke when placed on a haybale
+    -   Axes break campfires more quickly
+-   Added Stonecutter functionality 
+-   Added Cartography Table UI
+-   Added Sweet Berry Bush sounds
+-   Lecterns now emit a redstone signal when used
+    -   Players can use a comparator and each page turn emits one redstone signal
+-   Added Lantern sounds
+-   Added Barrel basic functionality and sounds
+
+### **Changes:**
+
+-   Bamboo generation is no longer behind the experimental gameplay toggle
+-   Cartography tables and grindstones can now be crafted with multiple wooden plank types
+-   Adding missing recipes for campfires, including wood blocks, stripped wood blocks, and stripped logs
+-   Moved all stonecutter recipes to the normal recipe list with tags
+
+### **For Map Makers and Add-On Creators:**
+
+-   Added Data Driven Furnace Recipes
+    -   Custom furnace recipes can be added to the game using JSON
+    -   Furnace recipes are 1 per file just like all other craft recipes.
+    -   Added tags to furnace recipes and made the UI screens use them to filter the recipes down
+-   Recipes now have tags so they can be filtered by crafting type
+-   Leash positions now use vanilla positions if not specified in the pack
+-   Fixed baby Zombie Pigman sword scale in marketplace content
+-   Sound Event is now displayed in the scripting documentation
+-   Renamed blocks in resource packs now keep their custom names
+
+### **Fixes:**
+
+-   **Crashes/Performance**
+    -   Fixed several crashes that could occur during gameplay
+    -   Fixed a crash that could occur when enabling Texel Anti-Aliasing
+    -   Fixed a crash that could occur if a villager trade was too expensive
+    -   Fixed a crash that could occur when spawning a villager in the Luxury Life marketplace pack.
+    -   Fixed a crash that could occur when loading in new villages
+    -   Fixed a crash that could occur when trading with the Wandering Trader
+    -   Fixed a crash that could occur when replacing a world with an unsynced world
+    -   Fixed a crash that could occur when loading in mob geometry
+    -   Fixed a crash that could occur when interacting with villagers with custom trades
+
+-   **General**
+    -   Global resource packs will now stay applied if you revisit the settings screen after restarting the game, and then restarting the game
+    -   The Shield hotbar item now only shakes when durability is lost
+    -   Fishing float now sits slightly higher in water ([MCPE-32976](https://bugs.mojang.com/browse/MCPE-32976))
+    -   The Treasure Hunter Achievement will now unlock when the map is placed the in the off-hand slot ([MCPE-33382](https://bugs.mojang.com/browse/MCPE-33382))
+    -   Global resource reset message now shows up if the load screen is taking too long on some devices
+    -   The "No Available Space" message no longer shows unexpectedly when downloading marketplace bundles
+    -   Renamed empty maps will now stay named after becoming a filled map
+
+-   **Gameplay**
+    -   Players on split-screen no longer have limited visibility underwater ([MCPE-39539](https://bugs.mojang.com/browse/MCPE-39539))
+    -   Scaffolding that is placed over the void now supports the player ([MCPE-38064](https://bugs.mojang.com/browse/MCPE-38064))
+    -   Chorus fruit now plays teleport sound after eating it 
+    -   Farmer villagers no longer produce infinite amounts of bread ([MCPE-33608](https://bugs.mojang.com/browse/MCPE-33608))
+    -   Signs can now be used as fuel in furnaces 
+    -   Players can now climb vines and ladders using the jump button again
+    -   Lightning no longer has a downward area of effect when hitting blocks, so will no longer strike mobs sheltering underneath blocks
+    -   Creative players no longer get additional buckets when collecting water or lava
+    -   Renaming items using an anvil no longer increases the prior work penalty ([MCPE-36931](https://bugs.mojang.com/browse/MCPE-36931))
+    -   Sweet berry bushes no longer supply infinite amounts of berries ([MCPE-41211](https://bugs.mojang.com/browse/MCPE-41211))
+
+-   **World Generation**
+    -   Fixed mineshaft generation - no longer generate in a giant cluster and should more closely resemble those found in the Java Edition ([MCPE-28485](https://bugs.mojang.com/browse/MCPE-28485))
+    -   Mesa Plateau biomes now generate more like those in the Java Edition
+
+-   **Mobs**
+    -   Panda eating animation is now faster ([MCPE-40743](https://bugs.mojang.com/browse/MCPE-40743))
+    -   Shulkers now have a chance to drop more shulker shells when killed with looting ([MCPE-39893](https://bugs.mojang.com/browse/MCPE-39893))
+    -   Vexes no longer attack baby Villagers 
+    -   Vindicators no longer become passive when renamed ([MCPE-27927](https://bugs.mojang.com/browse/MCPE-27927))
+    -   Baby Villagers can no longer show trade options in hand
+    -   Guardians no longer spawn outside water ([MCPE-39941](https://bugs.mojang.com/browse/MCPE-39941))
+    -   Fixed villager scheduling - Villagers now spend less time standing around doing nothing!
+    -   Pandas no longer roll into dangerous blocks when spawned 
+    -   Fixed a bug related to the Polar Bear attack animation (legs are now 100% more attached!)
+    -   The Polar Bear hitbox is no longer offset, and is positioned properly when riding a boat ([MCPE-41299](https://bugs.mojang.com/browse/MCPE-41299))
+    -   Fixed Wither boss armour geometry
+    -   Creepers now flash white during their pre-explosion animation ([MCPE-41258](https://bugs.mojang.com/browse/MCPE-41258))
+    -   Fixed Polar bear model size being too small
+    -   Snow golems now take damage when walking over campfires 
+    -   Creepers can now spawn in a 1.8 high space ([MCPE-24120](https://bugs.mojang.com/browse/MCPE-24120))
+
+-   **Blocks**
+    -   Grindstone can no longer support Scaffolding
+    -   Grass now spreads to normal dirt blocks, not coarse dirt ( [MCPE-41198](https://bugs.mojang.com/browse/MCPE-41198))
+
+-   **Items**
+    -   Renamed Firework Stars and Firework Rockets now display their new names
+    -   Leather horse armour is now properly colored ([MCPE-40124](https://bugs.mojang.com/browse/MCPE-40124))
+    -   Banners no longer render as wall variants when held ([MCPE-41228](https://bugs.mojang.com/browse/MCPE-41228))
+    -   Shields held in the off-hand are no longer upside-down  ([MCPE-41221](https://bugs.mojang.com/browse/MCPE-41221))
+
+-   **Graphical**
+    -   Fixed issues with the Armorer and Cleric textures 
+    -   Fixed Armorer villager arm texture 
+    -   Surrounded leaves are now the correct color 
+
+-   **User Interface**
+    -   Items can now be split if they are spread in a crafting grid on touch devices
+    -   Stonecutter now only makes a noise when there's something to take
+
+-   **Commands**
+    -   Different cauldron types will no longer overwrite each other in the player's inventory when using the give command
+
+-   **Add-Ons and Script Engine**
+    -   A component group is now correctly removed on second activation of minecraft:damage\_sensor
+    -   Target selectors are no longer case-specific
+    -   Scoreboard scores are no longer saved earlier than other information when exiting a world

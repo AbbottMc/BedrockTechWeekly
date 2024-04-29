@@ -1,0 +1,30 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Add-Ons and Script Engine**
+
+-   Fixed an issue where projectiles with an offset weren't spawned based on the player's rotation ([MCPE-153880](https://bugs.mojang.com/browse/MCPE-153880))
+
+## **General**
+
+-   Cake blocks emit blockChange game events when slices are eaten
+
+## **Hunger**
+
+-   Exhaustion component now uses new correct default values ([MCPE-154238](https://bugs.mojang.com/browse/MCPE-154238))
+    -   Please note, add-on packs that alter the player.json may need to ensure that the player saturation rate is set correctly to match the default values if required
+
+# **Experimental Features**
+
+## **General**
+
+-   Renamed the 'minecraft:block\_light\_filter' component to 'minecraft:light\_dampening'
+-   Renamed the 'part visibility' component's field 'rules' to 'conditions'
+-   Renamed the 'crafting\_table' component's field 'custom\_description' to 'table\_name'
+
+## **Stability and Performance**
+
+-   Loading a world no longer takes a very long time when having the Holiday Creator Features toggle enabled
+

@@ -29,7 +29,7 @@ export class ArticleUtil {
 
   static isBedrockArticle(article: ArticleObject) {
     const javaEditionKeywords = [Config.java, "Snapshot", "Candidate", "Pre "]
-    return javaEditionKeywords.every(keyword => !article.title.includes(keyword));
+    return javaEditionKeywords.every(keyword => !article.title.includes(keyword)) && (article.title.includes('-'));
   }
 
   static isPreviewArticle(article: ArticleObject) {
@@ -51,6 +51,14 @@ export class ArticleUtil {
       const versionPos = title.split('-').length - 1;
       return title.split('-')[versionPos].replace('/', '-').split('(')[0].split('(')[0].trim();
     }
+  }
+
+  static canSortPreview(articleObj: ArticleObject, startSort: boolean) {
+    return startSort || articleObj.title === Config.startSortFromTitle;
+  }
+
+  static forceSortPocket(articleObj: ArticleObject) {
+    return Config.forceSortTitleParts?.some(titlePart => articleObj.title.includes(titlePart));
   }
 
   static getMajorVersion(version: string) {
@@ -227,5 +235,9 @@ export class ArticleUtil {
       }
       return [key, value];
     })) as BedrockArticleSplitResult;
+  }
+
+  public static handleArticleTitle(title: string) {
+    return title.replaceAll(' ', '_').replaceAll('/', '-').replaceAll(':', '&');
   }
 }

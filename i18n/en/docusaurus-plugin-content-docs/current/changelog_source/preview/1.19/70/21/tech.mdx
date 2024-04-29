@@ -1,0 +1,34 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Crafting Table component no longer appends "tile." when defaulting to use block name for crafting table label
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **GameTest Framework**
+
+-   Test
+    -   Added optional _searchDistance_parameter to _assertEntityPresent(entityTypeIdentifier: string, blockLocation: BlockLocation, searchDistance?: number, isPresent?: boolean)_
+    -   Added _assertEntityInstancePresentInArea(entity: Entity, isPresent?: boolean)_to check if an entity instance is present in the test area
+    -   Made the _searchDistance_parameter optional in _assertItemEntityPresent_
+
+## **General**
+
+-   In JSON formats 1.19.70 and later, blocks fail to load if the "condition" field in Block Permutations is not a valid Molang string

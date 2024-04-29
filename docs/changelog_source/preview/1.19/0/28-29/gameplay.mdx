@@ -1,0 +1,124 @@
+## Information on the Minecraft Preview and Beta: 
+
+-   Beta Version: 1.19.0.28 | Preview Version: 1.19.0.29 | Xbox Preview Version: 1.19.0.64
+-   While the version numbers between Preview and Beta are different, there is no difference in game content
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Xbox, Windows 10/11, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta)for detailed instructions 
+
+![A Minecraft screenshot showing a new music disk](https://feedback.minecraft.net/hc/article_attachments/5862625227277/Screenshot_2022-04-27_094221.jpg)
+
+Here's a list of what is new in this week's Beta! As always, please search and report any bugs you may find at [bugs.mojang.com](http://bugs.mojang.com/) and send us [your feedback](https://aka.ms/MinecraftBetaFeedback).
+
+# **Spectator Mode (Experimental)**
+
+-   Introducing Spectator Mode experimental toggle. Players can now try out early development versions of Spectator Mode by enabling the experimental toggle
+    -   Just as a reminder, we won't be accepting bug reports related to spectator mode until we let you know, as the feature is likely to change a lot during development.
+-   Mobs no longer flee from players in Spectator Mode
+-   Spectator Mode will no longer trigger Tripwire traps
+
+# **Features and Bug Fixes**
+
+## **Music Disc 5**
+
+-   Added Disc Fragment 5 and Music Disc 5
+    -   Unlike other discs, it can only be obtained by finding and crafting 9 Disc Fragments together
+    -   These Disc Fragments can be found rarely in Ancient City Chests
+
+## **Warden**
+
+-   Some changes have been made to the Warden's ranged attack:
+    -   When using their ranged attack, the vertical knockback now respects directionality
+    -   It will now bypass Shields and armor, and has a custom death message
+    -   It deals 10 damage instead of 30 damage, and the cooldown has been reduced from 5 seconds to 2 seconds
+-   Wardens now drop a single Sculk Catalyst upon death
+-   Warden now increases anger (10 for non-frequent projectiles and 35 for frequent projectiles) when being distracted by projectiles
+-   Warden now reacts to non-arrow type projectiles
+-   Warden can now correctly be distracted by non-arrow projectiles ([MCPE-153549](https://bugs.mojang.com/browse/MCPE-153549))
+-   Warden now gets angry at all mobs that bump into it ([MCPE-153839](https://bugs.mojang.com/browse/MCPE-153839))
+
+## **Sculk**
+
+-   Sculk Catalysts and Shriekers have the same blast resistance as on Java ([MCPE-153208](https://bugs.mojang.com/browse/MCPE-153208))
+-   Restored some Sculk-related sounds that were mistakenly removed ([MCPE-153296](https://bugs.mojang.com/browse/MCPE-153296))
+-   The Sculk Shrieker's shrieking sound is now categorized properly as a block sound ([MCPE-154130](https://bugs.mojang.com/browse/MCPE-154130))
+-   The Sculk Sensor's activation and deactivation sounds are now categorized properly as block sounds ([MCPE-115395](https://bugs.mojang.com/browse/MCPE-115395))
+-   Sculk Sensor can now properly detect a Player using a Fishing Rod
+-   The Sculk Shrieker no longer exhibits z-fighting on any faces when held in hand or placed in Item Frames ([MCPE-145580](https://bugs.mojang.com/browse/MCPE-145580))
+-   Piston will not be able to push Sculk Shrieker, Sculk Sensor and Sculk Catalyst ([MCPE-154056](https://bugs.mojang.com/browse/MCPE-154056))
+-   Cracking animation no longer appears around tendrils while mining Sculk Sensor ([MCPE-121492](https://bugs.mojang.com/browse/MCPE-121492))
+
+## **Mangrove**
+
+-   Mangrove Propagule can no longer be fertilized indefinitely ([MCPE-153707](https://bugs.mojang.com/browse/MCPE-153707))
+-   Mangrove trees no longer grow if the area above them is obstructed
+-   Merged _mangrove\_propagule\_hanging_ into _mangrove\_propagule_ block and used a hanging block state instead
+-   Mangrove wood/log types now properly prevent leaf decay ([MCPE-153948](https://bugs.mojang.com/browse/MCPE-153948))
+-   Brought Mangrove tree foliage into parity with Java Edition
+-   Fixed an issue where Mangrove trees were generating without logs in the branches ([MCPE-153948](https://bugs.mojang.com/browse/MCPE-153948))
+-   Fixed a bug that caused most of the Mangrove Wood blocks to be unaffected by fire
+-   Non-Mangrove Saplings can now grow into full trees when bone-mealed on Mud
+-   Mangrove leaves now drop leaf blocks when harvested by Shears ([MCPE-153787](https://bugs.mojang.com/browse/MCPE-153787))
+-   Campfires and Smokers can now be crafted out of all variants of Mangrove Wood ([MCPE-153811](https://bugs.mojang.com/browse/MCPE-153811))
+
+## **Allay**
+
+-   It is now possible to take a stackable item from the Allay and add it to an existing stack ([MCPE-153540](https://bugs.mojang.com/browse/MCPE-153540))
+-   Allay now has a new throw sound
+
+## **Frog**
+
+-   Frogs no longer have trouble pathfinding on Mud Blocks. To fix this, until a proper pathfinding-fix has been implemented, Mud Blocks will longer sink entities down into them slightly ([MCPE-153961](https://bugs.mojang.com/browse/MCPE-153961))
+-   Fixed a bug where the Frog's mouth Z-fights with their head when eating Slimes or Magma Cubes ([MCPE-151539](https://bugs.mojang.com/browse/MCPE-151539))
+
+## **Froglight**
+
+-   Froglight is now correctly dropped when destroyed by any tool
+-   Froglight blocks now have the correct map colors ([MCPE-154315](https://bugs.mojang.com/browse/MCPE-154315))
+-   Froglight blocks now has the correct breaking time
+
+## **Frogspawn**
+
+-   Frogspawn now gets broken by flowing water
+
+## **Gameplay**
+
+-   Mobs can no longer spawn on Buttons again ([MCPE-153897](https://bugs.mojang.com/browse/MCPE-153897))
+-   Amethyst clusters can no longer be placed on top of Sculk Shriekers and other blocks with no top support, and can now be placed on blocks with bottom support, as intended ([MCPE-145676](https://bugs.mojang.com/browse/MCPE-145676))
+-   Fixed a bug where an undamaged tool, such as Pickaxe, when name changed on an Anvil, would fail to work correctly when used for the first time ([MCPE-152637](https://bugs.mojang.com/browse/MCPE-152637))
+-   The recipes for Minecart with Chest/Hopper/TNT are now shapeless
+-   Fixed an issue where taking large fatal damage with the absorption effect on could cause a soft lock
+
+## **Vanilla Parity**
+
+-   Shulkers are now fire immune ([MCPE-33236](https://bugs.mojang.com/browse/MCPE-33236))
+-   Shulkers now remain in upright position in vehicles ([MCPE-115269](https://bugs.mojang.com/browse/MCPE-115269))
+-   Shulkers no longer fail to spawn when there’s another Shulker at relative negative y and x axis
+
+## **Touch Controls**
+
+-   The player can now slide from movement directions to jump and not get interrupted when jump and sneak are swapped on the 'Classic’ touch controls ([MCPE-151149](https://bugs.mojang.com/browse/MCPE-151149))
+
+## **Graphical**
+
+-   Fixed sun direction not updating in RTX worlds ([MCPE-153958](https://bugs.mojang.com/browse/MCPE-153958))
+
+## **Trader Llama**
+
+-   Trader Llamas can now breed after being fed Hay Bales
+-   Trader Llamas will no longer be persistent after being unleashed from the Wandering Trader ([MCPE-102302](https://bugs.mojang.com/browse/MCPE-102302))
+
+## **Stability and Performance**
+
+-   Fixed a crash which could occur when trading with a Villager that last traded with a disconnected player
+-   Fixed a crash that would occasionally occur in Villages on iOS
+
+## **User Interface**
+
+-   Fixed bug where items can be dropped by clicking in the dark gray area of the left side of player inventory when using Furnace, Blast Furnace, Smoker, Enchant Table, Grindstone, Brewing Stand, Anvil, Beacon, and Smithing Table
+-   Featured Servers message text is no longer centered
+
+## **Commands**
+
+-   Added the 'replace entity' overload to the '/loot' command
+

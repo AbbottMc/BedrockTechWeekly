@@ -1,0 +1,32 @@
+**Posted:** 18 November 2020
+
+PLEASE READ before participating in the Minecraft Beta:
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them
+-   Beta builds can be unstable and are not representative of final version quality
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+## Bug Fixes
+
+## **Vanilla Parity** 
+
+-   Basalt can no longer be destroyed by Ghast fireballs ([MCPE-75252](https://bugs.mojang.com/browse/MCPE-75252))  
+-   Basalt blocks now take slightly more time to destroy 
+-   Dragon Egg now always drops as an item when it's destroyed by an explosion ([MCPE-52632](https://bugs.mojang.com/browse/MCPE-52632))
+
+## **General** 
+
+-   The Founder's Cape will now show up within the capes tab of the dressing room again if owned by user 
+-   Fixed a server/client desync with blocks when using the '/fill' command at the edge of render distance  
+-   If available GPU memory cannot be queried, the maximum render chunk distance will now default to 16  
+-   Fixed an issue that caused a crash on Nintendo Switch when trying to load a 256x resolution resource pack  
+    -   The system now blocks that selection and notifies the player they cannot select it  
+
+## **Technical Changes**  
+
+-   Added a limit to how many log messages could be processed to the GUI per frame to prevent delay on load  
+-   Fixed some culling issues with data\-driven blocks larger than 1x1x1 when placed on a chunk boundary. Also added content warnings for larger blocks  
+-   Fixed custom spawn egg generation in template worlds  
+-   Fixed player smaller hitbox while swimming and gliding from being reset after an event is sent on the player

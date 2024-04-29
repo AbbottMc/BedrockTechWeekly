@@ -1,0 +1,77 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for19.20 with new resources, behaviors, and documentation, are available to download at [aka.ms/MCAddonPacks  
+    ](https://aka.ms/MCAddOnPacks)
+
+## **General**
+
+-   Fixed a Disconnect Packet vulnerability used to crash Bedrock Server
+-   Blocks with _their_ _render\_method_component set to _double\_sided_ now have their back faces properly rendered
+-   Limit the number of elements in the conditionsfield of the minecraft:part\_visibility to 64
+-   Renamed minecraft:aim\_collisionblock component to minecraft:selection\_box
+-   renamed the 'minecraft:block\_light\_emission' component to 'minecraft:light\_emission' and changed its accepted value type from float to int
+-   Renamed 'minecraft:destroy\_time' to 'minecraft:destructible\_by\_mining' and restructured the component to be either defined as a boolean or as an object
+-   Setting the component to true will give the block the default destroy time and setting it to false will make the block indestructible by mining
+-   Setting the component as an object will let users define the number of seconds needed to destroy the block with base equipment
+-   Changed the minecraft:frictioncomponent to represent friction of block instead of movement
+-   Removed the component _minecraft:unwalkable_
+-   Renamed _'minecraft:explosion\_resistance'_ to _'minecraft:destructible\_by\_explosion'_ and restructured the component to be either defined as a boolean or as an object
+    -   Setting the component to true will give the block the default _explosion\_resistance_ and setting it to false will make the block indestructible by explosion
+    -   Setting the component as an object will let users define the resistance of the block to a base explosion
+-   Added /tagsfromitem and /itemswithtag commands which output the tags associated with an item and vice versa
+-   Added a new dedicated server property, "chat-restriction", that can be modified in the "server.properties" file to restrict the chat for all players connecting to the server. The property's possible values are "None", "Dropped", and "Disabled". See the default file for more information
+-   Server developers can now see checksums of the block registry from the server and client to check for mismatch (search "Block Registry Checksum" in the output logs and compare)
+-   Added a server property disable-player-interaction which informs clients that they should ignore other players when interacting with the world
+-   Modified the _json_ entity file so that it also contains projectile damage in addition to the explosion and fire damage ([MCPE-153740](https://bugs.mojang.com/browse/MCPE-153740))
+-   Items with the _item\_lock_component can no longer be placed in Item Frames or Armor Stands ([MCPE-138479](https://bugs.mojang.com/browse/MCPE-138479))
+
+## **Actor Properties**
+
+-   Added Content Errors for when there are too many properties on the actor (more than 32) or when a string enum name is too long (more than 32 characters)
+-   Added new Molang _had\_component\_group_ to allow calculating appropriate default values from previously saved entity data
+-   Renamed _'actor\_property'_ and _'has\_actor\_property'_ Molang queries to _'property'_ and _'has\_property'_. Also renamed _'set\_actor\_property'_ to _'set\_property'_
+-   Update _'set\_property'_ to only allow changing properties on the local actor rather than some other target
+-   Restored ability to use a Molang expression string for default values of Actor Properties (These are primarily useful for random starting values)
+
+## **GameTest Framework**
+
+-   Performance Watchdog
+    -   Added a performance watchdog that monitors GameTests for slow-running scripts
+    -   Executing a slow-running script will result in content log warnings
+    -   Additionally, long script hangs (more than 3 seconds in a single tick) will result in an exception
+    -   Added new properties to propertiesfor watchdog configuration on Dedicated Server
+        -   script-watchdog-enable- Enables the watchdog (default = true)
+        -   script-watchdog-hang-threshold- Sets the watchdog threshold for single tick hangs (default = 3000 ms)
+        -   script-watchdog-spike-threshold- Sets the watchdog threshold for single tick spikes (default = 100 ms)
+        -   script-watchdog-slow-threshold- Sets the watchdog threshold for slow scripts over multiple ticks (default = 2ms)
+    -   Updated mojang-minecraft-uiforms to respond when the client was unable to show a modal form
+        -   Renamed isCanceledfield to canceled
+        -   Added cancelationReasonfield
+        -   Added FormCancelationReasonenum
+    -   ScoreboardObjectiveDisplayOptions
+        -   Added 'ScoreboardObjectiveDisplayOptions' class
+        -   Added read-only property 'Objective: objective'
+        -   Added read-only property 'ObjectiveSortOrder: sortOrder'
+    -   Scoreboard
+        -   Added function 'removeObjective(objectiveId: string | Objective): void' - Untracks an objective
+        -   Added function 'addObjective(objectiveId: string, displayName: string): Objective' - Creates and objective to be tracked, identified with objectiveId and displayed on the screen with displayName
+        -   Added function 'getObjectiveAtDisplaySlot(displaySlotId: string): ScoreboardObjectiveDisplayOptions' - Gets objective and sort order contained in the DisplayObjective slot specified by displaySlotId
+        -   Added function 'setObjectiveAtDisplaySlot(displaySlotId: string, _ScoreboardObjectiveDisplayOptions_: scoreboardObjectiveDisplayOptions): Objective' - Sets the objective and sort order of the display slot, as specified by displaySlotId
+        -   Added function 'clearObjectiveAtDisplaySlot(displaySlotId: string): Objective' - Clear's the DisplayObjective of the objective it is currently displaying
+    -   Block
+        -   Added Block SignComponent that allows for retrieving of the value of sign text - Accessible from getComponent("sign")on sign blocks
+    -   BlockSignComponent
+        -   Added read-only property text: string- Gets the sign text
+    -   System Events
+        -   Added event _beforeWatchdogTerminate_\- Shuts down the server when a critical scripting exception occurs (e.g. script hang). Can be canceled to prevent shutdown
+        -   Added enum _WatchdogTerminateReason_\- Specifies the reason for watchdog termination
+        -   Added new properties to _properties_for watchdog configuration on Bedrock Dedicated Server
+            -   _script-watchdog-enable-exception-handling_\- Enables watchdog exception handling via the _events.beforeWatchdogTerminate_ event (default = true)
+            -   _script-watchdog-enable-shutdown_\- Enables server shutdown in the case of an unhandled watchdog exception (default = true)
+            -   _script-watchdog-hang-exception_\- Throws a critical exception when a hang occurs (default = true)
+

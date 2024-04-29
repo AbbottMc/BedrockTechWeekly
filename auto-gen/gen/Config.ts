@@ -12,15 +12,15 @@ export const Config = {
     pocket: 99999999,
   },
   startPage: 1,
-  endPage: 4,
-  startVersion: '1.19.80.22',
+  // endPage: 4,
+  // startVersion: '1.19.80.22',
   startSortFromTitle: 'Minecraft Beta - 1.2.20.1 (Xbox One/Windows 10/Android)',
-  forceSortTitleParts: ['New Nintendo'],
+  forceSortTitleParts: ['New Nintendo', 'Education'],
   titles: {
     technicalUpdates: 'Technical Updates',
     scriptAPI: ['API', 'Scripting'],
     expTechUpdates: ['Experimental Technical Updates', 'Technical Experimental Updates', 'Experimental Technical Features'],
-    ignore: ['**Posted', '**Information', '**Update on ']
+    ignore: ['**Posted', '**Information', '**Update on ', '**PLEASE READ', '**NOTE:**']
   },
   output: {
     folder: {

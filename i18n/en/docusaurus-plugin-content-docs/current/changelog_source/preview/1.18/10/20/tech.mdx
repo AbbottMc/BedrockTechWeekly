@@ -1,0 +1,116 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Add-ons and Scripting**
+
+-   Fixed custom food behaviours not being replicated to guest clients
+
+## **Animation**
+
+-   Fixed a crash that could occur when an animation controller referenced itself as one of its "animations"
+
+## **Commands**
+
+-   The '/spreadplayers' command no longer hangs when given a high spread range ([MCPE-137793](https://bugs.mojang.com/browse/MCPE-137793))
+-   Fixed a bug that caused performance drops when using the '/tag' command ([MCPE-139609](https://bugs.mojang.com/browse/MCPE-139609))
+
+## **Data-Driven Blocks**
+
+-   Updated documentation for BlockExplosionResistance
+-   Updated documentation for BlockFrictionComponent
+-   Updated documentation for BlockMaterialInstances
+-   Updated documentation for BlockBreathabilityComponent
+-   Updated documentation for CraftingTableComponent
+-   Updated documentation for BlockLightFilterComponent
+-   Changed BlockLightDescription JSON name from "minecraft:block\_light\_absorption" to "Minecraft:block\_light\_filter" and field name from "block\_light\_absorption" to "block\_light\_filter"
+
+## **Data-Driven Entities**
+
+-   Fixed many missing "Description" entries in the documentation
+-   Added AI Goals documentation for "behavior.move\_to\_liquid" and "behavior.move\_to\_block"
+-   Added AI Goals documentation for missing parameters of "behavior.tempt", "behavior.rise\_to\_liquid\_level", and "behavior.random\_fly"
+-   Added Components documentation for missing parameters of "movement.sway"
+-   Fixed some typos and inconsistencies in the Entities documentation
+
+## **Data-Driven Items**
+
+-   Updated documentation for BlockCollisionComponentDescription
+-   Changed BlockCollisionComponentDescription JSON name from "entity\_collision" to "block\_collision"
+-   Updated documentation for FuelItemComponent
+-   Renamed DamageableItemComponent to DurabilityItemComponent
+-   Updated documentation for BlockRaycastComponent
+-   Updated documentation for FoodItemComponent
+-   Changed SaturationModifier in FoodItemComponent to take a float instead of a string
+
+## **Feature Placement**
+
+-   Optimization of geode feature placement. Reduces the compute cost of geode feature placement
+
+## **Mobs**
+
+-   The "controlling\_seat" field on "minecraft:rideable" now works as intended for both Boats and Horses
+-   Mobs riding other mobs and pathing towards a target will no longer wiggle back and forth along their path
+-   Match tool conditions now work on mobs (Experimental)
+
+## **Molang**
+
+-   Fixed arrow operator to return 0 if the left side is not a valid entity or item, rather than causing the entire expression to return 0
+    -   For example, if bis not valid variable.a = variable.b-\>variable.c will now assign 0 to variable.a
+    -   This is not a Molang Versioned Changebecause no known content is currently using the arrow operator
+
+## **Stability and Performance**
+
+-   Fixed a crash that could occur when setting the width or height of a mob's hitbox to a negative value
+-   Fixed an issue where ticking areas would occasionally skip a tick ([MCPE-119312](https://bugs.mojang.com/browse/MCPE-119312))
+-   The Content Log History panel is now accessible from the second player in split-screen without crashing the game
+
+# **Experimental Features**
+
+## **Block Components**
+
+-   Fixed BlockPartVisibilityComponent for multiplayer by adding network save/load tags ([MCPE-141908](https://bugs.mojang.com/browse/MCPE-141908))
+
+## **GameTest Framework**
+
+There are some important breaking changes in APIs creators should be aware of:
+
+-   Renamed mojang-minecraft:Worldobject to mojang-minecraft:world (World still exists but is the type instead of the instance of the world)
+    -   In practice, this means “World.getDimension” code should now read “world.getDimension”
+-   Removed mojang-minecraft:Commands- Instead, we are adding runCommand methods on dimension, entity, and player
+    -   In practice, this means that “Commands.run(“say Hello World”, dimension)” should now read “dimension.runCommand(“say Hello World”)”
+
+Many exciting new API adds, as well:
+
+-   mojang-minecraft:ItemStack
+    -   Item use events:
+        -   Added event World.event.beforeItemUse - Fires before an item is used. Can be cancelled
+        -   Added event World.event.itemUse - Fires when an item is used and the before event is not cancelled
+        -   Added event World.event.beforeItemUseOn - Fires before an item is used on a block. Can be cancelled
+        -   Added event World.event.itemUseOn - Fires when an item is used on a block and the before event is not cancelled
+    -   Note that the following definition events only function with data driven items created as part of the Holiday Creator Features experiment:
+        -   Added event World.event.beforeItemDefinitionEvent - Fires before an Item definition event is processed. Can be cancelled
+        -   Added event World.event.itemDefinitionEvent - Fires when the Item definition event is processed and the before event is not cancelled
+        -   Added method triggerEvent(eventName : String) - Triggers an event on the ItemStack if an event with the given eventName, as defined in the Items JSON file
+    -   mojang-minecraft:Entity
+        -   Added runCommandmethod to run a command as an entity
+        -   Added dimensionproperty to get the dimension the entity is in
+        -   Added function addTag(tag: string): bool- Adds a tag to this entity. Returns true if the tag does not already exist
+        -   Added function hasTag(tag: string): bool- Returns true if the tag exists on this entity
+        -   Added function removeTag(tag: string): bool- Removes a tag from this entity. Returns true if the tag was removed
+        -   Added function getTags(): string\[\] - Returns all tags on this entity
+        -   Added target property to Entity. targetrepresents the Entity that this Entity is currently targeting, for purposes such as AI targeting
+        -   Added function getEntitiesFromViewVector(options: EntityRaycastOptions): Entity\[\]\` - Gets all entities that intersects the ray from the entities view vector
+        -   Added function getBlockFromViewVector(options: BlockRaycastOptions): Block – Gets the first block that intersects the ray from the entities view vector
+    -   mojang-minecraft:Dimension
+        -   Added runCommandmethod to run a command in a dimension
+        -   Added function getEntitiesFromRay(pos: Location, direction: Location, options: EntityRaycastOptions): Entity\[\]- Gets all entities that intersects the ray starting at a location which extends in direction
+        -   Added function getBlockFromRay(pos: Location, direction: Location, options: BlockRaycastOptions) : Block - Gets the first block that intersects the ray starting at a location which extends in direction
+    -   mojang-gametest:Test
+        -   Added getDimensionto get the dimension in which the test is being ran
+    -   mojang-gametest:ScriptSimulatedPlayer
+        -   Added function giveItem(itemStack: ItemStack, selectSlot: boolean)
+        -   Added function setItem(itemStack: ItemStack, selectSlot: boolean, slot: number)
+        -   GameTestExtensions - Removed function giveItem
+

@@ -1,0 +1,47 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.18.0 with new resources, behaviors, and documentation, are available to download at [aka.ms/MCAddOnPacks](https://aka.ms/MCAddOnPacks)
+
+## **Fixes**
+
+-   Players are disconnected if server and client have different Runtime Block IDs
+-   Fixed a rendering error that could occur when attempting to render a Vanilla mob in a base game version prior to the version that mob was introduced through JSON files
+-   Most content errors and warnings will now only display once per world ([MCPE-135153](https://bugs.mojang.com/browse/MCPE-135153))
+-   Improved performance in 'RangedAttackGoal' for mobs that do not move
+-   Fixed mobs' default summonability when not specified in JSON
+-   Fixed a versioning error with animation controllers that was causing the wrong schema to be utilized on Marketplace worlds with an animation controller version 1.8.0
+
+## **Commands**
+
+-   The '/clone' command has been updated to properly check for overlapping source and destinations areas no longer allowing for a 1 block depth overlap on each axis. This can continue to be overridden via the force clone option
+
+## **GameTest Framework  
+## **
+
+-   New Item API updates: ItemStack
+    -   Exposed interfaces for accessing script-enabled ItemComponents on ItemStack. Note that these item components only work in conjunction with custom items defined via the Holiday Creator Features experiment
+    -   hasComponent(componentId: string) - returns true if the ItemStack has the component \[componentId\] attached to it
+    -   getComponent(componentId: string) - returns a handle to the component attached to this ItemStack. Returns an undefined handle if the component does not exist or if the component is yet to be exposed to script
+    -   getComponents() - returns an array of all attached script-enabled components on this ItemStack
+-   Script Enabled Item Components
+    -   minecraft:food
+        -   Read-only property nutrition - number that describes how much nutrition this food item gives the player when eaten
+        -   Read-only property saturationModifier - number that is the saturation modifier used to apply the saturation buff when eaten
+        -   Read-only property canAlwaysEat - if true the player can always eat this item (even when not hungry)
+        -   Read-only property usingConvertsTo - string name of the Item this will be converted to when eaten. If empty, the item will not convert to anything else
+    -   minecraft:durability
+        -   Read-only property maxDurability - the number amount of damage this item can take before breaking
+        -   Read-only property damageRange - a NumberRange describing the chance of the item losing durability
+        -   Property damage - gets or sets the current damage on the ItemStack
+    -   getDamageChance(unbreaking: number = 0) - gets the maximum chance that this item would be damaged using the damageRange property if given an unbreaking level. Incoming unbreaking parameter must be greater than 0
+-   Added deltaTime read only property to TickEvent which represents the time between the last Level tick in seconds
+
+## **Molang**
+
+-   Fixed content error when Molang expression has no tokens to only fire when 'min\_engine\_version' is 1.17.40 or higher
+

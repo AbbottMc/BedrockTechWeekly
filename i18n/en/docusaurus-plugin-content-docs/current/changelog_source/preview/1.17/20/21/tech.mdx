@@ -1,0 +1,20 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **GameTest Framework (Experimental)** 
+
+-   Renamed helper method worldLocation(location : BlockLocation) to worldBlockLocation(location : BlockLocation) 
+-   Renamed helper method relativeLocation(location : BlockLocation) to relativeBlockLocation(location : BlockLocation) 
+-   Added helper method worldLocation(relativeLocation : Location) : Location - From a Location with coordinates relative to the GameTest structure block, returns a new Location with coordinates relative to the world 
+-   Added helper method relativeLocation(worldLocation : Location) : Location - From a Location, returns a new Location with coordinates relative to the current GameTest structure block 
+-   Added helper method spawnWithoutBehaviorsAtLocation(entityIdentifier : string, location : Location) : Entity - Spawns an entity at a location without any AI behaviors 
+-   Added helper method rotateDirection(direction : Direction) : Direction - Rotates the given direction relative to the GameTest structure rotation 
+-   Added helper method getTestDirection() : Direction - Returns the direction the GameTest is facing based on its structure rotation 
+
+## **Commands** 
+
+-   Commands ran through animations now will run in the order defined in animation files on all platforms, including Realms  
+-   Commands or structures being placed in a loaded area that is only partially loaded by a ticking area will now be considered loaded if the required chunks are loaded
+

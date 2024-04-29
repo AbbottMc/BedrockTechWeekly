@@ -1,0 +1,35 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **GameTest Framework (Experimental)** 
+
+-   Renamed BlockTypes class to MinecraftBlockTypes 
+-   Renamed Effects class to MinecraftEffectTypes 
+-   Renamed Items class to MinecraftItemTypes 
+-   Events 
+-   Added read-only property currentTick to tick event - Returns the current server tick 
+-   Renamed event createEntity to entityCreate 
+-   Renamed event addEffect to effectAdd 
+-   Renamed event activatePiston to pistonActivate 
+-   Renamed event beforeActivatePiston to beforePistonActivate 
+-   Renamed event explodeBlock to blockExplode 
+-   Renamed event changeWeather to weatherChange 
+
+## **Commands** 
+
+-   Target selectors ry and rym now support wrapping around north  
+
+## **Items** 
+
+-   Killing a custom mob with an unknown loot table entry type will no longer cause a crash, and will now throw a content error ([MCPE-129006](https://bugs.mojang.com/browse/MCPE-129006))  
+
+## **Mobs** 
+
+-   Rabbit with initialEvent specified now scales properly to adult rabbit size ([MCPE-76643](https://bugs.mojang.com/browse/MCPE-76643))  
+
+## **Spawning** 
+
+-   Similar to the spawns\_on\_block\_filter, the spawns\_above\_block\_filter specifies a list of blocks and a distance. The mob can then spawn only if the nearest block within the specified distance below the desired spawnpoint is in that list (water and air not included). "minecraft:spawns\_above\_block\_filter": { "blocks": "minecraft:stone", "distance": 10 }
+

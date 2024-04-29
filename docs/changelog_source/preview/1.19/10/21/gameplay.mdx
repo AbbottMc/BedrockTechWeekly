@@ -1,0 +1,153 @@
+## **Information on the Minecraft Preview and Beta:** 
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions 
+
+![A Minecraft screenshot, showing a campground structure in an ancient city](https://feedback.minecraft.net/hc/article_attachments/6601951803533/beta19U1_2_16x9.jpg)
+
+Here's a list of what is new in this week's Beta! As always, please search and report any bugs you may find at [bugs.mojang.com](http://bugs.mojang.com/) and send us [your feedback](https://aka.ms/MinecraftBetaFeedback).
+
+# **Features and Bug Fixes**
+
+### **Spectator Mode (Experimental)**
+
+-   Players in Spectator gamemode can't get effects from gameplay
+-   Players in Spectator don't trigger raids while being in Village with Bad Omen effect
+
+## **Sculk Sensor**
+
+-   Sculk Sensors are now occluded by Wool in a consistent manner, no matter which direction vibrations come from ([MCPE-153815](https://bugs.mojang.com/browse/MCPE-153815))
+-   Sculk Sensors cannot detect a Player placing, destroying, walking and falling on Carpets anymore ([MCPE-153956](https://bugs.mojang.com/browse/MCPE-153956))
+-   Sculk Sensors cannot detect Wool and Carpets hitting ground in item form anymore ([MCPE-152998](https://bugs.mojang.com/browse/MCPE-152998))
+-   Sculk Sensor now retains information about the vibration it is reacting to through save and load
+-   Sculk Sensors can now detect a Boat with Chest having its Chest opened and closed ([MCPE-156199](https://bugs.mojang.com/browse/MCPE-156199))
+-   Sculk Sensors give out a Redstone Signal of 12 and 13 when detecting fluids being placed and picked up, respectively
+-   Sculk Sensors can now detect a Player drinking Milk
+-   Sculk Sensors can now detect a Player picking up Powder Snow via Bucket ([MCPE-153817](https://bugs.mojang.com/browse/MCPE-153817))
+-   Sculk Sensors cannot detect an entity jumping on Wool covered by Sculk Veins anymore
+-   Sculk Sensors cannot detect an entity standing still in Scaffolding anymore ([MCPE-118454](https://bugs.mojang.com/browse/MCPE-118454))
+-   Sculk Sensors can now detect an entity moving in Powder Snow and cobwebs ([MCPE-153105](https://bugs.mojang.com/browse/MCPE-153105))
+-   Sculk Sensors can now detect items being placed in the hand of an Armor Stand
+-   Sculk Sensors cannot detect any more items being equipped on mobs at spawn time
+
+## **Sculk Shrieker**
+
+-   Sculk Shrieker now retains information about the vibration it is reacting to through save and load
+-   A Sculk Shrieker can no longer summon a Warden underwater ([MCPE-153791](https://bugs.mojang.com/browse/MCPE-153791))
+
+### **Warden**
+
+-   Warden can now spawn on more types of non-full blocks, such as upper Slabs, Redstone Dust, Snow layers, Buttons and Tripwires. Known limitations: The current solution doesn't allow spawn on some types of blocks such as Leaves and lower Slabs. ([MCPE-155821](https://bugs.mojang.com/browse/MCPE-155821))
+-   Warden now retains information about the vibration it is reacting to through save and load
+-   Warden sonic boom attack now bypasses enchantment damage reduction such as Protection ([MCPE-156282](https://bugs.mojang.com/browse/MCPE-156282))
+
+## **Allay**
+
+-   Allay now retains information about the vibration it is reacting to through save and load
+
+### **Mangrove Propagule**
+
+-   Mangrove propagule now uses grass sounds
+-   Mangrove propagule is no longer destroyed by flowing water ([MCPE-154011](https://bugs.mojang.com/browse/MCPE-154011))
+
+## **Deep Dark**
+
+-   Campground Structures generate correctly in Ancient Cities ([MCPE-156084](https://bugs.mojang.com/browse/MCPE-156084))
+-   Sculk Vein feature can now generate within the same height-span as the Sculk Patch feature. ([MCPE-156074](https://bugs.mojang.com/browse/MCPE-156074))
+
+## **Blocks**
+
+-   Mangrove Leaf Blocks are no longer collected into different stacks when using silk touch ([MCPE-153786](https://bugs.mojang.com/browse/MCPE-153786))
+-   Stripped Mangrove Logs now craft into Stripped Mangrove Wood instead of Mangrove Wood ([MCPE-155365](https://bugs.mojang.com/browse/MCPE-155365))
+-   Mangrove propagules now render correctly when placed in flower pots ([MCPE-155528](https://bugs.mojang.com/browse/MCPE-155528))
+-   Sweet Berry Bush can now be planted on Mud, Muddy Mangrove Roots, and Rooted Dirt ([MCPE-153916](https://bugs.mojang.com/browse/MCPE-153916))
+
+## **Gameplay**
+
+-   Smelting gold/iron tools and weapons into nuggets now rewards xp ([MCPE-136467](https://bugs.mojang.com/browse/MCPE-136467))
+-   Fixing bug where the Soul Campfire was using the wrong tag resulting in cases where some custom recipes for Campfires were not working correctly ([MCPE-98305](https://bugs.mojang.com/browse/MCPE-98305))
+-   Fixed entities disappearing when importing worlds converted from legacy console editions of Minecraft
+-   Teleporting entities into unloaded chunks no longer deletes them
+-   Fishing Rod no longer crashes the game when fish hook is cast through dimension-changing portals ([MCPE-154161](https://bugs.mojang.com/browse/MCPE-154161))
+-   Fixed bug causing player's hitbox to not reset if they die while swimming ([MCPE-155232](https://bugs.mojang.com/browse/MCPE-155232))
+-   Fixed issue with health boost extra life not staying ([MCPE-153504](https://bugs.mojang.com/browse/MCPE-153504))
+-   Wooden tools can now be repaired using Mangrove Planks, Crimson Planks, and Warped Planks ([MCPE-153808](https://bugs.mojang.com/browse/MCPE-153808))
+
+## **Character Creator**
+
+-   Infinite loading should no longer occur when entering the dressing room
+-   Fixed up some of the text for the emote wheel so it would fit inside the box
+-   Fixed issue where the Emote Expedite List would be unable to display duplicate emotes, and the issue where the Emote Expedite List would not display correctly if the user did not enter the Dressing Room first
+
+## **Graphical**
+
+-   Fixed the issue where water fog expanding speed did not match value specified in 'midPercentage' field ([MCPE-153864](https://bugs.mojang.com/browse/MCPE-153864))
+-   Fixed issue where under water fog transition between biomes is not smooth while affected by eye adapting effect
+
+### **Splitscreen**
+
+-   Fixed animation system issues for players in split screen situations
+    -   Fixed Crossbow, Trident and Shield rendering for other players ([MCPE-118528](https://bugs.mojang.com/browse/MCPE-118528))
+    -   Fix split-screen render position when sleeping in a bed ([MCPE-65705](https://bugs.mojang.com/browse/MCPE-65705))
+    -   Fix Elytra's animation is during split-screen
+    -   Fix attached Lead position when second player is using first person perspective
+
+## **Graphical**
+
+-   Fixed device loss when reloading RTX worlds that caused DX11 to be used resulting in a black screen
+-   Fog setting with negative fog start will no longer cause UI elements get tinted by fog color
+-   Fixed the issue where terrain flickers in and out of the fog on Switch
+
+## **Marketplace**
+
+-   Minecoins read by the text-to-speech reader will now say 'Minecoins'
+-   Fixed the ratings percentages to add up to 100%.
+-   Fixed issue where info and buttons do not appear for downloaded skin packs ([MCPE-152216](https://bugs.mojang.com/browse/MCPE-152216))
+
+### **Villager**
+
+-   Villagers will now flee from Zoglins ([MCPE-74974](https://bugs.mojang.com/browse/MCPE-74974))
+
+### **Wandering Trader**
+
+-   The Wandering Trader will now flee from Zoglins
+-   The Wandering Trader will now drink milk to clear its invisibility effect ([MCPE-44605](https://bugs.mojang.com/browse/MCPE-44605))
+
+### **Wither**
+
+-   Wither now breaks Obsidian when attacked by the player ([MCPE-64630](https://bugs.mojang.com/browse/MCPE-64630))
+-   Wither no longer breaks surrounding blocks after a shorter delay than intended after being attacked
+
+## **Player Rendering**
+
+-   Changed entity json files for the player to fix the hands not rendering while holding a map ([MCPE-100259](https://bugs.mojang.com/browse/MCPE-100259))
+
+## **User Interface**
+
+-   Added the player's cause of death to the death screen
+-   On the death screen in Pocket UI, moved the Main Menu button to the top navigation to avoid accidental button presses when dying mid-fight
+-   Fixed incorrect positioning of "Select (A)" tip on the death screen when using a gamepad controller
+-   Added correct death message when dying from Sweet Berry Bush ([MCPE-103583](https://bugs.mojang.com/browse/MCPE-103583))
+-   Added a minimum size to yellow splash screen text.
+-   Fixed "Crafting" word above the crafting slots in the Inventory in Bedrock's Classic UI ([MCPE-152697](https://bugs.mojang.com/browse/MCPE-152697))
+-   Worlds created with template will now always disable achievements.
+-   Fixed bug where items can be dropped by clicking in the dark gray area of the player inventory when using Furnace, Blast Furnace, Smoker, Enchant Table, Grindstone, Brewing Stand, Anvil, Beacon and Smithing Table, Loom, Cartography table, Stone cutter
+-   Fixed an issue where some paragraphs of text in modals was being misaligned ([MCPE-153789](https://bugs.mojang.com/browse/MCPE-153789))
+
+## **Vanilla Parity**
+
+-   Actors entering nether portals exit in same relative position and rotation to the portal ([MCPE-139835](https://bugs.mojang.com/browse/MCPE-139835))
+-   Muddy Mangrove Roots are now broken fastest with a shovel ([MCPE-153710](https://bugs.mojang.com/browse/MCPE-153710))
+-   Mangrove Roots are now broken fastest with an axe ([MCPE-155606](https://bugs.mojang.com/browse/MCPE-155606))
+-   Updated Ancient City structures to match Java
+
+## **Mobile Controls**
+
+-   Updated the visual style of the touch control joystick
+
+## **Performance and Stability**
+
+-   The game will no longer crash in multiplayer when a player leaves the game while changing dimension.
+-   Fixed a crash that would happen when players died while affected with withering.
+

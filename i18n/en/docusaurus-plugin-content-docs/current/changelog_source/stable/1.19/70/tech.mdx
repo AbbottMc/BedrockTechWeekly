@@ -1,0 +1,308 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.19.70 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddonPacks)
+
+## **General**
+
+-   Behavior packs with scripts can now be removed from worlds
+-   Item loot table conditions are no longer ignored in-game when used inside functions ([MCPE-164582](https://bugs.mojang.com/browse/MCPE-164582))
+-   Carrots now display the proper name in item tooltips when used in can\_place\_on and can\_destroy item components ([MCPE-160838](https://bugs.mojang.com/browse/MCPE-160838))
+-   In JSON formats 1.19.70 and later, blocks fail to load if the "condition" field in Block Permutations is not a valid Molang string
+-   Crafting Table component no longer appends "tile." when defaulting to use block name for crafting table label
+
+## **Wool Blocks**
+
+Wool has been flattened into separate blocks, namely:
+
+-   white\_wool
+-   orange\_wool
+-   magenta\_wool
+-   light\_blue\_wool
+-   yellow\_wool
+-   lime\_wool
+-   pink\_wool
+-   gray\_wool
+-   light\_gray\_wool
+-   cyan\_wool
+-   purple\_wool
+-   blue\_wool
+-   brown\_wool
+-   green\_wool
+-   red\_wool
+-   black\_wool
+
+Commands, recipes, loot tables, etc. will still work with _wool_ and an aux value or color state, but _wool_ will not be suggested in the command prompt. Instead, the new wool block names will.
+
+## **Commands**
+
+-   Fixed a crash with deferred command execution when the executing actor is removed before execution ([MCPE-165374](https://bugs.mojang.com/browse/MCPE-165374))
+-   Summon command no longer causes some entities to be spawned in at an angle
+-   Removed support for field "data" in commands /clone, /execute, /fill, /setblock and /testforblock beyond version 1.19.70, eg. /setblock ~ ~ ~ minecraft:wool 1 will only have its equivalent /setblock ~ ~ ~ minecraft:wool \["color":"orange"\] supported
+    -   Here are some additional examples\[JW1\] \[JW2\] \[JW3\] :
+        -   /setblock ~~~ green\_wool \[\] \[\] is equivalent to the old 0
+        -   /setblock ~~~ wood \["wood\_type": "oak"\]
+        -   /setblock ~~~ coral \["dead\_bit" : true , "coral\_color" : "blue" \]
+        -   /setblock ~~~ coral\_fan \["coral\_fan\_direction" : 1, "coral\_color" : "pink"\]
+        -   /setblock ~~~ wool \["color": "blue"\]
+        -   /fill ~ ~ ~ ~5 ~5 ~5 gold\_block \[\] replace air
+    -   More information about commands can be found at learn.microsoft.com/minecraft/creator/commands
+-   Volume arguments no longer floor the selector's position ([MCPE-162237](https://bugs.mojang.com/browse/MCPE-162237))
+-   Selecting targets by volume will now select all entities whose hitbox collides with the volume box. This is versioned for 1.19.70 and later ([MCPE-162237](https://bugs.mojang.com/browse/MCPE-162237))
+    -   Previous behavior works as expected on versions less than 1.19.70
+-   Volume arguments for selectors (dx, dy, dz) now support float values ([MCPE-163863](https://bugs.mojang.com/browse/MCPE-163863))
+-   Replaceitem and loot replace block commands no longer place items in Cauldrons ([MCPE-129472](https://bugs.mojang.com/browse/MCPE-129472))
+-   Rotation in the teleport command is now relative to the executor of the command instead of the target. Old usage of rotations in commands will stay relative to the target mob for backwards compatibility
+
+## **Entity Properties**
+
+-   Fixed an issue where Entity Property value changes could be discarded if done by events fired as part of removal of active behaviors caused by other events
+
+## **Mobs**
+
+-   Witch potion drinking and ranged attack behaviour is now defined in its .json file
+-   The game will no longer create a content error when Bee spawn eggs are used on a Mob Spawner
+
+## **GameTest Framework (Experimental)**
+
+-   Test
+    -   Added optional _searchDistance_ parameter to _assertEntityPresent(entityTypeIdentifier: string, blockLocation: BlockLocation, searchDistance?: number, isPresent?: boolean)_
+    -   Added _assertEntityInstancePresentInArea(entity: Entity, isPresent?: boolean)_ to check if an entity instance is present in the test area
+    -   Made the _searchDistance_ parameter optional in _assertItemEntityPresent_
+
+## **API (Experimental)**
+
+-   IMPORTANT BREAKING CHANGE: The classes Location and _BlockLocation_ no longer exist in the beta script API. All usages of these classes have been changed to use the _Vector3_ interface (that is, { x: 1, y: 2, z: 3} objects)
+-   Also, note that several changes were made to properties and get/set methods across objects (listed below) to make them more consistent in calling structure
+    -   World Events
+    -   Added event _entityDie_ \- It is fired when an entity dies
+    -   Modified _projectileHit_ to be a readOnly property on the Events class
+-   Player
+    -   Added method _getSpawnPosition_ - Gets the _spawnPoint_ _position_
+    -   Added property _spawnDimension_ - Gets the _spawnPoint_ _dimension_
+    -   Added method _setSpawn(spawnPosition : Vec3, spawnDimension : Dimension)_ i Sets _spawnPoint_ with a _position_ and _dimension_
+    -   Added method _clearSpawn_ - Sets the _spawnPoint_ position and dimension to _undefined_
+    -   Renamed function _tell_ to _sendMessage_
+-   World
+    -   Renamed function _say_ to _sendMessage_
+    -   Added method _'getDefaultSpawnPosition'_ - Gets the spawnPoint position
+    -   Added method _'setDefaultSpawn'(spawnPosition : Vec3)_ - Sets the spawnPoint position within 'overworld' dimension
+-   BeforeChatEvent
+    -   Added function _getTargets(): Player\[\]_ \- Gets chat Player targets
+    -   Added function _setTargets(players: Player\[\])_ - Sets chat Player targets
+    -   Removed property _targets_
+-   BeforeDataDrivenEntityTriggerEvent
+    -   Added function _getModifiers(): DefinitionModifier\[\]_ - Gets entity definition modifiers
+    -   Added function _setModifiers(modifiers: DefinitionModifier\[\])_ - Sets entity definition modifiers
+    -   Removed property modifiers
+-   BoolBlockProperty
+    -   Added function _getValidValues(): boolean\[\]_ \- Gets all valid boolean values for the _BoolBlockProperty_
+    -   Removed property _validValues_
+-   Converted _BlockHitInformation_ to an interface
+-   ChatEvent
+    -   Added function _getTargets(): Player\[\]_ \- Gets chat Player targets
+    -   Removed property _targets_
+-   Converted Color to an _interface_
+-   DataDrivenEntityTriggerEvent
+    -   Added function _getModifiers(): DefinitionModifier\[\]_ - Gets Entity definition modifiers
+    -   Removed property _modifiers_
+-   DefinitionModifier
+    -   Added function _getComponentGroupsToAdd(): string\[\]_ \- Gets component groups that will be added with the _DefinitionModifier_
+    -   Added function _setComponentGroupsToAdd(newGroups: string\[\]): void_ - Sets component groups that will be added with the _DefinitionModifier_
+    -   Added function _getComponentGroupsToRemove(): string\[\]_ - Gets component groups that will be removed with the _DefinitionModifier_
+    -   Added function _setComponentGroupsToRemove(removedGroups: string\[\]): void_ - Sets component groups that will be removed with the _DefinitionModifier_
+    -   Added function _getTriggers(): Trigger\[\]_ - Gets event triggers of the _DefinitionModifier_
+    -   Added function _setTriggers(newTriggers: Trigger\[\]): void_ \- Sets event triggers of the _DefinitionModifier_
+    -   Removed property _componentGroupsToAdd_
+    -   Removed property _componentGroupsToRemove_
+    -   Removed property _triggers_
+-   DirectionBlockProperty
+    -   Added function _getValidValues(): Direction\[\]_ \- Gets all valid direction enum values for the _DirectionBlockProperty_
+    -   Removed property _validValues_
+-   Entity
+    -   Added function _getViewDirection(): Vector3_ - Gets view direction of the Entity
+    -   Added function _getRotation(): XYRotation_ - Gets rotation of the Entity
+    -   Added function _getVelocity(): Vector_ - Gets velocity of the Entity
+    -   Removed property _viewDirection_
+    -   Removed property _rotation_
+    -   Removed property _velocity_
+-   Added function _playAnimation(animationName: string, options?: PlayAnimationOptions)_
+    -   Plays the specified animation for an entityReplaced general setVelocity call with methods to apply impulses to entities:
+-   Added function _clearVelocity(): void_ \- Sets the current velocity of the Entity to zero
+-   Added function _applyImpulse(vector: Vector3): void_ \- Applies impulse vector to the current velocity of the Entity
+-   Added function _applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void_ - Applies knockback to the Entity in specified direction based on vertical and horizontal strength
+-   Removed function _setVelocity_
+-   EntityAgeableComponent
+    -   Added function _getDropItems(): string\[\]_ \- Gets items that drop when entity grows
+    -   Added function _getFeedItems(): EntityDefinitionFeedItem\[\]_ \- Gets items that can be fed to the entity
+    -   Removed property _dropItems_
+    -   Removed property _feedItems_
+-   EntityBreathableComponent
+    -   Added function _getBreatheBlocks(): BlockPermutation\[\]_ \- Gets blocks entity can breathe in
+    -   Added function _getNonBreatheBlocks(): BlockPermutation\[\]_ \- Gets blocks entity can't breathe in
+    -   Removed property _breatheBlocks_
+    -   Removed property _nonBreatheBlocks_
+-   EntityHealableComponent
+    -   Added function _getFeedItems(): FeedItem\[\]_ \- Gets healing items for the _EntityHealableComponent_
+    -   Removed property _items_
+-   Converted _EntityHitInformation_ to an interface
+-   EntityRideableComponent
+    -   Added function _getFamilyTypes(): string\[\]_ - Gets supported rider entity types
+    -   Added function _getSeats(): Seat\[\]_ - Gets rider information for each seat
+    -   Removed property _familyTypes_
+    -   Removed property _seats_
+-   EntityTameableComponent
+    -   Added function _getTameItems(): string\[\]_ \- Gets tame items of the _EntityTameableComponent_
+    -   Removed property _tameItems_
+-   FeedItem
+    -   Added function _getEffects(): FeedItemEffect\[\]_ - Gets effect of the FeedItem
+    -   Removed property _effects_
+-   IntBlockProperty
+    -   Added function _getValidValues(): number\[\]_ \- Gets all valid integer values for the _IntBlockProperty_
+    -   Removed property _validValues_
+-   ItemDurabilityComponent
+    -   Added function _getDamageRange(): NumberRange_ - Gets the range of numbers that describes the chance of the item losing durability
+    -   Removed property _damageRange_
+-   Converted _NumberRange_ to an interface
+-   ProjectileHitEvent
+    -   Added function _getBlockHit(): BlockHitInformation_ - Gets block hit information from the _ProjectileHitEvent_
+    -   Added function _getEntityHit(): EntityHitInformation_ - Gets entity hit information from the _ProjectileHitEvent_
+    -   Removed property _blockHit_
+    -   Removed property _entityHit_
+-   StringBlockProperty
+    -   Added function _getValidValues(): string\[\]_ \- Gets all valid string values for the _StringBlockProperty_
+    -   Removed property _validValues_
+-   ItemStack
+    -   _ItemStack_ can now be constructed using a string identifier
+    -   Removed constructor parameter _data_
+    -   Removed property _data_
+    -   Removed function _clearLore_ \- To clear lore, call setLore with an empty array or undefined
+    -   Setting _nameTag_ to an empty string will now clear the name tag
+    -   Setting _nameTag_ to a string longer than 255 characters will now result in an exception
+    -   Setting _amount_ greater than the maximum stack size will now clamp the value to the maximum stack size
+    -   Setting _amount_ to a value less than 1 will now result in an exception
+    -   Item lore can now be cleared by calling _setLore(undefined)_ or _setLore(\[\])_
+    -   Fixed a bug where calling function _ItemStack.getComponent_ or _ItemStack.getComponents_ would fail on ItemStacks returned from _EntityItemComponent.itemStack_
+    -   Added read-only property _getMaxAmount: number_ \- Returns the maximum stack size for the item
+    -   Added read-only property _isStackable: bool_ - Returns whether the item is stackable
+    -   Added function _isStackableWith(itemStack: ItemStack): bool_ - Returns whether the item can be stacked with the given item
+    -   Added read-only property _type: ItemType_ - Returns the type of the item
+    -   Added function _clone(): ItemStack_ - Returns a copy of the item stack
+    -   Added property _keepOnDeath: bool_ \- Sets whether the item is kept on death
+    -   Added property _lockMode: ItemLockMode_ \- Sets whether the item can be moved or dropped
+    -   Added function _setCanPlaceOn(blockIdentifiers?: string\[\])_ \- Sets which blocks the item can be placed on
+    -   Added function _setCanDestroy(blockIdentifiers?: string\[\])_ \- Sets which blocks this item can destroy
+-   ContainerSlot
+    -   Removed function _clearItem_ \- To clear the item, call setItem with undefined
+    -   Removed function _clearLore_ \- To clear lore, call setLore with an empty array or undefined
+
+General changes to more consistently use methods when working with simple data-only objects vs. properties:
+
+-   BeforeExplosionEvent
+    -   Added function _getImpactedBlocks(): Vector3\[\]_ \- Gets the blocks locations that are impacted the by the explosion
+    -   Added function _setImpactedBlocks(blocks: Vector3\[\]): void_ - Sets the blocks locations that are impacted the by the explosion
+    -   Removed property _impactedBlocks_
+-   BeforeItemUseOnEvent
+    -   Added function _getBlockLocation(): Vector3_ - Gets the location of the block being impacted
+    -   Removed property _blockLocation_
+-   BlockInventoryComponent
+    -   Removed property _location_
+-   BlockLavaContainerComponent
+    -   Removed property _location_
+-   BlockPistonComponent
+    -   Added function _getAttachedBlocks(): Vector3\[\]_ - Gets the blocks locations that are impacted by the activation of this piston
+    -   Removed property _attachedBlocks_
+    -   Removed property _location_
+-   BlockPotionContainerComponent
+    -   Removed property _location_
+-   BlockRecordPlayerComponent
+    -   Removed property _location_
+-   BlockSignComponent
+    -   Removed property _location_
+-   BlockSnowContainerComponent
+    -   Removed property _location_
+-   BlockWaterContainerComponent
+    -   Removed property _location_
+    -   Added function _getHeadLocation(): Vector3_ - Gets the head location of the Entity
+    -   Removed property _headLocation_
+-   ExplosionEvent
+    -   Added function _getImpactedBlocks(): Vector3\[\]_ \- Gets the blocks locations that are impacted the by the explosion
+    -   Removed property _impactedBlocks_
+-   ItemStartUseOnEvent
+    -   Added function _getBlockLocation(): Vector3_ - Gets the location of the block being impacted
+    -   Added function _getBuildBlockLocation(): Vector3_ \- Gets the location of the resulting build block
+    -   Removed property _blockLocation_
+    -   Removed property _buildBlockLocation_
+-   ItemStopUseOnEvent
+    -   Added function _getBlockLocation(): Vector3_ - Gets the location of the block being impacted
+    -   Removed property _blockLocation_
+-   ItemUseOnEvent
+    -   Added function _getBlockLocation(): Vector3_ \- Gets the location of the block being impacted
+    -   Removed property _blockLocation_
+-   NavigationResult
+    -   Added function _getPath(): Vector3\[\]_ - Gets the locations of the blocks that comprise the navigation route
+    -   Removed property _path_
+-   Player
+    -   Added function _getHeadLocation(): Vector3_ - Gets the head location of the Player
+    -   Removed property _headLocation_
+-   Block
+    -   Added function _isAir_ \- Returns if the block is an air block (i.e. empty space)
+    -   Added function _isLiquid_ \- Returns if the block is a liquid (e.g., a water block and a lava black are liquid, while an air block and a stone block are not)
+    -   Added function _isSolid_ - Returns if the block is solid (e.g., a cobblestone block and a diamond block are solid, while a ladder block and a fence block are not)
+    -   The following blocks now have an inventory component:
+        -   Barrel
+        -   Beacon
+        -   Blast Furnace
+        -   Brewing Stand
+        -   Dispenser
+        -   Dropper
+        -   Furnace
+        -   Hopper
+        -   Jukebox
+        -   Lectern
+        -   Smoker
+
+## **BlockPermutation**
+
+BlockPermutation has been significantly refactored! Every BlockPermutation now share a unique JavaScript handle so exact equality (`===`) will work for permutations that share exactly the same state values. We've also added utility methods that make interacting with permutations easier, which includes the removal of the _XBlockProperty_ classes and now directly return properties _(boolean | number | string)_ or a while collection of properties _( Record\<string, boolean | number | string\>)_
+
+-   Added method matches(blockName: string, properties?: BlockProperties): boolean which is used to match a block with optional states against a BlockPermutation
+-   Added method _withProperty(name: string, value: boolean | number | string): BlockPermutation_; which returns a new block permutation with a given property set to a specific value. Throws if the provided data cannot be resolved as a valid block permutation
+-   Added function _static resolve(blockName: string, properties?: BlockProperties): BlockPermutation_ which resolve a BlockPermutation from a block name and optional states. Throws if the provided data cannot be resolved as a valid block permutation
+-   Updated methods _getProperty_ and _getAllProperties_ to return values directly instead of wrapped into class objects. Example code:
+
+Before:
+
+_const blockPermutation = MinecraftBlockTypes.stoneSlab.createDefaultBlockPermutation();_
+
+_blockPermutation.getProperty(MinecraftBlockProperties.stoneSlabType).value = 'stone\_brick';_
+
+_blockPermutation.getProperty(MinecraftBlockProperties.topSlotBit).value = true;_
+
+Now:
+
+_const blockPermutation = BlockPermutation.resolve('minecraft:stone\_slab', {_
+
+    _stone\_slab\_type: 'stone\_brick',_
+
+    _top\_slot\_bit: true,_
+
+_});_
+
+## **BlockProperties**
+
+-   Added new class to expose _BlockPropertyType_
+
+## **BlockPropertyType**
+
+-   Added new class to track "definitional" data about block properties. This is how you can find which values are valid for each block property
+
+## **Data-Driven Custom Blocks**
+
+-   Released block properties and permutations out of experimental in JSON formats 1.19.70 and higher
+-   Added a content warning when loading world with more than 65536 custom block permutations. Custom block permutation counts are logged in debug log
+

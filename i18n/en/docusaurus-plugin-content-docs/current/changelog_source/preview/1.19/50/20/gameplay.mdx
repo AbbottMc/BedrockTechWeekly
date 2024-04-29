@@ -1,0 +1,123 @@
+**Posted:** 13th October 2022
+
+## **Information on the Minecraft Preview and Beta:** 
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A Minecrfat screenshot showing how the world looks when flying through the terrain using spectator game mode](https://feedback.minecraft.net/hc/article_attachments/9857667786893)
+
+Here's a list of what is new in this week's Minecraft Preview and Beta! As always, please search and report any bugs you may find at [bugs.mojang.com](https://bugs.mojang.com) and feel free to send us [your feedback](https://aka.ms/MinecraftBetaFeedback).
+
+## **Minecraft Live Mob Vote:** To participate in the Minecraft Live mob vote, you will need to be on Bedrock version 1.19.31.
+
+You can opt out of the Android Beta on the Google Play Store and uninstall/reinstall Minecraft to get back to the 1.19.31 version - Remember to make a backup of your worlds if you do this!
+
+You will also be able to vote via the Minecraft Launcher or via web browser at [minecraft.net/live](https://www.minecraft.net/en-us/live). The vote will be open for 24 hours starting October 14 at 12pm EDT!
+
+# **Features and Bug Fixes**
+
+## **Vanilla Parity**
+
+### **Spectator Mode**
+
+-   Spectator Mode has moved from an experimental toggle into the base game
+    -   Please remember worlds that have used Experimental toggles will always be flagged as Experimental. We recommend keeping these Experimental worlds separate from your main saves. More information can be found in [this article](https://feedback.minecraft.net/hc/en-us/articles/4403610710797).
+-   Players can go in and out of Spectator Mode using the Personal game mode in the Settings Menu or the '/gamemode spectator' command, if cheats are enabled ([MCPE-156688](https://bugs.mojang.com/browse/MCPE-156688))
+-   Spectators have a reduced HUD that does not show the crosshair, hotbar, XP, health, hunger, or armor UI elements
+-   Player's inventory, health, held items etc are unchanged when switching into Spectator Mode and when you leave Spectator Mode
+-   Spectators are always flying and cannot be grounded
+-   Spectators pass through solid blocks and entities without collision
+-   Spectators can see out of solid objects when inside blocks
+-   Spectators cannot take damage and are not affected by any blocks, mobs, items, portals or effects
+-   Spectators cannot use items or interact with blocks or mobs
+-   Spectators cannot open their inventory or interact with block UIs like chests
+-   Spectators cannot be seen by mobs or other players except other players in Spectator Mode
+-   Spectators are not needed to sleep to pass the night
+-   Spectators appear as a transparent floating head to other players in Spectator Mode
+-   When playing in first person, spectators do not see their arm or held item
+-   Spectators generate chunks if they fly to new chunks
+-   Spectators do not spawn any mobs
+-   Non-persistent mobs around spectators will check for distance to any non-spectators when deciding if they should despawn
+-   Commands can select and act on spectators
+-   Open container, Command Block or Structure Block screens now close when players enter Spectator Mode
+-   Spectator Mode now appears on the list of Personal Game Modes in Settings ([MCPE-156688](https://bugs.mojang.com/browse/MCPE-156688))
+
+### **Blocks**
+
+-   Dirt Path and Farmland collision are now one pixel lower ([MCPE-12109](https://bugs.mojang.com/browse/MCPE-12109))
+-   Players swimming above Mud will not have their screen covered ([MCPE-153737](https://bugs.mojang.com/browse/MCPE-153737))
+-   Projectiles landing on Mud will not repeatedly shake ([MCPE-153744](https://bugs.mojang.com/browse/MCPE-153744))
+-   Amphibious mobs no longer have trouble pathfinding around Mud Blocks ([MCPE-153961](https://bugs.mojang.com/browse/MCPE-153961))
+-   Mud and Soul Sand Block bounding boxes now matches their visual bounding boxes for when a player places the blocks ([MCPE-162252](https://bugs.mojang.com/browse/MCPE-162252))
+-   Sugar Cane will break on next random tick when its water source is removed ([MCPE-162351](https://bugs.mojang.com/browse/MCPE-162351))
+-   Fixed a bug where placed Light Blocks were invisible even while selecting a Light Block
+
+## **Gameplay**
+
+-   Fixed blocks flickering when moved by Pistons
+-   Fixed an issue where breeding mobs with applied effects would result in the offspring having the effect bonuses permanently applied ([MCPE-81890](https://bugs.mojang.com/browse/MCPE-81890))
+-   Piston's arm now extends more smoothly ([MCPE-155987](https://bugs.mojang.com/browse/MCPE-155987))
+-   Blocks attached to Pistons now move more smoothly ([MCPE-146597](https://bugs.mojang.com/browse/MCPE-146597))
+-   Fixed a bug that could cause the player to teleport back to a portal after exiting it ([MCPE-157494](https://bugs.mojang.com/browse/MCPE-157494))
+-   Fixed an issue where signs would not play a placement sound when placed ([MCPE-65423](https://bugs.mojang.com/browse/MCPE-65423))
+-   Maps corrupted by black pixels can now be repaired by revisiting corrupted areas. Previously affected maps can now be repaired by holding in main or off hand ([MCPE-162421](https://bugs.mojang.com/browse/MCPE-162421))
+-   Huge Fungus blocks will no longer replace partial blocks when growing from Nylium ([MCPE-65661](https://bugs.mojang.com/browse/MCPE-65661))
+
+## **General**
+
+-   Fixed Bat resting location being offset when at negative world height
+-   Fixed a bug where fully charged items were lost when going through a portal ([MCPE-55279](https://bugs.mojang.com/browse/MCPE-55279))
+-   Bubble columns are now properly generated above underwater Magma Blocks
+
+## **Graphical**
+
+-   Applied ambient light to blocks moved by Pistons ([MCPE-136928](https://bugs.mojang.com/browse/MCPE-136928))
+-   Fixed the brightness of the night sky when enabling RTX ([MCPE-162445](https://bugs.mojang.com/browse/MCPE-162445))
+
+## **Items**
+
+-   Freshly crafted tools and armor now work the first time they are used ([MCPE-161151](https://bugs.mojang.com/browse/MCPE-161151))
+-   Weapons, tools, and armor can now be dropped from the players inventory the first time after being renamed ([MCPE-162132](https://bugs.mojang.com/browse/MCPE-162132))
+-   Fixed an issue where an entity at coordinate 0,0,0 prevented Pressure Plates from being placed ([MCPE-161377](https://bugs.mojang.com/browse/MCPE-161377))
+
+## **Mob Effects**
+
+-   Jump Boost now consistently affects mobs ridden by players ([MCPE-45823](https://bugs.mojang.com/browse/MCPE-45823))
+-   Slow Falling now consistently affects mobs ridden by players ([MCPE-126604](https://bugs.mojang.com/browse/MCPE-126604))
+
+## **Mobile Data**
+
+-   Added a new Mobile Data Blocked screen on Android/iOS when mobile data is available but disabled in-game and Wi-Fi is not connected
+
+## **Mobs**
+
+-   Increased Enderman follow range from 32 to 64 ([MCPE-35306](https://bugs.mojang.com/browse/MCPE-35306))
+
+## **Touch Controls**
+
+-   In Preview, we've re-enabled the new stack splitting functionality for touch devices
+-   "Split Control" option will only appear in Classic control mode and only affect the Classic control scheme
+-   Fixed an issue where hotbar slots could not be touched in Crosshair and Touch control schemes in certain situations
+-   Scrolling the inventory screen is easier as the dwell time has been increased to 180 milliseconds (was 120 previously). The dwell time is the length of time an item must be held before a drag action begins
+-   Untangled the connections between "Lock Joystick", "Joystick Always Visible", and "Joystick Visible When Unused"
+-   Added toggle "Delayed Block Breaking (Creative Only)" in Touch Settings to control this functionality
+-   Fixed an issue where double tapping touch control buttons can be difficult on high refresh rate screens ([MCPE-156351](https://bugs.mojang.com/browse/MCPE-156351))
+-   Improved the way that button presses and camera movements work in tandem in the new Touch Controls
+-   Action buttons now show up when in a Boat while using Crosshair mode ([MCPE-159376](https://bugs.mojang.com/browse/MCPE-159376))
+
+## **User Interface**
+
+-   Fixed a bug where the boss bar name would not update when the boss's name changed until the bar was reloaded by the player
+-   A warning now appears when the player is about to lose changes when moving away from the Create New World screen
+-   Changed the error handling of copying worlds to display a modal pop-up instead of a toast notification
+-   Fixed a bug causing the HUD to not rotate with the player's direction while riding in a Boat in VR
+-   Changed the color of the description text for the “Allow mobile data for online play” option to be more readable ([MCPE-162459](https://bugs.mojang.com/browse/MCPE-162459))
+-   Hotbar item text background is now affected by the Text Background Opacity slider ([MCPE-79331](https://bugs.mojang.com/browse/MCPE-79331))
+
+## **Commands**
+
+-   Using the '/enchant' command to apply the same level of enchantment no longer results in a higher level being applied ([MCPE-153204](https://bugs.mojang.com/browse/MCPE-153204))
+-   Fixed an issue where _hasItem_ wouldn't correctly detect an item with a data value if _hasItem_ wasn't provided a data value ([MCPE-162460](https://bugs.mojang.com/browse/MCPE-162460))
+

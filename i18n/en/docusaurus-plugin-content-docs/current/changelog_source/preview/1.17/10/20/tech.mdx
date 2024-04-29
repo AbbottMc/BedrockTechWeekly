@@ -1,0 +1,49 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Gameplay**
+
+-   Loot chests with Seed=0 now correctly randomize if placed on the same coordinates. Note that pickblocking a Vanilla loot chest before opening it will now result in identical loot in each copy unless you set the seed to 0 in the NBT
+
+## **Data Driven Mobs**
+
+-   The Ender Dragon rendering and animations are now fully data-driven
+-   The Ender Crystal rendering and animations are now fully data-driven
+
+## **Graphics**
+
+-   Graphics hardware that supports a maximum D3D11 feature level of 9\_3 or below are no longer supported
+
+## **Stability and Performance**
+
+-   Added better error handling for json parsing. Also added several new content errors for item parsing as well as for loot tables
+
+## **Actors**
+
+-   Incoming client-sync properties for newly seen types will properly register with client-side Actor Property Manager groups
+
+## **Molang**
+
+-   "query.wing\_flap\_position" now works with the Ender Dragon
+-   Added "query.show\_bottom" - a query for determining whether or not the entity's bottom is rendered
+-   Added "query.death\_time" - a query for determining the elapsed ticks since a mob started dying
+-   Added "math.min\_angle" - a math expression for minimizing the angle magnitude (in degrees) into the range \[-180, 180)
+
+## **Experimental Features**
+
+## **GameTest Framework**
+
+-   Updated the '/clearall ' command to also clear tests outside of loaded areas
+-   Dimension
+    -   getEntitiesAtBlockLocation(location : BlockLocation) : Entity\[\] - Returns an array of all entities at the given block location
+    -   spawnEntity(identifier : String, location : BlockLocation) : Entity - Spawns an entity with the given identifier at the given block location
+    -   \[Removed\] function getName()
+    -   property id : String - Gets the entity's identifier
+    -   property nameTag : String - Gets or sets the entity's name tag
+
+-   Player
+    -   property name : String - Gets the player's name
+    -   method getPlayers() : Player\[\] - Returns all players in the server
+

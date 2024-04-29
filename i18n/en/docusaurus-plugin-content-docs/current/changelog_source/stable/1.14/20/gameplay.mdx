@@ -1,0 +1,53 @@
+**Posted:** January 28, 2020
+
+The team has been hard at work fixing several issues to improve gameplay! All versions of 1.14 are compatible together through multiplayer.
+
+## **Fixes:**
+
+-   **Cr****ashes / Performance**
+    -   Fixed several crashes that could occur during gameplay
+    -   Fixed several crashes that could occur when loading into world on Nintendo Switch
+    -   Placing a compass and locator map in the crafting grid no longer causes the game to crash ([MCPE-57882](https://bugs.mojang.com/browse/MCPE-57882))
+    -   Fixed a crash that could occur when travelling through a Nether Portal with another entity ([MCPE-58568](https://bugs.mojang.com/browse/MCPE-58568))
+    -   Fixed a crash that could occur when converting a world with fireworks equipped in a crossbow
+    -   Fixed a crash that could occur with raids on converted worlds
+    -   Fixed a crash that could occur when loading the 'Extreme Speed Runner' Marketplace world on PlayStation 4 and Xbox One
+
+-   **General**
+    -   Classic skin choices no longer revert after reloading the game ([MCPE-55278](https://bugs.mojang.com/browse/MCPE-55278))
+    -   Fixed .mcworld and .mctemplate files not importing on devices running iOS 13
+    -   Fixed the LittleBigPlanet world and textures not being usable if the game was installed from disc
+    -   Fixed issues with the 'Chroma Hills' texture pack not loading on Nintendo Switch
+    -   Split-screen players can no longer be left in a limbo state when joining the game while the primary player quits at the same time
+
+-   **Gameplay**
+    -   Projectiles can now be shot through the gap between two honey blocks
+    -   Players no longer bounce when being pushed and pulled by honey blocks and pistons ([MCPE-53815](https://bugs.mojang.com/browse/MCPE-53815))
+
+-   **Mobs**
+    -   Fixed an issue that prevented mobs from spawning under transparent blocks ([MCPE-59682](https://bugs.mojang.com/browse/MCPE-59682))
+    -   Bees no longer fly in and out of a beehive or nest that is on fire ([MCPE-53872](https://bugs.mojang.com/browse/MCPE-53872))
+    -   Fixed tamed wolves not breeding by increasing their breeding priority ([MCPE-59570](https://bugs.mojang.com/browse/MCPE-59570))
+    -   Tamed parrots sitting on the player's shoulder are now transitioned after world conversion
+    -   Fixed Pillagers not attacking players after world conversion
+    -   Fixed players not obtaining Bad Omen when killing a Pillager Captain after world conversion
+
+-   **Items**
+    -   Tridents no longer bounce continuously on the sides of honey blocks ([MCPE-53626](https://bugs.mojang.com/browse/MCPE-53626))
+    -   Honey Bottles now show the proper item tooltip ([MCPE-61195](https://bugs.mojang.com/browse/MCPE-61195))
+    -   Undyed Shulker Boxes now retain their color after world conversion ([MCPE-36744](https://bugs.mojang.com/browse/MCPE-36744))
+
+-   **User Interface**
+    -   A confirmation prompt now appears if purchasing Realms on Nintendo Switch
+    -   Fixed an issue that could cause text to overlap when using different window resolutions in the Marketplace
+
+-   **Commands**
+    -   Beehives and bee nests now have proper textures when placed with the '/setblock' command
+    -   Defining an execute location no longer breaks the "detect" argument
+
+-   **Add-Ons**
+    -   Fixed an issue that could sometimes prevent Behavior Pack animations from working on Android ([MCPE-56117](https://bugs.mojang.com/browse/MCPE-56117))
+    -   The sensing component (used for ranged attacks) now calculates the view direction like it used to, making it so mobs can see their target on the y-axis
+    -   Fixed an issue that was preventing players from being teleported and rotated smoothly
+    -   Fixed the order of 'on\_exit' and 'on\_entry' events being reversed in animation controller state transitions
+    -   Local space for particles attached to entities will once again inherit the locator's bone rotation

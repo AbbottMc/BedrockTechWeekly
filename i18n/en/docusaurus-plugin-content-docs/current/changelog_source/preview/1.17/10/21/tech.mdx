@@ -1,0 +1,29 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+### Chunks
+
+-   Limits writing of chunks unless necessary. Chunks upgraded from older formats will not automatically save when loaded, but when modified (Through blocks or actors, for example) they will be marked for saving
+
+### Data-Driven Mobs
+
+-   The horse rendering and animations are now fully data-driven
+-   This work supports all horse variants (horse, mule, donkey, zombie horse, skeleton horse) and all horse versions including:
+    -   v1 (engine version 1.2.5 and earlier)
+    -   v2 (engine version 1.2.6 to 1.17.0)
+    -   v3 (engine version 1.17.10 and onward). This will be a cleaner version of the v2 model, with less confusing bone naming
+
+### GameTest Framework
+
+-   Updates to how blocks are handled in APIs:
+    -   BlockType, BlockPermutation, and Block instances replace BlockState-based updating
+-   Exposed chest block component and Container
+-   Added location and velocity read-only properties to Entity
+-   function createExplosion(location : Location, radius : number, explosionOptions : ExplosionOptions)
+    -   Creates an explosion
+        -   ExplosionOptions : class - Provides additional configuration parameters for createExplosion
+-   method triggerEvent(eventName : string) - Triggers an event on an entity
+-   Added 'thenExecuteFor' to 'GameTestSequence', which repeatedly calls the callback for the specified number of ticks
+

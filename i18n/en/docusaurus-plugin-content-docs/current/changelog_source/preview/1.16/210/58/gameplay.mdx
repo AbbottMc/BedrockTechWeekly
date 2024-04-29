@@ -1,0 +1,67 @@
+**Posted:** 3 February, 2021
+
+**PLEASE READ before participating in the Minecraft Beta:**
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them
+-   Beta builds can be unstable and are not representative of final version quality
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+We have a bunch of bug fixes going into this week’s beta! Thanks for all of the feedback and bug reports that you’ve sent in so far! Send us your Caves and Cliffs ideas and feedback at [aka.ms/CavesCliffsFeedback](https://aka.ms/CavesCliffsFeedback), and search and reports any new bugs you may encounter at [bugs.mojang.com](https://bugs.mojang.com/).
+
+![img_656.JPG](https://feedback.minecraft.net/hc/article_attachments/360084662732/img_656.JPG)
+
+## **Bug Fixes**
+
+## **Accessibility**
+
+-   The screen reader now properly announces edit/create character button text for each character on the profile screen
+
+## **Performance and Stability**
+
+-   Fixed a number of crashes that could occur during gameplay
+-   Fixed a crash that could occur when opening the achievements screen when the anti-aliasing setting was set to 1 ([MCPE-110164](https://bugs.mojang.com/browse/MCPE-110164))  
+
+## **General**
+
+-   Fixed ticks not affecting blocks changing states - this means that things like crops and saplings will once again grow correctly ([MCPE-116221](https://bugs.mojang.com/browse/MCPE-116221))
+-   Fixed the player being unable to interact with a tool in their inventory after breaking blocks with it in survival ([MCPE-115341](https://bugs.mojang.com/browse/MCPE-115341))
+-   Fixed dried kelp block bottom and carried textures so that rope pixels are aligned ([MCPE-35476](https://bugs.mojang.com/browse/MCPE-35476))
+-   Fixed an issue where snow accumulated in lines with certain simulation distances ([MCPE-73468](https://bugs.mojang.com/browse/MCPE-73468))
+-   TNT submerged in water will once again launch players in Survival mode
+-   Fixed an issue where achievement names and descriptions would not be translated, independent of language selection. ([MCPE-85813](https://bugs.mojang.com/browse/MCPE-85813))
+-   The online status of cross-platform friends' shown on the invite screen will now update when a change has been detected ([MCPE-70004](https://bugs.mojang.com/browse/MCPE-70004))
+-   Fixed an issue that prevented achievement rewards from showing correctly after changing the language setting
+-   Owned and purchasable skins no longer get mixed into different categories while offline
+-   Emote title no longer shows previously previewed emote upon re-entering tab
+-   Updated the in-game links to the feedback site and bug tracker
+
+## **Graphics**
+
+-   Goat and other tinted spawn eggs now look correct when held in hand ([MCPE-104145](https://bugs.mojang.com/browse/MCPE-104145))
+-   Fixed an issue with screen resolution which could flicker when resizing a window ([MCPE-69721](https://bugs.mojang.com/browse/MCPE-69721))
+-   Entities that use material state "Blending" now render correctly behind transparent parts
+
+## **Technical Fixes and Changes**
+
+## **Animation**
+
+-   On the "Dragons!" Marketplace map, behavior animation controller will no longer stop working after reloading the map with a saddled dragon
+
+## **Custom Biomes and Blocks**
+
+-   Disabled loading of entities in custom biome features
+-   Fixed UVs of data-driven blocks to not be slightly shrunk, which caused texel warping
+-   Fixed data driven blocks being pushed by pistons not working correctly.
+
+## **Render Offsets Component**
+
+-   Simple items, like swords or pickaxes, can have an optional offset applied to them to modify the way they are rendered. Note this component should not be added to an attachable item
+
+## **Component Variables**
+
+-   main\_hand - An optional object storing optional transform data for 'first\_person' and 'third\_person' for the player's right hand
+-   off\_hand - An optional object storing optional transform data for 'first\_person' and 'third\_person' for the player's left hand
+-   first\_person - An optional object storing 3 vectors 'position', 'rotation', 'scale' used to build the first person matrix
+-   third\_person - An optional object storing 3 vectors 'position', 'rotation', 'scale' used to build the third person matrix

@@ -1,0 +1,118 @@
+
+
+-   **IMPORTANT BREAKING CHANGE:** The classes _Location_and _BlockLocation_ no longer exist in the beta script API. All usages of these classes have been changed to use the _Vector3_ interface (that is, { x: 1, y: 2, z: 3} objects).
+-   Also, note that several changes were made to properties and get/set methods across objects (listed below) to make them more consistent in calling structure.
+-   ItemStack
+    -   Item lore can now be cleared by calling _setLore(undefined)_ or _setLore(\[\])_
+    -   Added function _clearLore_\- Clears the item lore
+-   ItemStack
+    -   Fixed a bug where calling function _getComponent_ or _ItemStack.getComponents_would fail on _ItemStacks_ returned from _EntityItemComponent.itemStack_
+-   BeforeChatEvent
+    -   Renamed function tell to _sendMessage_
+-   Block
+    -   Added function _isAir_\- Returns if the block is an air block (i.e. empty space)
+    -   Added function _isLiquid_\- Returns if the block is a liquid (e.g., a water block and a lava black are liquid, while an air block and a stone block are not).
+    -   Added function _isSolid_\- Returns if the block is solid (e.g., a cobblestone block and a diamond block are solid, while a ladder block and a fence block are not).
+    -   The following blocks now have an _inventory_ component:
+        -   Barrel
+        -   Beacon
+        -   Blast Furnace
+        -   Brewing Stand
+        -   Dispenser
+        -   Dropper
+        -   Furnace
+        -   Hopper
+        -   Jukebox
+        -   Lectern
+        -   Smoker
+    -   World Events
+        -   Added event _entityDie_\- It is fired when an entity dies.
+        -   Modified _projectileHit_to be a readOnly property on the Events class
+    -   Player
+        -   Added method 'getSpawnPosition' : Gets the spawnPoint position
+        -   Added property 'spawnDimension' : Gets the spawnPoint dimension
+        -   Added method 'setSpawn'(spawnPosition : Vec3, spawnDimension : Dimension) : Sets spawnPoint with a position and dimension
+        -   Added method 'clearSpawn' : Sets the spawnPoint position and dimension to undefined
+    -   World
+        -   Renamed function _say_to _sendMessage_
+        -   Added method 'getDefaultSpawnPosition' : Gets the spawnPoint position
+        -   Added method 'setDefaultSpawn'(spawnPosition : Vec3) : Sets the spawnPoint position within 'overworld' dimension
+    -   BeforeChatEvent
+        -   Added function _getTargets(): Player\[\]_\- Gets chat Player targets
+        -   Added function _setTargets(players: Player\[\])_\- Sets chat Player targets
+        -   Removed property _targets_
+    -   BeforeDataDrivenEntityTriggerEvent
+        -   Added function _getModifiers(): DefinitionModifier\[\]_\- Gets entity definition modifiers
+        -   Added function _setModifiers(modifiers: DefinitionModifier\[\])_\- Sets entity definition modifiers
+        -   Removed property _modifiers_
+    -   BoolBlockProperty
+        -   Added function _getValidValues(): boolean\[\]_\- Gets all valid boolean values for the BoolBlockProperty
+        -   Removed property _validValues_
+    -   Converted _BlockHitInformation_to an interface
+    -   ChatEvent
+        -   Added function _getTargets(): Player\[\]_\- Gets chat Player targets
+        -   Removed property _targets_
+    -   Converted _Color_to an interface
+    -   DataDrivenEntityTriggerEvent
+        -   Added function _getModifiers(): DefinitionModifier\[\]_\- Gets Entity definition modifiers
+        -   Removed property _modifiers_
+    -   DefinitionModifier
+        -   Added function _getComponentGroupsToAdd(): string\[\]_\- Gets component groups that will be added with the DefinitionModifier
+        -   Added function _setComponentGroupsToAdd(newGroups: string\[\]): void_\- Sets component groups that will be added with the DefinitionModifier
+        -   Added function _getComponentGroupsToRemove(): string\[\]_\- Gets component groups that will be removed with the DefinitionModifier
+        -   Added _function_ _setComponentGroupsToRemove(removedGroups: string\[\]): void_\- Sets component groups that will be removed with the DefinitionModifier
+        -   Added function _getTriggers(): Trigger\[\]_\- Gets event triggers of the DefinitionModifier
+        -   Added function _setTriggers(newTriggers: Trigger\[\]): void_\- Sets event triggers of the DefinitionModifier
+        -   Removed property _componentGroupsToAdd_
+        -   Removed property _componentGroupsToRemove_
+        -   Removed property _triggers_
+    -   DirectionBlockProperty
+        -   Added function _getValidValues(): Direction\[\]_\- Gets all valid direction enum values for the DirectionBlockProperty
+        -   Removed property _validValues_
+    -   Entity
+        -   Added function _getViewDirection(): Vector3_\- Gets view direction of the Entity
+        -   Added function _getRotation(): XYRotation_\- Gets rotation of the Entity
+        -   Added function _getVelocity(): Vector_\- Gets velocity of the Entity
+        -   Removed property _viewDirection_
+        -   Removed property _rotation_
+        -   Removed property _velocity_
+    -   EntityAgeableComponent
+        -   Added function _getDropItems(): string\[\]_\- Gets items that drop when entity grows
+        -   Added function _getFeedItems(): EntityDefinitionFeedItem\[\]_\- Gets items that can be fed to the entity
+        -   Removed property _dropItems_
+        -   Removed property _feedItems_
+    -   EntityBreathableComponent
+        -   Added function _getBreatheBlocks(): BlockPermutation\[\]_\- Gets blocks entity can breathe in
+        -   Added function _getNonBreatheBlocks(): BlockPermutation\[\]_\- Gets blocks entity can't breathe in
+        -   Removed property _breatheBlocks_
+        -   Removed property _nonBreatheBlocks_
+    -   EntityHealableComponent
+        -   Added function _getFeedItems(): FeedItem\[\]_\- Gets healing items for the EntityHealableComponent
+        -   Removed property _items_
+    -   Converted _EntityHitInformation_to an interface
+    -   EntityRideableComponent
+        -   Added function _getFamilyTypes(): string\[\]_\- Gets supported rider entity types
+        -   Added function _getSeats(): Seat\[\]_\- Gets rider information for each seat
+        -   Removed property _familyTypes_
+        -   Removed property _seats_
+    -   EntityTameableComponent
+        -   Added function _getTameItems(): string\[\]_\- Gets tame items of the EntityTameableComponent
+        -   Removed property _tameItems_
+    -   FeedItem
+        -   Added function _getEffects(): FeedItemEffect\[\]_\- Gets effect of the FeedItem
+        -   Removed property _effects_
+    -   IntBlockProperty
+        -   Added function _getValidValues(): number\[\]_\- Gets all valid integer values for the IntBlockProperty
+        -   Removed property _validValues_
+    -   ItemDurabilityComponent
+        -   Added function _getDamageRange(): NumberRange_\- Gets the range of numbers that describes the chance of the item losing durability
+        -   Removed property _damageRange_
+    -   Converted _NumberRange_to an interface
+    -   ProjectileHitEvent
+        -   Added _function_ _getBlockHit(): BlockHitInformation_\- Gets block hit information from the ProjectileHitEvent
+        -   Added function _getEntityHit(): EntityHitInformation_\- Gets entity hit information from the ProjectileHitEvent
+        -   Removed property _blockHit_
+        -   Removed property _entityHit_
+    -   StringBlockProperty
+        -   Added function _getValidValues(): string\[\]_\- Gets all valid string values for the StringBlockProperty
+        -   Removed property _validValues_

@@ -1,0 +1,27 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Components**
+
+-   Fixed a bug that prevented the owner of the "minecraft:angry" component from broadcasting anger to its friends if it has no target. A mob with this component will now be able to get angry if it both does not have a target and the component's "filters" list is empty ([MCPE-94996](https://bugs.mojang.com/browse/MCPE-94996))
+
+## **Mobs**
+
+-   Mobs can now be hit by projectile when their hitboxes are outside the mob's bounds
+
+# **Experimental Features**
+
+## **Actor Properties**
+
+-   Replace 'values' field with 'range' field, which only supports array JSON types. Added required 'type' JSON field for actor properties with supported values 'int', 'float', 'bool', and 'enum'. The 'default' and 'range' fields on the property must match the type specified in the new 'type' field
+
+## **General**
+
+-   Blocks with _block\_light\_absorption_component of value 16 no longer fail to load
+-   Renamed the component 'minecraft:ticking' to 'minecraft:queued\_ticking'
+-   Renamed the 'minecraft:ticking' component's field 'range' to 'interval\_range', which is now described in ticks rather than seconds
+-   Renamed block flammable component fields _flame\_odds_and _burn\_odds_ _to_ _catch\_chance\_modifier_ and _destroy\_chance\_modifier_ 
+-   Added ability to set block flammable component using booleans for default flammable or nonflammable values
+

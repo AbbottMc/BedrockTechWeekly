@@ -1,0 +1,102 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+-   Updated Actor Properties. Two fields that were invalid and appeared in some vanilla content will now give a content error. The field "value" on "minecraft:can\_fly" and the property "minecraft:foot\_size" should simply be removed from any entity files 
+-   Make boat use the Buoyancy Component. Added two new components, the inside\_block\_notifiercomponent, which fires specified events when the actor enters or exits specified blocks, and the out\_of\_control component, which sets a corresponding actor flag, in order to make this possible 
+-   Added error checks to parsing of minecraft shareables items. Displays content log if item name is invalid or the array is empty 
+-   Attempting to load a custom material that is not defined no longer causes a crash. A proper content error is now thrown 
+-   Exposed new data parameters to control the behavior of Drop Item For Goal. This includes: "seconds\_before\_pickup", "cooldown", "minimum\_teleport\_distance", "max\_head\_look\_at\_height", "teleport\_offset", and "entity\_types". Check out the new Actor component documentation! 
+-   Exposed new data parameters to control the behavior of Harvest Farm Block Goal, including "max\_seconds\_before\_search", "search\_cooldown\_max\_seconds", and "seconds\_until\_new\_task". Check out the new Actor component documentation! 
+
+## **Aseprite**
+
+-   The UI now supports using aseprite JSON files for animations, which allows more advanced animations than simple flip books
+
+## **Commands**
+
+-   Added a new /structure command that allows to save and load structures without having to use structure blocks 
+-   Added /playanimation command which allows you to run a one-off animation. It assumes all variables have been setup correctly for the animation to run
+-   Added /ride command which allows you to make entities ride other entities, stop entities from riding, make rides evict their riders, or summon rides or riders
+
+## **Format Version Checks**
+
+-   Updated the format\_versionfield in geometry, particles, and animation files to behave as entity behavior files do. That is, you no longer need to specify a specific version for it to be accepted, instead you can just specify the version of the release you are targeting
+
+## **SetBannerDetailsFunction**
+
+-   Now supports customizing non-Illager banners
+-   Up to 6 patterns and colors can be specified
+
+## **Accepted banner types**
+
+-   "default"
+-   "illager\_captain"
+
+## **Accepted color values**
+
+-   "black"
+-   "red"
+-   "green"
+-   "brown"
+-   "blue"
+-   "purple"
+-   "cyan"
+-   "silver"
+-   "gray"
+-   "pink"
+-   "lime"
+-   "yellow"
+-   "light\_blue"
+-   "magenta"
+-   "orange"
+-   "white"
+
+## **Accepted pattern values**
+
+-   "base"
+-   "border"
+-   "bricks"
+-   "circle"
+-   "creeper"
+-   "cross"
+-   "curly\_border"
+-   "diagonal\_left"
+-   "diagonal\_right"
+-   "diagonal\_up\_left"
+-   "diagonal\_up\_right"
+-   "flower"
+-   "gradient"
+-   "gradient\_up"
+-   "half\_horizontal"
+-   "half\_horizontal\_bottom"
+-   "half\_vertical"
+-   "half\_vertical\_right"
+-   "mojang"
+-   "piglin"
+-   "rhombus"
+-   "skull"
+-   "small\_stripes"
+-   "square\_bottom\_left"
+-   "square\_bottom\_right"
+-   "square\_top\_left"
+-   "square\_top\_right"
+-   "straight\_cross"
+-   "stripe\_bottom"
+-   "stripe\_center"
+-   "stripe\_downleft"
+-   "stripe\_downright"
+-   "stripe\_left"
+-   "stripe\_middle"
+-   "stripe\_right"
+-   "stripe\_top"
+-   "triangle\_bottom"
+-   "triangle\_top"
+-   "triangles\_bottom"
+-   "triangles\_top"
+
+## **Possible input**
+
+"function": "set\_banner\_details","type": "default","base\_color": "blue","patterns": \[  {    "pattern": "flower",    "color": "white"  },  {    "pattern": "triangle\_bottom",    "color": "brown"  }\]
+

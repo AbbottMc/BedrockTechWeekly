@@ -1,0 +1,105 @@
+**Posted:** 5 January, 2023
+
+**Information on the Minecraft Preview and Beta:** 
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](http://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A Minecraft screenshot of a village with an iron golem, a camel, and a piglin head on a noteblock.](https://feedback.minecraft.net/hc/article_attachments/11996092236685)
+
+Here's a list of what is new in this week's Minecraft Preview and Beta! Remember to send us all your feedback at [aka.ms/MC120Feedback](https://aka.ms/MC120Feedback)and report any bugs to [bugs.mojang.com](http://bugs.mojang.com/).
+
+## Known Issues
+
+-   Players cannot stack split items while using gamepads or mouse and keyboard. We hope to have this issue resolved as soon as possible!  
+      
+    
+
+# Experimental Features
+
+## Gameplay
+
+-   Camels no longer get pulled into rideable entities ([MCPE-163610](https://bugs.mojang.com/browse/MCPE-163610))
+
+## Note Blocks
+
+-   Mob heads can now be placed on top of note blocks without sneaking
+    -   This bypasses the default interaction, and we would love your feedback on this change!
+
+Touch Controls
+
+-   Correct dismount tip now shows if not using classic touch controls  
+      
+    
+
+# Features and Bug Fixes
+
+## Blocks
+
+-   Crimson and Warped block sets now have a unique set of sounds
+
+## Commands
+
+-   Fixed potential crash when teleporting players to other dimensions using commands ([MCPE-164940](https://bugs.mojang.com/browse/MCPE-164940))
+
+## Commands Parity
+
+-   Running ‘/execute if|unless score’ on a player that doesn’t have a score set will now return false ([MCPE-156279](https://bugs.mojang.com/browse/MCPE-156279))
+-   ‘/execute if|unless score’ no longer accepts selectors that can return multiple entities (ie. @e, @a)
+
+## General
+
+-   Redstone Dust now emits a sound when placed on the ground ([MCPE-65423](https://bugs.mojang.com/browse/MCPE-65423))
+-   Player will now respond correctly to speed changes using _minecraft:movement_
+
+## Input
+
+-   Fixed a bug where the mouse cursor was visible and is no longer usable to control the player camera on the HUD screen after exiting the menu screen with a touch while moving the mouse around
+
+## Items
+
+-   Wither and Ender Dragon Spawn Eggs are no longer available in the Creative Inventory but are still available using commands
+
+## Mobs
+
+-   Players can now “pick” Iron Golems, Snow Golems, Withers, and Ender Dragons, obtaining their respective Spawn Eggs ([MCPE-164533](https://bugs.mojang.com/browse/MCPE-164533))
+-   Piglins can once again spawn at light levels above 7 in the Nether ([MCPE-165096](https://bugs.mojang.com/browse/MCPE-165096))
+-   Evokers now play a ‘sit’ animation when riding a mount or vehicle ([MCPE-43778](https://bugs.mojang.com/browse/MCPE-43778))
+
+## Particle Effects
+
+-   Updated particles documentation with descriptions of new materials and included example particles in the example resource pack
+
+## Performance and Stability
+
+-   Fixed potential crash when using “instant\_despawn” component
+-   Fixed potential crash when loading actors
+-   ClientSide LevelChunk generation is now Server authoritative, preventing Clients from generating unnecessary chunks
+
+## Touch Controls
+
+-   Resolved an issue that pressing the inventory button could interact with the world instead of opening the inventory on some devices ([MCPE-154499](https://bugs.mojang.com/browse/MCPE-154499))
+-   Fixed an issue that players couldn’t scroll pages when one row was off-screen
+-   Added several levels of intervals for repeat crafting when holding on the crafted items
+-   Removed the camera movement delay when the player swiped from the attack and build buttons in crosshair mode
+-   The touch focus circle has been reactivated with the new touch controls (not in Crosshair mode)
+
+## User Interface
+
+-   Toast notifications can now be swiped away on touch devices in-game
+-   Touch control settings section is no longer visible on Xbox
+
+## Vanilla Parity
+
+-   Change various blocks’ map colors to match Java Edition ([MCPE-19228](https://bugs.mojang.com/browse/MCPE-19228))
+-   Change frogspawn map color to match Java Edition ([MCPE-159715](https://bugs.mojang.com/browse/MCPE-159715))
+-   Change bed block map colors to match Java Edition ([MCPE-40709](https://bugs.mojang.com/browse/MCPE-40709))
+-   Updated the Skeleton/Zombie Horse's and Donkey/Mule's saddle and chest textures
+
+## Blocks
+
+-   Wooden Doors, Iron Doors, Wooden Trapdoors, Iron Trapdoors and Fence Gates now use the same opening and closing sounds as Java Edition
+-   Updated Pressure Plates to have different sound pitches based on their behaviour to match Java Edition
+-   Added a unique button click sound for Wooden Buttons to match Java Edition
+

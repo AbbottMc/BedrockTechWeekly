@@ -1,0 +1,72 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Bedrock Editor**
+
+The Editor is in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. It is an in-engine, multiblock editing experience focused on making it possible for creators of all skillsets to easily craft high-quality experiences in Bedrock! We're working to add more capabilities, and it will change significantly as we get feedback from creators like you.
+
+-   Learn [how to use](https://aka.ms/LearnEditor) the Editor
+-   Join our Discussion forum, post bugs, view more detailed release notes, and share your creations on [GitHub](https://github.com/Mojang/minecraft-editor)
+-   Tag us on social channels with **#BedrockEditor**
+
+## **Game Events**
+
+-   _item\_interact\_finish_ game event now has a vibration frequency of 2 instead of 14
+-   _item\_interact\_start_ is no longer considered a detectable vibration
+-   Reeling a fishing rod now emits _projectile\_shoot_ vibration
+
+## **Data-Driven Components**
+
+-   Added "lose\_target" field to projectile data to specify if an entity should unselect its target after shooting the projectile
+-   Added a new Transformation component for blocks to support rotation, scaling and translation. The component can be added to the whole block, and/or to individual block permutations. Eg.
+
+"minecraft:transformation": {  
+                "translation": \[0.0, 0.1, -0.1\],  
+                "scale": \[0.5, 1, 1.5\],  
+      "rotation": \[90, 180, 0\]  
+}
+
+-   Transformed geometries still have the same restrictions that non-transformed geometries have, eg. a maximum size of 30/16 units
+
+## **Add-Ons and Script Engine**
+
+-   Chance information types used in tree feature JSONs for some trunks and foliage now allow 0 as the chance (values like 0.0001 were allowed, but not 0)
+
+## **Entity Filters**
+
+-   Created new entity filter "is\_raider" to determine if subject is part of a raid
+
+## **Blocks**
+
+-   Deprecated _minecraft:part\_visibility_ block component.
+-   Added _bone\_visibility_ behavior to _minecraft:geometry_ block component
+
+##  **Marketplace**
+
+-   In the map WDW Magic Kingdom, the carts on the Big Thunder Mountain, Snow White and the Seven Dwarves, and Space Mountain rides now properly align with the invisible Minecart they are attached to
+
+## **Servers**
+
+-   Blocks can now optionally (via a setting in StartGamePacket) use a hashed value for their network IDs. This hashed value is independent of all other blocks and remains stable across future releases
+
+## **User Interface**
+
+-   Feedback button on the pause menu will now prompt the user with a modal before redirecting to the browser
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

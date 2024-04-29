@@ -1,0 +1,43 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Actors**
+
+-   Fixed movement prediction interpolating with invalid data in even more scenarios ([MCPE-108568](https://bugs.mojang.com/browse/MCPE-108568))
+
+## **Items**
+
+-   Fixed crash after firing a transform item event
+
+## **Molang**
+
+-   Added experimental queries for item cooldowns: 'query.is\_cooldown\_type', 'query.cooldown\_time', and 'query.cooldown\_time\_remaining'
+-   Updated many Molang content errors to specify which operator or query was involved
+
+## **Commands**
+
+-   The "run\_command" event response now will properly use versioned commands
+
+## **Data-Driven Items**
+
+-   Updated documentation for 'IconItemComponent' and it now provides a list of all IDs for the 'legacy\_id' field
+
+## **Data-Driven Sounds**
+
+-   Removed the "replace" element from 'sound\_definitions.json' for being ambiguous in its usage (and was never used)
+
+## **Gameplay**
+
+-   Data-driven blocks can now be added to the Creative menu
+-   Knockback Roar is no longer stronger than it used to be
+
+## **Graphical**
+
+-   Fixed particles not emitting when using animation controllers
+
+## **Player**
+
+-   Attachables that are visible in first person will no longer render backwards
+

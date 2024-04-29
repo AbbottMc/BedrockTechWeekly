@@ -1,0 +1,42 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Entity Documentation**
+
+-   Removed experimental markers for The Wild Update entity behaviors and components
+-   Added documentation for minecraft:heartbeat. Rephrased some of the documentation
+
+## **Items**
+
+-   Added support for recipes to use item tags directly instead of item names
+    -   Added new item tags
+    -   Converted several recipes from code into their own recipe files
+    -   Added several recipes using the new tags to override many old, item specific recipes (these still exist for backwards compatability):
+        -   barrel, beehive, bookshelf, bowl, brewing\_stand, campfire, cartography\_table, chest, composter, crafting\_table, daylight\_detector, fire\_charge, fletching\_table, furnace, grindstone, jukebox, lectern, loom, noteblock, painting, piston, shield, smithing\_table, smoker, soul\_campfire, soul\_torch, stick, stone\_axe, stone\_hoe, stone\_pickaxe, stone\_shovel, stone\_sword, torch, tripwire\_hook, wooden\_axe, wooden\_hoe, wooden\_pickaxe, wooden\_shovel, wooden\_sword
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## **Add-Ons and Script Engine**
+
+-   Implemented the has\_property, int\_property, bool\_property, float\_property, and enum\_property actor behavior filters
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **GameTest Framework**
+
+-   Fixed a bug where EntityHurtEvent would not fire on Player death
+-   Renamed experiment GameTest Framework to Beta APIs
+-   The now-renamed Beta APIs experiment is still needed to access all beta APIs, including core Minecraft APIs and GameTest APIs

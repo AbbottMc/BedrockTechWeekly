@@ -1,0 +1,42 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Actor Filters**
+
+-   Created new actor filters "on\_fire", "on\_hot\_block", "target\_distance", and "actor\_health"
+
+## **Molang**
+
+-   Added new Molang _is\_local\_player_ to allow detection of the current player
+
+## **AI Goals**
+
+-   The "celebrate\_survive" AI behavior will now consider the highest rain passable block in addition to sky visibility before firing fireworks
+-   The "move\_outdoors" AI behavior will now consider the highest rain passable block in addition to sky visibility when searching for a place to consider as being outdoors
+-   Exposed new data parameters for the "trade\_with\_player" AI behavior to specify such things as the conditions that need to be met for the goal to start and the max distance the mob can be from its trading player before exiting the goal
+
+## **Stability and Performance**
+
+-   Fixed a crash on Xbox when the Edit World Button on the Select World Screen has quick successive selections
+
+# **Technical Experimental Features**
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **General**
+
+-   Release BlockSelectionBoxComponent outside of experimental toggle in json formats 1.19.60 and higher
+-   Release BlockDisplayNameComponent outside of experimental toggle in json formats 1.19.60 and higher
+-   Ensure Block Permutation Conditions can only use _'query.block\_property'_ Molang Query
+
+## **Synchronization**
+
+-   Chiseled Bookshelf BlockActor inherit from Container to take advantage and ensure synchronization when exiting/importing worlds is correct and not losing any Books
+

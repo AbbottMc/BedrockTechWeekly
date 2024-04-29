@@ -1,0 +1,62 @@
+**PLEASE READ before participating in the Minecraft Beta**:
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them
+-   Beta builds can be unstable and are not representative of final version quality
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+## For Map Makers and Add-On Creators:
+
+-   Removed the byte order mark at the beginning of function files if it exists
+-   Updated ScriptHotbarContainerComponent's generateDocumentation function to say it checks the player's first hotbar item slot, not their third
+-   Removing a timer component and adding a new one should no longer have the new timer inherit the old timer's time value
+-   Included a fix to allow for json content that refers to blocks with 'tile.' at the front of it to be looked up successfully 
+
+## Fixes:
+
+-   **Crashes/Performance**
+    -   Fixed several crashes that could occur during gameplay 
+    -   Fixed a crash that could occur on Nintendo Switch when the game was saving or loading ([MCPE-45862](https://bugs.mojang.com/browse/MCPE-45862))
+    -   Fixed a marketplace issue that could result in the game getting stuck or crashing when loading in content
+    -   Made further performance improvements when opening inventory screens ([MCPE-27167](https://bugs.mojang.com/browse/MCPE-27167))
+    -   Fixed a crash that could occur when signing in to Xbox Live
+    -   Fixed a crash that could occur when breaking a bell ([MCPE-46636](https://bugs.mojang.com/browse/MCPE-46636))
+    -   Fixed an issue that could cause the game to freeze or stop responding ([MCPE-46654](https://bugs.mojang.com/browse/MCPE-46654))
+    -   Made some further performance improvements around Villages and job sites
+    -   Fixed a crash that could sometimes occur when changing skinsFixed a crash that could occur when loading in a roaming skin
+    -   Fixed a crash that could occur on SwitchSeveral other performance improvements, included some related to mob AI pathfinding 
+
+-   **General**
+    -   The marketplace search screen now displays the proper pack icons
+    -   Fixed Marketplace sale items not showing the discount percentage
+    -   Marketplace sale items not longer change size when hovered over
+    -   The 'New' tag will be properly removed from a Marketplace collection once it has been viewed
+    -   Replaced some missing Marketplace screenshots
+    -   Made improvements to the patch notes to make sure the correct ones show up after an update
+    -   Fixed an issue with skins not loading in correctly after restarting the game 
+    -   Several fixes and improvements related to game invites:
+        -   Fixed a bug that would prevent a player from creating or loading a world, or cause a crash, after attempting and failing to join another world via an invite
+        -   Fixed an issue that prevented the player from joining a world or server after receiving an invite
+        -   Players should no longer see the "Unable to connect to World" message when trying to enter own Realm or any area from Friends tab after failed attempt to join a game
+    -   Fixed a loading screen issue that could prevent split screen players on console from joining the world correctly 
+
+-   **Gameplay**
+    -   Fixed an issue that was preventing players from feeding hay bales to animals in order to breed them
+    -   Players now respawn at the correct spawn point when they die
+    -   Players can now respawn successfully without having to exit and re-join the world first  
+
+-   **Mobs**
+    -   Iron Golems now sway when walking 
+
+-   **Graphical**
+    -   Fixed the sitting model for cats that were previously tamed ocelots ([MCPE-41929](https://bugs.mojang.com/browse/MCPE-41929))
+    -   Enchanted armor and bows now show their shimmering effect again ([MCPE-45750](https://bugs.mojang.com/browse/MCPE-45750)) 
+
+-   **User Interface**
+    -   Fixed a controller bug when navigating through the Marketplace
+    -   The crafting grid no longer clears when the gamepad cursor moves to any non-recipe book slot 
+
+-   **Add-Ons and Script Engine**
+    -   Fixed an issue that was preventing custom blocks from registering successfully
+    -   Fixed an issue with custom items and blocks not requiring the namespace for slash commands

@@ -1,0 +1,90 @@
+**Posted:** 20 January, 2021
+
+**PLEASE READ before participating in the Minecraft Beta:**
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them
+-   Beta builds can be unstable and are not representative of final version quality
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+## **New Experimental Features:** 
+
+In this week's beta we have some exciting new Caves and Cliffs features that are accessible by enabling the "Experimental Features" toggle on your worlds. (You can find out more about using the toggles at [aka.ms/MCExperimentalToggle](https://aka.ms/MCExperimentalToggle).) Please remember these features are not yet complete as they are work in progress. You can leave us your feedback for these features in the threads at [aka.ms/CavesCliffsFeedback](https://aka.ms/CavesCliffsFeedback), and search and reports any new bugs you may encounter at [bugs.mojang.com](https://bugs.mojang.com/).   
+
+![img_616.JPG](https://feedback.minecraft.net/hc/article_attachments/360082619692/img_616.JPG)
+
+## **Dripstone** 
+
+-   Added pointed dripstone blocks 
+    -   These can be found in the creative inventory for now 
+-   A pointed dripstone block can be placed in the ceiling and on the floor, creating stalactites and stalagmites 
+-   Falling on a stalagmite causes increased fall damage  
+-   Breaking the ceiling above a stalactite causes it to fall towards the ground and will cause damage on impact with entities  
+-   Stalactites have a dripping water and lava animation  
+
+-   **Known issues****:** 
+    -   When hanging Pointed Dripstones start falling their position is slightly offset 
+    -   Sneaking while placing tips of opposing stalactites and stalagmites merges them 
+    -   Placed pointed dripstone can be destroyed by lava on Bedrock 
+    -   If player is killed by stalactite or stalagmite fall damage, custom death message is not displayed 
+    -   Pointed dripstone item is rendered differently in-hand on Bedrock compared to Java Edition 
+    -   Placing pointed dripstones in water results in the water being removed 
+    -   Player receives 2 points of damage when jumping on a stalagmite 
+
+## **Sculk** **S****ensor** 
+
+-   Introducing the bizarre, tendril-filled world of sculk – prepare for sculk sensors to creep you out with their unique ability to detect nearby vibrations  
+-   A vibration is anything that causes physical motion; if you are careful, there are some motions that are undetectable to sensors by sneaking. There are still quite a few of these events missing though - stay tuned! 
+-   These sneak-friendly vibrations currently include walking, falling to the ground 
+-   The current list of vibration events are as follows: (more will be added in future updates) 
+    -   Step 
+    -   Swim 
+    -   Block Place 
+    -   Block Destroy 
+    -   Elytra Free Fall  
+    -   Hit Ground 
+    -   Splash 
+    -   Projectile Shoot 
+-   Sculk sensors will not listen to vibrations that are directly created by other sculk sources 
+-   When a vibration is detected, a signal is sent from the source location to the sensor at a speed of 1 game tick per block 
+-   Other vibrations cannot be detected by a sensor when a signal is already traveling to it 
+-   When the signal has arrived, the sensor will be activated for 40 game ticks (approximately 2 seconds) 
+-   While activated, the sensor cannot detect other vibrations 
+-   Sculk sensors can detect vibrations in an 8-block radius around it 
+
+-   **Known issues:** 
+    -   Sculk sensors cannot be waterlogged 
+    -   Wool occlusion is not yet added to the blocks’ functionality. This will be added in a later beta 
+
+## **Bug Fixes**
+
+ **General** 
+
+-   Fixed Pork Chop achievement and trophy being unlocked by raw porkchop ([MCPE-95446](https://bugs.mojang.com/browse/MCPE-95446))  
+-   Fixed a bug where foxes wouldn't knock off and eat sweet berries ([MCPE-70790](https://bugs.mojang.com/browse/MCPE-70790))  
+-   Clicking "Download Template" when missing required templates of an existing world now correctly downloads the required templates  
+-   Fixed bug that allowed players to place custom spawn eggs by default in Adventure mode  
+
+## **Commands** 
+
+-   The '/setblock' command now supports setting the connected state for the soul\_lantern block ([MCPE-89609](https://bugs.mojang.com/browse/MCPE-89609))  
+-   The '/setblock' command now supports setting the rotation state for the chain block ([MCPE-105912](https://bugs.mojang.com/browse/MCPE-105912))  
+-   'SetBlock' and 'SetBlockAtPos' events now support custom block states  
+
+## **Blocks** 
+
+-   Fix for certain Marketplace worlds having incorrect block data when played on Realms and multiplayer between mobile and PC    
+
+## **World Generation** 
+
+-   Mcstructure files saved with entities no longer crash game when loaded into the world ([MCPE-63387](https://bugs.mojang.com/browse/MCPE-63387))  
+
+## **Technical Changes** 
+
+-   A boolean parameter called "ignore\_game\_mode" is added for the block event response "decrement\_stack", set to false by default. Thus "decrement\_stack" no longer decreases the item stack when playing in Creative by default  
+
+## **Other Known Issues** **in this** **Beta:** 
+
+-   A crash may occur when suspending and resuming the game on Android
+-   The patch notes screen may contain an invalid link to the Marketplace

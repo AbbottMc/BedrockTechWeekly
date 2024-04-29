@@ -1,0 +1,37 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Add-Ons**
+
+-   Enable event filters in the root definition to be evaluated independent of sequence or randomize when a _format\_version_ of 1.19.20 or higher is specified
+
+## **Stability and Performance**
+
+-   Fixed a crash when exploring multiple categories in Marketplace on Xbox and PlayStation
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## **GameTest Framework**
+
+-   System Events
+    -   Added event _beforeWatchdogTerminate_\- Shuts down the server when a critical scripting exception occurs (e.g. script hang). Can be canceled to prevent shutdown
+    -   Added enum _WatchdogTerminateReason_\- Specifies the reason for watchdog termination
+    -   Added new properties to _properties_for watchdog configuration on Bedrock Dedicated Server
+        -   _script-watchdog-enable-exception-handling_\- Enables watchdog exception handling via the _events.beforeWatchdogTerminate_ event (default = true)
+        -   _script-watchdog-enable-shutdown_\- Enables server shutdown in the case of an unhandled watchdog exception (default = true)
+        -   _script-watchdog-hang-exception_\- Throws a critical exception when a hang occurs (default = true)
+
+## **General**
+
+-   Removed the component _minecraft:unwalkable_
+-   Renamed _'minecraft:explosion\_resistance'_ to _'minecraft:destructible\_by\_explosion'_ and restructured the component to be either defined as a boolean or as an object
+    -   Setting the component to true will give the block the default _explosion\_resistance_ and setting it to false will make the block indestructible by explosion
+    -   Setting the component as an object will let users define the resistance of the block to a base explosion

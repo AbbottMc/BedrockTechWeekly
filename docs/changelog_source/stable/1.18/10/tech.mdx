@@ -1,0 +1,219 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.18.10 with new resources, behaviors, and documentation, are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddOnPacks)
+
+## **Performance / Stability Fixes**
+
+-   Fixed a crash that could occur when setting the width or height of a mob's hitbox to a negative value
+-   Fixed an issue where ticking areas would occasionally skip a tick
+-   Fixed a bug that caused performance drops when using the '/tag' command ([MCPE-139609](https://bugs.mojang.com/browse/MCPE-139609))
+-   The Content Log History panel is now accessible from the second player in split-screen without crashing the game
+-   Fixed a crash that could occur when an animation controller referenced itself as one of its "animations"
+-   The game no longer crashes when nesting schedule commands in functions ([MCPE-144730](https://bugs.mojang.com/browse/MCPE-144730))
+-   Added log messages to help identify the cause of the BDS crash ([BDS-12751](https://bugs.mojang.com/browse/BDS-12751))
+-   Improved performance of RandomStrollGoal
+-   Reduced memory and load times for ticking areas
+
+## **General**
+
+-   Android’s target API has been updated to API 30 for Google Play Store
+-   Reapplied changes to use "allowlist" instead of "whitelist" ([BDS-14119](https://bugs.mojang.com/browse/BDS-14119))
+
+## **Commands**
+
+-   Added '/loot' command - Drops the given loot table into the world
+-   Added a new '/damage' command to allow players to deal damage to entities
+-   Placing Cocoa Beans with '/setblock' or '/fill' commands no longer results in an error
+-   The '/spreadplayers' command no longer hangs when given a high spread range ([MCPE-137793](https://bugs.mojang.com/browse/MCPE-137793))
+-   Order of function calls triggered by '/execute' inside a function are now consistent ([MCPE-111849](https://bugs.mojang.com/browse/MCPE-111849))
+-   The '/effect' command no longer has the redundant argument 'empty' ([MCPE-62903](https://bugs.mojang.com/browse/MCPE-62903))
+-   Fixed a bug that caused the '/kill' command to not kill entities with the Absorption effect ([MCPE-142763](https://bugs.mojang.com/browse/MCPE-142763))
+
+## **Data-Driven Blocks**
+
+-   Added support for blocks having the same name, as long as they belong to different namespaces
+-   Updated documentation for several components:
+    -   BlockExplosionResistance
+    -   BlockFrictionComponent
+    -   BlockMaterialInstances
+    -   BlockBreathabilityComponent
+    -   CraftingTableComponent
+    -   BlockLightFilterComponent
+-   Changed BlockLightDescription JSON name from "minecraft:block\_light\_absorption" to "Minecraft:block\_light\_filter" and field name from "block\_light\_absorption" to "block\_light\_filter"
+
+## **Data-Driven Entities**
+
+-   The random chance for a wild adult Ocelot to spawn with two children is now handled by components added in the entity JSON definition
+-   Fixed many missing "Description" entries in the documentation
+-   Added AI Goals documentation for "behavior.move\_to\_liquid" and "behavior.move\_to\_block"
+-   Added AI Goals documentation for missing parameters of "behavior.tempt", "behavior.rise\_to\_liquid\_level", and "behavior.random\_fly"
+-   Added Components documentation for missing parameters of "movement.sway"
+-   Fixed some typos and inconsistencies in the Entities documentation
+
+## **Data-Driven Items**
+
+-   Added nine new shapeless recipe JSON files, replacing hard-coded Smithing Table crafting recipes
+-   Updated documentation for BlockCollisionComponentDescription
+-   Changed BlockCollisionComponentDescription JSON name from "entity\_collision" to "block\_collision"
+-   Updated documentation for FuelItemComponent
+-   Renamed DamageableItemComponent to DurabilityItemComponent
+-   Updated documentation for BlockRaycastComponent
+-   Updated documentation for FoodItemComponent
+-   Changed SaturationModifier in FoodItemComponent to take a float instead of a string
+-   Fixed custom food behaviours not being replicated to guest clients
+
+## **Mobs**
+
+-   The "controlling\_seat" field on "minecraft:rideable" now works as intended for both Boats and Horses
+-   Mobs riding other mobs and pathing towards a target will no longer wiggle back and forth along their path
+-   Match tool conditions now work on mobs (Experimental)
+-   JumpToBlockGoal can no longer be used when the mob is in water
+-   JumpToBlockGoal now correctly searches the same distance upwards and downwards when looking for jumpblockcandidates, allowing a mobs that use the goal to jump equally high as low
+-   Fixed an issue where animation controller events defined in the default state would get skipped if the controller immediately transitioned to another state (This is a versioned change that will only be applied for animation controllers starting at format\_version 1.18.10)
+
+## **Animation**
+
+-   Fixed an issue where animation events, sound effect events, and particle events would not trigger if the event time specified was equal to the total "animation\_length"
+-   Fixed an issue where event times were not considered within the animation length calculation that happens when "animation\_length" is not explicitly specified
+
+## **Molang**
+
+-   Fixed arrow operator to return 0 if the left side is not a valid entity or item, rather than causing the entire expression to return 0
+    -   For example, if bis not valid variable.a = variable.b-\>variable.c will now assign 0 to variable.a
+    -   This is not a Molang Versioned Changebecause no known content is currently using the arrow operator
+-   Add non-experimental is\_name\_any, is\_item\_name\_any, and is\_owner\_identifier\_any queries
+-   Fixed relative\_block\_has\_all\_tags block\_neighbor\_has\_all\_tags and biome\_has\_all\_tags queries to require all tags rather than just any tags
+-   Fixed nested conditional (ternary) operator parsing to go right-to-left instead of left-to-right
+    -   This is a Molang Versioned Change that only takes effect for Molang expressions in packs that use a min\_engine\_version of 1.18.10 or higher
+    -   Previously nested conditional expressions like 'A?B:C?D:E'would evaluate as ' (A?B:C)?D:E', now they evaluate as 'A?B:(C?D:E'
+-   Access of missing public variables on other entities will return 0.0 and not cause an error
+-   Fix loading of public variables containing capital letters to not cause an error
+-   Added "slot.equippable" added as a slot option for WearableItemComponent and Molang
+-   Added alland query.any to check if a value matches all or any of the following values
+-   Added in\_rangeto check if a value is in the (inclusive) range between a min and max value
+
+## **Block Components (Experimental)**
+
+-   Fixed BlockPartVisibilityComponent for multiplayer by adding network save/load tags ([MCPE-141908](https://bugs.mojang.com/browse/MCPE-141908))
+
+## **GameTest Framework (Experimental)**
+
+There are some important breaking changes in APIs creators should be aware of:
+
+-   Renamed mojang-minecraft:Worldobject to mojang-minecraft:world 
+    -   In practice, this means “World.getDimension” code should now read “world.getDimension”
+-   Removed mojang-minecraft:Commands- Instead, we are adding runCommand methods on dimension, entity, and player
+    -   In practice, this means that “Commands.run(“say Hello World”, dimension)” should now read “dimension.runCommand(“say Hello World”)”
+
+Other major API adds and updates:
+
+## **mojang-minecraft module**
+
+World
+
+-   Replaced function getPlayers() : Player\[\] with function getPlayers(options: EntityQueryOptions = undefined) : EntityIterator- Returns an iterator to a collection containing all players in the dimension. Optionally, options can be used to filter the result
+
+World.events
+
+-   Added blockBreak and blockPlace events, which are called when a player breaks or places a block in the world
+-   Added optional argument to events.addEffect. This argument will limit the callback to only fire for specific entities (see EntityEventOptions)
+-   Item use events:
+    -   Added event events.beforeItemUse - Fires before an item is used. Can be canceled
+    -   Added event events.itemUse - Fires when an item is used and the before event is not cancelled
+    -   Added event events.beforeItemUseOn - Fires before an item is used on a block. Can be cancelled
+    -   Added event events.itemUseOn - Fires when an item is used on a block and the before event is not cancelled  
+          
+        
+-   Note that the following definition events only function with data driven items created as part of the Holiday Creator Features experiment:
+    -   Added event events.beforeItemDefinitionEvent - Fires before an Item definition event is processed. Can be canceled
+    -   Added event events.itemDefinitionEvent - Fires when the Item definition event is processed and the before event is not canceled
+    -   Added method triggerEvent(eventName : String) - Triggers an event on the ItemStack if an event with the given eventName, as defined in the Items JSON file
+
+BlockBreakEvent
+
+-   Added property brokenBlockPermutationto indicate which kind of block was broken
+
+Entity (note that derived types Player and mojang-gametest:SimulatedPlayer also added these APIs as well)
+
+-   Added runCommandmethod to run a command as an entity
+-   Added dimensionproperty to get the dimension the entity is in
+-   Added function addTag(tag: string): bool- Adds a tag to this entity. Returns true if the tag does not already exist
+-   Added function hasTag(tag: string): bool- Returns true if the tag exists on this entity
+-   Added function removeTag(tag: string): bool- Removes a tag from this entity. Returns true if the tag was removed
+-   Added function getTags(): string\[\] - Returns all tags on this entity
+-   Added target property to Entity. targetrepresents the Entity that this Entity is currently targeting, for purposes such as AI targeting
+-   Added function getEntitiesFromViewVector(options: EntityRaycastOptions): Entity\[\] - Gets all entities that intersects the ray from the entities view vector
+-   Added function getBlockFromViewVector(options: BlockRaycastOptions): Block – Gets the first block that intersects the ray from the entities view vector
+-   Added function setVelocity(velocity: Vector): bool- Sets the velocity of this entity
+-   Added property viewVector: Vector- Represents the direction that the entity is looking, as a vector
+-   Added property headLocation: Location- Represents the location of the head of the entity
+-   Added property bodyRotation: number- Represents the body rotation of the entity as a float (in degrees)
+-   Added function teleport(location: Location, dimension: Dimension, xRotation (optional): float, yRotation (optional): float)
+-   Added function teleportFacing(location: Location, dimension: Dimension, facingLocation: Location)
+
+Player
+
+-   Added method startItemCooldown(itemCategory : string, durationTicks : int) - Starts or resets a cooldown on an item category (e.g., ender\_pearl) for the given duration in ticks
+-   Added method getItemCooldown(itemCategory : string) - Returns the remaining duration in ticks that this player has of the given item category. If no cooldown is present, returns 0
+
+ItemCooldownComponent
+
+-   Added ItemCooldownComponent (item.getComponent("minecraft:cooldown"))
+-   Read-only property cooldownCategory : string - Represents the cooldown category of this item.
+-   Read-only property cooldownTicks : int - Represents the cooldown time in ticks for this item if cooldown is enabled
+-   method startCooldown(player : Player) - Starts or resets a cooldown for this item on the given player if cooldown is enabled for this item
+
+ItemType
+
+-   Removed getName method and added read-only property .id
+
+Dimension
+
+-   Added runCommandmethod to run a command in a dimension
+-   Added function getEntitiesFromRay(pos: Location, direction: Location, options: EntityRaycastOptions): Entity\[\]- Gets all entities that intersects the ray starting at a location which extends in direction
+-   Added function getBlockFromRay(pos: Location, direction: Location, options: BlockRaycastOptions) : Block - Gets the first block that intersects the ray starting at a location which extends in direction
+-   Added function getPlayers(options: EntityQueryOptions = undefined) : EntityIterator- Returns an iterator to a collection containing all players. Optionally, options can be used to filter the result
+-   Added function getEntities(options: EntityQueryOptions = undefined) : EntityIterator- Returns an iterator to a collection containing all entities in the dimension. Optionally, options can be used to filter the result
+-   Updated spawnEntityto take a Location or a BlockLocation
+
+EntityQueryOptions
+
+-   Added class EntityQueryOptions- Provides additional filtering options when calling getEntities and getPlayers
+
+EntityQueryScoreOptions
+
+-   Added class EntityQueryScoreOptions- Used with EntityQueryOptions to provide scoreboard filtering
+
+EntityEventOptions
+
+-   Used to filter events that fire on entities to restrict the callback to only certain ones.
+-   Property entity: Entity\[\] - If specified, will restrict to just this entity
+-   Property entityTypes: string\[\] - If specified, will restrict to entities with the specified type (e.g., minecraft:creeper)
+
+BlockExplodeEvent
+
+-   Renamed destroyedBlock to block
+
+## **mojang-gametest module**
+
+-   Added registerAsync method to register and properly track the state of GameTests using async functions
+
+Test
+
+-   Added getDimensionto get the dimension in which the test is being ran
+-   Added gameMode: GameModeparameter to spawnSimulatedPlayer method
+
+ScriptSimulatedPlayer
+
+-   Added function giveItem(itemStack: ItemStack, selectSlot: boolean)
+-   Added function setItem(itemStack:ItemStack, slot: number, selectSlot: boolean)
+-   Renamed destroyBlockto breakBlock
+-   Renamed stopDestroyingBlockto stopBreakingBlock
+-   Removed selectSlot method
+-   Added property selectedSlot: int - Gets or sets the currently selected hotbar slot for the player
+

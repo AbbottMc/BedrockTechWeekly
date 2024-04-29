@@ -1,0 +1,42 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **GameTest Framework (Experimental)** 
+
+-   Renamed module "Minecraft" to "mojang-minecraft" 
+-   Renamed module "GameTest" to "mojang-gametest" 
+    -   Renamed function assertBlockTypePresent to assertBlockPresent 
+    -   Renamed function assertEntityData to assertEntityState 
+    -   Removed function assertBlockTypeNotPresent 
+    -   Removed function assertEntityNotPresent 
+    -   Removed function assertEntityNotPresentInArea 
+    -   Removed function assertEntityNotTouching 
+    -   Removed function succeedWhenEntityNotPresent 
+    -   Modified signature of function assertBlockState(blockLocation: BlockLocation, callback: (Block) =\> boolean) 
+    -   Modified signature of function assertBlockPresent(blockType: BlockType, blockLocation: BlockLocation, isPresent: boolean) 
+    -   Modified signature of function assertEntityPresent(entityTypeIdentifier: string, blockLocation: BlockLocation, isPresent: boolean) 
+    -   Modified signature of function assertEntityPresentInArea(entityTypeIdentifier: string, isPresent: boolean) 
+    -   Modified signature of function assertEntityTouching(entityTypeIdentifier: string, location: Location, isTouching: boolean) 
+    -   Modified signature of function succeedWhenEntityPresent(entityTypeIdentifier: string, location: Location, isPresent: boolean) 
+    -   Added GameTestExtension function assertBlockProperty(propertyName: string, value: number | string | boolean, blockLocation: BlockLocation) 
+
+## **Commands** 
+
+-   The '/particle' command position argument is now optional ([MCPE-128379](https://bugs.mojang.com/browse/MCPE-128379)) 
+-   The '/particle' command will now output on success ([MCPE-80348](https://bugs.mojang.com/browse/MCPE-80348)) 
+-   The '/particle' command no longer shows an error when run successfully through '/execute' ([MCPE-129001](https://bugs.mojang.com/browse/MCPE-129001)) 
+
+## **Gameplay** 
+
+-   Data-driven blocks can now be added to the Creative menu  
+
+## **Molang** 
+
+-   'min\_engine\_version' from Resource Pack and Behavior Pack manifests is now passed into Molang expression parsing. This allows for future breaking changes tied to a specific engine version  
+
+## **User Interface** 
+
+-   UI bind objects can now utilize the ignore field
+

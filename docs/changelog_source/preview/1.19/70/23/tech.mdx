@@ -1,0 +1,49 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+### **BlockPermutation**
+
+BlockPermutation has been significantly refactored! Every BlockPermutation now share a unique JavaScript handle so exact equality (===) will work for permutations that share exactly the same state values. We've also added utility methods that make interacting with permutations easier, which includes the removal of the _XBlockProperty_ classes and now directly return properties _(__boolean | number | string__)_ or a while collection of properties _(_ _Record\<string, boolean | number | string\>__)_.
+
+-   Added method _matches(blockName: string, properties?: BlockProperties): boolean_which is used to match a block with optional states against a BlockPermutation.
+-   Added method _withProperty(name: string, value: boolean | number | string): BlockPermutation;_which returns a new block permutation with a given property set to a specific value. Throws if the provided data cannot be resolved as a valid block permutation.
+-   Added _function_ _static resolve(blockName: string, properties?: BlockProperties): BlockPermutation_which resolve a BlockPermutation from a block name and optional states. Throws if the provided data cannot be resolved as a valid block permutation.
+-   Updated methods _getProperty_and _getAllProperties_ to return values directly instead of wrapped into class objects. Example code: Before:
+
+_const blockPermutation = MinecraftBlockTypes.stoneSlab.createDefaultBlockPermutation();__blockPermutation.getProperty(MinecraftBlockProperties.stoneSlabType).value = 'stone\_brick';__blockPermutation.getProperty(MinecraftBlockProperties.topSlotBit).value = true;  
+  
+_
+
+Now:
+
+_const blockPermutation = BlockPermutation.resolve('minecraft:stone\_slab', {_    _stone\_slab\_type: 'stone\_brick',_    _top\_slot\_bit: true,__});_ 
+
+### **BlockProperties**
+
+Added new class to expose _BlockPropertyType_.
+
+### **BlockPropertyType**
+
+Added new class to track "definitional" data about block properties. This is how you can find which values are valid for each block property.
+
+## **Blocks**
+
+-   Released block properties and permutations out of experimental in JSON formats 1.19.70 and higher
+-   Added a content warning when loading world with more than 65536 custom block permutations. Custom block permutation counts are logged in debug log

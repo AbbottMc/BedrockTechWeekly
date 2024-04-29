@@ -1,0 +1,103 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for19.50 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddOnPacks)
+
+## **Structure Block Import**
+
+-   Structure Blocks can now import structures from ‘.mcstructure’ files on Windows
+
+## **General**
+
+-   Actor (Entity) Properties are no longer experimental (This includes Molang queries and property filters, but not Permutations)
+-   Fixed a crash that would occur if the _texture\_index_ of a spawn egg was out of bounds. Now a content log error will be presented instead
+-   Min/Max distance values in sound events now only affect the sound event and not all events using the same sound ([MCPE-154376](https://bugs.mojang.com/browse/MCPE-154376))
+-   Added client-side-chunk-generation-enabled toggle to server.properties
+-   Fixed an issue where changing the subpack of Resource Packs that have subpacks would not apply changes until the game was restarted ([MCPE-162002](https://bugs.mojang.com/browse/MCPE-162002))
+-   Recipes that have the same inputs but have different outputs will now display content errors (excludes Crafting Table and Stonecutter recipes)
+
+## **New ‘/execute’ Command Syntax**
+
+-   Removed the Upcoming Creator Features requirement for the new execute command syntax
+-   Version 1.19.50 is now required to run the new command syntax
+-   Creators currently using the new execute command syntax in command blocks will have to go modify those command blocks in order to update those commands
+-   Creators currently using the new execute command in behavior packs will need to change the min engine version to 1.19.50
+-   The previous execute command syntax can still be used by using version 1.19.40 or less
+
+## **Commands**
+
+-   Using the '/enchant' command to apply the same level of enchantment no longer results in a higher level being applied ([MCPE-153204](https://bugs.mojang.com/browse/MCPE-153204))
+-   Fixed an issue where _hasItem_ wouldn't correctly detect an item with a data value if _hasItem_ wasn't provided a data value ([MCPE-162460](https://bugs.mojang.com/browse/MCPE-162460))
+-   Running '/execute as' from Command Blocks no longer inherits rotation from entity ([MCPE-162680](https://bugs.mojang.com/browse/MCPE-162680))
+-   Fixed a bug where Chain Command Blocks would not activate when Delay in Ticks was greater than 0
+-   Running ‘/execute align xyz entity’ now produces a command error instead of crashing ([MCPE-162733](https://bugs.mojang.com/browse/MCPE-162733))
+
+## **Data-Driven Blocks**
+
+-   Released _BlockCollisionBoxComponent_ outside of experimental toggle in JSON formats 1.19.50 and higher
+-   Released _BlockCraftingTableComponent_ outside of experimental toggle in JSON formats 1.19.50 and higher
+-   The Crafting Table UI now updates when a block changes to a permutation with a different “minecraft:crafting\_table” block component
+-   Removed the functionality of the “minecraft:breathability” block component. Component will have no effect on the custom defined block
+
+## **Data-Driven Items**
+
+-   Blocks using the "minecraft:placement\_filter" component now produce particles, sounds and vibrations events when they are removed due to their placement condition failing
+
+## **Mobs**
+
+-   "input\_ground\_controlled" no longer implies increased auto step when controlled by player. The "variable\_max\_auto\_step" component can be used instead. To have consistency with previous versions, use "base\_value": 1.0625 and "jump\_prevented\_value": 0.5625
+
+## **Networking**
+
+-   Added server property 'enable-lan-visibility' to disable the explicit LAN discovery by clients. This will prevent unexpected port conflicts when running multiple dedicated servers on a single host. Clarified port use in server logs and made error messaging more clear ([BDS-1094](https://bugs.mojang.com/browse/BDS-1094))
+
+## **AI Goals**
+
+-   Exposed new data parameters for the "minecraft:offer\_flower" AI behaviour to specify such things as the time that the mob offers the flower for, the chance that the goal will start, and the dimensions of the AABB used to search for a mob to offer a flower to
+-   The "minecraft:offer\_flower" AI behavior can now be used by any mob, not just the Iron Golem
+-   The "minecraft:offer\_flower" AI behavior will now search through all mobs in the specified range rather than just the closest one, meaning that this goal has the potential to be used more consistently than before
+-   Exposed new data parameters for the "minecraft:take\_flower" AI behavior to specify such things as the conditions to be met to start the goal, the min and max wait times before taking the flower, and the dimensions of the AABB used to search for a mob to take a flower from
+-   The "minecraft:take\_flower" AI behavior can now be used by any mob, not just baby Villagers
+
+## **Molang**
+
+-   Fixed _has\_property_ to return 1 when a property exists and 0 when not, rather than the opposite of that
+
+## **Scripting, APIs, and GameTest Framework (Experimental)**
+
+-   Fixed _velocity_ property not returning correct values in certain situations ([MCPE-152715](https://bugs.mojang.com/browse/MCPE-152715))
+-   Added function _canPlace_ - Returns if it is valid to place the desired block type or block permutation at a specified location (and optional face of the block)
+-   Added function _trySetPermutation_ - Attempts to place the desired block permutation at a location by first checking _canPlace_
+-   Entity
+    -   Removed function _runCommand_. Consider _runCommandAsync_ as an alternative
+-   Dimension
+    -   Removed function _runCommand_. Consider _runCommandAsync_ as an alternative
+-   Converted _BlockRaycastOptions_ to an interface
+-   Converted _EntityEventOptions_ to an interface
+-   Converted _ScoreboardObjectiveDisplayOptions_ to an interface
+    -   _Location_ _type_ updated to IVec3
+-   Vector
+    -   add - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   cross - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   distance - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   divide - updated _a_argument to accept an IVec3 interface type
+    -   lerp - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   max - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   min - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   multiply - updated _a_argument to accept an IVec3 interface type
+    -   slerp - updated _a_and _b_ arguments to accept an IVec3 interface type
+    -   subtract - updated _a_and _b_ arguments to accept an IVec3 interface type
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+
+

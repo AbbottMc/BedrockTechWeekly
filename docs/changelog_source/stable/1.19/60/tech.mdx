@@ -1,0 +1,191 @@
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for1.19.60 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks  
+    ](https://aka.ms/MCAddOnPacks)
+
+## **Performance / Stability**
+
+-   Fixed a crash that could occur when teleporting players to other dimensions using commands ([MCPE-164940](https://bugs.mojang.com/browse/MCPE-164940))
+-   Fixed a crash that could occur when using the “instant\_despawn” component
+-   Fixed a crash that could occur when loading actors
+
+## **General**
+
+-   Added a content error for the condition that custom blocks with permutations or properties fail to load in non-experimental worlds for JSON formats 1.19.60 and onwards
+-   Ensure Block Permutation Conditions cannot have side effects (i.e. 'math.random', 'math.random\_integer', and variable assignment)
+-   Released _BlockSelectionBoxComponent_ outside of experimental toggle in json formats 1.19.60 and higher
+-   Released _BlockDisplayNameComponent_ outside of experimental toggle in json formats 1.19.60 and higher
+-   Ensure Block Permutation Conditions can only use _'query.block\_property'_ Molang Query
+-   Fixed albedo color arrays in texture sets for custom blocks ([MCPE-163622](https://bugs.mojang.com/browse/MCPE-163622))
+
+## **Recipes**
+
+-   Renamed and converted all Smithing Table recipes to use the newly introduced “minecraft:recipe\_smithing\_transform” recipe format
+
+## **Particles**
+
+-   Updated particles documentation with descriptions of new materials and included example particles in the example resource pack
+
+## **Commands**
+
+-   Executing the ‘/say’ command via the new execute syntax now displays the entity’s name that produced the message ([MCPE-161450](https://bugs.mojang.com/browse/MCPE-161450))
+-   When teleporting a group of leashed mobs using "/tp @e" a far enough distance away to unleash them, all mobs now get properly unleashed ([MCPE-159617](https://bugs.mojang.com/browse/MCPE-159617))
+-   Fixed a bug causing players to not wake up when teleported while sleeping ([MCPE-162346](https://bugs.mojang.com/browse/MCPE-162346))
+-   Running ‘/execute if|unless score’ on a player that doesn’t have a score set will now return false ([MCPE-156279](https://bugs.mojang.com/browse/MCPE-156279))
+-   ‘/execute if|unless score’ no longer accepts selectors that can return multiple entities (ie. @e, @a)
+
+## **Commands (Experimental)**
+
+-   Fixed a bug where the @initiator selector would not work with the Upcoming Creator Features experiment enabled ([MCPE-164727](https://bugs.mojang.com/browse/MCPE-164727))
+
+## **Components**
+
+-   Released _BlockPlacementFilterComponent_ outside of experimental toggle in JSON formats 1.19.60 and higher
+-   Expanded "minecraft:shooter" component to define multiple projectiles that can specify different projectile definitions and condition filters
+-   Exposed more fields to shooter component to allow for more projectile customization such as throw power, sounds, and whether the attack is a magic attack
+-   Projectiles that teleport their owner will no longer do so while their owner is sleeping ([MCPE-161189](https://bugs.mojang.com/browse/MCPE-161189))
+-   Added "inventory" as a possible "domain" value for the "has\_equipment" filter, which allows to check for items stored in the actor's inventory
+-   Added an "equip\_item\_slot" field to the "interact" component
+    -   If set, an item held by the player will be equipped to the specified slot upon successful interaction
+    -   If an item is already present in the specified slot, it will be moved to the player's inventory
+    -   Equipping an item removes it from the player's inventory, unless the player is in Creative Mode
+-   Players now respond correctly to speed changes using the _minecraft:movement_ component
+
+## **Actor Filters**
+
+-   Created new actor filters "on\_fire", "on\_hot\_block", "target\_distance", and "actor\_health"
+
+## **AI Goals**
+
+-   The "celebrate\_survive" AI behavior will now consider the highest rain passable block in addition to sky visibility before firing Fireworks
+-   The "move\_outdoors" AI behavior will now consider the highest rain passable block in addition to sky visibility when searching for a place to consider as being outdoors
+-   Exposed new data parameters for the "trade\_with\_player" AI behavior to specify such things as the conditions that need to be met for the goal to start and the max distance the mob can be from its trading player before exiting the goal
+
+## **Particle Effects**
+
+-   Fixed a bug causing particles with collision and "expire\_on\_contact" to not expire when collided
+-   Added support for mixed color blending on particle effects
+
+## **Molang**
+
+-   Added new Molang _query.is\_local\_player_ to allow detection of the current player
+-   Fixed a bug where dividing any value in Molang by a dynamically determined negative variable resulted in a division by a positive (absolute) value instead
+    -   This is a Molang Versioned Change that only takes effect for Molang expressions in packs that use a min\_engine\_version of 1.19.60 or higher
+
+## **API (Experimental)**
+
+## **Entities/Players/SimulatedPlayer: Fire, levels, experience, and more**
+
+-   Entity
+    -   Added method _setOnFire(seconds: number, useEffects?: boolean = true): boolean)_which sets an entity on fire (if it is not in water or rain)
+    -   Added method _extinguishFire(useEffects?: boolean = true): void_ which extinguishes the fire
+    -   If an entity is on fire, you can call _getComponent('minecraft:onfire')_on it, which returns an object of type _EntityOnFireComponent_, which has a property _onFireTicksRemaining_
+    -   Fixed a bug where _viewDirection_would return the direction from the previous tick
+    -   Fixed a bug where _getEntitiesFromViewDirection_would use the direction from the previous tick
+    -   Fixed a bug where _getBlockFromViewDirection_would use the direction from the previous tick
+    -   Fixed a bug where _headLocation_would return the location from the previous tick
+    -   Fixed a bug where the _getEffect_ method could return an invalid Effect (and another case where an Effect could become invalid after a new Effect was added)
+    -   Added method _getEffects_which returns an array of all active effects on the entity
+-   EntityHealthComponent
+    -   Fixed a bug where health could be modified on dead entities ([MCPE-130687](https://bugs.mojang.com/browse/MCPE-130687))
+-   Player
+    -   Added function _addLevels(amount: number): number_ - Adds/Removes level to/from the player and returns the current level of the player
+    -   Added function _addExperience(amount: number): number_ - Adds/Removes experience to/from the player and returns the current experience of the player
+    -   Added function _resetLevel(): void_ - Resets the level of the player
+    -   Added function _getTotalXp(): number_ - Gets the total experience of the player
+    -   Added read-only property _level_ - Gets the level of the player
+    -   Added read-only property _xpEarnedAtCurrentLevel_ - Gets the experience earned at the current level of the player
+    -   Added read-only property _totalXpNeededForNextLevel_ - Gets the total experience required for the current level of the player
+-   Simulated Player
+    -   Added property _isSprinting_\- Used to get or set if the sprinting state of the simulated player is set to true
+-   Added function _respawn()_\- Respawns the SimulatedPlayer if it's dead
+-   Added function _disconnect()_\- Removes the SimulatedPlayer from the world
+
+## **Blocks & Redstone**
+
+-   Added function _getRedstonePower(): number_\- Gets the Redstone signal strength of the Block if it is part of a circuit, otherwise returns undefined
+
+## **Fill Block APIs**
+
+-   Added function _dimension.fillBlocks(begin: BlockLocation, end: BlockLocation, block: BlockPermutation | BlockType, options?: BlockFillOptions): number_
+    -   Fills an area between _begin_ and _end_ with block of type _block_. Returns number of blocks placed
+-   Added new interface _BlockFillOptions_ with member _matchingBlock?: BlockPermutation | BlockType_
+    -   Used with _fillBlocks_ to apply additional options, such as only filling blocks matching _matchingBlock_
+
+## **Command to script message passing**
+
+-   Added the '/scriptevent' command as part of the Beta APIs experiment. This is what will trigger _events.scriptEventReceive_ events (see below)
+    -   Usage: /scriptevent \<messsageId: string\> \[message: ???\]
+    -   messageId must be namespaced, use of the minecraft namespace is invalid (e.g. "/scriptevent give:coal", "/scriptevent my\_scripts:spawn\_sheep")
+    -   message is optional, with a max length of 256 characters
+-   events.scriptEventReceive
+    -   Added system event _events.scriptEventReceive_
+    -   Added read-only property _id: String__\-_ The namespaced ID of the event
+    -   Added read-only property message: String- The content of the message the event was sent with
+    -   Added read-only property _sourceBlock: Block_\- The command block that triggered/executed the command call if applicable, otherwise undefined
+    -   Added read-only property _sourceEntity: Entity_\- The player/entity that executed the command call if applicable, otherwise undefined
+    -   Added read-only property _initiator: Entity_\- The player that caused an NPC to execute the command call if applicable, otherwise undefined
+    -   Added read-only property _sourceType: MessageSourceType_\- The type of source the event was triggered by
+    -   _subscribe()_can filter by valid namespace string using the _ScriptEventMessageFilterOptions_ class
+-   ScriptEventMessageFilterOptions
+    -   Added _ScriptEventMessageFilterOptions_ class
+    -   Added property _namespaces: string\[\]_\- An array of namespaces to filter on
+
+## **Item Stacks**
+
+-   ContainerSlot
+    -   Added class _ContainerSlot_\- Used to directly manipulate items stored within a container
+    -   Renamed entity property _viewVector_to _viewDirection_ and now returns Vector3
+    -   Renamed entity function g_etEntitiesFromViewVector_to _getEntitiesFromViewDirection_
+    -   Renamed entity function _getBlockFromViewVector_to _getBlockFromViewDirection_
+-   Container
+    -   Added function _getSlot(slot: number): ContainerSlot_\- Returns the slot at the given container slot index
+    -   Added function _clearItem(slot: number): void_\- Clears the item at the given slot index
+    -   Added function _clearAll(): void_\- Clears all items in the container
+    -   Made the _itemStack_argument of function _setItem_ optional - If not provided, the slot is cleared
+    -   Added event _events.playerSpawn_\- Fires when a player spawns in the world
+    -   Renamed event _events.entityCreate_to _world.events.entitySpawn_. This event no longer fires for players
+
+## **Refactored and Improved Player events**
+
+-   PlayerJoinEvent
+    -   Added read-only property _playerId_\- The unique ID of the player that joined the world
+    -   Added read-only property _playerName_\- The name of the player that joined the world
+    -   Removed property _player_
+-   PlayerLeaveEvent
+    -   Added read-only property _playerId_\- The unique ID of the player that left the world
+
+## **Say/Tell/sendMessage APIs**
+
+-   Renamed _IRawMessage_ to _RawMessage_ for naming consistency
+-   RawMessage
+    -   Changed the signature of property withfrom _(string\[\] | RawMessage)\[\]?_  to _(string\[\] | RawMessage)?_
+
+## **Scoreboard get/set value APIs**
+
+-   Scoreboard
+    -   Added _setScore(ScoreboardObjective, ScoreboardIdentity, Number)_
+    -   Added _getScore(ScoreboardObjective, ScoreboardIdentity)_
+-   ScoreboardObjective
+    -   Added _setScore(ScoreboardIdentity, Number)_
+    -   Added _getScore(ScoreboardIdentity)_
+    -   Added _removeParticipant(ScoreboardIdentity)_
+-   ScoreboardIdentity
+    -   Added _setScore(ScoreboardObjective, Number)_
+    -   Added _getScore(ScoreboardObjective)_
+    -   Added _removeFromObjective(ScoreboardObjective)_
+
+## **EntityHurtEvent updates**
+
+-   Added read-only property _damageSource: EntityDamageSource_ - Gets information about the damage source
+-   EntityDamageSource
+    -   Added property _cause: EntityDamageCause_ - Gets the damage cause
+    -   Added property _damagingEntity?: Entity_ - Gets the damaging Entity
+    -   Added property _damagingProjectile?: Entity_ - Gets the damaging projectile Entity
+    -   Added function _applyDamage(amount: number, source?: EntityDamageSource): boolean_ - Applies damage to the Entity and returns the result of the operation
+

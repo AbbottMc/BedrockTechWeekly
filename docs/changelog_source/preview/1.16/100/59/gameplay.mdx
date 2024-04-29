@@ -1,0 +1,83 @@
+**PLEASE READ before participating in the Minecraft Beta:**
+
+-   Joining the beta will replace your game with a work in progress version of Minecraft
+-   You will not have access to Realms and will not be able to join non-beta players while you're previewing the beta
+-   Any worlds played while in the beta cannot be opened in previous versions of the game so please make copies of worlds to prevent losing them
+-   Beta builds can be unstable and are not representative of final version quality
+-   The beta is available only on Xbox One, Windows 10, and Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions  
+      
+    
+
+## **Changes**
+
+-   RenderDragon has been re-enabled in this beta  
+      
+    
+
+## **Fixes**
+
+## **Performance and Stability**
+
+-   Fixed several crashes that occurred during gameplay
+-   Fixed a crash that could occasionally occur while flying or moving around the game world
+
+## **Blocks**
+
+-   Signs can no longer be placed on end rods
+-   Blocks that can only be obtained with commands no longer have a placeholder tooltip ([MCPE-100760](https://bugs.mojang.com/browse/MCPE-100760))
+-   Fixed Crimson Roots, Warped Roots and Nether Sprouts not generating in the Nether ([MCPE-100614](https://bugs.mojang.com/browse/MCPE-100614))
+-   Walls converted from Console Edition saves are now joined properly
+
+## **Items**
+
+-   Item lock icon and tooltip no longer appear when the Show Tags game rule is false
+-   Fixed an issue that was causing some item recipes to be missing from the crafting window ([MCPE-100257](https://bugs.mojang.com/browse/MCPE-100257))
+-   Armor no longer gets stuck in the hot bar after interacting with an armor stand ([MCPE-84368](https://bugs.mojang.com/browse/MCPE-84368))
+-   Added Book & Quill back to the Creative item inventory ([MCPE-100361](https://bugs.mojang.com/browse/MCPE-100361))
+
+## **User Interface**
+
+-   Fixed the 'Profile' button in the Pause Menu not being sized correctly  
+      
+    
+
+## **Technical Changes**
+
+## **Commands**
+
+-   Added the ability to pick between different shake types using the '/camerashake'
+-   Fixed an issue where custom items were not added to the Creative item inventory and therefore could not be used with commands
+-   Fixed a bug where a request queued with '/schedule' would not clear out when executed and would execute when re-entering a level
+-   Added to the '/schedule on\_area\_loaded' command an overload that allows you to track a circular area, by specifying a center and a radius. Also added serialization for the queue of requests
+-   Fixed issues with the '/schedule' command that would consider an area loaded before it was actually loaded, and the command now respects which dimension it is queued in
+
+## **Add Block**
+
+-   Fixed issue with Blocks sync
+-   Add Block content is not allowed to use Vanilla Block identifiers to avoid content collisions
+-   'SetBlockAtPos' does not modify the block position from incoming parameters
+
+## **Components**
+
+-   Added a Lock in Inventory component that can be applied to an item via the 'give' and 'replaceitem' commands. This prevents the item from being removed from the player's inventory, dropped, or crafted with. Example of use: \`/give @s apple 1 0 {"item\_lock": {"mode": "lock\_in\_inventory"}}\`
+-   Added a Lock in Slot component that can be applied to an item via the 'give' and 'replaceitem' commands. This prevents the item from being moved or removed from its slot in the player's inventory, dropped, or crafted with. Example of use: '/give @s apple 1 0 {"item\_lock": {"mode": "lock\_in\_slot"}}'
+-   Added a Keep on Death component which can be applied to an item via the 'give' and 'replaceitem' commands. This component prevents the item from being dropped when the player dies. Example of use: '/give @s apple 1 0 {"keep\_on\_death": {}}'
+
+## **Item Icon Component**
+
+-   Items now have an easy way to set the icon for an item for displaying in the user interface
+-   Component Variables
+    -   "texture": Full path to icon image to use as item's icon. No default
+    -   "frame": Molang script to be executed at runtime to determine the icon's current frame. Can be a constant, defaults to: 0
+    -   "legacy\_texture\_id": The name of the texture used on legacy items. No default
+    -   "legacy\_frame": Molang script to be executed at runtime to determine the icon's current frame. Can be a constant, defaults to: 0
+
+## **Data Driven Blocks**
+
+-   Added the BlockDisplayNameComponent to allow display names to be configured in the localization table
+-   Made 'entity\_collision' and 'pick\_collision' take into account the rotation on a block
+-   Fixed animations not running on mobs spawned with custom events
+-   Added support for the 'on\_interact' trigger component
+-   Improved support for 'on\_interact' modifying the item used, e.g. change durability or set into another item
+-   Fixed issue where 'on\_interact' would duplicate the item used if an event response killed the player
+-   Fixed custom items functioning or rendering correctly on the client in a client/server scenario

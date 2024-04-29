@@ -1,0 +1,40 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Fixed a crashing issue related to undyed Shulkers
+
+## **Commands**
+
+-   The '/execute at' and '/execute as' commands will now execute at the correct relative rotation ([MCPE-156277](https://bugs.mojang.com/browse/MCPE-156277))
+-   '/execute at @e run kill @e' no longer crashes the game when there are items on the ground ([MCPE-161029](https://bugs.mojang.com/browse/MCPE-161029))
+-   Added chat output when entities are skipped by "/ride summon\_ride no\_ride\_change" ([MCPE-129486](https://bugs.mojang.com/browse/MCPE-129486))
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## **Actor Properties**
+
+-   Add a content error when default or set\_property expressions include side-effects, such as Molang variable assignment
+
+## **GameTest Framework**
+
+-   Memory Watchdog
+    -   `script-watchdog-memory-warning-` Produces a content log warning when the combined memory usage exceeds the given threshold (in megabytes). Setting this value to 0 disables the warning. (default = 100)
+    -   `script-watchdog-memory-limit-` Saves and shuts down the world when the combined memory usage exceeds the given threshold (in megabytes). Setting this value to 0 disables the limit. (default = 250)
+-   Player
+    -   setVelocity will now throw an exception when called on player types
+-   Watchdog
+    -   Increased slow code warning threshold from 2 ms to 6 ms
+-   Items
+    -   Renamed `Items` to `ItemTypes`
+-   ItemTypes
+    -   Added `function getAll(): ItemTypeIterator-` Returns an iterator of all available item types

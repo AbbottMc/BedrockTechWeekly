@@ -1,0 +1,20 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Actors**
+
+-   Added in check to prevent an actor that is a passenger from being ridden by the vehicle it is on preventing an infinite loop looking for the root vehicle ([MCPE-133774](https://bugs.mojang.com/browse/MCPE-133774))
+
+## **Mobs**
+
+-   Rotation when riding a mob that has a locked rotation will no longer unexpectedly snap to one side when that mob is rotating
+
+## **WebSocket** 
+
+-   JSON format for events sent from websocket server and Code Builder APIs updated to hierarchical JSON format instead of flat format 
+-   Less useful properties removed with block and item IDs moved to newer name-based format instead of numerical format 
+-   Agent-based commands in websockets moved to new "action:agent" format, and all commands are now queued and include unique IDs to correlate responses 
+-   Any future breaking changes to websocket and Code Builder APIs will now result in the "protocolVersion" being incremented
+
