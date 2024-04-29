@@ -94,6 +94,7 @@ html[data-theme='dark'] {
 
 @media screen and (max-width: 996px) {
     .header-button-container {
+        width: 100%;
         flex-direction: column;
         padding-left: 3rem;
         padding-right: 3rem;
