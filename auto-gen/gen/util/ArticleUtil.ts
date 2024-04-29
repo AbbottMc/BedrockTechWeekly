@@ -40,7 +40,6 @@ export class ArticleUtil {
     return Config.bedrockPreviewVersionKeywords.find(keyword => article.title.includes(keyword));
   }
 
-  // TODO: Add support for all versions
   static getBedrockVersion(article: ArticleObject) {
     if (!this.isBedrockArticle(article)) return undefined;
     const title = article.title;
@@ -48,8 +47,17 @@ export class ArticleUtil {
       const previewKeyword = this.getPreviewKeyword(article) as string;
       return title.split(previewKeyword)[1].replace('/', '-').split('(')[0].trim().replaceAll(' ', '_');
     } else {
-      const versionPos = title.split('-').length - 1;
-      return title.split('-')[versionPos].replace('/', '-').split('(')[0].split('(')[0].trim();
+      let versionPos = title.split('-').length - 1;
+      const titleSplit = title.split('-');
+      const numberList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      if (numberList.every(num => !titleSplit[versionPos].includes(num.toString()))) {
+        versionPos--;
+      }
+      if (versionPos < 0) throw new Error('No version found in article: ' + article.title);
+      if (title.includes('1.2.13.60 / 1.2.16')) {
+        return '1.2.13-16';
+      }
+      return titleSplit[versionPos].replace('/', '-').split('(')[0].split('(')[0].trim();
     }
   }
 
@@ -59,6 +67,10 @@ export class ArticleUtil {
 
   static forceSortPocket(articleObj: ArticleObject) {
     return Config.forceSortTitleParts?.some(titlePart => articleObj.title.includes(titlePart));
+  }
+
+  static ignoreArticleWithTitlePart(articleObj: ArticleObject) {
+    return Config.ignoreTitleParts?.some(titlePart => articleObj.title.includes(titlePart));
   }
 
   static getMajorVersion(version: string) {

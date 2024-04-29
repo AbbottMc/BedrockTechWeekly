@@ -1,0 +1,15 @@
+import TechSapiChangelog from './tech_sapi_changelog.md';
+import TechSapi from './tech_sapi.md';
+import Switcher from '../../../components/TechChangelogSwitcher.mdx';
+
+## **数据驱动**
+
+- 在1.19.70及以上的JSON格式版本中，将方块属性和置换从实验性玩法中释放。
+- 现在当加载一个有着超过65536个自定义方块置换的世界时，会发出内容警告。自定义方块置换数量会被记录在调试日志中。
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+## **Script API**
+
+<Switcher techSapi={<TechSapi/>} techSapiDiff={<TechSapiChangelog/>}/>

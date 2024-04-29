@@ -2,6 +2,8 @@ import {ApiUtil} from './util/ApiUtil'
 import {ArticleUtil} from './util/ArticleUtil'
 import {Config} from './Config'
 import {Article} from './api/Article'
+import FileUtil from './util/FileUtil'
+import {sidebarOutput, sidebarOutputPath} from './sidebarOutput'
 
 let started = false;
 let startSort = false;
@@ -16,7 +18,7 @@ const processPage = async function (pageNumber = 1) {
     const canSortPreview = ArticleUtil.canSortPreview(articleObj, startSort);
     if (canSortPreview) startSort = true;
     const article = new Article(articleObj, {isOldVersion: !canSortPreview});
-    if (!article.canStart(started)) continue;
+    if (!article.canStart(started) || ArticleUtil.ignoreArticleWithTitlePart(articleObj)) continue;
     started = true;
     article.generate();
     const isContinue = article.canContinue();
@@ -30,5 +32,6 @@ ApiUtil.fetchPage().then(async (page) => {
     const isContinue = await processPage(i);
     if (!isContinue) break;
   }
+  FileUtil.createFileSync('sidebar.json', sidebarOutputPath, JSON.stringify(sidebarOutput));
   console.log('生成官方预览版更新日志完成');
 });

@@ -16,11 +16,12 @@ export const Config = {
   // startVersion: '1.19.80.22',
   startSortFromTitle: 'Minecraft Beta - 1.2.20.1 (Xbox One/Windows 10/Android)',
   forceSortTitleParts: ['New Nintendo', 'Education'],
+  ignoreTitleParts: ['Bedrock Add-On Templates', 'Old Worlds Types in Minecraft: Bedrock Edition - FAQ', ],
   titles: {
     technicalUpdates: 'Technical Updates',
     scriptAPI: ['API', 'Scripting'],
     expTechUpdates: ['Experimental Technical Updates', 'Technical Experimental Updates', 'Experimental Technical Features'],
-    ignore: ['**Posted', '**Information', '**Update on ', '**PLEASE READ', '**NOTE:**']
+    ignore: ['**Posted', '**Information', '**Update on ', '**PLEASE READ', '**NOTE', '**30']
   },
   output: {
     folder: {

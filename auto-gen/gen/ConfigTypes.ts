@@ -32,6 +32,7 @@ export interface IConfig {
   endVersion?: string;
   startSortFromTitle?: string;
   forceSortTitleParts?: string[];
+  ignoreTitleParts?: string[];
   titles: {
     technicalUpdates: string,
     scriptAPI: string[];

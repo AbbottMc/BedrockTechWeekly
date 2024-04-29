@@ -4,6 +4,7 @@ import {turndownService} from '../util/TurndownService';
 import {StringBuilder} from '../misc/StringBuilder'
 import {Config} from '../Config'
 import FileUtil from '../util/FileUtil'
+import {sidebarOutput} from '../sidebarOutput'
 
 interface ArticleOptions {
   isOldVersion?: boolean;
@@ -236,6 +237,27 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
     return this.version !== Config.endVersion;
   }
 
+  private generateSidebar() {
+    if (this._isOldVersion) {
+      sidebarOutput.pocket ??= [];
+      sidebarOutput.pocket.push(this._changelogOutputPathPieces.pocket[0]);
+      return;
+    }
+
+    if (this._isPreview) {
+      sidebarOutput.preview ??= {};
+      sidebarOutput.preview[this.majorVersion] ??= {};
+      const previewSidebar = sidebarOutput.preview[this.majorVersion] as { [key: string]: string[] };
+      previewSidebar[this.minorVersion] ??= [];
+      previewSidebar[this.minorVersion].push(this.patchVersion);
+      return;
+    }
+
+    sidebarOutput.stable ??= {};
+    sidebarOutput.stable[this.majorVersion] ??= [];
+    (sidebarOutput.stable[this.majorVersion] as string[]).push(this.minorVersion ?? 'README');
+  }
+
   generate() {
     const enSourcePath = this.getSourceOutputPath('en');
     const sourcePath = this.getSourceOutputPath('zh-hans');
@@ -279,5 +301,7 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
     FileUtil.createFileSync((this.getEndVersionNumber() ?? 'README') + '.mdx', changelogPath, changelogMdx, 'utf8');
     FileUtil.createFileSync((this.getEndVersionNumber() ?? 'README') + '.mdx', enChangelogPath, enChangelogMdx, 'utf8');
     Config.startSidebarPosition[this._versionTypeKeyword]--;
+
+    this.generateSidebar();
   }
 }
