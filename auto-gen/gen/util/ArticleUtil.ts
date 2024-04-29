@@ -33,16 +33,22 @@ export class ArticleUtil {
   }
 
   static isPreviewArticle(article: ArticleObject) {
-    return article.title.includes(Config.bedrockPreviewVersionSplitter);
+    return Config.bedrockPreviewVersionKeywords.some(keyword => article.title.includes(keyword));
   }
 
+  static getPreviewKeyword(article: ArticleObject) {
+    return Config.bedrockPreviewVersionKeywords.find(keyword => article.title.includes(keyword));
+  }
+
+  // TODO: Add support for all versions
   static getBedrockVersion(article: ArticleObject) {
     if (!this.isBedrockArticle(article)) return undefined;
     const title = article.title;
-    if (title.includes(Config.bedrockPreviewVersionSplitter)) {
-      return title.split(Config.bedrockPreviewVersionSplitter)[1].replace('/', '-').split('(')[0].trim()
+    if (this.isPreviewArticle(article)) {
+      const previewKeyword = this.getPreviewKeyword(article) as string;
+      return title.split(previewKeyword)[1].replace('/', '-').split('(')[0].trim().replaceAll(' ', '_');
     } else {
-      const versionPos = title.includes('&') ? 2 : 1;
+      const versionPos = title.split('-').length - 1;
       return title.split('-')[versionPos].replace('/', '-').split('(')[0].split('(')[0].trim();
     }
   }
@@ -73,42 +79,6 @@ export class ArticleUtil {
       if (ret) return ret;
     }
     return undefined;
-  }
-
-  private static replaceSapiContent(techContent: string, sapiContent: string, sapiVarName: string, sapiDiffVarName?: string) {
-    return techContent.replace(sapiContent, (`\n## **Script API**\n\n` + `<Switcher techSapi=\{<${sapiVarName}/>\} techSapiDiff=\{${sapiDiffVarName ?? 'undefined'}\}/>\n\n`))
-  }
-
-  static decorateTechContent(pureTechContent: string, untitledExpTechContent?: string, stableSapiContent?: string, expSapiContent?: string) {
-    const builder = new StringBuilder();
-    const appendTechArticleImport = (varName: string, fileName: string) => builder.appendLine(`import ${varName} from './${fileName}.md';`);
-    const appendSwitcherImport = () => builder.appendLine(`import Switcher from '../../../components/TechChangelogSwitcher.mdx';`);
-    const techUpdateMdxFileImport = Config.output.techUpdateMdxFileImport;
-    Object.entries(techUpdateMdxFileImport).forEach(([name, [varName, fileName]]) => {
-      if (((name === 'stable' || name === 'stableDiff') && stableSapiContent) || ((name === 'exp' || name === 'expDiff') && expSapiContent)) {
-        appendTechArticleImport(varName, fileName);
-      }
-    });
-    appendSwitcherImport();
-    let decoratedTechContent = pureTechContent;
-    let decoratedExpTechContent = untitledExpTechContent;
-    if (stableSapiContent) {
-      decoratedTechContent = this.replaceSapiContent(decoratedTechContent, stableSapiContent, techUpdateMdxFileImport.stable[0]/*, techUpdateMdxFileImport.stableDiff[0]*/);
-    }
-    if (expSapiContent && decoratedExpTechContent) {
-      decoratedExpTechContent = this.replaceSapiContent(decoratedExpTechContent, expSapiContent, techUpdateMdxFileImport.exp[0]/*, techUpdateMdxFileImport.expDiff[0]*/);
-    }
-    builder.appendLine('');
-    builder.appendLine('');
-    builder.insertEnd(decoratedTechContent);
-    builder.appendLine('');
-    builder.appendLine('');
-    if (!decoratedExpTechContent) return builder.toString();
-    builder.insertEnd(`<h2 className="experimental_divider">实验性特性</h2>`);
-    builder.appendLine('');
-    builder.appendLine('');
-    builder.insertEnd(decoratedExpTechContent);
-    return builder.toString();
   }
 
   private static splitSapiContent(articleSections: ArticleSections, stableContent?: string, expContent?: string): SapiArticleSplitResult {

@@ -34,3 +34,4 @@ yarn-error.log*
 /docs/sapi/stable/common/
 /docs/sapi/preview/common/
 /docs/sapi/preview/server-editor/
+/auto-gen/node_modules/

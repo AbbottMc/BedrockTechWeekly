@@ -6,6 +6,7 @@ import {Config} from '../Config'
 import FileUtil from '../util/FileUtil'
 
 interface ArticleOptions {
+  isOldVersion?: boolean;
 }
 
 export interface ResultTemplateOptions {
@@ -13,47 +14,65 @@ export interface ResultTemplateOptions {
   sidebarPos: number;
 }
 
+export interface HandledTechUpdateContent {
+  en: string,
+  ['zh-hans']: string
+}
+
 export class Article {
   private readonly _articleObj: ArticleObject;
+  private readonly _isOldVersion: boolean;
   private readonly _isPreview: boolean; // preview or snapshot
   private readonly _isBedrock: boolean;
-  private readonly _versionTypeKeyword: 'preview' | 'stable';
+  private readonly _versionTypeKeyword: 'preview' | 'stable' | 'pocket';
   private readonly _version: string;
-  private readonly _majorVersion: string;
-  private readonly _mainVersion: string;
-  private readonly _patchVersion: string;
-  private readonly _minorVersion: string;
+  private readonly _majorVersion!: string;
+  private readonly _mainVersion!: string;
+  private readonly _patchVersion!: string;
+  private readonly _minorVersion!: string;
   private readonly _articleSeparateResult: BedrockArticleSplitResult;
   private _content: string;
   private _sourceOutputPathPieces: string[];
-  private _changelogOutputPathPieces: { preview: string[], stable: string[] }
+  private _changelogOutputPathPieces: { preview: string[], stable: string[], pocket: string[] }
 
-  private _handledTechUpdateContent!: string;
+  private _handledTechUpdateContent: HandledTechUpdateContent | undefined;
   private _handledStableSapiContent!: string;
   private _handledExpSapiContent!: string;
 
-  constructor(articleObj: ArticleObject) {
+  constructor(articleObj: ArticleObject, options?: ArticleOptions) {
+    const isOldVersion = options?.isOldVersion ?? this.forceSortPreview() ?? false;
     this._articleObj = articleObj;
     this._isBedrock = ArticleUtil.isBedrockArticle(articleObj);
-    this._isPreview = ArticleUtil.isPreviewArticle(articleObj);
-    this._versionTypeKeyword = this._isPreview ? 'preview' : 'stable';
+    this._isOldVersion = isOldVersion;
+    this._isPreview = isOldVersion ? false : ArticleUtil.isPreviewArticle(articleObj);
+    this._versionTypeKeyword = isOldVersion ? 'pocket' : this._isPreview ? 'preview' : 'stable';
     this._content = turndownService.turndown(this._articleObj.body);
-    this._version = ArticleUtil.getBedrockVersion(articleObj) as string;
-    if (!this._version) {
+    this._version = isOldVersion ? '' : ArticleUtil.getBedrockVersion(articleObj) as string;
+    if (this._version === undefined) {
       throw new Error('No version found');
     }
-    const {mainVersion, majorVersion, patchVersion, minorVersion} = ArticleUtil.separateVersion(this._version);
-    this._mainVersion = mainVersion;
-    this._majorVersion = majorVersion;
-    this._patchVersion = patchVersion;
-    this._minorVersion = minorVersion;
+    if (!isOldVersion) {
+      const {mainVersion, majorVersion, patchVersion, minorVersion} = ArticleUtil.separateVersion(this._version);
+      this._mainVersion = mainVersion;
+      this._majorVersion = majorVersion;
+      this._patchVersion = patchVersion;
+      this._minorVersion = minorVersion;
+      this._sourceOutputPathPieces = [this.majorVersion, this.minorVersion];
+      if (this.patchVersion) this._sourceOutputPathPieces.push(this.patchVersion);
+      this._changelogOutputPathPieces = {
+        preview: [this.majorVersion, this.minorVersion],
+        stable: [this.majorVersion],
+        pocket: []
+      };
+    } else {
+      this._sourceOutputPathPieces = [];
+      this._changelogOutputPathPieces = {
+        preview: [],
+        stable: [],
+        pocket: []
+      };
+    }
     this._articleSeparateResult = this.separateArticle();
-    this._sourceOutputPathPieces = [this.majorVersion, this.minorVersion];
-    this._changelogOutputPathPieces = {
-      preview: [this.majorVersion, this.minorVersion],
-      stable: [this.majorVersion]
-    };
-    if (this.patchVersion) this._sourceOutputPathPieces.push(this.patchVersion);
 
     this.handleTechUpdateContent();
     this.handleStableSapiContent();
@@ -116,6 +135,10 @@ export class Article {
     return new Array(this._changelogOutputPathPieces[this._versionTypeKeyword].length + 2).fill(0).map(() => '..').join('/');
   }
 
+  private getVersionTypeText(isChinese: boolean) {
+    return this._isOldVersion ? (isChinese ? "携带版" : "Pocket") : this.isPreview ? (isChinese ? "预览版" : "Preview") : (isChinese ? "稳定版" : "Stable");
+  }
+
   private genChangelogMdx(options: ResultTemplateOptions) {
     const hasTechUpdates = !!this._articleSeparateResult.techUpdatesContent;
     const {isChinese, sidebarPos} = options;
@@ -123,7 +146,7 @@ export class Article {
     return `---
 sidebar_position: ${sidebarPos}
 title: "${this.version}"
-tags: [${isChinese ? "官方" : "Official"}, ${isChinese ? "更新日志" : "Changelog"}, ${this.isPreview ? (isChinese ? "预览版" : "Preview") : (isChinese ? "稳定版" : "Stable")}, "${this.majorVersion}"]
+tags: [${isChinese ? "官方" : "Official"}, ${isChinese ? "更新日志" : "Changelog"}, ${this.getVersionTypeText(isChinese)}, "${this.majorVersion}"]
 ---
 import Switcher from '${this.getChangelogSwitcherImportPathPrefix()}/components/ChangelogSwitcher.mdx';
 import GameplayChangelog from '${this.getChangelogSwitcherImportPathPrefix()}/changelog_source/${this._versionTypeKeyword}/${sourcePath}/${Config.output.names.gameplay}.mdx';
@@ -145,7 +168,7 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
     return techContent.replace(sapiContent, (`\n## **Script API**\n\n` + `<Switcher techSapi=\{<${sapiVarName}/>\} techSapiDiff=\{${sapiDiffVarName ?? 'undefined'}\}/>\n\n`))
   }
 
-  private decorateTechContent(pureTechContent: string, untitledExpTechContent?: string, stableSapiContent?: string, expSapiContent?: string) {
+  private decorateTechContent(lang: string, pureTechContent: string, untitledExpTechContent?: string, stableSapiContent?: string, expSapiContent?: string) {
     const builder = new StringBuilder();
     const appendTechArticleImport = (varName: string, fileName: string) => builder.appendLine(`import ${varName} from './${fileName}.md';`);
     const appendSwitcherImport = () => builder.appendLine(this.getTechChangelogSwitcherImportPath());
@@ -170,7 +193,7 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
     builder.appendLine('');
     builder.appendLine('');
     if (!decoratedExpTechContent) return builder.toString();
-    builder.insertEnd(`<h2 className="experimental_divider">实验性特性</h2>`);
+    builder.insertEnd(`<h2 className="experimental_divider">${lang === 'zh-hans' ? '实验性特性' : 'Experimental Features'}</h2>`);
     builder.appendLine('');
     builder.appendLine('');
     builder.insertEnd(decoratedExpTechContent);
@@ -188,7 +211,10 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
     } = this._articleSeparateResult;
     const pureTechContent = expTechUpdatesContent ? techUpdatesContent.replace(expTechUpdatesContent, '') : techUpdatesContent;
     const untitledExpTechContent = expTechUpdatesContent?.replace(expTechUpdatesTitleLine as string, '');
-    this._handledTechUpdateContent = this.decorateTechContent(pureTechContent, untitledExpTechContent, stableSapiContent, expSapiContent)
+    this._handledTechUpdateContent = {} as HandledTechUpdateContent;
+    this._handledTechUpdateContent['zh-hans'] = this.decorateTechContent('zh-hans', pureTechContent, untitledExpTechContent, stableSapiContent, expSapiContent)
+      .replace(techUpdatesTitleLine as string, '');
+    this._handledTechUpdateContent['en'] = this.decorateTechContent('en', pureTechContent, untitledExpTechContent, stableSapiContent, expSapiContent)
       .replace(techUpdatesTitleLine as string, '');
   }
 
@@ -203,11 +229,19 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
   }
 
   canStart(isStarted: boolean) {
-    return (isStarted || this.version === Config.startVersion);
+    return (isStarted || !Config.startVersion || this.version === Config.startVersion);
   }
 
   canContinue() {
     return this.version !== Config.endVersion;
+  }
+
+  canSortPreview(startSort: boolean) {
+    return startSort || this.title === Config.startSortFromTitle;
+  }
+
+  forceSortPreview() {
+    return Config.forceSortTitleParts?.some(titlePart => this.title.includes(titlePart));
   }
 
   generate() {
@@ -226,8 +260,8 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
     FileUtil.createFileSync(Config.output.names.gameplay + '.mdx', enSourcePath, this._articleSeparateResult.gameplayContent, 'utf8');
 
     if (this._handledTechUpdateContent) {
-      FileUtil.createFileSync(Config.output.names.tech + '.mdx', sourcePath, this._handledTechUpdateContent, 'utf8');
-      FileUtil.createFileSync(Config.output.names.tech + '.mdx', enSourcePath, this._handledTechUpdateContent, 'utf8');
+      FileUtil.createFileSync(Config.output.names.tech + '.mdx', sourcePath, this._handledTechUpdateContent['zh-hans'], 'utf8');
+      FileUtil.createFileSync(Config.output.names.tech + '.mdx', enSourcePath, this._handledTechUpdateContent['en'], 'utf8');
     }
 
     if (this._handledStableSapiContent) {

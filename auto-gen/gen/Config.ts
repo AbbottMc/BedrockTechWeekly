@@ -1,89 +1,21 @@
+import {IConfig} from './ConfigTypes'
+
 const docsFolder = '../docs';
 const enDocsFolder = '../i18n/en/docusaurus-plugin-content-docs/current';
 
-export interface OutputPaths {
-  changelogSource: string;
-  officialChangelog: string;
-}
-
-export interface OutputFolder {
-  docsPath: string;
-  preview: OutputPaths;
-  stable: OutputPaths;
-}
-
-export interface OutputNames {
-  gameplay: string;
-  tech: string;
-  techSapiStable: string,
-  techSapiExp: string,
-  techSapiStableDiff: string,
-  techSapiExpDiff: string,
-}
-
-export interface LocaleMap {
-  ['en']: string;
-  ['zh-hans']: string;
-}
-
-export interface Config {
-  apiUrl: string;
-  startSidebarPosition: {
-    preview: number;
-    stable: number;
-  };
-  startPage: number;
-  endPage?: number;
-  startVersion: string;
-  /**
-   * finish the auto gen process when arrived this version (exclude this version)
-   */
-  endVersion?: string;
-  titles: {
-    technicalUpdates: string,
-    scriptAPI: string[];
-    expTechUpdates: string[];
-    ignore: string[];
-  }
-  techUpdateSplitter: string;
-  bedrock: string;
-  java: string;
-  bedrockPreviewVersionSplitter: string;
-  output: {
-    folder: {
-      [key in keyof LocaleMap]: OutputFolder
-    };
-    names: OutputNames;
-    techUpdateMdxFileImport: {
-      stable: [string, string],
-      exp: [string, string],
-      stableDiff: [string, string],
-      expDiff: [string, string],
-    }
-  },
-  genResultMarkdownX: (options: ResultTemplateOptions) => string;
-  genExpTechUpdateTitle: () => string;
-}
-
-interface ResultTemplateOptions {
-  isChinese: boolean,
-  isPreview: boolean,
-  majorVersion: string,
-  version: string,
-  title: string;
-  sidebarPos: number;
-  hasTechUpdates: boolean;
-}
 
 export const Config = {
   apiUrl: 'https://feedback.minecraft.net/api/v2/help_center/en-us/articles',
   startSidebarPosition: {
-    preview: 99999993,
-    stable: 99999997
+    preview: 99999999,
+    stable: 99999999,
+    pocket: 99999999,
   },
   startPage: 1,
   endPage: 4,
   startVersion: '1.19.80.22',
+  startSortFromTitle: 'Minecraft Beta - 1.2.20.1 (Xbox One/Windows 10/Android)',
+  forceSortTitleParts: ['New Nintendo'],
   titles: {
     technicalUpdates: 'Technical Updates',
     scriptAPI: ['API', 'Scripting'],
@@ -93,26 +25,10 @@ export const Config = {
   output: {
     folder: {
       ['en']: {
-        docsPath: enDocsFolder,
-        preview: {
-          changelogSource: enDocsFolder + '/changelog_source/preview',
-          officialChangelog: enDocsFolder + '/official_changelog/preview'
-        },
-        stable: {
-          changelogSource: enDocsFolder + '/changelog_source/stable',
-          officialChangelog: enDocsFolder + '/official_changelog/stable'
-        }
+        docsPath: enDocsFolder
       },
       ['zh-hans']: {
-        docsPath: docsFolder,
-        preview: {
-          changelogSource: docsFolder + '/changelog_source/preview',
-          officialChangelog: docsFolder + '/official_changelog/preview'
-        },
-        stable: {
-          changelogSource: docsFolder + '/changelog_source/stable',
-          officialChangelog: docsFolder + '/official_changelog/stable'
-        }
+        docsPath: docsFolder
       }
     },
     names: {
@@ -133,25 +49,6 @@ export const Config = {
   bedrock: 'Bedrock',
   java: 'Java',
   bedrockPreviewVersionSplitter: 'Preview -',
-  techUpdateSplitter: 'Technical Updates',
-  genChangelog() {
-  },
-  genExpTechUpdateTitle() {
-    return `<h2 className="experimental_divider">实验性特性</h2>`;
-  },
-  genResultMarkdownX: (options: ResultTemplateOptions) => {
-    const {isPreview, title, version, majorVersion, isChinese, sidebarPos, hasTechUpdates} = options;
-    return `---
-sidebar_position: ${sidebarPos}
-title: "${version}"
-tags: [${isChinese ? "官方" : "Official"}, ${isChinese ? "更新日志" : "Changelog"}, ${isPreview ? (isChinese ? "预览版" : "Preview") : (isChinese ? "稳定版" : "Stable")}, "${majorVersion}"]
----
-import Switcher from '../../components/ChangelogSwitcher.mdx';
-import GameplayChangelog from '../../changelog_source/${isPreview ? "preview" : "stable"}/${version}/${Config.output.names.gameplay}.mdx';
-${hasTechUpdates ? `import TechChangelog from '../../changelog_source/${isPreview ? "preview" : "stable"}/${version}/${Config.output.names.tech}.mdx';` : ''}
-
-# [${version}] ${title}
-
-<Switcher gameplayChangelog=\{<GameplayChangelog/>\} techChangelog=\{${hasTechUpdates ? `<TechChangelog/>` : 'undefined'}\}/>`
-  }
-} as Config;
+  bedrockPreviewVersionKeywords: ['Preview -', 'Beta -'],
+  techUpdateSplitter: 'Technical Updates'
+} as IConfig;

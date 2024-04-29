@@ -4,6 +4,7 @@ import {Config} from './Config'
 import {Article} from './api/Article'
 
 let started = false;
+let startSort = false;
 
 const processPage = async function (pageNumber = 1) {
   const page = await ApiUtil.fetchPage(pageNumber);
@@ -14,6 +15,7 @@ const processPage = async function (pageNumber = 1) {
     if (!ArticleUtil.isBedrockArticle(articleObj)) continue
     const article = new Article(articleObj);
     if (!article.canStart(started)) continue;
+    if (!article.canSortPreview(startSort)) continue;
     started = true;
     article.generate();
     const isContinue = article.canContinue();
