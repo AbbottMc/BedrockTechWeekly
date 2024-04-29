@@ -257,6 +257,6 @@ export class ArticleUtil {
   }
 
   public static handleArticleTitle(title: string) {
-    return title.replaceAll(' ', '_').replaceAll('/', '-').replaceAll(':', '&');
+    return title.replaceAll(' ', '_').replaceAll('/', '-').replaceAll(':', '&').split('(')[0];
   }
 }

@@ -4,6 +4,6 @@ export type SidebarOutputKeyName = {
 export const sidebarOutput = {
   preview: {} as SidebarOutputKeyName,
   stable: {} as SidebarOutputKeyName,
-  pocket: [] as string[]
+  pocket: [] as [string, string][]
 };
 export const sidebarOutputPath = './out'

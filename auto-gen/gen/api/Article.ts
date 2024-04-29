@@ -146,7 +146,7 @@ export class Article {
     const sourcePath = this._sourceOutputPathPieces.join('/');
     return `---
 sidebar_position: ${sidebarPos}
-title: "${this.version}"
+title: "${this._isOldVersion ? this.title : this.version}"
 tags: [${isChinese ? "官方" : "Official"}, ${isChinese ? "更新日志" : "Changelog"}, ${this.getVersionTypeText(isChinese)}, "${this.majorVersion}"]
 ---
 import Switcher from '${this.getChangelogSwitcherImportPathPrefix()}/components/ChangelogSwitcher.mdx';
@@ -240,7 +240,7 @@ ${hasTechUpdates ? `import TechChangelog from '${this.getChangelogSwitcherImport
   private generateSidebar() {
     if (this._isOldVersion) {
       sidebarOutput.pocket ??= [];
-      sidebarOutput.pocket.push(this._changelogOutputPathPieces.pocket[0]);
+      sidebarOutput.pocket.push([this._changelogOutputPathPieces.pocket[0], this.title]);
       return;
     }
 
