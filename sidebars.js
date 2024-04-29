@@ -233,7 +233,7 @@ const generateChangelogSidebar = function (isStable, isOldVersion) {
             items: patchVersionList.reverse().map((patchVersion) => {
               return {
                 type: 'doc',
-                label: `${majorVersion}.${minorVersion}.${patchVersion}`,
+                label: `${majorVersion}.${minorVersion}` + (patchVersionList === 'README' ? '' : `.${patchVersion}`),
                 id: `official_changelog/${path}/${majorVersion}/${minorVersion}/${patchVersion}`,
               }
             })
@@ -241,7 +241,7 @@ const generateChangelogSidebar = function (isStable, isOldVersion) {
         }) : minorVersionListObj.reverse().map((minorVersion) => {
           return {
             type: 'doc',
-            label: `${majorVersion}.${minorVersion}`,
+            label: `${majorVersion}` + (minorVersion === 'README' ? '' : `.${minorVersion}`),
             id: `official_changelog/${path}/${majorVersion}/${minorVersion}`,
           }
         })
