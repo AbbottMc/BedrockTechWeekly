@@ -4,6 +4,16 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const minecraftTypeNames = [
+  'common',
+  'server',
+  'server-ui',
+  'server-admin',
+  'server-net',
+  'server-editor',
+  'server-gametest',
+];
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '基岩技术周刊 | Bedrock Tech Weekly',
@@ -38,208 +48,42 @@ const config = {
     }
   },
   plugins: [
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'preview-common',
-        entryPoints: ['./static/typedoc/preview/common.d.ts'],
-        tsconfig: './static/typedoc/preview/tsconfig.json',
-        out: 'sapi/preview/common',
-        sidebar: {
-          categoryLabel: 'sapiPreviewSidebar',
-          collapsed: false,
-          position: 0,
-          fullNames: true,
-        },
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'preview-server',
-        entryPoints: ['./static/typedoc/preview/server.d.ts'],
-        tsconfig: './static/typedoc/preview/tsconfig.json',
-        out: 'sapi/preview/server',
-        sidebar: {
-          categoryLabel: 'sapiPreviewSidebar',
-          collapsed: false,
-          position: 0,
-          fullNames: true,
-        },
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'preview-server-admin',
-        entryPoints: [
-          './static/typedoc/preview/server-admin.d.ts'
-        ],
-        tsconfig: './static/typedoc/preview/tsconfig.json',
-        out: 'sapi/preview/server-admin'
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'preview-server-ui',
-        entryPoints: [
-          './static/typedoc/preview/server-ui.d.ts'
-        ],
-        tsconfig: './static/typedoc/preview/tsconfig.json',
-        out: 'sapi/preview/server-ui'
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'preview-server-net',
-        entryPoints: [
-          './static/typedoc/preview/server-net.d.ts'
-        ],
-        tsconfig: './static/typedoc/preview/tsconfig.json',
-        out: 'sapi/preview/server-net'
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'preview-server-gametest',
-        entryPoints: [
-          './static/typedoc/preview/server-gametest.d.ts',
-        ],
-        tsconfig: './static/typedoc/preview/tsconfig.json',
-        out: 'sapi/preview/server-gametest'
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'preview-server-editor',
-        entryPoints: [
-          './static/typedoc/preview/server-editor.d.ts',
-        ],
-        tsconfig: './static/typedoc/preview/tsconfig.json',
-        out: 'sapi/preview/server-editor'
-      },
-    ],
-    // -----------------------------------------------------
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'stable-common',
-        entryPoints: [
-          './static/typedoc/stable/common.d.ts'
-        ],
-        tsconfig: './static/typedoc/stable/tsconfig.json',
-        out: 'sapi/stable/common',
-        sidebar: {
-          categoryLabel: 'sapiStableSidebar',
-          collapsed: false,
-          position: 0,
-          fullNames: true,
+    ...minecraftTypeNames.map((typeName)=>{
+      return [
+        'docusaurus-plugin-typedoc',
+        // Plugin / TypeDoc options
+        {
+          id: `preview-${typeName}`,
+          entryPoints: [`./static/typedoc/preview/${typeName}.d.ts`],
+          tsconfig: './static/typedoc/preview/tsconfig.json',
+          out: `sapi/preview/${typeName}`,
+          sidebar: {
+            categoryLabel: 'sapiPreviewSidebar',
+            collapsed: false,
+            position: 0,
+            fullNames: true,
+          }
         }
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'stable-server',
-        entryPoints: [
-          './static/typedoc/stable/server.d.ts'
-        ],
-        tsconfig: './static/typedoc/stable/tsconfig.json',
-        out: 'sapi/stable/server',
-        sidebar: {
-          categoryLabel: 'sapiStableSidebar',
-          collapsed: false,
-          position: 0,
-          fullNames: true,
+      ];
+    }),
+    ...minecraftTypeNames.map((typeName)=>{
+      return [
+        'docusaurus-plugin-typedoc',
+        // Plugin / TypeDoc options
+        {
+          id: `stable-${typeName}`,
+          entryPoints: [`./static/typedoc/stable/${typeName}.d.ts`],
+          tsconfig: './static/typedoc/stable/tsconfig.json',
+          out: `sapi/stable/${typeName}`,
+          sidebar: {
+            categoryLabel: 'sapiStableSidebar',
+            collapsed: false,
+            position: 0,
+            fullNames: true,
+          }
         }
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'stable-server-admin',
-        entryPoints: [
-          './static/typedoc/stable/server-admin.d.ts'
-        ],
-        tsconfig: './static/typedoc/stable/tsconfig.json',
-        out: 'sapi/stable/server-admin'
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'stable-server-ui',
-        entryPoints: [
-          './static/typedoc/stable/server-ui.d.ts'
-        ],
-        tsconfig: './static/typedoc/stable/tsconfig.json',
-        out: 'sapi/stable/server-ui'
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'stable-server-net',
-        entryPoints: [
-          './static/typedoc/stable/server-net.d.ts'
-        ],
-        tsconfig: './static/typedoc/stable/tsconfig.json',
-        out: 'sapi/stable/server-net'
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'stable-server-gametest',
-        entryPoints: [
-          './static/typedoc/stable/server-gametest.d.ts',
-        ],
-        tsconfig: './static/typedoc/stable/tsconfig.json',
-        out: 'sapi/stable/server-gametest'
-      }
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'stable-server-editor',
-        entryPoints: [
-          './static/typedoc/stable/server-editor.d.ts',
-        ],
-        tsconfig: './static/typedoc/stable/tsconfig.json',
-        out: 'sapi/stable/server-editor'
-      }
-    ],
-    // --------------------------------------
-    [
-      'docusaurus-plugin-typedoc',
-      // Plugin / TypeDoc options
-      {
-        id: 'test-tenon-server',
-        entryPoints: [
-          './static/typedoc/preview/tenon-server.d.ts',
-        ],
-        tsconfig: './static/typedoc/preview/tsconfig.json',
-        out: 'sapi/preview/tenon-server'
-      }
-    ]
+      ];
+    })
   ],
   presets: [
     [
