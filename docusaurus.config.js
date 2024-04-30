@@ -16,8 +16,8 @@ const minecraftTypeNames = [
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '基岩技术周刊 | Bedrock Tech Weekly',
-  tagline: 'Minecraft基岩版技术周刊文档站点',
+  title: '基岩技术文刊 | Bedrock Tech Journal',
+  tagline: 'Minecraft基岩版技术文刊站点',
   favicon: 'img/logo.png',
 
   // Set the production url of your site here
@@ -31,7 +31,7 @@ const config = {
   organizationName: 'AbbottMc', // Usually your GitHub org/user name.
   projectName: 'BedrockTechWeekly', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -133,7 +133,7 @@ const config = {
       announcementBar: {
         id: 'welcome',
         content:
-          '欢迎来到基岩技术周刊！这个站点仍在完善当中，欢迎您的<a href="https://github.com/AbbottMc/BedrockTechWeekly/issues">反馈</a>！',
+          '欢迎来到基岩技术文刊站！这个站点仍在完善当中，欢迎您的<a href="https://github.com/AbbottMc/BedrockTechWeekly/issues">反馈</a>！',
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: true,
