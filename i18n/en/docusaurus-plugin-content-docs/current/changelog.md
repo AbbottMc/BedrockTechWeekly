@@ -1,49 +1,72 @@
-# 站点维护日志
+# Site Maintenance Log
 
-## 2023.02.11
-- 添加脚本接口文档解析功能
-- 修复脚本文档下拉栏项目英文翻译
-- 更新脚本接口文档主页描述
-- 同步稳定版1.19.60更新日志
-- 主页新增预览版更新日志入口
-- 【中文】完善1.19.70.22技术更新日志
-- 更新页脚版权说明
+## April 30, 2024
 
-## 2023.02.10
-- 添加默认暗色模式配置（但不知道为什么不起作用，我裂开）
-- 添加顶部告示
-- 更新主题风格
-- 完善首页布局样式
-- 添加脚本接口d.ts文件
+- Corrected omitted site name text and set to issue warnings instead of errors upon encountering broken links.
+- Updated the site maintenance log, add english support for it.
 
-## 2023.02.09
-- 更新周刊（待翻译）
-  - 23w02m01a
-- 更新站点名称
-- 暂时移除了帮助翻译按钮
+## April 29, 2024
 
-## 2023.02.08
-- 实现国际化
-- 翻译站点内容至英文（工地英语警告）
-- 启用完整日志Tab栏
-- 日志翻译与布局调整
-- 翻译主页
+- Automated scraping, splitting, and generation of all Bedrock Edition update logs.
+- Refactored the sidebar of the official log page.
+- Fixed homepage button styles, enabling dynamic adjustment of button layouts within the Header container.
 
-## 2023.02.05
-- 添加官方完整日志开关（暂未启用）
+## April 28, 2024
 
-## 2023.02.04
-- 自定义域名
-- 使用国内CDN加速站点域名
-- 修复Github Action
+- Adjusted page layout proportions.
 
-## 2023.02.03
-- 初始化项目
-- 个性化站点配置
-- 添加站点Logo
-- 添加周刊导览
-- 添加首页
-- 添加技术更新日志
-  - Preview: 1.19.70.21
-- 添加站点维护日志页面
-- 部署至GitHub Page
+## April 27, 2024
+
+- Updated and repaired page styles for aesthetics.
+- Redesigned the homepage and updated its description.
+- Changed site name to "Bedrock Tech Journal Station" and refined page styles.
+- Synced Script API docs for 1.20.80 stable version and 1.21.0.23 preview version.
+- Fixed Script API doc generation errors, added redirects for new packages, and initiated document fetching functionality.
+
+## February 11, 2023
+
+- Added Script Interface Document parsing functionality.
+- Fixed English translations in the script document dropdown menu.
+- Updated the homepage description for Script Interface Docs.
+- Synced technical update logs.
+  - Stable: 1.19.60 – Added an entry for preview version update logs on the homepage [Chinese] and improved technical update logs.
+  - Preview: 1.19.70.22 – Updated footer copyright notice.
+
+## February 10, 2023
+
+- Added default dark mode configuration (not functional, troubleshooting ongoing).
+- Inserted a top notification banner.
+- Refreshed the theme style.
+- Enhanced the homepage layout style.
+- Added `.d.ts` files for Script Interfaces.
+
+## February 9, 2023
+
+- Synced technical update logs.
+  - Preview: 1.19.70.22 – Updated the weekly publication (translation pending).
+- Updated the site name.
+- Temporarily removed the help translate button.
+
+## February 8, 2023
+
+- Implemented internationalization, translating site content into English (basic translation quality warning).
+- Enabled full log tab, adjusted log translations, and layout.
+- Translated the homepage.
+
+## February 5, 2023
+
+- Added a switch for official full logs (not yet active).
+
+## February 4, 2023
+
+- Customized domain and utilized domestic CDN for site acceleration.
+- Fixed Github Action issues.
+
+## February 3, 2023
+
+- Initialized project with personalized site configurations.
+- Added site logo.
+- Integrated a weekly guide.
+- Created the homepage.
+- Added technical update logs.
+  - Preview: 1.19.70.21 – Introduced the site maintenance log page and deployed to GitHub Page.
