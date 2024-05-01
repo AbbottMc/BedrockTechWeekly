@@ -119,7 +119,8 @@ const config = {
             require.resolve('./src/css/api_reference.css'),
             require.resolve('./src/css/sapi_docs.css'),
             require.resolve('./src/css/article.css'),
-            require.resolve('primeflex/primeflex.min.css')
+            require.resolve('primeflex/primeflex.min.css'),
+            require.resolve('primeicons/primeicons.css')
           ]
         },
       }),

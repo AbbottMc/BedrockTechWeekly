@@ -17,6 +17,8 @@
     --ifm-admonition-content-color: black;
     --ifm-admonition-border: 1px solid rgb(64 64 64 / 0.08);
     --ifm-color-divider-light: #f35b39;
+    --bedoc-overlay-background-color: white;
+    --bedoc-overlay-border: 4px solid #c6c6c6;
     --bedoc-footer-background-color: white;
     --bedoc-footer-link-item-color: black;
     --bedoc-title-background-color: #ededed;
@@ -32,6 +34,8 @@
     --ifm-admonition-content-color: white;
     --ifm-admonition-border: none;
     --ifm-color-divider-light: #ec3c19;
+    --bedoc-overlay-background-color: rgb(55, 60, 72);
+    --bedoc-overlay-border: 4px solid rgba(0, 0, 0, 0.8);
     --bedoc-footer-background-color: rgb(35 39 47);
     --bedoc-footer-link-item-color: white;
     --bedoc-title-background-color: #1c1e21;
@@ -142,6 +146,11 @@ html[data-theme='dark'] {
     background-color: rgb(244 251 249) !important;
 }
 
+.text-margin {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 h2 {
     display: flex;
 }
@@ -236,4 +245,16 @@ img[loading='lazy'] {
 /**移除侧边栏右侧描边**/
 .theme-doc-sidebar-container {
     border-right: unset !important;
+}
+
+.hidden-switch-button {
+    border-radius: 5rem;
+    padding: 0.64rem;
+    line-height: initial;
+    border: initial;
+    background-color: var(--ifm-background-color);
+}
+
+.hidden-switch-button:hover {
+    background-color: var(--bedoc-overlay-background-color) !important;
 }
