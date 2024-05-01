@@ -142,6 +142,15 @@ html[data-theme='dark'] {
     background-color: rgb(244 251 249) !important;
 }
 
+h2 {
+    display: flex;
+}
+
+li > p {
+    margin-block-start: unset;
+    margin-block-end: unset;
+}
+
 /**更新日志总标题**/
 .changelog_divider {
     color: var(--bedoc-changelog-title-color);

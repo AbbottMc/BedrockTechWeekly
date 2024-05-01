@@ -1,6 +1,15 @@
+import {ComponentUtil} from '../../../../../../src/util/ComponentUtil'
+import {HiddenSourceText} from '../../../../../../src/components/controls/HiddenSourceText'
+
+<button className={"button button--lg"} onClick={() => ComponentUtil.switchHidden()}>切换</button>
+
 **Posted:** 24 April 2024
 
-**Information on Minecraft Preview and Beta:**
+**Minecraft预览版/实验版信息**
+<HiddenSourceText>
+  <strong>Information on Minecraft Preview and Beta</strong>
+</HiddenSourceText>
+
 
 -   These work-in-progress versions can be unstable and may not be representative of final version quality
 -   Minecraft Preview is available on Xbox, PlayStation 4, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
@@ -10,20 +19,47 @@
 
 Here’s a list of what’s new in this week’s Preview and Beta! We’d love your feedback, as always, so please let us know what you think at [feedback.minecraft.net](https://feedback.minecraft.net), and report any bugs at [bugs.mojang.com](http://bugs.mojang.com/).
 
-# Features and Bug Fixes
 
-## Trial Explorer Map
+## 特性和漏洞修复
+<HiddenSourceText>
+  <h2>Features and Bug Fixes</h2>
+</HiddenSourceText>
 
--   The Trial Chambers Map item has been renamed to Trial Explorer Map
+### 试炼者探索地图
+<HiddenSourceText>
+  <h3>Trial Explorer Map</h3>
+</HiddenSourceText>
 
-## Blocks
+- 试炼大厅地图被重命名为试炼探索者地图
+<HiddenSourceText>
+  <li>The Trial Chambers Map item has been renamed to Trial Explorer Map</li>
+</HiddenSourceText>
 
--   Decorated Pots made with Pottery Sherds in Trial Chambers are now oriented correctly ([MCPE-180380](https://bugs.mojang.com/browse/MCPE-180380))
--   "stone\_block\_slab" block is now split into unique instances "smooth\_stone\_slab", "sandstone\_slab", "oak\_slab", "cobblestone\_slab", "brick\_slab", "stone\_brick\_slab", "quartz\_slab" and "nether\_brick\_slab". The id "oak\_slab" had already been split from "wooden\_slab", as a result, any "stone\_block\_slab:2" will be turned into the already existing "oak\_slab" id 
+### 方块
+<HiddenSourceText>
+  <h3>Blocks</h3>
+</HiddenSourceText>
+
+- 试炼大厅里使用陶瓦碎片制作的饰纹陶罐现在有着正确的朝向([MCPE-180380](https://bugs.mojang.com/browse/MCPE-180380))
+<HiddenSourceText>
+  <li>Decorated Pots made with Pottery Sherds in Trial Chambers are now oriented correctly(<a
+    href={"https://bugs.mojang.com/browse/MCPE-180380"}>MCPE-180380</a>)
+  </li>
+</HiddenSourceText>
+
+- "stone_block_slab"方块现在被拆分为唯一的实例"smooth_stone_slab"，"sandstone_slab"，"oak_slab"，"cobblestone_slab"，"brick_slab"，"stone_brick_slab"，"quartz_slab"和"nether_brick_slab"。从"wooden_slab"中拆分出"oak_slab"，由此，任何"stone_block_slab:2"将会被转变为已经存在的"oak_slab" ID
+<HiddenSourceText>
+  <li>"stone_block_slab" block is now split into unique instances "smooth_stone_slab", "sandstone_slab", "oak_slab",
+    "cobblestone_slab", "brick_slab", "stone_brick_slab", "quartz_slab" and "nether_brick_slab". The id "oak_slab" had
+    already been split from "wooden_slab", as a result, any "stone_block_slab:2" will be turned into the already
+    existing "oak_slab" id
+  </li>
+</HiddenSourceText>
+
 -   Copper Trapdoor now oxidizes with time
 -   Added missing crafting recipes for the following blocks ([MCPE-176613](https://bugs.mojang.com/browse/MCPE-176613))
-    -   Exposed Chiseled Copper from Exposed Cut Copper Slab x 2
-    -   Waxed Chiseled Copper from Waxed Cut Copper Slab x 2
+-   Exposed Chiseled Copper from Exposed Cut Copper Slab x 2
+-   Waxed Chiseled Copper from Waxed Cut Copper Slab x 2
 
 ## Gameplay
 
@@ -77,7 +113,7 @@ Here’s a list of what’s new in this week’s Preview and Beta! We’d love y
 -   Added new intersection variation
 -   Remade "Chamber 6", and renamed it to "Assembly"
 -   Chamber Eruption:
-    -   Adding missing Water Bucket to the Dispenser
+-   Adding missing Water Bucket to the Dispenser
 -   Added new wall dispenser style
 
 ## Trial Spawners
@@ -95,29 +131,29 @@ Here’s a list of what’s new in this week’s Preview and Beta! We’d love y
 
 ## Mobs
 
--   Removed unnecessary "min\_engine\_version" from the Bogged client\_entity json, which broke resource packs ([MCPE-178910](https://bugs.mojang.com/browse/MCPE-178910))
+-   Removed unnecessary "min_engine_version" from the Bogged client_entity json, which broke resource packs ([MCPE-178910](https://bugs.mojang.com/browse/MCPE-178910))
 -   The Breeze now aims slightly higher when shooting at the player
 -   Breeze Wind Charge can now hurt mobs in Boats and Minecarts
 -   The types of damage that can cause a mob to panic have been restricted ([MCPE-167513](https://bugs.mojang.com/browse/MCPE-167513)) 
-    -   Only the following damage causes now induce panic:
-        -   "campfire"
-        -   "entity\_attack"
-        -   "entity\_explosion"
-        -   "fire"
-        -   "fire\_tick"
-        -   "fireworks"
-        -   "freezing"
-        -   "lava"
-        -   "lightning"
-        -   "magic"
-        -   "magma"
-        -   "projectile"
-        -   "ram\_attack"
-        -   "sonic\_boom"
-        -   "soul\_campfire"
-        -   "temperature"
-        -   "wither"
-    -   Java Edition will also be adjusted to match this new behavior
+-   Only the following damage causes now induce panic:
+-   "campfire"
+-   "entity_attack"
+-   "entity_explosion"
+-   "fire"
+-   "fire_tick"
+-   "fireworks"
+-   "freezing"
+-   "lava"
+-   "lightning"
+-   "magic"
+-   "magma"
+-   "projectile"
+-   "ram_attack"
+-   "sonic_boom"
+-   "soul_campfire"
+-   "temperature"
+-   "wither"
+-   Java Edition will also be adjusted to match this new behavior
 
 ## Vault
 

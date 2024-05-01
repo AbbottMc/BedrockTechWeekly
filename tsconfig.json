@@ -3,7 +3,7 @@
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "lib": ["esnext"]
+    "lib": ["esnext", "DOM", "DOM.Iterable"]
   },
   "exclude": ["./auto-gen/node_modules/"]
 }

@@ -100,6 +100,9 @@ const config = {
             keywords: ['info', 'warn'],
             // extendDefaults: true,
           },
+          // remarkPlugins: [
+          //   require('./src/remark/SourceTextOverlay')
+          // ]
         },
         blog: {
           blogSidebarTitle: '历史周刊文章',
@@ -115,7 +118,8 @@ const config = {
             require.resolve('./src/css/custom.css'),
             require.resolve('./src/css/api_reference.css'),
             require.resolve('./src/css/sapi_docs.css'),
-            require.resolve('./src/css/article.css')
+            require.resolve('./src/css/article.css'),
+            require.resolve('primeflex/primeflex.min.css')
           ]
         },
       }),

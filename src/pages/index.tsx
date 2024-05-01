@@ -7,7 +7,7 @@ import Translate from '@docusaurus/Translate'
 
 function HomepageHeader() {
   return (
-    <header className="hero section-lighter no-underline-links px-4 pt-16 lg:py-0 heroBanner">
+    <header className="hero section-lighter no-underline-links px-4 pt-16 heroBanner">
       <div className="container text--center"
            style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <h1 className="hero__title">
