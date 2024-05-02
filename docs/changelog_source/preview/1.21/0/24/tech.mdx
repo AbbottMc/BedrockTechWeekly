@@ -1,46 +1,81 @@
-import TechSapiStable from './tech_sapi_stable.md';
-import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStable from './tech_sapi_stable.mdx';
+import TechSapiExp from './tech_sapi_exp.mdx';
 import TechSapiStableDiff from './tech_sapi_stable_diff.md';
 import TechSapiExpDiff from './tech_sapi_exp_diff.md';
 import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+import {HiddenSourceText} from '../../../../../../src/components/controls/HiddenSourceText'
 
 
 
 
-## Add-Ons and Script Engine
+## 附加包与脚本引擎
+<HiddenSourceText>
+  <h2>Add-Ons and Script Engine</h2>
+</HiddenSourceText>
 
--   Changed Biome documentation to generate with a different system, which will cause the layout and order of those documentation elements to change
+- 更改了群系文档，使其通过不同的系统生成，这将导致文档布局和元素的顺序发生变化
+<HiddenSourceText>
+<li>Changed Biome documentation to generate with a different system, which will cause the layout and order of those documentation elements to change</li>
+</HiddenSourceText>
 
 
 ## **Script API**
 
 <Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
 
-## Editor
+## 编辑器
+<HiddenSourceText>
+  <h2>Editor</h2>
+</HiddenSourceText>
 
--   Added _addTable_ API
--   Fixed GIF asset support for _addImage_ API
--   Fixed a bug where the viewport did not scale properly with changes in UI or font scaling
--   Resolved tooltip positioning and content size issues
+- 添加了 `addTable` API
+<HiddenSourceText>
+  <li>Added <code>addTable</code> API</li>
+</HiddenSourceText>
 
-## General
+- 修复了 `addImage` 接口的GIF资产支持
+<HiddenSourceText>
+  <li>Fixed GIF asset support for <code>addImage</code> API</li>
+</HiddenSourceText>
 
--   The Free camera experiment has been deprecated and the toggle removed as this feature has shipped. Future improvements to the free camera preset will be found in new experimental toggles as those capabilities become available. Samples can be found in the document for the camera command.
+- 修复了视口随着UI或字体缩放异常的问题
+<HiddenSourceText>
+  <li>Fixed a bug where the viewport did not scale properly with changes in UI or font scaling</li>
+</HiddenSourceText>
 
-## Items
+- 解决了工具提示定位和内容尺寸的问题
+<HiddenSourceText>
+  <li>Resolved tooltip positioning and content size issues</li>
+</HiddenSourceText>
 
--   Fixed a bug where, if a block and item are registered with the same identifier, the block returns a null item when 'picked'
+## 常规
+<HiddenSourceText>
+  <h2>General</h2>
+</HiddenSourceText>
 
+- 实验性自由相机已被弃用。随着新功能的逐步解锁，自由摄像机预设的后续优化将会在新增的实验性设置中呈现。欲查看示例，请参阅摄像机命令的相关文档
+<HiddenSourceText>
+  <li>The Free camera experiment has been deprecated and the toggle removed as this feature has shipped. Future improvements to the free camera preset will be found in new experimental toggles as those capabilities become available. Samples can be found in the document for the camera command.</li>
+</HiddenSourceText>
 
+## 物品
+<HiddenSourceText>
+  <h2>Items</h2>
+</HiddenSourceText>
+
+- 修复了方块和物品注册为同一个id时，方块被“选取”会返回一个null物品的问题
+<HiddenSourceText>
+  <li>Fixed a bug where, if a block and item are registered with the same identifier, the block returns a null item when 'picked'</li>
+</HiddenSourceText>
 
 
 <h2 className="experimental_divider">实验性特性</h2>
 
 
-
-
-
-## **Script API**
+## **脚本API**
+<HiddenSourceText>
+  <h2><strong>Script API</strong></h2>
+</HiddenSourceText>
 
 <Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
 
