@@ -1,0 +1,46 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Changed Biome documentation to generate with a different system, which will cause the layout and order of those documentation elements to change
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Editor
+
+-   Added _addTable_ API
+-   Fixed GIF asset support for _addImage_ API
+-   Fixed a bug where the viewport did not scale properly with changes in UI or font scaling
+-   Resolved tooltip positioning and content size issues
+
+## General
+
+-   The Free camera experiment has been deprecated and the toggle removed as this feature has shipped. Future improvements to the free camera preset will be found in new experimental toggles as those capabilities become available. Samples can be found in the document for the camera command.
+
+## Items
+
+-   Fixed a bug where, if a block and item are registered with the same identifier, the block returns a null item when 'picked'
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

@@ -40,7 +40,7 @@ function HomepageHeader() {
           <Link
             // className="homepage-button-secondary hero--primary  button--lg"
             className="header-button button button--primary button--lg"
-            to="/docs/official_changelog/preview/1.21/0/23">
+            to="/docs/official_changelog/preview/1.21/0/24">
             <Translate
               id="homepage.checkTechChangelog"
               description="The homepage check tech changelog button message">
