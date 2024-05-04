@@ -34,6 +34,10 @@ const config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
+  // markdown: {
+  //   format: 'detect'
+  // },
+
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -48,10 +52,10 @@ const config = {
     }
   },
   plugins: [
-    ...minecraftTypeNames.map((typeName)=>{
+    ...minecraftTypeNames.map((typeName) => {
       return [
         'docusaurus-plugin-typedoc',
-        // Plugin / TypeDoc options
+        /** @type {import("docusaurus-plugin-typedoc/dist/types").PluginOptions} */
         {
           id: `preview-${typeName}`,
           entryPoints: [`./static/typedoc/preview/${typeName}.d.ts`],
@@ -66,7 +70,7 @@ const config = {
         }
       ];
     }),
-    ...minecraftTypeNames.map((typeName)=>{
+    ...minecraftTypeNames.map((typeName) => {
       return [
         'docusaurus-plugin-typedoc',
         // Plugin / TypeDoc options

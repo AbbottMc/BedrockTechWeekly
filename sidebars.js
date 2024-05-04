@@ -43,6 +43,14 @@ const genSapiModuleSidebar = function (path, moduleName, moduleParseResultItemNa
   });
   return ret;
 }
+
+// const importSapiModuleSidebar = (path, moduleName) => {
+//   return {
+//     type: 'category',
+//     label: '@minecraft/' + moduleName,
+//     items: require(`./docs/sapi/en/${path}/${moduleName}/typedoc-sidebar.cjs`)
+//   }
+// };
 const sapiModuleSidebarGenerator = function (isStable) {
   const path = isStable ? 'stable' : 'preview';
   const ret = [];
