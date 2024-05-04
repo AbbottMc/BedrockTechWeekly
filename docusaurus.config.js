@@ -177,11 +177,11 @@ const config = {
             items: [
               {
                 to: '/docs/sapi/stable',
-                label: '稳定版 [1.20.80]',
+                label: '稳定版 [1.20.8x]',
               },
               {
                 to: '/docs/sapi/preview',
-                label: '预览版 [1.21.0.23]',
+                label: '预览版 [1.21.0.24]',
               }
             ]
           },
