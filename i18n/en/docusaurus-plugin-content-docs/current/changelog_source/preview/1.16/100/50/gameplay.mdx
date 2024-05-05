@@ -46,9 +46,9 @@
 
 -   **Example 1**
     -   **any\_tag functionality added to several actor components. In addition to representing items as item names in json they can now be represented as a set of tags**
-    -   "item": {"any\_tag": "food"}
-    -   "item": {"any\_tag": \["food", "wood"\]}
-    -   "bribe\_items": \["emerald", {"any\_tag": "stone"}\]
+    -   "item": \{"any\_tag": "food"\}
+    -   "item": \{"any\_tag": \["food", "wood"\]\}
+    -   "bribe\_items": \["emerald", \{"any\_tag": "stone"\}\]
     -   minecraft:ageable feed\_items can now use any\_tag functionality
     -   minecraft:breedable breed\_items can now use any\_tag functionality
     -   minecraft:bribeable bribe\_items can now use any\_tag functionality
@@ -58,16 +58,16 @@
     -   minecraft:equippable accepted\_items can now use any\_tag functionality
 -   **Example 2**
     -   **looks for "apple" key in the vanilla localization for a string to use as the display text, which it will NOT find a value so the display name will just be "apple"**
-    -   "minecraft:display\_name": {  
+    -   "minecraft:display\_name": \{  
         "value": "apple"  
-        }
+        \}
 -   **Example 3**
     -   **looks for "item.apple.name" key in the vanilla localization for a string to use as the display text, which it will find a value as "Apple". Note "minecraft:" namespace not required.**
-    -   "minecraft:display\_name": {  
+    -   "minecraft:display\_name": \{  
         "value": "item.apple.name"  
-        }
+        \}
 -   **Example 4**
     -   **looks for a custom string supplied in the resource pack, if not found the display name will be "item.my\_namespace:My\_Awesome\_Item.name".**
-    -   "minecraft:display\_name": {  
+    -   "minecraft:display\_name": \{  
         "value": "item.my\_namespace:My\_Awesome\_Item.name"  
-        }
+        \}

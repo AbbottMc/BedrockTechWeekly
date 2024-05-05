@@ -76,7 +76,7 @@ Commands, recipes, loot tables, etc. will still work with _wool_ and an aux valu
 
 ## **API (Experimental)**
 
--   IMPORTANT BREAKING CHANGE: The classes Location and _BlockLocation_ no longer exist in the beta script API. All usages of these classes have been changed to use the _Vector3_ interface (that is, { x: 1, y: 2, z: 3} objects)
+-   IMPORTANT BREAKING CHANGE: The classes Location and _BlockLocation_ no longer exist in the beta script API. All usages of these classes have been changed to use the _Vector3_ interface (that is, \{ x: 1, y: 2, z: 3\} objects)
 -   Also, note that several changes were made to properties and get/set methods across objects (listed below) to make them more consistent in calling structure
     -   World Events
     -   Added event _entityDie_ \- It is fired when an entity dies
@@ -285,13 +285,13 @@ _blockPermutation.getProperty(MinecraftBlockProperties.topSlotBit).value = true;
 
 Now:
 
-_const blockPermutation = BlockPermutation.resolve('minecraft:stone\_slab', {_
+_const blockPermutation = BlockPermutation.resolve('minecraft:stone\_slab', \{_
 
     _stone\_slab\_type: 'stone\_brick',_
 
     _top\_slot\_bit: true,_
 
-_});_
+_\});_
 
 ## **BlockProperties**
 

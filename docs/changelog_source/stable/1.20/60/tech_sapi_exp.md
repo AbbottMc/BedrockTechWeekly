@@ -24,7 +24,7 @@
 -   BlockSignComponent
     -   Changed signature of function _setWaxed_to _setWaxed(waxed: boolean)_
     -   Removed event/property _pistonActivate_
--   Added enum _BlockPistonState export enum BlockPistonState { Expanded = "Expanded", Expanding = "Expanding", Retracted = "Retracted", Retracting = "Retracting" }_
+-   Added enum _BlockPistonState export enum BlockPistonState \{ Expanded = "Expanded", Expanding = "Expanding", Retracted = "Retracted", Retracting = "Retracting" \}_
 -   Class BlockPistonComponent
     -   Removed property _isExpanded_
     -   Removed property _isExpanding_

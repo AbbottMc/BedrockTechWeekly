@@ -49,7 +49,7 @@
 -   Updated class Effect
     -   Updated duration property. Is the duration of the effect in ticks
     -   Added property typeId. Returns the effect’s type id
--   Added interface EntityEffectOptions { amplifier?: number, showParticles?: boolean }
+-   Added interface EntityEffectOptions \{ amplifier?: number, showParticles?: boolean \}
     -   Added function removeEffect(effectType: EffectType | string): boolean - Removes an effect from an Entity. Returns false if the effect is not found or does not exist
     -   Updated function getEffect(effectType: EffectType | string): Effect | undefined - Gets the effect if it exists on the entity. Otherwise returns undefined
     -   Updated function addEffect(effectType: EffectType | string, duration: number, options?: EntityEffectOptions): boolean - Adds an effect to the Entity. Returns false if the effect cannot be added ( the effect does not exist, the duration is negative)

@@ -171,9 +171,9 @@ Moved the following APIs from beta to stable:
     -   Added _projectileHitBlock_
     -   Added _projectileHitEntity_
 -   Added class _ProjectileHitBlockAfterEvent_ export class:  
-    _ProjectileHitBlockAfterEvent { readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getBlockHit(): BlockHitInformation; }_
+    _ProjectileHitBlockAfterEvent \{ readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getBlockHit(): BlockHitInformation; \}_
 -   Added class _ProjectileHitEntityAfterEvent_ export class:  
-    _ProjectileHitEntityAfterEvent { readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getEntityHit(): EntityHitInformation; }_
+    _ProjectileHitEntityAfterEvent \{ readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getEntityHit(): EntityHitInformation; \}_
 -   Fixed a bug where _ContainerSlot_ would not work with certain container types ([MCPE-168805](https://bugs.mojang.com/browse/MCPE-168805))
 -   Fixed a bug where setLore would incorrectly calculate the length of lore strings containing multi-byte characters ([MCPE-173189](https://bugs.mojang.com/browse/MCPE-173189))
     -   Added function _remove_ - Removes the Entity. This cannot be called on Players but can be used on SimulatedPlayers in Gametest

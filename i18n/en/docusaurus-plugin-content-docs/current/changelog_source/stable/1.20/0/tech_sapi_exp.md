@@ -28,8 +28,8 @@
     -   _ProjectileHitEvent_ property _faceLocation: Vec2_ has been changed to _faceLocation: Vec3_ - This position is relative to the bottom north-west corner of the block
     -   _ItemUseOnEvent_ property _faceLocation: Vec2_ has been changed to _faceLocation: Vec3_ - This position is relative to the bottom north-west corner of the block
 -   Entity
-    -   Added interface _teleportOptions {dimension?: Dimension, rotation?: Vector2, keepVelocity?: boolean, facingLocation?: Vector3, checkForBlocks?: boolean}_
-    -   Added interface _Vector2 {x: number, y: number}_
+    -   Added interface _teleportOptions \{dimension?: Dimension, rotation?: Vector2, keepVelocity?: boolean, facingLocation?: Vector3, checkForBlocks?: boolean\}_
+    -   Added interface _Vector2 \{x: number, y: number\}_
     -   Added function t_ryTeleport(location: Vector3, teleportOptions?: teleportOptions) : boolean_ - Attempts to teleport the entity and returns false if the entity is unable to teleport safely (blocks surrounding teleport location or unloaded chunk)
     -   Changed function _teleport_ to _teleport(location: Vector3, teleportOptions?: teleportOptions) : void_ - Teleports an entity
     -   Changed function _setRotation_ to _setRotation(rotation: Vector2) : void_ - Sets the entity's rotation
@@ -82,7 +82,7 @@
 -   Updated class _Effect_
     -   Updated _duration_ property. Is the duration of the effect in ticks
     -   Added property _typeId_. Returns the effect’s type _id_
--   Added interface _EntityEffectOptions { amplifier?: number, showParticles?: boolean }_
+-   Added interface _EntityEffectOptions \{ amplifier?: number, showParticles?: boolean \}_
 -   Added function _Entity.removeEffect(effectType: EffectType | string): boolean_ - Removes an effect from an Entity. Returns false if the effect is not found or does not exist
 -   Updated function _Entity.getEffect(effectType: EffectType | string): Effect | undefined_ - Gets the effect if it exists on the entity. Otherwise returns undefined
 -   Updated function _Entity.addEffect(effectType: EffectType | string, duration: number, options?: EntityEffectOptions): boolean_ - Adds an effect to the Entity. Returns false if the effect cannot be added (If the effect does not exist, the duration is negative)

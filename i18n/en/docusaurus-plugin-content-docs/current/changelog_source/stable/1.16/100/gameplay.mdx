@@ -400,7 +400,7 @@ Added "minecraft:placement\_filter" component which allows you to set conditions
     -   comparator\_signal - An integer value that represents the strenght of the analog signal, used by the Comparator Block
 -   **Examples**
     -   When added to JukeBox Block this will play the sound clip of "record.chirp"
-    -   Example 1: "minecraft:record": { "sound\_event": "chirp", "duration": 185.0, "comparator\_signal": 4 }
+    -   Example 1: "minecraft:record": \{ "sound\_event": "chirp", "duration": 185.0, "comparator\_signal": 4 \}
 
 ## **Items**
 
@@ -408,11 +408,11 @@ Added "minecraft:placement\_filter" component which allows you to set conditions
 -   Created RepairableItemComponent that data-drives how an item is repaired in game
 -   Items can now override their display name with a localized 'value'. If a value is not supplied, the component will stay with its default name. If the value supplied is not in the localization file, the display name will be the value string
 -   Added a Lock in Inventory component that can be applied to an item via the '/give' and '/replaceitem' commands. This prevents the item from being removed from the player's inventory, dropped, or crafted with
-    -   Example of use: \`/give @s apple 1 0 {"item\_lock": {"mode": "lock\_in\_inventory"}}\`
+    -   Example of use: \`/give @s apple 1 0 \{"item\_lock": \{"mode": "lock\_in\_inventory"\}\}\`
 -   Added a Lock in Slot component that can be applied to an item via the '/give' and '/replaceitem' commands. This prevents the item from being moved or removed from its slot in the player's inventory, dropped, or crafted with
-    -   Example of use: '/give @s apple 1 0 {"item\_lock": {"mode": "lock\_in\_slot"}}'
+    -   Example of use: '/give @s apple 1 0 \{"item\_lock": \{"mode": "lock\_in\_slot"\}\}'
 -   Added a Keep on Death component which can be applied to an item via the '/give' and '/replaceitem' commands. This component prevents the item from being dropped when the player dies
-    -   Example of use: '/give @s apple 1 0 {"keep\_on\_death": {}}'
+    -   Example of use: '/give @s apple 1 0 \{"keep\_on\_death": \{\}\}'
 
 ## **Item Icon Component**
 
@@ -427,9 +427,9 @@ Added "minecraft:placement\_filter" component which allows you to set conditions
 
 -   'any\_tag' functionality added to several actor components. In addition to representing items as item names in json they can now be represented as a set of tags
 -   Examples:
-    -   "item": {"any\_tag": "food"}
-    -   "item": {"any\_tag": \["food", "wood"\]}
-    -   "bribe\_items": \["emerald", {"any\_tag": "stone"}\]
+    -   "item": \{"any\_tag": "food"\}
+    -   "item": \{"any\_tag": \["food", "wood"\]\}
+    -   "bribe\_items": \["emerald", \{"any\_tag": "stone"\}\]
 -   Components and fields that can now use 'any\_tag' functionality:
     -   'minecraft:ageable'
     -   'minecraft:breedable' breed\_items
@@ -502,7 +502,7 @@ Added "minecraft:placement\_filter" component which allows you to set conditions
     -   "base" "border" "bricks" "circle" "creeper" "cross" "curly\_border" "diagonal\_left" "diagonal\_right" "diagonal\_up\_left" "diagonal\_up\_right" "flower" "gradient" "gradient\_up" "half\_horizontal" "half\_horizontal\_bottom" "half\_vertical" "half\_vertical\_right" "mojang" "piglin" "rhombus" "skull" "small\_stripes" "square\_bottom\_left" "square\_bottom\_right" "square\_top\_left" "square\_top\_right" "straight\_cross" "stripe\_bottom" "stripe\_center" "stripe\_downleft" "stripe\_downright" "stripe\_left" "stripe\_middle" "stripe\_right" "stripe\_top" "triangle\_bottom" "triangle\_top" "triangles\_bottom" "triangles\_top"
 -   **Possible Input**
 
-    "function": "set_banner_details", "type": "default", "base_color": "blue", "patterns": [   {     "pattern": "flower",     "color": "white"   },   {     "pattern": "triangle_bottom",     "color": "brown"   } ]
+    "function": "set_banner_details", "type": "default", "base_color": "blue", "patterns": [   \{     "pattern": "flower",     "color": "white"   \},   \{     "pattern": "triangle_bottom",     "color": "brown"   \} ]
     
 
 ## **Format Version Checks**

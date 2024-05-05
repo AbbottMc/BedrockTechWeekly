@@ -61,7 +61,7 @@ In this week's beta we've fixed several important issues, and we've also include
 
 When added to JukeBox Block this will play the sound clip of "record.chirp" 
 
--   Example 1: "minecraft:record": { "sound\_event": "chirp", "duration": 185.0, "comparator\_signal": 4 } 
+-   Example 1: "minecraft:record": \{ "sound\_event": "chirp", "duration": 185.0, "comparator\_signal": 4 \} 
 
 ## **Item Names** 
 
@@ -126,39 +126,39 @@ Added 'minecraft:placement\_filter' component which allows you to set conditions
 
 -   Created RepairableItemComponent that data-drives how an item is repaired in game. Data is structured as follows in the item JSON file: 
 
-{   
+\{   
 "format\_version": "1.16.100",   
-"minecraft:item": {   
+"minecraft:item": \{   
 ...   
-    "minecraft:repairable": {   
+    "minecraft:repairable": \{   
       "repair\_items": \[   
-        {   
+        \{   
           "items": \[ "minecraft:item" \],   
           "repair\_amount": "query.max\_damage \* 0.25"   
-        },   
-        {   
+        \},   
+        \{   
           "items": \[ "minecraft:item", "minecraft:item2" \],   
           "repair\_amount": "context.other\-\>query.remaining\_health + 0.05 \* context.other\-\>query.max\_damage"   
-        },   
-        {   
+        \},   
+        \{   
           "items": \[ "minecraft:item3" \],   
-          "on\_repaired": {   
+          "on\_repaired": \{   
             "event": "repaired",   
             "target": "self"   
-          }   
-        }   
+          \}   
+        \}   
       \]   
-    }   
-  },   
-  "events": {   
-    "repaired": {   
-      "transform\_item": {   
+    \}   
+  \},   
+  "events": \{   
+    "repaired": \{   
+      "transform\_item": \{   
         "transform": "item\_name"   
-      }   
-    }   
-  }   
-}   
-} 
+      \}   
+    \}   
+  \}   
+\}   
+\} 
 
 ## **RunCommand** 
 

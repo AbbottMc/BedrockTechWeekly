@@ -1,6 +1,6 @@
 
 
--   **IMPORTANT BREAKING CHANGE:** The classes _Location_and _BlockLocation_ no longer exist in the beta script API. All usages of these classes have been changed to use the _Vector3_ interface (that is, { x: 1, y: 2, z: 3} objects).
+-   **IMPORTANT BREAKING CHANGE:** The classes _Location_and _BlockLocation_ no longer exist in the beta script API. All usages of these classes have been changed to use the _Vector3_ interface (that is, \{ x: 1, y: 2, z: 3\} objects).
 -   Also, note that several changes were made to properties and get/set methods across objects (listed below) to make them more consistent in calling structure.
 -   ItemStack
     -   Item lore can now be cleared by calling _setLore(undefined)_ or _setLore(\[\])_

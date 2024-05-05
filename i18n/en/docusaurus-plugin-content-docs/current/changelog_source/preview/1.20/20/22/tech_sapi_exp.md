@@ -35,7 +35,7 @@
     -   Added _projectileHitBlock_
     -   Added _projectileHitEntity_
 -   Added class _ProjectileHitBlockAfterEvent_ export class:  
-    ProjectileHitBlockAfterEvent { readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getBlockHit(): BlockHitInformation; }
+    ProjectileHitBlockAfterEvent \{ readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getBlockHit(): BlockHitInformation; \}
 -   Added class _ProjectileHitEntityAfterEvent_ export class:  
-    ProjectileHitEntityAfterEvent { readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getEntityHit(): EntityHitInformation; }
+    ProjectileHitEntityAfterEvent \{ readonly dimension: Dimension; readonly hitVector: Vector3; readonly location: Vector3; readonly projectile: Entity; readonly source?: Entity; getEntityHit(): EntityHitInformation; \}
 -   Fixed a bug where _ContainerSlot_ would not work with certain container types ([MCPE-172782)](https://bugs.mojang.com/browse/MCPE-172782)

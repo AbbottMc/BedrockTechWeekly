@@ -250,7 +250,9 @@ export class ArticleUtil {
         officialSiteLinkHandled = officialSiteLinkHandled.replaceAll('(aka.ms/minecraftaddons)', '(https://aka.ms/minecraftaddons)');
         officialSiteLinkHandled = officialSiteLinkHandled.replaceAll('(bugs.mojang.com)', '(https://bugs.mojang.com)');
         officialSiteLinkHandled = officialSiteLinkHandled.replaceAll('(MCPE-83616)', '(https://bugs.mojang.com/browse/MCPE-83616)');
-        return [key, officialSiteLinkHandled];
+
+        const acornHandled = officialSiteLinkHandled.replaceAll('{', '\\{').replaceAll('}', '\\}');
+        return [key, acornHandled];
       }
       return [key, value];
     })) as BedrockArticleSplitResult;

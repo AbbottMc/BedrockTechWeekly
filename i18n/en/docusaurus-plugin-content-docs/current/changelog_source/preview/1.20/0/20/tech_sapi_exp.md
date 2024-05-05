@@ -28,8 +28,8 @@
         -   _ProjectileHitEvent_ property _faceLocation: Vec2_ has been changed to _faceLocation: Vec3_ - This position is relative to the bottom north-west corner of the block
         -   _ItemUseOnEvent_ property _faceLocation: Vec2_ has been changed to _faceLocation: Vec3_ - This position is relative to the bottom north-west corner of the block
     -   Entity
-        -   Added interface _teleportOptions {dimension?: Dimension, rotation?: Vector2, keepVelocity?: boolean, facingLocation?: Vector3, checkForBlocks?: boolean}_
-        -   Added interface _Vector2 {x: number, y: number}_
+        -   Added interface _teleportOptions \{dimension?: Dimension, rotation?: Vector2, keepVelocity?: boolean, facingLocation?: Vector3, checkForBlocks?: boolean\}_
+        -   Added interface _Vector2 \{x: number, y: number\}_
         -   Added function _tryTeleport(location: Vector3, teleportOptions?: teleportOptions) : boolean_ - Attempts to teleport the entity and returns false if the entity is unable to teleport safely (blocks surrounding teleport location or unloaded chunk)
         -   Changed function _teleport_ to _teleport(location: Vector3, teleportOptions?: teleportOptions) : void_ - Teleports an entity
     -   _Changed function setRotation to setRotation(rotation: Vector2) : void_ - Sets the entity's rotation

@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
 
 const minecraftTypeNames = [
   'common',
@@ -34,9 +35,9 @@ const config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // markdown: {
-  //   format: 'detect'
-  // },
+  markdown: {
+    format: 'detect'
+  },
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -52,42 +53,42 @@ const config = {
     }
   },
   plugins: [
-    ...minecraftTypeNames.map((typeName) => {
-      return [
-        'docusaurus-plugin-typedoc',
-        /** @type {import("docusaurus-plugin-typedoc/dist/types").PluginOptions} */
-        {
-          id: `preview-${typeName}`,
-          entryPoints: [`./static/typedoc/preview/${typeName}.d.ts`],
-          tsconfig: './static/typedoc/preview/tsconfig.json',
-          out: `sapi/preview/${typeName}`,
-          sidebar: {
-            categoryLabel: 'sapiPreviewSidebar',
-            collapsed: false,
-            position: 0,
-            fullNames: true,
-          }
-        }
-      ];
-    }),
-    ...minecraftTypeNames.map((typeName) => {
-      return [
-        'docusaurus-plugin-typedoc',
-        // Plugin / TypeDoc options
-        {
-          id: `stable-${typeName}`,
-          entryPoints: [`./static/typedoc/stable/${typeName}.d.ts`],
-          tsconfig: './static/typedoc/stable/tsconfig.json',
-          out: `sapi/stable/${typeName}`,
-          sidebar: {
-            categoryLabel: 'sapiStableSidebar',
-            collapsed: false,
-            position: 0,
-            fullNames: true,
-          }
-        }
-      ];
-    })
+    // ...minecraftTypeNames.map((typeName) => {
+    //   return [
+    //     'docusaurus-plugin-typedoc',
+    //     /** @type {import("docusaurus-plugin-typedoc/dist/types").PluginOptions} */
+    //     {
+    //       id: `preview-${typeName}`,
+    //       entryPoints: [`./static/typedoc/preview/${typeName}.d.ts`],
+    //       tsconfig: './static/typedoc/preview/tsconfig.json',
+    //       out: `sapi/preview/${typeName}`,
+    //       sidebar: {
+    //         categoryLabel: 'sapiPreviewSidebar',
+    //         collapsed: false,
+    //         position: 0,
+    //         fullNames: true,
+    //       }
+    //     }
+    //   ];
+    // }),
+    // ...minecraftTypeNames.map((typeName) => {
+    //   return [
+    //     'docusaurus-plugin-typedoc',
+    //     // Plugin / TypeDoc options
+    //     {
+    //       id: `stable-${typeName}`,
+    //       entryPoints: [`./static/typedoc/stable/${typeName}.d.ts`],
+    //       tsconfig: './static/typedoc/stable/tsconfig.json',
+    //       out: `sapi/stable/${typeName}`,
+    //       sidebar: {
+    //         categoryLabel: 'sapiStableSidebar',
+    //         collapsed: false,
+    //         position: 0,
+    //         fullNames: true,
+    //       }
+    //     }
+    //   ];
+    // })
   ],
   presets: [
     [
@@ -258,8 +259,9 @@ const config = {
         copyright: `基岩技术文刊站点，由<a href="https://space.bilibili.com/15122547">乾山瑶</a>基于Docusaurus搭建.<br/>“Minecraft”是 <a href="https://www.minecraft.net/">Mojang AB</a> 的商标，在中国大陆由<a href="https://mc.163.com/">网易我的世界</a>代理管辖。本站不以任何方式隶属于 Microsoft 、 Mojang AB 或网之易吾世界公司`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        additionalLanguages: ['bash', 'diff', 'json'],
       },
     }),
 };
