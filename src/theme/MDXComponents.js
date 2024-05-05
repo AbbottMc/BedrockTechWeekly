@@ -6,6 +6,7 @@ import {NavHiddenSwitcher} from '@site/src/components/controls/navigation/NavHid
 import {HoverOverlayPanel} from '@site/src/components/controls/overlay/HoverOverlayPanel'
 import {ClickOverplayPanel} from '@site/src/components/controls/overlay/ClickOverplayPanel'
 import {PistonToggle} from '@site/src/components/controls/piston/PistonToggle'
+import {SingleItem} from '@site/src/components/controls/list/SingleItem'
 
 export default {
   // Re-use the default mapping
@@ -15,5 +16,6 @@ export default {
   NavHiddenSwitcher,
   HoverOverlayPanel,
   ClickOverplayPanel,
-  PistonToggle
+  PistonToggle,
+  SingleItem
 };

@@ -4,6 +4,8 @@
     --ifm-code-border-radius: 0.5rem;
     --ifm-button-border-width: 2px;
     --ifm-container-width-xl: 72vw;
+    /*--ifm-heading-margin-top: 0.83rem;*/
+    /*--ifm-heading-margin-bottom: 0;*/
     --bedoc-section-bg: var(--ifm-background-color);
     --bedoc-exp-title-background-color: var(--bedoc-title-background-color);
     --bedoc-exp-title-color: var(--bedoc-title-color);
@@ -164,8 +166,10 @@ li > p {
     margin-block-end: unset;
 }
 
-ul {
-    margin-bottom: var(--ifm-list-margin) !important;
+.hidden-source-text {
+    /*padding-inline-start: 1rem;*/
+    margin-top: calc(-1 * var(--ifm-list-margin));
+    /*margin-bottom: var(--ifm-list-margin);*/
 }
 
 /**更新日志总标题**/
@@ -295,6 +299,7 @@ img[loading='lazy'] {
     /*margin-left: 4px;*/
     /*margin-right: 4px;*/
 }
+
 .piston-toggle-rect-outline {
     border: 2px solid var(--bedoc-piston-toggle-outline-color);
     transform: rotate(45deg);

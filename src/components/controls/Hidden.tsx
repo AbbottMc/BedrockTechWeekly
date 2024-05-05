@@ -4,6 +4,7 @@ import {usePageEventListener} from '@site/src/hooks/usePageEventListener'
 
 interface HiddenProps {
   children: React.ReactNode;
+  className?: string;
 }
 
 export function Hidden(props: HiddenProps) {
@@ -24,7 +25,7 @@ export function Hidden(props: HiddenProps) {
   }, []);
 
   return (
-    <div style={{display: isHidden ? 'none' : 'flex'}}>
+    <div className={props.className} style={{display: isHidden ? 'none' : 'flex'}}>
       {props.children}
     </div>
   )
