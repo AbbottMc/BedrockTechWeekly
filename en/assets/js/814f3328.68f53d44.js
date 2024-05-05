@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbedrock_tech=self.webpackChunkbedrock_tech||[]).push([[67472],{55513:e=>{e.exports=JSON.parse('{"title":"All Articles","items":[{"title":"[2023w02m01a] \u547d\u4ee4\u811a\u672c\u79fb\u9664data\uff0c\u811a\u672c\u63a5\u53e3\u65e5\u5e38\u66f4\u65b0","permalink":"/en/blog/latest","unlisted":false}]}')}}]);
