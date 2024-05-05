@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbedrock_tech=self.webpackChunkbedrock_tech||[]).push([[89626],{48659:e=>{e.exports=JSON.parse('{"label":"\u5f00\u53d1","permalink":"/blog/tags/\u5f00\u53d1","allTagsPath":"/blog/tags","count":1}')}}]);
