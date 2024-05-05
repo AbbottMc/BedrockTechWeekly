@@ -1,0 +1,22 @@
+## getTopmostBlock
+
+新方法 `getTopmostBlock` 旨在提供获取指定（x, z）位置方块的最高点方块。
+
+### 语法
+
+```typescript
+getTopmostBlock(locationXZ: VectorXZ, minHeight?: number): Block | undefined;
+```
+
+示例：当玩家与方块交互时，获取玩家交互方块的所在位置的最高点方块。
+
+```typescript
+import {MinecraftDimensionTypes,VectorXZ, world} from "@minecraft/server"
+const overworld = world.getDimension(MinecraftDimensionTypes.overworld);
+
+world.afterEvents.playerInteractWithBlock.subscribe(({block}) => {
+  const location: VectorXZ = {x: block.x, y: block.y};
+  const topmostBlock = overworld.getTopmostBlock(location);
+  console.warn(`The topmost block at (${location.x}, ${location.y}) is "${topmostBlock.typeId}"`);
+});
+```

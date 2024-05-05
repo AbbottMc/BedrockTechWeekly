@@ -258,3 +258,20 @@ img[loading='lazy'] {
 .hidden-switch-button:hover {
     background-color: var(--bedoc-overlay-background-color) !important;
 }
+
+.hover-overlay-content {
+    border-bottom: var(--bedoc-overlay-border);
+    box-shadow: var(--ifm-global-shadow-tl);
+    background: var(--bedoc-overlay-background-color);
+    border-radius: var(--ifm-global-radius);
+    max-width: 80vw;
+    width: max-content;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    user-focus: auto;
+    pointer-events: unset;
+}
+
+.hover-overlay-panel {
+    display: inline-flex;
+}

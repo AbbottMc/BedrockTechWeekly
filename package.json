@@ -19,6 +19,7 @@
   "dependencies": {
     "@docusaurus/core": "2.3.0",
     "@docusaurus/preset-classic": "2.3.0",
+    "@floating-ui/react": "^0.26.13",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.2.1",
     "primeflex": "^3.3.1",
