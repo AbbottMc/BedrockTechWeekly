@@ -1,5 +1,4 @@
 import {HiddenSourceText} from '../../../../../../src/components/controls/HiddenSourceText'
-import {HoverOverlayPanel} from '../../../../../../src/components/controls/HoverOverlayPanel'
 import GetTopmostBlock from './piston/sapi/_getTopmostBlock.mdx'
 
 - 修复了在不蹲下的情况下无法在带有自定义组件的方块上放置方块的问题
@@ -12,7 +11,7 @@ import GetTopmostBlock from './piston/sapi/_getTopmostBlock.mdx'
   <li>Added new interface <code>VectorXZ</code></li>
 </HiddenSourceText>
 
-- 添加了新方法 <HoverOverlayPanel content={<GetTopmostBlock/>} trigger={<code>getTopmostBlock</code>}/> ，此方法将从世界顶部向下执行射线检测，尝试寻找首个固体方块
+- 添加了新方法 <PistonToggle content={<GetTopmostBlock/>}/> `getTopmostBlock` ，此方法将从世界顶部向下执行射线检测，尝试寻找首个固体方块
 <HiddenSourceText>
   <li>Added method <code>getTopmostBlock</code> which will perform a raycast from the top of the world downwards, trying
     to find the first solid block

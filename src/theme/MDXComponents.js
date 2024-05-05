@@ -3,7 +3,9 @@ import MDXComponents from '@theme-original/MDXComponents';
 import {Hidden} from '@site/src/components/controls/Hidden'
 import {HiddenSourceText} from '@site/src/components/controls/HiddenSourceText'
 import {NavHiddenSwitcher} from '@site/src/components/controls/navigation/NavHiddenSwitcher'
-import {HoverOverlayPanel} from '@site/src/components/controls/HoverOverlayPanel'
+import {HoverOverlayPanel} from '@site/src/components/controls/overlay/HoverOverlayPanel'
+import {ClickOverplayPanel} from '@site/src/components/controls/overlay/ClickOverplayPanel'
+import {PistonToggle} from '@site/src/components/controls/piston/PistonToggle'
 
 export default {
   // Re-use the default mapping
@@ -11,5 +13,7 @@ export default {
   Hidden,
   HiddenSourceText,
   NavHiddenSwitcher,
-  HoverOverlayPanel
+  HoverOverlayPanel,
+  ClickOverplayPanel,
+  PistonToggle
 };

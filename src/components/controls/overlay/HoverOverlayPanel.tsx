@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
-import {autoUpdate, flip, limitShift, shift, useFloating, useHover, useInteractions} from '@floating-ui/react';
+import {flip, shift, useClick, useFloating, useHover, useInteractions} from '@floating-ui/react';
+import {Placement} from '@floating-ui/utils'
 
 export interface OverlayPanelProps {
   trigger: React.ReactNode;
   content: React.ReactNode;
-  position?: 'left' | 'right' | 'top' | 'bottom';
+  position?: Placement;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -14,7 +15,7 @@ export function HoverOverlayPanel(props: OverlayPanelProps) {
   const {refs, floatingStyles, context} = useFloating({
     open: isOpen,
     onOpenChange: setIsOpen,
-    placement: 'bottom-start',
+    placement: props.position ?? 'bottom-start',
     // whileElementsMounted: autoUpdate,
     middleware: [shift({
       padding: 24
@@ -37,13 +38,5 @@ export function HoverOverlayPanel(props: OverlayPanelProps) {
         </div>
       }
     </>
-    // <div className="dropdown dropdown--hoverable hover-overlay-panel" style={{
-    //   // minWidth: '50vw'
-    // }}>
-    //   {props.trigger}
-    //     <div className="dropdown__menu hover-overlay-content p-4">
-    //       {props.content}
-    //     </div>
-    //   </div>
   );
 }

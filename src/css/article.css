@@ -26,6 +26,8 @@
     /*--bedoc-exp-title-shadow: 0 4px 8px rgb(0, 0, 0, 0.4);*/
     --bedoc-exp-title-border: 3px solid rgb(246, 194, 145);
     --bedoc-changelog-title-border: 3px solid rgb(88 196 220);
+    --bedoc-piston-toggle-border-color: #fff;
+    --bedoc-piston-toggle-outline-color: #646464;
 }
 
 [data-theme='dark'] {
@@ -42,6 +44,8 @@
     --bedoc-title-color: white;
     --bedoc-exp-title-border: 3px solid rgb(182 87 0);
     --bedoc-changelog-title-border: 3px solid rgb(88 196 220);
+    --bedoc-piston-toggle-border-color: #000;
+    --bedoc-piston-toggle-outline-color: #fff;
 }
 
 html[data-theme='light'] {
@@ -274,4 +278,24 @@ img[loading='lazy'] {
 
 .hover-overlay-panel {
     display: inline-flex;
+}
+
+.piston-toggle-rect {
+    width: 0.64rem;
+    height: 0.64rem;
+    /*transform: rotate(45deg);*/
+    background-image: linear-gradient(45deg, #ffde05, #ffb800, #e6a700);
+    border: 2px solid var(--bedoc-piston-toggle-border-color);
+    /*background-color: #e6a700;*/
+    cursor: pointer;
+    /*margin-left: 4px;*/
+    /*margin-right: 4px;*/
+}
+.piston-toggle-rect-outline {
+    border: 2px solid var(--bedoc-piston-toggle-outline-color);
+    transform: rotate(45deg);
+    /*background-color: #e6a700;*/
+    cursor: pointer;
+    margin-left: 4px;
+    margin-right: 4px;
 }
