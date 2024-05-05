@@ -1,7 +1,7 @@
-
+import GetTopmostBlock from './piston/sapi/_getTopmostBlock.mdx'
 
 -   Fixed issue where block with custom components could not have a block placed onto them without crouching
 -   Added new interface `VectorXZ`
--   Added method `getTopmostBlock` which will perform a raycast from the top of the world downwards, trying to find the first solid block
+-   Added method <PistonToggle content={<GetTopmostBlock/>}/> `getTopmostBlock` which will perform a raycast from the top of the world downwards, trying to find the first solid block
 -   Added method `getBlockAbove` which will perform a raycast from a given position, trying to find the first solid block above
 -   Added method `getBlockBelow` which will perform a raycast from a given position, trying to find the first solid block below

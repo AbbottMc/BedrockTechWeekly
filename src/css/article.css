@@ -164,6 +164,10 @@ li > p {
     margin-block-end: unset;
 }
 
+ul {
+    margin-bottom: var(--ifm-list-margin) !important;
+}
+
 /**更新日志总标题**/
 .changelog_divider {
     color: var(--bedoc-changelog-title-color);

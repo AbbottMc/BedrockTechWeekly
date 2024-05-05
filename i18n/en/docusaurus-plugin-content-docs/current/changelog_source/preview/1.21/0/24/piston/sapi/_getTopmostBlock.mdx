@@ -1,0 +1,39 @@
+## getTopmostBlock
+
+:::warn Warning
+The content on this page has not undergone rigorous testing and is presently intended solely for trialing the website's new feature: Piston Box.
+Please exercise caution when referencing this information.
+:::
+
+The new method `getTopmostBlock` is designed to facilitate obtaining the highest block at a given (x, z) coordinate position.
+
+### Syntax
+
+```typescript
+getTopmostBlock(locationXZ: VectorXZ, minHeight?: number): Block | undefined;
+```
+
+- `locationXZ`： An instance object conforming to the VectorXZ interface pattern, comprising two properties: x and z.
+- `minHeight`： An optional parameter representing the minimum height, with a default value of the minimum height of the world.
+
+Returns an instance object of [Block](/docs/sapi/preview/server/classes/Block), representing the highest point block. If no such highest block exists, returns `undefined`.
+
+
+### Example
+
+When a player interacts with a block, this function retrieves the highest point block at the block's (x, z) position.
+
+```typescript
+import {MinecraftDimensionTypes, VectorXZ, world} from "@minecraft/server"
+const overworld = world.getDimension(MinecraftDimensionTypes.overworld);
+
+// Subscribe events of player-block interactions in the game.
+world.afterEvents.playerInteractWithBlock.subscribe(({block}) => {
+  // Obtain the (x, z) position of the player's interacting block, and store it as a new VectorXZ type
+  const location: VectorXZ = {x: block.x, y: block.y};
+  // Get the highest point block at the (x, z) position
+  const topmostBlock = overworld.getTopmostBlock(location);
+  // Output the information of the highest point block
+  console.warn(`The topmost block at (${location.x}, ${location.y}) is "${topmostBlock.typeId}"`);
+});
+```

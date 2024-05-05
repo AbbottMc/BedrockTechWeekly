@@ -1,6 +1,10 @@
 ## getTopmostBlock
 
-新方法 `getTopmostBlock` 旨在提供获取指定（x, z）位置方块的最高点方块。
+:::warn 警告
+本页内容暂未经过严格测试，暂时仅用于测试本站新功能：**活塞盒**，请谨慎参考。
+:::
+
+新方法 `getTopmostBlock` 旨在提供获取指定（x, z）位置方块的最高点方块的功能。
 
 ### 语法
 
@@ -8,15 +12,28 @@
 getTopmostBlock(locationXZ: VectorXZ, minHeight?: number): Block | undefined;
 ```
 
-示例：当玩家与方块交互时，获取玩家交互方块的所在位置的最高点方块。
+- `locationXZ`： 符合 [VectorXZ](/docs/sapi/preview/server/interfaces/VectorXZ) 接口模式的实例对象，包含x和z两个属性。
+- `minHeight`： 可选参数，表示最低高度，默认值为世界最低高度。
+
+返回一个 [方块](/docs/sapi/preview/server/classes/Block) 实例对象，表示最高点方块。如果最高点方块不存在，则返回 undefined。
+
+
+### 示例
+
+当玩家与方块交互时，获取其所在(x, z)位置的最高点方块。
 
 ```typescript
-import {MinecraftDimensionTypes,VectorXZ, world} from "@minecraft/server"
+import {MinecraftDimensionTypes, VectorXZ, world} from "@minecraft/server"
 const overworld = world.getDimension(MinecraftDimensionTypes.overworld);
 
+// 监听玩家与方块交互事件
 world.afterEvents.playerInteractWithBlock.subscribe(({block}) => {
+  // 获取玩家交互方块的 (x, z) 位置, 储存为新增的 VectorXZ 类型
   const location: VectorXZ = {x: block.x, y: block.y};
+  // 获取该位置的最高点方块
   const topmostBlock = overworld.getTopmostBlock(location);
-  console.warn(`The topmost block at (${location.x}, ${location.y}) is "${topmostBlock.typeId}"`);
+  // 输出最高点方块相关信息
+  console.warn(`(${location.x}, ${location.y}) 位置上的最高点方块ID为："${topmostBlock.typeId}"`);
+  // console.warn(`The topmost block at (${location.x}, ${location.y}) is "${topmostBlock.typeId}"`);
 });
 ```
