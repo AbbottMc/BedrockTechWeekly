@@ -39,9 +39,8 @@
     "@minecraft/server-net": "^1.0.0-beta.1.21.0-preview.24",
     "@minecraft/server-ui": "^1.2.0-beta.1.21.0-preview.24",
     "@tsconfig/docusaurus": "^2.0.3",
-    "docusaurus-plugin-typedoc": "^1.0.0",
-    "typedoc": "^0.25.13",
-    "typedoc-plugin-markdown": "^4.0.0",
+    "docusaurus-plugin-typedoc": "^0.22.0",
+    "typedoc-plugin-markdown": "^3.17.1",
     "typescript": "^5.4.5"
   },
   "browserslist": {

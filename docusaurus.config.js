@@ -53,42 +53,46 @@ const config = {
     }
   },
   plugins: [
-    // ...minecraftTypeNames.map((typeName) => {
-    //   return [
-    //     'docusaurus-plugin-typedoc',
-    //     /** @type {import("docusaurus-plugin-typedoc/dist/types").PluginOptions} */
-    //     {
-    //       id: `preview-${typeName}`,
-    //       entryPoints: [`./static/typedoc/preview/${typeName}.d.ts`],
-    //       tsconfig: './static/typedoc/preview/tsconfig.json',
-    //       out: `sapi/preview/${typeName}`,
-    //       sidebar: {
-    //         categoryLabel: 'sapiPreviewSidebar',
-    //         collapsed: false,
-    //         position: 0,
-    //         fullNames: true,
-    //       }
-    //     }
-    //   ];
-    // }),
-    // ...minecraftTypeNames.map((typeName) => {
-    //   return [
-    //     'docusaurus-plugin-typedoc',
-    //     // Plugin / TypeDoc options
-    //     {
-    //       id: `stable-${typeName}`,
-    //       entryPoints: [`./static/typedoc/stable/${typeName}.d.ts`],
-    //       tsconfig: './static/typedoc/stable/tsconfig.json',
-    //       out: `sapi/stable/${typeName}`,
-    //       sidebar: {
-    //         categoryLabel: 'sapiStableSidebar',
-    //         collapsed: false,
-    //         position: 0,
-    //         fullNames: true,
-    //       }
-    //     }
-    //   ];
-    // })
+    ...minecraftTypeNames.map((typeName) => {
+      return [
+        'docusaurus-plugin-typedoc',
+        /** @type {import("docusaurus-plugin-typedoc/dist/types").PluginOptions} */
+        {
+          id: `preview-${typeName}`,
+          entryPoints: [`./static/typedoc/preview/${typeName}.d.ts`],
+          tsconfig: './static/typedoc/preview/tsconfig.json',
+          // exclude:['/node_modules/'],
+          out: `sapi/preview/${typeName}`,
+          skipErrorChecking: true,
+          sidebar: {
+            categoryLabel: 'sapiPreviewSidebar',
+            collapsed: false,
+            position: 0,
+            fullNames: true,
+          }
+        }
+      ];
+    }),
+    ...minecraftTypeNames.map((typeName) => {
+      return [
+        'docusaurus-plugin-typedoc',
+        // Plugin / TypeDoc options
+        {
+          id: `stable-${typeName}`,
+          entryPoints: [`./static/typedoc/stable/${typeName}.d.ts`],
+          tsconfig: './static/typedoc/stable/tsconfig.json',
+          // exclude:['/node_modules/'],
+          out: `sapi/stable/${typeName}`,
+          skipErrorChecking: true,
+          sidebar: {
+            categoryLabel: 'sapiStableSidebar',
+            collapsed: false,
+            position: 0,
+            fullNames: true,
+          }
+        }
+      ];
+    })
   ],
   presets: [
     [
