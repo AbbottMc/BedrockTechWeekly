@@ -4,7 +4,7 @@
         <title>基岩技术文刊 | Bedrock Tech Journal Blog</title>
         <link> https://abbottmc.github.io/en/blog</link>
         <description>基岩技术文刊 | Bedrock Tech Journal Blog</description>
-        <lastBuildDate>Sun, 05 May 2024 10:29:44 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 05 May 2024 13:32:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[[2023w02m01a] 命令脚本移除data，脚本接口日常更新]]></title>
             <link> https://abbottmc.github.io/en/blog/latest</link>
             <guid> https://abbottmc.github.io/en/blog/latest</guid>
-            <pubDate>Sun, 05 May 2024 10:29:44 GMT</pubDate>
+            <pubDate>Sun, 05 May 2024 13:32:40 GMT</pubDate>
             <description><![CDATA[本周官方更新了1.19.70.21版本，点击这里查看官方技术更新日志]]></description>
             <content:encoded><![CDATA[<div class="theme-admonition theme-admonition-info alert alert--info admonition_WoCw"><div class="admonitionHeading_TMsN"><span class="admonitionIcon_Ibzs"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>版本更新</div><div class="admonitionContent_vXIg"><p>本周官方更新了1.19.70.21版本，<a href="https://abbottmc.github.io/en/docs/backup/preview/1.19.70.21">点击这里</a>查看官方技术更新日志</p></div></div>
 <p>各位更新好，又到了一周一次的预览版更新，本周的预览版在技术更新方面主要涉及命令、数驱和脚本三个方面的内容，大体上还是日常小改小动。不过话虽如此，其中也不乏一些可能存在深远影响的更改。那么接下来就让我们一起来看看本周官方又给我们更新了什么新特性吧！</p>
