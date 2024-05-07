@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-sapi/stable/server/type-aliases/EntityComponentTypeMap" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.3.2">
+<title data-rh="true">Type alias: EntityComponentTypeMap | 基岩技术文刊 | Bedrock Tech Journal</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content=" https://abbottmc.github.io/en/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content=" https://abbottmc.github.io/en/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content=" https://abbottmc.github.io/en/docs/sapi/stable/server/type-aliases/EntityComponentTypeMap"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Type alias: EntityComponentTypeMap | 基岩技术文刊 | Bedrock Tech Journal"><meta data-rh="true" name="description" content="Beta"><meta data-rh="true" property="og:description" content="Beta"><link data-rh="true" rel="icon" href="/en/img/logo.png"><link data-rh="true" rel="canonical" href="https://abbottmc.github.io/en/docs/sapi/stable/server/type-aliases/EntityComponentTypeMap"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/docs/sapi/stable/server/type-aliases/EntityComponentTypeMap" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/en/docs/sapi/stable/server/type-aliases/EntityComponentTypeMap" hreflang="en"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/docs/sapi/stable/server/type-aliases/EntityComponentTypeMap" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/en/blog/rss.xml" title="基岩技术文刊 | Bedrock Tech Journal RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/en/blog/atom.xml" title="基岩技术文刊 | Bedrock Tech Journal Atom Feed"><link rel="stylesheet" href="/en/assets/css/styles.03cebe9b.css">
+<script src="/en/assets/js/runtime~main.859b7639.js" defer="defer"></script>
+<script src="/en/assets/js/main.0225bf22.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><div class="announcementBar_mb4j" style="background-color:#fafbfc;color:#091E42" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">欢迎来到基岩技术文刊站！这个站点仍在完善当中，欢迎您的<a href="https://github.com/AbbottMc/BedrockTechWeekly/issues">反馈</a>！</div><button type="button" aria-label="Close" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/logo.png" alt="基岩技术文刊Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/en/img/logo.png" alt="基岩技术文刊Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Bedrock Tech Journal</b></a><a class="navbar__item navbar__link" href="/en/docs/official_changelog/">Official Changelogs</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">ScriptAPI Docs</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/en/docs/sapi/stable">Stable [1.20.8x]</a></li><li><a class="dropdown__link" href="/en/docs/sapi/preview">Preview [1.21.0.24]</a></li></ul></div></div><div class="navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/en/docs/changelog">Website Changelogs</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>English</a><ul class="dropdown__menu"><li><a href="/docs/sapi/stable/server/type-aliases/EntityComponentTypeMap" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-Hans">简体中文</a></li><li><a href="/en/docs/sapi/stable/server/type-aliases/EntityComponentTypeMap" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="en">English</a></li></ul></div><a href="https://github.com/AbbottMc/BedrockTechWeekly" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG menuWithAnnouncementBar_GW3s"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/docs/sapi/stable/">Script API (for Minecraft Stable)</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/en/docs/sapi/stable/common/classes/ArgumentOutOfBoundsError">@minecraft/common</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/en/docs/sapi/stable/server/enumerations/BlockComponentTypes">@minecraft/server</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/sapi/stable/server/enumerations/BlockComponentTypes">Enumerations</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/sapi/stable/server/classes/BiomeType">Classes</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/sapi/stable/server/interfaces/BiomeSearchOptions">Interfaces</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/en/docs/sapi/stable/server/type-aliases/BlockComponentTypeMap">Type Aliases</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/sapi/stable/server/type-aliases/BlockComponentTypeMap">BlockComponentTypeMap</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/docs/sapi/stable/server/type-aliases/EntityComponentTypeMap">EntityComponentTypeMap</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/sapi/stable/server/type-aliases/ItemComponentTypeMap">ItemComponentTypeMap</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/sapi/stable/server/variables/HudElementsCount">Variables</a></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/en/docs/sapi/stable/server-ui/enumerations/FormCancelationReason">@minecraft/server-ui</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/en/docs/sapi/stable/server-admin/classes/SecretString">@minecraft/server-admin</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/en/docs/sapi/stable/server-net/enumerations/HttpRequestMethod">@minecraft/server-net</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/en/docs/sapi/stable/server-gametest/enumerations/GameTestErrorType">@minecraft/server-gametest</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/en/docs/sapi/stable/server-editor/enumerations/ActionTypes">@minecraft/server-editor</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">@minecraft/server</span><meta itemprop="position" content="1"></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Type Aliases</span><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">EntityComponentTypeMap</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Type alias: EntityComponentTypeMap</h1>
+<p><code>Beta</code></p>
+<blockquote>
+<p><strong>EntityComponentTypeMap</strong>: <code>object</code></p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="type-declaration">Type declaration<a href="#type-declaration" class="hash-link" aria-label="Direct link to Type declaration" title="Direct link to Type declaration">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="addrider">addrider<a href="#addrider" class="hash-link" aria-label="Direct link to addrider" title="Direct link to addrider">​</a></h3>
+<blockquote>
+<p><strong>addrider</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityAddRiderComponent"><code>EntityAddRiderComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ageable">ageable<a href="#ageable" class="hash-link" aria-label="Direct link to ageable" title="Direct link to ageable">​</a></h3>
+<blockquote>
+<p><strong>ageable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityAgeableComponent"><code>EntityAgeableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="breathable">breathable<a href="#breathable" class="hash-link" aria-label="Direct link to breathable" title="Direct link to breathable">​</a></h3>
+<blockquote>
+<p><strong>breathable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityBreathableComponent"><code>EntityBreathableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="can_climb">can_climb<a href="#can_climb" class="hash-link" aria-label="Direct link to can_climb" title="Direct link to can_climb">​</a></h3>
+<blockquote>
+<p><strong>can_climb</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityCanClimbComponent"><code>EntityCanClimbComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="can_fly">can_fly<a href="#can_fly" class="hash-link" aria-label="Direct link to can_fly" title="Direct link to can_fly">​</a></h3>
+<blockquote>
+<p><strong>can_fly</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityCanFlyComponent"><code>EntityCanFlyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="can_power_jump">can_power_jump<a href="#can_power_jump" class="hash-link" aria-label="Direct link to can_power_jump" title="Direct link to can_power_jump">​</a></h3>
+<blockquote>
+<p><strong>can_power_jump</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityCanPowerJumpComponent"><code>EntityCanPowerJumpComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="color">color<a href="#color" class="hash-link" aria-label="Direct link to color" title="Direct link to color">​</a></h3>
+<blockquote>
+<p><strong>color</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityColorComponent"><code>EntityColorComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="color2">color2<a href="#color2" class="hash-link" aria-label="Direct link to color2" title="Direct link to color2">​</a></h3>
+<blockquote>
+<p><strong>color2</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityColor2Component"><code>EntityColor2Component</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="equippable">equippable<a href="#equippable" class="hash-link" aria-label="Direct link to equippable" title="Direct link to equippable">​</a></h3>
+<blockquote>
+<p><strong>equippable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityEquippableComponent"><code>EntityEquippableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="fire_immune">fire_immune<a href="#fire_immune" class="hash-link" aria-label="Direct link to fire_immune" title="Direct link to fire_immune">​</a></h3>
+<blockquote>
+<p><strong>fire_immune</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityFireImmuneComponent"><code>EntityFireImmuneComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="floats_in_liquid">floats_in_liquid<a href="#floats_in_liquid" class="hash-link" aria-label="Direct link to floats_in_liquid" title="Direct link to floats_in_liquid">​</a></h3>
+<blockquote>
+<p><strong>floats_in_liquid</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityFloatsInLiquidComponent"><code>EntityFloatsInLiquidComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flying_speed">flying_speed<a href="#flying_speed" class="hash-link" aria-label="Direct link to flying_speed" title="Direct link to flying_speed">​</a></h3>
+<blockquote>
+<p><strong>flying_speed</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityFlyingSpeedComponent"><code>EntityFlyingSpeedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="friction_modifier">friction_modifier<a href="#friction_modifier" class="hash-link" aria-label="Direct link to friction_modifier" title="Direct link to friction_modifier">​</a></h3>
+<blockquote>
+<p><strong>friction_modifier</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityFrictionModifierComponent"><code>EntityFrictionModifierComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ground_offset">ground_offset<a href="#ground_offset" class="hash-link" aria-label="Direct link to ground_offset" title="Direct link to ground_offset">​</a></h3>
+<blockquote>
+<p><strong>ground_offset</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityGroundOffsetComponent"><code>EntityGroundOffsetComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="healable">healable<a href="#healable" class="hash-link" aria-label="Direct link to healable" title="Direct link to healable">​</a></h3>
+<blockquote>
+<p><strong>healable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityHealableComponent"><code>EntityHealableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="health">health<a href="#health" class="hash-link" aria-label="Direct link to health" title="Direct link to health">​</a></h3>
+<blockquote>
+<p><strong>health</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityHealthComponent"><code>EntityHealthComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="inventory">inventory<a href="#inventory" class="hash-link" aria-label="Direct link to inventory" title="Direct link to inventory">​</a></h3>
+<blockquote>
+<p><strong>inventory</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityInventoryComponent"><code>EntityInventoryComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_baby">is_baby<a href="#is_baby" class="hash-link" aria-label="Direct link to is_baby" title="Direct link to is_baby">​</a></h3>
+<blockquote>
+<p><strong>is_baby</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsBabyComponent"><code>EntityIsBabyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_charged">is_charged<a href="#is_charged" class="hash-link" aria-label="Direct link to is_charged" title="Direct link to is_charged">​</a></h3>
+<blockquote>
+<p><strong>is_charged</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsChargedComponent"><code>EntityIsChargedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_chested">is_chested<a href="#is_chested" class="hash-link" aria-label="Direct link to is_chested" title="Direct link to is_chested">​</a></h3>
+<blockquote>
+<p><strong>is_chested</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsChestedComponent"><code>EntityIsChestedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_dyeable">is_dyeable<a href="#is_dyeable" class="hash-link" aria-label="Direct link to is_dyeable" title="Direct link to is_dyeable">​</a></h3>
+<blockquote>
+<p><strong>is_dyeable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsDyeableComponent"><code>EntityIsDyeableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_hidden_when_invisible">is_hidden_when_invisible<a href="#is_hidden_when_invisible" class="hash-link" aria-label="Direct link to is_hidden_when_invisible" title="Direct link to is_hidden_when_invisible">​</a></h3>
+<blockquote>
+<p><strong>is_hidden_when_invisible</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsHiddenWhenInvisibleComponent"><code>EntityIsHiddenWhenInvisibleComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_ignited">is_ignited<a href="#is_ignited" class="hash-link" aria-label="Direct link to is_ignited" title="Direct link to is_ignited">​</a></h3>
+<blockquote>
+<p><strong>is_ignited</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsIgnitedComponent"><code>EntityIsIgnitedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_illager_captain">is_illager_captain<a href="#is_illager_captain" class="hash-link" aria-label="Direct link to is_illager_captain" title="Direct link to is_illager_captain">​</a></h3>
+<blockquote>
+<p><strong>is_illager_captain</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsIllagerCaptainComponent"><code>EntityIsIllagerCaptainComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_saddled">is_saddled<a href="#is_saddled" class="hash-link" aria-label="Direct link to is_saddled" title="Direct link to is_saddled">​</a></h3>
+<blockquote>
+<p><strong>is_saddled</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsSaddledComponent"><code>EntityIsSaddledComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_shaking">is_shaking<a href="#is_shaking" class="hash-link" aria-label="Direct link to is_shaking" title="Direct link to is_shaking">​</a></h3>
+<blockquote>
+<p><strong>is_shaking</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsShakingComponent"><code>EntityIsShakingComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_sheared">is_sheared<a href="#is_sheared" class="hash-link" aria-label="Direct link to is_sheared" title="Direct link to is_sheared">​</a></h3>
+<blockquote>
+<p><strong>is_sheared</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsShearedComponent"><code>EntityIsShearedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_stackable">is_stackable<a href="#is_stackable" class="hash-link" aria-label="Direct link to is_stackable" title="Direct link to is_stackable">​</a></h3>
+<blockquote>
+<p><strong>is_stackable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsStackableComponent"><code>EntityIsStackableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_stunned">is_stunned<a href="#is_stunned" class="hash-link" aria-label="Direct link to is_stunned" title="Direct link to is_stunned">​</a></h3>
+<blockquote>
+<p><strong>is_stunned</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsStunnedComponent"><code>EntityIsStunnedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is_tamed">is_tamed<a href="#is_tamed" class="hash-link" aria-label="Direct link to is_tamed" title="Direct link to is_tamed">​</a></h3>
+<blockquote>
+<p><strong>is_tamed</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsTamedComponent"><code>EntityIsTamedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="item">item<a href="#item" class="hash-link" aria-label="Direct link to item" title="Direct link to item">​</a></h3>
+<blockquote>
+<p><strong>item</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityItemComponent"><code>EntityItemComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="lava_movement">lava_movement<a href="#lava_movement" class="hash-link" aria-label="Direct link to lava_movement" title="Direct link to lava_movement">​</a></h3>
+<blockquote>
+<p><strong>lava_movement</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityLavaMovementComponent"><code>EntityLavaMovementComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="leashable">leashable<a href="#leashable" class="hash-link" aria-label="Direct link to leashable" title="Direct link to leashable">​</a></h3>
+<blockquote>
+<p><strong>leashable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityLeashableComponent"><code>EntityLeashableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mark_variant">mark_variant<a href="#mark_variant" class="hash-link" aria-label="Direct link to mark_variant" title="Direct link to mark_variant">​</a></h3>
+<blockquote>
+<p><strong>mark_variant</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMarkVariantComponent"><code>EntityMarkVariantComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft">minecraft:addrider<a href="#minecraft" class="hash-link" aria-label="Direct link to minecraft:addrider" title="Direct link to minecraft:addrider">​</a></h3>
+<blockquote>
+<p><strong>minecraft:addrider</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityAddRiderComponent"><code>EntityAddRiderComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-1">minecraft:ageable<a href="#minecraft-1" class="hash-link" aria-label="Direct link to minecraft:ageable" title="Direct link to minecraft:ageable">​</a></h3>
+<blockquote>
+<p><strong>minecraft:ageable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityAgeableComponent"><code>EntityAgeableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-2">minecraft:breathable<a href="#minecraft-2" class="hash-link" aria-label="Direct link to minecraft:breathable" title="Direct link to minecraft:breathable">​</a></h3>
+<blockquote>
+<p><strong>minecraft:breathable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityBreathableComponent"><code>EntityBreathableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_climb">minecraft:can_climb<a href="#minecraft_climb" class="hash-link" aria-label="Direct link to minecraft:can_climb" title="Direct link to minecraft:can_climb">​</a></h3>
+<blockquote>
+<p><strong>minecraft:can_climb</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityCanClimbComponent"><code>EntityCanClimbComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_fly">minecraft:can_fly<a href="#minecraft_fly" class="hash-link" aria-label="Direct link to minecraft:can_fly" title="Direct link to minecraft:can_fly">​</a></h3>
+<blockquote>
+<p><strong>minecraft:can_fly</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityCanFlyComponent"><code>EntityCanFlyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_power_jump">minecraft:can_power_jump<a href="#minecraft_power_jump" class="hash-link" aria-label="Direct link to minecraft:can_power_jump" title="Direct link to minecraft:can_power_jump">​</a></h3>
+<blockquote>
+<p><strong>minecraft:can_power_jump</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityCanPowerJumpComponent"><code>EntityCanPowerJumpComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-3">minecraft:color<a href="#minecraft-3" class="hash-link" aria-label="Direct link to minecraft:color" title="Direct link to minecraft:color">​</a></h3>
+<blockquote>
+<p><strong>minecraft:color</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityColorComponent"><code>EntityColorComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-4">minecraft:color2<a href="#minecraft-4" class="hash-link" aria-label="Direct link to minecraft:color2" title="Direct link to minecraft:color2">​</a></h3>
+<blockquote>
+<p><strong>minecraft:color2</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityColor2Component"><code>EntityColor2Component</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-5">minecraft:equippable<a href="#minecraft-5" class="hash-link" aria-label="Direct link to minecraft:equippable" title="Direct link to minecraft:equippable">​</a></h3>
+<blockquote>
+<p><strong>minecraft:equippable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityEquippableComponent"><code>EntityEquippableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_immune">minecraft:fire_immune<a href="#minecraft_immune" class="hash-link" aria-label="Direct link to minecraft:fire_immune" title="Direct link to minecraft:fire_immune">​</a></h3>
+<blockquote>
+<p><strong>minecraft:fire_immune</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityFireImmuneComponent"><code>EntityFireImmuneComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_in_liquid">minecraft:floats_in_liquid<a href="#minecraft_in_liquid" class="hash-link" aria-label="Direct link to minecraft:floats_in_liquid" title="Direct link to minecraft:floats_in_liquid">​</a></h3>
+<blockquote>
+<p><strong>minecraft:floats_in_liquid</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityFloatsInLiquidComponent"><code>EntityFloatsInLiquidComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_speed">minecraft:flying_speed<a href="#minecraft_speed" class="hash-link" aria-label="Direct link to minecraft:flying_speed" title="Direct link to minecraft:flying_speed">​</a></h3>
+<blockquote>
+<p><strong>minecraft:flying_speed</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityFlyingSpeedComponent"><code>EntityFlyingSpeedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_modifier">minecraft:friction_modifier<a href="#minecraft_modifier" class="hash-link" aria-label="Direct link to minecraft:friction_modifier" title="Direct link to minecraft:friction_modifier">​</a></h3>
+<blockquote>
+<p><strong>minecraft:friction_modifier</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityFrictionModifierComponent"><code>EntityFrictionModifierComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_offset">minecraft:ground_offset<a href="#minecraft_offset" class="hash-link" aria-label="Direct link to minecraft:ground_offset" title="Direct link to minecraft:ground_offset">​</a></h3>
+<blockquote>
+<p><strong>minecraft:ground_offset</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityGroundOffsetComponent"><code>EntityGroundOffsetComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-6">minecraft:healable<a href="#minecraft-6" class="hash-link" aria-label="Direct link to minecraft:healable" title="Direct link to minecraft:healable">​</a></h3>
+<blockquote>
+<p><strong>minecraft:healable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityHealableComponent"><code>EntityHealableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-7">minecraft:health<a href="#minecraft-7" class="hash-link" aria-label="Direct link to minecraft:health" title="Direct link to minecraft:health">​</a></h3>
+<blockquote>
+<p><strong>minecraft:health</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityHealthComponent"><code>EntityHealthComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-8">minecraft:inventory<a href="#minecraft-8" class="hash-link" aria-label="Direct link to minecraft:inventory" title="Direct link to minecraft:inventory">​</a></h3>
+<blockquote>
+<p><strong>minecraft:inventory</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityInventoryComponent"><code>EntityInventoryComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_baby">minecraft:is_baby<a href="#minecraft_baby" class="hash-link" aria-label="Direct link to minecraft:is_baby" title="Direct link to minecraft:is_baby">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_baby</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsBabyComponent"><code>EntityIsBabyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_charged">minecraft:is_charged<a href="#minecraft_charged" class="hash-link" aria-label="Direct link to minecraft:is_charged" title="Direct link to minecraft:is_charged">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_charged</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsChargedComponent"><code>EntityIsChargedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_chested">minecraft:is_chested<a href="#minecraft_chested" class="hash-link" aria-label="Direct link to minecraft:is_chested" title="Direct link to minecraft:is_chested">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_chested</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsChestedComponent"><code>EntityIsChestedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_dyeable">minecraft:is_dyeable<a href="#minecraft_dyeable" class="hash-link" aria-label="Direct link to minecraft:is_dyeable" title="Direct link to minecraft:is_dyeable">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_dyeable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsDyeableComponent"><code>EntityIsDyeableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_hidden_when_invisible">minecraft:is_hidden_when_invisible<a href="#minecraft_hidden_when_invisible" class="hash-link" aria-label="Direct link to minecraft:is_hidden_when_invisible" title="Direct link to minecraft:is_hidden_when_invisible">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_hidden_when_invisible</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsHiddenWhenInvisibleComponent"><code>EntityIsHiddenWhenInvisibleComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_ignited">minecraft:is_ignited<a href="#minecraft_ignited" class="hash-link" aria-label="Direct link to minecraft:is_ignited" title="Direct link to minecraft:is_ignited">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_ignited</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsIgnitedComponent"><code>EntityIsIgnitedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_illager_captain">minecraft:is_illager_captain<a href="#minecraft_illager_captain" class="hash-link" aria-label="Direct link to minecraft:is_illager_captain" title="Direct link to minecraft:is_illager_captain">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_illager_captain</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsIllagerCaptainComponent"><code>EntityIsIllagerCaptainComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_saddled">minecraft:is_saddled<a href="#minecraft_saddled" class="hash-link" aria-label="Direct link to minecraft:is_saddled" title="Direct link to minecraft:is_saddled">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_saddled</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsSaddledComponent"><code>EntityIsSaddledComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_shaking">minecraft:is_shaking<a href="#minecraft_shaking" class="hash-link" aria-label="Direct link to minecraft:is_shaking" title="Direct link to minecraft:is_shaking">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_shaking</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsShakingComponent"><code>EntityIsShakingComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_sheared">minecraft:is_sheared<a href="#minecraft_sheared" class="hash-link" aria-label="Direct link to minecraft:is_sheared" title="Direct link to minecraft:is_sheared">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_sheared</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsShearedComponent"><code>EntityIsShearedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_stackable">minecraft:is_stackable<a href="#minecraft_stackable" class="hash-link" aria-label="Direct link to minecraft:is_stackable" title="Direct link to minecraft:is_stackable">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_stackable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsStackableComponent"><code>EntityIsStackableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_stunned">minecraft:is_stunned<a href="#minecraft_stunned" class="hash-link" aria-label="Direct link to minecraft:is_stunned" title="Direct link to minecraft:is_stunned">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_stunned</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsStunnedComponent"><code>EntityIsStunnedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_tamed">minecraft:is_tamed<a href="#minecraft_tamed" class="hash-link" aria-label="Direct link to minecraft:is_tamed" title="Direct link to minecraft:is_tamed">​</a></h3>
+<blockquote>
+<p><strong>minecraft:is_tamed</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityIsTamedComponent"><code>EntityIsTamedComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-9">minecraft:item<a href="#minecraft-9" class="hash-link" aria-label="Direct link to minecraft:item" title="Direct link to minecraft:item">​</a></h3>
+<blockquote>
+<p><strong>minecraft:item</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityItemComponent"><code>EntityItemComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_movement">minecraft:lava_movement<a href="#minecraft_movement" class="hash-link" aria-label="Direct link to minecraft:lava_movement" title="Direct link to minecraft:lava_movement">​</a></h3>
+<blockquote>
+<p><strong>minecraft:lava_movement</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityLavaMovementComponent"><code>EntityLavaMovementComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-10">minecraft:leashable<a href="#minecraft-10" class="hash-link" aria-label="Direct link to minecraft:leashable" title="Direct link to minecraft:leashable">​</a></h3>
+<blockquote>
+<p><strong>minecraft:leashable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityLeashableComponent"><code>EntityLeashableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_variant">minecraft:mark_variant<a href="#minecraft_variant" class="hash-link" aria-label="Direct link to minecraft:mark_variant" title="Direct link to minecraft:mark_variant">​</a></h3>
+<blockquote>
+<p><strong>minecraft:mark_variant</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMarkVariantComponent"><code>EntityMarkVariantComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-11">minecraft:movement<a href="#minecraft-11" class="hash-link" aria-label="Direct link to minecraft:movement" title="Direct link to minecraft:movement">​</a></h3>
+<blockquote>
+<p><strong>minecraft:movement</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementComponent"><code>EntityMovementComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftamphibious">minecraft:movement.amphibious<a href="#minecraftamphibious" class="hash-link" aria-label="Direct link to minecraft:movement.amphibious" title="Direct link to minecraft:movement.amphibious">​</a></h3>
+<blockquote>
+<p><strong>minecraft:movement.amphibious</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementAmphibiousComponent"><code>EntityMovementAmphibiousComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftbasic">minecraft:movement.basic<a href="#minecraftbasic" class="hash-link" aria-label="Direct link to minecraft:movement.basic" title="Direct link to minecraft:movement.basic">​</a></h3>
+<blockquote>
+<p><strong>minecraft:movement.basic</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementBasicComponent"><code>EntityMovementBasicComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftfly">minecraft:movement.fly<a href="#minecraftfly" class="hash-link" aria-label="Direct link to minecraft:movement.fly" title="Direct link to minecraft:movement.fly">​</a></h3>
+<blockquote>
+<p><strong>minecraft:movement.fly</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementFlyComponent"><code>EntityMovementFlyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftgeneric">minecraft:movement.generic<a href="#minecraftgeneric" class="hash-link" aria-label="Direct link to minecraft:movement.generic" title="Direct link to minecraft:movement.generic">​</a></h3>
+<blockquote>
+<p><strong>minecraft:movement.generic</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementGenericComponent"><code>EntityMovementGenericComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftglide">minecraft:movement.glide<a href="#minecraftglide" class="hash-link" aria-label="Direct link to minecraft:movement.glide" title="Direct link to minecraft:movement.glide">​</a></h3>
+<blockquote>
+<p><strong>minecraft:movement.glide</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementGlideComponent"><code>EntityMovementGlideComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecrafthover">minecraft:movement.hover<a href="#minecrafthover" class="hash-link" aria-label="Direct link to minecraft:movement.hover" title="Direct link to minecraft:movement.hover">​</a></h3>
+<blockquote>
+<p><strong>minecraft:movement.hover</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementHoverComponent"><code>EntityMovementHoverComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftjump">minecraft:movement.jump<a href="#minecraftjump" class="hash-link" aria-label="Direct link to minecraft:movement.jump" title="Direct link to minecraft:movement.jump">​</a></h3>
+<blockquote>
+<p><strong>minecraft:movement.jump</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementJumpComponent"><code>EntityMovementJumpComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftskip">minecraft:movement.skip<a href="#minecraftskip" class="hash-link" aria-label="Direct link to minecraft:movement.skip" title="Direct link to minecraft:movement.skip">​</a></h3>
+<blockquote>
+<p><strong>minecraft:movement.skip</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementSkipComponent"><code>EntityMovementSkipComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftsway">minecraft:movement.sway<a href="#minecraftsway" class="hash-link" aria-label="Direct link to minecraft:movement.sway" title="Direct link to minecraft:movement.sway">​</a></h3>
+<blockquote>
+<p><strong>minecraft:movement.sway</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementSwayComponent"><code>EntityMovementSwayComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftclimb">minecraft:navigation.climb<a href="#minecraftclimb" class="hash-link" aria-label="Direct link to minecraft:navigation.climb" title="Direct link to minecraft:navigation.climb">​</a></h3>
+<blockquote>
+<p><strong>minecraft:navigation.climb</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationClimbComponent"><code>EntityNavigationClimbComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftfloat">minecraft:navigation.float<a href="#minecraftfloat" class="hash-link" aria-label="Direct link to minecraft:navigation.float" title="Direct link to minecraft:navigation.float">​</a></h3>
+<blockquote>
+<p><strong>minecraft:navigation.float</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationFloatComponent"><code>EntityNavigationFloatComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftfly-1">minecraft:navigation.fly<a href="#minecraftfly-1" class="hash-link" aria-label="Direct link to minecraft:navigation.fly" title="Direct link to minecraft:navigation.fly">​</a></h3>
+<blockquote>
+<p><strong>minecraft:navigation.fly</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationFlyComponent"><code>EntityNavigationFlyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftgeneric-1">minecraft:navigation.generic<a href="#minecraftgeneric-1" class="hash-link" aria-label="Direct link to minecraft:navigation.generic" title="Direct link to minecraft:navigation.generic">​</a></h3>
+<blockquote>
+<p><strong>minecraft:navigation.generic</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationGenericComponent"><code>EntityNavigationGenericComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecrafthover-1">minecraft:navigation.hover<a href="#minecrafthover-1" class="hash-link" aria-label="Direct link to minecraft:navigation.hover" title="Direct link to minecraft:navigation.hover">​</a></h3>
+<blockquote>
+<p><strong>minecraft:navigation.hover</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationHoverComponent"><code>EntityNavigationHoverComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftwalk">minecraft:navigation.walk<a href="#minecraftwalk" class="hash-link" aria-label="Direct link to minecraft:navigation.walk" title="Direct link to minecraft:navigation.walk">​</a></h3>
+<blockquote>
+<p><strong>minecraft:navigation.walk</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationWalkComponent"><code>EntityNavigationWalkComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-12">minecraft:npc<a href="#minecraft-12" class="hash-link" aria-label="Direct link to minecraft:npc" title="Direct link to minecraft:npc">​</a></h3>
+<blockquote>
+<p><strong>minecraft:npc</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNpcComponent"><code>EntityNpcComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-13">minecraft:onfire<a href="#minecraft-13" class="hash-link" aria-label="Direct link to minecraft:onfire" title="Direct link to minecraft:onfire">​</a></h3>
+<blockquote>
+<p><strong>minecraft:onfire</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityOnFireComponent"><code>EntityOnFireComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-14">minecraft:projectile<a href="#minecraft-14" class="hash-link" aria-label="Direct link to minecraft:projectile" title="Direct link to minecraft:projectile">​</a></h3>
+<blockquote>
+<p><strong>minecraft:projectile</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityProjectileComponent"><code>EntityProjectileComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_through">minecraft:push_through<a href="#minecraft_through" class="hash-link" aria-label="Direct link to minecraft:push_through" title="Direct link to minecraft:push_through">​</a></h3>
+<blockquote>
+<p><strong>minecraft:push_through</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityPushThroughComponent"><code>EntityPushThroughComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-15">minecraft:rideable<a href="#minecraft-15" class="hash-link" aria-label="Direct link to minecraft:rideable" title="Direct link to minecraft:rideable">​</a></h3>
+<blockquote>
+<p><strong>minecraft:rideable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityRideableComponent"><code>EntityRideableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-16">minecraft:riding<a href="#minecraft-16" class="hash-link" aria-label="Direct link to minecraft:riding" title="Direct link to minecraft:riding">​</a></h3>
+<blockquote>
+<p><strong>minecraft:riding</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityRidingComponent"><code>EntityRidingComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-17">minecraft:scale<a href="#minecraft-17" class="hash-link" aria-label="Direct link to minecraft:scale" title="Direct link to minecraft:scale">​</a></h3>
+<blockquote>
+<p><strong>minecraft:scale</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityScaleComponent"><code>EntityScaleComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_id">minecraft:skin_id<a href="#minecraft_id" class="hash-link" aria-label="Direct link to minecraft:skin_id" title="Direct link to minecraft:skin_id">​</a></h3>
+<blockquote>
+<p><strong>minecraft:skin_id</strong>: <a href="/en/docs/sapi/stable/server/classes/EntitySkinIdComponent"><code>EntitySkinIdComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-18">minecraft:strength<a href="#minecraft-18" class="hash-link" aria-label="Direct link to minecraft:strength" title="Direct link to minecraft:strength">​</a></h3>
+<blockquote>
+<p><strong>minecraft:strength</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityStrengthComponent"><code>EntityStrengthComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-19">minecraft:tameable<a href="#minecraft-19" class="hash-link" aria-label="Direct link to minecraft:tameable" title="Direct link to minecraft:tameable">​</a></h3>
+<blockquote>
+<p><strong>minecraft:tameable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityTameableComponent"><code>EntityTameableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-20">minecraft:tamemount<a href="#minecraft-20" class="hash-link" aria-label="Direct link to minecraft:tamemount" title="Direct link to minecraft:tamemount">​</a></h3>
+<blockquote>
+<p><strong>minecraft:tamemount</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityTameMountComponent"><code>EntityTameMountComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_family">minecraft:type_family<a href="#minecraft_family" class="hash-link" aria-label="Direct link to minecraft:type_family" title="Direct link to minecraft:type_family">​</a></h3>
+<blockquote>
+<p><strong>minecraft:type_family</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityTypeFamilyComponent"><code>EntityTypeFamilyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_movement-1">minecraft:underwater_movement<a href="#minecraft_movement-1" class="hash-link" aria-label="Direct link to minecraft:underwater_movement" title="Direct link to minecraft:underwater_movement">​</a></h3>
+<blockquote>
+<p><strong>minecraft:underwater_movement</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityUnderwaterMovementComponent"><code>EntityUnderwaterMovementComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft-21">minecraft:variant<a href="#minecraft-21" class="hash-link" aria-label="Direct link to minecraft:variant" title="Direct link to minecraft:variant">​</a></h3>
+<blockquote>
+<p><strong>minecraft:variant</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityVariantComponent"><code>EntityVariantComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraft_jockey">minecraft:wants_jockey<a href="#minecraft_jockey" class="hash-link" aria-label="Direct link to minecraft:wants_jockey" title="Direct link to minecraft:wants_jockey">​</a></h3>
+<blockquote>
+<p><strong>minecraft:wants_jockey</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityWantsJockeyComponent"><code>EntityWantsJockeyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="movement">movement<a href="#movement" class="hash-link" aria-label="Direct link to movement" title="Direct link to movement">​</a></h3>
+<blockquote>
+<p><strong>movement</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementComponent"><code>EntityMovementComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="movementamphibious">movement.amphibious<a href="#movementamphibious" class="hash-link" aria-label="Direct link to movement.amphibious" title="Direct link to movement.amphibious">​</a></h3>
+<blockquote>
+<p><strong>movement.amphibious</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementAmphibiousComponent"><code>EntityMovementAmphibiousComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="movementbasic">movement.basic<a href="#movementbasic" class="hash-link" aria-label="Direct link to movement.basic" title="Direct link to movement.basic">​</a></h3>
+<blockquote>
+<p><strong>movement.basic</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementBasicComponent"><code>EntityMovementBasicComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="movementfly">movement.fly<a href="#movementfly" class="hash-link" aria-label="Direct link to movement.fly" title="Direct link to movement.fly">​</a></h3>
+<blockquote>
+<p><strong>movement.fly</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementFlyComponent"><code>EntityMovementFlyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="movementgeneric">movement.generic<a href="#movementgeneric" class="hash-link" aria-label="Direct link to movement.generic" title="Direct link to movement.generic">​</a></h3>
+<blockquote>
+<p><strong>movement.generic</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementGenericComponent"><code>EntityMovementGenericComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="movementglide">movement.glide<a href="#movementglide" class="hash-link" aria-label="Direct link to movement.glide" title="Direct link to movement.glide">​</a></h3>
+<blockquote>
+<p><strong>movement.glide</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementGlideComponent"><code>EntityMovementGlideComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="movementhover">movement.hover<a href="#movementhover" class="hash-link" aria-label="Direct link to movement.hover" title="Direct link to movement.hover">​</a></h3>
+<blockquote>
+<p><strong>movement.hover</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementHoverComponent"><code>EntityMovementHoverComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="movementjump">movement.jump<a href="#movementjump" class="hash-link" aria-label="Direct link to movement.jump" title="Direct link to movement.jump">​</a></h3>
+<blockquote>
+<p><strong>movement.jump</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementJumpComponent"><code>EntityMovementJumpComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="movementskip">movement.skip<a href="#movementskip" class="hash-link" aria-label="Direct link to movement.skip" title="Direct link to movement.skip">​</a></h3>
+<blockquote>
+<p><strong>movement.skip</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementSkipComponent"><code>EntityMovementSkipComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="movementsway">movement.sway<a href="#movementsway" class="hash-link" aria-label="Direct link to movement.sway" title="Direct link to movement.sway">​</a></h3>
+<blockquote>
+<p><strong>movement.sway</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityMovementSwayComponent"><code>EntityMovementSwayComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="navigationclimb">navigation.climb<a href="#navigationclimb" class="hash-link" aria-label="Direct link to navigation.climb" title="Direct link to navigation.climb">​</a></h3>
+<blockquote>
+<p><strong>navigation.climb</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationClimbComponent"><code>EntityNavigationClimbComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="navigationfloat">navigation.float<a href="#navigationfloat" class="hash-link" aria-label="Direct link to navigation.float" title="Direct link to navigation.float">​</a></h3>
+<blockquote>
+<p><strong>navigation.float</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationFloatComponent"><code>EntityNavigationFloatComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="navigationfly">navigation.fly<a href="#navigationfly" class="hash-link" aria-label="Direct link to navigation.fly" title="Direct link to navigation.fly">​</a></h3>
+<blockquote>
+<p><strong>navigation.fly</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationFlyComponent"><code>EntityNavigationFlyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="navigationgeneric">navigation.generic<a href="#navigationgeneric" class="hash-link" aria-label="Direct link to navigation.generic" title="Direct link to navigation.generic">​</a></h3>
+<blockquote>
+<p><strong>navigation.generic</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationGenericComponent"><code>EntityNavigationGenericComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="navigationhover">navigation.hover<a href="#navigationhover" class="hash-link" aria-label="Direct link to navigation.hover" title="Direct link to navigation.hover">​</a></h3>
+<blockquote>
+<p><strong>navigation.hover</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationHoverComponent"><code>EntityNavigationHoverComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="navigationwalk">navigation.walk<a href="#navigationwalk" class="hash-link" aria-label="Direct link to navigation.walk" title="Direct link to navigation.walk">​</a></h3>
+<blockquote>
+<p><strong>navigation.walk</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNavigationWalkComponent"><code>EntityNavigationWalkComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="npc">npc<a href="#npc" class="hash-link" aria-label="Direct link to npc" title="Direct link to npc">​</a></h3>
+<blockquote>
+<p><strong>npc</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityNpcComponent"><code>EntityNpcComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="onfire">onfire<a href="#onfire" class="hash-link" aria-label="Direct link to onfire" title="Direct link to onfire">​</a></h3>
+<blockquote>
+<p><strong>onfire</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityOnFireComponent"><code>EntityOnFireComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="projectile">projectile<a href="#projectile" class="hash-link" aria-label="Direct link to projectile" title="Direct link to projectile">​</a></h3>
+<blockquote>
+<p><strong>projectile</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityProjectileComponent"><code>EntityProjectileComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="push_through">push_through<a href="#push_through" class="hash-link" aria-label="Direct link to push_through" title="Direct link to push_through">​</a></h3>
+<blockquote>
+<p><strong>push_through</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityPushThroughComponent"><code>EntityPushThroughComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="rideable">rideable<a href="#rideable" class="hash-link" aria-label="Direct link to rideable" title="Direct link to rideable">​</a></h3>
+<blockquote>
+<p><strong>rideable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityRideableComponent"><code>EntityRideableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="riding">riding<a href="#riding" class="hash-link" aria-label="Direct link to riding" title="Direct link to riding">​</a></h3>
+<blockquote>
+<p><strong>riding</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityRidingComponent"><code>EntityRidingComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="scale">scale<a href="#scale" class="hash-link" aria-label="Direct link to scale" title="Direct link to scale">​</a></h3>
+<blockquote>
+<p><strong>scale</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityScaleComponent"><code>EntityScaleComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="skin_id">skin_id<a href="#skin_id" class="hash-link" aria-label="Direct link to skin_id" title="Direct link to skin_id">​</a></h3>
+<blockquote>
+<p><strong>skin_id</strong>: <a href="/en/docs/sapi/stable/server/classes/EntitySkinIdComponent"><code>EntitySkinIdComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="strength">strength<a href="#strength" class="hash-link" aria-label="Direct link to strength" title="Direct link to strength">​</a></h3>
+<blockquote>
+<p><strong>strength</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityStrengthComponent"><code>EntityStrengthComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tameable">tameable<a href="#tameable" class="hash-link" aria-label="Direct link to tameable" title="Direct link to tameable">​</a></h3>
+<blockquote>
+<p><strong>tameable</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityTameableComponent"><code>EntityTameableComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tamemount">tamemount<a href="#tamemount" class="hash-link" aria-label="Direct link to tamemount" title="Direct link to tamemount">​</a></h3>
+<blockquote>
+<p><strong>tamemount</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityTameMountComponent"><code>EntityTameMountComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="type_family">type_family<a href="#type_family" class="hash-link" aria-label="Direct link to type_family" title="Direct link to type_family">​</a></h3>
+<blockquote>
+<p><strong>type_family</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityTypeFamilyComponent"><code>EntityTypeFamilyComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="underwater_movement">underwater_movement<a href="#underwater_movement" class="hash-link" aria-label="Direct link to underwater_movement" title="Direct link to underwater_movement">​</a></h3>
+<blockquote>
+<p><strong>underwater_movement</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityUnderwaterMovementComponent"><code>EntityUnderwaterMovementComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="variant">variant<a href="#variant" class="hash-link" aria-label="Direct link to variant" title="Direct link to variant">​</a></h3>
+<blockquote>
+<p><strong>variant</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityVariantComponent"><code>EntityVariantComponent</code></a></p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="wants_jockey">wants_jockey<a href="#wants_jockey" class="hash-link" aria-label="Direct link to wants_jockey" title="Direct link to wants_jockey">​</a></h3>
+<blockquote>
+<p><strong>wants_jockey</strong>: <a href="/en/docs/sapi/stable/server/classes/EntityWantsJockeyComponent"><code>EntityWantsJockeyComponent</code></a></p>
+</blockquote></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/AbbottMc/BedrockTechWeekly/tree/master/docs/sapi/stable/server/type-aliases/EntityComponentTypeMap.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/docs/sapi/stable/server/type-aliases/BlockComponentTypeMap"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">BlockComponentTypeMap</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/docs/sapi/stable/server/type-aliases/ItemComponentTypeMap"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">ItemComponentTypeMap</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#type-declaration" class="table-of-contents__link toc-highlight">Type declaration</a><ul><li><a href="#addrider" class="table-of-contents__link toc-highlight">addrider</a></li><li><a href="#ageable" class="table-of-contents__link toc-highlight">ageable</a></li><li><a href="#breathable" class="table-of-contents__link toc-highlight">breathable</a></li><li><a href="#can_climb" class="table-of-contents__link toc-highlight">can_climb</a></li><li><a href="#can_fly" class="table-of-contents__link toc-highlight">can_fly</a></li><li><a href="#can_power_jump" class="table-of-contents__link toc-highlight">can_power_jump</a></li><li><a href="#color" class="table-of-contents__link toc-highlight">color</a></li><li><a href="#color2" class="table-of-contents__link toc-highlight">color2</a></li><li><a href="#equippable" class="table-of-contents__link toc-highlight">equippable</a></li><li><a href="#fire_immune" class="table-of-contents__link toc-highlight">fire_immune</a></li><li><a href="#floats_in_liquid" class="table-of-contents__link toc-highlight">floats_in_liquid</a></li><li><a href="#flying_speed" class="table-of-contents__link toc-highlight">flying_speed</a></li><li><a href="#friction_modifier" class="table-of-contents__link toc-highlight">friction_modifier</a></li><li><a href="#ground_offset" class="table-of-contents__link toc-highlight">ground_offset</a></li><li><a href="#healable" class="table-of-contents__link toc-highlight">healable</a></li><li><a href="#health" class="table-of-contents__link toc-highlight">health</a></li><li><a href="#inventory" class="table-of-contents__link toc-highlight">inventory</a></li><li><a href="#is_baby" class="table-of-contents__link toc-highlight">is_baby</a></li><li><a href="#is_charged" class="table-of-contents__link toc-highlight">is_charged</a></li><li><a href="#is_chested" class="table-of-contents__link toc-highlight">is_chested</a></li><li><a href="#is_dyeable" class="table-of-contents__link toc-highlight">is_dyeable</a></li><li><a href="#is_hidden_when_invisible" class="table-of-contents__link toc-highlight">is_hidden_when_invisible</a></li><li><a href="#is_ignited" class="table-of-contents__link toc-highlight">is_ignited</a></li><li><a href="#is_illager_captain" class="table-of-contents__link toc-highlight">is_illager_captain</a></li><li><a href="#is_saddled" class="table-of-contents__link toc-highlight">is_saddled</a></li><li><a href="#is_shaking" class="table-of-contents__link toc-highlight">is_shaking</a></li><li><a href="#is_sheared" class="table-of-contents__link toc-highlight">is_sheared</a></li><li><a href="#is_stackable" class="table-of-contents__link toc-highlight">is_stackable</a></li><li><a href="#is_stunned" class="table-of-contents__link toc-highlight">is_stunned</a></li><li><a href="#is_tamed" class="table-of-contents__link toc-highlight">is_tamed</a></li><li><a href="#item" class="table-of-contents__link toc-highlight">item</a></li><li><a href="#lava_movement" class="table-of-contents__link toc-highlight">lava_movement</a></li><li><a href="#leashable" class="table-of-contents__link toc-highlight">leashable</a></li><li><a href="#mark_variant" class="table-of-contents__link toc-highlight">mark_variant</a></li><li><a href="#minecraft" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-1" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-2" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft_climb" class="table-of-contents__link toc-highlight">minecraft_climb</a></li><li><a href="#minecraft_fly" class="table-of-contents__link toc-highlight">minecraft_fly</a></li><li><a href="#minecraft_power_jump" class="table-of-contents__link toc-highlight">minecraft_power_jump</a></li><li><a href="#minecraft-3" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-4" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-5" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft_immune" class="table-of-contents__link toc-highlight">minecraft_immune</a></li><li><a href="#minecraft_in_liquid" class="table-of-contents__link toc-highlight">minecraft_in_liquid</a></li><li><a href="#minecraft_speed" class="table-of-contents__link toc-highlight">minecraft_speed</a></li><li><a href="#minecraft_modifier" class="table-of-contents__link toc-highlight">minecraft_modifier</a></li><li><a href="#minecraft_offset" class="table-of-contents__link toc-highlight">minecraft_offset</a></li><li><a href="#minecraft-6" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-7" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-8" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft_baby" class="table-of-contents__link toc-highlight">minecraft_baby</a></li><li><a href="#minecraft_charged" class="table-of-contents__link toc-highlight">minecraft_charged</a></li><li><a href="#minecraft_chested" class="table-of-contents__link toc-highlight">minecraft_chested</a></li><li><a href="#minecraft_dyeable" class="table-of-contents__link toc-highlight">minecraft_dyeable</a></li><li><a href="#minecraft_hidden_when_invisible" class="table-of-contents__link toc-highlight">minecraft_hidden_when_invisible</a></li><li><a href="#minecraft_ignited" class="table-of-contents__link toc-highlight">minecraft_ignited</a></li><li><a href="#minecraft_illager_captain" class="table-of-contents__link toc-highlight">minecraft_illager_captain</a></li><li><a href="#minecraft_saddled" class="table-of-contents__link toc-highlight">minecraft_saddled</a></li><li><a href="#minecraft_shaking" class="table-of-contents__link toc-highlight">minecraft_shaking</a></li><li><a href="#minecraft_sheared" class="table-of-contents__link toc-highlight">minecraft_sheared</a></li><li><a href="#minecraft_stackable" class="table-of-contents__link toc-highlight">minecraft_stackable</a></li><li><a href="#minecraft_stunned" class="table-of-contents__link toc-highlight">minecraft_stunned</a></li><li><a href="#minecraft_tamed" class="table-of-contents__link toc-highlight">minecraft_tamed</a></li><li><a href="#minecraft-9" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft_movement" class="table-of-contents__link toc-highlight">minecraft_movement</a></li><li><a href="#minecraft-10" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft_variant" class="table-of-contents__link toc-highlight">minecraft_variant</a></li><li><a href="#minecraft-11" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraftamphibious" class="table-of-contents__link toc-highlight">minecraft.amphibious</a></li><li><a href="#minecraftbasic" class="table-of-contents__link toc-highlight">minecraft.basic</a></li><li><a href="#minecraftfly" class="table-of-contents__link toc-highlight">minecraft.fly</a></li><li><a href="#minecraftgeneric" class="table-of-contents__link toc-highlight">minecraft.generic</a></li><li><a href="#minecraftglide" class="table-of-contents__link toc-highlight">minecraft.glide</a></li><li><a href="#minecrafthover" class="table-of-contents__link toc-highlight">minecraft.hover</a></li><li><a href="#minecraftjump" class="table-of-contents__link toc-highlight">minecraft.jump</a></li><li><a href="#minecraftskip" class="table-of-contents__link toc-highlight">minecraft.skip</a></li><li><a href="#minecraftsway" class="table-of-contents__link toc-highlight">minecraft.sway</a></li><li><a href="#minecraftclimb" class="table-of-contents__link toc-highlight">minecraft.climb</a></li><li><a href="#minecraftfloat" class="table-of-contents__link toc-highlight">minecraft.float</a></li><li><a href="#minecraftfly-1" class="table-of-contents__link toc-highlight">minecraft.fly</a></li><li><a href="#minecraftgeneric-1" class="table-of-contents__link toc-highlight">minecraft.generic</a></li><li><a href="#minecrafthover-1" class="table-of-contents__link toc-highlight">minecraft.hover</a></li><li><a href="#minecraftwalk" class="table-of-contents__link toc-highlight">minecraft.walk</a></li><li><a href="#minecraft-12" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-13" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-14" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft_through" class="table-of-contents__link toc-highlight">minecraft_through</a></li><li><a href="#minecraft-15" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-16" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-17" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft_id" class="table-of-contents__link toc-highlight">minecraft_id</a></li><li><a href="#minecraft-18" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-19" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft-20" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft_family" class="table-of-contents__link toc-highlight">minecraft_family</a></li><li><a href="#minecraft_movement-1" class="table-of-contents__link toc-highlight">minecraft_movement</a></li><li><a href="#minecraft-21" class="table-of-contents__link toc-highlight">minecraft</a></li><li><a href="#minecraft_jockey" class="table-of-contents__link toc-highlight">minecraft_jockey</a></li><li><a href="#movement" class="table-of-contents__link toc-highlight">movement</a></li><li><a href="#movementamphibious" class="table-of-contents__link toc-highlight">movement.amphibious</a></li><li><a href="#movementbasic" class="table-of-contents__link toc-highlight">movement.basic</a></li><li><a href="#movementfly" class="table-of-contents__link toc-highlight">movement.fly</a></li><li><a href="#movementgeneric" class="table-of-contents__link toc-highlight">movement.generic</a></li><li><a href="#movementglide" class="table-of-contents__link toc-highlight">movement.glide</a></li><li><a href="#movementhover" class="table-of-contents__link toc-highlight">movement.hover</a></li><li><a href="#movementjump" class="table-of-contents__link toc-highlight">movement.jump</a></li><li><a href="#movementskip" class="table-of-contents__link toc-highlight">movement.skip</a></li><li><a href="#movementsway" class="table-of-contents__link toc-highlight">movement.sway</a></li><li><a href="#navigationclimb" class="table-of-contents__link toc-highlight">navigation.climb</a></li><li><a href="#navigationfloat" class="table-of-contents__link toc-highlight">navigation.float</a></li><li><a href="#navigationfly" class="table-of-contents__link toc-highlight">navigation.fly</a></li><li><a href="#navigationgeneric" class="table-of-contents__link toc-highlight">navigation.generic</a></li><li><a href="#navigationhover" class="table-of-contents__link toc-highlight">navigation.hover</a></li><li><a href="#navigationwalk" class="table-of-contents__link toc-highlight">navigation.walk</a></li><li><a href="#npc" class="table-of-contents__link toc-highlight">npc</a></li><li><a href="#onfire" class="table-of-contents__link toc-highlight">onfire</a></li><li><a href="#projectile" class="table-of-contents__link toc-highlight">projectile</a></li><li><a href="#push_through" class="table-of-contents__link toc-highlight">push_through</a></li><li><a href="#rideable" class="table-of-contents__link toc-highlight">rideable</a></li><li><a href="#riding" class="table-of-contents__link toc-highlight">riding</a></li><li><a href="#scale" class="table-of-contents__link toc-highlight">scale</a></li><li><a href="#skin_id" class="table-of-contents__link toc-highlight">skin_id</a></li><li><a href="#strength" class="table-of-contents__link toc-highlight">strength</a></li><li><a href="#tameable" class="table-of-contents__link toc-highlight">tameable</a></li><li><a href="#tamemount" class="table-of-contents__link toc-highlight">tamemount</a></li><li><a href="#type_family" class="table-of-contents__link toc-highlight">type_family</a></li><li><a href="#underwater_movement" class="table-of-contents__link toc-highlight">underwater_movement</a></li><li><a href="#variant" class="table-of-contents__link toc-highlight">variant</a></li><li><a href="#wants_jockey" class="table-of-contents__link toc-highlight">wants_jockey</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Journal</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/en/">Home</a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/en/blog">Weekly</a></li><li class="footer__item"><a href="https://github.com/AbbottMc/BedrockTechWeekly" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub Repository<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Bedrock Tech Weekly by QianShanyao, Inc. Built with Docusaurus.<br>"Minecraft" is a trademark of Mojang AB. bedrocktechweekly.top is not affiliated in any way with Microsoft or Mojang AB.</div></div></div></footer></div>
+</body>
+</html>
