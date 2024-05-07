@@ -56,19 +56,19 @@ const config = {
     ...minecraftTypeNames.map((typeName) => {
       return [
         'docusaurus-plugin-typedoc',
-        /** @type {import("docusaurus-plugin-typedoc/dist/types").PluginOptions} */
+        /**
+         * @type {import("docusaurus-plugin-typedoc/dist/models").PluginOptions}
+         **/
         {
           id: `preview-${typeName}`,
           entryPoints: [`./static/typedoc/preview/${typeName}.d.ts`],
           tsconfig: './static/typedoc/preview/tsconfig.json',
           // exclude:['/node_modules/'],
-          out: `sapi/preview/${typeName}`,
+          out: `./docs/sapi/preview/${typeName}`,
           skipErrorChecking: true,
+          parametersFormat: 'table',
           sidebar: {
-            categoryLabel: 'sapiPreviewSidebar',
-            collapsed: false,
-            position: 0,
-            fullNames: true,
+            pretty: true,
           }
         }
       ];
@@ -82,8 +82,9 @@ const config = {
           entryPoints: [`./static/typedoc/stable/${typeName}.d.ts`],
           tsconfig: './static/typedoc/stable/tsconfig.json',
           // exclude:['/node_modules/'],
-          out: `sapi/stable/${typeName}`,
+          out: `./docs/sapi/stable/${typeName}`,
           skipErrorChecking: true,
+          parametersFormat: 'table',
           sidebar: {
             categoryLabel: 'sapiStableSidebar',
             collapsed: false,

@@ -44,18 +44,18 @@ const genSapiModuleSidebar = function (path, moduleName, moduleParseResultItemNa
   return ret;
 }
 
-// const importSapiModuleSidebar = (path, moduleName) => {
-//   return {
-//     type: 'category',
-//     label: '@minecraft/' + moduleName,
-//     items: require(`./docs/sapi/en/${path}/${moduleName}/typedoc-sidebar.cjs`)
-//   }
-// };
+const importSapiModuleSidebar = (path, moduleName) => {
+  return {
+    type: 'category',
+    label: '@minecraft/' + moduleName,
+    items: require(`./docs/sapi/${path}/${moduleName}/typedoc-sidebar.cjs`)
+  }
+};
 const sapiModuleSidebarGenerator = function (isStable) {
   const path = isStable ? 'stable' : 'preview';
   const ret = [];
   for (const moduleNamesKey in moduleNames) {
-    ret.push(genSapiModuleSidebar(path, moduleNamesKey, moduleNames[moduleNamesKey]));
+    ret.push(importSapiModuleSidebar(path, moduleNamesKey));
   }
   return ret;
 };
