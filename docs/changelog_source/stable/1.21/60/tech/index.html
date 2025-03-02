@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-changelog_source/stable/1.21/60/tech" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.3.2">
+<title data-rh="true">tech | 基岩技术文刊 | Bedrock Tech Journal</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content=" https://abbottmc.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content=" https://abbottmc.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content=" https://abbottmc.github.io/docs/changelog_source/stable/1.21/60/tech"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="tech | 基岩技术文刊 | Bedrock Tech Journal"><meta data-rh="true" name="description" content="Add-Ons and Script Engine"><meta data-rh="true" property="og:description" content="Add-Ons and Script Engine"><link data-rh="true" rel="icon" href="/img/logo.png"><link data-rh="true" rel="canonical" href="https://abbottmc.github.io/docs/changelog_source/stable/1.21/60/tech"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/docs/changelog_source/stable/1.21/60/tech" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/en/docs/changelog_source/stable/1.21/60/tech" hreflang="en"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/docs/changelog_source/stable/1.21/60/tech" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="基岩技术文刊 | Bedrock Tech Journal RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="基岩技术文刊 | Bedrock Tech Journal Atom Feed"><link rel="stylesheet" href="/assets/css/styles.22b3443e.css">
+<script src="/assets/js/runtime~main.ede8168d.js" defer="defer"></script>
+<script src="/assets/js/main.a64872d1.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><div class="announcementBar_mb4j" style="background-color:#fafbfc;color:#091E42" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">欢迎来到基岩技术文刊站！这个站点仍在完善当中，欢迎您的<a href="https://github.com/AbbottMc/BedrockTechWeekly/issues">反馈</a>！</div><button type="button" aria-label="关闭" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="基岩技术文刊Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="基岩技术文刊Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">基岩技术文刊</b></a><a class="navbar__item navbar__link" href="/docs/official_changelog/">官方日志</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">脚本文档</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/sapi/stable">稳定版 [1.20.8x]</a></li><li><a class="dropdown__link" href="/docs/sapi/preview">预览版 [1.21.0.24]</a></li></ul></div></div><div class="navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/docs/changelog">站点日志</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>简体中文</a><ul class="dropdown__menu"><li><a href="/docs/changelog_source/stable/1.21/60/tech" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-Hans">简体中文</a></li><li><a href="/en/docs/changelog_source/stable/1.21/60/tech" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li></ul></div><a href="https://github.com/AbbottMc/BedrockTechWeekly" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="切换浅色/暗黑模式（当前为暗黑模式）" aria-label="切换浅色/暗黑模式（当前为暗黑模式）" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>tech</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="add-ons-and-script-engine">Add-Ons and Script Engine<a href="#add-ons-and-script-engine" class="hash-link" aria-label="Add-Ons and Script Engine的直接链接" title="Add-Ons and Script Engine的直接链接">​</a></h2>
+<ul>
+<li>Added the ability to define the order for the items for the creative inventory &amp; recipe book, called the crafting item catalog, for new items added by packs. New items can either merge with existing groups, create new groups with your own item for the icon, or just become added as loose items without a group. This catalog should be saved as <code>item_catalog/crafting_item_catalog.json</code> in your behavior pack</li>
+</ul>
+<p>Example:</p>
+<p>{
+&quot;format_version&quot;: &quot;1.21.60&quot;,
+&quot;minecraft<!-- -->:crafting_items_catalog<!-- -->&quot;: {
+&quot;categories&quot;: [
+{
+// Valid values are construction, equipment, nature, and items
+&quot;category_name&quot;: &quot;construction&quot;,
+&quot;groups&quot;: [
+{
+// This will add the items to the end of the
+// existing planks group
+&quot;group_identifier&quot;: {
+&quot;icon&quot;: &quot;minecraft<!-- -->:oak_planks<!-- -->&quot;,
+&quot;name&quot;: &quot;minecraft<!-- -->:itemGroup<!-- -->.name.planks&quot;
+},
+&quot;items&quot;: [
+&quot;mynamespace<!-- -->:my_planks1<!-- -->&quot;,
+&quot;mynamespace<!-- -->:my_planks2<!-- -->&quot;
+]
+},
+{
+// This will create a new group
+&quot;group_identifier&quot;: {
+&quot;icon&quot;: &quot;mynamespace<!-- -->:my_item<!-- -->&quot;,
+// This is the name of your group which doubles as
+// the localization string. The namespace is required
+&quot;name&quot;: &quot;mynamespace<!-- -->:my_group_name<!-- -->&quot;
+},
+&quot;items&quot;: [
+&quot;mynamespace<!-- -->:my_item<!-- -->&quot;
+]
+},
+{
+// This adds items without being part of a
+// group as loose items
+&quot;items&quot;: [
+&quot;mynamespace<!-- -->:my_loose_item<!-- -->&quot;
+]
+}
+]
+}
+]
+}
+}</p>
+<ul>
+<li>
+<p>Item and Block json files now require a namespace for group names in the &quot;menu_category&quot; object.</p>
+</li>
+<li>
+<p>Added new Creator toggle setting `Show Content Log GUI On Error During Load.</p>
+<ul>
+<li>This setting with make the Content Log GUI automatically open and display after loading into a world and there was either warnings or errors found during the loading process.</li>
+<li>This setting is disabled in the Editor.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="script-api"><strong>Script API</strong><a href="#script-api" class="hash-link" aria-label="script-api的直接链接" title="script-api的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Updated numeric JavaScript enums now properly handle and support reverse value mappings.</p>
+</li>
+<li>
+<p>Fixed a bug where calling <code>Player.hideAllExcept</code> could crash the server.</p>
+</li>
+<li>
+<p>InputPermissions</p>
+<ul>
+<li>Moved the following <code>InputPermissionCategory</code> enum values to 1.17.0: <code>LateralMovement</code>, <code>Sneak</code>, <code>Jump</code>, <code>Mount</code>, <code>Dismount</code>, <code>MoveForward</code>, <code>MoveBackward</code>, <code>MoveLeft</code>, and <code>MoveRight</code></li>
+<li>Moved the following methods on <code>PlayerInputPermissions</code> to 1.17.0:
+<ul>
+<li><code>isPermissionCategoryEnabled(permissionCategory: InputPermissionCategory): boolean;</code></li>
+<li><code>setPermissionCategory(permissionCategory: InputPermissionCategory, isEnabled: boolean): void;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Removed the &quot;compostingChance&quot; available from the ItemStack API. The composting chance for Vanilla items can now be accessed via the singular CompostableItemComponent-&gt;compostingChance in the Item Component API.</p>
+</li>
+<li>
+<p>Fixed edge cases where <code>ModalFormData</code> scrolls to the bottom when UI is opened.</p>
+</li>
+<li>
+<p>Added script bindings to <code>beta</code> for the experimental Aim-Assist feature.</p>
+<ul>
+<li><code>class AimAssistCategory</code></li>
+<li><code>class AimAssistCategorySettings</code></li>
+<li><code>class AimAssistPreset</code></li>
+<li><code>class AimAssistPresetSettings</code></li>
+<li><code>class AimAssistRegistry</code></li>
+<li><code>enum AimAssistTargetMode</code></li>
+<li><code>interface PlayerAimAssistSettings</code></li>
+<li><code>class PlayerAimAssist</code></li>
+<li>method Player.getAimAssist to modify a player&#x27;s aim-assist settings</li>
+<li>method World.getAimAssist to add aim-assist presets and categories.</li>
+</ul>
+</li>
+<li>
+<p>Added enum <code>InvalidArgumentErrorType</code> that adds extra context to the type of invalid argument error.</p>
+</li>
+<li>
+<p>Added property <code>type</code> to <code>InvalidArgumentError</code> for checking the type of argument error.</p>
+</li>
+<li>
+<p>Moved the following methods from <code>beta</code> to <code>1.17.0</code>:</p>
+<ul>
+<li><code>Block::isWaterlogged</code></li>
+<li><code>Block::setWaterlogged</code></li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="biomes">Biomes<a href="#biomes" class="hash-link" aria-label="Biomes的直接链接" title="Biomes的直接链接">​</a></h2>
+<ul>
+<li>Add creature spawn probability JSON component for spawning related experiments</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="blocks">Blocks<a href="#blocks" class="hash-link" aria-label="Blocks的直接链接" title="Blocks的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Removed &quot;Upcoming Creator Feature&quot; toggle requirement for <code>minecraft:item_visual</code> component.</p>
+</li>
+<li>
+<p>Removed <strong>UpcomingCreatorFeatures</strong> experiment requirement for <code>&quot;ambient_occlusion&quot;</code> field to be float type</p>
+</li>
+<li>
+<p>Re-added new field <code>&quot;ambient_occlusion_exponent&quot;</code> to <strong>blocks.json</strong> file schema in resource packs, replaces broken <code>&quot;brightness_gamma&quot;</code> field. (<a href="https://bugs.mojang.com/browse/MCPE-188216" target="_blank" rel="noopener noreferrer">MCPE-188216</a> , <a href="https://bugs.mojang.com/browse/MCPE-188221" target="_blank" rel="noopener noreferrer">MCPE-188221</a>)</p>
+</li>
+<li>
+<p>Fixed issue where legacy data driven block didn&#x27;t apply the render layer from the material instances component</p>
+</li>
+<li>
+<p>Fix spurious content log error: &#x27;trying to override the Geometry component with blocks.json settings for a custom block&#x27;</p>
+</li>
+<li>
+<p>Door blocks use state <code>minecraft:cardinal_direction</code> instead of <code>minecraft:direction</code>. Uses string values (&quot;north, south, east, west&quot;)</p>
+</li>
+<li>
+<p>Removed content log error: &#x27;Block needs both a geometry and material instances component&#x27;</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cameras">Cameras<a href="#cameras" class="hash-link" aria-label="Cameras的直接链接" title="Cameras的直接链接">​</a></h2>
+<ul>
+<li>Focus Target Camera is released. Its associated experimental toggle is removed (&quot;Creator Cameras: Focus Target Camera&quot;)</li>
+<li>Focus Target Camera has vertical_rotation_limits of [0.0, 180.0] by default to reflect world space changes</li>
+<li>Focus Target camera now stops targeting when either `clear` from the camera command is used, or when the target is over 64 chunks away from the camera</li>
+<li>Focus Target Camera now displays a command output error when trying to target an entity when not on a free camera or custom camera that inherits from free camera.</li>
+<li>Focus Target Camera `vertical_rotation_limits` are now in world space. 0 degrees is straight down, 90 degrees is horizontal and 180 degrees is straight up. The limits for the values are [0, 180] inclusive.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="commands">Commands<a href="#commands" class="hash-link" aria-label="Commands的直接链接" title="Commands的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Fixed a bug that would cause messages to report double the items that match the criteria when using the clear command with a max count of 0</p>
+</li>
+<li>
+<p>the &quot;mine&quot; overload of the /loot command has been moved to outside of Upcoming Creator Features experiments:</p>
+</li>
+<li>
+<p>The /kick command now allows use of target selectors on Realms.</p>
+</li>
+<li>
+<p><code>wsserver</code> command disabled by default. Enable in General Settings.</p>
+</li>
+<li>
+<p>Websocket encryption default enabled for all platforms</p>
+</li>
+<li>
+<p>Added support for input glyph replacement for <code>/me</code> and <code>/tell</code> commands. For example, using input string &quot;:_input_key.jump:&quot; will be replaced with &quot;JUMP&quot; when using keyboard, or an emoji in case of using a gamepad.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="components">Components<a href="#components" class="hash-link" aria-label="Components的直接链接" title="Components的直接链接">​</a></h2>
+<ul>
+<li>
+<p>The Strider now makes use of the minecraft<!-- -->:movement<!-- -->_sound_distance_offset component for its movement sound distance offset</p>
+</li>
+<li>
+<p>Added the &quot;minecraft<!-- -->:renders<!-- -->_when_invisible&quot; component, which enables entities to render even when invisible</p>
+<ul>
+<li>Appropriate rendering behavior can then be specified in the corresponding &quot;minecraft<!-- -->:client<!-- -->_entity&quot;</li>
+</ul>
+</li>
+<li>
+<p>Moved the <code>minecraft:liquid_detection</code> component out of the Upcoming Creator Features experiment for format_versions 1.21.60 and above</p>
+</li>
+<li>
+<p>Expand the <code>minecraft:breedable</code> component to allow inheriting properties to child entities</p>
+<ul>
+<li>Adds the new &quot;property_inheritance&quot; field which takes property name keyed objects</li>
+<li>The objects in property_inheritance can contain a &quot;mutation_chance&quot; which give the chance it should not inherit from either parent</li>
+<li>They can also contain the &quot;mutation_values&quot; array of values to select from if mutating and the component has random mutation set</li>
+</ul>
+</li>
+<li>
+<p>Added &quot;min_looked_at_duration&quot; field to &quot;minecraft<!-- -->:looked<!-- -->_at&quot; component to specify how long a stare has to be maintained before the target and cooldown logic is set</p>
+</li>
+<li>
+<p>The Strider now makes use of the minecraft<!-- -->:movement<!-- -->_sound_distance_offset component for its movement sound distance offset</p>
+</li>
+<li>
+<p>Two values on the minecraft<!-- -->:storage<!-- -->_item component have been split off into separate components:</p>
+<ul>
+<li>max_weight_limit has been moved to the new minecraft<!-- -->:storage<!-- -->_weight_limit component</li>
+<li>weight_in_storage_item has been moved to the new minecraft<!-- -->:storage<!-- -->_weight_modifier component</li>
+</ul>
+</li>
+<li>
+<p>Moved the &quot;minecraft<!-- -->:compostable<!-- -->&quot; item component out of experimental and to Release. Moved the related scripting apis out of Beta to Release</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="collisions">Collisions<a href="#collisions" class="hash-link" aria-label="Collisions的直接链接" title="Collisions的直接链接">​</a></h2>
+<ul>
+<li>Entities with no collision box but with the <code>minecraft:custom_hit_test</code> component are no longer sometimes unable to be interacted with</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="dedicated-server">Dedicated Server<a href="#dedicated-server" class="hash-link" aria-label="Dedicated Server的直接链接" title="Dedicated Server的直接链接">​</a></h2>
+<ul>
+<li>The movement mode authority chosen settings will now be displayed in the command window on dedicated server launch.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="editor">Editor<a href="#editor" class="hash-link" aria-label="Editor的直接链接" title="Editor的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Added Roughen brush to terrain tool</p>
+</li>
+<li>
+<p>Added a new Workbench tool which allows for quickly changing block states for blocks with modifiable properties (doors, fences, etc)</p>
+</li>
+<li>
+<p>Added new Vertical Fly Speed ability.</p>
+</li>
+<li>
+<p>Added a night vision setting to the view settings pane. This enables night vision within the editor for the user and is enabled by default.</p>
+</li>
+<li>
+<p>Added <code>ContinuousAction</code> to supported key binding actions that simulate key repeats at set tick intervals</p>
+</li>
+<li>
+<p>Added &#x27;Test World&#x27;, &#x27;Export&#x27;, and &#x27;Settings&#x27; to the ActionBar</p>
+</li>
+<li>
+<p>Added missing image for &#x27;Navigation Panel&#x27; in the ActionBar</p>
+</li>
+<li>
+<p>Added color picker hue gradient selector works for monochromatic values</p>
+</li>
+<li>
+<p>Added right click on action bar items to toggle selector menus</p>
+</li>
+<li>
+<p>Added data-driven rendering to editor block images</p>
+<ul>
+<li>Added block name aliasing for signs</li>
+<li>Added support for namespace block names for <code>block://</code> protocol</li>
+</ul>
+</li>
+<li>
+<p>Added a new <code>BlockTable</code> UI element to Property Pane API.</p>
+</li>
+<li>
+<p>Added an optional CursorPosition property to the CursorPropertiesChangeAfterEvent. Using this new property, developers can track when the block or block face under the mouse cursor changes.</p>
+</li>
+<li>
+<p>Updated Editor Compass body to toggle between NSEW directions and Axis directions (Z, -Z, X, -X) on click</p>
+</li>
+<li>
+<p>Updated block picker to a floating window and made the viewport behind it clearer for middle-click</p>
+</li>
+<li>
+<p>Updated Flatten Brush to a Native Brush, increased maximum Height and Radius</p>
+</li>
+<li>
+<p>Updated export and play test pane to now include beds work and required sleeping players as export options</p>
+</li>
+<li>
+<p>Updated hot bar item to open block picker when shortcut key is pressed and block is already selected</p>
+</li>
+<li>
+<p>Updated daylight cycle and multiplayer options to now be respected in an exported world</p>
+</li>
+<li>
+<p>Updated Bedrock Dedicated Server to correctly load an existing Editor project regardless if the <code>Editor=true</code> command line argument is used</p>
+</li>
+<li>
+<p>Updated Fly Speed Multiplier Global Hotkeys.</p>
+<ul>
+<li>Q, E, Shift + Q and Shift + E have been added as viewport keyboard shortcuts for increasing and decreasing fly speed</li>
+</ul>
+</li>
+<li>
+<p>Updated rotation slider to be an integer</p>
+</li>
+<li>
+<p>Updated <code>/reload</code> (and the <code>Reload Scripts</code> action bar item) to now work in the editor when hosting a session, or connected to a remote session (when only a single player is connected).</p>
+</li>
+<li>
+<p>Updated player model to now be fully hidden while in tool mode</p>
+</li>
+<li>
+<p>Updated farm generator to use transactions allowing for undo and redo functionality</p>
+</li>
+<li>
+<p>Updated the summon tool nudge operation to remain active as long as the key binding is held down.</p>
+</li>
+<li>
+<p>Fixed an assert/crash that occurs when changing dimensions</p>
+</li>
+<li>
+<p>Fixed an assert/crash when saving world and re-entering a world multiple times</p>
+</li>
+<li>
+<p>Fixed a bug that occasionally made panel scrollbars unresponsive.</p>
+</li>
+<li>
+<p>Fixed a bug that caused action bar items to change positions when scrollbar is visible</p>
+</li>
+<li>
+<p>Fixed a bug where game menus are shown in the tool mode viewport</p>
+</li>
+<li>
+<p>Fixed incorrect maximum value for fixed distance mode</p>
+</li>
+<li>
+<p>Fixed a bug that caused text field to lose focus when another UI element is hovered</p>
+</li>
+<li>
+<p>Fixed a number of missing block icon thumbnails for block:// image resource</p>
+</li>
+<li>
+<p>Fixed error sound triggered by pressing the number 9 key</p>
+</li>
+<li>
+<p>Fixed block thumbnail images to be centered in hotbar, block picker and lists</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="entities">Entities<a href="#entities" class="hash-link" aria-label="Entities的直接链接" title="Entities的直接链接">​</a></h2>
+<ul>
+<li>Fixed issue where <code>No more entities</code> assert failure occurred when flying through biomes during a storm</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="entity-components">Entity Components<a href="#entity-components" class="hash-link" aria-label="Entity Components的直接链接" title="Entity Components的直接链接">​</a></h2>
+<ul>
+<li>
+<p>The &quot;minecraft<!-- -->:breedable<!-- -->&quot; component now has a field that enables the offspring&#x27;s &quot;minecraft<!-- -->:color<!-- -->&quot; attribute to be a blend of the parents&#x27; &quot;minecraft<!-- -->:color<!-- -->&quot;</p>
+<ul>
+<li>&quot;combine_parent_colors&quot;, If a color mutation will not happen, the baby will get a combination of the parents&#x27; colors if the colors are compatible. Color combinations follow the rules of DyeItem combinations. If the colors are not compatible the baby will get one of the parents colors chosen randomly<!-- -->
+<ul>
+<li>Valid values: &quot;true&quot;, &quot;false&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="entity-filters">Entity Filters<a href="#entity-filters" class="hash-link" aria-label="Entity Filters的直接链接" title="Entity Filters的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Added new entity filter &quot;home_distance&quot;, which checks the distance of an entity from its home</p>
+<ul>
+<li>Requires the subject entity to have a &quot;minecraft<!-- -->:home<!-- -->&quot; component</li>
+<li>Returns false if the subject has no home or if the home is in a different dimension</li>
+</ul>
+</li>
+<li>
+<p>Added new entity filter &quot;is_bound_to_creaking_heart&quot;, which checks if the Creaking Heart that spawned the subject Creaking still exists</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fog">Fog<a href="#fog" class="hash-link" aria-label="Fog的直接链接" title="Fog的直接链接">​</a></h2>
+<ul>
+<li>Fixed issue where &quot;inherit_from_prior_fog&quot; field in biomes_client.json was ignored on first content on resource pack stack (<a href="https://bugs.mojang.com/browse/MCPE-187805" target="_blank" rel="noopener noreferrer">MCPE-187805</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="gameplay">Gameplay<a href="#gameplay" class="hash-link" aria-label="Gameplay的直接链接" title="Gameplay的直接链接">​</a></h2>
+<ul>
+<li>Fixed a bug where opening a chest while the clone command is spamming could crash the server.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="graphical">Graphical<a href="#graphical" class="hash-link" aria-label="Graphical的直接链接" title="Graphical的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Improved logic for handling very large textures within atlases. Textures that are guaranteed to overflow the maximum atlas size will now have mips dropped individually rather than forcing the entire atlas to drop mips.</p>
+</li>
+<li>
+<p>Single-channel textures in resource packs are now interpreted as grayscale, rather than red. This change does not apply to single-channel UI textures, which were already interpreted as such</p>
+</li>
+<li>
+<p>client_biome JSON files now support a &quot;surface_opacity&quot; field in the &quot;minecraft<!-- -->:water<!-- -->_appearance&quot; component</p>
+<ul>
+<li>This change also restores swampland and warm_ocean surface opacity to what they were until recently when the client_biome JSON files were introduced</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="items">Items<a href="#items" class="hash-link" aria-label="Items的直接链接" title="Items的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Added a content warning to the &quot;minecraft<!-- -->:durability<!-- -->_sensor&quot; item component&#x27;s &quot;particle_type&quot; when an invalid value is provided</p>
+</li>
+<li>
+<p>Fixed an issue where non-host clients joining multiplayer sessions would be missing an icon for packs that had duplicate items</p>
+</li>
+<li>
+<p>The following legacy item (pre 1.16.100) components are now synced to the client:</p>
+<ul>
+<li><code>minecraft:camera</code></li>
+<li><code>minecraft:seed</code></li>
+<li><code>minecraft:max_damage</code></li>
+<li><code>minecraft:hand_equipped</code></li>
+<li><code>minecraft:stacked_by_data</code></li>
+<li><code>minecraft:foil</code></li>
+<li><code>minecraft:block</code></li>
+<li><code>minecraft:use_duration</code></li>
+<li><code>minecraft:max_stack_size</code></li>
+</ul>
+</li>
+<li>
+<p>Removed &quot;Upcoming Creator Feature&quot; toggle requirement for <code>minecraft:block_placer</code> item component</p>
+</li>
+<li>
+<p>Migrated ItemData from <code>StartGamePacket</code> into <code>ItemRegistryPacket</code> (renamed from <code>ItemComponentPacket</code>)</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="network-protocol">Network Protocol<a href="#network-protocol" class="hash-link" aria-label="Network Protocol的直接链接" title="Network Protocol的直接链接">​</a></h2>
+<ul>
+<li>Added ActorFlags::RENDERS_WHEN_INVISIBLE</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="scripting">Scripting<a href="#scripting" class="hash-link" aria-label="Scripting的直接链接" title="Scripting的直接链接">​</a></h2>
+<ul>
+<li>Fixed <code>Entity.getComponent</code> and <code>Entity.getComponents</code> from crashing when called within <code>EntityDieAfterEvent</code> callback.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="sounds">Sounds<a href="#sounds" class="hash-link" aria-label="Sounds的直接链接" title="Sounds的直接链接">​</a></h2>
+<ul>
+<li>Added &quot;base&quot; parameter to block sounds specifying another block sound they should use sounds for if they do not define a sound themselves</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="stability-and-performance">Stability and Performance<a href="#stability-and-performance" class="hash-link" aria-label="Stability and Performance的直接链接" title="Stability and Performance的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Fixed an issue where optional and required resource packs couldn&#x27;t be downloaded when joining a multiplayer game if it was cancelled on the first download and join attempt</p>
+</li>
+<li>
+<p>Players on Switch should remain signed into their Microsoft Account after putting Minecraft app to sleep and resuming it.</p>
+</li>
+<li>
+<p>Removed redundant biome data from chunks and improved World Template generation stability.</p>
+</li>
+<li>
+<p>Made changes to add up to 4% CPU performance improvement on Switch</p>
+</li>
+</ul>
+<h2 class="experimental_divider">实验性特性</h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="aim-assist">Aim Assist<a href="#aim-assist" class="hash-link" aria-label="Aim Assist的直接链接" title="Aim Assist的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Updated Aim Assist, now it can only be used in third person camera perspectives. Switching to a unsupported camera type will disable aim assist</p>
+</li>
+<li>
+<p>Changed aim-assist preset item settings to reference categories by unique namespace Ids globally instead of via name in a &#x27;categories&#x27; list.</p>
+</li>
+<li>
+<p>Aim assist will no longer get automatically enabled when switch to vanilla third-person-behind camera by default (<a href="https://bugs.mojang.com/browse/MCPE-188005" target="_blank" rel="noopener noreferrer">MCPE-188005</a>)</p>
+</li>
+<li>
+<p>Aim assist will now only allow interactions within player&#x27;s interact distance</p>
+</li>
+<li>
+<p>Aim Assist can now properly detect entities have hitbox partially inside detection area</p>
+</li>
+<li>
+<p>Block and entity targeting of Aim assist will now apply to touch control modes: &#x27;Joystick &amp; tap to interact&#x27; and &#x27;D-Pad &amp; tap to interact&#x27;</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="script-api-1"><strong>Script API</strong><a href="#script-api-1" class="hash-link" aria-label="script-api-1的直接链接" title="script-api-1的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Added <code>scriptEvent</code> method to <code>system</code> object which sends a script event similar to the <code>/scriptevent</code> command to beta</p>
+</li>
+<li>
+<p>Added <code>NamespaceNameError</code> error which validates namespace usage to beta</p>
+</li>
+<li>
+<p>Added <code>NamespaceNameErrorReason</code> enum which shows the types of issues that namespace validation can run into to beta</p>
+</li>
+<li>
+<p>Added new function <code>collectPluginStats</code> to <code>@minecraft/debug-utilities</code> which will return the types and counts of all active script objects.</p>
+<ul>
+<li>Removed <code>/script watchdog exportstats</code> command, deprecated in favor of script API.</li>
+</ul>
+</li>
+<li>
+<p>Added <code>setDynamicProperties</code> method to <code>World</code>, <code>Entity</code>, <code>ItemStack</code> and <code>ContainerSlot</code>.</p>
+</li>
+<li>
+<p>Added enum <code>LiquidType</code>.</p>
+<p>export enum LiquidType {
+Water = &#x27;Water&#x27;
+}</p>
+</li>
+<li>
+<p>Added four new bindings to Script Block API (Beta).</p>
+<ul>
+<li><code>Block::canBeDestroyedByLiquidSpread</code></li>
+<li><code>Block::isLiquidBlocking</code></li>
+<li><code>Block::liquidSpreadCausesSpawn</code></li>
+<li><code>Block::liquidCanFlowFromDirection</code></li>
+</ul>
+</li>
+<li>
+<p>Added three new bindings to Script Block Permutation API (Beta).</p>
+<ul>
+<li><code>BlockPermutation::canBeDestroyedByLiquidSpread</code></li>
+<li><code>BlockPermutation::isLiquidBlocking</code></li>
+<li><code>BlockPermutation::liquidSpreadCausesSpawn</code></li>
+</ul>
+</li>
+<li>
+<p>Fixed bug where <code>Block.setWaterlogged</code> would create a water source that does not flow.</p>
+</li>
+<li>
+<p>Rename <code>handleCounts</code> interface to <code>HandleCounts</code> in <code>@minecraft/debug_utilities</code> module.</p>
+</li>
+<li>
+<p>Fixed <code>BlockLocationIterator</code> crash that could happen if the <code>BlockVolume</code> that the iterator came from was deleted first.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="commands-1">Commands<a href="#commands-1" class="hash-link" aria-label="Commands的直接链接" title="Commands的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Place: Entities saved within structures will now be placed unless specified</p>
+</li>
+<li>
+<p>Added two subcommands to the <code>/place</code> command behind the Upcoming Creator Features Experiment toggle</p>
+<ul>
+<li><code>/place feature</code></li>
+<li><code>/place featurerule</code></li>
+</ul>
+</li>
+<li>
+<p><code>RegistrationBuilder.structureLocation</code> method in @minecraft/server-gametest</p>
+<ul>
+<li>Added optional argument <code>structureDimension: DimensionTye | string</code> to specify which dimension the gametest should spawn in. If not provided, it will default to whichever dimension the test is ran from.</li>
+</ul>
+</li>
+<li>
+<p><code>system.scriptEvent()</code> no longer returns <code>ScriptEventMessageSizeError</code> but instead an <code>InvalidArgumentError</code> for the message size exceeding 2048 characters in size in Beta</p>
+</li>
+<li>
+<p>Removed <code>ScriptEventMessageSizeError</code> from Beta</p>
+</li>
+<li>
+<p>Moved CameraTargetOptions from beta to <code>v1.16.0</code></p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cameras-1">Cameras<a href="#cameras-1" class="hash-link" aria-label="Cameras的直接链接" title="Cameras的直接链接">​</a></h2>
+<ul>
+<li>Added easing between two moving cameras when &quot;Creator Camera: New Third Person Presets&quot; experiment is enabled</li>
+<li>Added the option to limit yaw rotations on all cameras with an orbit component</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="creator">Creator<a href="#creator" class="hash-link" aria-label="Creator的直接链接" title="Creator的直接链接">​</a></h2>
+<ul>
+<li>Added support for ItemTags in match_tool loot table conditions behind the Upcoming Creator Features Experiment toggle</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="components-1">Components<a href="#components-1" class="hash-link" aria-label="Components的直接链接" title="Components的直接链接">​</a></h3>
+<ul>
+<li>Removing a waterlogged custom block using the <code>minecraft:liquid_detection</code> component with <code>stopsLiquidFlowingFromDirection</code> enabled for all directions now results in flowing water rather than a stagnant block of water.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="molang">Molang<a href="#molang" class="hash-link" aria-label="Molang的直接链接" title="Molang的直接链接">​</a></h2>
+<ul>
+<li>Moved <code>query.last_input_mode_is_any</code> to stable. It takes one or more arguments (&#x27;keyboard_and_mouse&#x27;, &#x27;touch&#x27;, &#x27;gamepad&#x27;, or &#x27;motion_controller&#x27;). If the last input used is any of the specified string values, returns 1.0. Otherwise returns 0.0. Available on the Client (Resource Packs) only.</li>
+<li>Moved <code>query.touch_only_affects_hotbar</code> to stable. It returns 1.0 if the touch input only affects the touchbar, otherwise returns 0.0. Available on the Client (Resource Packs) only.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="scripting-api">Scripting API<a href="#scripting-api" class="hash-link" aria-label="Scripting API的直接链接" title="Scripting API的直接链接">​</a></h2>
+<ul>
+<li>Moved enum <code>InputMode</code> from <code>beta</code> to <code>1.17.0</code>.</li>
+<li>Moved class <code>InputInfo</code> from <code>beta</code> to <code>1.17.0</code>.<!-- -->
+<ul>
+<li>Moved property <code>lastInputModeUsed</code> from <code>beta</code> to <code>1.17.0</code>.</li>
+<li>Moved property <code>touchOnlyAffectsHotbar</code> from <code>beta</code> to <code>1.17.0</code>.</li>
+</ul>
+</li>
+<li>Class <code>Player</code>.<!-- -->
+<ul>
+<li>Moved property <code>inputInfo</code> from <code>beta</code> to <code>1.17.0</code>.</li>
+</ul>
+</li>
+<li>Moved class <code>PlayerInputModeChangeAfterEvent</code> from <code>beta</code> to <code>1.17.0</code>.</li>
+<li>Moved class <code>PlayerInputModeChangeAfterEventSignal</code> from <code>beta</code> to <code>1.17.0</code>.</li>
+<li>Class <code>WorldAfterEvents</code>.<!-- -->
+<ul>
+<li>Moved property <code>playerInputModeChange</code> from <code>beta</code> to <code>1.17.0</code>.</li>
+</ul>
+</li>
+<li>Moved class <code>InvalidEntityError</code> from <code>beta</code> to <code>1.17.0</code>.</li>
+<li><code>system.scriptEvent</code> updated to return a new error for exceeding the message size</li>
+<li>Structure<!-- -->
+<ul>
+<li>Added <code>waterlogged: boolean</code> parameter to <code>setBlockPermutation</code>. This can be used to set whether the specified block within a structure is waterlogged.</li>
+</ul>
+</li>
+<li>Removed <code>ScriptBlockType.canBeWaterlogged</code> from Beta - instead, <code>ScriptBlock.canContainLiquid</code> or <code>ScriptBlockPermutation.canContainLiquid</code> can be used to check if a block can be waterlogged.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="stability-and-performance-1">Stability and Performance<a href="#stability-and-performance-1" class="hash-link" aria-label="Stability and Performance的直接链接" title="Stability and Performance的直接链接">​</a></h2>
+<ul>
+<li>Resolved a crash that could occur when using top_layer_modification in custom jigsaw structures</li>
+<li>Resolved a crash that could occur when entering the nether with a custom jigsaw structure in the nether</li>
+<li>Experimental support for applying a service-driven texture memory budget in low memory situations. When enabled, memory will be conserved by progressively reducing resolution of some textures as usage approaches the budgeted limit.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="user-interface">User Interface<a href="#user-interface" class="hash-link" aria-label="User Interface的直接链接" title="User Interface的直接链接">​</a></h2>
+<ul>
+<li>Added a new radio button to allow players to select if they want Deferred Video Settings to favor performance or favor visuals.</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/AbbottMc/BedrockTechWeekly/tree/master/docs/changelog_source/stable/1.21/60/tech.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#add-ons-and-script-engine" class="table-of-contents__link toc-highlight">Add-Ons and Script Engine</a></li><li><a href="#script-api" class="table-of-contents__link toc-highlight"><strong>Script API</strong></a></li><li><a href="#biomes" class="table-of-contents__link toc-highlight">Biomes</a></li><li><a href="#blocks" class="table-of-contents__link toc-highlight">Blocks</a></li><li><a href="#cameras" class="table-of-contents__link toc-highlight">Cameras</a></li><li><a href="#commands" class="table-of-contents__link toc-highlight">Commands</a></li><li><a href="#components" class="table-of-contents__link toc-highlight">Components</a></li><li><a href="#collisions" class="table-of-contents__link toc-highlight">Collisions</a></li><li><a href="#dedicated-server" class="table-of-contents__link toc-highlight">Dedicated Server</a></li><li><a href="#editor" class="table-of-contents__link toc-highlight">Editor</a></li><li><a href="#entities" class="table-of-contents__link toc-highlight">Entities</a></li><li><a href="#entity-components" class="table-of-contents__link toc-highlight">Entity Components</a></li><li><a href="#entity-filters" class="table-of-contents__link toc-highlight">Entity Filters</a></li><li><a href="#fog" class="table-of-contents__link toc-highlight">Fog</a></li><li><a href="#gameplay" class="table-of-contents__link toc-highlight">Gameplay</a></li><li><a href="#graphical" class="table-of-contents__link toc-highlight">Graphical</a></li><li><a href="#items" class="table-of-contents__link toc-highlight">Items</a></li><li><a href="#network-protocol" class="table-of-contents__link toc-highlight">Network Protocol</a></li><li><a href="#scripting" class="table-of-contents__link toc-highlight">Scripting</a></li><li><a href="#sounds" class="table-of-contents__link toc-highlight">Sounds</a></li><li><a href="#stability-and-performance" class="table-of-contents__link toc-highlight">Stability and Performance</a></li><li><a href="#aim-assist" class="table-of-contents__link toc-highlight">Aim Assist</a></li><li><a href="#script-api-1" class="table-of-contents__link toc-highlight"><strong>Script API</strong></a></li><li><a href="#commands-1" class="table-of-contents__link toc-highlight">Commands</a></li><li><a href="#cameras-1" class="table-of-contents__link toc-highlight">Cameras</a></li><li><a href="#creator" class="table-of-contents__link toc-highlight">Creator</a><ul><li><a href="#components-1" class="table-of-contents__link toc-highlight">Components</a></li></ul></li><li><a href="#molang" class="table-of-contents__link toc-highlight">Molang</a></li><li><a href="#scripting-api" class="table-of-contents__link toc-highlight">Scripting API</a></li><li><a href="#stability-and-performance-1" class="table-of-contents__link toc-highlight">Stability and Performance</a></li><li><a href="#user-interface" class="table-of-contents__link toc-highlight">User Interface</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">文刊</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/">主页</a></li></ul></div><div class="col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">周刊</a></li><li class="footer__item"><a href="https://github.com/AbbottMc/BedrockTechWeekly" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub仓库<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">基岩技术文刊站点，由<a href="https://space.bilibili.com/15122547">乾山瑶</a>基于Docusaurus搭建.<br>“Minecraft”是 <a href="https://www.minecraft.net/">Mojang AB</a> 的商标，在中国大陆由<a href="https://mc.163.com/">网易我的世界</a>代理管辖。本站不以任何方式隶属于 Microsoft 、 Mojang AB 或网之易吾世界公司</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-changelog_source/preview/1.21/70/20/tech" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.3.2">
+<title data-rh="true">tech | 基岩技术文刊 | Bedrock Tech Journal</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content=" https://abbottmc.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content=" https://abbottmc.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content=" https://abbottmc.github.io/docs/changelog_source/preview/1.21/70/20/tech"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="tech | 基岩技术文刊 | Bedrock Tech Journal"><meta data-rh="true" name="description" content="API - Scripting"><meta data-rh="true" property="og:description" content="API - Scripting"><link data-rh="true" rel="icon" href="/img/logo.png"><link data-rh="true" rel="canonical" href="https://abbottmc.github.io/docs/changelog_source/preview/1.21/70/20/tech"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/docs/changelog_source/preview/1.21/70/20/tech" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/en/docs/changelog_source/preview/1.21/70/20/tech" hreflang="en"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/docs/changelog_source/preview/1.21/70/20/tech" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="基岩技术文刊 | Bedrock Tech Journal RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="基岩技术文刊 | Bedrock Tech Journal Atom Feed"><link rel="stylesheet" href="/assets/css/styles.22b3443e.css">
+<script src="/assets/js/runtime~main.ede8168d.js" defer="defer"></script>
+<script src="/assets/js/main.a64872d1.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><div class="announcementBar_mb4j" style="background-color:#fafbfc;color:#091E42" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">欢迎来到基岩技术文刊站！这个站点仍在完善当中，欢迎您的<a href="https://github.com/AbbottMc/BedrockTechWeekly/issues">反馈</a>！</div><button type="button" aria-label="关闭" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="基岩技术文刊Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="基岩技术文刊Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">基岩技术文刊</b></a><a class="navbar__item navbar__link" href="/docs/official_changelog/">官方日志</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">脚本文档</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/sapi/stable">稳定版 [1.20.8x]</a></li><li><a class="dropdown__link" href="/docs/sapi/preview">预览版 [1.21.0.24]</a></li></ul></div></div><div class="navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/docs/changelog">站点日志</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>简体中文</a><ul class="dropdown__menu"><li><a href="/docs/changelog_source/preview/1.21/70/20/tech" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-Hans">简体中文</a></li><li><a href="/en/docs/changelog_source/preview/1.21/70/20/tech" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li></ul></div><a href="https://github.com/AbbottMc/BedrockTechWeekly" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="切换浅色/暗黑模式（当前为暗黑模式）" aria-label="切换浅色/暗黑模式（当前为暗黑模式）" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>tech</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="api---scripting">API - Scripting<a href="#api---scripting" class="hash-link" aria-label="API - Scripting的直接链接" title="API - Scripting的直接链接">​</a></h2>
+<ul>
+<li>Unhandled rejected promises in scripting now include callstacks when logged.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftserver-1180">@minecraft/server 1.18.0<a href="#minecraftserver-1180" class="hash-link" aria-label="@minecraft/server 1.18.0的直接链接" title="@minecraft/server 1.18.0的直接链接">​</a></h3>
+<ul>
+<li>
+<p>Renamed <code>system.scriptEvent</code> to <code>system.sendScriptEvent</code></p>
+</li>
+<li>
+<p>Moved <code>NamespaceNameErrorReason</code> from beta to @minecraft/server 1.18.0</p>
+</li>
+<li>
+<p>Moved <code>system.sendScriptEvent</code> from beta to @minecraft/server 1.18.0</p>
+</li>
+<li>
+<p>Moved <code>NamespaceNameError</code> from beta to @minecraft/server 1.18.0</p>
+</li>
+<li>
+<p>Released <code>InputInfo.getButtonState</code>, <code>InputButton</code>, and <code>ButtonState</code> to @minecraft/server 1.18.0</p>
+</li>
+<li>
+<p>Released <code>InputInfo.getMovementVector</code> to @minecraft/server 1.18.0</p>
+</li>
+<li>
+<p>Released <code>PlayerButtonInputAfterEvent</code>, <code>AfterEvents.playerButtonInput</code> and <code>InputEventOptions</code> to @minecraft/server 1.18.0</p>
+</li>
+<li>
+<p>Several APIs have been given the Readonly permission, which allows them to now be called inside Before Event callbacks.</p>
+<ul>
+<li>All methods for <code>BlockVolume</code>.</li>
+<li>All methods for <code>Vector</code>.</li>
+</ul>
+</li>
+<li>
+<p>Changed <code>spawnEntity</code> method on <code>Dimension</code> to now take a variant of either a string or <code>EntityType</code>.</p>
+</li>
+<li>
+<p>Added <code>placeFeature</code> and <code>placeFeatureRule</code> APIs to the <code>Dimension</code> class</p>
+</li>
+<li>
+<p>Added <code>isValid</code> property to the Camera class.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="biomes">Biomes<a href="#biomes" class="hash-link" aria-label="Biomes的直接链接" title="Biomes的直接链接">​</a></h2>
+<ul>
+<li>Fix client_biome loading so grass_appearance and foliage_appearance settings are added if not specified when format_version is lower than 1.21.60 (<a href="https://bugs.mojang.com/browse/MCPE-189816" target="_blank" rel="noopener noreferrer">MCPE-189816</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="blocks">Blocks<a href="#blocks" class="hash-link" aria-label="Blocks的直接链接" title="Blocks的直接链接">​</a></h2>
+<ul>
+<li>
+<p><code>water</code> and <code>lava</code> no longer will turn into <code>flowing_water</code> or <code>flowing_lava</code> when neighbor updates happen. <code>water</code> and <code>lava</code> now will respond to queued ticks without needing to change into another block</p>
+</li>
+<li>
+<p>The minecraft<!-- -->:map<!-- -->_color component underwent a schema change</p>
+<ul>
+<li>
+<p>It is now a JSON object with two fields &quot;color&quot; and &quot;tint_method&quot;.</p>
+</li>
+<li>
+<p>&quot;color&quot; is a required string field expecting an HEX representation of the RGB, prefixed with a # character.</p>
+</li>
+<li>
+<p>&quot;tint_method&quot; is a string field that multiplies the color with a predefined tint. Supported values are &quot;none, &quot;default_foliage&quot;, &quot;birch_foliage&quot;, &quot;evergreen_foliage&quot;, &quot;grass&quot; and &quot;water&quot;.</p>
+</li>
+<li>
+<p>the old schema format is still supported for convenience.<br>
+<!-- -->Examples:</p>
+<p>&quot;minecraft<!-- -->:map_color<!-- -->&quot;: {
+&quot;color&quot;: &quot;#ABCDEF&quot;,
+&quot;tint_method&quot;: &quot;grass&quot;
+}</p>
+<p>or</p>
+<p>&quot;minecraft<!-- -->:map_color<!-- -->&quot;: {
+&quot;color&quot;: &quot;#ABCDEF&quot;
+}</p>
+<p>or</p>
+<p>&quot;minecraft<!-- -->:map_color<!-- -->&quot;: &quot;#ABCDEF&quot;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="components">Components<a href="#components" class="hash-link" aria-label="Components的直接链接" title="Components的直接链接">​</a></h3>
+<ul>
+<li>Added the &#x27;minecraft<!-- -->:replaceable<!-- -->&#x27; component which determines if a new block can replace the existing block at a particular position. If the component is not added to a block it is not replaceable.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="components-1">Components<a href="#components-1" class="hash-link" aria-label="Components的直接链接" title="Components的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Multiple components that used effect durations can now be set to &quot;infinite&quot; including:</p>
+<ul>
+<li>&quot;minecraft<!-- -->:attack<!-- -->&quot;: &quot;effect_duration&quot;</li>
+<li>&quot;minecraft<!-- -->:healable<!-- -->&quot;: &quot;duration&quot; in the &quot;effects&quot; list</li>
+<li>&quot;minecraft<!-- -->:mob<!-- -->_effect&quot;: &quot;effect_time&quot;</li>
+<li>&quot;minecraft<!-- -->:projectile<!-- -->&quot;: &quot;durationeasy&quot;, &quot;durationnormal&quot;, and &quot;durationhard&quot; can now all use &quot;infinite&quot;</li>
+<li>&quot;minecraft<!-- -->:food<!-- -->&quot;: &quot;duration&quot; in the &quot;effects&quot; list</li>
+<li>&quot;minecraft<!-- -->:spell<!-- -->_effects&quot;: &quot;duration&quot; in the &quot;add_effects&quot; list</li>
+<li>&quot;minecraft<!-- -->:combat<!-- -->_regeneration&quot;: &quot;regeneration_duration&quot;</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="editor">Editor<a href="#editor" class="hash-link" aria-label="Editor的直接链接" title="Editor的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Shulker box&#x27;s textures are fixed in Block picker and lists</p>
+</li>
+<li>
+<p>Fixed a bug that excluded some blocks from block picker list with partial text search</p>
+</li>
+<li>
+<p>Block picker search text field will have UI focus when modal opens</p>
+</li>
+<li>
+<p>Line Tool: Left Click no longer clears the line if two points already exist. Left Click now behaves the same as Shift + Left Click and always adds points to the existing line.</p>
+</li>
+<li>
+<p>Added cursor support for selecting invisible blocks when the Show Invisible Blocks setting is enabled</p>
+</li>
+<li>
+<p>Added <code>IPropertyPane.addProgressIndicator</code> API function to display a spinner or a progress bar property item</p>
+</li>
+<li>
+<p>Added <code>ImageAnimationData</code> API type to represent a sprite sheet animation for images</p>
+</li>
+<li>
+<p>Added <code>iconAnimation: ImageAnimationData</code> property to <code>IActionBarItemCreationParams</code> API</p>
+</li>
+<li>
+<p>Added <code>IPropertyPane.addLink</code> API function to create link buttons in panes.</p>
+</li>
+<li>
+<p>Added <code>system.isEditorWorld</code> property into @minecraft/server in beta</p>
+</li>
+<li>
+<p>Now using minecraft/server 2.0.0-beta, see API section for more details on 2.0.0-beta.</p>
+<ul>
+<li><code>registerEditorExtension</code> can be called in Early Execution.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="entities">Entities<a href="#entities" class="hash-link" aria-label="Entities的直接链接" title="Entities的直接链接">​</a></h2>
+<ul>
+<li>Fixed issue where <code>No more entities</code> assert failure occurred when flying through biomes during a storm</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="jigsaw">Jigsaw<a href="#jigsaw" class="hash-link" aria-label="Jigsaw的直接链接" title="Jigsaw的直接链接">​</a></h2>
+<ul>
+<li>Fixed <code>world_surface</code> type of <code>heightmap_projection</code> in <code>minecraft:jigsaw</code> to generate on top of water and leaf blocks.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="json-events">JSON Events<a href="#json-events" class="hash-link" aria-label="JSON Events的直接链接" title="JSON Events的直接链接">​</a></h2>
+<ul>
+<li>The parameter &quot;duration&quot; in the &quot;add_mob_effect&quot; event can now be set to &quot;infinite&quot;</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="sounds">Sounds<a href="#sounds" class="hash-link" aria-label="Sounds的直接链接" title="Sounds的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Added support for entity sound variants</p>
+<ul>
+<li>Entity sounds now have a &quot;variants&quot; field which defines sound variants based on the runtime entity</li>
+<li>Variants has a &quot;key&quot; field reading a Molang expression returning a string to select sound variant (eg: querying an enum entity property).</li>
+<li>Variants has a &quot;map&quot; field which contains key-value pairs of a variant identifier and the sound events it overrides.</li>
+<li>When playing a sound for an entity we first try to calculate their variant and see if that variant overrides the sound event, if not we play the sound form the base entity. If that fails we fall back to the existing logic of running from &quot;defaults&quot;.<br>
+<!-- -->Example:<br>
+<!-- -->Given a mob with the following property</li>
+</ul>
+<p>&quot;minecraft<!-- -->:emotional_state<!-- -->&quot;: {
+&quot;type&quot;: &quot;enum&quot;,
+&quot;values&quot;: [ &quot;neutral&quot;, &quot;angry&quot;, &quot;happy&quot;, &quot;sad&quot; ],
+&quot;default&quot;: &quot;neutral&quot;,
+&quot;client_sync&quot;: true
+}</p>
+</li>
+</ul>
+<p>Sound variants can be played by querying the property:</p>
+<p>{
+&quot;entity_sounds&quot;: {
+&quot;entities&quot;: {
+&quot;test_mob&quot;: {
+&quot;volume&quot;: 1.0,
+&quot;pitch&quot;: 1.0,
+// The base sounds for various events
+&quot;events&quot;: {
+&quot;ambient&quot;: &quot;mob.test_mob.ambient&quot;,
+&quot;death&quot;: &quot;mob.test_mob.death&quot;,
+&quot;step&quot;: {
+&quot;sound&quot;: &quot;mob.test_mob.step&quot;,
+&quot;volume&quot;: 0.8,
+&quot;pitch&quot;: 1.0
+},
+&quot;attack&quot;: &quot;mob.test_mob.attack&quot;
+},
+&quot;variants&quot;: {
+// Key returning the enum string for variants, can use any Molang expression resulting in a string
+&quot;key&quot;: &quot;query.property(&#x27;minecraft<!-- -->:emotional_state<!-- -->&#x27;)&quot;,
+&quot;map&quot;: {
+// If a resulting variant key is not handled here then it will use the base sounds
+&quot;neutral&quot;: {
+&quot;volume&quot;: 1.0,
+&quot;pitch&quot;: 1.0,
+&quot;events&quot;: {
+// If an event is not handled in a variant then it will use the base sound
+&quot;death&quot;: &quot;mob.test_mob.death.netural&quot;
+}
+},
+&quot;angry&quot;: {
+&quot;volume&quot;: 1.0,
+&quot;pitch&quot;: 1.0,
+&quot;events&quot;: {
+// Variants can override different events than other variants
+&quot;death&quot;: &quot;mob.test_mob.death.angry&quot;,
+&quot;ambient&quot;: &quot;mob.test_mob.ambient.angry&quot;
+}
+}
+}
+}
+}
+}
+}
+}
+}</p>
+<h2 class="experimental_divider">实验性特性</h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="api---scripting-1">API - Scripting<a href="#api---scripting-1" class="hash-link" aria-label="API - Scripting的直接链接" title="API - Scripting的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minecraftserver-200-beta">@minecraft/server 2.0.0-beta<a href="#minecraftserver-200-beta" class="hash-link" aria-label="@minecraft/server 2.0.0-beta的直接链接" title="@minecraft/server 2.0.0-beta的直接链接">​</a></h3>
+<p>The beta for <code>@minecraft/server</code> has been updated to 2.0.0-beta. This signifies that breaking changes have occurred, largely related to script execution timing. Version 1.X will continue to function as-is.</p>
+<p>Visit our <a href="https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/" target="_blank" rel="noopener noreferrer">documentation portal</a>  for more information in the near future.</p>
+<ul>
+<li>
+<p>Added new privilege <code>EarlyExecution</code></p>
+<ul>
+<li>2.0.0-beta and higher now executes with the early execution privilege, scripting below 2.0.0-beta will continue to execute without early execution</li>
+<li>All after and before event signals subscribe<code>and</code>unsubscribe` methods can now be called in early execution</li>
+<li>The following <code>System</code> methods can now be called in early execution<!-- -->
+<ul>
+<li><code>clearJob</code></li>
+<li><code>clearRun</code></li>
+<li><code>run</code></li>
+<li><code>runInterval</code></li>
+<li><code>runJob</code></li>
+<li><code>runTimeout</code></li>
+<li><code>waitTicks</code></li>
+</ul>
+</li>
+<li><code>BlockComponentRegistry</code> method <code>registerCustomComponent</code> can now be called in early execution</li>
+<li><code>ItemComponentRegistry</code> method <code>registerCustomComponent</code> can now be called in early execution</li>
+</ul>
+</li>
+<li>
+<p>Added <code>startup</code> property to <code>SystemBeforeEvents</code></p>
+</li>
+<li>
+<p>Added <code>StartupEvent</code></p>
+</li>
+<li>
+<p>Added <code>StartupEventSignal</code></p>
+</li>
+<li>
+<p><code>WorldAfterEvents</code> renamed property <code>worldInitialize</code> to <code>worldLoad</code></p>
+</li>
+<li>
+<p><code>WorldBeforeEvents</code> removed property <code>worldInitialize</code></p>
+</li>
+<li>
+<p><code>WorldInitializeAfterEvent</code> renamed to <code>WorldLoadAfterEvent</code></p>
+</li>
+<li>
+<p><code>WorldInitializeAfterEventSignal</code> renamed to <code>WorldLoadAfterEventSignal</code></p>
+</li>
+<li>
+<p>Removed <code>WorldInitializeBeforeEvent</code></p>
+</li>
+<li>
+<p>Removed <code>WorldInitializeBeforeEventSignal</code></p>
+</li>
+<li>
+<p>Removed <code>Dimension.runCommandAsync</code> as most commands did not actually run asynchronously. If you are looking to run a function asynchronously, please investigate using Jobs via <code>System.runJob</code>.</p>
+</li>
+<li>
+<p><code>EntityComponent.getEntity</code> method throws if the underlying entity is invalid (instead of return undefined previously).</p>
+</li>
+<li>
+<p><code>EntityInventoryComponent.container</code>property throws if the underlying entity is invalid (instead of return undefined previously).</p>
+</li>
+<li>
+<p><code>isValid</code> methods on various classes have been changed to read only properties</p>
+</li>
+<li>
+<p><code>getComponents</code>, <code>getComponent</code> and <code>hasComponent</code> now throw if the Entity is invalid</p>
+</li>
+<li>
+<p><code>applyKnockback</code> method now takes a VectorXZ parameter for the knockback horizontal force (which includes the strength/magnitude), as well as a vertical strength parameter. To convert from V1, you should normalize your previous direction vector and multiply it by the old horizontal strength value. Vertical strength is the same as before.</p>
+</li>
+<li>
+<p>EffectType</p>
+<ul>
+<li><code>getName</code> method now always returns the <code>minecraft:</code> namespace prefix along with the name</li>
+</ul>
+</li>
+<li>
+<p>Effect</p>
+<ul>
+<li><code>typeId</code> property now always returns the <code>minecraft:</code> namespace prefix along with the name</li>
+</ul>
+</li>
+<li>
+<p><code>minecraft:air</code> item has been removed (it is still a valid block)</p>
+</li>
+<li>
+<p>Promises are now flushed along with after events and system tasks</p>
+</li>
+<li>
+<p><code>system.waitTicks()</code> now can accept an argument bounds of 0 minimum to run this tick</p>
+</li>
+<li>
+<p>Added a <code>GraphicsMode</code> enum and <code>Player.graphicsMode</code> to query a player&#x27;s current graphics mode on the server.</p>
+</li>
+<li>
+<p>Added <code>system.isEditorWorld</code> property into @minecraft/server in beta</p>
+</li>
+<li>
+<p>BlockLocationIterator</p>
+<ul>
+<li>Added <code>isValid(): boolean</code> method to beta. This method checks if the iterator as been invalidated by modifying the underlining block volume.</li>
+</ul>
+</li>
+<li>
+<p><code>BlockMapColorComponent</code> API has been added to beta</p>
+</li>
+<li>
+<p><code>TintMethod</code> enum has been added to beta</p>
+</li>
+<li>
+<p>Early execution changes in version @minecraft/server 2.0.0-beta</p>
+<ul>
+<li>The following <code>RegistrationBuilder</code> methods can now be called in early execution<!-- -->
+<ul>
+<li><code>batch</code></li>
+<li><code>maxAttempts</code></li>
+<li><code>maxTicks</code></li>
+<li><code>padding</code></li>
+<li><code>required</code></li>
+<li><code>requiredSuccessfulAttempts</code></li>
+<li><code>rotateTest</code></li>
+<li><code>setupTicks</code></li>
+<li><code>structureName</code></li>
+<li><code>tag</code></li>
+</ul>
+</li>
+<li><code>register</code> function can now be called in early execution</li>
+<li><code>registerAsync</code> function can now be called in early execution</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="api---molang">API - Molang<a href="#api---molang" class="hash-link" aria-label="API - Molang的直接链接" title="API - Molang的直接链接">​</a></h2>
+<ul>
+<li>Added <code>query.graphics_mode_is_any</code> to Molang which accepts any of the following parameters: <code>simple</code>, <code>fancy</code>, <code>deferred</code>, <code>raytraced</code>. These parameters are all graphics modes that are available in the settings menu.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="graphical">Graphical<a href="#graphical" class="hash-link" aria-label="Graphical的直接链接" title="Graphical的直接链接">​</a></h2>
+<ul>
+<li>
+<p>Added a new version (<code>1.21.70</code>) for the lighting JSON schema in the Deferred Technical Preview. This new version adds support for controlling the intensity of sky light, which affects both the contribution of legacy sky lighting as well as sky reflections. See updated documentation on the Learning Portal for more details.</p>
+<ul>
+<li>This object snippet can be added to <code>lighting/global.json</code> under the <code>minecraft:lighting_settings</code> object to control the sky intensity</li>
+</ul>
+<p>&quot;sky&quot;: {
+&quot;intensity&quot;: 1.0 // Float value between [0.1 - 1.0]
+}</p>
+</li>
+<li>
+<p>Improved the quality of screen space reflections, specifically cases where holes would appear in reflections at certain angles in the Deferred Technical Preview.</p>
+</li>
+<li>
+<p>Fixed a bug with water surface rendering that caused specular highlights to be much lower than they should have been in the Deferred Technical Preview.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="stability-and-performance">Stability and Performance<a href="#stability-and-performance" class="hash-link" aria-label="Stability and Performance的直接链接" title="Stability and Performance的直接链接">​</a></h2>
+<ul>
+<li>Resolve crash when changing point light shadow settings under Deferred Graphical Settings</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/AbbottMc/BedrockTechWeekly/tree/master/docs/changelog_source/preview/1.21/70/20/tech.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#api---scripting" class="table-of-contents__link toc-highlight">API - Scripting</a><ul><li><a href="#minecraftserver-1180" class="table-of-contents__link toc-highlight">@minecraft/server 1.18.0</a></li></ul></li><li><a href="#biomes" class="table-of-contents__link toc-highlight">Biomes</a></li><li><a href="#blocks" class="table-of-contents__link toc-highlight">Blocks</a><ul><li><a href="#components" class="table-of-contents__link toc-highlight">Components</a></li></ul></li><li><a href="#components-1" class="table-of-contents__link toc-highlight">Components</a></li><li><a href="#editor" class="table-of-contents__link toc-highlight">Editor</a></li><li><a href="#entities" class="table-of-contents__link toc-highlight">Entities</a></li><li><a href="#jigsaw" class="table-of-contents__link toc-highlight">Jigsaw</a></li><li><a href="#json-events" class="table-of-contents__link toc-highlight">JSON Events</a></li><li><a href="#sounds" class="table-of-contents__link toc-highlight">Sounds</a></li><li><a href="#api---scripting-1" class="table-of-contents__link toc-highlight">API - Scripting</a><ul><li><a href="#minecraftserver-200-beta" class="table-of-contents__link toc-highlight">@minecraft/server 2.0.0-beta</a></li></ul></li><li><a href="#api---molang" class="table-of-contents__link toc-highlight">API - Molang</a></li><li><a href="#graphical" class="table-of-contents__link toc-highlight">Graphical</a></li><li><a href="#stability-and-performance" class="table-of-contents__link toc-highlight">Stability and Performance</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">文刊</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/">主页</a></li></ul></div><div class="col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">周刊</a></li><li class="footer__item"><a href="https://github.com/AbbottMc/BedrockTechWeekly" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub仓库<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">基岩技术文刊站点，由<a href="https://space.bilibili.com/15122547">乾山瑶</a>基于Docusaurus搭建.<br>“Minecraft”是 <a href="https://www.minecraft.net/">Mojang AB</a> 的商标，在中国大陆由<a href="https://mc.163.com/">网易我的世界</a>代理管辖。本站不以任何方式隶属于 Microsoft 、 Mojang AB 或网之易吾世界公司</div></div></div></footer></div>
+</body>
+</html>

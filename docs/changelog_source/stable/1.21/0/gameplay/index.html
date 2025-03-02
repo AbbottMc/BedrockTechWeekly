@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-changelog_source/stable/1.21/0/gameplay" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.3.2">
+<title data-rh="true">gameplay | 基岩技术文刊 | Bedrock Tech Journal</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content=" https://abbottmc.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content=" https://abbottmc.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content=" https://abbottmc.github.io/docs/changelog_source/stable/1.21/0/gameplay"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="gameplay | 基岩技术文刊 | Bedrock Tech Journal"><meta data-rh="true" name="description" content="Posted: June 13, 2024"><meta data-rh="true" property="og:description" content="Posted: June 13, 2024"><link data-rh="true" rel="icon" href="/img/logo.png"><link data-rh="true" rel="canonical" href="https://abbottmc.github.io/docs/changelog_source/stable/1.21/0/gameplay"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/docs/changelog_source/stable/1.21/0/gameplay" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/en/docs/changelog_source/stable/1.21/0/gameplay" hreflang="en"><link data-rh="true" rel="alternate" href="https://abbottmc.github.io/docs/changelog_source/stable/1.21/0/gameplay" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="基岩技术文刊 | Bedrock Tech Journal RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="基岩技术文刊 | Bedrock Tech Journal Atom Feed"><link rel="stylesheet" href="/assets/css/styles.22b3443e.css">
+<script src="/assets/js/runtime~main.ede8168d.js" defer="defer"></script>
+<script src="/assets/js/main.a64872d1.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><div class="announcementBar_mb4j" style="background-color:#fafbfc;color:#091E42" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">欢迎来到基岩技术文刊站！这个站点仍在完善当中，欢迎您的<a href="https://github.com/AbbottMc/BedrockTechWeekly/issues">反馈</a>！</div><button type="button" aria-label="关闭" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="基岩技术文刊Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="基岩技术文刊Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">基岩技术文刊</b></a><a class="navbar__item navbar__link" href="/docs/official_changelog/">官方日志</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">脚本文档</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/sapi/stable">稳定版 [1.20.8x]</a></li><li><a class="dropdown__link" href="/docs/sapi/preview">预览版 [1.21.0.24]</a></li></ul></div></div><div class="navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/docs/changelog">站点日志</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>简体中文</a><ul class="dropdown__menu"><li><a href="/docs/changelog_source/stable/1.21/0/gameplay" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-Hans">简体中文</a></li><li><a href="/en/docs/changelog_source/stable/1.21/0/gameplay" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li></ul></div><a href="https://github.com/AbbottMc/BedrockTechWeekly" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="切换浅色/暗黑模式（当前为暗黑模式）" aria-label="切换浅色/暗黑模式（当前为暗黑模式）" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><p><strong>Posted:</strong> June 13, 2024</p>
+<p>Venture into the Tricky Trials update! Team up or go solo and discover new decorative blocks, hostile mobs, items, weapons, paintings, and the Trial Chambers – whose sprawling halls stuffed with traps and treasure. Creep through copper corridors, harness auto-crafting, triumph over waves of hostile mobs, leap using the wind charge, smash your foes with the mace, build with new blocks, battle the breeze, dodge the bogged, and earn exciting rewards for every player. There’s even a way to make the trials trickier!</p>
+<p><img decoding="async" loading="lazy" src="https://feedback.minecraft.net/hc/article_attachments/27452354448781" alt="tricky-trials.jpg" class="img_ev3q"></p>
+<p>Your thoughts on the game continue to shape new updates so please upvote and report any new bugs at <a href="https://bugs.mojang.com" target="_blank" rel="noopener noreferrer">bugs.mojang.com</a> and leave us your feedback at <a href="https://feedback.minecraft.net/" target="_blank" rel="noopener noreferrer">feedback.minecraft.net</a>.</p>
+<h1><strong>New Features:</strong></h1>
+<ul>
+<li>Added a new underground structure called the Trial Chambers</li>
+<li>Added 2 new mobs<!-- -->
+<ul>
+<li>Breeze</li>
+<li>Bogged</li>
+</ul>
+</li>
+<li>Added a new weapon, the Mace</li>
+<li>Added 3 new enchantments exclusive to the Mace<!-- -->
+<ul>
+<li>Density</li>
+<li>Breach</li>
+<li>Wind Burst</li>
+</ul>
+</li>
+<li>Added the following blocks:<!-- -->
+<ul>
+<li>Crafter</li>
+<li>Trial Spawner</li>
+<li>Ominous Trial Spawner</li>
+<li>Vault</li>
+<li>Ominous Vault</li>
+<li>New variants in the Copper Family</li>
+<li>New variants in the Tuff Family</li>
+<li>Heavy Core</li>
+</ul>
+</li>
+<li>Added the following items:<!-- -->
+<ul>
+<li>Trial Explorer Map</li>
+<li>Ominous Bottle</li>
+<li>Wind Charge</li>
+<li>Trial Key</li>
+<li>Ominous Trial Key</li>
+<li>Breeze Rod</li>
+<li>3 new Pottery Sherds</li>
+<li>2 new Banner Patterns</li>
+<li>2 new Armor Trims</li>
+<li>4 new Potions<!-- -->
+<ul>
+<li>Potion of Infestation</li>
+<li>Potion of Oozing</li>
+<li>Potion of Weaving</li>
+<li>Potion of Wind Charging</li>
+</ul>
+</li>
+<li>4 new Tipped Arrows<!-- -->
+<ul>
+<li>Arrow of Infestation</li>
+<li>Arrow of Oozing</li>
+<li>Arrow of Weaving</li>
+<li>Arrow of Wind Charging</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Added 3 new Music Discs by Aaron Cherof and Lena Raine</li>
+<li>Added 20 new Paintings<!-- -->
+<ul>
+<li>5 by artist Sarah Boeving</li>
+<li>15 by artist Kristoffer Zetterstrand</li>
+</ul>
+</li>
+<li>Redesigned Bad Omen to give access to Ominous Events</li>
+<li>Added 6 new Status Effects<!-- -->
+<ul>
+<li>Infested</li>
+<li>Oozing</li>
+<li>Weaving</li>
+<li>Wind Charged</li>
+<li>Raid Omen</li>
+<li>Trial Omen</li>
+</ul>
+</li>
+<li>Added 9 new music tracks by Aaron Cherof, Kumi Tanioka, and Lena Raine</li>
+<li>Added 4 new achievements</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="structures"><strong>Structures</strong><a href="#structures" class="hash-link" aria-label="structures的直接链接" title="structures的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="trial-chambers"><strong>Trial Chambers</strong><a href="#trial-chambers" class="hash-link" aria-label="trial-chambers的直接链接" title="trial-chambers的直接链接">​</a></h3>
+<ul>
+<li>Trial Chambers are a new structure in the Overworld where players can explore and take on combat challenges<!-- -->
+<ul>
+<li>Made out of a variety of Copper and Tuff blocks, and can be found in different sizes</li>
+<li>A relatively common find throughout the Deepslate layer of the underground</li>
+<li>Natural mob spawning does not occur inside, similar to Ancient Cities</li>
+<li>Never starts inside a Deep Dark biome, but can sometimes overlap it</li>
+</ul>
+</li>
+<li>The layout of each Trial Chamber is procedurally generated, and can include traps, rewards and a variety of combat areas<!-- -->
+<ul>
+<li>Decorated Pots line the corridors and hold hidden treasures</li>
+<li>Supply Barrels can be found between different rooms, and give you blocks and items which help you navigate your trials</li>
+<li>Vaults are guarded by challenges in each room, and can be a source of many high level Enchanted Books and equipment including a very rare chance to receive a Trident</li>
+<li>Ominous Vaults can be found in harder to reach places and give even better loot than standard Vaults, including some items which are exclusive to Ominous Vaults</li>
+</ul>
+</li>
+<li>Each Trial Chamber will include Trial Spawners with a melee, small melee, or ranged category:<!-- -->
+<ul>
+<li>Melee<!-- -->
+<ul>
+<li>Zombie</li>
+<li>Husk</li>
+<li>Spider</li>
+</ul>
+</li>
+<li>Small Melee<!-- -->
+<ul>
+<li>Slime</li>
+<li>Cave Spider</li>
+<li>Baby Zombie</li>
+<li>Silverfish</li>
+</ul>
+</li>
+<li>Ranged<!-- -->
+<ul>
+<li>Skeleton</li>
+<li>Stray</li>
+<li>Bogged</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Each Trial Spawner category will only use one mob for the entire structure when generated, and these mobs are randomized for each Trial Chamber<!-- -->
+<ul>
+<li>For example, one Trial Chamber might only spawn Zombies, Cave Spiders and Strays, while another might only spawn Spiders, Silverfish and Skeletons</li>
+<li>The exceptions to this are some Trial Spawners in unique rooms which always spawn Breezes</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mobs"><strong>Mobs</strong><a href="#mobs" class="hash-link" aria-label="mobs的直接链接" title="mobs的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="breeze"><strong>Breeze</strong><a href="#breeze" class="hash-link" aria-label="breeze的直接链接" title="breeze的直接链接">​</a></h3>
+<ul>
+<li>A cunning hostile mob spawned by some Trial Spawners in Trial Chamber rooms<!-- -->
+<ul>
+<li>Drops 1-2 Breeze Rods when killed by a player</li>
+<li>The number of Breeze Rods dropped is affected by looting enchantments</li>
+</ul>
+</li>
+<li>Moves primarily by leaping around its target</li>
+<li>Deflects almost all projectiles, making it immune to ranged combat<!-- -->
+<ul>
+<li>With one notable exception: it cannot deflect Wind Charges</li>
+</ul>
+</li>
+<li>An aggressive adversary, it shoots volatile wind energy in the form of Wind Charge projectiles at its target<!-- -->
+<ul>
+<li>After colliding with an entity or a block, Wind Charge projectiles produce a Wind Burst, which knocks back entities in the area</li>
+<li>Wind Charges deal a small amount of damage when colliding directly with an entity</li>
+<li>Wind Charges break decorated pots and chorus flower blocks upon collision</li>
+</ul>
+</li>
+<li>Wind Bursts have the effect of &#x27;activating&#x27; certain blocks:<!-- -->
+<ul>
+<li>Non-Iron Doors and Trapdoors are flipped</li>
+<li>Fence Gates are flipped</li>
+<li>Buttons are pressed</li>
+<li>Levers are flipped</li>
+<li>Bells are rung and swung</li>
+<li>Lit Candles are extinguished</li>
+</ul>
+</li>
+<li>Wind Bursts do not have any effect on Iron Doors, Iron Trapdoors, or any block being held in its position by a Redstone signal</li>
+<li>Will not retaliate against attacks from the following mobs: Skeletons, Strays, Bogged, Zombies, Husks, Spiders, Cave Spiders and Slimes<!-- -->
+<ul>
+<li>The same mobs will not retaliate against a Breeze when hurt by its Wind Charge projectile</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bogged"><strong>Bogged</strong><a href="#bogged" class="hash-link" aria-label="bogged的直接链接" title="bogged的直接链接">​</a></h3>
+<ul>
+<li>A new variant of Skeletons that shoots poisonous arrows<!-- -->
+<ul>
+<li>They&#x27;re easier to take down with 16 health instead of 20 health</li>
+<li>They attack at a slower interval of 3.5 seconds instead of 2 seconds</li>
+</ul>
+</li>
+<li>Has a chance to drop Arrows of Poison when killed by players</li>
+<li>These mossy and mushroom covered Skeletons spawn naturally in Swamps and Mangrove Swamps<!-- -->
+<ul>
+<li>Can also be found spawning from Trial Spawners in some Trial Chambers</li>
+</ul>
+</li>
+<li>Drops 2 mushrooms when sheared (either both red, both brown, or one of each)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="weapons"><strong>Weapons</strong><a href="#weapons" class="hash-link" aria-label="weapons的直接链接" title="weapons的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mace"><strong>Mace</strong><a href="#mace" class="hash-link" aria-label="mace的直接链接" title="mace的直接链接">​</a></h3>
+<ul>
+<li>A new heavy weapon to smash your enemies!<!-- -->
+<ul>
+<li>Has a base damage of 5</li>
+<li>Can be crafted with a Breeze Rod and a Heavy Core</li>
+<li>Using it will decrease its durability like any other weapon; can be repaired with Breeze Rods at an Anvil</li>
+</ul>
+</li>
+<li>Has a unique attack called the smash attack. When the player falls more than 1.5 blocks before hitting, a smash attack is triggered which has multiple effects:<!-- -->
+<ul>
+<li>Safe Fall: Resets all vertical momentum and negates any fall-damage accumulated from the fall</li>
+<li>Extra Damage: Does more damage the further the player fell before hitting the target with it:<!-- -->
+<ul>
+<li>For the first 3 blocks fallen: Add 4 damage per block</li>
+<li>For the next 5 blocks fallen: Add 2 damage per block</li>
+<li>For any blocks fallen after: Add 1 damage per block</li>
+</ul>
+</li>
+<li>Great Knockback: Other entities near the struck enemy will be knocked back by the immense force of the Mace</li>
+</ul>
+</li>
+<li>Can be used in combination with Wind Charges to launch up and deliver devastating smash attacks to enemies</li>
+<li>These existing enchantments can be applied to the Mace:<!-- -->
+<ul>
+<li>Mending</li>
+<li>Unbreaking</li>
+<li>Smite</li>
+<li>Bane of Arthropods</li>
+<li>Fire Aspect</li>
+<li>Curse of Vanishing</li>
+</ul>
+</li>
+<li>The Mace also has 3 exclusive enchantments: Density, Breach and Wind Burst</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="enchantments"><strong>Enchantments</strong><a href="#enchantments" class="hash-link" aria-label="enchantments的直接链接" title="enchantments的直接链接">​</a></h2>
+<p>Three new enchantments have been added which are exclusive to the Mace:</p>
+<ul>
+<li>Density<!-- -->
+<ul>
+<li>Common Enchantment, accessible in the Enchanting Table and on Enchanted Books in random loot chests</li>
+<li>Has 5 levels</li>
+<li>Maces enchanted with Density do more damage per fallen block per Density level<!-- -->
+<ul>
+<li>Damage dealt per fallen block is increased by 0.5 per level of Density</li>
+</ul>
+</li>
+<li>Mutually exclusive with Breach, Smite, and Bane of Arthropods</li>
+</ul>
+</li>
+<li>Breach<!-- -->
+<ul>
+<li>Rare Enchantment, accessible in the Enchanting Table and on Enchanted Books in random loot chests</li>
+<li>Has 4 levels</li>
+<li>Maces enchanted with Breach reduce the effectiveness of armor on the target<!-- -->
+<ul>
+<li>The effectiveness of the armor is reduced by 15% per Breach level</li>
+</ul>
+</li>
+<li>Mutually exclusive with Density, Smite, and Bane of Arthropods</li>
+</ul>
+</li>
+<li>Wind Burst<!-- -->
+<ul>
+<li>Unique enchantment which can only be found in Ominous Vaults<!-- -->
+<ul>
+<li>Only Wind Burst I can be found, higher levels must be obtained by combining them in an Anvil</li>
+</ul>
+</li>
+<li>Has 3 levels</li>
+<li>Maces enchanted with Wind Burst will emit a Wind Burst upon hitting an enemy, launching the attacker upward and enabling the linking of smash attacks one after the other</li>
+<li>Successfully landing a Wind Burst attack causes the player to lose the fall damage protection they would otherwise have from landing a successful smash attack</li>
+<li>Each level will bounce the attacker an additional 7 blocks into the air</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="blocks"><strong>Blocks</strong><a href="#blocks" class="hash-link" aria-label="blocks的直接链接" title="blocks的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="crafter"><strong>Crafter</strong><a href="#crafter" class="hash-link" aria-label="crafter的直接链接" title="crafter的直接链接">​</a></h3>
+<ul>
+<li>A new block that enables the crafting of items and blocks via Redstone<!-- -->
+<ul>
+<li>Can be crafted with 5 Iron Ingots, 2 Redstone Dust, 1 Crafting Table and 1 Dropper</li>
+</ul>
+</li>
+<li>Will eject one crafting result at a time when powered by a Redstone pulse<!-- -->
+<ul>
+<li>Its current powered state is indicated by Redstone crystals on its back face, which will light up</li>
+<li>The crafting grid on its top face will light up red when it successfully crafts a recipe</li>
+</ul>
+</li>
+<li>Upon receiving a signal, it will eject the recipe result from the front face<!-- -->
+<ul>
+<li>If the recipe output has any remainder items (such as a Bucket), the result and remainder items will be ejected together</li>
+</ul>
+</li>
+<li>When placed, the front face of the Crafter will face towards the player</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="crafter-user-interface"><strong>Crafter User Interface</strong><a href="#crafter-user-interface" class="hash-link" aria-label="crafter-user-interface的直接链接" title="crafter-user-interface的直接链接">​</a></h3>
+<ul>
+<li>Has a 3x3 interactable crafting grid</li>
+<li>The crafting grid slots are toggleable, meaning that the player can change the behavior of a slot by interacting with it while not holding an item</li>
+<li>A slot that is ‘toggled’ cannot hold any items<!-- -->
+<ul>
+<li>Other blocks such as Hoppers and Droppers also cannot place items into them</li>
+</ul>
+</li>
+<li>Unlike the Crafting Table, the Crafter displays a preview of the crafted item which will be crafted and ejected on the next Redstone pulse, but cannot be manually taken out by the player<!-- -->
+<ul>
+<li>The arrow pointing out from the recipe grid will light up red when the Crafter is currently powered</li>
+</ul>
+</li>
+<li>The Crafter User Interface is shared between all players interacting with it, meaning that multiple players can interact with the Crafter at the same time, similar to Chests and Hoppers</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="crafter-interaction-with-other-blocks"><strong>Crafter Interaction with Other Blocks</strong><a href="#crafter-interaction-with-other-blocks" class="hash-link" aria-label="crafter-interaction-with-other-blocks的直接链接" title="crafter-interaction-with-other-blocks的直接链接">​</a></h3>
+<ul>
+<li>The signal strength of a Comparator reading a Crafter is 0-9, where each non-empty or toggled slot adds 1 strength</li>
+<li>Hoppers and Minecarts with Hoppers can be used to both insert and extract items from the Crafter</li>
+<li>Droppers can be used to insert items into the Crafter</li>
+<li>Items inserted from another block (ex: Hopper, Dropper) will fill the Crafter&#x27;s slots based on these rules:<!-- -->
+<ul>
+<li>Prioritize the first empty slot (from left-to-right, top-to-bottom)</li>
+<li>If there are no empty slots, then prioritize the smallest stack of the same item (pick the first if there are multiple)</li>
+<li>If there is a toggled slot it will be skipped. The item will then be moved into the container</li>
+<li>If the item cannot be moved, it will be ejected into the world</li>
+</ul>
+</li>
+<li>Items are removed from Crafters by Hoppers and Minecarts with Hoppers in the same order as from other containers like Chests</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="trial-spawner"><strong>Trial Spawner</strong><a href="#trial-spawner" class="hash-link" aria-label="trial-spawner的直接链接" title="trial-spawner的直接链接">​</a></h3>
+<ul>
+<li>A new variant of Monster Spawners that ejects rewards upon defeat<!-- -->
+<ul>
+<li>Cannot be crafted nor obtained by players in Survival - instead, they can be found naturally throughout Trial Chambers</li>
+<li>Very slow to mine and resistant to explosions, and will not drop even with Silk Touch</li>
+<li>Cannot be moved by Pistons</li>
+</ul>
+</li>
+<li>The challenge level will increase for each new player a Trial Spawner notices nearby<!-- -->
+<ul>
+<li>The challenge level will not decrease until it is reset during a Trial Spawner&#x27;s cooldown</li>
+<li>Trial Spawners can only notice players which are in line of sight, and will ignore Creative and Spectator players</li>
+</ul>
+</li>
+<li>Unlike normal Spawners, a Trial Spawner will spawn a limited number of mobs proportional to its current challenge level<!-- -->
+<ul>
+<li>It can only spawn a mob at positions that are within line of sight</li>
+<li>It can spawn a mob regardless of any light level requirement the mob has</li>
+<li>Spawned mobs are persistent</li>
+</ul>
+</li>
+<li>Once all mobs are defeated, the Trial Spawner will eject a number of rewards which is proportional to the current challenge level<!-- -->
+<ul>
+<li>After the rewards have been ejected, the Trial Spawner goes into cooldown for 30 minutes, during which it will no longer spawn mobs</li>
+</ul>
+</li>
+<li>When placed in Creative, Trial Spawners have no mob type set by default<!-- -->
+<ul>
+<li>The mob type can be set by interacting with it while holding a Spawn Egg</li>
+</ul>
+</li>
+<li>Has an Ominous Trial Spawner variant, accessible through an Ominous Trial</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="vault"><strong>Vault</strong><a href="#vault" class="hash-link" aria-label="vault的直接链接" title="vault的直接链接">​</a></h3>
+<ul>
+<li>A block that holds locked treasure and loot - players must find the right key to eject its rewards<!-- -->
+<ul>
+<li>Can be found throughout Trial Chambers, containing the structures&#x27; most valuable loot</li>
+<li>Vaults in Trial Chambers require a Trial Key to be unlocked</li>
+<li>Cannot be crafted nor obtained in Survival, and does not drop anything when mined</li>
+<li>Explosion resistant and cannot be moved by Pistons</li>
+</ul>
+</li>
+<li>Can be unlocked by an unlimited number of players<!-- -->
+<ul>
+<li>After a player has unlocked a Vault, they cannot personally unlock that Vault again</li>
+<li>If a player has not unlocked a particular Vault before, this can be seen by an orange stream of particles that flow from the player to that Vault when nearby</li>
+</ul>
+</li>
+<li>Has a keyhole that will be open or closed depending on the players nearby<!-- -->
+<ul>
+<li>If any nearby player has not unlocked that Vault, the keyhole will be open</li>
+<li>If all nearby players have unlocked that Vault, the keyhole will be closed</li>
+</ul>
+</li>
+<li>Within its cage, it will cycle through and display items which are possible to eject from its loot table<!-- -->
+<ul>
+<li>Players cannot time their unlocks to eject the item that is currently displayed in the cage</li>
+</ul>
+</li>
+<li>The loot it ejects is randomized each time it is unlocked</li>
+<li>Has an Ominous Vault variant, unlockable through an Ominous Trial</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="copper-family"><strong>Copper Family</strong><a href="#copper-family" class="hash-link" aria-label="copper-family的直接链接" title="copper-family的直接链接">​</a></h3>
+<ul>
+<li>The Copper family of blocks has been expanded to add:<!-- -->
+<ul>
+<li>Chiseled Copper</li>
+<li>Copper Grate</li>
+<li>Copper Bulb</li>
+<li>Copper Door</li>
+<li>Copper Trapdoor</li>
+<li>Oxidized and waxed variants of all of the above</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="chiseled-copper"><strong>Chiseled Copper</strong><a href="#chiseled-copper" class="hash-link" aria-label="chiseled-copper的直接链接" title="chiseled-copper的直接链接">​</a></h3>
+<ul>
+<li>Crafted with 2 Cut Copper Slabs of a shared oxidation level</li>
+<li>Can be crafted in the Stonecutter</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="copper-grate"><strong>Copper Grate</strong><a href="#copper-grate" class="hash-link" aria-label="copper-grate的直接链接" title="copper-grate的直接链接">​</a></h3>
+<ul>
+<li>A new type of decorative block unique to the Copper family</li>
+<li>Crafted with 4 Copper Blocks of a shared oxidation level<!-- -->
+<ul>
+<li>Stonecutting a Copper Block into Copper Grates outputs 4 Copper Grates</li>
+</ul>
+</li>
+<li>Properties:<!-- -->
+<ul>
+<li>Transparent and allows light to pass through</li>
+<li>Mobs cannot suffocate inside them</li>
+<li>Cannot conduct Redstone</li>
+<li>Hostile mobs cannot naturally spawn on them</li>
+<li>Can hold water</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="copper-bulb"><strong>Copper Bulb</strong><a href="#copper-bulb" class="hash-link" aria-label="copper-bulb的直接链接" title="copper-bulb的直接链接">​</a></h3>
+<ul>
+<li>A light-emitting block that can toggle its light emission through Redstone pulses</li>
+<li>Oxidizes like other Copper blocks, and emits light based on oxidation level<!-- -->
+<ul>
+<li>Copper Bulb: Light level 15</li>
+<li>Exposed Copper Bulb: Light level 12</li>
+<li>Weathered Copper Bulb: Light level 8</li>
+<li>Oxidized Copper Bulb: Light level 4</li>
+</ul>
+</li>
+<li>When placed, its light is off by default<!-- -->
+<ul>
+<li>While it is unpowered, it will toggle its light on or off when it receives a Redstone pulse</li>
+<li>Its light will stay on even when the Redstone source is removed, and will only toggle off when it receives another Redstone pulse</li>
+</ul>
+</li>
+<li>A Redstone crystal can be seen in its center while it is powered by a Redstone signal</li>
+<li>Similar to Glass Blocks, it does not conduct Redstone power</li>
+<li>Comparators reading a Copper Bulb will output a signal strength of 15 if the Copper Bulb&#x27;s light is on</li>
+<li>The crafting recipe for 4 Copper Bulbs is:<!-- -->
+<ul>
+<li>3 Copper Blocks of a shared oxidation level</li>
+<li>1 Blaze Rod</li>
+<li>1 Redstone Dust</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="copper-doors-and-trapdoors"><strong>Copper Doors and Trapdoors</strong><a href="#copper-doors-and-trapdoors" class="hash-link" aria-label="copper-doors-and-trapdoors的直接链接" title="copper-doors-and-trapdoors的直接链接">​</a></h3>
+<ul>
+<li>Copper variants of Doors and Trapdoors that can oxidize over time and be waxed</li>
+<li>Behaves like wooden doors, meaning they can be opened and closed with interaction as well as Redstone<!-- -->
+<ul>
+<li>Can be opened by mobs that have the ability to open doors</li>
+</ul>
+</li>
+<li>Crafted with Copper Ingots</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tuff-family"><strong>Tuff Family</strong><a href="#tuff-family" class="hash-link" aria-label="tuff-family的直接链接" title="tuff-family的直接链接">​</a></h3>
+<ul>
+<li>Tuff has been expanded to have its own family of blocks:<!-- -->
+<ul>
+<li>Stair, Slab, Wall, and Chiseled variants</li>
+<li>Tuff Bricks with Stair, Slab, Wall, and Chiseled variants</li>
+<li>Polished Tuff with Stair, Slab, and Wall variants</li>
+</ul>
+</li>
+<li>All Tuff variants can be crafted in the Stonecutter</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="heavy-core"><strong>Heavy Core</strong><a href="#heavy-core" class="hash-link" aria-label="heavy-core的直接链接" title="heavy-core的直接链接">​</a></h3>
+<ul>
+<li>A mysterious, dense block which can be combined with a Breeze Rod to craft the Mace</li>
+<li>Can only be obtained from Ominous Vaults</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="items"><strong>Items</strong><a href="#items" class="hash-link" aria-label="items的直接链接" title="items的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="trial-explorer-map"><strong>Trial Explorer Map</strong><a href="#trial-explorer-map" class="hash-link" aria-label="trial-explorer-map的直接链接" title="trial-explorer-map的直接链接">​</a></h3>
+<ul>
+<li>Used to locate a nearby Trial Chamber</li>
+<li>Level up a Cartographer Villager to Journeyman for the opportunity to trade for this map</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ominous-bottle"><strong>Ominous Bottle</strong><a href="#ominous-bottle" class="hash-link" aria-label="ominous-bottle的直接链接" title="ominous-bottle的直接链接">​</a></h3>
+<ul>
+<li>An item which can be consumed by players to receive the Bad Omen effect for 1 hour and 40 minutes<!-- -->
+<ul>
+<li>Comes in 5 variations, one for each Bad Omen level</li>
+<li>The bottle breaks when consumed</li>
+<li>Can be stacked to 64</li>
+</ul>
+</li>
+<li>Ominous Bottles can be found uncommonly in any Vaults, and are dropped by Raid Captains which are defeated outside a Raid</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="wind-charge"><strong>Wind Charge</strong><a href="#wind-charge" class="hash-link" aria-label="wind-charge的直接链接" title="wind-charge的直接链接">​</a></h3>
+<ul>
+<li>Become the Breeze! Using this item will fire off a Wind Charge projectile similar to the Breeze&#x27;s<!-- -->
+<ul>
+<li>Can be used to launch entities away from the impact of the Wind Burst</li>
+<li>Grants 10% more knockback than a Breeze&#x27;s, but has a much smaller area of impact</li>
+<li>Deals damage if it hits an entity directly</li>
+<li>Has a half-second cooldown after each use</li>
+<li>Can be fired from a Dispenser</li>
+</ul>
+</li>
+<li>Players can use Wind Charges to propel themselves high into the air<!-- -->
+<ul>
+<li>Players that launch themselves with a Wind Charge only accumulate fall damage below the height of where they collided with the Wind Burst</li>
+<li>As an example, if a player uses a Wind Charge to launch themselves 9 blocks into the air, and they do not land lower than where they initially launched, they will take 0 damage</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="trial-key"><strong>Trial Key</strong><a href="#trial-key" class="hash-link" aria-label="trial-key的直接链接" title="trial-key的直接链接">​</a></h3>
+<ul>
+<li>An item that can only be obtained from Trial Spawners</li>
+<li>Can be used to unlock Vaults</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="breeze-rod"><strong>Breeze Rod</strong><a href="#breeze-rod" class="hash-link" aria-label="breeze-rod的直接链接" title="breeze-rod的直接链接">​</a></h3>
+<ul>
+<li>An item dropped by a Breeze that can be crafted into 4 Wind Charges, or used with the Heavy Core to craft a Mace</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pottery-sherds"><strong>Pottery Sherds</strong><a href="#pottery-sherds" class="hash-link" aria-label="pottery-sherds的直接链接" title="pottery-sherds的直接链接">​</a></h3>
+<ul>
+<li>Added Flow, Guster, and Scrape Pottery Sherds</li>
+<li>These can be obtained by breaking Decorated Pots that display them in Trial Chambers</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="banner-patterns"><strong>Banner Patterns</strong><a href="#banner-patterns" class="hash-link" aria-label="banner-patterns的直接链接" title="banner-patterns的直接链接">​</a></h3>
+<ul>
+<li>Added Flow Banner Pattern, found in Vaults</li>
+<li>Added Guster Banner Pattern, found in Ominous Vaults</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="armor-trims"><strong>Armor Trims</strong><a href="#armor-trims" class="hash-link" aria-label="armor-trims的直接链接" title="armor-trims的直接链接">​</a></h3>
+<ul>
+<li>Added Bolt Armor Trim and Smithing Template, found in Vaults<!-- -->
+<ul>
+<li>Can be duplicated using a Copper Block or Waxed Copper</li>
+</ul>
+</li>
+<li>Added Flow Armor Trim and Smithing Template, found in Ominous Vaults<!-- -->
+<ul>
+<li>Can be duplicated using a Breeze Rod</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="music-discs"><strong>Music Discs</strong><a href="#music-discs" class="hash-link" aria-label="music-discs的直接链接" title="music-discs的直接链接">​</a></h2>
+<p>Added 3 new music discs:</p>
+<ul>
+<li>&quot;Precipice&quot; by Aaron Cherof. Can be found rarely in standard Vaults, and has a comparator output of 13 when played in a Jukebox</li>
+<li>&quot;Creator&quot; by Lena Raine. Can be found rarely in Ominous Vaults, and has a comparator output of 12 when played in a Jukebox</li>
+<li>&quot;Creator (Music Box)&quot; by Lena Raine. Can be found rarely in Decorated Pots broken in Trial Chambers, and has a comparator output of 11 when played in a Jukebox</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="paintings"><strong>Paintings</strong><a href="#paintings" class="hash-link" aria-label="paintings的直接链接" title="paintings的直接链接">​</a></h2>
+<p>Added five new paintings by artist Sarah Boeving:</p>
+<ul>
+<li>Baroque</li>
+<li>Humble</li>
+<li>Meditative</li>
+<li>Prairie Ride</li>
+<li>Unpacked</li>
+</ul>
+<p>Added fifteen new paintings by artist Kristoffer Zetterstrand:</p>
+<ul>
+<li>Backyard</li>
+<li>Bouquet</li>
+<li>Cavebird</li>
+<li>Changing</li>
+<li>Cotan</li>
+<li>Fern</li>
+<li>Endboss</li>
+<li>Finding</li>
+<li>Lowmist</li>
+<li>Orb</li>
+<li>Owlemons</li>
+<li>Passage</li>
+<li>Pond</li>
+<li>Sunflowers</li>
+<li>Tides</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ominous-events"><strong>Ominous Events</strong><a href="#ominous-events" class="hash-link" aria-label="ominous-events的直接链接" title="ominous-events的直接链接">​</a></h3>
+<ul>
+<li>Bad Omen has been expanded to give access to an optional experience in Trial Chambers</li>
+<li>These optional experiences can be accessed through Bad Omen, and are now known as Ominous Events<!-- -->
+<ul>
+<li>They are more challenging than usual, and are designed to shake up the experience in unique ways</li>
+<li>Raids are an example of an existing Ominous Event</li>
+</ul>
+</li>
+<li>As a result, Bad Omen has a new, shadowy icon and a sound for being applied to the player<!-- -->
+<ul>
+<li>It is no longer given to players that defeat a Raid Captain outside a Raid</li>
+<li>Instead, players can gain access to Bad Omen by consuming the new Ominous Bottle item</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="raids"><strong>Raids</strong><a href="#raids" class="hash-link" aria-label="raids的直接链接" title="raids的直接链接">​</a></h3>
+<ul>
+<li>Bad Omen no longer triggers a Raid directly when entering a Village<!-- -->
+<ul>
+<li>Instead, it will transform into a Raid Omen variant with a duration of 30 seconds</li>
+<li>Once the Raid Omen expires, a Raid will start at the location the player gained the Raid Omen</li>
+<li>Like any other effect, players can drink a Bucket of Milk to clear the Raid Omen, preventing the Raid from starting</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ominous-trials"><strong>Ominous Trials</strong><a href="#ominous-trials" class="hash-link" aria-label="ominous-trials的直接链接" title="ominous-trials的直接链接">​</a></h3>
+<ul>
+<li>A new Ominous Event that can be accessed by exploring a Trial Chamber while Bad Omen is active</li>
+<li>This event will have players facing more powerful Ominous Trial Spawners, if they dare</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="trial-omen"><strong>Trial Omen</strong><a href="#trial-omen" class="hash-link" aria-label="trial-omen的直接链接" title="trial-omen的直接链接">​</a></h3>
+<ul>
+<li>A variant that Bad Omen can transform into<!-- -->
+<ul>
+<li>This occurs when the player is within detection range of a Trial Spawner that is not Ominous</li>
+<li>The Trial Omen will have a duration of 15 minutes multiplied by the transformed Bad Omen&#x27;s level</li>
+</ul>
+</li>
+<li>Players that have Trial Omen are surrounded by ominous particles</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ominous-trial-spawner"><strong>Ominous Trial Spawner</strong><a href="#ominous-trial-spawner" class="hash-link" aria-label="ominous-trial-spawner的直接链接" title="ominous-trial-spawner的直接链接">​</a></h3>
+<ul>
+<li>A more powerful active phase of the Trial Spawner with unique challenges and rewards<!-- -->
+<ul>
+<li>Provides a more challenging experience that combat-loving players can opt into for better rewards</li>
+</ul>
+</li>
+<li>If a Trial Spawner detects a player that has the Trial Omen effect, the spawner will become Ominous if:<!-- -->
+<ul>
+<li>It is not in cooldown</li>
+<li>Or, it is in cooldown but was not Ominous during its last activation<!-- -->
+<ul>
+<li>Making it Ominous this way will bypass the cooldown</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>While active, it will:<!-- -->
+<ul>
+<li>Glow blue instead of orange</li>
+<li>Emit soul flames instead of normal flames</li>
+<li>Periodically spawn potions and projectiles on top of unsuspecting players and mobs<!-- -->
+<ul>
+<li>Based on their location, spawners in an area will select a random set of projectiles to spawn</li>
+<li>These projectiles will always include a single type of Lingering Potion from a set of possible effects</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The mobs it spawns are more powerful than usual:<!-- -->
+<ul>
+<li>Mobs that can wear equipment will often spawn with enchanted weapons and armor<!-- -->
+<ul>
+<li>The armor these mobs wear have Armor Trims applied from the Trial Chambers</li>
+<li>All 3 of the following armor enchantments are applied to each piece:<!-- -->
+<ul>
+<li>Protection IV</li>
+<li>Projectile Protection IV</li>
+<li>Fire Protection IV</li>
+</ul>
+</li>
+<li>Sword enchantments can be either of the two:<!-- -->
+<ul>
+<li>Sharpness I</li>
+<li>Knockback I</li>
+</ul>
+</li>
+<li>Bow enchantments can be either of the two:<!-- -->
+<ul>
+<li>Power I</li>
+<li>Punch I</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Mobs that cannot wear equipment will instead be spawned at double the total mob count over the course of the challenge<!-- -->
+<ul>
+<li>The spawners for these mobs will also have an additional mob out at once during its challenge</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Becoming Ominous will despawn any existing mobs it spawned and reset its challenge<!-- -->
+<ul>
+<li>If those mobs picked up or equipped any items on the floor, those items will be dropped when they despawn</li>
+<li>It will stay Ominous until it has been defeated and its cooldown has finished</li>
+</ul>
+</li>
+<li>When defeated, it will eject a different set of loot to normal Trial Spawners</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ominous-vault"><strong>Ominous Vault</strong><a href="#ominous-vault" class="hash-link" aria-label="ominous-vault的直接链接" title="ominous-vault的直接链接">​</a></h3>
+<ul>
+<li>A variant of Vaults that have a more menacing looking and emit soul flames instead of normal flames</li>
+<li>These hold a more valuable set of rewards than the standard Vaults that are unlocked by Trial Keys</li>
+<li>Can be found throughout Trial Chambers in harder to reach places, and require an Ominous Trial Key to unlock</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ominous-trial-key"><strong>Ominous Trial Key</strong><a href="#ominous-trial-key" class="hash-link" aria-label="ominous-trial-key的直接链接" title="ominous-trial-key的直接链接">​</a></h3>
+<ul>
+<li>A variant of the Trial Key which has a 30% chance to eject when defeating an Ominous Trial Spawner</li>
+<li>Can be used to unlock Ominous Vaults</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="status-effects"><strong>Status Effects</strong><a href="#status-effects" class="hash-link" aria-label="status-effects的直接链接" title="status-effects的直接链接">​</a></h2>
+<ul>
+<li>The following status effects have been added:<!-- -->
+<ul>
+<li>Wind Charged<!-- -->
+<ul>
+<li>Affected entities will emit a wind burst upon death</li>
+<li>Can be brewed as a Potion with an Awkward Potion and a Breeze Rod</li>
+</ul>
+</li>
+<li>Weaving<!-- -->
+<ul>
+<li>Affected entities will spread Cobweb blocks upon death</li>
+<li>Affected entities can move through Cobweb with 50% of their normal speed instead of 25%</li>
+<li>Can be brewed as a Potion with an Awkward Potion and a Cobweb block</li>
+</ul>
+</li>
+<li>Oozing<!-- -->
+<ul>
+<li>Affected entities will spawn two Slimes upon death</li>
+<li>Can be brewed as a Potion with an Awkward Potion and a Slime Block</li>
+</ul>
+</li>
+<li>Infested<!-- -->
+<ul>
+<li>Affected entities have a 10% chance to spawn 1-2 Silverfish when hurt</li>
+<li>Can be brewed as a Potion with an Awkward Potion and a Stone block</li>
+</ul>
+</li>
+<li>Splash Potions, Lingering Potions and Tipped Arrows can be made with these effects</li>
+</ul>
+</li>
+<li>These effects can be encountered while taking on an Ominous Trial Spawner</li>
+<li>Some mobs are immune to these effects<!-- -->
+<ul>
+<li>Slimes are immune to Oozing</li>
+<li>Silverfish are immune to Infested</li>
+</ul>
+</li>
+<li>Whenever a mob with Oozing dies, it will check within a 5x5x5 area how many Slimes there are<!-- -->
+<ul>
+<li>If the amount exceeds the max entity cramming cap (24 by default), it will not spawn any Slimes</li>
+<li>If it does not exceed it, it will attempt to spawn 2 Slimes up until the max entity cramming cap</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="music"><strong>Music</strong><a href="#music" class="hash-link" aria-label="music的直接链接" title="music的直接链接">​</a></h2>
+<p>Added 9 new background music tracks which will all play in the main menu:</p>
+<ul>
+<li>&quot;Featherfall&quot; by Aaron Cherof<!-- -->
+<ul>
+<li>Plays in Badlands, Cherry Grove, Flower Forest, and Lush Caves Biomes</li>
+</ul>
+</li>
+<li>&quot;Deeper&quot; by Lena Raine<!-- -->
+<ul>
+<li>Plays in Deep Dark and Dripstone Caves Biomes</li>
+</ul>
+</li>
+<li>&quot;Eld Unknown&quot; by Lena Raine<!-- -->
+<ul>
+<li>Plays in Dripstone Caves, Grove, Jagged Peaks, and Stony Peaks Biomes</li>
+</ul>
+</li>
+<li>&quot;Endless&quot; by Lena Raine<!-- -->
+<ul>
+<li>Plays in Dripstone Caves, Grove, Jagged Peaks, and Stony Peaks Biomes</li>
+</ul>
+</li>
+<li>&quot;pokopoko&quot; by Kumi Tanioka<!-- -->
+<ul>
+<li>Plays in Dripstone Caves, Grove, Jagged Peaks, and Snow Slopes Biomes</li>
+</ul>
+</li>
+</ul>
+<p>The following have been added to the pool of songs which play in Overworld Biomes that do not have biome-specific music:</p>
+<ul>
+<li>&quot;Featherfall&quot; by Aaron Cherof</li>
+<li>&quot;komorebi&quot; by Kumi Tanioka</li>
+<li>&quot;Puzzlebox&quot; by Aaron Cherof</li>
+<li>&quot;Watcher&quot; by Aaron Cherof</li>
+<li>&quot;yakusoku&quot; by Kumi Tanioka</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="achievements"><strong>Achievements</strong><a href="#achievements" class="hash-link" aria-label="achievements的直接链接" title="achievements的直接链接">​</a></h2>
+<p>Added 4 new achievements:</p>
+<ul>
+<li>ReVaulting - Unlock a Vault using an Ominous Trial Key</li>
+<li>Who Needs Rockets? - Use a wind charge to launch yourself upward at least 8 blocks</li>
+<li>Crafters Crafting Crafters - Be near a Crafter when it crafts a Crafter</li>
+<li>Over-Overkill - Deal 50 hearts of damage in a single hit using the Mace</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="updated-player-profile"><strong>Updated Player Profile</strong><a href="#updated-player-profile" class="hash-link" aria-label="updated-player-profile的直接链接" title="updated-player-profile的直接链接">​</a></h2>
+<p>Introducing the improved player Profile page, where you can see your own profile or the profiles of other players! In the new Profile screen, you can view achievement progress, compare stats, and access the dressing room, with more features coming later this year. This new screen will roll out slowly and become available in the coming weeks. Please try it out and let us know what you think at <a href="https://aka.ms/MCPreviewProfileFeedback" target="_blank" rel="noopener noreferrer">aka.ms/MCPreviewProfileFeedback</a>!</p>
+<p><img decoding="async" loading="lazy" src="https://feedback.minecraft.net/hc/article_attachments/27452853978509" alt="profile1.png" class="img_ev3q"></p>
+<ul>
+<li>Achievements View:<!-- -->
+<ul>
+<li>See your friend’s achievement progress and some suggested next achievements you can work on together!</li>
+<li>Wondering what to do next? Check out your own suggested achievements.</li>
+</ul>
+</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://feedback.minecraft.net/hc/article_attachments/27452837677581" alt="profile2.png" class="img_ev3q"></p>
+<ul>
+<li>Stats View:<!-- -->
+<ul>
+<li>Check out your Minecraft stats, including blocks broken, distance travelled, time played, and mobs defeated. The stats view combines play across all platforms.</li>
+<li>Press the “Compare stats” button and select a friend to engage in a little friendly competition.</li>
+</ul>
+</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://feedback.minecraft.net/hc/article_attachments/27452837681805" alt="profile3.png" class="img_ev3q"></p>
+<ul>
+<li>Compare Stats View:<!-- -->
+<ul>
+<li>Compare stats with others to see who’s broken more blocks, travelled more distance, defeated more mobs, and played longer.</li>
+</ul>
+</li>
+<li>Getting to the new Profile Screen:<!-- -->
+<ul>
+<li>
+<p>In the new Play Screen UI, you can access Profile from the Play menu.</p>
+<ul>
+<li>Open the Friends Drawer and click on your friends to see their profiles, or click “Search for Players” from the Friends Drawer to find new profiles.</li>
+</ul>
+</li>
+<li>
+<p>In the old UI, click “Add Friends” from the Friends tab and search for friends. Click on them to view their profiles.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1><strong>Known Issues:</strong></h1>
+<ul>
+<li>
+<p>Using Trident with Riptide Enchantment during Wind Charge jump does not negate Wind Charge fall damage protection</p>
+</li>
+</ul>
+<h1><strong>Fixes and Changes:</strong></h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="performance--stability"><strong>Performance / Stability:</strong><a href="#performance--stability" class="hash-link" aria-label="performance--stability的直接链接" title="performance--stability的直接链接">​</a></h2>
+<ul>
+<li>Fixed a crash that could occur when teleporting to a region where a Piston was pushing a Chest (<a href="https://bugs.mojang.com/browse/MCPE-179440" target="_blank" rel="noopener noreferrer">MCPE-179440</a>)</li>
+<li>Fixed a crash that could occur when the player began losing air</li>
+<li>Containers being cloned over no longer keep their container screens open and cause crashes</li>
+<li>Fixed an issue that could cause the loading screen to get stuck for some time around 41% (<a href="https://bugs.mojang.com/browse/MCPE-175550" target="_blank" rel="noopener noreferrer">MCPE-175550</a>)</li>
+<li>Fixed not being able to load into worlds with some texture packs (<a href="https://bugs.mojang.com/browse/MCPE-180918" target="_blank" rel="noopener noreferrer">MCPE-180918</a>)</li>
+<li>Fixed crashes that could occur when creating worlds on new Realms and backing out at the Online Safety dialog box</li>
+<li>Support prevention of app/flow restart when dark mode toggled on or off on across Android devices</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="general"><strong>General</strong><a href="#general" class="hash-link" aria-label="general的直接链接" title="general的直接链接">​</a></h2>
+<ul>
+<li>Fixed an issue where the ‘Let It Go’ trophy did not unlock on PlayStation®4</li>
+<li>The ‘Castaway’ achievement can now be reliably unlocked (<a href="https://bugs.mojang.com/browse/MCPE-118433" target="_blank" rel="noopener noreferrer">MCPE-118433</a>)</li>
+<li>The game no ensures the proper controller gets assigned to player 1 when playing on Xbox (<a href="https://bugs.mojang.com/browse/MCPE-163023" target="_blank" rel="noopener noreferrer">MCPE-163023</a>)</li>
+<li>Fixed a bug causing Character Creator skins with removed eyes to break skin texture loading (<a href="https://bugs.mojang.com/browse/MCPE-181228" target="_blank" rel="noopener noreferrer">MCPE-181228</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="gameplay"><strong>Gameplay</strong><a href="#gameplay" class="hash-link" aria-label="gameplay的直接链接" title="gameplay的直接链接">​</a></h2>
+<ul>
+<li>Added 4 new ambient cave sounds</li>
+<li>Players can now stand on Boats that float on water (<a href="https://bugs.mojang.com/browse/MCPE-105535" target="_blank" rel="noopener noreferrer">MCPE-105535,</a> <a href="https://bugs.mojang.com/browse/MCPE-120687" target="_blank" rel="noopener noreferrer">MCPE-120687</a>)</li>
+<li>Sprinting speed is no longer activated with a delay (<a href="https://bugs.mojang.com/browse/MCPE-178858" target="_blank" rel="noopener noreferrer">MCPE-178858</a>)</li>
+<li>Flower forests now generate all expected flower types (<a href="https://bugs.mojang.com/browse/MCPE-180417" target="_blank" rel="noopener noreferrer">MCPE-180417</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mobs-1"><strong>Mobs</strong><a href="#mobs-1" class="hash-link" aria-label="mobs-1的直接链接" title="mobs-1的直接链接">​</a></h2>
+<ul>
+<li>Armadillos no longer repeatedly roll and unroll when receiving damage from blocks (<a href="https://bugs.mojang.com/browse/MCPE-180142" target="_blank" rel="noopener noreferrer">MCPE-180142</a>)</li>
+<li>Naturally spawning mobs now spawn at the center of a block (<a href="https://bugs.mojang.com/browse/MCPE-99315" target="_blank" rel="noopener noreferrer">MCPE-99315</a>)<!-- -->
+<ul>
+<li>This fixes many issues where mobs could not spawn on slopes, in narrow passageways, and in other situations where they were expected to</li>
+<li>For technical players, this bug fix will mean that some player-made mob farms no longer fully work. We appreciate the time the community puts into building clever farms and we try to avoid breaking farms when we can. In this case, we felt that this change was necessary because it improves the way spawning works in many biomes</li>
+</ul>
+</li>
+<li>The types of damage that can cause a mob to panic have been restricted (<a href="https://bugs.mojang.com/browse/MCPE-167513" target="_blank" rel="noopener noreferrer">MCPE-167513</a>)<!-- -->
+<ul>
+<li>Only the following damage causes now induce panic:<!-- -->
+<ul>
+<li>&quot;campfire&quot;</li>
+<li>&quot;entity_attack&quot;</li>
+<li>&quot;entity_explosion&quot;</li>
+<li>&quot;fire&quot;</li>
+<li>&quot;fire_tick&quot;</li>
+<li>&quot;fireworks&quot;</li>
+<li>&quot;freezing&quot;</li>
+<li>&quot;lava&quot;</li>
+<li>&quot;lightning&quot;</li>
+<li>&quot;magic&quot;</li>
+<li>&quot;magma&quot;</li>
+<li>&quot;projectile&quot;</li>
+<li>&quot;ram_attack&quot;</li>
+<li>&quot;sonic_boom&quot;</li>
+<li>&quot;soul_campfire&quot;</li>
+<li>&quot;temperature&quot;</li>
+<li>&quot;wither&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="blocks-1"><strong>Blocks</strong><a href="#blocks-1" class="hash-link" aria-label="blocks-1的直接链接" title="blocks-1的直接链接">​</a></h2>
+<ul>
+<li>Fixed a recipe bug where any type of Stone Slab could be used to craft a Grindstone with Crimson, Mangrove, or Warped Planks. It can now only accept the actual normal Stone Slab, no other type of stones</li>
+<li>Cauldrons filled with potions now keep the color of the potion when pushed by a Piston</li>
+<li>Added unique sounds for breaking and placing Cobwebs (<a href="https://bugs.mojang.com/browse/MCPE-180109" target="_blank" rel="noopener noreferrer">MCPE-180109</a>)</li>
+<li>Items drops from blocks destroyed in an explosion now get merged into bigger item stacks before spawning in the world</li>
+<li>All blocks now drop items by default when exploded with TNT (<a href="https://bugs.mojang.com/browse/MCPE-56036" target="_blank" rel="noopener noreferrer">MCPE-56036</a>)</li>
+<li>Added a new game rule to control decay of drops from TNT explosions, named &quot;tntExplosionDropDecay&quot;<!-- -->
+<ul>
+<li>The rule can be set to &quot;true&quot; to re-enable the previous behavior where not all blocks would drop when exploded by TNT</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="items-1"><strong>Items</strong><a href="#items-1" class="hash-link" aria-label="items-1的直接链接" title="items-1的直接链接">​</a></h2>
+<ul>
+<li>When using an item on an entity, it is now necessary to release the use button before being able to use it again, which prevents players from inadvertently consuming items themselves when interacting with entities</li>
+<li>Chemistry items now appear in the Creative mode inventory when the Education Edition toggle is enabled</li>
+<li>Tridents no longer damage the Ender Dragon when it is perching (<a href="https://bugs.mojang.com/browse/MCPE-37112" target="_blank" rel="noopener noreferrer">MCPE-37112</a>)</li>
+<li>Fixed a bug that loaded held player item incorrectly, causing possible item duplication</li>
+<li>Banners are once again obtainable via the recipe book (<a href="https://bugs.mojang.com/browse/MCPE-179650" target="_blank" rel="noopener noreferrer">MCPE-179650</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="air-bubbles"><strong>Air Bubbles</strong><a href="#air-bubbles" class="hash-link" aria-label="air-bubbles的直接链接" title="air-bubbles的直接链接">​</a></h2>
+<ul>
+<li>The oxygen bar now disappears immediately when switching to Creative mode underwater (<a href="https://bugs.mojang.com/browse/MCPE-139168" target="_blank" rel="noopener noreferrer">MCPE-139168</a>)</li>
+<li>Added an empty state for air bubbles on the oxygen bar, along with a wobble when the player is drowning</li>
+<li>Added a popping sound when bubbles pop on the oxygen bar</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="graphical"><strong>Graphical</strong><a href="#graphical" class="hash-link" aria-label="graphical的直接链接" title="graphical的直接链接">​</a></h2>
+<ul>
+<li>Changed the default Anti-Aliasing setting from 4 to 2 for better performance with minimal visual degradation</li>
+<li>Fixed Character Creator hair and headwear clipping through worn Pumpkins and Mob Heads (<a href="https://bugs.mojang.com/browse/MCPE-128908" target="_blank" rel="noopener noreferrer">MCPE-128908</a>)</li>
+<li>Status effect particle colors are no longer blended into one particle color<!-- -->
+<ul>
+<li>Up to 8 active visible status effect particles are now rendered separately</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="realms"><strong>Realms</strong><a href="#realms" class="hash-link" aria-label="realms的直接链接" title="realms的直接链接">​</a></h2>
+<ul>
+<li>In Realms, blocks no longer reappear after breaking them in Creative Mode with Delayed Block Breaking toggle turned off (<a href="https://bugs.mojang.com/browse/REALMS-11707" target="_blank" rel="noopener noreferrer">REALMS-11707</a>)</li>
+<li>Fixed a crash when opening Realms Stories (<a href="https://bugs.mojang.com/browse/MCPE-178759" target="_blank" rel="noopener noreferrer">MCPE-178759</a>)</li>
+<li>Fixed Realms Stories availability for Xbox players</li>
+<li>Combined Realm Events of the same type that happen on the same day</li>
+<li>Fixed Realms Stories posts on Xbox devices with more than one user signed in</li>
+<li>Fixed Realm Events on Xbox devices with more than one user signed in</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="accessibility"><strong>Accessibility</strong><a href="#accessibility" class="hash-link" aria-label="accessibility的直接链接" title="accessibility的直接链接">​</a></h2>
+<ul>
+<li>Fixed an issue where pressing Enter on a keyboard, keypad, or controller (menu button) did not send messages on the Chat screen (<a href="https://bugs.mojang.com/browse/MCPE-170890" target="_blank" rel="noopener noreferrer">MCPE-170890</a>)</li>
+<li>Fixed various keys not being bindable when using external keyboards on mobile devices (<a href="https://bugs.mojang.com/browse/MCPE-176505" target="_blank" rel="noopener noreferrer">MCPE-176505</a>, <a href="https://bugs.mojang.com/browse/MCPE-176878" target="_blank" rel="noopener noreferrer">MCPE-176878</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="touch-controls"><strong>Touch Controls</strong><a href="#touch-controls" class="hash-link" aria-label="touch-controls的直接链接" title="touch-controls的直接链接">​</a></h2>
+<ul>
+<li>Fixed a bug where players could not navigate through the inventory using keyboard on touch devices</li>
+<li>On touch devices, when moving items between different slots, the icon no longer appears as duplicated between the moving item and the destination slot</li>
+<li>On touch devices, when moving enchanted items between different slots, the moving icon is now rendered correctly</li>
+<li>On touch devices, stack-splitting UI no longer appears for unstackable items</li>
+<li>On touch devices, items from Creative Inventory are now unselectable</li>
+<li>On touch devices, it is now possible to swap two identical items</li>
+<li>Added slide-off persistence to new d-pad touch control scheme</li>
+<li>Changed positioning and scale of default new touch d-pad control scheme. Also allows for moving the d-pad closer to the hotbar when customizing touch controls</li>
+<li>Made the jump and ascend in water button overlap so now the player can stay above water more easily (<a href="https://bugs.mojang.com/browse/MCPE-179689" target="_blank" rel="noopener noreferrer">MCPE-179689</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="user-interface"><strong>User Interface</strong><a href="#user-interface" class="hash-link" aria-label="user-interface的直接链接" title="user-interface的直接链接">​</a></h2>
+<ul>
+<li>Added a new HUD overlay that displays the number of days played in a world. The overlay is enabled with the &quot;Show days played&quot; world setting</li>
+<li>Fixed a bug where GUI scale was not modifiable after changing between handheld and docked mode on Nintendo Switch (<a href="https://bugs.mojang.com/browse/MCPE-159959" target="_blank" rel="noopener noreferrer">MCPE-159959</a>)</li>
+<li>Added missing indentation to list items in some modals, which should make those lists easier to read</li>
+<li>Removed faulty hotbar scale setting for Pocket UI</li>
+<li>&quot;Draw&quot; and &quot;Release&quot; tooltips now appear for Crossbows (<a href="https://bugs.mojang.com/browse/MCPE-44845" target="_blank" rel="noopener noreferrer">MCPE-44845</a>)</li>
+<li>&quot;Read Book&quot; tooltip now appears when it&#x27;s possible to read a Book from a Lectern even when you are not holding an item (<a href="https://bugs.mojang.com/browse/MCPE-44848" target="_blank" rel="noopener noreferrer">MCPE-44848</a>)</li>
+<li>&quot;Place&quot; tooltip now appears for doors (<a href="https://bugs.mojang.com/browse/MCPE-157688" target="_blank" rel="noopener noreferrer">MCPE-157688</a>)</li>
+<li>Fixed a bug that prevented navigating to previously sent messages with a keyboard on Xbox (<a href="https://bugs.mojang.com/browse/MCPE-174648" target="_blank" rel="noopener noreferrer">MCPE-174648</a>)</li>
+<li>Recipes that are always unlocked will be available when the game rule &quot;dolimitedcrafting&quot; is enabled (<a href="https://bugs.mojang.com/browse/MCPE-175449" target="_blank" rel="noopener noreferrer">MCPE-175449</a>)</li>
+<li>Stack splitting window is now aligned with the inventory slots (<a href="https://bugs.mojang.com/browse/MCPE-173632" target="_blank" rel="noopener noreferrer">MCPE-173632</a>)</li>
+<li>The text on the Realms buttons in Create New World and Edit World have been made consistent with each other (<a href="https://bugs.mojang.com/browse/MCPE-179777" target="_blank" rel="noopener noreferrer">MCPE-179777</a>)</li>
+<li>The respawn radius field now resets to the correct default value if given invalid input (<a href="https://bugs.mojang.com/browse/MCPE-179686" target="_blank" rel="noopener noreferrer">MCPE-179686</a>)</li>
+<li>The chat caret now is placed at the end of the text when navigating to previously sent messages/commands with an external keyboard on mobile devices (<a href="https://bugs.mojang.com/browse/MCPE-178574" target="_blank" rel="noopener noreferrer">MCPE-178574</a>)</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/AbbottMc/BedrockTechWeekly/tree/master/docs/changelog_source/stable/1.21/0/gameplay.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#structures" class="table-of-contents__link toc-highlight"><strong>Structures</strong></a><ul><li><a href="#trial-chambers" class="table-of-contents__link toc-highlight"><strong>Trial Chambers</strong></a></li></ul></li><li><a href="#mobs" class="table-of-contents__link toc-highlight"><strong>Mobs</strong></a><ul><li><a href="#breeze" class="table-of-contents__link toc-highlight"><strong>Breeze</strong></a></li><li><a href="#bogged" class="table-of-contents__link toc-highlight"><strong>Bogged</strong></a></li></ul></li><li><a href="#weapons" class="table-of-contents__link toc-highlight"><strong>Weapons</strong></a><ul><li><a href="#mace" class="table-of-contents__link toc-highlight"><strong>Mace</strong></a></li></ul></li><li><a href="#enchantments" class="table-of-contents__link toc-highlight"><strong>Enchantments</strong></a></li><li><a href="#blocks" class="table-of-contents__link toc-highlight"><strong>Blocks</strong></a><ul><li><a href="#crafter" class="table-of-contents__link toc-highlight"><strong>Crafter</strong></a></li><li><a href="#crafter-user-interface" class="table-of-contents__link toc-highlight"><strong>Crafter User Interface</strong></a></li><li><a href="#crafter-interaction-with-other-blocks" class="table-of-contents__link toc-highlight"><strong>Crafter Interaction with Other Blocks</strong></a></li><li><a href="#trial-spawner" class="table-of-contents__link toc-highlight"><strong>Trial Spawner</strong></a></li><li><a href="#vault" class="table-of-contents__link toc-highlight"><strong>Vault</strong></a></li><li><a href="#copper-family" class="table-of-contents__link toc-highlight"><strong>Copper Family</strong></a></li><li><a href="#chiseled-copper" class="table-of-contents__link toc-highlight"><strong>Chiseled Copper</strong></a></li><li><a href="#copper-grate" class="table-of-contents__link toc-highlight"><strong>Copper Grate</strong></a></li><li><a href="#copper-bulb" class="table-of-contents__link toc-highlight"><strong>Copper Bulb</strong></a></li><li><a href="#copper-doors-and-trapdoors" class="table-of-contents__link toc-highlight"><strong>Copper Doors and Trapdoors</strong></a></li><li><a href="#tuff-family" class="table-of-contents__link toc-highlight"><strong>Tuff Family</strong></a></li><li><a href="#heavy-core" class="table-of-contents__link toc-highlight"><strong>Heavy Core</strong></a></li></ul></li><li><a href="#items" class="table-of-contents__link toc-highlight"><strong>Items</strong></a><ul><li><a href="#trial-explorer-map" class="table-of-contents__link toc-highlight"><strong>Trial Explorer Map</strong></a></li><li><a href="#ominous-bottle" class="table-of-contents__link toc-highlight"><strong>Ominous Bottle</strong></a></li><li><a href="#wind-charge" class="table-of-contents__link toc-highlight"><strong>Wind Charge</strong></a></li><li><a href="#trial-key" class="table-of-contents__link toc-highlight"><strong>Trial Key</strong></a></li><li><a href="#breeze-rod" class="table-of-contents__link toc-highlight"><strong>Breeze Rod</strong></a></li><li><a href="#pottery-sherds" class="table-of-contents__link toc-highlight"><strong>Pottery Sherds</strong></a></li><li><a href="#banner-patterns" class="table-of-contents__link toc-highlight"><strong>Banner Patterns</strong></a></li><li><a href="#armor-trims" class="table-of-contents__link toc-highlight"><strong>Armor Trims</strong></a></li></ul></li><li><a href="#music-discs" class="table-of-contents__link toc-highlight"><strong>Music Discs</strong></a></li><li><a href="#paintings" class="table-of-contents__link toc-highlight"><strong>Paintings</strong></a><ul><li><a href="#ominous-events" class="table-of-contents__link toc-highlight"><strong>Ominous Events</strong></a></li><li><a href="#raids" class="table-of-contents__link toc-highlight"><strong>Raids</strong></a></li><li><a href="#ominous-trials" class="table-of-contents__link toc-highlight"><strong>Ominous Trials</strong></a></li><li><a href="#trial-omen" class="table-of-contents__link toc-highlight"><strong>Trial Omen</strong></a></li><li><a href="#ominous-trial-spawner" class="table-of-contents__link toc-highlight"><strong>Ominous Trial Spawner</strong></a></li><li><a href="#ominous-vault" class="table-of-contents__link toc-highlight"><strong>Ominous Vault</strong></a></li><li><a href="#ominous-trial-key" class="table-of-contents__link toc-highlight"><strong>Ominous Trial Key</strong></a></li></ul></li><li><a href="#status-effects" class="table-of-contents__link toc-highlight"><strong>Status Effects</strong></a></li><li><a href="#music" class="table-of-contents__link toc-highlight"><strong>Music</strong></a></li><li><a href="#achievements" class="table-of-contents__link toc-highlight"><strong>Achievements</strong></a></li><li><a href="#updated-player-profile" class="table-of-contents__link toc-highlight"><strong>Updated Player Profile</strong></a></li><li><a href="#performance--stability" class="table-of-contents__link toc-highlight"><strong>Performance / Stability:</strong></a></li><li><a href="#general" class="table-of-contents__link toc-highlight"><strong>General</strong></a></li><li><a href="#gameplay" class="table-of-contents__link toc-highlight"><strong>Gameplay</strong></a></li><li><a href="#mobs-1" class="table-of-contents__link toc-highlight"><strong>Mobs</strong></a></li><li><a href="#blocks-1" class="table-of-contents__link toc-highlight"><strong>Blocks</strong></a></li><li><a href="#items-1" class="table-of-contents__link toc-highlight"><strong>Items</strong></a></li><li><a href="#air-bubbles" class="table-of-contents__link toc-highlight"><strong>Air Bubbles</strong></a></li><li><a href="#graphical" class="table-of-contents__link toc-highlight"><strong>Graphical</strong></a></li><li><a href="#realms" class="table-of-contents__link toc-highlight"><strong>Realms</strong></a></li><li><a href="#accessibility" class="table-of-contents__link toc-highlight"><strong>Accessibility</strong></a></li><li><a href="#touch-controls" class="table-of-contents__link toc-highlight"><strong>Touch Controls</strong></a></li><li><a href="#user-interface" class="table-of-contents__link toc-highlight"><strong>User Interface</strong></a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">文刊</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/">主页</a></li></ul></div><div class="col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">周刊</a></li><li class="footer__item"><a href="https://github.com/AbbottMc/BedrockTechWeekly" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub仓库<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">基岩技术文刊站点，由<a href="https://space.bilibili.com/15122547">乾山瑶</a>基于Docusaurus搭建.<br>“Minecraft”是 <a href="https://www.minecraft.net/">Mojang AB</a> 的商标，在中国大陆由<a href="https://mc.163.com/">网易我的世界</a>代理管辖。本站不以任何方式隶属于 Microsoft 、 Mojang AB 或网之易吾世界公司</div></div></div></footer></div>
+</body>
+</html>
