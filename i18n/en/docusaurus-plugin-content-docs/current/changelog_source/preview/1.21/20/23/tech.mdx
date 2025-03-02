@@ -1,0 +1,60 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.** 
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples). 
+
+Updates this week:
+
+-   Updated block hotbar to have non-air defaults
+-   Added persistence for the default hotbar 
+-   Added "ExtensionContext.settings.theme" which will represent the In-World UI Theme
+    -   This feature currently has three functions: _resolveColorKey(string): Color_, _setCurrentTheme(string): void_, and _getThemeList(): string\[\]_
+    -   There is a single "minecraft:default" theme
+    -   Future work will add the ability to create, modify, and delete custom themes but the default themes will not be modifiable
+-   Updated subset of PropertyPane API to use IObservable pattern.
+    -   Added an alternative Property Pane _addVector3_API that leverages type safe _IObservable_ Observables can be created using _makeObservable_ API 
+        -   Added interfaces _IVector3PropertyItem_and _IVector3PropertyItemOptions_ for the new property item
+        -   Renamed function to create property bag Vector3 to _addVector3\_deprecated_
+    -   Added an alternative Property Pane _addBool_API that leverages type safe _IObservableProp_ value API 
+        -   Added interfaces _IBoolPropertyItem_and _IBoolPropertyItemOptions_ for the new property item
+        -   Renamed function to create property bag bool item to _addBool\_deprecated_
+    -   Converted Property Pane addText API to use _IObservableProp_
+    -   Added interfaces _IButtonPropertyItem_and _IButtonPropertyItemOptions_ for the button property item 
+        -   IPropertyPane _addButton_API can now take a plain function
+        -   Removed _ButtonVariant_type, and added _ButtonPropertyItemVariant_ enum API
+    -   Renamed _EDITOR\_PANE\_PROPERTY\_ITEM\_TYPE_enum API to _PropertyItemType_
+    -   Converted property pane _addImage_API to support _IObservable_. It will also be possible to use custom image formats like icon and block with _ImageResourceData_ as value 
+        -   Added _onClick_function and _alignment_ property to _IImagePropertyItemOptions_ API
+
+## Entity Components
+
+-   Improved "behavior.follow\_owner" teleportation logic: 
+    -   Entities now seamlessly resume navigation after teleporting to their owner
+    -   Added the "post\_teleport\_distance" field, allowing to specify how far from its owner an entity will be placed after teleporting
+        -   If no value is specified, "stop\_distance" increased by one will be used
+    -   These changes only affect entities with format version of 1.21.20 or above
+
+## General
+
+-   Removed the "Holiday Creator Features" experiment. Content that uses the experimental features may no longer function correctly. Please check out Custom Components which replicates most of the functionality: [https://learn.microsoft.com/en-us/minecraft/creator/documents/customcomponents](https://learn.microsoft.com/en-us/minecraft/creator/documents/customcomponents) 
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## Creator Camera - Focus Target
+
+-   Focus target experiment is now available, more functionality to come in future releases
+-   A new camera command has been added to target entities and keep them in center screen 
+    -   Includes option to add an offset from the center of the entity
+    -   Includes option to remove the target

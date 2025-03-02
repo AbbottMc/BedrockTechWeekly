@@ -1,0 +1,41 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Biomes
+
+-   Biome components "minecraft:forced\_features" and "minecraft:ignore\_automatic\_features" are now deprecated 
+
+## Blocks
+
+-   Restored the back-side texture of the Sunflower to be leafy green ([MCPE-181275](https://bugs.mojang.com/browse/MCPE-181275)) 
+-   "coral\_fan\_hang" block is now split into unique instances "tube\_coral\_wall\_fan", "brain\_coral\_wall\_fan", "dead\_tube\_coral\_wall\_fan", and "dead\_brain\_coral\_wall\_fan" 
+-   "coral\_fan\_hang2" block is now split into unique instances "bubble\_coral\_wall\_fan", "fire\_coral\_wall\_fan", "dead\_bubble\_coral\_wall\_fan", and "dead\_fire\_coral\_wall\_fan" 
+-   "coral\_fan\_hang3" block is now split into unique instances "horn\_coral\_wall\_fan" and "dead\_horn\_coral\_wall\_fan"
+-   "stone\_block\_slab4" block is now split into unique instances "mossy\_stone\_brick\_slab", "smooth\_quartz\_slab", "normal\_stone\_slab", "cut\_sandstone\_slab" and "cut\_red\_sandstone\_slab" 
+-   "mossy\_stone\_brick\_slab" now has a destruction time of 1.5
+
+## Editor
+
+-   Do not show Hardcore mode option when creating an editor project 
+-   Updated Selection, Brush, Line, Paste, Delete, Fill tool to load bounds before applying changes
+-   Added _IActionBar_ API to manage scripted _IActionBarItem_
+-   Added property _actionBar: IActionBar_ to _IPlayerUISession_ API which represents quick action items in the action bar selector UI
+-   Added _addColorPicker_ method to _IPropertyPane_ API to display a color picker property pane item for modifying _RGBA_ values 
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

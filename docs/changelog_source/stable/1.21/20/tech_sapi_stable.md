@@ -1,0 +1,80 @@
+
+
+-   Fixed a crash with _getTags_method on _Item Stack_ when called on the Air Block Item
+-   Dimension
+    -   Released method _getTopmostBlock_ from _beta_ to _1.13.0_
+    -   Released interface _VectorXZ_ from _beta_ to _1.13.0_
+-   Fixed a bug that prevented _get_ and _StructureManager.place_ from loading structures stored in the root of the structures directory
+-   _MinecraftItemTypes_ no longer contains old item names
+-   Fixed bug that caused the game to crash when executing a run command from the _runCommand()_ and _Dimension.runCommandAsync()_ scripting APIs
+-   Potions
+    -   Added class _Potions_ which contains helpers for retrieving handles to potion associated types
+    -   Added class _PotionEffectType_ which is a potion effect type handle associated with _MinecraftPotionEffectTypes_
+    -   Added class _PotionModifierType_ which is a potion modifier type handle associated with _MinecraftPotionModifierTypes_
+    -   Added class _PotionLiquidType_ which is a potion type handle associated with _MinecraftPotionLiquidTypes_
+    -   Added class _ItemPotionComponent_ which can be obtained from a valid potion _ItemStack_
+    -   Added interface _PotionOptions_ for use in _createPotion_
+    -   Added function _createPotion_ for creating valid potion items
+-   Vanilla-Data
+    -   Added enum _MinecraftPotionLiquidTypes_ containing potion liquid IDs
+    -   Added enum _MinecraftPotionEffectTypes_ containing potion effect IDs
+    -   Added enum _MinecraftPotionModifierTypes_ containing potion modifier IDs
+-   BlockExplodeAfterEvent
+    -   Released _BlockExplodeAfterEvent_ from _beta_ to _1.12.0_
+    -   Released _BlockExplodeAfterEventSignal_ from _beta_ to _1.12.0_
+    -   Released _blockExplode_ from _beta_ to _1.12.0_
+-   Released _ItemTypes_ from _beta_ to _1.12.0_
+-   Released _InputPermissionCategory_ from _beta_ to _1.12.0_
+-   Released _PlayerInputPermissions_ and _inputPermissions_ from _beta_ to _1.12.0_
+-   Released _PlayerInputPermissionCategoryChangeAfterEvent_ and _afterEvents.playerInputPermissionCategoryChanged_ from _beta_ to _1.12.0_
+-   Added bound check for _setCurrentValue_. The provided value will be clamped to the range of this attribute
+-   GameRules
+    -   Released _ShowDaysPlayed_ from _beta_ to _1.12.0_
+    -   Released _showDaysPlayed_ from _beta_ to _1.12.0_
+-   EnchantmentTypes
+    -   Released _getAll(): EnchantmentType\[\]_ from _beta_ to _1.12.0_
+-   EntityRaycastOptions
+    -   Released _ignoreBlockCollision_ from _beta_ to _1.12.0_
+    -   Released _includeLiquidBlocks_ from _beta_ to _1.12.0_
+    -   Released _includePassableBlocks_ from _beta_ to _1.12.0_
+    -   Released _hitBlockPermutation_ member of _EntityHitBlockAfterEvent_ from _beta_ to _1.12.0_
+-   Released _beta_ version of _addEffect_ method on _Entity_ to _1.3.0_, which adds a return type for the newly created effect (or undefined if no effect was added)
+-   BlockRecordPlayerComponent
+-   Added _UIManager_ class and _uiManager_ object to _@minecraft/server-ui_ beta
+    -   Renamed the componentId to _minecraft:record\_player_ for consistency
+    -   Added methods _getRecord_, _ejectRecord_, _pauseRecord_ and _playRecord_
+    -   Removed method _clearRecord_, instead you should now pass undefined to _setRecord_ to reset it
+    -   Removed property _readonly getLifetimeState: EntityLifetimeState_ from _beta_
+-   Removed enum _EntityLifetimeState_ from _beta_
+    -   Move _setBlockPermutation(location: Vector3, permutation: BlockPermutation): void_ from _beta_ to _1.12.0_
+    -   Move _setBlockType(location: Vector3, blockType: BlockType | string): void_ from _beta_ to _1.12.0_
+    -   Moved _getTags(): string\[\]_ from _beta_ to _1.12.0_
+    -   Moved _hasTag(tag: string): boolean_ from _beta_ to _1.12.0_
+    -   Removed property _readonly fallDistance: number_ from _beta_
+-   Released WorldInitializeBeforeEvent from _beta_ to _1.12.0_
+-   Released WorldInitializeBeforeEventSignal from _beta_ to _1.12.0_
+-   Custom Components
+    -   Released ItemComponentRegistry from _beta_ to _1.12.0_
+    -   Released ItemCustomComponent from _beta_ to _1.12.0_
+    -   Released ItemComponentBeforeDurabilityDamageEvent from _beta_ to _1.12.0_
+    -   Released ItemComponentCompleteUseEvent from _beta_ to _1.12.0_
+    -   Released ItemComponentConsumeEvent from _beta_ to _1.12.0_
+    -   Released ItemComponentHitEntityEvent from _beta_ to _1.12.0_
+    -   Released ItemComponentMineBlockEvent from _beta_ to _1.12.0_
+    -   Released ItemComponentUseEvent from _beta_ to _1.12.0_
+    -   Released ItemComponentUseOnEvent from _beta_ to _1.12.0_
+-   Moved EntityTameableComponent from _beta_ to _1.12.0_ with properties getTameItems, isTamed, probability, tamedToPlayer, tamedToPlayerId and function tame
+-   Moved _EntityAgeableComponent_ from _beta_ to _1.12.0_ with properties _duration_, _growUp_, _transformToItem_ and function _getDropItems_, _getFeedItems_, _EntityDefinitionFeedItem_, _Trigger_
+-   Fixed an issue where a warning would incorrectly appear when reloading item custom components
+-   EntityTameMountComponent
+    -   Moved method tameToPlayer and readonly properties tamedToPlayerId, tamedToPlayer, isTamed, isTamedToPlayer from _beta_ to _1.12.0_
+-   Released runJob method on System from _beta_ to _1.12.0_
+-   Released clearJob method on System from _beta_ to _1.12.0_
+-   Released waitTicks method on System from _beta_ to _1.12.0_
+-   @minecraft/server-ui
+    -   Released version _1.2.0_
+    -   Added new _beta_ version _1.3.0_
+    -   Released submitButton method on ModalFormData from _beta_ to _1.2.0_
+-   EntityLeashableComponent
+    -   Moved class _EntityLeashableComponent_ from _beta_ to _1.13.0_
+

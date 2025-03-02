@@ -1,0 +1,90 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   New Beta options in "minecraft:looked\_at" and "minecraft:home" entity components now properly require that "use\_beta\_features" is specified in the root JSON object
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Components
+
+-   The "minecraft:damage\_sensor" component's "deals\_damage" field now supports three values:
+    -   "yes", received damage is applied to the entity
+    -   "no", received damage is not applied to the entity
+    -   "no\_but\_side\_effects\_apply", received damage is not applied to the entity, but the side effects of the attack are
+        -   This means that the attacker's weapon loses durability, enchantment side effects are applied, etc.
+    -   Pre-existing content will be automatically updated to maintain its original behavior
+
+## Editor
+
+-   Added a new air block image to visualize when air blocks are selected in the Editor.
+-   Updated the block picker modal to better communicate the currently selected block and the block that is replacing it.
+-   Fixed Navigation Panel action bar icon and missing localization text
+-   Fixed a bug where certain icon theme colors were not applied correctly
+
+## Entities
+
+-   Horse armor now correctly renders on horses when using resource packs with a minimum engine version of 1.17.0 or lower ([MCPE-185316](https://bugs.mojang.com/browse/MCPE-185316) )
+
+## Stability and Performance
+
+-   Custom biome ids are now assigned with values starting at 30,000 and are stored in 'BiomeIdsTable' in world data so their id assignments persist for the duration of the world
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Added "replace\_block\_item" field to the "minecraft:block\_placer" item component. This field allows you to specify that this item should replace the default item created for the data-driven block it places. To use this field, the identifier of the item must match the identifier of the block it places. This field is optional and defaults to false.
+
+## Cameras
+
+-   Added horizontal and vertical rotation limits to the Focus Target Camera experimental toggle
+-   Added "continue\_targeting" bool to the Focus Target Camera experimental toggle for tracking entities outside of set rotation limits
+
+## Graphical
+
+-   Fixed a bug with point light shadows that would cause circles to appear on nearby surfaces. As a consequence, the edges of point light shadows are now jagged. This will be resolved in a later update.
+    
+-   Added the ability to data-drive the ambient light in the Deferred Technical Preview. The ambient light is used as the indirect specular contribution when SSR and IBL are not available or when they are insufficient to illuminate metal objects in low light conditions. It is also used as the minimum value that ambient contribution can have, thus avoiding scenes from being completely black if no light sources are present. See updated documentation on the Creator portal for more information.
+    
+-   Made a breaking schema change to JSON files associated with the Deferred Technical Preview to hoist the `"format_version"` field out to the root level. Documentation on the Creator portal will be updated accordingly. The following files are affected:
+    
+    -   `"atmospherics/atmospherics.json"`
+    -   `"color_grading/color_grading.json"`
+    -   `"lighting/global.json"`
+    -   `"pbr/global.json"`
+    -   `"point_lights/global.json"`
+    -   `"water/water.json"`
+
+For example, the previous schema for `"lighting/global.json"` was:
+
+    \{
+        "minecraft:lighting_settings": \{
+            "format_version": "1.21.40",
+            ...
+        \}
+    \}
+    
+
+But should now be written as:
+
+    \{
+        "format_version": "1.21.40",
+        "minecraft:lighting_settings": \{
+            ...
+        \}
+    \}

@@ -1,0 +1,158 @@
+**Posted:** 12 February 2025
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ) 
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta)  for detailed instructions
+
+![zukfhnkxdrhvfkdxrhbf.jpg](https://feedback.minecraft.net/hc/article_attachments/34234917737869)
+
+It's time for another Preview and Beta! On this extra wool-some Wednesday, we are introducing new, biome-based spawn rules for differently colored sheep, updated trades for wandering traders and cartographers - and more! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback on these new features at [feedback.minecraft.net](http://feedback.minecraft.net/).
+
+Enjoy!
+
+# Experimental Features
+
+-   Fixed Leaf Litter being able to be bonemealed ([MCPE-190253](https://bugs.mojang.com/browse/MCPE-190253))
+-   Fixed Cactus Flower growth so they only grow if a Cactus Block itself would survive to avoid breaking Cactus Farms
+-   Aim Assist no longer requires the "Aim Assist" experimental toggle
+
+## Cartographer and Wandering Trader Rebalance
+
+-   Integrated the Village Trade Rebalance experiment changes to the Cartographer and Wandering Trader
+
+### Cartographer Trades
+
+-   Cartographers now sell 7 new maps which each point to a different village or other structures in a different biome
+    -   These maps can help players who want to quickly find a specific location.
+-   Cartographers from different village types will sell a different range of maps and colored banners
+
+![Cartographer trades 2025-02-11.png](https://feedback.minecraft.net/hc/article_attachments/34235397726989)
+
+### Wandering Trader Trades
+
+-   The Wandering Trader now has better prices, more trades and sells larger amounts of many items
+-   They will also now buy basic supplies from players, so it's possible to get some emeralds by helping them prepare for their next journey even if you don't feel like buying anything
+-   The Wandering Trader will offer to buy two items from this list:
+    -   Water Bottle
+    -   Water Bucket
+    -   Milk Bucket
+    -   Fermented Spider Eye
+    -   Baked Potato
+    -   Hay Bale
+-   Wandering Traders now have a chance of selling these items (in addition to their previous trades):
+    -   Logs (Acacia, Birch, Dark Oak, Jungle, Oak, Spruce, Pale Oak or Cherry)
+    -   Enchanted Iron Pickaxe
+    -   Potion of Invisibility
+
+![Wandering Trader trades 2025-02-11.png](https://feedback.minecraft.net/hc/article_attachments/34235397728141)
+
+## Sheep wool color in warm and cold biomes
+
+-   Sheep have updated rules for which color of wool they have based on which biome they spawn in:
+    -   Temperate Biomes: (these colors are unchanged from current behavior)
+        -   Common sheep color is white
+        -   Uncommon sheep colors are black, gray, light gray and brown
+        -   There is a rare chance for a pink Sheep to spawn
+    -   Cold biomes:
+        -   Common Sheep color is black
+        -   Uncommon Sheep colors are light gray, light blue, blue and cyan
+        -   There is a rare chance for a pink Sheep to spawn
+    -   Warm Biomes:
+        -   Common Sheep color is brown
+        -   Uncommon Sheep colors are gray, yellow, orange and red
+        -   There is a rare chance for a pink Sheep to spawn
+
+# Features and Bug Fixes
+
+## Village Chest Bundles
+
+-   Added a 33% chance of finding a Bundle in various Villager chests:
+    -   Cartrographer
+    -   Tannery
+    -   Weaponsmith
+    -   Desert House
+    -   Plains House
+    -   Snowy House
+    -   Savanna House
+    -   Taiga House
+
+## Desert Animal Spawning
+
+-   Camels will naturally spawn in the Desert
+
+## Blocks
+
+### Bush
+
+-   Bushes can now be snowlogged ([MCPE-190294](https://bugs.mojang.com/browse/MCPE-190294))
+-   Bush can now be replaced by other blocks
+-   Bush drops itself when broken with Shears or with a tool that is enchanted with Silk Touch, otherwise it drops nothing
+
+### Cactus Flower
+
+-   Cactus Flowers can now be placed on Farmland blocks ([MCPE-190391](https://bugs.mojang.com/browse/MCPE-190391))
+-   Endermenn can no pick up Cactus Flowers
+
+### Firefly Bush
+
+-   Firefly Bushes can now be snowlogged ([MCPE-190294](https://bugs.mojang.com/browse/MCPE-190294))
+-   Tweak Firefly Bush world generation:
+    -   Lowered chance of them being attempted to be placed by water
+    -   Reduce patch size when placed to be from 2-5
+-   The Firefly Bush now has the same bonemealing properties as the Bush block
+
+### Leaf Litter
+
+-   Leaf Litter is now replaceable
+-   Leaf Litter can only be placed on blocks which provide full surface support
+
+### Nether Fungi
+
+-   Warped and Crimson Fungi no longer z-fight ([MCPE-190389](https://bugs.mojang.com/browse/MCPE-190389))
+
+### Short and Tall Dry Grass
+
+-   Short and Tall Dry Grass are now randomly offset, like regular Short and Tall Grass ([MCPE-190387](https://bugs.mojang.com/browse/MCPE-190387))
+
+## Gameplay
+
+-   Players fall momentum is no longer reset after exiting and re-entering the world ([MCPE-188490](https://bugs.mojang.com/browse/MCPE-188490))
+
+## General
+
+-   In Server Authoritative movement, when Player is corrected, the movement will not have easing anymore. This is a better feel, as can be seen with upward, repeating, Pistons
+-   Fixed typos in music definitions and sound definitions that were causing the wrong music to play for soulsand valley, desert mutated, and jungle mutated biomes
+
+### Friends Drawer Improvements
+
+-   Players can now also find the Friends Drawer in Create New World, Edit World and your profile, in addition to the Play Screen, Main Menu and Game Menu, in the top right of the screen. We hope this will make it easier to connect and play with your friends! Let us know how you like it, at [aka.ms/mcfriendsdrawerfeedback](https://aka.ms/mcfriendsdrawerfeedback) 
+
+## Mobs
+
+-   Fixed Pufferfish attack and inflate logic ([MCPE-149129](https://bugs.mojang.com/browse/MCPE-149129)) ([MCPE-69522](https://bugs.mojang.com/browse/MCPE-69522))
+    -   Pufferfish no longer only trigger inflate/deflate logic against monsters and players. Now triggers inflate/deflate logic against Axolotls, all non-aquatic mobs, and players
+    -   Pufferfish no longer only attack players and monsters. Now they attack Axolotls, all non-aquatic mobs, and players that aren't in creative mode
+    -   Pufferfish no longer only poison players and monsters. Now they poison Axolotls, all non-aquatic mobs excluding undead monsters, and players that aren't in creative mode
+
+## Pause
+
+-   Fix so data driven particles pause properly when game is paused ([MCPE-188461](https://bugs.mojang.com/browse/MCPE-188461))
+
+## Player
+
+-   Fixed an issue where other players in multiplayer scenarios would sometimes get stuck in their dying animation after respawning
+-   Player characters no longer rotate sideways when moving forward
+
+## Sound
+
+-   Fixed Block breaking sounds not playing ([MCPE-190264](https://bugs.mojang.com/browse/MCPE-190264))
+
+## User Interface
+
+-   Hand bobbing no longer occurs while the game is paused ([MCPE-188457](https://bugs.mojang.com/browse/MCPE-188457))
+-   Minecraft logo misaligned on progress screen
+-   Touch controls: Fixed a bug where a player could stay moving diagonally after opening a menu ([MCPE-190308](https://bugs.mojang.com/browse/MCPE-190308))
+-   Keep Inventory is back to being a cheat on all difficulties
+

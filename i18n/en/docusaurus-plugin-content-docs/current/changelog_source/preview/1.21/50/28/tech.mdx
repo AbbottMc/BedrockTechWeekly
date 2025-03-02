@@ -1,0 +1,102 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Fixed a bug where vanilla items with the "minecraft:block\_placer" component had the wrong icon on split-screen clients.
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor**. Learn [how to use](https://learn.microsoft.com/en-us/minecraft/creator/documents/editoroverview?view=minecraft-bedrock-stable)   the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions)   forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit)   and [samples](https://github.com/Mojang/minecraft-editor-extension-samples) .
+
+This week we're releasing Editor V0.8! This release was jam packed with tons of few features and improvements, including:
+
+-   Flatten Tool
+-   Fill Tool
+-   Smooth Tool
+-   Quick Extrude
+-   Repeater Tool
+-   Farm Tool
+-   2D Directional XZ Compass
+-   Custom Blocks
+-   Block Picker Updates
+-   Select with Brush
+-   Carve with Brush
+-   Brush Offset
+-   Locate Biome Tool
+-   Grapple/locomotion Updates
+-   Middle Mouse Block Selection
+-   Custom Widget Improvements
+
+Checkout the full changelog with demos at the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions)   page.  
+Updates this week:
+
+-   Added a new Flatten Brush: drag this brush over a block to turn blocks above it into air. This brush has a customizable height and radius.
+-   Added a Fill tool to allow creators to quickly change block groups
+-   Added a Smooth tool to easily smooth terrain
+-   Added a Quick Extrude tool to allow creators to extrude block groups
+-   Added a Repeater tool to repeat a selection volume along X, Y, and Z
+-   Added a Farm tool to quickly drop in farms into a world
+-   Added friendly names in the Block Picker
+-   Added a 2D directional XZ compass to game viewport to aid with building
+    -   Added the ability to click on the compass to snap to closest cardinal direction
+-   Added a configurable Fly Speed Multiplier.  
+    -   Added SpeedSettings
+    -   New Slider in View-\>View Settings to configure fly speed multiplier between 1 and 10
+    -   Fly Speed Multiplier only takes effect while in Tool/Editor mode
+-   Added quick action for Selection::Delete
+-   Added new axis and plane restriction options in the Widget Gizmo Component creation options. Creators can restrict which axes of movement are afforded by their gizmos
+-   Added Block Filter Disabled state
+-   Added M key to toggle between mask mode and disabled
+-   Added R key to toggle between replace mode and disabled
+-   Added support for persistence in hotbar block palettes
+-   Added context menu to the options button next to hotbar for creating and managing new palettes
+-   Added a new `session.extensionContext.blockUtilities` object which will present a number of high-performance common block operations. First function added is a `fillVolume` function to perform large scale fill operation which honors Editors different block palette types
+-   Updated default filters with air (when not loaded previous state)
+-   Updated the icon for Selection::Deselect
+-   Updated block IDs in the UI to use localized names
+-   Updated checkbox labels to be clickable
+-   Updated property pane information tooltip icon to be more visible
+-   Updated the View-\>Log Panel menu item to now expand the panel drawer
+-   Fixed a bug that caused dropdowns to be truncated at the window edges
+
+## Entity Components
+
+-   Added the 'minecraft:ignore\_cannot\_be\_attacked' component and moved the filter from 'minecraft:cannot\_be\_attacked' to it. This allows content to have custom mobs which bypass the 'cannot\_be\_attacked' component (for example the one on the Ghast) without requiring a modification of the attacked mob's settings.
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Block Components
+
+-   Modified `"ambient_occlusion"` field for `"minecraft:material_instances"` component to be a float value, requires **UpcomingCreatorFeatures** experiment
+
+## Cameras
+
+-   Tracking a target using the free camera preset: optional "tracking\_radius" float value for setting a listening radius for a target entity
+-   Added content error when trying to target an entity when not on a free camera.
+
+## UI
+
+-   Added support for input glyph replacement for signed books. For example, using input string ":\_input\_key.jump:" will be replaced with "JUMP" when using keyboard, or an emoji in case of using a gamepad.

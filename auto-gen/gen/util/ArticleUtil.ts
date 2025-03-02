@@ -47,15 +47,20 @@ export class ArticleUtil {
       const previewKeyword = this.getPreviewKeyword(article) as string;
       return title.split(previewKeyword)[1].replace('/', '-').split('(')[0].trim().replaceAll(' ', '_');
     } else {
-      let versionPos = title.split('-').length - 1;
-      const titleSplit = title.split('-');
+      let titleSplit = title.split('-');
+      let versionPos = titleSplit.length - 1;
       const numberList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-      if (numberList.every(num => !titleSplit[versionPos].includes(num.toString()))) {
+      console.log(title)
+      while (versionPos >= 0 && numberList.every(num => !titleSplit[versionPos].includes(num.toString()))) {
         versionPos--;
       }
       if (versionPos < 0) throw new Error('No version found in article: ' + article.title);
       if (title.includes('1.2.13.60 / 1.2.16')) {
         return '1.2.13-16';
+      }
+      console.log(titleSplit)
+      if (titleSplit[versionPos].includes('Bedrock Edition')) {
+        return titleSplit[versionPos].split('Bedrock Edition')[1].trim();
       }
       return titleSplit[versionPos].replace('/', '-').split('(')[0].split('(')[0].trim();
     }

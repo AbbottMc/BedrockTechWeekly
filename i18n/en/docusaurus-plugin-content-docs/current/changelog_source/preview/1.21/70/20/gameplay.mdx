@@ -1,0 +1,152 @@
+**Posted:** 30 January 2025
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ) 
+    -   **Please note:** The update will take slightly longer to become available on iOS this week. Thank you for your patience!
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta)  for detailed instructions
+
+![r21u7_1.jpg](https://feedback.minecraft.net/hc/article_attachments/33873681032077)
+
+Ah, there you are! I'm writing this changelog on the go because there's no time to waste. Plenty of new features from the next game drop go into testing _checks watch_ right this second! I made us an itinerary so we can get exploring right away:
+
+First, I suggest we hike to a chilly biome to befriend the ever-so fluffy cold cow before we trek to the sandy biomes where our auburn warm cow is kicking up dust. There, you better listen out for howling wind and other ambient desert sounds! Oh, and if you like satisfying sounds, let's make a pitstop where there's crunchy leaf litter! Perhaps pick some new wildflowers to bring home too? Then as night falls, we head towards water for the grand finale: the mesmerizing firefly bush with its dancing particles glimmering in the dark. And here I thought nothing could outshine my bug fixes!
+
+# Experimental Features
+
+## Blocks
+
+-   Added Leaf Litter block
+    
+-   Short Grass now generates slightly sparser in Meadows
+    
+-   Added Wildflowers block
+    
+
+### Bush
+
+-   The Bush is a new type of decorative block that can be found in small patches in the following biomes:
+    -   Plains
+    -   Windswept Hills
+    -   Windswept Gravelly Hills
+    -   Windswept Forest
+    -   River
+    -   Forest
+    -   Birch Forest
+    -   Old Growth Birch Forest
+-   The Bush can be used in the Composter
+-   Using Bone Meal on a Bush places a neighbouring Bush next to the Bush if possible
+
+### Firefly Bush
+
+-   Added the Firefly Bush block
+    -   Spawns Firefly particles that fly around it when the player is near
+    -   Illuminates the area around it
+-   Using Bone Meal on a Firefly Bush drops a Firefly Bush block
+-   Firefly Bushes are found naturally in clumps next to water in the Overworld
+-   In Swamp biomes they can be found anywhere and are twice as likely to be found next to water
+
+### Cow Variants
+
+-   Added two new Cow variants - Warm Cow and Cold Cow!
+-   These have their own own unique texture and geometry, but not a separate spawn egg
+-   They spawn in the same biomes as the Warm, Cold, and Temperate Pigs
+
+### Leaf Litter
+
+-   Leaf Litter is a new type of decorative block which can be found in the Forests, Dark Forests and Wooded Badlands
+-   Leaf Litter can have different amounts of leaves in one block space
+    -   Up to four Leaf Litter pieces can be placed in the same block space
+    -   Placing a Leaf Litter into an already placed Leaf Litter block increases the amount of leaves
+-   Leaf Litter can be placed in four orientations
+-   Leaf Litter can be created by smelting any type of Leaves block
+-   Leaf Litter can be used as fuel for smelting
+-   Leaf Litter has unique block sounds
+
+### Wildflowers
+
+-   Wildflowers are a new type of flower which grow in Birch Forests, Old Growth Birch Forests and Meadows
+    -   Using Bone Meal on Grass Blocks in these biomes can grow Wildflowers
+-   Wildflowers can have different amounts of flowers in one block space
+    -   Up to four Wildflowers can be placed in the same block space
+    -   Placing Wildflowers into an already placed Wildflowers block increases the amount of flowers
+    -   Using Bone Meal on Wildflowers will produce more Wildflowers
+-   Wildflowers can be placed in four orientations
+-   Wildflowers can be crafted into Yellow Dye
+
+### New Ambient Sounds for Desert and Badlands
+
+-   Sand, Red Sand and Terracotta of any color have a chance of playing ambient sounds when surrounded by any one of them on at least 3 sides 8 blocks away
+    -   `block.sand.ambient` can be played in any biome
+    -   `block.sand.ambient.attached` only plays when in Desert or Badlands biomes
+-   Dead Bush blocks have a chance of playing ambient sounds when placed on top of two blocks that are any color of Terracotta, Sand or Red Sand blocks in any biome
+
+# Features and Bug Fixes
+
+## Blocks
+
+-   Placing a block in liquid, and then placing another block next to your first block in liquid will no longer replace your second placed block for a moment causing you to fall into the liquid
+    
+-   Structure Blocks no longer briefly change textures when placed ([MCPE-185531](https://bugs.mojang.com/browse/MCPE-185531))
+    
+-   Sea Pickles can now be placed on any block with center support ([MCPE-116152](https://bugs.mojang.com/browse/MCPE-116152))
+    
+-   Barrier blocks will no longer prevent chunks rendering behind them ([MCPE-153515](https://bugs.mojang.com/browse/MCPE-153515))
+    
+
+## Gameplay
+
+-   Fixed a mismatch between server and client when continuously building that caused orientation sensitive blocks to sometimes change to the wrong block
+
+## General
+
+-   Fixed a crash that would occur on Xbox if you pressed "Cancel" in the Xbox UI when converting a world or importing a world from Retail to Preview
+    
+-   In Server Authoritative movement, when Players receive a movement correction it will use the current Player speed instead of a generic one, this should give a better experience.
+    
+-   In Server Authoritative movement, when Players receive a downward movement correction it will now use gravity acceleration, this should give a better experience.
+    
+
+## Mobs
+
+-   Foxes now take damage from lava, and not only fire ([MCPE-56926](https://bugs.mojang.com/browse/MCPE-56926))
+
+## Realms
+
+-   Fix Random Tick Speed and Respawn Radius settings resetting to default values ([REALMS-11759](https://bugs.mojang.com/browse/REALMS-11759))
+    
+-   Fix "Reset Random Tick Speed" button not working when editing an existing world on Realms
+    
+
+## User Interface
+
+-   Bundle tooltip no longer flickers for players beyond the first when playing in split screen
+    
+-   Adjusted Minecoin purchase screen UI to not show stray pixels. Fixed overlapping issue on PS4.
+    
+-   Replacing items with the `lock_in_inventory` component with items from the creative inventory using touch input now fails gracefully and produces a warning message.
+    
+-   Align rideable entity inventory transparent background with other screens  
+    ([MCPE-189224](https://bugs.mojang.com/browse/MCPE-189224))
+    
+-   Fixed problem with moving items from creative inventory to player inventory on pocket ui. ([MCPE-185361](https://bugs.mojang.com/browse/MCPE-185361))
+    
+
+## Vanilla Parity
+
+-   Beacon rendering is no longer limited by the player's vertical distance from it ([MCPE-25228](https://bugs.mojang.com/browse/MCPE-25228))
+
+### Biomes
+
+-   Fixed an issue where Dark Forests were missing trees along their northern borders with other biomes
+    
+-   Updated the tree composition in Dark Forests to match Java Edition, increasing the number of Dark Oak Trees and reducing the prevalence of other tree types
+    
+
+### Mobs
+
+-   Donkeys now spawn in Savannas
+-   Donkeys now spawn in Plains in groups of 1-3 instead of 2-6  
+    ([MCPE-118688](https://bugs.mojang.com/browse/MCPE-118688))
+

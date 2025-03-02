@@ -1,0 +1,96 @@
+**Posted:** 10 July 2024
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A Minecraft screenshot taken with the updated water and reflections in the Deferred Technical Preview](https://feedback.minecraft.net/hc/article_attachments/28289283931661)
+
+There’s a new Minecraft Preview and Beta rolling out, with more tweaks and bug fixes! Here’s a list of what’s new this week:
+
+# Features and Bug Fixes
+
+## Accessibility
+
+-   Fixed an issue where Screen Narration would not describe how to accept a game invitation on Android and iOS 
+-   Text to speech for UI now reads the how to play screens by hovering over, tapping on or navigating to the respective headers and paragraphs
+
+## Blocks
+
+-   Trapdoors and Fence Gates no longer push players or mobs when activated by Redstone 
+-   Added VanillaBlockTag "one\_way\_collidable" that can be used to emulate the one way collision of Doors, Trapdoors, and Fence Gates that don't push out a mob when inside their collision box 
+-   The Rooted Dirt block now has unique sounds, to better match the Java Edition ([MCPE-121664](https://bugs.mojang.com/browse/MCPE-121664)) 
+-   Copper Door's "open" sound is now pitched differently 
+-   A damaged Anvil block may now spawn in Trail Ruins, as it would in Java Edition 
+-   "anvil" block is now split into unique instances: "anvil", "chipped\_anvil", "damaged\_anvil", "deprecated\_anvil"
+-   "quartz\_block" is now split into unique instances "quartz\_block", "chiseled\_quartz\_block", "quartz\_pillar", and "smooth\_quartz"
+-   Smooth Quartz has had its destroy-time adjusted to match Java Edition ([MCPE-101893](https://bugs.mojang.com/browse/MCPE-101893)) 
+-   Pillar Quartz Block has been renamed to Quartz Pillar 
+-   "red\_sandstone" block is now split into unique instances "red\_sandstone", "chiseled\_red\_sandstone", "cut\_red\_sandstone", and "smooth\_red\_sandstone" 
+    -   "smooth\_red\_sandstone" destroy time changed from 0.8 to 2.0
+-   "dirt" block is now split into unique instances: "dirt" and "coarse\_dirt" 
+-   "sand" block is now split into unique instances "sand" and "red\_sand"
+
+## Game Tips
+
+-   Added a game tip that informs players on touch devices that they are sneaking in order to avoid having new players stuck in crouch
+-   Added some minor tip interruption improvements for existing game tips
+
+## Gameplay
+
+-   Fixed Torch item icon being temporarily misplaced when transferring it between the inventory and the hotbar when quick-moved ([MCPE-180913](https://bugs.mojang.com/browse/MCPE-180913))
+-   Mounts and vehicles are no longer given a slight velocity during a dismount
+
+## Split Screen
+
+-   Fixed mob animations not playing when mobs were unloaded in split screen
+
+## General
+
+-   Fixed an issue so that Marketplace content is properly imported before you create or start a world
+-   Legacy worlds no longer have chunks at the edge of the world that don't render
+
+## Graphical
+
+-   Fixed fog JSON validation to allow for max\_density\_height and zero\_density\_height values to range from (-64,320)
+
+## Maps
+
+-   Fixed an issue where structure icons or other map decorations were not visible at map edges on maps with unlimited tracking, such as Trial Explorer Maps ([MCPE-182681](https://bugs.mojang.com/browse/MCPE-182681))
+
+## Mobs
+
+-   Bogged no longer levitates when riding a Boat, Raft, or Minecart ([MCPE-178876](https://bugs.mojang.com/browse/MCPE-178876))
+
+## Ominous Vault
+
+-   Rare loot now has 80% chance of dropping from Ominous Vaults ([MCPE-180654](https://bugs.mojang.com/browse/MCPE-180654))
+
+## Realms Invite Links
+
+We are making some changes to how Realms invite links work to make it easier than ever to invite your friends and to keep your Realm safe from unwanted joiners:
+
+-   You can now create up to 5 invite links per Realm
+-   Invite links can be enabled or disabled at will, or set to have an expiration date in the future
+-   Invite links can be deleted entirely
+-   Newly created invite links codes will be 15 characters long (increased from 11)
+-   Existing Preview Realms will keep their existing invite links, but all new Preview Realms will start with 0 invite links by default moving forward
+
+## **Realms Bug Fixes**
+
+-   Fixed issues with the Realms button sticking around when it shouldn't or not showing up when it should
+-   Fixed a bug that locked players on an infinite loop after cancelling the process of joining a recently claimed preview Realm
+-   Fixed a bug where players with a freshly installed Minecraft needed to restart before being able to see Realms Stories
+
+## Realms Stories
+
+-   Cleaned up the disabled Realms Stories button interface on the pause screen when playing as a second user in split screen
+
+## User Interface
+
+-   Removed an unnecessary warning from 2 Player realms subscription
+-   Fix so that pressing "Join Realm" on the new Play screen does not lead into an empty void 
+-   The new Bedtime screen now cancels sleeping when pressing the escape keyboard button ([MCPE-183434](https://bugs.mojang.com/browse/MCPE-183434)) 
+

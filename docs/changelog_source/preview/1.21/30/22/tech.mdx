@@ -1,0 +1,36 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Fixed a bug that caused moon to appear darker ([MCPE-172971](https://bugs.mojang.com/browse/MCPE-172971))
+-   Fixed bug where culling rules for data driven blocks did not rotate with the transformation component 
+
+## Resource and Behavior Packs
+
+-   The player's "helmet\_layer\_visible" variable is now based on the result of the `has_head_gear` Molang query and the player and persona render controller's part visibility for the helmet layer no longer checks for the existence of head gear. This fixes attachable scripts setting the "helmet\_layer\_visible" to 1.0 to now properly work and maintains a fix that prevents persona hair and head gear from clipping outside of mob and Pumpkin heads  ([MCPE-183058](https://bugs.mojang.com/browse/MCPE-183058))
+
+# Experimental Features
+
+## API
+
+-   ItemUseOnBeforeEvent
+    -   Added property `readonly isFirstEvent: boolean` to beta. This value will be true if the event was triggered on players initial interaction button press and false on events triggered from holding the interaction button
+-   ItemUseOnAfterEvent
+    -   Added property `readonly isFirstEvent: boolean` to beta. This value will be true if the event was triggered on players initial interaction button press and false on events triggered from holding the interaction button
+
+## Graphical
+
+-   Added the ability to data-drive water parameters in the Deferred Technical Preview. See the updated Creator portal for more information 
+-   Added a new feature to the Deferred Technical Preview: realistic waves! This new feature must be opted into via a resource pack and will not be enabled by default. See the updated Creator portal for more information
+-   Added water controls to the Editor's Deferred Graphics Settings
+

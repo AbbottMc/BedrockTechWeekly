@@ -1,0 +1,147 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+### Mobs
+
+-   Mangrove Swamp no longer spawns mobs from other biomes ([MCPE-187514](https://bugs.mojang.com/browse/MCPE-187514))
+
+### Blocks
+
+-   Added the 'minecraft:liquid\_detection' component which controls the basic liquid detection properties of a block, such as liquidlogging, liquid blocking, and being broken or popped by liquid spread. The only liquid currently supported by the component is water
+-   Using the "minecraft:block\_placer" item component to render the referenced block as the item icon no longer requires the "Upcoming Creator Features" toggle
+-   Cherry Leaves no longer count as custom blocks ([MCPE-180725](https://bugs.mojang.com/browse/MCPE-180725))
+
+## Audio
+
+-   Per-biome ambient sounds are now defined in client\_biome JSON components  
+    -   This uses the new "minecraft:ambient\_sounds" component
+    -   Named sounds must be defined in "individual\_named\_sounds" in sounds.json files
+
+## Biomes
+
+-   Client biome JSON files now support a "minecraft:biome\_music" component with a "volume\_multiplier" field which will gradually affect music volume when the audio listener is inside the corresponding biome  
+    -   The gradual volume change will take roughly ten seconds and will linearly increase but exponentially decrease
+
+## Molang
+
+-   Moved `query.client_memory_tier` to stable.
+    -   Removed 'Undetermined'. It returns a number representing the client RAM memory tier, 0 = 'SuperLow', 1 = 'Low', 2 = 'Mid', 3 = 'High', or 4 = 'SuperHigh'. Available on the Client (Resource Packs) only.
+-   Moved `query.server_memory_tier` to stable.
+    -   Removed 'Undetermined'. It returns a number representing the server RAM memory tier, 0 = 'SuperLow', 1 = 'Low', 2 = 'Mid', 3 = 'High', or 4 = 'SuperHigh'. Available on the server side (Behavior Packs) only.
+-   Moved `query.client_max_render_distance` to stable.
+
+## Editor
+
+-   Added a new `ClipboardWidgetComponent` to the client widget system to allow creators to be able to add clipboard items to widgets, and have them displayed as 'holograms'
+-   Added a flag to `Widget` and `WidgetBaseComponent` to allow locking the Y position to the surface, based on the XZ position
+-   Added a flag to `Widget` to tell the widget to bind it's position to that of the 3D block cursor
+-   Added quick action button bar to Selection (Deselect & Fill)
+-   Added Copy & Cut to main menu and action bar items
+-   Added information tooltip links for core editor panes
+-   Added a new `ClipboardWidgetComponent` to the client widget system to allow creators to be able to add clipboard items to widgets, and have them displayed as 'holograms'
+-   Added a flag to `Widget` and `WidgetBaseComponent` to allow locking the Y position to the surface, based on the XZ position
+-   Added a flag to `Widget` to tell the widget to bind it's position to that of the 3D block cursor
+-   Added quick action button bar to Selection (Deselect & Fill)
+-   Added Copy & Cut to main menu and action bar items
+-   Added information tooltip links for core editor panes
+-   Added Middle Mouse block picking in block picker modal
+-   Updated the Selection Tool size input box to be enabled when a block is selected
+-   Update `IModalToolContainer.addTool` API function to take unique tool id as a required argument. Removed `inputContextId` and `inputContextLabel` from creation parameters.
+-   Updated Grapple locomotion  
+    -   Added 'getRay()' to Cursor Service API
+    -   Camera now rotates towards grapple target during flight and is less snappy
+    -   Grapple now lets the creator fly 100 blocks distance towards the mouse pointer if there is no nearby block to grapple to
+    -   Changed hotkey for grapple-to-selection from F to CTRL+SHIFT+F
+-   Removed all of the `CursorAttachment` related types, properties and methods
+-   Removed `hide`, `show`, `dispose` functions from `IModalTool` API
+-   Renamed `anchor` in the `ClipboardWriteOptions` to `normalizedOrigin` for clarity
+-   Removed all of the `CursorAttachment` related types, properties and methods
+-   Fixed a bug where cylinder and cuboid brushes with a height of 1 were incorrectly sized
+-   Fixed deselect in Line Tool (this was actually a problem with Client Widgets not correctly tracking selected state in script)
+-   Fixed incorrect key binding in Selection move up/down
+-   Fixed 'Next Navigation Position' keyboard shortcut to no longer conflict with 'Previous Navigation Position'.
+-   Fixed an issue where Brush Painting tools to work in dimensiononly work in the starting dimension (generally Overworld) and do not work when changing dimensions
+-   Fixed keyboard navigation for interactive tooltip links
+-   Fixed padding for Selection tool panel items when the scrollbar is absent
+-   Fixed issue where camera flashes to the inside of the player mobs' head when grappling
+
+## Entity Components
+
+-   The "minecraft:looked\_at" component's "look\_at\_locations" field now accepts a list of objects as a parameter, each containing two fields  
+    -   "location", the location of the entity that must be visible
+        -   Valid values: "head", "body", "feet"
+    -   "vertical\_offset", an optional vertical offset applied to the entity's location
+
+## Scripting API
+
+-   Moved `ClientSystemInfo` from `beta` to `1.16.0`.
+-   Moved `MemoryTier` from `beta` to `1.16.0`.
+-   Moved `PlatformType` from `beta` to `1.16.0`.
+-   Moved `SystemInfo` from `beta` to `1.16.0`.
+-   Enum `MemoryTier`.
+    -   Removed `Undetermined` entry.
+
+## Network Protocol
+
+-   New level sound events added: Open, OpenLong, Close, and CloseLong
+-   New Particle Type added: EyeblossomOpen
+-   New Particle Type added: EyeblossomClose
+-   New particle type added: PaleOakLeaves
+
+## Recipes
+
+-   Added content error when parsing shaped recipes if the pattern contains undefined keys, also fixes crash when opening crafting screen with such malformed recipes ([MCPE-178520](https://bugs.mojang.com/browse/MCPE-178520))
+
+## Stability and Performance
+
+-   Some stats for packs discovered on launch are stored locally to enable faster future launches on some platforms
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Blocks
+
+-   Added "minecraft:item\_visual" block component. This component takes nested "minecraft:geometry" and "minecraft:material\_instances" components to configure the item representation of a block
+    -   "geometry" and "material\_instances" fields are required. They utilize the same fields/requirements as "minecraft:geometry" and "minecraft:material\_instances" respectively
+    -   Block must include "minecraft:geometry" and "minecraft:material\_instances" components alongside the "minecraft:item\_visual" component
+    -   Requires the "Upcoming Creator Features" toggle
+-   Cobwebs now obey 'blockshape' and 'textures' properties set in blocks.json
+    -   Requires the "Upcoming Creator Features" toggle
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Camera
+
+-   Added the rotation to the camera command for the fixed\_boom camera
+
+## Component
+
+-   Added the "minecraft:compostable" item component to UpcomingCreatorFeatures experimental toggle
+
+## Scripting
+
+### Server UI
+
+-   Added support for input glyph replacement for server forms (`ActionFormData`, `MessageFormData`, and `ModalFormData`).
+
+## Structures
+
+-   Expose "Data-Driven Jigsaw Structures" experiment toggle to Creators
+    -   Creators will be able to modify structure generation rules around placement (location and frequency), layout (how structure pieces are placed relative to one another), and customization (how blocks within a structure piece are modified or replaced).
+    -   There are 4 new JSON files comprising Jigsaw Structure data:
+        -   Jigsaw Structures: These are structures that can be constructed throughout the world with various structure pieces. The connection block is a jigsaw block.
+        -   Processors: A processor can add custom behaviors to the structure that affects how it looks.
+        -   Structure Sets: Structure sets are JSON that indicate where and how a structure is placed throughout the world.
+        -   Template Pools: A template pool contains the structure pieces that make up a structure.

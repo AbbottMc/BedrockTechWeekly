@@ -1,0 +1,99 @@
+**Posted:** 22 May 2024
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation 4, Windows 10/11, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A portal ruins on the edge of a jungle biome, with a jungle temple up on the hill](https://feedback.minecraft.net/hc/article_attachments/26900163666957)
+
+Here’s what’s new in the latest Minecraft: Bedrock Edition Beta and Preview update! Please keep sending in any suggestions you have at [feedback.minecraft.net](https://feedback.minecraft.net), and please report and upvote any bugs you find at [bugs.mojang.com](https://bugs.mojang.com/)!
+
+# Features and Bug Fixes
+
+## Trial Spawner
+
+-   Fixed some Trial Spawner texture inconsistencies ([MCPE-181455](https://bugs.mojang.com/browse/MCPE-181455))
+
+## Commands
+
+-   Music will no longer be stopped by the '/stopsound' command
+
+## Game Tips
+
+-   Added a swim tip for touch devices
+-   How to move is now taught to players on touch devices with the D-pad control scheme 
+
+Sometimes it’s not a good time to learn new game play skills. For example, opening your inventory is not a relevant skill when you just discovered that the floor is lava. So here are some additional constraints for when game tips don’t show up:
+
+-    The swim game tip only shows up when you are in water
+-   The break block tip is the most relevant tip when you're freezing in powder snow. Other tips won't show up
+-   When there are hostile mobs nearby you can still learn skills that will help you run away (movement, jumping and camera movement) but other tips won’t bother you
+
+## Gameplay
+
+-   Slabs and Stairs should no longer randomly start placing on the bottom when continuously building ([MCPE-54855](https://bugs.mojang.com/browse/MCPE-54855)) 
+-   Fixed a bug that caused the environment within a chunk to noticeably change when thousands of blocks away from spawn ([REALMS-11625](https://bugs.mojang.com/browse/REALMS-11625)) 
+-   Particles generated when breaking Leaves will now match the color of the destroyed leaves ([MCPE-179726](https://bugs.mojang.com/browse/MCPE-179726))
+-   Locator Maps will now only render head and head attachments ([MCPE-61891](https://bugs.mojang.com/browse/MCPE-61891)) 
+-   The sound emitted when a player walks on a Heavy Core Block is now controlled by the appropriate slider in the audio preferences
+
+## Items
+
+-   Breeze Rods now render correctly in third-person view ([MCPE-179661](https://bugs.mojang.com/browse/MCPE-179661))
+-   The Mace no longer breaks Cobwebs and Bamboo as fast as Swords and other sharp items ([MCPE-179754](https://bugs.mojang.com/browse/MCPE-179754))
+-   The Fishing Rod hook no longer sticks to actors that have the Projectile Reflection component ([MCPE-180337](https://bugs.mojang.com/browse/MCPE-180337))
+-   The Mace's Smash Attack no longer knocks back Mobs that have been tamed by the Player wielding the Mace ([MCPE-180962](https://bugs.mojang.com/browse/MCPE-180962))
+-   Attacking an entity with a Mace enchanted with the Wind Burst enchantment no longer negates fall damage ([MCPE-181496](https://bugs.mojang.com/browse/MCPE-181496))
+
+## Marketplace
+
+-   Fixed a number of bugs related to downloading content getting stuck, including errors related to: "Downloads all stuck at 0%" and broken content updates ([MCPE-177684](https://bugs.mojang.com/browse/MCPE-177684))
+
+## Mobs
+
+-   The Bogged's underwater melee attack no longer applies a Slowness effect to the victim ([MCPE-178884](https://bugs.mojang.com/browse/MCPE-178884))
+-   Parrot now correctly imitates the Bogged when nearby
+-   Witches now always drop 4-8 Redstone Dust on death
+    -   This is to improve the viability of farms that utilize Witch Huts to obtain Redstone Dust
+
+## Petrified Oak Slab
+
+-   The Oak-Slab-looking variation of "stone\_block\_slab" (aux value 2) is now flattened into its own new block "minecraft:petrified\_oak\_slab" ([MCPE-180964](https://bugs.mojang.com/browse/MCPE-180964)) 
+    -   Will behave like other Stone Slabs, eg. cannot be destroyed by fire, but will look like an ordinary oak slab
+    -   "minecraft:petrified\_oak\_slab" can only be obtained and placed through commands
+-   The Oak-Slab-looking variation of "double\_stone\_block\_slab" (aux value 2) is now flattened into its own new block "minecraft:petrified\_oak\_double\_slab" ([MCPE-180964](https://bugs.mojang.com/browse/MCPE-180964))
+    -   Will behave like other stone double slabs, eg. cannot be destroyed by fire, but will look like an ordinary oak double slab
+    -   "minecraft:petrified\_oak\_double\_slab" can only be placed through commands
+
+## Projectiles
+
+-   The Wind Charge Projectile can now be summoned via the /summon command ([MCPE-178937](https://bugs.mojang.com/browse/MCPE-178937)) 
+
+## Realms
+
+-   All items on the Realms purchase screens are now focusable and can be navigated through using a gamepad input 
+-   Removed an extra "the" in Realms section of Minecraft Encyclopedia 
+
+## Trial Chambers
+
+-   Trial Chambers now generate far less frequently in the Deep Dark biome
+
+## User Interface
+
+-   We have been testing our fixed dpad-tweaks in Preview for a few weeks and are looking for your feedback here: [https://aka.ms/newdpadfeedback](https://aka.ms/newdpadfeedback)
+-   When Regeneration effect is active, hearts on the HUD no longer move too fast ([MCPE-180864](https://bugs.mojang.com/browse/MCPE-180864)) 
+-   Shift-clicking inventory items no longer causes the item stack count to briefly appear above the stack
+-   Interacting with a block outside of a players reach no longer causes the block interface to briefly appear 
+-   Added new visual elements to Hardcore mode in Create New World and new Edit World, and a sound effect when toggling Hardcore mode on or off (Preview only)
+-   Items no longer render in front of stack size number when being quick moved ([MCPE-180712](https://bugs.mojang.com/browse/MCPE-180712)) 
+-   Number on a stack of items no longer overlaps with item hover text in Villager's trade menu ([MCPE-181338](https://bugs.mojang.com/browse/MCPE-181338)) 
+-   Item no longer moves slightly in slot after being quick moved to Anvil ([MCPE-180275](https://bugs.mojang.com/browse/MCPE-180275)) 
+-   Items no longer stay selected on touch devices when switching between Creative inventory tabs ([MCPE-173506](https://bugs.mojang.com/browse/MCPE-173506))
+-   Items can now be removed from the off-hand slot and crafting grids by tapping on other items in Creative inventory on mobile devices ([MCPE-168757](https://bugs.mojang.com/browse/MCPE-168757)) 
+
+## Vault
+
+-   Loot ejected from Vaults in Trial Chambers are now dependent on level, position and player seed 
+

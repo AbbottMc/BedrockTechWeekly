@@ -1,0 +1,108 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## AI Goals
+
+-   Removed the `minecraft:behavior.peek` AI goal component that was never used
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   The "item\_display\_transforms" field in block geometries no longer requires the "Upcoming Creator Features" toggle 
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with**#BedrockEditor**. Learn [how to use](https://learn.microsoft.com/en-us/minecraft/creator/documents/editoroverview?view=minecraft-bedrock-stable) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+This week we're releasing Editor V0.7! This release was jam packed with tons of few features:
+
+-   Paste Preview
+-   Deferred Lighting Settings
+-   Custom Input Mapping
+-   Entity Transactions
+-   Attach Debugger
+-   Client Widget System
+-   Export Pane
+-   Brush Tool + masking support
+-   Ruler Tool
+-   Structure Manager
+-   Navigation Panel
+-   Simple Tool Wrapper
+-   Updated Property Pane API
+-   Action Bar API
+
+Checkout the full changelog with demos at the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) page.
+
+Updates this week:
+
+-   Added Navigation Panel which adds a mini-map to teleport around your world and add labels for key points 
+-   Added Structure Panel action bar item for managing structures stored in the project. 
+    -   Added Editor Structure Manager API to interface with it 
+-   Added Hardcore mode as an option in the export pane 
+-   Added `getSelectedToolId` and `setSelectedToolId` functions to `IModalToolContainer` API
+-   Fixed a bug where Editor operations could exhaust all available ticking areas causing all future operations to fail 
+-   Fixed a bug where sometimes `IModalTool.onModalToolActivation` API event was called in the wrong order 
+-   Fixed a bug which could sometimes cause brush masks to fail to load
+
+## Items
+
+-   Item data versioned 1.16.100+ can now be overridden by item data versioned 1.16.100+ higher in the pack stack 
+-   Enables Creators to override 1.16.100+ data driven Vanilla items with 1.16.100+ data
+-   Added "minecraft:storage\_item" item component to allow an item to store data of the dynamic container associated with it 
+    -   This component requires that the Bundles toggle is enabled
+    -   A dynamic container is a container for storing items that is linked to an item instead of a block or an entity
+    -   To use this component the item must have "minecraft:max\_stack\_size" set to 1
+    -   The "max\_slots" field (1 to 64) defines the number of slots of the dynamic container
+    -   The "max\_weight\_limit" field defines the maximum allowed sum of the weight of the items in all slots of the dynamic container
+        -   Items that stack to 64 weigh 1 each, those that stack to 16 weigh 4 each and unstackable items weigh 64
+    -   The "allow\_nested\_storage\_items" field allows for other items with a "minecraft:storage\_item" component to be put inside it
+    -   The "weight\_in\_storage\_item" (0 to 64) defines the additional weight the item adds when inside another storage item
+        -   A value of 0 means that this item is not allowed inside another storage item
+    -   The "banned\_items" field defines the items that are not allowed in the item's dynamic container
+    -   The "allowed\_items" field defines the items that are exclusively allowed in the item's dynamic container
+        -   If empty all items are allowed in the item's dynamic container
+-   Added "minecraft:bundle\_interaction" item component to enable bundle-specific interaction scheme and tooltip 
+    -   This component requires that the Bundles toggle is enabled
+    -   To use this component the item must have a "minecraft:storage\_item" component defined
+    -   The "minecraft:bundle\_interaction" component interacts with the container created by the "minecraft:storage\_item" component
+    -   The "num\_viewable\_slots" field (1 to 64) defines the maximum number of item stacks accessible from the top of the bundle, while other slots are hidden
+    -   Textures named \[item\_name\]\_open\_front and \[item\_name\]\_open\_back must be added to textures/textures\_list.json
+
+## Trade Tables
+
+-   The Trade Table files are now versioned 
+    -   TradeTier's "total\_exp\_required" is a required member from version 1.21.30
+    -   TradeTier's "groups" is a required member from version 1.21.30
+    -   TradeItem's quantity "min" cannot be lower than "max" from version 1.21.30
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   Fixed an issue with 'minecraft:redstone\_conductivity' support for custom blocks  
+
+## Graphical
+
+-   Fixed night vision potions having no effect in Deferred Technical Preview 
+-   Fishing lines are now rendered correctly in first person when the FOV setting has been changed in Deferred Technical Preview.

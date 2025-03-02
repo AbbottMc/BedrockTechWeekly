@@ -1,0 +1,95 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   The "blocks.json" files found in resource packs are now versioned
+    -   Overriding the block "stone" with a format\_version of 1.20.50 or higher will assume the texture data in terrain\_texture.json is flattened and not using an array
+    -   Overriding the block "prismarine" with a format\_version of 1.21.10 or higher will assume the texture data in terrain\_texture.json is flattened and not using an array
+    -   Overriding the block "anvil", "quartz\_block", "red\_sandstone", "sand" and "sandstone" with a format\_version of 1.21.20 or higher will assume the texture data in terrain\_texture.json is flattened and not using an array
+-   "infested\_stone" and its derivatives now have their block sound defined ([MCPE-182290](https://bugs.mojang.com/browse/MCPE-182290)) 
+
+## Commands
+
+-   The /locate structure command now uses namespaced structure names. Structure names provided without a namespace will assume the “minecraft” namespace ([MCPE-151807)](https://bugs.mojang.com/browse/MCPE-151807)
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.** 
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples). 
+
+Updates this week:
+
+-   Updated set of blocks + entities that appear within the Editor picker
+-   Added 'Attach Debugger' ActionBarItem shortcut for attaching to the scripting debugger 
+-   Implemented single entity transaction payload for entity delete/create 
+-   Implemented Undo/Redo of single entity creation and deletion
+-   Added _isFloat_ to support floating point values in _addNumber_ Editor Property Pane API 
+-   Added copy to clipboard button to log panel messages
+-   Added localized field names into the Deferred Lighting property editor dropdown
+-   Added Global Illumination settings to the Deferred Lighting property editor
+-   Fixed bug that caused visual artifacts when enabling Deferred Lighting in Editor
+-   Removed fallback display text properties from API in favor of single localized property. 
+    -   Added _label_property to _IDropdownItem_ API, removed _displayAltText_ and _displayStringId_ properties
+    -   Added _label_property to _IMenuCreationParams_ API, removed _name_ and _displayStringId_ properties
+    -   Added _title_property to _IPropertyItemOptions_ and _IPropertyItem_ APIs, removed _titleAltText_ and _titleStringId_ properties
+    -   Added _title_ and _tooltip_ properties to _ModalToolCreationParameters_ API, removed _titleAltText_, _titleStringId_, _tooltipAltText_ and _tooltipStringId_ properties
+
+## Entity Components
+
+-   Added the "behavior.teleport\_to\_owner" goal, which allows an entity to teleport to its owner 
+    -   This goal is designed for emergency situations where "behavior.follow\_owner" could be too slow or too low priority
+    -   The "filters" field allows defining the conditions for teleportation using entity filters
+    -   The "cooldown" field allows defining how often the entity should attempt to teleport
+-   _minecraft:behavior.move\_away\_from\_target_ has been renamed to _minecraft:behavior.move\_around\_target_ to better describe what the goal does, since it can be used both for moving away from the target, but also to move towards a random position around the target
+
+## Entity Filters
+
+-   Added new entity filter "owner\_distance", which checks the distance of an entity from its owner 
+
+## Gameplay
+
+-   Modified _ItemUseInventoryTransaction_ packet by adding _Trigger Type_. This new value tells us if the packet is sent from a direct player input or the simulation tick from the button being held down
+
+## General
+
+-   Entities that fail to load due to missing content will now be preserved inside the level. These entities will re-appear when the missing content becomes available (I.E Removing and re-applying an Add-On)
+
+## Items
+
+-   Using 'minecraft:wearable' with slot set to 'slot.weapon.offhand' in combination with 'minecraft:allow\_off\_hand' set to false will now cause a content error
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Extended TextureSet capabilities to support Items in the Deferred Technical Preview. See updated documentation on the Creator portal for details. 
+-   Added the new bio-optical lighting model for water in the Deferred Technical Preview. The ability to customize and data-drive water will be made available in future updates
+    -   Known issue: there is a volumetrics boundary 8 blocks below the water surface that creates a harsh lighting transition when the camera passes through it.
+    -   Known issue: waterfalls or thin bodies of water can be difficult to see.
+-   Added Screen Space Reflections to the Deferred Technical Preview. These reflections are included as part of the Reflections quality slider in the Deferred graphics settings menu. On mobile devices, screen space reflections are only available when running at Ultra settings. See updated documentation on the Creator portal for details.
+-   Fixed a bug on iOS that resulted in undefined graphics behaviour (such as no point lights or washed-out lighting) in the Deferred Technical Preview. 
+-   Fixed a gamma-correction bug that caused the textures of Candles, Glass, Ice, Honey, Slime, Beacons, Cauldrons and portals to be overly bright in the Deferred Technical Preview

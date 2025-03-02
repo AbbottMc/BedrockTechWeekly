@@ -1,0 +1,173 @@
+**Posted:** 5 February 2025
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ) 
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta)  for detailed instructions
+
+![New Chicken variants in a desert village.](https://feedback.minecraft.net/hc/article_attachments/34063162908429)
+
+Apologies if all the clucking is distracting you from this changelog, but two new chicken variants have just joined the coop! The cold chicken and the warm chicken spawn in their respective climates, drop different colored eggs, and cause all kinds of chaos. Uh-oh, I think they are in fact about to escape their pen! I’ll quickly tell you that pink cactus flowers and two types of dry grass are now sprouting in sandy biomes. Oh, and we’ve squashed some bugs too!
+
+# Experimental Features
+
+## Cactus Flower
+
+-   Added the Cactus Flower, a new type of flower which has a chance of generating on Cactuses in Deserts and Badlands
+-   Cactus Flower can be placed on Cactus blocks or any block which has center support at the top of the block
+-   Cactus Flowers have a chance of growing on Cactus blocks
+    -   If a Cactus is 1-2 blocks high the Cactus Flower has a 10% chance to grow instead of the Cactus getting higher
+    -   If a Cactus is 3 blocks high the Cactus Flower has a 25% chance to grow instead of the Cactus getting higher
+-   Cactus Flowers can be used in the Composter
+-   A Cactus Flower can be used to craft 1 Pink Dye
+
+## Chicken Variants
+
+-   Added two new Chicken variants - Warm Chicken and Cold Chicken!
+-   These have their own unique texture and geometry, but not a separate spawn egg
+-   They spawn in the same biomes as the Warm, Cold, and Temperate variants of Pigs and Cows
+-   Two new Egg items have been added for the Warm and Cold Chicken variants
+    -   Blue Egg - The Egg that is laid by and can hatch Cold Chicken variants
+    -   Brown Egg - The Egg that is laid by and can hatch Warm Chicken variants
+
+## Firefly Bush
+
+-   Added ambient sounds to the Firefly Bush that will play when the moon is visible to the block
+-   Fixed held Firefly Bush texture to better match Java Edition ([MCPE-190248](https://bugs.mojang.com/browse/MCPE-190248))
+
+## General
+
+-   Fixed the Bush block emitting brightness ([MCPE-190222](https://bugs.mojang.com/browse/MCPE-190222)) 
+-   Leaf Litter can now be placed on any block which provides center support 
+-   Fixed Leaf Litter step sound being in the block audio category not player 
+-   Change Leaf Litter map colour to be Brown 
+-   Fixed trailing spaces on new item names ([MCPE-190210](https://bugs.mojang.com/browse/MCPE-190210)) 
+
+## Short and Tall Dry Grass
+
+-   Added two new types of grass: Short Dry Grass and Tall Dry Grass
+-   Both are 1 block high, which makes Tall Dry Grass differ from Tall Grass which is 2 blocks high
+-   Both generate in the Desert and Badlands
+-   Both can be placed on types of Sand, Terracotta and Dirt blocks like the Dead Bush
+-   Both can be bone mealed
+    -   Using Bone Meal on Short Dry Grass grows it into a Tall Dry Grass
+    -   Using Bone Meal on Tall Dry Grass places a neighbouring Short Dry Grass next to the block if possible
+-   Both can be used in the Composter
+-   Sheep can eat both to regrow its wool
+-   Both can be used as fuel for smelting
+
+## Animal Variants
+
+-   Applied the warm and cold animal variant tags to all appropriate biomes, so that animals spawned in these biomes by spawn eggs or commands are an appropriate variant even if they still do not spawn in the biome naturally
+-   Cold Farm Animal Biomes:
+    -   Deep Frozen Ocean
+    -   Frozen Ocean
+    -   Frozen Peaks
+    -   Frozen River
+    -   Grove
+    -   Ice Spikes
+    -   Jagged Peaks
+    -   Snowy Beach
+    -   Snowy Plains
+    -   Snowy Slopes
+    -   Snowy Taiga
+    -   The End
+    -   Cold Ocean
+    -   Deep Cold Ocean
+    -   Deep Dark
+    -   End Barrens
+    -   End Highlands
+    -   End Midlands
+    -   Small End Islands
+    -   Stony Peaks
+    -   Old Growth Pine Taiga
+    -   Old Growth Spruce Taiga
+    -   Taiga
+    -   Windswept Forest
+    -   Windswept Gravelly Hills
+    -   Windswept Hills
+-   Warm Farm Animal Biomes
+    -   Mangrove Swamp
+    -   Badlands
+    -   Bamboo Jungle
+    -   Basalt Deltas
+    -   Crimson Forest
+    -   Desert
+    -   Eroded Badlands
+    -   Jungle
+    -   Nether Wastes
+    -   Savanna Plateau
+    -   Savanna
+    -   Soul Sand Valley
+    -   Sparse Jungle
+    -   Warm Ocean
+    -   Warped Forest
+    -   Windswept Savanna
+    -   Wooded Badlands
+    -   Deep Lukewarm Ocean
+    -   Lukewarm Ocean
+-   Temperate Farm Animal Biomes
+    -   Swamp
+    -   Beach
+    -   Birch Forest
+    -   Cherry Grove
+    -   Dark Forest
+    -   Dripstone Caves
+    -   Flower Forest
+    -   Forest
+    -   Lush Caves
+    -   Meadow
+    -   Mushroom Fields
+    -   Ocean
+    -   Old Growth Birch Forest
+    -   Plains
+    -   River
+    -   Stony Shore
+    -   Sunflower Plains
+    -   Lukewarm Ocean
+    -   The Void
+    -   Pale Garden
+
+# Features and Bug Fixes
+
+## Known Issues
+
+-   We have a couple of known issues in this week's update that we hope to have addressed soon
+    -   The Player's character is moving sideways
+    -   Other Players in Multiplayer sessions can get stuck in dying animation after respawn 
+
+## Blocks
+
+-   Fixed z-fighting textures in Flower Pot and Nether Sprout blocks ([MCPE-190215](https://bugs.mojang.com/browse/MCPE-190215)) 
+-   Fixed a crash that would sometimes happen when entities with an excessively large hitbox entered liquid 
+-   Fixed blocks using the `minecraft:destructible_by_mining` component with `item_specific_speeds` defined flickering during their block breaking animation ([MCPE-188401](https://bugs.mojang.com/browse/MCPE-188401)) 
+-   Fixed trigger rate of red stone powered droppers and dispensers ([MCPE-189895](https://bugs.mojang.com/browse/MCPE-189895)) 
+
+## Gameplay
+
+-   Using Riptide while standing in shallow water will once again launch the player as if they weren't standing in water. ([MCPE-188795](https://bugs.mojang.com/browse/MCPE-188795))
+
+## General
+
+-   In Server Authoritative movement, the Player will not constantly bop up and down if flying state change during small loss of connection with the server. 
+-   Removing experimental files cold\_taiga, cold\_taiga\_hills, and cold\_taiga\_mutated from behavior packs. These files were only loaded with the custom biomes experiment enabled, and this change does not remove the biomes themselves. 
+
+## User Interface
+
+-   Fixed some typos and inaccuracies in the minecraft Encyclopedia ([MCPE-186358](https://bugs.mojang.com/browse/MCPE-186358))
+-   Screen Safe Area Settings: Disables Horizontal and Vertical Screen Position sliders if the Safe area is set to 100% 
+-   Stops Screen Position from displaying -0.0 due to a rounding error.
+-   Long splash texts on the start screen will break into two lines to be more readable. 
+-   The invite button on the pause screen is moved up a bit and now has an icon.
+-   Scaled and moved the title logo to make room for the friends drawer button. 
+-   Added new loading tips for creative mode. 
+
+### Player Permissions
+
+-   The Player Permissions screen has been upgraded to the new Ore UI, bringing a fresh look and a more intuitive and user friendly experience. We've improved the visual design, introduced new icons for permission levels, and simplified the flow for easier navigation. Additionally, players now receive better feedback after each action, and error handling has been improved for a smoother experience. Let us know how you like it, at [aka.ms/mcplayerpermissionscreenfeedback](https://aka.ms/mcplayerpermissionscreenfeedback)
+
+### Friends Drawer Improvements
+
+-   Players can now also find the Friends Drawer in the Main Menu and Game Menu, in addition to the Play Screen, in the top right of the screen. We hope this will make it easier to connect and play with your friends! Let us know how you like it, at [aka.ms/mcfriendsdrawerfeedback](https://aka.ms/mcfriendsdrawerfeedback)
+

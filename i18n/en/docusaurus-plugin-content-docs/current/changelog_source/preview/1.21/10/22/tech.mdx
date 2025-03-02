@@ -1,0 +1,98 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Deprecated Entity Permutations
+    -   Permutations can no longer be parsed and applied to entities via their JSON file under the flag permutations
+-   Deprecated Volume and /volumearea command
+-   Entity Aliases is deprecated when a format\_version of 1.21.10 or higher is specified
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Camera
+
+-   Added the view offset to the 3rd person camera for the experimental _follow\_orbit_ preset
+    -   The view offset is anchored to a pivot point at the center of the screen. When applied to the follow\_orbit preset, the player is shifted to be at a distance from center specified by the the offset.
+    -   The range for this offset is -100 to 100
+    -   This can be set by both commands and JSON
+        -   /camera @s set minecraft:follow\_orbit view\_offset viewX viewY
+    -   A new learning portal article detailing the 3rd person camera, including JSON syntax, will be published soon.
+-   Added starting radius and rotation to the _follow\_orbit_ and 3rd person boom camera presets
+    -   The starting radius (distance from player) is fixed right now at 10 blocks from the player position.
+    -   The starting rotation (pitch and yaw) are fixed right now at 45X and 45Y.
+    -   The follow orbit camera is the only preset available, the 3rd person boom preset will be coming in a future release.
+-   Exposed radius component to behavior packs to be overwritten by creator cameras. Also added ‘minecraft:third\_person’ and ‘minecraft:third\_person\_front’ to the allow list of presets that can be inherited from
+    -   This allows you to make a 3rd person camera based on the vanilla 3rd person cameras but with a variable radius.  
+        The radius (distance from player) is not limited but render distance and other constraints still exist.
+    -   This does **_not_** allow modifications to the vanilla cameras.
+
+## Editor
+
+-   Removed Keybinding for ‘D’ from Paste Preview which blocked movement right. Fixed Distance mode can be selected using the side-panel
+-   Fixed missing CTRL+X key binding in Editor
+-   Expanded the Block Palette Service API to allow management of Block Palettes and Block Palette Items
+-   Added radial drag to number input fields, allowing value changes with mouse drag movement
+-   Introduced a new script brush manager method _getBrushVolume_ which, given a set of brush pipeline operations, builds an absolute compound block volume for the brush
+-   Fixed bug where small movements in the brush tool caused incorrect cursor tracking
+
+## Entity Components
+
+-   Added a _wind\_burst\_on\_hit_ subcomponent for Projectiles which creates a wind burst upon collision with an entity or block before being removed from the world
+-   Wind Charges no longer burst when removed by command
+
+## General
+
+-   “minecraft:scatter\_feature” now has a “distribution” field like “minecraft:feature\_rules” to define the scattering settings. Features now use schema version “1.21.10”
+-   [Learning portal documentation](https://learn.microsoft.com/en-us/minecraft/creator/reference/content/featuresreference/examples/features/minecraftscatter_feature?view=minecraft-bedrock-stable) on this feature will be updated with the full release
+
+## Items
+
+-   Released _minecraft:custom\_components_ item component out of experimental in json formats 1.21.10 and higher
+-   Introduced “slot.armor.body” as an extra armor slot for entities, like horses, limited to a single armor item but needing the effects of a full armor set
+-   Introduced the “minecraft:damage\_absorption” item component, enabling items to absorb damage intended for their wearer
+    -   The “absorbable\_causes” field allows to specify which damage causes to absorb
+    -   Absorbed damage depletes the item’s durability, and surplus damage is ignored
+    -   Requires equipping the item in an armor slot for damage to be absorbed
+    -   When multiple damage absorbing items are equipped, a suitable one is selected at random to absorb incoming damage
+-   Introduced the “minecraft:durability\_sensor” item component, enabling items to emit sounds and particles when damage causes them to lose durability
+    -   The “durability\_thresholds” field allows to define a list of both durability thresholds and the effects to emit when they are met
+    -   When the item receives enough damage to meet multiple thresholds at the same time, only the one corresponding to the lowest durability is considered
+-   Learning portal documents on these features and how to use them are being written and will be available soon
+
+## Realms
+
+-   Fixed a bug that prevented two back-to-back error screens when the client was out of date and a Realm had a pending update  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Added a Brightness / Gamma calibration screen for Deferred Technical Preview
+    -   The calibration screen can be found under Deferred Graphics Settings within the Video settings menu
+
+## Stability and Performance
+
+-   Fixed a crash when enabling the Deferred Technical Preview experiment on Android devices with an Arm Mali GPU

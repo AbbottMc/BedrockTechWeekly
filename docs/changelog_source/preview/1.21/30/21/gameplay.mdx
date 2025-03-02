@@ -1,0 +1,219 @@
+**Posted:** 1 August 2024
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A screenshot of the tree canopy in Minecraft, where the sunlight bleeds through the leaves due to the Deferred Technical Preview feature that adds Sub Surface Scattering.](https://feedback.minecraft.net/hc/article_attachments/28896805992461)
+
+There’s a new Minecraft Preview and Beta rolling out, bringing fixes to disappearing boats, heat-resistant snow golems, and more! For those of you wondering about bundles – our developers are still working hard on bringing bundles into Preview and Beta, so keep your eyes peeled on future changelogs for updates!
+
+Here’s what’s new in this week’s Preview and Beta:
+
+# Features and Bug Fixes
+
+## Blocks
+
+-   Vertically retracting waterlogged blocks with a Piston no longer creates "ghost water" on the client ([MCPE-144222](https://bugs.mojang.com/browse/MCPE-144222))
+-   "purpur\_block" block is now split into unique instances "purpur\_block", and "purpur\_pillar"; the previously unused chiseled and smooth purpur blocks were renamed to "deprecated\_purpur\_block\_1" and "deprecated\_purpur\_block\_2" for backwards compatibility, but are hidden from creative inventory and commands
+-   "structure\_void" has had its block state removed and "air" variants will be converted to the base block
+-   Added new vanilla block and item tags to support vanilla item tier level destruction speeds for data driven blocks
+-   All Logs, Stripped Logs, Woods, and Stripped Woods are now treated consistently across various scenarios:
+    -   Flying mobs that can land on trees will now recognize these blocks as suitable landing positions
+    -   Parrots will now prefer these blocks as landing spots
+    -   Previously, these behaviors applied to only a subset of these blocks
+-   Kelp can no longer be placed on any type of Fence, instead of just a subset of them
+-   Seagrass can no longer be placed on any type of Fence, instead of just a subset of them
+-   Turtle Eggs can no longer be placed on any type of Fence, instead of just a subset of them
+-   "cobblestone\_wall" block is now split into unique instances "cobblestone\_wall", "mossy\_cobblestone\_wall", "granite\_wall", "diorite\_wall", "andesite\_wall", "sandstone\_wall", "brick\_wall", "stone\_brick\_wall", "mossy\_stone\_brick\_wall", "nether\_brick\_wall", "end\_stone\_brick\_wall", "prismarine\_wall", "red\_sandstone\_wall" and "red\_nether\_brick\_wall" ()
+-   "granite\_wall", "diorite\_wall", "andesite\_wall", "stone\_brick\_wall", "mossy\_stone\_brick\_wall" and "prismarine\_wall" now have a destruction time of 1.5
+-   "sandstone\_wall" and "red\_sandstone\_wall" now have a destruction time of 0.8
+-   "end\_stone\_brick\_wall" now has a destruction time of 3.0
+
+## Crafting
+
+-   When crafting a Firework, adding or removing items from the grid will update the output item appropriately ([MCPE-183455](https://bugs.mojang.com/browse/MCPE-183455))
+
+## Full Keyboard Gameplay
+
+-   Added Q and E as left and right click equivalents in JSON UI menus (including inventory menus) when playing in Full Keyboard Gameplay mode
+
+## Gameplay
+
+-   The Bad Omen effect can now be reset by drinking an Ominous Bottle of any level
+-   Boats will no longer disappear while sliding on Ice ([MCPE-180432](https://bugs.mojang.com/browse/MCPE-180432))
+-   Fixed a crash that could occur when opening a Lectern while a Sticky Piston was moving it. The Lectern now closes the book screen when moved ([MCPE-183508](https://bugs.mojang.com/browse/MCPE-183508))
+-   Dismounting a vehicle no longer puts the player inside the ground on some platforms ([MCPE-184363](https://bugs.mojang.com/browse/MCPE-184363), [MCPE-182448](https://bugs.mojang.com/browse/MCPE-182448))
+
+## General
+
+-   Fixed a bug that caused placeholder textures to appear after minimizing and then restoring the game window
+
+## Graphical
+
+-   Fixed an issue where Banners were rendered before other transparent objects regardless of their positions ([MCPE-130262](https://bugs.mojang.com/browse/MCPE-130262))
+
+## How to Play
+
+-   Added line break ability for How to Play topic labels instead of having it add "..." when the line got too long
+
+## Items
+
+-   Each Banner Pattern item now includes their pattern type in their name instead of as a subtitle ([MCPE-182508](https://bugs.mojang.com/browse/MCPE-182508))
+-   Smithing Template items are now named after their template type instead of the generic "Smithing Template" name
+    -   They instead specify that they are a Smithing Template through a subtitle in the hover text
+-   Unique item textures have been given to each Banner Pattern item to better distinguish between each other
+-   Illager Banner has been renamed to Ominous Banner to match Java Edition
+
+![The Minecraft creative inventory, showing a search for banner. The updated banner pattern pattern items can be seen.](https://feedback.minecraft.net/hc/article_attachments/28902005618957)
+
+## Mobs
+
+-   Fixed custom entity's name not appearing correctly in death messages ([MCPE-158447](https://bugs.mojang.com/browse/MCPE-158447))
+
+## Multiplayer
+
+-   Fixed an issue where the invite screen in-game would not show the correct substatus
+
+## Rarity
+
+-   Various items and blocks have had their assigned rarities changed ([MCPE-182414](https://bugs.mojang.com/browse/MCPE-182414))
+    -   Once these rarity changes come to Java Edition in a future snapshot, all item and block rarities will be in parity across both platforms
+-   Rarity is a set of categories which determine the color used to display the name of an item or block
+    -   It has no gameplay impact, but is used to signal how difficult something is to obtain
+    -   By default, unless specified otherwise, all items and blocks have a rarity of Common which displays their name in the color white
+-   We have re-evaluated the rarity of all items and blocks in the game to more accurately reflect the current challenge of obtaining them, given the following guidelines:
+    -   Items and blocks become rarer depending on the following factors:
+        -   The chance of finding it in a loot table, including mob drops
+        -   The amount of travelling required to obtain it
+        -   The difficulty of any obstacle which must be overcome to obtain it
+        -   The possible amount of that item or block which exists in the world
+    -   Any item or block which can be crafted must inherit the highest rarity of its crafting ingredients
+        -   For example, a Mace has an Epic rarity because one of its ingredients (the Heavy Core) has an Epic rarity
+        -   Likewise, any crafted item which has only Common crafting ingredients must also be Common
+    -   The lists below detail the items and blocks which have changed to that rarity category
+
+### Common
+
+-   End Crystal
+-   Golden Apple
+
+### Epic
+
+-   Elytra
+-   Dragon Head
+-   Silence Armor Trim
+
+### Rare
+
+-   Enchanted Golden Apple
+    -   Enchanted Golden Apples have become more common in recent years due to being accessible in both Ancient Cities and Trial Chambers, warranting a demotion to Rare instead of Epic
+-   Trident
+    -   We recently increased Trident's rarity up to Epic from Common, but after re-evaluating we felt that it was easier to obtain than other items in the Epic category such as Heavy Cores or Elytra
+-   Nether Star
+-   Ward Armor Trim
+-   Eye Armor Trim
+-   Vex Armor Trim
+-   Spire Armor Trim
+-   Wither Skeleton Skull
+-   Skull Charge Banner Pattern
+    -   Now that Wither Skeleton Skulls are Rare, these banner patterns should be Rare as well
+-   Thing Banner Pattern
+    -   Now that Enchanted Golden Apples are Rare, these banner patterns should be Rare as well
+-   The following Music Discs:
+    -   Pigstep
+    -   otherside
+    -   Creator
+
+### Uncommon
+
+-   Sniffer Egg
+-   Chainmail Helmet
+-   Chainmail Chestplate
+-   Chainmail Leggings
+-   Chainmail Boots
+-   Recovery Compass
+-   Disc Fragment 5
+-   Nautilus Shell
+-   Echo Shard
+-   Goat Horns
+-   Pottery Sherds
+-   Ominous Bottles
+-   Ominous Banner
+-   Netherite Upgrade
+-   Sentry Armor Trim
+-   Dune Armor Trim
+-   Coast Armor Trim
+-   Wild Armor Trim
+-   Tide Armor Trim
+-   Snout Armor Trim
+-   Rib Armor Trim
+-   Wayfinder Armor Trim
+-   Shaper Armor Trim
+-   Raiser Armor Trim
+-   Host Armor Trim
+-   Flow Armor Trim
+-   Bolt Armor Trim
+-   The following Music Discs:
+    -   13
+    -   Cat
+    -   Blocks
+    -   Chirp
+    -   Creator (Music Box)
+    -   Far
+    -   Mall
+    -   Mellohi
+    -   Stal
+    -   Strad
+    -   Ward
+    -   11
+    -   Wait
+    -   Relic
+    -   5
+    -   Precipice
+
+## Realms
+
+-   Fixed an issue that was preventing RealismCraft and some other packs from working on Realms. This was a service-side fix that is live in both Preview and the latest full release ([REALMS-11913](https://bugs.mojang.com/browse/REALMS-11913), [REALMS-11916](https://bugs.mojang.com/browse/REALMS-11916))
+-   Realms Stories content is no longer cropped when scrolling
+-   Text no longer overlaps screenshots in Realms Stories on Galaxy Z Flip devices on any UI size
+-   Gamepad legend no longer overlaps with UI elements when choosing a Preview Realm to create a world on
+-   In split screen mode, only show the subscriptions tab for the primary player
+-   Realm ID is now displayed in the debug text for preview/beta builds while connected to a Realm or while on associated screens.
+
+## Touch Controls
+
+-   Improved new d-pad for touch controls. It is now more compact, includes back strafing buttons, and a slightly extended zone outside where camera input is not received in order to prevent unexpected camera movement. When customizing controls, the diagonal buttons are visible as well
+-   Fixed a bug where the hide hud command would not hide the d-pad touch control ([MCPE-184157](https://bugs.mojang.com/browse/MCPE-184157))
+
+## Trial Chambers
+
+-   Added new variations to the hallways, including "Encounters": Short challenges leading to a larger chamber.
+-   Beds in intersections now have their colors randomized. ([MCPE-180424](https://bugs.mojang.com/browse/MCPE-180424))  
+-   Replaced the empty chests at the entrance of chamber with a Hopper and Barrel to better show the players that these are meant for disposal and inventory management!
+-   Fixed multiple trial chamber templates have missing or incorrect block ([MCPE-176952](https://bugs.mojang.com/browse/MCPE-176952))
+-   Fixed inaccessible traps can generate behind walls in Trial Chamber ([MCPE-180912](https://bugs.mojang.com/browse/MCPE-180912))
+-   Some slime trial spawners in trial chambers won't spawn slimes without player intervention
+-   Fixed Ominous Vault may fail to generate in Pedestal and chamber\_1/2
+
+## User Interface
+
+-   Fixed a softlock that could occur when purchasing subscriptions
+-   Fixed a bug where the 'Drink' interaction prompt was not displayed when the player was holding an Ominous Bottle
+-   Fixed a bug where player health would be rounded down instead of rounded up, causing the HUD to sometimes only show empty health icons ([MCPE-183157](https://bugs.mojang.com/browse/MCPE-183157))
+-   The chat output's scroll position keeps its position after the game screen re-gains focus
+-   Shortened the URL for signing in on another device to microsoft.com/link
+
+## Vanilla Parity
+
+-   Entities falling into water now make the same splashing sound as in Java Edition ([MCPE-44120](https://bugs.mojang.com/browse/MCPE-44120))
+-   Fixed a bug where a standalone Scaffolding block could not be placed on top of a Structure Block ([MCPE-169818](https://bugs.mojang.com/browse/MCPE-169818))
+-   Snow Golems with Fire Resistance no longer take damage in warm biomes ([MCPE-94448](https://bugs.mojang.com/browse/MCPE-94448))
+-   Uncarved Pumpkin blocks can no longer be used to create Snow Golems and Iron Golems ([MCPE-33801](https://bugs.mojang.com/browse/MCPE-33801))
+-   When an item is enchanted, their rarity status is now increased depending on their base rarity
+    -   If the base rarity of an item is Common or Uncommon, it will become Rare when enchanted
+    -   If the base rarity of an item is Rare, it will become Epic when enchanted
+    -   If the base rarity of an item is Epic, it will stay Epic when enchanted
+

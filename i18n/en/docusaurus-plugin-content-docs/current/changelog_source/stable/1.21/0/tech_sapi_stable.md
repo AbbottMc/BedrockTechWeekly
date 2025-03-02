@@ -1,0 +1,82 @@
+
+
+-   ScreenDisplay
+    -   Moved _getHiddenHudElements(): HudElements\[\]_ from _beta_ to _1.11.0_
+    -   Moved _isForcedHidden(hudElement: HudElements): boolean_ from _beta_ to _1.11.0_
+    -   Moved _resetHudElements(): void_ from _beta_ to _1.11.0_
+    -   Moved _setHudVisibility(visible: HudVisibility, hudElements?: HudElements\[\]): void_ from _beta_ to _1.11.0_
+    -   Moved _hideAllExcept(hudElements?: HudElements\[\]): void_ from _beta_ to _1.11.0_
+-   HudElement
+    -   Moved _HudElement_enum from _beta_ to _1.11.0_
+    -   Moved _HudElementsCount_ from _beta_ to _1.11.0_
+-   HudVisibility
+    -   Moved _HudVisibility_ enum from _beta_ to _1.11.0_
+    -   Moved _HudVisibilityCount_ from _beta_ to _1.11.0_
+-   Moved _WeatherChangeBeforeEvent_ from _beta_ to _1.11.0_
+-   BlockPermutation
+    -   Removed function _clone_
+-   Creator Settings UI
+    -   Watchdog settings
+    -   Increase script hang threshold
+    -   Disable/Enable slow script warnings and adjust threshold
+    -   Disable/Enable script spike warnings and adjust threshold
+    -   Removed _disableWatchdog_ method
+    -   Added _disableWatchdogTimingWarnings_ to disable spike and slow warnings per behavior pack
+-   Released _ItemEnchantableComponent_ from _beta_ to _1.11.0_
+-   Released Enchantment APIs from _beta_ to _1.11.0_
+    -   interface _Enchantment_
+    -   enum _EnchantmentSlot_
+    -   class _EnchantmentType_
+    -   class _EnchantmentTypes_
+-   Added new interface _EntityFilter_ with many of the existing options from _EntityRaycastOptions_
+-   _EntityRaycastOptions_ now inherits from _EntityFilter_
+-   _EntityQueryOptions_ now inherits from _EntityFilter_
+-   Removed property _blockFilter_ (and several others, now moved to _EntityFilter_) from _BlockRaycastOptions_
+-   _BlockRaycastOptions_ now inherits from _BlockFilter_
+-   Released _BlockFilter_ to _1.4.0_
+-   Released _volume_ from _beta_ to _1.11.0_
+-   GameRules
+    -   Released _GameRules_ from _beta_ to _1.11.0_
+    -   Released _GameRuleChangeAfterEvent_ from _beta_ to _1.11.0_
+    -   Released _GameRuleChangeAfterEventSignal_ from _beta_ to _1.11.0_
+    -   Released _gameRules_ from _beta_ to _1.11.0_
+    -   Released _gameRuleChange_ from _beta_ to _1.11.0_
+-   EntityTameableComponent
+    -   Changed return type of _getTameItems_ to _ItemStack\[\]_
+    -   Changed _tame_ to take a player
+    -   Added method _tamedToPlayer_, _tamedToPlayerId_, _isTamed_
+-   Released _EntityColor2Component_ from _beta_ to _1.11.0_
+-   Released _PaletteColor_ from _beta_ to _1.11.0_
+-   Released _matches_ from _beta_ to _1.11.0_
+-   Released _EntityNavigationComponent_ from _beta_ to _1.11.0_
+-   Released _EntityNavigationClimbComponent_ from _beta_ to _1.11.0_
+-   Released _EntityNavigationFloatComponent_f rom _beta_ to _1.11.0_
+-   Released _EntityNavigationFlyComponent_ from _beta_ to _1.11.0_
+-   Released _EntityNavigationGenericComponent_ from _beta_ to _1.11.0_
+-   Released _EntityNavigationHoverComponent_ from _beta_ to _1.11.0_
+-   Released _EntityNavigationWalkComponent_ from _beta_ to _1.11.0_
+-   Moved _entity_ from _beta_ to _1.11.0_
+-   Moved _EntityTameMountComponent_and method _tame_ from _beta_ to _1.11.0_
+-   Moved _EntityRideableComponent_ from _beta_ to _1.11.0_
+-   Moved _Seat_ from _beta_ to _1.11.0_
+-   Moved _EntityRidingComponent_ from _beta_ to _1.11.0_
+-   Fixed _GameRules_rule property-setters so that changes are propagated to clients
+-   Moved _startItemCooldown_and _player.getItemCooldown_ from _beta_ to _1.11.0_
+-   Released _playSound_ from _beta_ to _1.11.0_
+-   _playSound_ is now deprecated and will be removed in a future major version
+    -   Use _Dimension.playSound_ as the alternative
+-   Released _ListBlockVolume_ from _beta_ to _1.11.0_
+-   Released _BlockVolumeBase_ from _beta_ to _1.11.0_
+-   Released _BlockLocationIterator_ from _beta_ to _1.11.0_
+-   Moved method _getGameMode(): GameMode_ from _beta_ to _1.11.0_
+-   Moved method _setGameMode(gameMode?: GameMode): void_ from _beta_ to _1.11.0_
+-   Moved member _playerGameModeChange: PlayerGameModeChangeAfterEventSignal_ from _beta_ to _1.11.0_
+-   Moved member _playerGameModeChange: PlayerGameModeChangeBeforeEventSignal_ from _beta_ to _1.11.0_
+-   Moved class _PlayerGameModeChangeAfterEvent_ from _beta_ to _1.11.0_
+-   Moved class _PlayerGameModeChangeAfterEventSignal_ from _beta_ to _1.11.0_
+-   Moved class _PlayerGameModeChangeBeforeEvent_ from _beta_ to _1.11.0_
+-   Moved class _PlayerGameModeChangeBeforeEventSignal_ from _beta_ to _1.11.0_
+-   Added _ItemComponentConsumeEvent_ for _beta_
+-   Changed _waitTick(ticks?: number)_to _system.waitTicks(ticks: number);_
+-   Renamed property _selectedSlot_to _selectedSlotIndex_ and moved it from _beta_ to _1.11.0_
+

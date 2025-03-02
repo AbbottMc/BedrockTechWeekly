@@ -1,0 +1,86 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Commands
+
+-   Fixed commands not executing when command is entered with leading spaces ([MCPE-147815](https://bugs.mojang.com/browse/MCPE-147815))
+-   Moved the `place feature` and `place featurerule` subcommands out of the Upcoming Creator Features experiment 
+
+## Components
+
+-   Added the "minecraft:is\_collidable" component
+    -   This component allows other mobs to have vertical and horizontal collisions with the component's owner
+        -   For a collision to occur, both mobs must have a "minecraft:collision\_box" component
+        -   This component can only be used on mobs and enables collisions exclusively between mobs
+    -   Please note that this type of collision is unreliable for moving mobs
+        -   It is recommended to use this component only in scenarios where the mob remains stationary
+    -   Collidable behavior is closely related to stackable behavior
+        -   While the "minecraft:is\_collidable" component governs how other mobs interact with the component's owner, the "minecraft:is\_stackable" component describes how an entity interacts with others of its own kind
+-   The "entity\_sensor" component now has two additional fields: 
+    -   "y\_offset", applies a vertical offset to the entity's position when calculating distances to other entities
+    -   "find\_players\_only", restricts the search to Players only, affecting all subsensors
+-   Added the "minecraft:body\_rotation\_axis\_aligned" component, that causes the entity's body to automatically rotate to align with the nearest cardinal direction based on its current facing direction 
+    -   Combining this with the "minecraft:body\_rotation\_blocked" component will cause the entity to align to the nearest cardinal direction and remain fixed in that orientation, regardless of future changes in its facing direction
+
+## Data-driven Jigsaw Structures
+
+-   Fixed placement of Jigsaw structures that contain blocks with `minecraft:tick` component. 
+
+## Editor
+
+-   Added Block Inspector tool which allows you to view block states and permutations of blocks 
+-   Added Entity Inspector tool which allows you to view and modify entity components
+-   Added a new `IRootPropertyPane.createModalOverlayPane` API function, allowing the creation of `IModalOverlayPane` to display on top of the pane content. Each pane supports one active modal overlay at a time, but it can own multiple modals. Modal overlays can be managed through the root pane's `setActiveModalOverlay` function or the overlay pane's `show` and `hide` functions 
+-   Fixed an assert encountered on client disconnect from dedicated server and re-entry into a world 
+    -   Fixed block picker UI dialog persisting after a client disconnect from a dedicated server
+
+## Entity Components
+
+-   Added `on_spawn` trigger to `spawn_chance` on hit sub-component, triggered on the newly spawned entity with `other` set to the owning entity
+-   Added `particle_item_name` map to `particle_on_hit` on hit sub-component, maps an item name to an actor filter to determine what the name of the item used in the particle should be. Falls back to the name of the entity itself as before.
+
+## Goals
+
+-   "minecraft:behavior.float\_wander" AI goal will now restrict mobs to their home position if they have the "minecraft:home" component 
+
+## Mobs
+
+-   Added maximum value of `100000000.0` and minimum value of `-100000000.0` to **"minecraft:collision\_box"** component
+
+## Network Protocol
+
+-   Added ActorFlags::COLLIDABLE
+-   Added ActorFlags::BODY\_ROTATION\_AXIS\_ALIGNED
+
+## Sounds
+
+-   Sound effects found in animations and animation controllers can now include an optional "locator" field similar to particle effects allowing them to originate from the locator on the entity rather than the origin 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Fixed a bug that caused water to render through the bottom of boats in the Deferred Technical Preview. 
+-   Fixed a bug that caused weather (rain, snow, etc...) to appear brighter than it should be at night in the Deferred Technical Preview.

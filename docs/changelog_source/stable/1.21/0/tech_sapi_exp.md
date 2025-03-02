@@ -1,0 +1,53 @@
+
+
+-   Changed function from _fillBlocks(begin: Vector3, end: Vector3, block: BlockPermutation | BlockType | string, options?: BlockFillOptions): number_ to _fillBlocks(volume: BlockVolumeBase | CompoundBlockVolume, block: BlockPermutation | BlockType | string, options?: BlockFillOptions): ListBlockVolume_
+-   BlockFillOptions
+    -   Removed member _matchingBlock?: BlockPermutation_
+    -   Added member _blockFilter?: BlockFilter_
+    -   Added member _ignoreChunkBoundErrors?: boolean_
+-   Added _ItemComponentUseCompleteEvent_ for _beta_
+    -   Moved _setType_API from _beta_ to stable _1.11.0_
+    -   Added function _waitTick(ticks?: number): Promise_ where the returned promise is resolved after "ticks" number of ticks or 1 tick if no ticks parameter is supplied
+-   Removed argument _waterlogged_ from function _setBlockPermutation_ and moved it from _beta_ to _1.11.0_
+-   Moved function _saveToWorld_ from _beta_ to _1.11.0_
+-   Moved function _saveAs_ from _beta_ to _1.11.0_
+-   Updated signature of _createFromWorld_ and moved it from _beta_ to _1.11.0_
+-   Renamed function _getIds_ to _getWorldStructureIds_ and moved it from _beta_ to _1.11.0_
+-   Added _ItemComponentMineBlockEvent_ for _beta_
+-   Event Signals
+    -   Unsubscribe is no longer marked as "@throws". It does not throw exceptions and never has
+-   Added _getAll_ to _beta_
+-   Added _PlayerInputPermissions_ and _inputPermissions_ for enabling & disabling categories of player input permissions
+-   Added _InputPermissionCategory_
+-   Added _afterEvents.playerInputPermissionCategoryChange_ for listening to changes to a players input permissions
+-   Added _ignoreBlockCollision_ to _EntityRaycastOptions_ which when true, will make the raycast not stop on block collision
+-   Added _includePassableBlocks_ to _EntityRaycastOptions_ which when true, passable blocks like vines and flowers will be considered as blocks that 'stop' the raycast
+-   Added _includeLiquidBlocks_ to _EntityRaycastOptions_ which when true, liquid blocks will be considered as blocks that stop the raycast
+-   Added _ItemComponentHitEntityEvent_ and _ItemComponentBeforeDurabilityDamageEvent_ for _beta_
+-   _get_ will now handle items whose names have changed so that scripts referencing old names will still work as intended
+-   Added _ItemComponentUseOnEvent_ for _beta_
+-   Moved _typeId_and _Block.matches_ from _beta_ to _stable_
+-   Update JavaScript engine
+    -   BigInt support
+    -   hasOwn
+    -   Array findLast and at
+    -   Miscellaneous bug fixes
+-   _@minecraft/server.BlockType_
+    -   Moved _id_API from _beta_ to stable _1.11.0_
+-   _@minecraft/server.BlockTypes_
+    -   Moved _BlockTypes_ API from _beta_ to stable _1.11.0_
+    -   Moved _type_API from _beta_ to stable _1.11.0_
+-   _@minecraft/server.Block_
+    -   Moved _type_API from _beta_ to stable _1.11.0_
+-   EntityTameMountComponent
+    -   Added method _tameToPlayer_
+    -   Added properties _isTamed_, _isTamedToPlayer_, _tamedToPlayer_, and _tamedToPlayerId_
+-   GameRules
+    -   Added property _showDaysPlayed_ to _beta_
+-   Fixed _PlayerInputPermissions_ input-lock category property-setters so that changes are propagated to clients
+-   Fixed issue where blocks with custom components could not have a block placed onto them without crouching
+-   Added new interface _VectorXZ_
+-   Added method _getTopmostBlock_ which will perform a raycast from the top of the world downwards, trying to find the first solid block
+-   Added method _getBlockAbove_ which will perform a raycast from a given position, trying to find the first solid block above
+-   Added method _getBlockBelow_ which will perform a raycast from a given position, trying to find the first solid block below
+

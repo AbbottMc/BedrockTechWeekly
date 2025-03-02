@@ -1,0 +1,222 @@
+**Posted:** August 13, 2024
+
+A new update has been released with a variety of quality-of-life improvements and fixes to the Minecraft experience! Read below for a full list of the changes included.
+
+![image_r21u2.png](https://feedback.minecraft.net/hc/article_attachments/29115191581069)
+
+Your thoughts on the game continue to shape new updates so please upvote and report any new bugs at [bugs.mojang.com](https://bugs.mojang.com) and leave us your feedback at [feedback.minecraft.net](https://feedback.minecraft.net/).  
+  
+
+# **Fixes and Changes:**
+
+## **Performance / Stability:**
+
+-   Fixed a number of bugs related to downloading content getting stuck, including errors related to: "Downloads all stuck at 0%" and broken content updates ([MCPE-177684](https://bugs.mojang.com/browse/MCPE-177684))
+-   Fixed item and block corruption when converting worlds from legacy Console Edition
+-   Fixed an issue on Amazon devices where game would occasionally crash when joining a world
+
+## **General**
+
+-   Fixed an issue so that Marketplace content is properly imported before creating or starting a world
+-   Legacy worlds no longer have chunks at the edge of the world that don't render
+
+## **Gameplay**
+
+-   Fixed a bug that caused the environment within a chunk to noticeably change when thousands of blocks away from spawn ([REALMS-11625](https://bugs.mojang.com/browse/REALMS-11625))
+-   The sound emitted when a player walks on a Heavy Core Block is now controlled by the appropriate slider in the audio preferences
+-   Trial Chambers now generate far less frequently in the Deep Dark biome
+-   Jumping no longer overrides any previous greater upward velocity, and therefore doesn't cancel momentum from a Wind Burst explosion when both happen at the same time
+-   Loot ejected from Vaults in Trial Chambers are now dependent on level, position and player seed
+-   Players will no longer receive damage when in the world load or dimension transfer loading screen ([MCPE-42310](https://bugs.mojang.com/browse/MCPE-42310))
+-   Players no longer momentarily go into a crawl for a single tick when moving towards a Bed with a 1.5 unit gap above it ([MCPE-178370](https://bugs.mojang.com/browse/MCPE-178370), [MCPE-180810](https://bugs.mojang.com/browse/MCPE-180810))
+-   Area Effect Clouds no longer shrink when entered by entities immune to the effect
+
+## **Mobs**
+
+-   The Bogged's underwater melee attack no longer applies a Slowness effect to the victim ([MCPE-178884](https://bugs.mojang.com/browse/MCPE-178884))
+-   Bogged no longer levitates when riding a Boat, Raft, or Minecart ([MCPE-178876](https://bugs.mojang.com/browse/MCPE-178876))
+-   Parrots now correctly imitate the Bogged when nearby
+-   Witches now always drop 4-8 Redstone Dust on death
+    -   This is to improve the viability of farms that utilize Witch Huts to obtain Redstone Dust
+-   Fixed mob animations not playing when mobs were unloaded in split screen
+-   Fixed a bug where the Breeze could get stuck in one place when beneath a roof of blocks while attacking
+-   Entities that fail to load due to missing content will now be preserved inside the level. These entities will re-appear when the missing content becomes available (i.e. Removing and re-applying an Add-On)
+-   Drowned now spawn individually in rivers instead of in groups of two
+-   Drowned now spawn in aquifers in dripstone caves ([MCPE-144066](https://bugs.mojang.com/browse/MCPE-144066))
+-   Wolves, Bears, and Pandas will panic and try to avoid danger when damaged by environmental sources, eg: fire, lava, freezing
+-   Pufferfish now gives Nausea I effect instead of Nausea II when consumed ([MCPE-98458](https://bugs.mojang.com/browse/MCPE-98458))
+-   Zoglins now play angry sounds when chasing the player or mobs ([MCPE-95523](https://bugs.mojang.com/browse/MCPE-95523))
+-   Bees now start taking drowning damage after one second when underwater ([MCPE-114688](https://bugs.mojang.com/browse/MCPE-114688))
+-   Mounts and vehicles are no longer given a slight velocity during a dismount
+
+## **Blocks**
+
+-   Fixed a bug that caused Crafter to be audible from more than five blocks distance
+-   Fixed some Trial Spawner texture inconsistencies ([MCPE-181455](https://bugs.mojang.com/browse/MCPE-181455))
+-   Slabs and Stairs should no longer randomly start placing on the bottom when continuously building ([MCPE-54855](https://bugs.mojang.com/browse/MCPE-54855))
+-   Particles generated when breaking Leaves will now match the color of the destroyed leaves ([MCPE-179726](https://bugs.mojang.com/browse/MCPE-179726))
+-   Mirrored the back side of Skull, Guster, and Flow Banner textures ([MCPE-179894](https://bugs.mojang.com/browse/MCPE-179894))
+-   Fixed an issue with the Quartz Slab's texture ([MCPE-182604](https://bugs.mojang.com/browse/MCPE-182604))
+-   Restored the back-side texture of the Sunflower to be leafy green ([MCPE-181275](https://bugs.mojang.com/browse/MCPE-181275))
+-   Doors of different materials will now be able to form a double door
+-   The Heavy Core Block is now properly scaled in the inventory ([MCPE-179656](https://bugs.mojang.com/browse/MCPE-179656))
+-   The Heavy Core Block is now positioned correctly in Item Frames ([MCPE-181155](https://bugs.mojang.com/browse/MCPE-181155))
+-   The Bell Block no longer rings twice when hit with a Wind Charge Projectile
+-   The Scaffolding block no longer flickers when moving at far distances ([MCPE-120910](https://bugs.mojang.com/browse/MCPE-120910))
+-   Copper Doors now follow the intended design of only dropping when mined with a Stone Pickaxe or better
+-   Doors no longer drop when top block is mined in Creative mode
+-   Smooth Quartz Slab’s texture is back to normal ([MCPE-182104](https://bugs.mojang.com/browse/MCPE-182104))
+-   Crafting with Oxidized Cut Copper in Stonecutter now yields two slabs instead of one ([MCPE-136077](https://bugs.mojang.com/browse/MCPE-136077))
+-   Crafting Quartz Bricks from Blocks of Quartz now yield 4 Quartz Bricks instead of 1 ([MCPE-69281](https://bugs.mojang.com/browse/MCPE-69281))
+-   Naturally spawned Mushroom stems no longer drop Mushrooms when mined ([MCPE-71123](https://bugs.mojang.com/browse/MCPE-71123))
+-   The chance of dropping Mushrooms (max of 2) from Brown and Red Mushroom Block was increased to match Java Edition, from 10% per Mushroom to 11.11%
+-   A damaged Anvil block may now spawn in Trail Ruins, as it would in Java Edition
+-   Trapdoors and Fence Gates no longer push players or mobs when activated by Redstone
+-   Fixed double-plant blocks breaking in worlds of older versions ([MCPE-183072](https://bugs.mojang.com/browse/MCPE-183072))
+
+## **Wind Charge**
+
+-   The Wind Charge Projectile can now be summoned via the /summon command ([MCPE-178937](https://bugs.mojang.com/browse/MCPE-178937))
+-   Using Trident with Riptide enchantment now correctly cancels fall damage reduction from Wind Charge
+-   Fixed a bug where the fall damage protection from a Wind Charge incorrectly prevented fall damage when landing a second time
+-   Wind Charges thrown by players no longer have a chance of dealing more than 1 damage per hit
+-   The Wind Charge model now correctly renders within its bounding box
+-   Increased player-fired wind charge speed by 50%, bringing it into parity with Java Edition
+-   The Wind Charge Projectile shot by the Breeze no longer toggles blocks when Mob Griefing is disabled in Settings ([MCPE-181211](https://bugs.mojang.com/browse/MCPE-181211))
+-   Mounted entities are no longer immune to Wind Charge projectile damage
+-   Wind charges now work the same on all terrain
+-   Crouching no longer affects wind charge knockback / jump amount
+-   Wind charges used by the player aimed straight down now knock the player upward ~6 blocks instead of ~2.5
+-   Latency related fall damage when using a Wind Charge will occur less often
+-   The launch position of the Wind Charge has been adjusted so it no longer fires too far from the player
+
+## **Items**
+
+-   Using Trident with Riptide enchantment now correctly cancels fall damage reduction from Wind Charge
+-   Breeze Rods now render correctly in third-person view ([MCPE-179661](https://bugs.mojang.com/browse/MCPE-179661))
+-   The Mace no longer breaks Cobwebs and Bamboo as fast as Swords and other sharp items ([MCPE-179754](https://bugs.mojang.com/browse/MCPE-179754))
+-   The Fishing Rod hook no longer sticks to actors that have the Projectile Reflection component ([MCPE-180337](https://bugs.mojang.com/browse/MCPE-180337))
+-   The Mace's Smash Attack no longer knocks back Mobs that have been tamed by the Player wielding the Mace ([MCPE-180962](https://bugs.mojang.com/browse/MCPE-180962))
+-   Attacking an entity with a Mace enchanted with the Wind Burst enchantment no longer negates fall damage ([MCPE-181496](https://bugs.mojang.com/browse/MCPE-181496))
+-   Locator Maps will now only render head and head attachments ([MCPE-61891](https://bugs.mojang.com/browse/MCPE-61891))
+-   Leads now attach to the front of Boats, instead of to their center ([MCPE-182145](https://bugs.mojang.com/browse/MCPE-182145))
+-   Fixed flickering item icon when quick moving a stack to non-empty stacks
+-   Added rarity coloring in the tooltips of Creeper Charge, Skull Charge, Thing, Snout, Flow, and Guster Banner Patterns
+-   The rarity color of Trident, Mace, and Heavy Core have been changed to the Epic color (magenta)
+-   Banners are once again obtainable via the recipe book ([MCPE-179650](https://bugs.mojang.com/browse/MCPE-179650))
+-   Fixed Wolf Armor breaking not emitting enough Scute particles ([MCPE-179664](https://bugs.mojang.com/browse/MCPE-179664))
+-   Fixed Torch item icon being temporarily misplaced when transferring it between the inventory and the hotbar when quick-moved ([MCPE-180913](https://bugs.mojang.com/browse/MCPE-180913))
+-   Fixed an issue where structure icons or other Map decorations were not visible at Map edges on Maps with unlimited tracking, such as Trial Explorer Maps ([MCPE-182681](https://bugs.mojang.com/browse/MCPE-182681))
+
+## **Music / Sound**
+
+-   "Echo in the Wind" now plays in Lush Caves biome ([MCPE-182278](https://bugs.mojang.com/browse/MCPE-182278))
+-   "5", "Otherside", "Relic", "Creator", "Creator (Music Box)" & "Precipice" are now assigned to the Jukebox / Noteblock slider ([MCPE-169933](https://bugs.mojang.com/browse/MCPE-169933))
+-   The Rooted Dirt block now has unique sounds, to better match the Java Edition ([MCPE-121664](https://bugs.mojang.com/browse/MCPE-121664))
+-   Copper Door's "open" sound is now pitched differently
+-   Copper Grate step sounds play at a lower volume
+-   Trial Spawner break and place sounds are now pitched differently
+-   Vault break and place sounds are now pitched differently
+-   Break, place and hit sounds now pitch differently for Tuff, Tuff Bricks, and Polished Tuff Blocks
+-   Crafter craft and fail sounds now have a random pitch offset
+-   Crafter fail sound now has a max distance of 3 blocks instead of 5
+-   Copper Bulb break, place and hit sounds are now pitched differently
+-   Copper Grate break, place and hit sounds are now pitched differently
+-   "light\_block\_0" and its derivatives now have their block sound defined ([MCPE-183449](https://bugs.mojang.com/browse/MCPE-183449))
+-   Added a sound effect to help players understand that they have already looted a Vault
+-   Added break, fall, hit, jump, land, place, and step sounds for the Mob Spawner block
+
+## **Realms Invite Links**
+
+We are making some changes to how Realms invite links work to make it easier than ever to invite your friends and to keep your Realm safe from unwanted joiners:
+
+-   You can now create up to 5 invite links per Realm
+-   Invite links can be enabled or disabled at will, or set to have an expiration date in the future
+-   Invite links can be deleted entirely
+-   Newly created invite links codes will be 15 characters long (increased from 11)
+-   All new Realms will not have an invite link created for them by default. Realm owners will need to manually create an invite link for their Realm
+-   Existing links that have not been used will be deleted, while previously used links will not be deleted
+
+## **Realms**
+
+-   Fixed an issue that was preventing RealismCraft and some other packs from working on Realms. This was a service-side fix that went live prior to this release ([REALMS-11940](https://bugs.mojang.com/browse/REALMS-11940), [REALMS-11913](https://bugs.mojang.com/browse/REALMS-11913), [REALMS-11916](https://bugs.mojang.com/browse/REALMS-11916))
+-   Fixed a crash that could occur when viewing Realms Stories on a busy Realm
+-   All items on the Realms purchase screens are now focusable and can be navigated through using a gamepad input
+-   Removed an extra "the" in Realms section of Minecraft Encyclopedia
+-   Typing into the search box on the Realms Stories Members tab no longer overrides the filter options
+-   Added a new reporting flow that lets players add more context and information about why the report is being made
+-   New lines are no longer removed from Realms Stories posts that are displayed in the story feed
+-   Removed an unnecessary warning from 2 Player Realms subscription
+-   Cleaned up the disabled Realms Stories button interface on the pause screen when playing as a second user in split screen
+-   Fixed issues with the Realms button sticking around when it shouldn't or not showing up when it should
+-   Fixed a bug that locked players on an infinite loop after cancelling the process of joining a recently claimed preview Realm
+-   Fixed a bug where players with a freshly installed Minecraft needed to restart before being able to see Realms Stories
+-   Fix so that pressing "Join Realm" on the new Play screen does not lead into an empty void ([MCPE-183428](https://bugs.mojang.com/browse/MCPE-183428))
+-   Players are no longer kicked from the Realm if the owner enters and exits the Realms Settings screen without modifying packs while multiple Add-Ons are applied
+-   Navigating away from the Realms Stories Story Feed tab upon reading the first page of stories will remove the unread stories badge as the user has seen the most recent posts
+-   Fixed a bug where brand new Realm Events wouldn't display properly the first time the Story Feed is opened
+-   Fixed a bug where items from certain Add-ons could appear without textures or names when joining Realms
+-   Fixed a bug that prevented two back-to-back error screens when the client was out of date and a Realm had a pending update
+-   Fixed a bug where the unread badge for the Realms Stories button on the Pause Screen did not update
+
+## **Accessibility**
+
+-   Fixed an issue where Apple Pencil was not recognized as a valid input method ([MCPE-158895](https://bugs.mojang.com/browse/MCPE-158895))
+-   Fixed an issue where Screen Narration would not describe how to accept a game invitation on Android and iOS
+-   Text to speech now reads the how to play screens by hovering over, tapping on or navigating to the respective headers and paragraphs
+
+## **Customizable Controls**
+
+-   Customized controls no longer revert after player stops flight ([MCPE-180234](https://bugs.mojang.com/browse/MCPE-180234))
+-   The control customization screen is now automatically exited when input mode is switched to something other than touch controls
+-   The paper doll can now be shown in the HUD when customizable controls is enabled ([MCPE-176334](https://bugs.mojang.com/browse/MCPE-176334))
+-   Customized control button sizes remain stable when going up or down Scaffolding or Ladders ([MCPE-178820](https://bugs.mojang.com/browse/MCPE-178820))
+-   Buttons can now slide completely to the right when customizing controls on iOS
+-   When customizing touch controls, the safe zones on the left and right side are now ignored
+
+## **User Interface**
+
+-   Added animated title to the loading tips dialog
+-   Refreshed assets for Achievements screen: all achievements unlocked illustration, no achievement unlocked illustration, and the GamerScore icon
+-   Fixed a bug that caused half-absorption hearts not be rendered ([MCPE-181245](https://bugs.mojang.com/browse/MCPE-181245))
+-   The Water Breathing effect icon and timer no longer flicker while wearing the Turtle Helmet ([MCPE-142173](https://bugs.mojang.com/browse/MCPE-142173))
+-   Updated the Hide Paperdoll toggle to default to false on Chromebooks
+-   When Regeneration effect is active, hearts on the HUD no longer move too fast ([MCPE-180864](https://bugs.mojang.com/browse/MCPE-180864))
+-   Shift-clicking inventory items no longer causes the item stack count to briefly appear above the stack
+-   Interacting with a block outside of a players reach no longer causes the block interface to briefly appear
+-   Items no longer render in front of stack size number when being quick moved ([MCPE-180712](https://bugs.mojang.com/browse/MCPE-180712))
+-   Number on a stack of items no longer overlaps with item hover text in Villager's trade menu ([MCPE-181338](https://bugs.mojang.com/browse/MCPE-181338))
+-   Item no longer moves slightly in slot after being quick moved to Anvil ([MCPE-180275](https://bugs.mojang.com/browse/MCPE-180275))
+-   Items no longer stay selected on touch devices when switching between Creative inventory tabs ([MCPE-173506](https://bugs.mojang.com/browse/MCPE-173506))
+-   Items can now be removed from the off-hand slot and crafting grids by tapping on other items in Creative inventory on mobile devices ([MCPE-168757](https://bugs.mojang.com/browse/MCPE-168757))
+-   Fixed the Help button link in the Structure Block’s menu ([MCPE-179672](https://bugs.mojang.com/browse/MCPE-179672))
+-   The chat quick access history no longer stores duplicate chat entries
+-   Fixed an issue where content of the previously used text field was carried over to Signs on Xbox ([MCPE-182645](https://bugs.mojang.com/browse/MCPE-182645))
+-   Updated the Dressing Room category names for "Headwear", "Outerwear", and "Footwear"
+-   Safe Zone Screen position now saves properly on closing the menu
+-   Safe Zone Screen text no longer is obscured when you hover over it
+-   Safe Zone Screen sliders now properly save even when the value is changed by just 0.1
+-   Safe Zone Screen Position sliders now properly reset and rescale based on the Scale sliders
+-   Safe Zone Screen no longer errors on iOS when set to minimum values
+-   Fixed tags showing up vertically in Marketplace item descriptions
+-   Fixed missing texture in My Content section of Marketplace ([MCPE-181964](https://bugs.mojang.com/browse/MCPE-181964))
+-   Replaced Marketplace Pass gradient with solid gray to improve readability
+-   Fixed the message that appears when using the ‘Copy Coordinates’ feature to copy player coordinates to the clipboard ([MCPE-182146](https://bugs.mojang.com/browse/MCPE-182146))
+
+## **Game Tips**
+
+-   Game tips now appear and disappear from the screen with “fade-in” and “fade-out” animations
+-   Added a swim tip for touch devices
+-   How to move is now taught to players on touch devices with the D-pad control scheme
+-   Sometimes it’s not a good time to learn new game play skills. For example, opening your inventory is not a relevant skill when you just discovered that the floor is lava. So here are some additional constraints for when game tips don’t show up:
+    -   Only the swim game tip shows up when you are in water
+    -   The break block tip is the most relevant tip when you're freezing in powder snow. Other tips won't show up
+    -   When there are hostile mobs nearby you can still learn skills that will help you run away (movement, jumping and camera movement). But other tips won’t bother you
+-   Added emote game tip. The tip appears when there are remote players close to the player and the player has spent at least 30 seconds with other players in the world
+-   Added chat game tip. The tip appears when there are remote players in a world or if cheats are enabled
+    -   If the chat game tip can be shown for a player, the open chat instructions posted in the chat are removed
+-   Added a game tip that informs players on touch devices that they are sneaking in order to avoid having new players stuck in crouch
+-   Added some minor tip interruption improvements for existing game tips  
+      
+    
+

@@ -1,0 +1,129 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+### `@minecraft/server` 1.18.0
+
+-   Moved `CameraFixedBoomOptions` from beta to stable
+-   Moved `LiquidType` enum from beta to stable
+-   Moved liquid detection methods in `Block` from beta to stable
+-   Moved liquid detection methods in `BlockPermutation` from beta to stable
+-   Moved method `Player.spawnParticle` from beta to stable
+
+## Blocks
+
+-   The minecraft:material\_instances component supports an optional "tint\_method" field in its instance definitions
+    -   "tint\_method" is a string field that multiplies a face color with a tint computed with the biome the block is in. Supported values are "none, "default\_foliage", "birch\_foliage", "evergreen\_foliage", "dry\_foliage", "grass", and "water".
+    -   Held block-items are tinted as if they were in the "plains" biome.  
+        Example:  
+        "minecraft:material\_instances": \{  
+        "\*": \{  
+        "texture": "minimal",  
+        "render\_method": "opaque",  
+        "tint\_method": "water"  
+        \}
+
+## Components
+
+-   Added the "minecraft:input\_air\_controlled" component, that enables controlling flying rideables 
+    -   Functions similarly to "minecraft:input\_ground\_controlled", but instead of limiting acceleration to the XZ-plane, this component applies acceleration in the direction the player is looking in three dimensions
+    -   Supports adjustments to strafing and backward movement speeds, allowing entities to fly at equal speeds in all directions or move slower when strafing or reversing
+    -   This component is experimental and as such requires "use\_beta\_features" to be enabled
+    -   It may undergo significant changes or even be replaced as development progresses
+
+## Creator
+
+-   ItemTag support in the `match_tool` loot table condition no longer requires enabling the "Upcoming Creator Features" experiment toggle
+
+## Editor
+
+-   Added Terracotta to block picker
+-   Added Workbench support for selections allowing for updated to all blocks of the same type in the selection
+-   Updated various icons in editor UI for better resolution and functional clarity
+-   Updated Flatten Tool to no longer stays active when changing to Crosshair Mode
+-   Updated pyramid brush maximum height to 40 blocks 
+-   Removed End Gateway or Structure Block from block picker
+-   Fixed a bug that filtered stain glass blocks from block picker
+-   Fixed a bug that caused Project Through Water checkbox to be active for Keyboard only cursor control in panes
+-   Fixed a bug that caused custom time settings to be disabled for Time of Day pane
+-   Fixed a bug that caused player positions limit to have wrong values in Navigation Panel. 
+-   Fixed a bug where releasing the scrollbar after dragging outside the dropdown menu closed it. 
+-   Fixed a bug that caused button layout and inner icon size to be incorrect
+-   Fixed a render issue related to Banner, Conduit, Creeper Head, Decorated Pot, Dragon Head, Piglin Head, Player Head, Skeleton Skull, Wither Skeleton Skull, and Zombie Head thumbnails 
+-   Fixed an assert/crash due to custom block rendering components in creator packs or addons 
+-   Fixed Workbench functionality with block that use the `minecraft:block_face` and `minecraft:vertical_half` properties.
+
+## Goals
+
+-   Added "use\_home\_position\_restriction" field to "minecraft:behavior.float\_wander" AI goal to control whether mobs respect home position restrictions when selecting target positions
+    -   Defaults to false for entities with format version below 1.21.70, and true for 1.21.70 and later
+    -   When true, the mob will respect home position restrictions when selecting target positions
+
+## Network Protocol
+
+-   Added ActorFlags::WASD\_AIR\_CONTROLLED
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+### `@minecraft/server` 2.0.0-beta
+
+-   Fixed a bug where the `typeid` property of the `Effect` class was being translated based on your language option
+-   Raised the limit for Lore Entry length from 50 to 1000 and the number of lines from 20 to 100 when using `ItemStack.setLore`
+-   Added three new methods to `Player`. These Entity Overrides are only applied to the target `Player`. Changes are not applied until the next tick and will not apply to other players.
+    -   `setPropertyOverrideForEntity`: Overrides an Entity Property on the target Entity to the provided value. This property must be client synced.
+    -   `removePropertyOverrideForEntity`: Removes the override of the specified Entity Property on the target Entity.
+    -   `clearPropertyOverridesForEntity`: Removes all overrides of any Entity Properties on the target Entity.
+
+## Experimental
+
+-   Removed the Experimental Third Person Cameras toggle and added an Experimental Creator Camera Features toggle for all future experimental cameras
+
+## Graphical
+
+-   Decorated pots now render correctly when held in hand in the Deferred Technical Preview. ([MCPE-181679](https://bugs.mojang.com/browse/MCPE-181679))
+-   Added 4 optional components to the Client Biome JSON 1.21.70 Schema. However, these components are intended for future use with the Deferred Technical Preview and have no effect in current builds, Preview or otherwise. With this change, Deferred resource pack rules have changed slightly:
+    -   The game will now load all valid JSON files in the "atmospherics", "color\_grading", "lighting" and "water" directories of a Deferred resource pack. Every valid JSON file in each category must have a unique "`identifier`" field in its schema.
+    -   Reserved filenames for each schema category (e.g., "atmospherics/atmospherics.json" or "lighting/global.json") will still be treated as the global/default settings for a pack.
+    -   If a Biome JSON in a Deferred resource pack contains any of these new identifier components, then the identifiers will be validated against the identifiers found in the respective set of Deferred configurations. For instance, if a Biome JSON contains a "`minecraft:water_identifier`" entry, then the supplied identifier must correspond to a valid "`identifier`" in one of the pack's Water JSONs.
+    -   If a Biome JSON doesn't contain one of the new identifiers, then the global/default identifier from the reserved filenames will automatically be added to said biome.
+
+    "format_version": "1.21.70",
+    "minecraft:client_biome": \{
+      ...
+      "components": \{
+        ...,
+        "minecraft:atmosphere_identifier": \{
+          "atmosphere_identifier": "mypack:default_atmospherics"
+        \},
+        "minecraft:color_grading_identifier": \{
+          "color_grading_identifier": "mypack:default_color_grading"
+        \},
+        "minecraft:lighting_identifier": \{
+          "lighting_identifier": "mypack:default_lighting"
+        \},
+        "minecraft:water_identifier": \{
+          "water_identifier": "mypack:default_water"
+        \}
+      \}
+    \}

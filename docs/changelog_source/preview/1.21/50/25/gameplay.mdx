@@ -1,0 +1,185 @@
+**Posted:** 23 October 2024
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A Pale Garden with resin block types placed near a crafting table and furnace. There are eyeblossom flowers, and there is a Creaking with particles going to and from a pale oak with a Creaking heart.](https://feedback.minecraft.net/hc/article_attachments/31291909576205)
+
+Oh good! You found me! I’ve been wandering around the pale garden ever since the last preview and beta update – and let me tell you – the creaking isn’t the _best_ roommate. Luckily this week two new features are coming to the pale garden: resin, and eyeblossoms! Resin is a new block that you can craft after an encounter with the creaking (try asking it to wash its dishes…) and eyeblossoms are a flower unique to the pale garden, that bloom at night. They even bloom with a bit of an orange glow, so perhaps they’ll help me find my way out! As always, we’re keen to get your feedback on these new features at [aka.ms/mcgamedropfeedback](http://aka.ms/mcgamedropfeedback) , and you can report any bugs at [bugs.mojang.com](http://bugs.mojang.com/) ! Here’s what else is new this week:
+
+# New Features and Bug Fixes
+
+## Resin
+
+-   Resin Clumps are a new multi-face block:
+    -   Dropped by the Creaking Heart when it is destroyed
+    -   Placed around the Creaking Heart when its Creaking is attacked
+    -   Can be crafted into a Block of Resin
+    -   Can be hardened into Resin Bricks in a furnace
+    -   Can be used to trim armor
+-   Resin Bricks can be crafted into the Resin Brick set:
+    -   Brick block
+    -   Stairs
+    -   Walls
+    -   Slabs
+    -   Chiseled Resin Brick block
+-   Both can be found in Chests in the Woodland Mansion
+-   Blocks of Resin can be crafted into a Creaking Heart using two Pale Oak Logs
+
+## Eyeblossom
+
+Eyeblossoms are new flowers that generate in the Pale Garden biome. Unique features:
+
+-   They exist in two variants: Closed and Open Eyeblossom
+-   Eyeblossoms transition between the two variants based on the time of day
+    -   During the night, Eyeblossoms will become Open
+    -   During the day, they will become Closed
+    -   In dimensions that do not have a day/night cycle, they will remain as-is
+-   Eyeblossoms planted on the ground will communicate with each other, helping each other to open or close
+-   Open Eyeblossoms have glowing eyes during the night
+-   Eyeblossoms can be obtained by bonemealing the grass in the Pale Garden biome
+-   Bees get poisoned when they interact with Eyeblossoms
+-   Suspicious Stew made from Eyeblossom will have Blindness or Nausea effect depending on the variant
+-   Gray or Orange Dye can be crafted from Closed and Open Eyeblossoms respectively
+
+## Pale Garden
+
+-   Further adjusted the color of the Pale Garden sky at the horizon to more closely match Java ([MCPE-187519](https://bugs.mojang.com/browse/MCPE-187519))
+    
+-   The texture of the Pale Oak Sign model and UI has been adjusted for consistency with other signs ([MCPE-187306](https://bugs.mojang.com/browse/MCPE-187306 "https://bugs.mojang.com/browse/MCPE-187306"))
+    
+-   Pale Oak Saplings can now be composted ([MCPE-187457](https://bugs.mojang.com/browse/MCPE-187457 "https://bugs.mojang.com/browse/MCPE-187457"))
+    
+-   Pale Hanging Moss now uses the same sounds as other Moss and Pale Moss blocks ([MCPE-187327](https://bugs.mojang.com/browse/MCPE-187327 "https://bugs.mojang.com/browse/MCPE-187327"))
+    
+-   Increased frequency of the Pale Hanging Moss ambience sound
+    
+-   Pale Hanging Moss no longer generates on Pale Oak trees grown from Pale Oak Saplings
+    
+
+## Creaking Heart
+
+-   Naturally generated Creaking Hearts now drop 20 to 24 experience, even when collected with Silk Touch
+    
+-   Increased frequency of the Creaking Heart ambience sound
+    
+-   The texture of the inactive Creaking Heart has been updated to be more consistent with its active state ([MCPE-187395](https://bugs.mojang.com/browse/MCPE-187395 "https://bugs.mojang.com/browse/MCPE-187395"))
+    
+
+## Creaking
+
+-   Increased the speed of aggravated Creakings
+    
+-   Creakings now deal more attack damage
+    
+-   When a Creaking Heart is destroyed, its Creaking will now twitch for a few seconds before crumbling
+    
+-   Creakings spawned by a Creaking Heart will crumble when stuck in a hole with a Player for more than 5 seconds
+    
+    -   This prevents a potential soft lock, as the invulnerable Creaking would prevent the player from mining or placing any blocks, requiring them to exit and re-enter the world to force the Creaking to despawn
+-   A Creaking crumbling now causes nearby Sculk Catalysts to bloom
+    
+    -   However, no Sculk will be placed since the Creaking does not drop any XP
+-   The Creaking's walking animation has been updated
+    
+-   The Creaking's attack animation has been updated
+    
+-   A Creaking spawned by a Creaking Heart no longer avoids damaging blocks
+    
+-   A Creaking spawned by command or Spawn Egg is no longer invulnerable to Fire and Lava
+    
+-   A Creaking spawned by command or Spawn Egg now avoids damaging blocks
+    
+-   The Creaking's attack speed has been decreased to match Java ([MCPE-187309](https://bugs.mojang.com/browse/MCPE-187309 "https://bugs.mojang.com/browse/MCPE-187309"))
+    
+
+# Features and Bug Fixes
+
+## Blocks & Items
+
+-   The following blocks now only drop when broken with a pickaxe: Blast Furnace, Cauldron, Dispenser, Dropper, Enchanting Table, Furnace, Hopper, and Smoker ([MCPE-33950](https://bugs.mojang.com/browse/MCPE-33950 "https://bugs.mojang.com/browse/MCPE-33950"))
+    
+-   The following blocks that require support now always drop when broken with any tool: all Copper Doors, Iron Door, Heavy Weighted Pressure Plate, Light Weighted Pressure Plate, Polished Blackstone Pressure Plate, and Stone Pressure Plate
+    
+-   Budding Amethyst is now slower to mine with an improper tool
+    
+-   The following blocks (which always drop) are now mined faster when using the incorrect tool: Bell, Brewing Stand, Crafter, Ender Chest, Lantern, and Soul Lantern. Note that the Ender Chest is considered an 'always drops block' even though the drop is not an Ender Chest ([MCPE-176374](https://bugs.mojang.com/browse/MCPE-176374 "https://bugs.mojang.com/browse/MCPE-176374"))
+    
+-   Fixed an issue where the color of a Shulker Box was not listed as part of the name ([MCPE-182930)](https://bugs.mojang.com/browse/MCPE-182930)
+    
+-   Grass and Nylium no longer decay to Dirt and Netherrack when below Slime, Honey, Hopper, or Chemical Heat (Education Edition block) ([MCPE-62132](https://bugs.mojang.com/browse/MCPE-62132))
+    
+-   Grass and Nylium now decay to Dirt and Netherrack when below Observer
+    
+
+## Features
+
+-   Pale Oak Saplings can now grow on Moss Blocks and Pale Moss Blocks ([MCPE-187322](https://bugs.mojang.com/browse/MCPE-187322 "https://bugs.mojang.com/browse/MCPE-187322"))
+
+## Gameplay
+
+-   The camera now rotates the correct way around the X and Y axes when using the /camera command
+    
+-   Using an empty Bundle now causes an animation to play in both first and third person
+    
+-   Second passenger in a Boat or Camel will now also have the warning message when hitting unloaded chunk.
+    
+
+## General
+
+-   Player spawn algorithm has been improved so it is more difficult to spawn in water or powder snow. ([MCPE-120237](https://bugs.mojang.com/browse/MCPE-120237 "https://bugs.mojang.com/browse/MCPE-120237"))
+
+## Graphical
+
+-   Removed the unintended darker tinting of Kelp ([MCPE-169713](https://bugs.mojang.com/browse/MCPE-169713))
+
+## Items
+
+-   All projectiles on fire now ignite Minecart with TNT & TNT blocks ([MCPE-183512](https://bugs.mojang.com/browse/MCPE-183512 "https://bugs.mojang.com/browse/MCPE-183512"))
+    
+-   The textures of the Pale Oak Sign and Pale Oak Hanging Sign items have been adjusted for consistency with other signs
+    
+
+## Mobs
+
+-   Breeze now plays the correct idle sound if not on a solid surface ([MCPE-180023](https://bugs.mojang.com/browse/MCPE-180023 "https://bugs.mojang.com/browse/MCPE-180023"))
+
+## Realms
+
+-   Removed Opt-out option from Realms Stories Settings, now that it is in the Timeline tab instead
+-   Fixed an issue where players were unable to create a new world on an active Realm
+
+## Sound
+
+-   Wet Sponges now play correct block sounds ([MCPE-187287](https://bugs.mojang.com/browse/MCPE-187287))
+
+## Trial Chambers
+
+-   Changed contents of chest in end\_2 to reference a loot table
+
+## User Interface
+
+-   The size of Shield items no longer changes when the item is moved between slots
+    
+-   Bundles that are moved under a player's cursor now correctly update their tooltip
+    
+-   It is now possible to collect crafting output with a bundle to add the crafted items to the bundle
+    
+-   Touch Controls: Fixed a bug where boats were interactable during control customization ([MCPE-184404](https://bugs.mojang.com/browse/MCPE-184404 "https://bugs.mojang.com/browse/MCPE-184404"), [MCPE-184406](https://bugs.mojang.com/browse/MCPE-184406 "https://bugs.mojang.com/browse/MCPE-184406"))
+    
+-   Touch controls: in joystick modes, it is now possible to double tap "fly up" to stop flying. ([MCPE-185237](https://bugs.mojang.com/browse/MCPE-185237 "https://bugs.mojang.com/browse/MCPE-185237"))
+    
+-   Touch controls: tapping fly up and fly down in quick succession no longer causes the player to stop flying. ([MCPE-185236](https://bugs.mojang.com/browse/MCPE-185236 "https://bugs.mojang.com/browse/MCPE-185236"))
+    
+-   Tools in the hotbar no longer animate when their durability decrease ([MCPE-186979](https://bugs.mojang.com/browse/MCPE-186979 "https://bugs.mojang.com/browse/MCPE-186979"))
+    
+-   Remove 'X' closing button from the Command Block UI when player is using Gamepad
+    
+-   Fixed an issue that caused IP addresses with bad input to not be properly validated before joining an external server in the New Servers Tab (Preview only)
+    
+-   A popup now appears showing the item's name when it is selected in a Bundle's tooltip on touch screen devices
+    
+

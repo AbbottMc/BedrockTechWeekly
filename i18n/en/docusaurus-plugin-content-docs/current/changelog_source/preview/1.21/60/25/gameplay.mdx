@@ -1,0 +1,166 @@
+**Posted:** 8 January 2025
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta)for detailed instructions
+
+![ New Cold Pig variants spawned in a cold Taiga biome. There is a Lodestone in the background.](https://feedback.minecraft.net/hc/article_attachments/33311874312461)
+
+It's time for a new Preview and Beta! As always, we’re keen to get your feedback on these new features at [feedback.mojang.net](http://feedback.mojang.net/), and you can report any bugs at [bugs.mojang.com](http://bugs.mojang.com/)! Here's what's new this week:
+
+# Experimental Features
+
+-   There is a new experimental toggle for the next game drop update! You will need to enable it in order to test out these features that are in development. We would love to hear your thoughts on these updates, so please leave us your feedback at [aka.ms/mcgamedropfeedback](https://aka.ms/mcgamedropfeedback) and reports any bugs to [bugs.mojang.com](http://bugs.mojang.com/)!
+
+## Pig Variants
+
+-   Added two new Pig variants - Warm Pig and Cold Pig!
+-   These have their own own unique texture and geometry, but not a separate spawn egg
+-   These will spawn in different biomes, making the biomes feel more distinct from each other:
+
+### 'Cold Biomes'
+
+-   These Biomes now spawn the cold variants:
+    -   Old Growth Pine Taiga
+    -   Old Growth Spruce Taiga
+    -   Taiga
+    -   Snowy Taiga
+    -   Windswept Hills
+    -   Windswept Gravelly Hills
+    -   Windswept Forest
+
+### 'Warm Biomes'
+
+-   These Biomes now spawn the warm variants:
+    -   Savanna
+    -   Savanna Plateau
+    -   Windswept Savanna
+    -   Jungle
+    -   Sparse Jungle
+    -   Bamboo Jungle
+    -   Eroded Badlands
+    -   Wooded Badlands
+    -   Badlands
+
+### 'Temperate Biomes'
+
+-   These biomes spawn the same pigs as before. There is no change.
+    -   Forest
+    -   Flower Forest
+    -   Birch Forest
+    -   Old Growth Birch Forest
+    -   Dark Forest
+    -   Swamp
+
+# New Leaf Particles
+
+-   All Leaves blocks now emit falling leaf particles. These blocks are affected by this change:
+    
+    -   Oak Leaves
+    -   Jungle Leaves
+    -   Acacia Leaves
+    -   Dark Oak Leaves
+    -   Spruce Leaves
+    -   Mangrove Leaves
+    -   Birch Leaves
+    -   Azalea Leaves
+    -   Flowering Azalea Leaves
+-   Two blocks already emitted falling leaf particles before this update. They will continue to work like they did before:
+    
+    -   Cherry Leaves
+    -   Pale Oak Leaves
+
+# Lodestone Changes
+
+-   Lodestone is now crafted from 1 Iron Ingot surrounded by 8 Chiseled Stone Blocks
+-   The crafting recipe unlocks when the player obtains an Iron Ingot or a Lodestone.
+-   Lodestones can now be found as loot at Ruined Portals in the Overworld or Nether.
+
+# Features and Bug Fixes
+
+## Biomes
+
+-   Pale Gardens now generate more frequently and are overall larger
+-   Woodland Mansions can now generate in Pale Gardens
+
+## Blocks
+
+-   Crafter with no BlockActor data no longer produce a crash ([MCPE-188674](https://bugs.mojang.com/browse/MCPE-188674))
+-   Bone Meal can no longer be used on single Dark Oak or Pale Oak Saplings ([MCPE-187564](https://bugs.mojang.com/browse/MCPE-187564))
+-   The map color of Pale Oak Leaves and Pale Oak Sapling has been updated to better match their actual in-game color
+-   The Creaking Heart now has an additional state for when it is in a valid configuration but unable to spawn a Creaking due to it being daytime
+-   Eyeblossoms now open when the moon starts rising, and close when the moon has completely set
+-   Big Dripleaf blocks can no longer be placed on top of Pale Moss blocks
+-   Fixed a crash that could occur when destroying a Creaking Heart
+-   Fixed rendering issue with grass block under monster spawner block ([MCPE-188809](https://bugs.mojang.com/browse/MCPE-188809)) 
+-   A Player can now place blocks on Iron Doors and Iron Trapdoors without having to sneak ([MCPE-19129](https://bugs.mojang.com/browse/MCPE-19129))
+
+## Gameplay
+
+-   Fixed a bug where mobs would teleport to a height of 32767 when going to the Overworld from The End ([MCPE-157125](https://bugs.mojang.com/browse/MCPE-157125)) 
+
+## General
+
+-   Pistons, Sticky Pistons, Droppers, and Dispensers now show up in the recipe book again when crafting 
+
+## Graphics
+
+-   Added support 'minecraft:foliage\_appearance' and 'minecraft:grass\_appearance' components in client\_biome JSON files to control color or palette selection for foliage and grass rendering 
+
+## Loot Tables
+
+-   Entity loot tables with a spawn egg that omits the actor ID will no longer drop an invalid spawn egg when destroyed via the minecraft:instant\_despawn component.
+
+## Mobs
+
+-   Creakings now emit vibrations when swaying after being hit
+-   Creakings now spawn on Snow Layers ([MCPE-187368](https://bugs.mojang.com/browse/MCPE-187368))
+-   Creakings spawned by a Creaking Heart can now be nametagged, preventing them from despawning during the day
+    -   Destroying their Creaking Heart will still cause them to crumble
+    -   Hitting a nametagged Creaking during the day will result in a particle trail, but no Resin
+-   The Creaking can now spawn when the moon starts rising, and crumbles when the moon has completely set
+
+## Realms
+
+-   Fixed issue where the text of the purchase button on the old Realms product description page can swap between "Subscribe Now ..." and "Start Free Trial"
+-   Users can now access Realms Stories of Realms they are a part of even when multiplayer access is disabled in the account's privacy settings
+
+## Recipes
+
+-   Added content error when parsing shaped recipes if none of the keys can be mapped to any of the pattern characters, this fixes a crash when opening the crafting screen with such malformed recipes ([MCPE-178520](https://bugs.mojang.com/browse/MCPE-178520))
+
+## Sound
+
+### Blocks
+
+-   Iron Bars, Iron Blocks, Iron Trapdoors, Iron Doors and Heavy Weighted Pressure Plates now make iron sounds when you mine, break, place and walk on them
+
+## User Inteface
+
+-   Fixed an issue which prevented the user from exiting Edit World when choosing Play on Realm button and canceling the Sign-in process 
+
+## User Interface
+
+-   It is now possible to scroll through the friends tab with text-to-speech enabled and cross-play disabled
+-   The achievements disabled crossed bottle icon is now a blocked icon
+
+## Vanilla Parity
+
+### Blocks
+
+-   Changed the player's hurt sound when walking on a Magma Block to use the fire hurt sound instead of the default sound ([MCPE-125864](https://bugs.mojang.com/browse/MCPE-125864))
+
+### Mobs
+
+-   Endermen now correctly have a delay before they become hostile when you look at them ([MCPE-23544](https://bugs.mojang.com/browse/MCPE-23544)) 
+
+### Sound
+
+-   Added unique sound effects for Vines, Glow Berry Vines, Weeping Vines, and Twisting Vines ([MCPE-188001](https://bugs.mojang.com/browse/MCPE-188001)) 
+
+### Spawner
+
+-   Zombie Villagers can no longer randomly spawn from a Zombie Mob Spawner, matching Java Edition ([MCPE-91436](https://bugs.mojang.com/browse/MCPE-91436))
+

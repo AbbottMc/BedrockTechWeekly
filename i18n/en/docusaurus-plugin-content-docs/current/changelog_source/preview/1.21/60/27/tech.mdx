@@ -1,0 +1,51 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Component
+
+-   Moved the "minecraft:compostable" item component out of experimental and to Release. Moved the related scripting apis out of Beta to Release
+
+## Editor
+
+-   Added a new Workbench tool which allows for quickly changing block states for blocks with modifiable properties (doors, fences, etc)
+    
+-   Added `ContinuousAction` to supported key binding actions that simulate key repeats at set tick intervals
+    
+-   Added 'Test World', 'Export', and 'Settings' to the ActionBar
+    
+-   Added missing image for 'Navigation Panel' in the ActionBar
+    
+-   Updated rotation slider to be an integer
+    
+-   Fixed incorrect maximum value for fixed distance mode
+    
+-   Fixed a bug that caused text field to lose focus when another UI element is hovered
+    
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Experimental
+
+-   Focus Target Camera has vertical\_rotation\_limits of \[0.0, 180.0\] by default to reflect world space changes
+    
+-   Focus Target camera now stops targeting when either `clear` from the camera command is used, or when the target is over 64 chunks away from the camera
+    
+
+## Stability and Performance
+
+-   Experimental support for applying a service-driven texture memory budget in low memory situations. When enabled, memory will be conserved by progressively reducing resolution of some textures as usage approaches the budgeted limit.

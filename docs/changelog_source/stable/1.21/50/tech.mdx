@@ -1,0 +1,328 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   The \[Beta\] fields in the "minecraft:looked\_at" and "minecraft:home" entity components are no longer marked as \[Beta\] and no longer require "use\_beta\_features" to be specified in the root JSON object
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Audio
+
+-   Per-biome ambient sounds are now defined in client\_biome JSON components
+    
+    -   This uses the new "minecraft:ambient\_sounds" component
+    -   Named sounds must be defined in "individual\_named\_sounds" in sounds.json files
+
+## Biomes
+
+-   Client biome JSON files now support a "minecraft:biome\_music" component with a "volume\_multiplier" field which will gradually affect music volume when the audio listener is inside the corresponding biome
+    
+    -   The gradual volume change will take roughly ten seconds and will linearly increase but exponentially decrease
+
+## Blocks
+
+-   Updated `minecraft:destructible_by_mining` component, new field `item_specific_speeds` no longer experimental.
+    
+-   Removed the following vanilla block tags from experimental
+    
+    -   "minecraft:diamond\_tier\_destructible"
+    -   "minecraft:iron\_tier\_destructible"
+    -   "minecraft:is\_hatchet\_item\_destructible"
+    -   "minecraft:is\_hoe\_item\_destructible"
+    -   "minecraft:is\_mace\_item\_destructible"
+    -   "minecraft:is\_pickaxe\_item\_destructible"
+    -   "minecraft:is\_shears\_item\_destructible"
+    -   "minecraft:is\_shovel\_item\_destructible"
+    -   "minecraft:is\_sword\_item\_destructible"
+    -   "minecraft:netherite\_tier\_destructible"
+    -   "minecraft:stone\_tier\_destructible"
+-   Renamed vanilla block tag "minecraft:is\_hatchet\_item\_destructible" to "minecraft:is\_axe\_item\_destructible".
+    
+-   Removed the following vanilla block tags.
+    
+    -   "minecraft:is\_digger\_item\_destructible"
+    -   "minecraft:is\_tool\_item\_destructible"
+    -   "minecraft:gold\_tier\_destructible"
+    -   "minecraft:wood\_tier\_destructible"
+-   Added the 'minecraft:liquid\_detection' component to the Upcoming Creator Features experiment, which controls the basic liquid detection properties of a block, such as liquidlogging, liquid blocking, and being broken or popped by liquid spread. The only liquid currently supported by the component is water.
+    
+-   Using the "minecraft:block\_placer" item component to render the referenced block as the item icon no longer requires the "Upcoming Creator Features" toggle
+    
+
+## Camera
+
+-   The camera now rotates the correct way around the X and Y axes when using the /camera command
+
+## Commands
+
+-   The "mine" overload was added to the /loot command under the Upcoming Creator Features experiments
+    
+-   Added delay overload to the `Schedule` command, which allows you to queue a function to be executed after a certain amount of time. Time can be specified with no postfix, postfix 't' to indicate ticks, postfix 's' to indicate seconds, or with the postfix 'd' to indicate days. You can also give the argument 'append' to add your request to the queue no matter what, or 'replace' (which is also the default) to replace all current matching requests with the new one.
+    
+    -   `/schedule delay add \<function\> \<delay (ticks)\> [append|replace]`
+    -   `/schedule delay clear \<function\>`
+-   Translated rawtexts with extra percentage signs in them no longer expand inconsistently for numbered forms ("%%%%1"), compared to non-numbered ones ("%%%%s"). ([MCPE-171001](https://bugs.mojang.com/browse/MCPE-171001 "https://bugs.mojang.com/browse/MCPE-171001"))
+    
+-   Effect command now properly displays duration as seconds in the displayed message after adding an effect ([MCPE-186963](https://bugs.mojang.com/browse/MCPE-186963 "https://bugs.mojang.com/browse/MCPE-186963"))
+    
+
+## Editor (Beta)
+
+-   Editor (Beta) is now available as part of Bedrock
+-   Editor is an intuitive, visual tool to effortlessly build, refine, and share captivating Minecraft worlds at scale
+-   To learn how to access Editor and the available tools please visit the [Editor Documentation](https://learn.microsoft.com/en-us/minecraft/creator/documents/bedrockeditor/EditorInstallation?view=minecraft-bedrock-stable "https://learn.microsoft.com/en-us/minecraft/creator/documents/bedrockeditor/EditorInstallation?view=minecraft-bedrock-stable")
+
+## Entity Components
+
+-   Added new component 'minecraft:can\_attack\_ghast'. When added to an entity, it enables that entity to target and attack Ghasts
+    
+-   'behavior.summon\_entity' now lets creators specify an event to be invoked on the summoned entity immediately after summon ([MCPE-44454](https://bugs.mojang.com/browse/MCPE-44454 "https://bugs.mojang.com/browse/MCPE-44454"))
+    
+-   Removed the 'minecraft:can\_attack\_ghast' component and replaced it with a new component 'minecraft:cannot\_be\_attacked'. When added to an entity it prevents other entities from attacking it unless they fulfill an exception filter, in vanilla it is added to Ghasts, creators can add their entities to the exception filter allowing them to then attack Ghasts
+    
+-   The "minecraft:looked\_at" component's "look\_at\_locations" field now accepts a list of objects as a parameter, each containing two fields
+    
+    -   "location", the location of the entity that must be visible
+        -   Valid values: "head", "body", "feet"
+    -   "vertical\_offset", an optional vertical offset applied to the entity's location
+-   Added the 'minecraft:ignore\_cannot\_be\_attacked' component and moved the filter from 'minecraft:cannot\_be\_attacked' to it. This allows content to have custom mobs which bypass the 'cannot\_be\_attacked' component (for example the one on the Ghast) without requiring a modification of the attacked mob's settings
+    
+
+## Entity Event Responses
+
+-   Added the "play\_sound" entity event response, which allows the owner entity to emit sounds
+    
+    -   The "sound" field specifies the sound event to play
+    -   Sounds are played at the owner entity's position
+-   The "execute\_event\_on\_home\_block" entity event response is now marked as \[Beta\] and requires "use\_beta\_features" to be specified in the root JSON object
+    
+    -   The current implementation doesn't fully align with our internal standards, so it will remain unavailable for Creator content until we can develop a more robust technical solution
+    -   This approach allows us to iterate on the feature without risking backward compatibility
+-   Added the "emit\_particle" entity event response, allowing particles to be emitted at the center of the entity's bounding box
+    
+    -   The "particle" field allows to specify the type of particle to emit
+
+## General
+
+-   Creating a new world from a template that supports random seeds will now clear any stored spawn position from the level data
+    
+-   Fixed issue that caused the export as template functionality to generate invalid mctemplate UUIDs
+    
+
+## Structures
+
+### Jigsaw
+
+-   Dimension padding is now taken into account when placing the start piece of a jigsaw structure
+
+## Molang
+
+-   Moved `query.client_memory_tier` to stable.
+    -   Removed 'Undetermined'. It returns a number representing the client RAM memory tier, 0 = 'SuperLow', 1 = 'Low', 2 = 'Mid', 3 = 'High', or 4 = 'SuperHigh'. Available on the Client (Resource Packs) only.
+-   Moved `query.server_memory_tier` to stable.
+    -   Removed 'Undetermined'. It returns a number representing the server RAM memory tier, 0 = 'SuperLow', 1 = 'Low', 2 = 'Mid', 3 = 'High', or 4 = 'SuperHigh'. Available on the server side (Behavior Packs) only.
+-   Moved `query.client_max_render_distance` to stable.
+
+## Network Protocol
+
+-   New actor type added: Creaking (146)
+-   New level events added: ParticleCreakingHeartTrail, ParticleCreakingTeardown
+-   New level sound events added: ImitateCreaking, CreakingHeartTrail, CreakingHeartSpawn, Activate, Deactivate, Freeze, Unfreeze
+-   Level event removed: ParticleCreakingTeardown
+-   New particle type added: CreakingCrumble
+-   New level sound events added: Open, OpenLong, Close, and CloseLong
+-   New Particle Type added: EyeblossomOpen
+-   New Particle Type added: EyeblossomClose
+-   New particle type added: PaleOakLeaves
+
+## Realms
+
+-   Fixed soft-lock UI bug when an expired Realm was deleted
+
+## Recipes
+
+-   Added content error when parsing shaped recipes if the pattern contains undefined keys, also fixes crash when opening crafting screen with such malformed recipes ([MCPE-178520](https://bugs.mojang.com/browse/MCPE-178520 "https://bugs.mojang.com/browse/MCPE-178520"))
+
+## Scripting API
+
+-   Moved `ClientSystemInfo` from `beta` to `1.16.0`.
+-   Moved `MemoryTier` from `beta` to `1.16.0`.
+-   Moved `PlatformType` from `beta` to `1.16.0`.
+-   Moved `SystemInfo` from `beta` to `1.16.0`.
+-   Enum `MemoryTier`.
+    -   Removed `Undetermined` entry.
+
+## Stability and Performance
+
+-   Some stats for packs discovered on launch are stored locally to enable faster future launches on some platforms
+    
+-   The game no longer crashes if a mob attacks with an item that breaks during the attack
+    
+
+## Technical
+
+-   Vanilla Trial Spawner NBT `normalConfig` and `ominousConfig` tags values now support references to common configurations as an alternative to inline configuration
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Added "canUseBlockAsIcon" bool to the "minecraft:block\_placer" item component network data to fix bug where clients did not render the block item correctly.
+    
+-   Fixed a bug where vanilla items with the "minecraft:block\_placer" component had the wrong icon on split-screen clients.
+    
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Block Components
+
+-   Modified `"ambient_occlusion"` field for `"minecraft:material_instances"` component to be a float value, requires **UpcomingCreatorFeatures** experiment
+    
+-   BlockComponentTypes
+    
+    -   Moved `FluidContainer` from `beta` to `1.16.0`
+-   Moved `BlockFluidContainerComponent` from `beta` to `1.16.0`
+    
+-   Moved `FluidContainer` from `beta` to `1.16.0`
+    
+-   Added `initialRotation` optional member to `SpawnEntityOptions` for specifying the initial rotation of the spawned entity in degrees.
+    
+-   Added new method `lookAt` to `Entity` which sets the rotation of the entity to face the desired target location.
+    
+-   Added `shutdown` event to `beforeEvents` within the `system` class. This is fired after all players have left and the world is about to shutdown/close.
+    
+-   Input APIs
+    
+    -   Added a suite of input APIs that are readable even if the player's input is disabled with input permissions
+    -   Added `getMovementVector(): Vector2` to `InputInfo` to read raw movement values
+    -   Added enum `InputButton` with values `Jump` and `Sneak`
+    -   Added enum `ButtonState` with values `Pressed` and `Released`
+    -   Added `getButtonState(button: InputButton): ButtonState` to `InputInfo` to read raw player button inputs
+    -   Added `world.afterEvents.playerButtonInput` event to listen to button change events
+-   Added access to the composting chance for existing Vanilla items via the ItemStack API
+    
+-   Added access to the composting chance for items with CompostableItemComponent via the Item Component API
+    
+
+-   Fixed an API script processing error that could result in an infinite loop.
+    
+-   Moved `BlockFillOptions` from beta to `v1.16.0`
+    
+-   Moved `UnloadedChunksError` from beta to `v1.16.0`
+    
+-   Fixed bug where `Dimension.fillBlocks` would set blocks outside of the ticking area when `ignoreChunkBoundErrors` was set to true.
+    
+-   Dimension
+    
+    -   Moved `containsBlock(volume: BlockVolumeBase, filter: BlockFilter, allowUnloadedChunks?: boolean): boolean` from beta to `v1.16.0`
+    -   Moved `getBlocks(volume: BlockVolumeBase, filter: BlockFilter, allowUnloadedChunks?: boolean): ListBlockVolume` from beta to \`v1.16.0
+    -   Moved `fillBlocks(volume: BlockVolumeBase, block: BlockPermutation | BlockType | string, options?: BlockFillOptions): ListBlockVolume;` from beta to `v1.16.0`
+-   ItemUseOnBeforeEvent
+    
+    -   Move property `readonly isFirstEvent: boolean` from beta to `v1.16.0`
+-   ItemUseOnAfterEvent
+    
+    -   Move property `readonly isFirstEvent: boolean` from beta to `v1.16.0`
+-   CameraFixedBoomOptions
+    
+    -   Added property `entityOffset?: Vector3`
+-   Added new `CameraTargetOptions` parameter inside `setCamera` for `beta`. This can be used to modify the `minecraft:free` preset if the Focus Target experimental camera toggle is enabled
+    
+
+## Blocks
+
+-   Added "minecraft:item\_visual" block component. This component takes nested "minecraft:geometry" and "minecraft:material\_instances" components to configure the item representation of a block.
+    -   "geometry" and "material\_instances" fields are required. They utilize the same fields/requirements as "minecraft:geometry" and "minecraft:material\_instances" respectively.
+    -   Block must include "minecraft:geometry" and "minecraft:material\_instances" components alongside the "minecraft:item\_visual" component.
+    -   Requires the "Upcoming Creator Features" toggle.
+-   Cobwebs now obey 'blockshape' and 'textures' properties set in blocks.json. Requires the "Upcoming Creator Features" toggle.
+-   Cherry Leaves no longer count as custom blocks ([MCPE-180725](https://bugs.mojang.com/browse/MCPE-180725 "https://bugs.mojang.com/browse/MCPE-180725") )
+
+## Camera
+
+-   Added experimental toggle "Aim Assist" to allow easy targeting while using custom camera perspectives.
+    
+    -   Aim Assist currently targets blocks. Entites will be enabled in a future release.
+-   Aim Assist can be enabled through "/aimassist" command.
+    
+    -   Aim Assist's targeting behavior (distance, width, and height) can be configured through the settings under "aim\_assist" folder using a behavior pack.
+    -   Aim Assist will highlight the selected target. The highlighting textures are customizable through textures under "textures\\ui" folder using a resource pack
+-   Added the rotation to the camera command for the fixed\_boom camera
+    
+-   Tracking a target using the free camera preset: optional "tracking\_radius" float value for setting a listening radius for a target entity
+    
+-   Added content error when trying to target an entity when not on a free camera.
+    
+-   Added 'minecraft:fixed\_boom' preset to the 'Creator Cameras: New Third Person Presets' experimental toggle
+    
+
+## Component
+
+-   Added the "minecraft:compostable" item component to UpcomingCreatorFeatures experimental toggle
+    
+    -   Items with the minecraft:compostable component are compostable in the composter block. The component has a required field that defines the chance of generating a layer of compost in the composter block when a compostable item is supplied to a composter block.
+
+## Creator Options
+
+-   Added section "Device Info Settings".
+    -   Added option to allow override memory tier used in Scripting and Molang.
+
+## Molang
+
+-   Added `query.last_input_mode_is_any`. It takes one or more arguments ('keyboard\_and\_mouse', 'touch', 'gamepad', or 'motion\_controller'). If the last input used is any of the specified string values, returns 1.0. Otherwise returns 0.0. Available on the Client (Resource Packs) only. Added `query.touch_only_affects_hotbar`. It returns 1.0 if the touch input only affects the touchbar, otherwise returns 0.0. Available on the Client (Resource Packs) only.
+
+## Scripting
+
+-   Added enum `InputMode`. export enum InputMode \{ Gamepad = 'Gamepad', KeyboardAndMouse = 'KeyboardAndMouse', MotionController = 'MotionController', Touch = 'Touch', Undetermined = 'Undetermined', \}
+-   Added class `InputInfo`.
+    -   Field `touchOnlyAffectsHotbar`. Whether the player touch input only affects the touchbar or not.
+    -   Field `lastInputModeUsed`. The last input mode used by the player.
+    -   Added field `inputInfo`.
+-   Added class `PlayerInputModeChangeAfterEvent`.
+    -   Field `newInputModeUsed`, the new input mode used by the player.
+    -   Field `player`, the player that had the input mode change.
+    -   Field `previousInputModeUsed`, the previous input mode used by the player.
+-   Added class `PlayerInputModeChangeAfterEventSignal`.
+-   Enum `InputMode`.
+    -   Removed `Undetermined` entry.
+-   Class `InputInfo`.
+    -   Throws `EngineError` instead of `Error` in case of internal error.
+
+### Server UI
+
+-   Added support for input glyph replacement for server forms (`ActionFormData`, `MessageFormData`, and `ModalFormData`).
+
+## Structures
+
+-   Expose "Data-Driven Jigsaw Structures" experiment toggle to Creators
+    -   Creators will be able to modify structure generation rules around placement (location and frequency), layout (how structure pieces are placed relative to one another), and customization (how blocks within a structure piece are modified or replaced).
+    -   There are 4 new JSON files comprising Jigsaw Structure data:
+        -   Jigsaw Structures: These are structures that can be constructed throughout the world with various structure pieces. The connection block is a jigsaw block.
+        -   Processors: A processor can add custom behaviors to the structure that affects how it looks.
+        -   Structure Sets: Structure sets are JSON that indicate where and how a structure is placed throughout the world.
+        -   Template Pools: A template pool contains the structure pieces that make up a structure.
+
+## User Interface
+
+-   Toggle renderer is now a bindable action under Keyboard and Mouse settings menu.
+    
+-   Added support for input glyph replacement for signed books. For example, using input string ":\_input\_key.jump:" will be replaced with "JUMP" when using keyboard, or an emoji in case of using a gamepad.

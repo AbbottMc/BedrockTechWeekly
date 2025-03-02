@@ -1,0 +1,130 @@
+**Posted:** April 6, 2021
+
+Welcome to the Minecraft 1.16.220 release! This update focuses on bug fixes, as well as some new tools for map makers. We hope you enjoy it!
+
+Please report any bugs you find on [bugs.mojang.com](https://bugs.mojang.com/) and post feedback to [feedback.minecraft.net](https://feedback.minecraft.net/).  
+  
+
+## **Changes:**
+
+-   Dye can now be used to change the color of sign text  
+      
+    
+
+## **Known Issues:**
+
+-   Players are unable to see and join LAN sessions on Xbox without on Xbox Live Gold subscription
+-   Paintings appear invisible when placed ([MCPE-121718](https://bugs.mojang.com/browse/MCPE-121718))  
+      
+    
+
+## **Fixes:**
+
+## **Performance / Stability**
+
+-   Fixed several crashes that could occur during gameplay
+-   Fixed a crash that could occur when trying to rename a map on an anvil while its second slot was occupied ([MCPE-112905](https://bugs.mojang.com/browse/MCPE-112905))
+-   Fixed a crash when entering a Nether Portal and throwing a Bottle o' Enchanting at the same time ([MCPE-114793](https://bugs.mojang.com/browse/MCPE-114793))
+-   Improved input latency on Windows 10 when VSYNC is enabled ([MCPE-98861](https://bugs.mojang.com/browse/MCPE-98861))
+
+## **Gameplay**
+
+-   Fixed fog in Nether biomes not rendering properly in some Resource Packs ([MCPE-111680](https://bugs.mojang.com/browse/MCPE-111680))
+-   Players with Visitor permissions now drop inventory on death ([MCPE-47563](https://bugs.mojang.com/browse/MCPE-47563))
+
+## **Mobs**
+
+-   Fixed Drowned holding tridents backwards during attack ([MCPE-118213](https://bugs.mojang.com/browse/MCPE-118213))
+-   Drowned will now swing their arms when throwing tridents
+-   Zombie, Zombie Villager, Husk, Pillager, and Vindicator now use correct bone to attach shields ([MCPE-98606](https://bugs.mojang.com/browse/MCPE-98606))
+-   Mobs that pick up shields now place it in their off-hand
+-   Non-persistent mobs no longer despawn immediately after loading into the Nether
+
+## **Blocks**
+
+-   Projectiles now pass through Structure Void blocks ([MCPE-103579](https://bugs.mojang.com/browse/MCPE-103579))
+-   Improved placement rules for placing blocks on sides of stairs, slabs, and Top Snow blocks
+-   Pistons and Sticky Pistons no longer appear black when Outline Selection is disabled ([MCPE-53858](https://bugs.mojang.com/browse/MCPE-53858))
+
+## **Accessibility**
+
+-   Enabled screen narration with touch input on the new achievements screen
+-   Fixed a bug where the screen reader didn't read out default controller focus and checkbox state on the 'Online Play is not Rated' prompt
+-   Fixed a bug where the screen reader would read the wrong text while using VR
+
+## **User Interface**
+
+-   Enabled "Find Friends" button on Xbox
+-   Controllers are now able to select the "Button Mode" toggle in the Advanced Settings NPC screen in the Jurassic World pack ([MCPE-66446](https://bugs.mojang.com/browse/MCPE-66446))
+-   The "Results" field for search within the marketplace inventory now updates properly between different sections within the screen
+-   The death screen is now visible when behind full-screen effects (on fire, standing in a portal, etc.) while playing in VR
+-   Fixed translucent rendering of occluded UI elements, also when viewing menus near blocks while playing in VR
+-   Selecting the featured offer on the profile screen now properly redirects to the complete list of featured offers
+-   Made the Sign In button text fit the button in Portuguese-BR
+-   The Storage menu on now uses lighter text color
+-   Fixed an issue where button textures weren't scaled properly when applying Resource Packs
+-   Enabled navigating to the Back button using only keyboard in some screens where it was not possible
+
+## **Commands** 
+
+-   Entity selectors no longer allow self-selection with cheats disabled ([MCPE-92635](https://bugs.mojang.com/browse/MCPE-92635))
+-   The '/clear' command will now apply the correct "data" argument for the sapling item ([MCPE-117889](https://bugs.mojang.com/browse/MCPE-117889))
+-   Command blocks in a command block chain will now list the correct amount of ticking areas when a new ticking area is added before listing
+-   Title command no longer duplicates % symbols in message ([MCPE-51033](https://bugs.mojang.com/browse/MCPE-51033))
+-   Using teleport with the execute command now uses the dimension of the origin for its operations ([MCPE-44104](https://bugs.mojang.com/browse/MCPE-44104))
+
+## **Character Creator** 
+
+-   Steve’s Pants no longer change the color of the bottom of feet when no footwear is equipped
+-   Fixed other players appearing as Steve in multiplayer
+-   Changing skins while in split-screen now properly saves for all local players and update properly for remote players
+-   Alex’s shirt no longer looks corrupted when equipped with different pants
+-   "Hooray!" emote will now display in the emotes section if already owned ([MCPE-111165](https://bugs.mojang.com/browse/MCPE-111165))  
+      
+    
+
+## **For Map Makers and Add-On Creators:**
+
+## **Updated Template Packs**
+
+-   Updated templates for 1.16.220 with new resources, behaviors, and documentation are available for download
+    -   Resource Pack Template: [aka.ms/resourcepacktemplate](https://aka.ms/resourcepacktemplate)
+    -   Behavior Pack Template (Includes documentation): [aka.ms/behaviorpacktemplate](https://aka.ms/behaviorpacktemplate)
+
+## **Technical Changes and Fixes**
+
+-   Renamed all references of Actor to Entity
+-   Renamed 'BlockPos' to 'BlockLocation'
+-   Added 'startSequence' to GameTest, which allows finer control over advanced test sequences
+-   GameTest sequence callbacks no longer take test as a parameter as the initial test object now lives as long as the whole test
+-   Updated Behavior Packs to require explicit module dependencies when using other native modules
+-   Identifiers within "render\_controllers" will now be considered content errors if there is no render controller matching that name
+-   Entity json before version 1.16.100 will no longer give a content error for the deprecated field "minecraft:foot\_size"
+-   modified condition in 'trident.animation\_controllers.json' to allow mobs to enter  'wield\_third\_person\_raise' ([MCPE-118213](https://bugs.mojang.com/browse/MCPE-118213))
+-   Fixed an issue where loading into a world would cause continuous MoLang errors around "unhandled request for unknown variable"
+-   A black screen no longer covers the player icon in the pause menu in some worlds. Content creators no longer need to override both focus\_border\_frame.png and pause\_screen\_border.png for correct behavior
+-   Items can now have the "transparentattachable" tag applied to make attachable items not render for the player wearing them in the first person perspective
+-   Fixed an issue where V2 Villagers were not properly updating their MoLang variables on initialization
+
+## **Updates to GameTest Framework**
+
+-   Updated Blocks shorthand helpers to be camelCase
+-   Updated Blocks shorthand to only include vanilla blocks
+-   Added Blocks.get to fetch a block and return null if it doesn't exist
+-   Added BlockStates to enumerate all block states
+-   Added setState to Block to update its block state
+-   Added BlockPos class
+-   Added ItemStack class GameTest Module
+-   Added Tags to enumerate all built-in tags
+-   Updated all methods that took x, y, z position to take a BlockPos
+-   Exposed padding when registering game test
+-   Fixed issue where previous failed GameTest markers still show up in new worlds
+
+## **Movement Prediction**
+
+-   Fixed projectiles on third-party servers ignoring server movement packets
+-   The server will adjust the player's fall distance to take into account the client player's position when a player movement correction or anomaly is detected
+
+## **Network Packets**
+
+-   Changed cipher algorithm to AESGCM256 for UDP stream

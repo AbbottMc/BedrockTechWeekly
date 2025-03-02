@@ -1,0 +1,117 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Biomes
+
+-   Add creature spawn probability JSON component for spawning related experiments
+
+## Blocks
+
+-   Removed content log error: 'Block needs both a geometry and material instances component' 
+
+## Commands
+
+-   `wsserver` command disabled by default. Enable in General Settings.
+-   Websocket encryption default enabled for all platforms.
+
+## Components
+
+-   Added "min\_looked\_at\_duration" field to "minecraft:looked\_at" component to specify how long a stare has to be maintained before the target and cooldown logic is set
+-   The Strider now makes use of the minecraft:movement\_sound\_distance\_offset component for its movement sound distance offset
+-   Two values on the minecraft:storage\_item component have been split off into separate components:
+    -   max\_weight\_limit has been moved to the new minecraft:storage\_weight\_limit component
+    -   weight\_in\_storage\_item has been moved to the new minecraft:storage\_weight\_modifier component  
+          
+        
+
+## Dedicated Server
+
+-   The movement mode authority chosen settings will now be displayed in the command window on dedicated server launch
+
+## Editor
+
+-   Added a night vision setting to the view settings pane. This enables night vision within the editor for the user and is enabled by default. 
+-   Added new Vertical Fly Speed ability.
+-   Added a new `BlockTable` UI element to Property Pane API. 
+-   Added an optional CursorPosition property to the CursorPropertiesChangeAfterEvent. Using this new property, developers can track when the block or block face under the mouse cursor changes. 
+-   Added right click on action bar items to toggle selector menus
+-   Updated farm generator to use transactions allowing for undo and redo functionality 
+-   Updated the summon tool nudge operation to remain active as long as the key binding is held down. 
+-   Fixed an assert/crash that occurs when changing dimensions 
+-   Fixed an assert/crash when saving world and re-entering a world multiple times
+-   Fixed a bug that occasionally made panel scrollbars unresponsive.
+-   Fixed a bug that caused action bar items to change positions when scrollbar is visible 
+-   Fixed a bug where game menus are shown in the tool mode viewport
+
+## Entities
+
+-   Fixed issue where `No more entities` assert failure occurred when flying through biomes during a storm
+
+## Items
+
+-   Removed "Upcoming Creator Feature" toggle requirement for `minecraft:block_placer` item component
+-   Migrated ItemData from `StartGamePacket` into `ItemRegistryPacket` (renamed from `ItemComponentPacket`) 
+
+## Stability and Performance
+
+-   Removed redundant biome data from chunks and improved World Template generation stability. 
+-   Made changes to add up to 4% CPU performance improvement on Switch
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## Aim Assist
+
+-   Aim assist will now only allow interactions within player's interact distance
+-   Aim Assist can now properly detect entities have hitbox partially inside detection area 
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Camera
+
+-   Block and entity targeting of Aim assist will now apply to touch control modes: 'Joystick & tap to interact' and 'D-Pad & tap to interact' 
+
+## Experimental
+
+-   Removed the Creator Cameras: Focus Target Camera experimental toggle 
+
+## Gameplay
+
+-   Focus Target Camera now displays a command output error when trying to target an entity when not on a free camera or custom camera that inherits from free camera. 
+-   Focus Target Camera `vertical_rotation_limits` are now in world space. 0 degrees is straight down, 90 degrees is horizontal and 180 degrees is straight up. The limits for the values are \[0, 180\] inclusive.
+
+## User Interface
+
+Added full support and fixes for some input glyph replacement strings. This is to make them work across all the platforms (PC, Consoles, Mobile).  
+These are the values fixed:
+
+-   :\_input\_key.forward:
+-   :\_input\_key.back:
+-   :\_input\_key.left:
+-   :\_input\_key.right:
+-   :\_input\_key.inventory:
+-   :\_input\_key.use:
+-   :\_input\_key.chat:
+-   :\_input\_key.attack:
+-   :\_input\_key.sprint:  
+    The icons for these strings are updated in diverse areas of the game that support contextual glyphs, such as: signs, signed books, tags, chat, commands.  
+    Also, as improvement, replacement of these values depends on the interaction/control mode when using touch as input mode. These modes are Joystick & tap to interact, D-Pad & tap to interact, and Joystick & aim crosshair.

@@ -1,0 +1,78 @@
+import Switcher from '../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.17.40 are available for download with new resources, behaviors, and documentation
+    -   Resource Pack Template: [aka.ms/ResourcePackTemplate](https://aka.ms/ResourcePackTemplate)
+    -   Behavior Pack Template (Includes documentation): [aka.ms/BehaviorPackTemplate](https://aka.ms/BehaviorPackTemplate)
+
+## **Fixes**
+
+-   Fixed display only entity destruction in chunk discard scenarios
+-   Fixed a bug that caused animations to be restarted when changing render controllers
+
+## **Data-Driven Blocks** 
+
+-   Updated documentation for the Block Rotation component
+-   Updated documentation for 'BlockExplosionResistance'
+-   Added required toggles to documentation and to content error for block components
+
+## **Graphical**
+
+-   Added a content error for using a material but not providing the required number of textures to the render controller
+
+## **Molang** 
+
+-   Fixed 'item\_remaining\_use\_duration'having improperly scaled or inverted results (This fix is a Versioned Change as of engine version 1.17.30)
+-   Add new compile errors for expressions like 'text' + 3, which were previously ignored (This is a Versioned Change as of engine version 1.17.40)
+-   Molang expressions that contain capital letters are properly evaluated now
+-   'query.get\_equipped\_item\_name' will now recognize Sea Lanterns ([MCPE-67893](https://bugs.mojang.com/browse/MCPE-67893))
+-   Added new compile errors for expressions like 1 + (9 10), which were previously ignored (This is a Versioned Change as of engine version 1.17.40)
+
+## **GameTest Framework (Experimental)** 
+
+-   Renamed method 'succeedWhenBlockTypePresent' to 'succeedWhenBlockPresent'
+-   Fixed a bug where property id would return "Unknown" for custom entities ([MCPE-137786](https://bugs.mojang.com/browse/MCPE-137786))
+-   Identifier strings returned from property id now include the item's namespace
+-   Updated the GameTest Framework interface and added a new SimulatedPlayer capability:
+    -   Added 'SimulatedPlayer'class to GameTest. This class enables GameTest to simulate a variety of player behaviors such as movement, using items, and interacting with blocks and entities. See the [GameTest API](https://docs.microsoft.com/en-us/minecraft/creator/scriptapi/mojang-gametest/mojang-gametest) reference documentation for more details
+        -   Added function spawnSimulatedPlayer(blockLocation: BlockLocation, name: string): SimulatedPlayer
+        -   Added function   
+            removeSimulatedPlayer(simulatedPlayer: SimulatedPlayer): void
+    -   mojang-gametest.Test type
+        -   Changed signature of function assertEntityInstancePresent(entity: Entity, blockLocation: BlockLocation, isPresent: boolean = true)
+    -   mojang-minecraft components
+        -   Component 'inventory'now works with Player inventories
+
+## **GameTestSequence** 
+
+-   Removed method 'thenWaitWithDelay'
+-   Added method 'thenWaitAfter(delayTicks: number, callback: () =\> undefined)'- After a delay, executes the given callback every tick until it succeeds. Exceptions thrown within the callback will end sequence execution
+
+## **Player** 
+
+-   Fixed a bug where the location property would return an incorrect height for players
+-   Added property 'id'
+
+## **Block** 
+
+-   Replaced method 'getLocation' with property 'location'
+-   Replaced method getPermutation with property 'permutation'
+-   Replaced method 'getType' with property 'type'
+-   Replaced methods 'isWaterlogged' and 'setWaterlogged' with property 'isWaterlogged'
+-   Replaced method 'getBlockData' with property 'permutation'
+-   Replaced method 'isEmpty' with property 'isEmpty'
+-   Removed property 'canBeWaterlogged'
+
+## **BlockType**
+
+-   Replaced method 'getName' with property 'id'
+-   Replaced method 'canBeWaterlogged' with property 'canBeWaterlogged'
+
+## **BlockPermutation**
+
+-   Replaced method 'getType' with property 'type'
+

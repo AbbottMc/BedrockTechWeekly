@@ -1,0 +1,139 @@
+**Posted:** 30 October 2024
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![paleoakleaves.jpg](https://feedback.minecraft.net/hc/article_attachments/31476211693453)
+
+It's time for a new Preview and Beta! This week we're amping up the atmosphere in the pale garden. Eyeblossoms will now puff out orange particles when they open – and leaves will fall from the pale oak trees in the pale garden – adding to the ambiance of this new, eerie biome. As always, we’re keen to get your feedback on these new features at [feedback.minecraft.net](https://feedback.minecraft.net/hc/en-us) and you can report any bugs at [bugs.mojang.com](http://bugs.mojang.com/)! Here's what's new this week:
+
+# New Features and Bug Fixes
+
+## Biomes
+
+-   Music volume now gradually lowers to zero when entering a Pale Garden and gradually resumes when leaving it
+
+### Pale Garden
+
+-   Add the Pale Oak Sapling, Eyeblossoms, Pale Moss Block, and Hanging Pale Moss to the Wandering Trader ([MCPE-187456](https://bugs.mojang.com/browse/MCPE-187456))
+
+## Blocks
+
+-   Adjusted the flammability of Pale Moss, Pale Moss Carpet, and Pale Hanging Moss  
+    -   They now burn more quickly but take longer to catch on fire
+    -   They can now be ignited by Lava
+-   The attenuation drop-off rate for Pale Hanging Moss and Creaking Heart ambient sounds is now linear, allowing them to be heard from greater distances ([MCPE-187326](https://bugs.mojang.com/browse/MCPE-187326))
+-   Eyeblossoms now play sounds when opening and closing
+-   Open Eyeblossoms now emit ambient sounds when placed on a Pale Moss Block
+-   Vine, Cave Vines, Twisting Vines, and Weeping Vines now play their correct sounds instead of the Nether Wart sound
+-   Hanging Pale Moss now has the same model as Java ([MCPE-187397](https://bugs.mojang.com/browse/MCPE-187397))
+-   Eyeblossoms placed in world and in Flower Pots now emit a particle when opening/closing
+-   Pale Oak Leaves now emit falling leaf particles
+
+### Creaking Heart
+
+-   Reduced the distance by which the Creaking Heart can spread Resin Clumps by one block
+-   Resin Clumps can now only spread onto Pale Oak Log, Stripped Pale Oak Log, Pale Oak Wood, and Stripped Pale Oak Wood
+
+### Resin Bricks
+
+-   Recipes for Resin Brick Slabs, Stairs, and Walls now give the same amount of blocks as the Nether Brick ones ([MCPE-187707](https://bugs.mojang.com/browse/MCPE-187707), [MCPE-187795](https://bugs.mojang.com/browse/MCPE-187795), [MCPE-187796](https://bugs.mojang.com/browse/MCPE-187796))
+
+\> **Developer's Note:** _Counting is hard._
+
+### Resin Clump
+
+-   Mobs now correctly pathfind over Resin Clumps ([MCPE-187778](https://bugs.mojang.com/browse/MCPE-187778))
+
+## Commands
+
+-   Translated rawtexts with extra percentage signs in them no longer expand inconsistently for numbered forms ("%%%%1"), compared to non-numbered ones ("%%%%s"). ([MCPE-171001](https://bugs.mojang.com/browse/MCPE-171001))
+-   Effect command now properly displays duration as seconds in the displayed message after adding an effect ([MCPE-186963](https://bugs.mojang.com/browse/MCPE-186963))
+
+## Features
+
+-   Standardized the blocks that trees can replace when growing, with a few exceptions ([MCPE-187302](https://bugs.mojang.com/browse/MCPE-187302)) ([MCPE-187301](https://bugs.mojang.com/browse/MCPE-187301))
+    -   All trees can now grow through leaves, with the exception of Cherry trees cannot grow through their own leaves ([MCPE-168029](https://bugs.mojang.com/browse/MCPE-168029))
+    -   All trees can grow on dirt-like blocks ([MCPE-187739](https://bugs.mojang.com/browse/MCPE-187739))
+-   Tall Grass generates properly with its top part in the Pale Garden biome ([MCPE-187308](https://bugs.mojang.com/browse/MCPE-187308))
+-   Tall Grass generates properly with its top part in the Lush Caves biome ([MCPE-125799](https://bugs.mojang.com/browse/MCPE-125799))
+
+## Gameplay
+
+-   Holding the jump button when falling on a Slime Block no longer cancels the bounce ([MCPE-185354](https://bugs.mojang.com/browse/MCPE-185354))
+-   Sneaking while landing on a Slime Block no longer causes fall damage
+
+\> **Developer's Note:** The intended way to stop bouncing on a Slime Block is now to sneak.  
+\> Previously players could stop bouncing by holding the jump button, but this was an unintentional oversight that worked since the jump effectively cancelled out the movement from the block.
+\> 
+\> This caused other types of bugs such as when hitting a mob with a Mace with Wind Charge enchantment while holding the jump button.  
+\> The new player jump behaviour is to always pick the highest between existing vertical velocity and jump velocity.
+
+-   Fixed one case where blocks would fail to place if a player would place a block and then change their selected slot before the server handled the block placement. This would reject the block placement because the server didn't expect the slot to change ([MCPE-112420](https://bugs.mojang.com/browse/MCPE-112420))
+
+## Graphics
+
+-   Sky color now gradually transitions when traveling between different biomes, rather than changing abruptly ([MCPE-90625](https://bugs.mojang.com/browse/MCPE-90625))
+
+## Items
+
+-   Resin Clump and Resin Brick items no longer float in the Player's hand in 3rd person view
+-   Open and Closed Eyeblossoms can now be used on Mooshrooms to obtain their respective Suspicious Stews when milking ([MCPE-187754](https://bugs.mojang.com/browse/MCPE-187754))
+-   Blackstone can now be used to repair stone tools and stone weapons ([MCPE-71859](https://bugs.mojang.com/browse/MCPE-71859))
+
+## Mobs
+
+### Creaking
+
+-   Reduced the speed of non-hostile Creakings
+-   Tamed Wolves' attacks no longer prevent Creakings from attacking the Player
+-   Creakings can no longer move when only their feet are observed, and their feet are in Soul Sand or Mud
+-   Creakings can now approach a Player which is looking downward, stopping only once they enter the Player's field of view
+-   The Creaking now sways when hit by a projectile
+-   The Creaking's attack animation has been smoothed out for a more natural motion
+-   The volume and pitch of the Creaking's step sounds have been adjusted
+-   The attenuation drop-off rate for some of the Creaking's sounds is now linear, allowing them to be heard from greater distances
+
+## Realms
+
+-   Fixed bug where loading screens while loading a realm were not showing Realms UI elements
+
+## Stability and Performance
+
+-   Improved game loading stability
+
+## Structures
+
+### Jigsaw
+
+-   Dimension padding is now taken into account when placing the start piece of a jigsaw structure
+
+## Technical
+
+-   Vanilla Trial Spawner NBT `normalConfig` and `ominousConfig` tags values now support references to common configurations as an alternative to inline configuration
+
+## Trial Spawner
+
+-   Some Trial Spawners did not have an extra Breeze out at once when Ominous
+
+## User Interface
+
+-   Enables selecting disabled buttons on the 'join friends' menu while crossplay is turned off
+-   Dualsense gamepads now have correct tooltip icons on mobile devices
+-   Fixed spacing on Realms Stories and Timeline pages
+-   Touch Controls: Fixed a bug where boats were interactable during control customization ([MCPE-184404](https://bugs.mojang.com/browse/MCPE-184404))
+-   Fixed a bug where the death screen and new bed screen would sometimes have incorrect textures applied when resource packs were used ([MCPE-178701](https://bugs.mojang.com/browse/MCPE-178701), [MCPE-184050](https://bugs.mojang.com/browse/MCPE-184050))
+-   _Added Pick Block for touch controls in Creative mode_
+    
+    \> **_Developer's Note:_** _Pick Block allows you to add items to your hotbar without the need to open your inventory. With Pick Block you can select the block you want in your world and it will be added to your hotbar._
+    
+
+## Vanilla Parity
+
+### Blocks
+
+-   Resin Clumps and Glow Lichen now play their step sound when on top of a block an actor is walking on
+

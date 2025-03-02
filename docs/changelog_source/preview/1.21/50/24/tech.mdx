@@ -1,0 +1,56 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   Added new field `"ambient_occlusion_exponent"` to blocks.json file schema in resource packs, replaces broken `"brightness_gamma"` field.
+
+## Editor
+
+-   Fix a bug preventing the Quick Panel from being draggable using the drag icon on the header
+    
+-   Fix a bug that caused the dropdown menu to open with an incorrect position inside a scrollable pane
+    
+-   Added overflow handling for menu bar to collapse overflowing items into a menu and improved submenus to fit within window bounds
+    
+-   Improved persistent settings storage. The editorOptions.txt file is now located in the editor subfolder in the same AppData directory.
+    
+-   Improved viewport focus visibility with an animated outline on focus and added focused state as a step for Toggle Mode (CTRL + TAB)
+    
+-   Added `focusToolInputContext` function to `IModalToolContainer` which will try to set modal input focus (e.g. viewport for tool rail)
+    
+
+## User Interface
+
+-   Fixed a spelling error in an advanced tip for worlds with resource packs
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Scripting
+
+-   Enum `InputMode`.
+    -   Removed `Undetermined` entry.
+-   Class `InputInfo`.
+    -   Throws `EngineError` instead of `Error` in case of internal error.

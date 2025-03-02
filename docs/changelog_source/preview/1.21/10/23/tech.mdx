@@ -1,0 +1,46 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Add-Ons and Script Engine**
+
+-   Fixed an issue where particle effect lifetime event timeline did not trigger events as expected
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Molang**
+
+-   Fixed Molang content errors to include the expression in the logged message  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Blocks**
+
+-   _minecraft:custom\_components_ no longer requires the Beta APIs experiment
+-   _minecraft:entity\_fall\_on_ no longer requires the Beta APIs experiment
+-   _minecraft:tick_ no longer requires the Beta APIs experiment
+
+## **Editor**
+
+-   Matches caret color to font default color in built-in UI themes

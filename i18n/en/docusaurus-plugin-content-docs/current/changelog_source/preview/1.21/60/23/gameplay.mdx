@@ -1,0 +1,140 @@
+**Posted:** 4 December 2024
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A pillager outpost with with allays nearby](https://feedback.minecraft.net/hc/article_attachments/32412943720973)
+
+It's time for a new Preview and Beta! As always, we’re keen to get your feedback on these new features at [feedback.minecraft.net](http://feedback.minecraft.net/) , and you can report any bugs at [bugs.mojang.com](http://bugs.mojang.com/)  ! Here's what's new this week:
+
+# Features and Bug Fixes
+
+## Blocks
+
+-   Fixed a crash that could occur when teleporting back into a chunk where a block entity was destroyed ([MCPE-178461](https://bugs.mojang.com/browse/MCPE-178461)) 
+-   Lily Pads no longer flicker when seen from afar ([MCPE-91452](https://bugs.mojang.com/browse/MCPE-91452)) 
+-   Sunflowers no longer flicker when seen from afar ([MCPE-122695](https://bugs.mojang.com/browse/MCPE-122695)) ([MCPE-102412](https://bugs.mojang.com/browse/MCPE-102412))
+-   Fence Gate blocks use state "minecraft:cardinal\_direction" instead of "minecraft:direction". Uses string values ("north, south, east, west") 
+
+## Graphical
+
+-   The dark edges around the screen at low Y coordinates now fade in gradually rather than appear suddenly ([MCPE-121983](https://bugs.mojang.com/browse/MCPE-121983)) 
+
+## Mobs
+
+-   A Creaking's eyes now render even when the Creaking is invisible, provided it has a target ([MCPE-188259](https://bugs.mojang.com/browse/MCPE-188259))
+
+### Magma Cube
+
+-   The new Magma Cube model and texture are now only used by Resource Packs that explicitly override them, as they have been renamed to differentiate them from the original assets ([MCPE-188547](https://bugs.mojang.com/browse/MCPE-188547))
+    -   This change is retroactive, starting from version 1.21.50
+
+## Stability and Performance
+
+-   Fixed an issue where optional and required resource packs couldn't be downloaded when joining a multiplayer game if it was cancelled on the first download and join attempt 
+
+## User Interface
+
+-   Touch controls: It is now possible to place blocks on top of containers when flying downwards, like on PC. ([MCPE-176407](https://bugs.mojang.com/browse/MCPE-176407)) 
+-   Inbox messages with long content are now scrollable with gamepad immediately after entering the screen 
+-   Fixed "An unknown error has occurred" when downloading resource packs under specific circumstances.
+-   Touch controls: Touch button for Pick Block is now available for both Survival and Creative 
+
+### Trial Mode
+
+-   Removed the Sign In, Profile, Inbox and Gathering buttons from the Start Menu in Trial Mode
+-   Removed the Profile button from the Pause Menu in Trial Mode  
+      
+    
+
+## Vanilla Parity
+
+### Biomes
+
+-   Eyeblossoms and Pale Moss Carpets no longer generate inside Pale Oak Tree trunks
+-   The vegetation of many Overworld biomes has been updated to more closely match Java Edition and align with the intended look and feel of Minecraft:
+    -   Overworld (applies to all biomes)
+        -   Pumpkins now generate in larger patches
+        -   Dandelions are now alternated with Poppies when generating in flower patches
+        -   Sugar Canes no longer generate through other blocks
+    -   Plains
+        -   Short Grass now generates more frequently and in larger amounts ([MCPE-141364](https://bugs.mojang.com/browse/MCPE-141364)) 
+        -   Tall Grass now generates less frequently but in larger patches
+        -   Flower patches now contain mixed flowers, are larger and generate more frequently
+    -   Sunflower Plains
+        -   Sunflowers now generate in more cohesive patches
+    -   Mushroom Fields
+        -   Mushrooms now generate in larger patches
+    -   Savanna
+        -   Short Grass now generates more frequently and in larger amounts
+        -   Tall Grass now generates less frequently but in larger patches
+    -   Flower Forest
+        -   Trees are now denser
+        -   Flowers now generate in more cohesive patches
+    -   Taiga
+        -   Small Ferns now generate more frequently
+        -   Large Ferns now generate less frequently
+        -   Sweet Berry Bushes now generate in larger patches
+    -   Old Growth Spruce Taiga
+        -   Mushrooms now generate in larger and more cohesive patches
+        -   Ferns now generate more frequently
+        -   Sweet Berry Bushes patches now generate ([MCPE-152452](https://bugs.mojang.com/browse/MCPE-152452))
+    -   Old Growth Pine Taiga
+        -   Mushrooms now generate in larger and more cohesive patches
+        -   Ferns now generate more frequently
+        -   Sweet Berry Bushes patches now generate ([MCPE-152452](https://bugs.mojang.com/browse/MCPE-152452)) 
+    -   Jungle
+        -   Trees are now denser
+        -   Big Jungle Trees now generate more frequently
+        -   Jungle Bushes are now larger
+        -   Melon patches now generate more frequently
+    -   Bamboo Jungle
+        -   Bamboo now generates in larger and denser patches
+        -   The width of Bamboo is now consistent across the entire plant
+        -   Trees are now denser
+        -   Big Jungle Trees now generate more frequently
+        -   Jungle Bushes are now larger
+    -   Sparse Jungle
+        -   Bamboo no longer generates
+        -   Ferns and Short Grass now generate more frequently
+        -   Jungle Bushes are now larger
+        -   Melon patches now generate more frequently
+    -   Meadow ([MCPE-139903](https://bugs.mojang.com/browse/MCPE-139903)) ([MCPE-141447](https://bugs.mojang.com/browse/MCPE-141447))
+        -   Short Grass now generates more frequently
+        -   Tall Grass now generates more frequently
+        -   Flowers now generate in patches instead of being homogeneously spread across the biome
+    -   Swamp
+        -   Blue Orchids now generate more frequently and in larger patches
+        -   Swamp Oaks now generate slightly more frequently
+        -   Swamp Oaks no longer generate in direct contact with the ground
+        -   Lily Pads now generate more frequently
+    -   Mangrove Swamp
+        -   Mangroves are now sparser
+        -   Mangroves now generate over water ([MCPE-153748](https://bugs.mojang.com/browse/MCPE-153748))
+        -   Lily Pads now generate more frequently
+    -   Badlands
+        -   Dead Bushes now generate more frequently
+    -   Desert
+        -   Dead Bushes now generate more frequently
+    -   Oceans (except Frozen Ocean)
+        -   Kelp now generates more frequently and in denser patches
+
+### Blocks
+
+-   The Pale Oak Leaves no longer appear lighter than on Java ([MCPE-188217](https://bugs.mojang.com/browse/MCPE-188217))
+-   Renamed Banners no longer lose their custom names when broken, or when washed in cauldrons ([MCPE-36429](https://bugs.mojang.com/browse/MCPE-36429))
+-   Twisting Vines and Weeping Vines now have an increased chance of dropping as items when broken with Fortune enchanted tools, including a 100% chance when using Fortune III ([MCPE-91033](https://bugs.mojang.com/browse/MCPE-91033))
+-   Dispensers can now place Shulker Boxes under water ([MCPE-76004](https://bugs.mojang.com/browse/MCPE-76004))
+
+### Items
+
+-   Suspicious Stews crafted with Tulips now apply the Weakness Effect for 7 seconds when consumed, matching Java ([MCPE-188040](https://bugs.mojang.com/browse/MCPE-188040))
+-   Suspicious Stews with the Weakness Effect acquired from Shipwrecks and trading with Villagers now apply the Weakness Effect for 7 seconds when consumed.
+
+### Sounds
+
+-   Nether Brick Slab, Red Nether Brick Slab, Nether Brick Wall, Red Nether Brick Wall, Cracked Nether Bricks and Chiseled Nether Bricks now have the same sound as Nether Bricks, matching Java Edition ([MCPE-74879](https://bugs.mojang.com/browse/MCPE-74879))
+

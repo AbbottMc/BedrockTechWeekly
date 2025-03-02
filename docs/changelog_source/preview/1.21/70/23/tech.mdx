@@ -1,0 +1,99 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Components
+
+-   Added validation for asset references in components
+    -   Content errors will log missing references for the following fields:
+        -   item references
+        -   block reference in item component in "minecraft:block\_placer"
+        -   loot table reference in block component "minecraft:loot"
+-   The "entity\_sensor" component's "find\_players\_only" field now functions correctly, properly restricting searches to Players only and affecting all subsensors
+
+## Dedicated Server
+
+-   Exposed two new parameters for dedicated server when in server-auth-with-rewind. These will make the server more strict on player positions. Look in server.properties for more information on what these do
+    -   server-authoritative-movement-strict default to false and can be set to true. Will affect Player position acceptance
+    -   server-authoritative-dismount-strict default to false and can be set to true. Will affect Player position when dismounting
+
+## Editor
+
+-   Added `IButtonPanePropertyItem` API for customizing button layouts
+    -   `IPropertyPane.addButtonPane` and `IModalControlPane.addButtonPane` API methods to create button pane items
+-   Updated the mouse indicator for various tools to no longer linger after the app is suspended and resumed
+-   Updated the maximum allowed line segments in Line Tool to 40 to address a crash
+
+## Entity Event Responses
+
+-   Added the "stop\_movement" entity event response, which stops the entity's movement
+    -   The "stop\_vertical\_movement" field specifies whether vertical movement should be stopped
+    -   The "stop\_horizontal\_movement" field specifies whether horizontal movement should be stopped
+    -   This response does not stop navigation or prevent future movement
+        -   If that's the desired outcome, also remove the components responsible for that
+-   Added the "set\_home\_position" entity event response, which sets the entity's home position to its current position
+    -   For this to have any effect, the entity must already have a "minecraft:home" component
+
+## Entity Events
+
+-   Added "first\_valid" event type, it will evaluate every filter in order and execute the first valid one
+
+## Entity Filters
+
+-   The "in\_clouds" entity filter now succeeds when an entity's bounding box intersects the cloud layer, rather than only when its bottom is within it
+
+## Jigsaw
+
+-   Fixed gaps from appearing between data-driven jigsaw structure pieces.
+
+## Mobs
+
+-   Added aquatic family-type for all aquatic mobs
+-   Normal Minecart is no longer considered a mob
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+-   Removed unused experimental json field peaks\_factor from minecraft:mountain\_parameters in the behavior pack biome file
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+### `@minecraft/server`
+
+-   Fixed a bug where call methods on `Player.inputInfo`, `Player.inputPermissions`, or `Player.aimAssist` on a player that left and rejoined the world would throw an error.
+
+### `@minecraft/server-net`
+
+-   Updated the execution privilege of most APIs to allow them to be called in read-only contexts ("before" events)
+-   Added new error `InternalHttpRequestError`
+    -   An error thrown when a platform-level HTTP error occurs. Information provided in this class may be useful for diagnostics purposes but will differ from platform to platform.
+-   Added new error `MalformedHttpRequestError`
+    -   An error thrown when a malformed HTTP request is attempted to be sent.
+
+### `@minecraft/server-ui`
+
+-   Added method `divider(): ActionFormData;`. It adds a section divider into the form.
+-   Added method `divider(): ModalFormData;`. It adds a section divider into the form.
+
+### `@minecraft/diagnostics`
+
+-   Fixed crash on dedicated server when submitting error reports to Sentry.
+
+## Blocks
+
+-   `"minecraft:material_instances"` component has a new experimental boolean field `"isotropic"` for format version **1.21.70** and higher, this field controls rotating the face UVs randomly based on BlockPos
+
+## Graphical
+
+-   Fixed the behavior of the Darkness status effect in the Deferred Technical Preview

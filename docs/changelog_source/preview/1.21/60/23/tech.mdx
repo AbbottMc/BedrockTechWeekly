@@ -1,0 +1,147 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Added the ability to define the order for the items for the creative inventory & recipe book, called the crafting item catalog, for new items added by packs. New items can either merge with existing groups, create new groups with your own item for the icon, or just become added as loose items without a group. This catalog should be saved as `item_catalog/crafting_item_catalog.json` in your behavior pack  
+    Example:
+
+    \{
+       "format_version": "1.21.60",
+       "minecraft:crafting_items_catalog": \{
+          "categories": [
+             \{
+                // Valid values are construction, equipment, nature, and items
+                "category_name": "construction",
+                "groups": [
+                   \{
+                      // This will add the items to the end of the
+                      // existing planks group
+                      "group_identifier": \{
+                         "icon": "minecraft:oak_planks",
+                         "name": "minecraft:itemGroup.name.planks"
+                      \},
+                      "items": [
+                         "mynamespace:my_planks1",
+                         "mynamespace:my_planks2"
+                      ]
+                   \},
+                   \{
+                      // This will create a new group
+                      "group_identifier": \{
+                         "icon": "mynamespace:my_item",
+                         // This is the name of your group which doubles as
+                         // the localization string. The namespace is required
+                         "name": "mynamespace:my_group_name"
+                      \},
+                      "items": [
+                         "mynamespace:my_item"
+                      ]
+                   \},
+                   \{
+                      // This adds items without being part of a
+                      // group as loose items
+                      "items": [
+                         "mynamespace:my_loose_item"
+                      ]
+                   \}
+                ]
+             \}
+          ]
+       \}
+    \}
+    
+
+-   Item and Block json files now require a namespace for group names in the "menu\_category" object. 
+-   Added new Creator toggle setting \`Show Content Log GUI On Error During Load.
+    -   This setting with make the Content Log GUI automatically open and display after loading into a world and there was either warnings or errors found during the loading process.
+    -   This setting is disabled in the Editor.
+
+## Commands
+
+-   Fixed a bug that would cause messages to report double the items that match the criteria when using the clear command with a max count of 0 
+-   the "mine" overload of the /loot command has been moved to outside of Upcoming Creator Features experiments:
+-   The /kick command now allows use of target selectors on Realms
+
+## Components
+
+-   Added the "minecraft:renders\_when\_invisible" component, which enables entities to render even when invisible
+    -   Appropriate rendering behavior can then be specified in the corresponding "minecraft:client\_entity"
+
+## Editor
+
+-   Daylight cycle and multiplayer options are now respected in an exported world
+-   Bedrock Dedicated Server would not correctly load an existing Editor project unless the `Editor=true` command line argument was used - resulting in connected Editor clients missing windows.
+-   Fly Speed Multiplier Global Hotkeys
+    -   Q, E, Shift + Q and Shift + E have been added as viewport keyboard shortcuts for increasing and decreasing fly speed
+-   `/reload` (and the `Reload Scripts` action bar item) should now work in the editor when hosting a session, or connected to a remote session (when only a single player is connected).
+
+## Network Protocol
+
+-   Added ActorFlags::RENDERS\_WHEN\_INVISIBLE
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Aim Assist
+
+-   Changed aim-assist preset item settings to reference categories by unique namespace Ids globally instead of via name in a 'categories' list
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Commands
+
+-   Place: Entities saved within structures will now be placed unless specified 
+-   Added two subcommands to the `/place` command behind the Upcoming Creator Features Experiment toggle 
+    -   `/place feature`
+    -   `/place featurerule`
+
+## Creator
+
+-   Added support for ItemTags in match\_tool loot table conditions behind the Upcoming Creator Features Experiment toggle
+
+## Gameplay
+
+-   Added the option to limit yaw rotations on all cameras with an orbit component
+
+## Graphical
+
+-   Add bilinear upscaling option.
+-   Enabled the Deferred Technical Preview for PlayStation 5 and PlayStation 4 in Preview. See the [Getting Started with Deferred Lighting](https://learn.microsoft.com/en-us/minecraft/creator/documents/deferredlighting?view=minecraft-bedrock-stable)  article for more information
+    -   A known issue on PlayStation 4 may cause some entities or items to be invisible when turning on or toggling the Deferred Technical Preview.
+
+## Molang
+
+-   Moved `query.last_input_mode_is_any` to stable. It takes one or more arguments ('keyboard\_and\_mouse', 'touch', 'gamepad', or 'motion\_controller'). If the last input used is any of the specified string values, returns 1.0. Otherwise returns 0.0. Available on the Client (Resource Packs) only.
+-   Moved `query.touch_only_affects_hotbar` to stable. It returns 1.0 if the touch input only affects the touchbar, otherwise returns 0.0. Available on the Client (Resource Packs) only.
+
+## Scripting API
+
+-   Moved enum `InputMode` from `beta` to `1.17.0`.
+-   Moved class `InputInfo` from `beta` to `1.17.0`.
+    -   Moved property `lastInputModeUsed` from `beta` to `1.17.0`.
+    -   Moved property `touchOnlyAffectsHotbar` from `beta` to `1.17.0`.
+-   Class `Player`.
+    -   Moved property `inputInfo` from `beta` to `1.17.0`.
+-   Moved class `PlayerInputModeChangeAfterEvent` from `beta` to `1.17.0`.
+-   Moved class `PlayerInputModeChangeAfterEventSignal` from `beta` to `1.17.0`.
+-   Class `WorldAfterEvents`.
+    -   Moved property `playerInputModeChange` from `beta` to `1.17.0`.
+-   Moved class `InvalidEntityError` from `beta` to `1.17.0`.
+
+## Stability and Performance
+
+-   Resolved a crash that could occur when using top\_layer\_modification in custom jigsaw structures
+-   Resolved a crash that could occur when entering the nether with a custom jigsaw structure in the nether

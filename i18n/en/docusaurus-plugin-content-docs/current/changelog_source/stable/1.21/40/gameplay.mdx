@@ -1,0 +1,227 @@
+**Posted:** 22 October 2024
+
+Today marks the launch of our third game drop: Bundles of Bravery! Featuring space-saving bundles and the hardest Survival mode out there (Hardcore mode!) this drop is all about embarking on a new adventure, collecting everything you can along the way, and definitely _not_ dying. Given Hardcore mode brings hardcore stakes, we really can’t recommend backing up your Hardcore worlds enough – especially if you’ll be playing the new drop on low internet speeds (Read more about these bugs [here](#user-content-%3Ca-name%3D%22accordian%22%3Ehardcore-mode%3C%2Fa%3E)!). If that wasn’t enough stuff to stuff into a changelog, we’ve also fixed over 140 bugs, increased the spawn rate for bats above ground (because they’re cute, and more players should see them) and made a heap of technical changes for creators. Goodness, that was a lot, wasn’t it! Perhaps I should’ve stuffed it all into a bundle?
+
+![Ari is walking through a snowy village holding a bundle, and wearing an iron chest plate with armour trims](https://feedback.minecraft.net/hc/article_attachments/31222207626381)
+
+# Features and Bug Fixes
+
+## Hardcore Mode
+
+A new game mode for Bedrock Edition!
+
+-   You can't turn off Hardcore mode after creating this world
+-   The game is locked to the highest difficulty
+-   There are no second chances. If you die, it's game over!
+-   Upon death, you can only respawn as a spectator. You can still explore your world and watch others, but you’ll no longer be able to interact or rebuild
+
+\> _**Developer's Note:** We’re confident that Hardcore mode will run smoothly for most Bedrock players, but we’re still working on quashing some smaller bugs. Two of these impact multiplayer gameplay – one related to low internet speeds, and another when replacing a Creative mode Realm with a Hardcore mode world. While we develop a fix for these final bugs, we recommend all players regularly back up their worlds and check below for more detailed information on factors that might trigger them._
+
+## Bundles
+
+A Bundle is an item that lets you stack different blocks or items together in the same inventory slot. Different items normally don’t stack together, so you can end up wasting space by only having a few items in each slot. A Bundle lets you pack those items together so there is no wasted space.
+
+-   A Bundle is an item that can pack different items together into the same stack
+-   A Bundle only fits one stack (usually 64 items) but it can be a mixture of many different item types
+-   You can insert items into a Bundle directly in the inventory
+-   Bundles have a tooltip that shows the items inside
+    -   If a Bundle has less than 12 item types inside, the tooltip will show all of them
+    -   Otherwise, the tooltip will show the top three rows of items and the others will be hidden below
+-   You can select any of the visible items to pull out of the Bundle
+    -   Use the scroll wheel on mouse, the right stick on a game controller, or tap on a touch device
+-   When selecting an item to remove, the Bundle icon shows that item poking out of the Bundle
+-   When holding a Bundle in hand, you can empty it onto the ground
+-   The Bundle is crafted with one String above one Leather
+
+\> **Developer's Note:** _The original prototype for Bundles was much more expensive to craft and used Rabbit Hide, which is only available in certain biomes, so the player had to explore to get their first Bundle. In this version we've made it cheaper and something that you can craft at home in almost any biome. We want it to be easy to get Bundles in a new world so you can use it in your early adventures._
+
+## Accessibility Features
+
+-   Re-implemented the left handed mode on touch devices for accessing the inventory from the hotbar ([MCPE-179608](https://bugs.mojang.com/browse/MCPE-179608))
+-   Added text-to-speech voiceover for items in Marketplace Pass Content tab and Realms Content tab 
+
+## Android
+
+-   Fixed double input when using analog triggers on certain gamepads ([MCPE-175113](https://bugs.mojang.com/browse/MCPE-175113))
+
+## Blocks
+
+-   Vines placed with commands are now visible ([MCPE-131854](https://bugs.mojang.com/browse/MCPE-131854))
+-   "mushroom\_stem" is now its own block and is no longer a variant of "red\_mushroom\_block" and "brown\_mushroom\_block"
+-   "skull" has been split into 7 unique instances: "skeleton\_skull", "wither\_skeleton\_skull", "zombie\_head", "player\_head", "creeper\_head", "dragon\_head", "piglin\_head"
+-   Mob Spawner step sounds and hit sounds now play at their intended volume
+-   Trial Spawner hit sounds now play at their intended volume
+-   Fixed an issue with shipwrecks only generating lower-slabs. (This fix will not alter already generated shipwrecks) ([MCPE-186235](https://bugs.mojang.com/browse/MCPE-186235))
+-   Updated references to old block names in behavior pack wood recipe files
+-   Updated references to old block names in remaining behavior pack recipe files
+-   Fixed a bug where a block could be placed on a Vault block, causing weird block behaviors ([MCPE-186627](https://bugs.mojang.com/browse/MCPE-186627))
+-   Updated references to old block names in remaining behavior pack files
+
+## Commands
+
+-   Game rule ShowRecipeMessages is no longer considered a cheat ([MCPE-177299](https://bugs.mojang.com/browse/MCPE-177299))
+-   Added the 'entity\_offset' parameter to the camera command
+-   Issue where some commands did not recognize certain block or item names has been fixed 
+
+## Creative Inventory Changes
+
+\> **Developer's Note**: Items and blocks in the creative inventory have been reorganized, with the goal of making overall sorting more intuitive.
+
+-   Trial Chamber items
+    -   Trial Keys were moved to be next to Ominous Trial Keys, very ominous ([MCPE-180280](https://bugs.mojang.com/browse/MCPE-180280))
+    -   Ominous Bottles were moved next to the existing Potions and were made into its own "Ominous Bottle" group ([MCPE-180278](https://bugs.mojang.com/browse/MCPE-180278))
+-   Stone group in the Nature tab
+    -   Stone was moved into the Stone group, finally ([MCPE-116364](https://bugs.mojang.com/browse/MCPE-116364))
+    -   Stone is now the front block of the Stone group
+    -   Basalt and Smooth Basalt were moved into the Stone group
+    -   Tuff and Polished Tuff were moved into the Stone group ([MCPE-176383](https://bugs.mojang.com/browse/MCPE-176383))
+-   Decorative Stone in the Construction tab
+    -   Smooth Stone was moved into Decorative Stone
+    -   Tuff Brick, Chiseled Tuff, and Chiseled Tuff Bricks were moved from the Nature Category to Decorative Stone in the Construction Category
+    -   Prismarine Bricks were moved from the Decorative Stone group, now they are next to Prismarine and Dark Prismarine
+-   Copper family etc. ([MCPE-176384](https://bugs.mojang.com/browse/MCPE-176384))
+    -   Reordered Raw Iron, Raw Copper, Raw Gold to Raw Copper, Raw Iron, Raw Gold
+    -   The Copper, Iron, and Gold blocks were moved to match the Raw versions ordering
+    -   The Copper Doors were moved to all the other Doors
+    -   The Copper Trapdoors were moved to the group with all the other Trapdoors, this is not a trap
+    -   Copper Blocks and Copper Grates are now sorted by Block type then by Oxidation level, instead of Oxidation level then Block type
+-   Tuff family
+    -   Tuff Stairs, Tuff Slabs, Tuff Walls, and their polished versions were moved from the Nature tab to the Construction Tab into their respective groups
+-   Other blocks
+    -   Bricks are now placed before the Slabs group
+        -   This change only affects Bricks made from Clay and not all the brick blocks
+    -   Chiseled Nether Bricks and Cracked Nether Bricks were moved next to the Nether Brick Block and Red Nether Brick
+    -   Quartz Bricks placed next to the other Quartz blocks
+    -   Rooted Dirt is now next to the other Dirt blocks
+    -   Many Dirt blocks and Grass variants were shuffled around to match Java Edition
+    -   Gravel is now ordered after the Stone group and is next to Sand and Red Sand
+    -   Clay was moved from the Construction Category to the Nature Category, placed next to the Mud Block
+
+## Gameplay
+
+-   Wind Charges can't be hit and redirected shortly after throwing them
+-   Interacting with a Bed now sets it as the respawn point regardless of nearby enemies ([MCPE-152134](https://bugs.mojang.com/browse/MCPE-152134))
+-   Hardcore mode is now fully released. This mode locks player's game mode to Survival, locks difficulty to hard, and disables cheats. Players only have one life in Hardcore mode, if you die, you cannot respawn, only spectate
+-   Players hitting the edge of the generated world will keep their velocity. Example: While flying with the Elytra, the player will stay floating instead of losing all speed instantly
+-   Fixed a bug where Oozing, Weaving, and Wind Charged effects did not apply on player's death ([MCPE-180640](https://bugs.mojang.com/browse/MCPE-180640))
+-   Mobs can now perform Mace Smash attacks
+-   Players getting killed by the Mace's Smash Attack now get the correct death message ([MCPE-185952](https://bugs.mojang.com/browse/MCPE-185952))
+-   Fixed an issue that could prevent the player from respawning correctly ([MCPE-186324](https://bugs.mojang.com/browse/MCPE-186324))
+-   TNT explosions no longer reset momentum of other falling Primed TNTs. This should fix any issues that were occurring with TNT cannons ([MCPE-181055](https://bugs.mojang.com/browse/MCPE-181055))
+
+## General
+
+-   Removed some Keyboard key bindings from Settings that should only exist in Minecraft Education: Control Tips, Code Builder, and Immersive Reader
+-   Added Minecraft for PlayStation®5, an enhanced version of the game for PlayStation®5 users that better utilizes the hardware for smoother performance
+
+## Graphical
+
+-   Addressed an issue where the game would show pink on iOS when using Large Zoom ([MCPE-174398](https://bugs.mojang.com/browse/MCPE-174398)) ([MCPE-185373](https://bugs.mojang.com/browse/MCPE-185373))
+-   Data driven items are no longer misplaced in screenshots ([MCPE-185132](https://bugs.mojang.com/browse/MCPE-185132))
+
+## [Hardcore Mode](#user-content-%3Ca-name%3D%22accordian%22%3Ehardcore-mode%3C%2Fa%3E)
+
+Here are some of the bugs that we've fixed that could be especially troubling when playing in Hardcore mode!
+
+-   Fixed an issue where End Gateway Portals could teleport some players incorrectly ([MCPE-66061](https://bugs.mojang.com/browse/MCPE-66061))
+-   Fixed a bug that could sometimes cause the player to get pushed when pillaring up ([REALMS-9874](https://bugs.mojang.com/browse/REALMS-9874))
+-   Fixed issues with taking random fall damage ([MCPE-120140](https://bugs.mojang.com/browse/MCPE-120140) , [MCPE-136406](https://bugs.mojang.com/browse/MCPE-136406))
+
+## **Known Issues:** These are some of the issues that may rarely occur, and may be worse when playing on a world with a slow connection
+
+-   Rain/snow sometimes does not visually match the actual weather ([MCPE-131325](https://bugs.mojang.com/browse/MCPE-131325))
+-   Blocks sometimes disappear when placed ([MCPE-112420](https://bugs.mojang.com/browse/MCPE-112420))
+
+## **Known Realms Issue:**
+
+-   Replacing an existing Realms Creative world with a Hardcore world, or vice versa, may corrupt some world settings for the newly-uploaded world. It is safest to only replace a Survival mode world with a Hardcore mode world to avoid this issue.
+
+## Mobs
+
+-   Polar bear now drops Cooked Fish when killed by fire or lava ([MCPE-122488](https://bugs.mojang.com/browse/MCPE-122488))
+-   Pillager's 'celebrate3' sound now works ([MCPE-121058](https://bugs.mojang.com/browse/MCPE-121058))
+-   Wolves, Cats, and Parrots trying to catch up to their owner now seamlessly resume navigation after teleporting to them
+-   Wolves, Cats, and Parrots now teleport to their owner when panicking and far enough away
+-   Wolves now teleport to their owner when in a fight and far enough away, preventing them from being left behind ([MCPE-151765](https://bugs.mojang.com/browse/MCPE-151765))
+-   Piglins will no longer pick up and admire Powered Rail items ([MCPE-91187](https://bugs.mojang.com/browse/MCPE-91187))
+-   Wither Skeleton step sounds now play at their intended volume ([MCPE-185913](https://bugs.mojang.com/browse/MCPE-185913))
+-   Carved Pumpkin and Skull now rotates with Bogged's head when worn ([MCPE-178959](https://bugs.mojang.com/browse/MCPE-178959)) 
+-   The Breeze can no longer jump away from a player if it is on top of a Honey Block ([MCPE-176991](https://bugs.mojang.com/browse/MCPE-176991)) 
+-   Zombified Piglins spawned by a Nether Portal now have 15-second cooldown before it can use the Portal 
+-   Jump Boost now increases how high a Breeze can jump ([MCPE-176922](https://bugs.mojang.com/browse/MCPE-176922))
+-   Fixed issue with Minecarts stopping unexpectedly and then only being pushable in one direction ([MCPE-185643](https://bugs.mojang.com/browse/MCPE-185643))
+-   Updated the rules under which Bats spawn in the world:
+    -   Bats can now spawn at any height, provided the area is covered and sufficiently dark
+    -   Bats must spawn on one of the following blocks: Stone, Granite, Diorite, Andesite, Tuff, or Deepslate
+    -   As a result, Bats may now happen to spawn above the surface
+
+## Realms
+
+-   Added two new Realm Events. Can you discover them?
+-   Fixed a bug that would prevent activation of addon for a Realm via Marketplace
+
+## User Interface
+
+-   Hint about dismounting an entity no longer appears when changing dimensions and re-entering the world ([MCPE-182876](https://bugs.mojang.com/browse/MCPE-182876))
+    
+-   Armor HUD now updates properly when the player's equipped armor breaks ([MCPE-103592](https://bugs.mojang.com/browse/MCPE-103592)) 
+    
+-   Fixed a bug where the close button subpanel in the Stonecutter panel was empty instead of hidden while using controller
+    
+-   Added a new message to explain when a Marketplace Template is not available on a specific platform
+    
+-   Aligned the hunger and health bars with the experience bar in Classic UI on mobile devices ([MCPE-177192](https://bugs.mojang.com/browse/MCPE-177192))
+    
+-   Air bubbles now line up properly with hunger bar ([MCPE-185268](https://bugs.mojang.com/browse/MCPE-185268))
+    
+-   Position of player paper doll in the UI is now consistent between Classic and Pocket UI settings ([MCPE-57498](https://bugs.mojang.com/browse/MCPE-57498))
+    
+-   Potions with percentage-based effects now show the percentage sign correctly on their tooltips (on mobile devices) ([MCPE-28531](https://bugs.mojang.com/browse/MCPE-28531))
+    
+-   When dying by the thorns of a Guardian, the death message now reads "'Player' was killed trying to hurt 'Mob'" ([MCPE-114752](https://bugs.mojang.com/browse/MCPE-114752))
+    
+-   Chat messages no longer overlap with one pixel ([MCPE-119761](https://bugs.mojang.com/browse/MCPE-119761))
+    
+-   Item text no longer jumps up when looking at a non-interactable entity ([MCPE-161140](https://bugs.mojang.com/browse/MCPE-161140)) 
+    
+-   Close and help button visuals for Smithing Table and Loom changed to match visuals for Cartography Table ([MCPE-166008](https://bugs.mojang.com/browse/MCPE-166008)) 
+    
+-   "Hide Controller Hints" now properly hides all control hints in the Villager trading menu ([MCPE-167134](https://bugs.mojang.com/browse/MCPE-167134))
+    
+-   Fixed a bug where the incorrect message would be shown on the experimental bed screen for certain values of the playerssleepingpercentage game rule ([MCPE-183431](https://bugs.mojang.com/browse/MCPE-183431))
+    
+-   Single-tap to destroy now works with joystick/crosshair controls in Creative mode, without causing blocks to glitch ([MCPE-181789](https://bugs.mojang.com/browse/MCPE-181789))
+    
+-   Fixed a bug where Realms invite links could overflow past their text boxes
+    
+-   Items no longer get stuck in crafting grid after dropping an identical item from the recipe screen ([MCPE-73593](https://bugs.mojang.com/browse/MCPE-73593))
+    
+-   Take From Bundle functionality now takes precedence over Clear Hotbar when an item in a Bundle is selected using gamepad ([MCPE-186359](https://bugs.mojang.com/browse/MCPE-186359))
+    
+-   Inventory screen no longer shows item categories in tooltips unless the recipe book search screen is actually visible ([MCPE-128464](https://bugs.mojang.com/browse/MCPE-128464))
+    
+-   When using the Swap Jump and Sneak option with touch controls, sneak button no longer flickers when you press close to it ([MCPE-159557](https://bugs.mojang.com/browse/MCPE-159557))
+    
+-   Non-empty Bundles now have a fullness bar when inside of a Bundle ([MCPE-185457](https://bugs.mojang.com/browse/MCPE-185457)) 
+    
+-   Added the possibility to edit the thumbnail of a world in the new OreUI Edit World screen
+    
+
+## Vanilla Parity
+
+-   Creepers now drop a Music Disc upon being killed by a Bogged ([MCPE-179008](https://bugs.mojang.com/browse/MCPE-179008))
+-   Bogged now drops Poison Arrows when killed by Mobs tamed by a Player
+-   Dyeing Sheep and collars on Cats and Dogs now plays the dyeing sound as in Java Edition ([MCPE-150684](https://bugs.mojang.com/browse/MCPE-150684))
+-   Mushroom Stems used on the Composter have had their fill chance adjusted from 85% to 65% 
+-   The all-sided pore mushroom block has been removed from the creative inventory
+-   Enchanted Golden Apples now give Regeneration II instead of Regeneration V, matching Java Edition ([MCPE-103061](https://bugs.mojang.com/browse/MCPE-103061))
+-   Added infinite duration option to Effect command. `/effect \<player: target\> \<effect: Effect\> infinite [amplifier: int] [hideParticles: Boolean]`
+-   Added specific effect removal option to Effect command. `/effect \<player: target\> clear \<effect: Effect\>` 
+-   Placing Cocoa Beans now plays a sound ([MCPE-49126](https://bugs.mojang.com/browse/MCPE-49126)) 
+-   Beehive and Bee Nest can no longer be used as fuel in Furnaces ([MCPE-128393](https://bugs.mojang.com/browse/MCPE-128393)) 
+-   Identical Lodestone Compass items now stack up to 64, matching Java Edition ([MCPE-109595](https://bugs.mojang.com/browse/MCPE-109595))
+
+## VR / MR
+
+-   Our ability to support VR/MR devices has come to an end, and will no longer be supported in updates after March of 2025, when you will receive your final update. After you receive the final update, you will still receive updates on your PC and be able to play without a VR/MR device. From this point on you can keep building in your worlds, and your Marketplace purchases (including Minecoins) will continue to be available on a non-VR/MR graphics device such as a computer monitor. You will no longer be able to use your VR/MR device with Minecraft as it will no longer be supported in the latest updates.
+

@@ -1,0 +1,12 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Components
+
+-   Removed support for the "allow\_invulnerable" field from the "minecraft:looked\_at component"
+    -   This field never had any functionality, so this change won't affect pre-existing or future content in any way
+    -   The field will be ignored for any content with a format version lower than 1.21.40
+    -   A content error will be emitted for any content with a format version equal to or higher than 1.21.40 that still uses this field
+

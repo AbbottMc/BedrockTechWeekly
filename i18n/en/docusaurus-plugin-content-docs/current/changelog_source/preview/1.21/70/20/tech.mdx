@@ -1,0 +1,314 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## API - Scripting
+
+-   Unhandled rejected promises in scripting now include callstacks when logged.
+
+### @minecraft/server 1.18.0
+
+-   Renamed `system.scriptEvent` to `system.sendScriptEvent`
+    
+-   Moved `NamespaceNameErrorReason` from beta to @minecraft/server 1.18.0
+    
+-   Moved `system.sendScriptEvent` from beta to @minecraft/server 1.18.0
+    
+-   Moved `NamespaceNameError` from beta to @minecraft/server 1.18.0
+    
+-   Released `InputInfo.getButtonState`, `InputButton`, and `ButtonState` to @minecraft/server 1.18.0
+    
+-   Released `InputInfo.getMovementVector` to @minecraft/server 1.18.0
+    
+-   Released `PlayerButtonInputAfterEvent`, `AfterEvents.playerButtonInput` and `InputEventOptions` to @minecraft/server 1.18.0
+    
+-   Several APIs have been given the Readonly permission, which allows them to now be called inside Before Event callbacks.
+    
+    -   All methods for `BlockVolume`.
+    -   All methods for `Vector`.
+-   Changed `spawnEntity` method on `Dimension` to now take a variant of either a string or `EntityType`.
+    
+-   Added `placeFeature` and `placeFeatureRule` APIs to the `Dimension` class
+    
+-   Added `isValid` property to the Camera class.
+    
+
+## Biomes
+
+-   Fix client\_biome loading so grass\_appearance and foliage\_appearance settings are added if not specified when format\_version is lower than 1.21.60 ([MCPE-189816](https://bugs.mojang.com/browse/MCPE-189816))
+
+## Blocks
+
+-   `water` and `lava` no longer will turn into `flowing_water` or `flowing_lava` when neighbor updates happen. `water` and `lava` now will respond to queued ticks without needing to change into another block
+    
+-   The minecraft:map\_color component underwent a schema change
+    
+    -   It is now a JSON object with two fields "color" and "tint\_method".
+    -   "color" is a required string field expecting an HEX representation of the RGB, prefixed with a # character.
+    -   "tint\_method" is a string field that multiplies the color with a predefined tint. Supported values are "none, "default\_foliage", "birch\_foliage", "evergreen\_foliage", "grass" and "water".
+    -   the old schema format is still supported for convenience.  
+        Examples:
+        
+            "minecraft:map_color": \{
+              "color": "#ABCDEF",
+              "tint_method": "grass"
+            \}
+            
+        
+        or
+        
+            "minecraft:map_color": \{
+              "color": "#ABCDEF"
+            \}
+            
+        
+        or
+        
+            "minecraft:map_color": "#ABCDEF"
+            
+        
+
+### Components
+
+-   Added the 'minecraft:replaceable' component which determines if a new block can replace the existing block at a particular position. If the component is not added to a block it is not replaceable.
+
+## Components
+
+-   Multiple components that used effect durations can now be set to "infinite" including:
+    
+    -   "minecraft:attack": "effect\_duration"
+    -   "minecraft:healable": "duration" in the "effects" list
+    -   "minecraft:mob\_effect": "effect\_time"
+    -   "minecraft:projectile": "durationeasy", "durationnormal", and "durationhard" can now all use "infinite"
+    -   "minecraft:food": "duration" in the "effects" list
+    -   "minecraft:spell\_effects": "duration" in the "add\_effects" list
+    -   "minecraft:combat\_regeneration": "regeneration\_duration"
+
+## Editor
+
+-   Shulker box's textures are fixed in Block picker and lists
+    
+-   Fixed a bug that excluded some blocks from block picker list with partial text search
+    
+-   Block picker search text field will have UI focus when modal opens
+    
+-   Line Tool: Left Click no longer clears the line if two points already exist. Left Click now behaves the same as Shift + Left Click and always adds points to the existing line.
+    
+-   Added cursor support for selecting invisible blocks when the Show Invisible Blocks setting is enabled
+    
+-   Added `IPropertyPane.addProgressIndicator` API function to display a spinner or a progress bar property item
+    
+-   Added `ImageAnimationData` API type to represent a sprite sheet animation for images
+    
+-   Added `iconAnimation: ImageAnimationData` property to `IActionBarItemCreationParams` API
+    
+-   Added `IPropertyPane.addLink` API function to create link buttons in panes.
+    
+-   Added `system.isEditorWorld` property into @minecraft/server in beta
+    
+-   Now using minecraft/server 2.0.0-beta, see API section for more details on 2.0.0-beta.
+    
+    -   `registerEditorExtension` can be called in Early Execution.
+
+## Entities
+
+-   Fixed issue where `No more entities` assert failure occurred when flying through biomes during a storm
+
+## Jigsaw
+
+-   Fixed `world_surface` type of `heightmap_projection` in `minecraft:jigsaw` to generate on top of water and leaf blocks.
+
+## JSON Events
+
+-   The parameter "duration" in the "add\_mob\_effect" event can now be set to "infinite"
+
+## Sounds
+
+-   Added support for entity sound variants
+    
+    -   Entity sounds now have a "variants" field which defines sound variants based on the runtime entity
+    -   Variants has a "key" field reading a Molang expression returning a string to select sound variant (eg: querying an enum entity property).
+    -   Variants has a "map" field which contains key-value pairs of a variant identifier and the sound events it overrides.
+    -   When playing a sound for an entity we first try to calculate their variant and see if that variant overrides the sound event, if not we play the sound form the base entity. If that fails we fall back to the existing logic of running from "defaults".  
+        Example:  
+        Given a mob with the following property
+
+    "minecraft:emotional_state": \{
+      "type": "enum",
+      "values": [ "neutral", "angry", "happy", "sad" ],
+      "default": "neutral",
+      "client_sync": true
+    \}
+    
+
+Sound variants can be played by querying the property:
+
+    \{
+      "entity_sounds": \{
+        "entities": \{
+          "test_mob": \{
+            "volume": 1.0,
+            "pitch": 1.0,
+            // The base sounds for various events
+            "events": \{
+              "ambient": "mob.test_mob.ambient",
+              "death": "mob.test_mob.death",
+              "step": \{
+                "sound": "mob.test_mob.step",
+                "volume": 0.8,
+                "pitch": 1.0
+              \},
+              "attack": "mob.test_mob.attack"
+            \},
+            "variants": \{
+                // Key returning the enum string for variants, can use any Molang expression resulting in a string
+                "key": "query.property('minecraft:emotional_state')",
+                "map": \{
+                  // If a resulting variant key is not handled here then it will use the base sounds
+                  "neutral": \{
+                    "volume": 1.0,
+                    "pitch": 1.0,
+                    "events": \{
+                      // If an event is not handled in a variant then it will use the base sound
+                      "death": "mob.test_mob.death.netural"
+                    \}
+                  \},
+                  "angry": \{
+                    "volume": 1.0,
+                    "pitch": 1.0,
+                    "events": \{
+                      // Variants can override different events than other variants
+                      "death": "mob.test_mob.death.angry",
+                      "ambient": "mob.test_mob.ambient.angry"
+                    \}
+                  \}
+                \}
+              \}
+            \}
+          \}
+        \}
+      \}
+    \}
+    
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## API - Scripting
+
+### @minecraft/server 2.0.0-beta
+
+The beta for `@minecraft/server` has been updated to 2.0.0-beta. This signifies that breaking changes have occurred, largely related to script execution timing. Version 1.X will continue to function as-is.
+
+Visit our [documentation portal](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/)  for more information in the near future.
+
+-   Added new privilege `EarlyExecution`
+    
+    -   2.0.0-beta and higher now executes with the early execution privilege, scripting below 2.0.0-beta will continue to execute without early execution
+    -   All after and before event signals subscribe`and`unsubscribe\` methods can now be called in early execution
+    -   The following `System` methods can now be called in early execution
+        -   `clearJob`
+        -   `clearRun`
+        -   `run`
+        -   `runInterval`
+        -   `runJob`
+        -   `runTimeout`
+        -   `waitTicks`
+    -   `BlockComponentRegistry` method `registerCustomComponent` can now be called in early execution
+    -   `ItemComponentRegistry` method `registerCustomComponent` can now be called in early execution
+-   Added `startup` property to `SystemBeforeEvents`
+    
+-   Added `StartupEvent`
+    
+-   Added `StartupEventSignal`
+    
+-   `WorldAfterEvents` renamed property `worldInitialize` to `worldLoad`
+    
+-   `WorldBeforeEvents` removed property `worldInitialize`
+    
+-   `WorldInitializeAfterEvent` renamed to `WorldLoadAfterEvent`
+    
+-   `WorldInitializeAfterEventSignal` renamed to `WorldLoadAfterEventSignal`
+    
+-   Removed `WorldInitializeBeforeEvent`
+    
+-   Removed `WorldInitializeBeforeEventSignal`
+    
+-   Removed `Dimension.runCommandAsync` as most commands did not actually run asynchronously. If you are looking to run a function asynchronously, please investigate using Jobs via `System.runJob`.
+    
+-   `EntityComponent.getEntity` method throws if the underlying entity is invalid (instead of return undefined previously).
+    
+-   `EntityInventoryComponent.container`property throws if the underlying entity is invalid (instead of return undefined previously).
+    
+-   `isValid` methods on various classes have been changed to read only properties
+    
+-   `getComponents`, `getComponent` and `hasComponent` now throw if the Entity is invalid
+    
+-   `applyKnockback` method now takes a VectorXZ parameter for the knockback horizontal force (which includes the strength/magnitude), as well as a vertical strength parameter. To convert from V1, you should normalize your previous direction vector and multiply it by the old horizontal strength value. Vertical strength is the same as before.
+    
+-   EffectType
+    
+    -   `getName` method now always returns the `minecraft:` namespace prefix along with the name
+-   Effect
+    
+    -   `typeId` property now always returns the `minecraft:` namespace prefix along with the name
+-   `minecraft:air` item has been removed (it is still a valid block)
+    
+-   Promises are now flushed along with after events and system tasks
+    
+-   `system.waitTicks()` now can accept an argument bounds of 0 minimum to run this tick
+    
+-   Added a `GraphicsMode` enum and `Player.graphicsMode` to query a player's current graphics mode on the server.
+    
+-   Added `system.isEditorWorld` property into @minecraft/server in beta
+    
+-   BlockLocationIterator
+    
+    -   Added `isValid(): boolean` method to beta. This method checks if the iterator as been invalidated by modifying the underlining block volume.
+-   `BlockMapColorComponent` API has been added to beta
+    
+-   `TintMethod` enum has been added to beta
+    
+-   Early execution changes in version @minecraft/server 2.0.0-beta
+    
+    -   The following `RegistrationBuilder` methods can now be called in early execution
+        -   `batch`
+        -   `maxAttempts`
+        -   `maxTicks`
+        -   `padding`
+        -   `required`
+        -   `requiredSuccessfulAttempts`
+        -   `rotateTest`
+        -   `setupTicks`
+        -   `structureName`
+        -   `tag`
+    -   `register` function can now be called in early execution
+    -   `registerAsync` function can now be called in early execution
+
+## API - Molang
+
+-   Added `query.graphics_mode_is_any` to Molang which accepts any of the following parameters: `simple`, `fancy`, `deferred`, `raytraced`. These parameters are all graphics modes that are available in the settings menu.
+
+## Graphical
+
+-   Added a new version (`1.21.70`) for the lighting JSON schema in the Deferred Technical Preview. This new version adds support for controlling the intensity of sky light, which affects both the contribution of legacy sky lighting as well as sky reflections. See updated documentation on the Learning Portal for more details.
+    
+    -   This object snippet can be added to `lighting/global.json` under the `minecraft:lighting_settings` object to control the sky intensity
+
+    "sky": \{
+        "intensity": 1.0 // Float value between [0.1 - 1.0]
+    \}
+    
+
+-   Improved the quality of screen space reflections, specifically cases where holes would appear in reflections at certain angles in the Deferred Technical Preview.
+-   Fixed a bug with water surface rendering that caused specular highlights to be much lower than they should have been in the Deferred Technical Preview.
+
+## Stability and Performance
+
+-   Resolve crash when changing point light shadow settings under Deferred Graphical Settings

@@ -1,0 +1,576 @@
+**Posted:** 11 February 2025
+
+![21u6.jpg](https://feedback.minecraft.net/hc/article_attachments/34084607899021)
+
+Hold on tight, because this changelog is quite a pig deal! Not only do have we fixed a bunch of bugs, there are also several features available in the experimental toggle. Meet the two new pig variants trotting into the Overworld, make leaves fall from trees, and get a simpler recipe for the lodestone so you can find your way back home more easily. Just enable the Drop 1 2025 experimental toggle to test these out!
+
+Your thoughts on the game continue to shape new updates so please upvote and report any new bugs at [bugs.mojang.com](https://bugs.mojang.com/) and leave us your feedback at [feedback.minecraft.net](https://feedback.minecraft.net/).
+
+# Experimental Features
+
+-   There is a new experimental toggle for the next game drop update! You will need to enable it in order to test out these features that are in development. We would love to hear your thoughts on these updates, so please leave us your feedback at [aka.ms/mcgamedropfeedback](https://aka.ms/mcgamedropfeedback) and reports any bugs to [bugs.mojang.com](https://bugs.mojang.com/) !
+
+## Pig Variants
+
+-   Added two new Pig variants - Warm Pig and Cold Pig!
+-   These have their own own unique texture and geometry, but not a separate spawn egg
+-   These will spawn in different biomes, making the biomes feel more distinct from each other:
+
+### 'Cold Biomes'
+
+-   These Biomes now spawn the cold variants:
+    -   Old Growth Pine Taiga
+    -   Old Growth Spruce Taiga
+    -   Taiga
+    -   Snowy Taiga
+    -   Windswept Hills
+    -   Windswept Gravelly Hills
+    -   Windswept Forest
+
+### 'Warm Biomes'
+
+-   These Biomes now spawn the warm variants:
+    -   Savanna
+    -   Savanna Plateau
+    -   Windswept Savanna
+    -   Jungle
+    -   Sparse Jungle
+    -   Bamboo Jungle
+    -   Eroded Badlands
+    -   Wooded Badlands
+    -   Badlands
+
+### 'Temperate Biomes'
+
+-   These biomes spawn the same pigs as before. There is no change.
+    -   Forest
+    -   Flower Forest
+    -   Birch Forest
+    -   Old Growth Birch Forest
+    -   Dark Forest
+    -   Swamp
+
+## New Leaf Particles
+
+-   All Leaves blocks now emit falling leaf particles. These blocks are affected by this change:
+    
+    -   Oak Leaves
+    -   Jungle Leaves
+    -   Acacia Leaves
+    -   Dark Oak Leaves
+    -   Spruce Leaves
+    -   Mangrove Leaves
+    -   Birch Leaves
+    -   Azalea Leaves
+    -   Flowering Azalea Leaves
+-   Two blocks already emitted falling leaf particles before this update. They will continue to work like they did before:
+    
+    -   Cherry Leaves
+    -   Pale Oak Leaves
+
+## Lodestone Changes
+
+-   Lodestone is now crafted from 1 Iron Ingot surrounded by 8 Chiseled Stone Blocks
+-   The crafting recipe unlocks when the player obtains an Iron Ingot or a Lodestone.
+-   Lodestones can now be found as loot at Ruined Portals in the Overworld or Nether.
+
+# Features and Bug Fixes
+
+## Accessibility
+
+-   Added narration in the Realms plan picker screen informing the player they can navigate below the "buy" button to get more information about a given plan.
+
+## Achievements
+
+-   The Monster Hunter achievement can now be unlocked by destroying a Creaking Heart while it has a spawned Creaking
+
+## Audio
+
+-   Music volume now goes back to normal when exiting the game from a Pale Garden biome ([MCPE-188766](https://bugs.mojang.com/browse/MCPE-188766))
+
+## Biomes
+
+-   Pale Gardens now generate more frequently and are overall larger
+-   Woodland Mansions can now generate in Pale Gardens
+
+## Blocks
+
+-   Slightly improved the collision detection between moving blocks and mobs in some cases
+    
+-   Sculk Sensors now detect Resin Clumps being placed by the Creaking Heart ([MCPE-188260](https://bugs.mojang.com/browse/MCPE-188260))
+    
+-   Fixed various plant blocks rendering their faces differently to Java ([MCPE-40646](https://bugs.mojang.com/browse/MCPE-40646))
+    
+    -   All saplings
+    -   Short Grass
+    -   Dead Bush
+    -   Crimson Roots
+    -   Warped Roots
+    -   Poppy
+    -   Blue Orchid
+    -   Allium
+    -   Azure Bluet
+    -   All Tulips
+    -   Oxeye Daisy
+    -   Cornflower
+    -   Lily of the Valley
+    -   Dandelion
+    -   Red and Brown Mushrooms
+    -   Carrots
+    -   Wither Rose
+    -   Open and Closed Eyeblossom
+    -   Torchflower
+    -   Sweet Berry Bush
+    -   Lilac
+    -   Tall Grass
+    -   Lage Fern
+    -   Rose Bush
+    -   Peony
+-   Mangrove Leaves no longer display black pixels when held by Players with the "Fancy Leaves" option disabled ([MCPE-156469](https://bugs.mojang.com/browse/MCPE-156469))
+    
+-   Torchflowers, Pitcher Plants, Open Eyeblossoms and Closed Eyeblossoms now increase the probability of a nearby Sapling growing into a tree with a Beehive
+    
+-   Fixed a crash that could occur when teleporting back into a chunk where a block entity was destroyed ([MCPE-178461](https://bugs.mojang.com/browse/MCPE-178461))
+    
+-   Lily Pads no longer flicker when seen from afar ([MCPE-91452](https://bugs.mojang.com/browse/MCPE-91452))
+    
+-   Sunflowers no longer flicker when seen from afar ([MCPE-122695](https://bugs.mojang.com/browse/MCPE-122695)) ([MCPE-102412](https://bugs.mojang.com/browse/MCPE-102412))
+    
+-   Fence Gate blocks use state "minecraft:cardinal\_direction" instead of "minecraft:direction". Uses string values ("north, south, east, west")
+    
+-   Tall Grass Blocks that are placed when using Bone Meal on Moss Blocks or Pale Moss Blocks no longer render only their bottom half ([MCPE-188789](https://bugs.mojang.com/browse/MCPE-188789))
+    
+-   Crafter with no BlockActor data no longer produce a crash ([MCPE-188674](https://bugs.mojang.com/browse/MCPE-188674))
+    
+-   Bone Meal can no longer be used on single Dark Oak or Pale Oak Saplings ([MCPE-187564](https://bugs.mojang.com/browse/MCPE-187564))
+    
+-   The map color of Pale Oak Leaves and Pale Oak Sapling has been updated to better match their actual in-game color
+    
+-   The Creaking Heart now has an additional state for when it is in a valid configuration but unable to spawn a Creaking due to it being daytime
+    
+-   Eyeblossoms now open when the moon starts rising, and close when the moon has completely set
+    
+-   Big Dripleaf blocks can no longer be placed on top of Pale Moss blocks
+    
+-   Fixed a crash that could occur when destroying a Creaking Heart
+    
+-   Fixed rendering issue with grass block under monster spawner block ([MCPE-188809](https://bugs.mojang.com/browse/MCPE-188809))
+    
+-   A Player can now place blocks on Iron Doors and Iron Trapdoors without having to sneak ([MCPE-19129](https://bugs.mojang.com/browse/MCPE-19129))
+    
+-   Open and Closed Eyeblossoms no longer appear in the Creative Inventory for worlds that have not been updated to 1.21.50 ([MCPE-189030](https://bugs.mojang.com/browse/MCPE-189030))
+    
+-   Fixed trigger rate of Redstone powered Droppers and Dispensers ([MCPE-189895](https://bugs.mojang.com/browse/MCPE-189895))
+    
+-   Water placed on Magma or Soul Sand will now flow again ([MCPE-189889](https://bugs.mojang.com/browse/MCPE-189889))
+    
+
+### Copper bulb
+
+-   Updated the Exposed Copper Bulb's Lit Powered texture ([MCPE-177105](https://bugs.mojang.com/browse/MCPE-177105))
+
+## Gameplay
+
+-   The second passenger of a boat will no longer have large camera twitches when rotating toward the west direction.
+    
+-   Fixed a bug where mobs would teleport to a height of 32767 when going to the Overworld from The End ([MCPE-157125](https://bugs.mojang.com/browse/MCPE-157125))
+    
+-   Fixed issue where players who entered a world while crawling would sometimes take suffocation damage ([MCPE-185676](https://bugs.mojang.com/browse/MCPE-185676))
+    
+-   Players no longer float above the bed while sleeping
+    
+
+#### Pause Feature
+
+-   The pause functionality will only be available in Beta and Preview for the time being. We know you're super excited to be able to pause in Bedrock. However, we need a bit more time to perfect this feature before we can release it to you. Thanks for your patience and understanding as we work to bring you the best possible experience.
+    -   We'd love to know what you think of this feature, so please continue to test it in Beta and Preview and send us your feedback at [aka.ms/mcbedrockpausefeedback](https://aka.ms/mcbedrockpausefeedback)
+
+## General
+
+-   The world spawn point algorithm has been improved, so that locations with good biomes but far from the world's origin are preferred over really bad locations but closer to the origin ([MCPE-120237](https://bugs.mojang.com/browse/MCPE-120237))
+    
+-   Filter Profanity Toggle. We are introducing a new "Filter Profanity" setting on Windows. When on, all text content including chat will perform as it always has; profanities will be filtered for you and others. When off, most profanities, with the exception of some potentially harmful content, will be unfiltered for you and all others who also have the toggle off. The setting is default on for all players and cannot be changed for child accounts or players not signed in. You can toggle it off in Settings under "General".
+    
+-   Pistons, Sticky Pistons, Droppers, and Dispensers now show up in the recipe book again when crafting
+    
+
+## Graphical
+
+-   The dark edges around the screen at low Y coordinates now fade in gradually rather than appear suddenly ([MCPE-121983](https://bugs.mojang.com/browse/MCPE-121983))
+    
+-   Added support for 'minecraft:foliage\_appearance' and 'minecraft:grass\_appearance' components in client\_biome JSON files to control color or palette selection for foliage and grass rendering
+    
+
+## Items
+
+-   Open Bundle textures updated such that there is no longer a missing string pixel ([MCPE-188355](https://bugs.mojang.com/browse/MCPE-188355))
+    
+-   Resin Bricks are no longer found in Woodland Mansion chests ([MCPE-188234](https://bugs.mojang.com/browse/MCPE-188234))
+    
+-   The XP rewarded for smelting Resin Clump into Resin Bricks has been reduced from 0.3 to 0.1
+    
+
+## Loot Tables
+
+-   Entity loot tables with a spawn egg that omits the actor ID will no longer drop an invalid spawn egg when destroyed via the minecraft:instant\_despawn component.
+
+## Mobs
+
+-   Creakings now crumble if their Creaking Heart is forcibly deactivated through commands
+    
+-   Creakings are now persistent like any other hostile mob, meaning they won't disappear on save/load
+    
+-   Creaking no longer plays ambient sounds when aggravated, only when idle
+    
+-   A Creaking's eyes now render even when the Creaking is invisible, provided it has a target ([MCPE-188259](https://bugs.mojang.com/browse/MCPE-188259))
+    
+-   Creakings spawned from Creaking Hearts now always persist upon reloading the world ([MCPE-188352](https://bugs.mojang.com/browse/MCPE-188352))
+    
+-   Creaking's eyes now properly flicker when the Creaking Heart which spawned it is destroyed
+    
+-   Creakings now emit vibrations when swaying after being hit
+    
+-   Creakings now spawn on Snow Layers ([MCPE-187368](https://bugs.mojang.com/browse/MCPE-187368))
+    
+-   Creakings spawned by a Creaking Heart can now be nametagged, preventing them from despawning during the day
+    
+    -   Destroying their Creaking Heart will still cause them to crumble
+    -   Hitting a nametagged Creaking during the day will result in a particle trail, but no Resin
+-   The Creaking can now spawn when the moon starts rising, and crumbles when the moon has completely set
+    
+-   Fixed issue preventing Squid from rotating to match their movement
+    
+-   Fixed an issue to prevent Enderman from teleporting when riding Boats and Minecarts ([MCPE-31761](https://bugs.mojang.com/browse/MCPE-31761))
+    
+
+### Magma Cube
+
+-   The new Magma Cube model and texture are now only used by Resource Packs that explicitly override them, as they have been renamed to differentiate them from the original assets ([MCPE-188547](https://bugs.mojang.com/browse/MCPE-188547))
+    
+    -   This change is retroactive, starting from version 1.21.50
+
+### Breeding
+
+-   Breeding Sheep with compatible wool colors now gives the Baby Sheep a mixture of the colors ([MCPE-19862](https://bugs.mojang.com/browse/MCPE-19862))
+    
+-   Breeding Wolves now produce offspring with one the parents' collar colors or a mixture of the parents' collar colors if the colors are compatible
+    
+-   Breeding Cats with compatible collar colors now gives the Baby Cat a collar with a mixture of the colors ([MCPE-188187](https://bugs.mojang.com/browse/MCPE-188187))
+    
+
+## Realms
+
+-   Player profile pics in Realms Stories will now load in more reliably
+    
+-   Fixed an issue where users could sometimes not rejoin a Realm after using an invite code
+    
+-   On Play Screen Friends Tab hide a Joinable Friends world if it is a realm world and not a joinable Realm
+    
+-   Fixed an issue where player permissions reverted to the previous state after leaving the Manage Realm tab.
+    
+-   Fixed issue where game mode appears as Unknown on the Realms Tab of the new play screen even if the realm has a world with a valid game mode
+    
+-   From new Play screen users can now access Realms Stories of Realms they are a part of even when multiplayer access is disabled in the account's privacy settings
+    
+-   We recently shipped a couple of service changes behind the scenes (prior to this client update). You may have already experienced them since they have been live for a few weeks now:
+    
+    -   Persistent game settings: Changes using /gamerule do not persist when a world is unloaded/reloaded ([REALMS-10030](https://bugs.mojang.com/browse/REALMS-10030))
+        
+        -   We now properly persist game settings updates made in-game via slash commands.
+            
+        -   Note that there is a bug in the Realms Edit World and in-game pause menu settings screens which causes settings that were adjusted via in-game slash commands to not display properly and also causes changes made in those screens to not save properly. If that happens to you, just run the in-game slash commands again.
+            
+        -   We are working on a resolution for the UI bug and expect to have it fixed soon.
+            
+    -   Server hosting region allocation: We are working behind the scenes to improve how Realms are assigned to data center regions. Currently we are only testing these improvements for a subset of players to make sure there are no negative side effects. So far, the change has dramatically reduced network latency, improving the connection of these players to their Realms. We will be sharing a lot more information about this soon when we roll the change out to all Realms. Keep your eyes open!
+        
+
+## Recipes
+
+-   Added content error when parsing shaped recipes if none of the keys can be mapped to any of the pattern characters, this fixes a crash when opening the crafting screen with such malformed recipes ([MCPE-178520](https://bugs.mojang.com/browse/MCPE-178520))
+
+## User Interface
+
+-   Disabling Realms Stories badge notifications via the Stories Settings screen now hides badges in the Story Feed as well as the Play Screen
+    
+-   Touch Controls: The empty space in the center of the D-pad no longer acts as the forward button when flying or swimming ([MCPE-183944](https://bugs.mojang.com/browse/MCPE-183944))
+    
+-   Fixed Players needed to skip night slider on the Edit World screen to be able to go to 0%
+    
+-   Changed wording for lowest number required for player sleeping to skip the night.
+    
+-   In response to player feedback signaling confusion around the meaning of the potion bottle, we've updated the location, labeling and icon usage for Achievements across multiple screens.
+    
+-   For the achievement % counter, a new book asset replaced the potion bottle and supports multi-tier visual states to celebrate progress, including a delightful animation for 100% completion.
+    
+-   Consolidated the fancy graphics toggle and ray tracing toggle into a single Graphics Mode dropdown. Fancy and Ray Tracing mode are equivalent to having the previous Fancy and Ray Tracing toggles enabled, and the Simple mode is equivalent to having neither of the previous toggles enabled.
+    
+-   Touch controls: It is now possible to place blocks on top of containers when flying downwards, like on PC. ([MCPE-176407](https://bugs.mojang.com/browse/MCPE-176407))
+    
+-   Inbox messages with long content are now scrollable with gamepad immediately after entering the screen
+    
+-   Fixed "An unknown error has occurred" when downloading resource packs under specific circumstances.
+    
+-   Touch controls: Touch button for Pick Block is now available for both Survival and Creative
+    
+-   \[PlayStation®5\] 'Enable Screen Reader' accessibility setting is now used to initialize Text-to-Speech during first launch
+    
+-   Fixed a bug where the game could soft lock in certain scenarios when it was suspended right before the player dying
+    
+-   Changed wording for enabling/disabling player's sleep skipping the night to "Skip night by sleeping" from "Beds work"
+    
+-   Add additional debug info regarding Realms features in the general settings screen
+    
+-   Updated the text on the new bed screen when sleeping to skip the night is disabled
+    
+-   Fixed an issue which prevented the user from exiting Edit World when choosing Play on Realm button and cancelling the Sign-in process
+    
+-   It is now possible to scroll through the friends tab with text-to-speech enabled and cross-play disabled
+    
+-   The achievements disabled crossed bottle icon is now a blocked icon.
+    
+-   Fixed a bug where incorrect text would be shown on the bed screen ([MCPE-189823](https://bugs.mojang.com/browse/MCPE-189823))
+    
+-   Added support for input glyph replacement for signs, signed books, and NPC dialogs. For example, using input string ":\_input\_key.jump:" will be replaced with "JUMP" when using keyboard, or an emoji in case of using a gamepad.
+    
+-   Added full support and fixes for some input glyph replacement strings. This is to make them work across all the platforms (PC, Consoles, Mobile). These are the values fixed:
+    
+    -   :\_input\_key.forward:
+    -   :\_input\_key.back:
+    -   :\_input\_key.left:
+    -   :\_input\_key.right:
+    -   :\_input\_key.inventory:
+    -   :\_input\_key.use:
+    -   :\_input\_key.chat:
+    -   :\_input\_key.attack:
+    -   :\_input\_key.sprint:
+-   The icons for these strings are updated in diverse areas of the game that support contextual glyphs, such as: signs, signed books, tags, chat, commands.
+    
+-   Also, as improvement, replacement of these values depends on the interaction/control mode when using touch as input mode. These modes are Joystick & tap to interact, D-Pad & tap to interact, and Joystick & aim crosshair.
+    
+
+### Play Screen
+
+-   We've introduced a brand new Play Screen:
+    -   Worlds tab - access your saved local and LAN worlds.
+    -   Realms tab - easily jump into Realms you own or have joined.
+    -   Servers tab - join multiplayer featured servers from our partners, and add or access your custom servers.
+    -   Create from template - create from, and rate, your owned templates, discover Minecraft creator made content.
+    -   Friends - connect with your Minecraft friends (they now live in the top right hand corner of the screen)
+
+These updates are being rolled out incrementally to all platforms except Nintendo Switch, so they might not be available right away.
+
+## Vanilla Parity
+
+-   Wheat color is now yellow on a Map instead of green ([MCPE-148982](https://bugs.mojang.com/browse/MCPE-148982))
+    
+    -   Please note - there is a known issue with this change that means the colour is shown as yellow regardless of growth stage
+-   Shears can now be used on Cave Vines, Kelp, Twisting Vines, and Weeping Vines to prevent further growth ([MCPE-141497](https://bugs.mojang.com/browse/MCPE-141497))
+    
+
+### Biomes
+
+-   Zombie Villagers that spawn in the Mangrove Swamp biome now have the correct skin applied ([MCPE-158736](https://bugs.mojang.com/browse/MCPE-158736))
+    
+-   Monsters that normally spawn in the Overworld (Zombies, Endermen, Spiders, Creepers, etc., with the exception of Skeletons) can now spawn in the Mangrove Swamp biome [MCPE-170183](https://bugs.mojang.com/browse/MCPE-170183)
+    
+-   Eyeblossoms and Pale Moss Carpets no longer generate inside Pale Oak Tree trunks
+    
+-   The vegetation of many Overworld biomes has been updated to more closely match Java Edition and align with the intended look and feel of Minecraft:
+    
+    -   Overworld (applies to all biomes)
+        
+        -   Pumpkins now generate in larger patches
+        -   Dandelions are now alternated with Poppies when generating in flower patches
+        -   Sugar Canes no longer generate through other blocks
+    -   Plains
+        
+        -   Short Grass now generates more frequently and in larger amounts ([MCPE-141364](https://bugs.mojang.com/browse/MCPE-141364))
+            
+        -   Tall Grass now generates less frequently but in larger patches
+            
+        -   Flower patches now contain mixed flowers, are larger and generate more frequently
+            
+    -   Sunflower Plains
+        
+        -   Sunflowers now generate in more cohesive patches
+    -   Mushroom Fields
+        
+        -   Mushrooms now generate in larger patches
+    -   Savanna
+        
+        -   Short Grass now generates more frequently and in larger amounts
+        -   Tall Grass now generates less frequently but in larger patches
+    -   Flower Forest
+        
+        -   Trees are now denser
+        -   Flowers now generate in more cohesive patches
+    -   Taiga
+        
+        -   Small Ferns now generate more frequently
+        -   Large Ferns now generate less frequently
+        -   Sweet Berry Bushes now generate in larger patches
+    -   Old Growth Spruce Taiga
+        
+        -   Mushrooms now generate in larger and more cohesive patches
+        -   Ferns now generate more frequently
+        -   Sweet Berry Bushes patches now generate ([MCPE-152452](https://bugs.mojang.com/browse/MCPE-152452))
+    -   Old Growth Pine Taiga
+        
+        -   Mushrooms now generate in larger and more cohesive patches
+        -   Ferns now generate more frequently
+        -   Sweet Berry Bushes patches now generate ([MCPE-152452](https://bugs.mojang.com/browse/MCPE-152452))
+    -   Jungle
+        
+        -   Trees are now denser
+        -   Big Jungle Trees now generate more frequently
+        -   Jungle Bushes are now larger
+        -   Melon patches now generate more frequently
+    -   Bamboo Jungle
+        
+        -   Bamboo now generates in larger and denser patches
+        -   The width of Bamboo is now consistent across the entire plant
+        -   Trees are now denser
+        -   Big Jungle Trees now generate more frequently
+        -   Jungle Bushes are now larger
+    -   Sparse Jungle
+        
+        -   Bamboo no longer generates
+        -   Ferns and Short Grass now generate more frequently
+        -   Jungle Bushes are now larger
+        -   Melon patches now generate more frequently
+    -   Meadow ([MCPE-139903](https://bugs.mojang.com/browse/MCPE-139903)) ([MCPE-141447](https://bugs.mojang.com/browse/MCPE-141447))
+        
+        -   Short Grass now generates more frequently
+        -   Tall Grass now generates more frequently
+        -   Flowers now generate in patches instead of being homogeneously spread across the biome
+    -   Swamp
+        
+        -   Blue Orchids now generate more frequently and in larger patches
+        -   Swamp Oaks now generate slightly more frequently
+        -   Swamp Oaks no longer generate in direct contact with the ground
+        -   Lily Pads now generate more frequently
+    -   Mangrove Swamp
+        
+        -   Mangroves are now sparser
+            
+        -   Mangroves now generate over water ([MCPE-153748](https://bugs.mojang.com/browse/MCPE-153748))
+            
+        -   Lily Pads now generate more frequently
+            
+    -   Badlands
+        
+        -   Dead Bushes now generate more frequently
+    -   Desert
+        
+        -   Dead Bushes now generate more frequently
+    -   Oceans (except Frozen Ocean)
+        
+        -   Kelp now generates more frequently and in denser patches
+
+\> **Developer's Note:** _While the exact placement of features like tall grass and flowers may vary between platforms, the overall distribution of these features should remain consistent across larger areas, even if specific chunks differ slightly._
+
+-   Seagrass now generates more frequently, with the amount of tall Seagrass varying by biome ([MCPE-188870](https://bugs.mojang.com/browse/MCPE-188870))
+    
+-   Kelp can now generate at any depth, leading to increased overall generation ([MCPE-188870](https://bugs.mojang.com/browse/MCPE-188870))
+    
+-   Mangrove Swamp downfall value now matches that of regular Swamp ([MCPE-156495](https://bugs.mojang.com/browse/MCPE-156495))
+    
+-   Mangrove Swamp underwater fog now gradually fades out after entering water, as it does in other biomes ([MCPE-158256](https://bugs.mojang.com/browse/MCPE-158256))
+    
+-   Fossils now generate under Mangrove Swamps, similar to regular Swamps ([MCPE-175680](https://bugs.mojang.com/browse/MCPE-175680))
+    
+-   Jungle Bushes now use Oak Leaves for foliage, aligning with the intended game aesthetic, despite their Jungle Log trunks ([MCPE-164963](https://bugs.mojang.com/browse/MCPE-164963))
+    
+
+### Blocks
+
+-   The Lily Pad Block's hitbox has been updated to be in parity with Java ([MCPE-60826](https://bugs.mojang.com/browse/MCPE-60826))
+    
+-   The Sugar Cane Block's hitbox has been updated to be in parity with Java ([MCPE-60827](https://bugs.mojang.com/browse/MCPE-60827))
+    
+-   TnT Blocks no longer flash with a solid white color when exploding ([MCPE-51809](https://bugs.mojang.com/browse/MCPE-51809))
+    
+-   Candles and Candle Cake Blocks now play ambient sounds properly ([MCPE-130585](https://bugs.mojang.com/browse/MCPE-130585))
+    
+-   The Pale Oak Leaves no longer appear lighter than on Java ([MCPE-188217](https://bugs.mojang.com/browse/MCPE-188217))
+    
+-   Renamed Banners no longer lose their custom names when broken, or when washed in cauldrons ([MCPE-36429](https://bugs.mojang.com/browse/MCPE-36429))
+    
+-   Twisting Vines and Weeping Vines now have an increased chance of dropping as items when broken with Fortune enchanted tools, including a 100% chance when using Fortune III ([MCPE-91033](https://bugs.mojang.com/browse/MCPE-91033))
+    
+-   Dispensers can now place Shulker Boxes under water ([MCPE-76004](https://bugs.mojang.com/browse/MCPE-76004))
+    
+-   Sniffer Egg block now only provides center support on top and bottom faces ([MCPE-169520](https://bugs.mojang.com/browse/MCPE-169520))
+    
+-   Water and Lava no longer remains in the world when placing a Water or Lava Bucket against a Cave Vine with Glow Berries
+    
+-   Sniffer Egg block no longer provides side support to any block
+    
+-   Changed the player's hurt sound when walking on a Magma Block to use the fire hurt sound instead of the default sound ([MCPE-125864](https://bugs.mojang.com/browse/MCPE-125864))
+    
+
+### Items
+
+-   Suspicious Stews crafted with Tulips now apply the Weakness Effect for 7 seconds when consumed, matching Java ([MCPE-188040](https://bugs.mojang.com/browse/MCPE-188040))
+    
+-   Suspicious Stews with the Weakness Effect acquired from Shipwrecks and trading with Villagers now apply the Weakness Effect for 7 seconds when consumed.
+    
+
+### Mobs
+
+-   Horses, Skeleton Horses, Zombie Horses, Donkeys, and Mules now play their ambient sounds as intended ([MCPE-178313](https://bugs.mojang.com/browse/MCPE-178313))
+    
+-   Foxes now periodically play their "mad" sound while defending a player
+    
+-   Baby Drowneds now move with the same speed as their Zombie and Zombie Villager counterparts ([MCPE-34574](https://bugs.mojang.com/browse/MCPE-34574))
+    
+-   Gold Swords dropped by Piglins and Zombified Piglins now have randomized durability to match Java ([MCPE-75292](https://bugs.mojang.com/browse/MCPE-75292))
+    
+-   Axes dropped by Piglin Brutes now have randomized durability to match Java ([MCPE-95543](https://bugs.mojang.com/browse/MCPE-95543))
+    
+-   Creepers no longer flash with a solid white color when exploding ([MCPE-51809](https://bugs.mojang.com/browse/MCPE-51809))
+    
+-   Neutral Mobs no longer become aggressive when Players or other Mobs throw Lingering Potions with positive effects on them ([MCPE-105343](https://bugs.mojang.com/browse/MCPE-105343))
+    
+-   Endermen now correctly have a delay before they become hostile when you look at them ([MCPE-23544](https://bugs.mojang.com/browse/MCPE-23544))
+    
+
+### Sounds
+
+-   Nether Brick Slab, Red Nether Brick Slab, Nether Brick Wall, Red Nether Brick Wall, Cracked Nether Bricks and Chiseled Nether Bricks now have the same sound as Nether Bricks, matching Java Edition ([MCPE-74879](https://bugs.mojang.com/browse/MCPE-74879))
+    
+-   Iron Bars, Iron Blocks, Iron Trapdoors, Iron Doors and Heavy Weighted Pressure Plates now make iron sounds when you mine, break, place and walk on them
+    
+-   Added unique sound effects for Vines, Glow Berry Vines, Weeping Vines, and Twisting Vines ([MCPE-188001](https://bugs.mojang.com/browse/MCPE-188001))
+    
+-   Wood stripping now plays a wood stripping sound instead of a wood step sound ([MCPE-106552](https://bugs.mojang.com/browse/MCPE-106552))
+    
+-   Creating a Grass Path now makes a shovel flattening sound instead of a grass step sound ([MCPE-114390](https://bugs.mojang.com/browse/MCPE-114390))
+    
+
+### Spawner
+
+-   Zombie Villagers can no longer randomly spawn from a Zombie Mob Spawner, matching Java Edition ([MCPE-91436](https://bugs.mojang.com/browse/MCPE-91436))
+
+## World Generation
+
+-   Creaking Hearts now generate more often in naturally generated Pale Oaks ([MCPE-187337](https://bugs.mojang.com/browse/MCPE-187337))
+    
+-   Ravines now generate more often
+    
+-   Ravines can once again reach the surface ([MCPE-121708](https://bugs.mojang.com/browse/MCPE-121708))
+    
+-   Ravines can once again generate on the ocean floor
+    
+-   Ravines now completely carve through Copper Ore veins and most other underground blocks ([MCPE-181410](https://bugs.mojang.com/browse/MCPE-181410))
+    
+-   Ravines now properly interact with aquifers, filling with water instead of generating as disconnected segments
+    
+-   Fixed issue that caused new terrain generation to not match already saved chunks in some Biomes ([MCPE-175332](https://bugs.mojang.com/browse/MCPE-175332))
+    
+
+## Structures
+
+-   Some Savanna Villages no longer have a hole where a Dirt Path block should be
+

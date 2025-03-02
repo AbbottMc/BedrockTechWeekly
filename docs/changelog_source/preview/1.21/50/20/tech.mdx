@@ -1,0 +1,161 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+### General
+
+-   Fixed issue that caused the export as template functionality to generate invalid mctemplate UUIDs
+
+## Add-Ons and Script Engine
+
+-   The \[Beta\] fields in the "minecraft:looked\_at" and "minecraft:home" entity components are no longer marked as \[Beta\] and no longer require "use\_beta\_features" to be specified in the root JSON object
+
+## Blocks
+
+-   Updated `minecraft:destructible_by_mining` component, new field `item_specific_speeds` no longer experimental.
+    
+-   Removed the following vanilla block tags from experimental
+    
+    -   "minecraft:diamond\_tier\_destructible"
+    -   "minecraft:iron\_tier\_destructible"
+    -   "minecraft:is\_hatchet\_item\_destructible"
+    -   "minecraft:is\_hoe\_item\_destructible"
+    -   "minecraft:is\_mace\_item\_destructible"
+    -   "minecraft:is\_pickaxe\_item\_destructible"
+    -   "minecraft:is\_shears\_item\_destructible"
+    -   "minecraft:is\_shovel\_item\_destructible"
+    -   "minecraft:is\_sword\_item\_destructible"
+    -   "minecraft:netherite\_tier\_destructible"
+    -   "minecraft:stone\_tier\_destructible"
+-   Renamed vanilla block tag "minecraft:is\_hatchet\_item\_destructible" to "minecraft:is\_axe\_item\_destructible".
+    
+-   Removed the following vanilla block tags.
+    
+    -   "minecraft:is\_digger\_item\_destructible"
+    -   "minecraft:is\_tool\_item\_destructible"
+    -   "minecraft:gold\_tier\_destructible"
+    -   "minecraft:wood\_tier\_destructible"
+
+## Editor
+
+-   Selection now has a freehand select that uses brushes to paint
+    
+-   Updated general brush functionality:
+    
+    -   Brush shapes are visualized as grey wireframes, and show only affected blocks in yellow
+    -   Cusor Control / Mouse Mode is now using a common control which is shared across extensions
+    -   Brush Selection, Masking and Brush Properties is now using a custom control which is shared across extensions
+    -   Brush Painting now visualizes only affected blocks
+-   Added `addToggleGroup` function to `IPropertyPane` API to create toggle groups with selectable icon buttons
+    
+-   Added support for Brush Shape Offsets
+    
+-   Added a new settings screen in `View \> View Settings` to configure certain view related settings (like invisible block visibility and chunk boundaries)
+    
+-   Added mouse button event data to the widget state change event so that server scripts can track mouse button events (press, release, drag) and the state of modifier keys (shift, ctrl)
+    
+-   Added an optional `infoTooltip: TooltipInteractiveContent` property to `IRootPropertyPane` API, displayed as an icon in the drawer header. Interactive tooltips remain active on hover and support links and paragraphs.
+    
+-   Added `serialize(obj)` and `deserialize(string)` functions. These act like JSON.stringify/JSON.parse but will use custom serializers/deserializers registered with `registerSerializationForType`
+    
+    -   `CompoundBlockVolume` and `BlockVolume` are able to be serialized and deserialized with these functions
+-   Added `registerSerializationForType\<T\>(constructor, name, serializer, deserializer)` which registers any type with custom serialization/deserialization for `serialize` and `deserialize`
+    
+-   Updated Block Masks to work when empty (always match)
+    
+-   Added 'cancel' property to endPainting()
+    
+-   Added control buttons next to the hotbar to switch the active palette and manage other palettes
+    
+-   Updated Selection Volume and Cursor colors to default to the colors of those keys in the currrently-selected theme. Changed Client Widget X, Y, and Z arrows to always be the colors of those keys in the currently-selected theme. Changed deleted fillColor and outlineColor in CursorProperties so that causes the Cursor colors to return back to the colors of those keys in the currently-selected theme.
+    
+-   Fixed issues with selection being cleared on tool focus change
+    
+
+## Entity Components
+
+-   Added new component 'minecraft:can\_attack\_ghast'. When added to an entity, it enables that entity to target and attack Ghasts.
+    
+-   'behavior.summon\_entity' now lets creators specify an event to be invoked on the summoned entity immediately after summon ([MCPE-44454](https://bugs.mojang.com/browse/MCPE-44454))
+    
+
+## Entity Event Responses
+
+-   Added the "play\_sound" entity event response, which allows the owner entity to emit sounds
+    
+    -   The "sound" field specifies the sound event to play
+    -   Sounds are played at the owner entity's position
+
+## General
+
+-   Creating a new world from a template that supports random seeds will now clear any stored spawn position from the level data
+
+## Network Protocol
+
+-   New actor type added: Creaking (146)
+-   New level events added: ParticleCreakingHeartTrail, ParticleCreakingTeardown
+-   New level sound events added: ImitateCreaking, CreakingHeartTrail, CreakingHeartSpawn, Activate, Deactivate, Freeze, Unfreeze
+
+## Realms
+
+-   Fixed soft-lock UI bug when an expired Realm was deleted
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Added "canUseBlockAsIcon" bool to the "minecraft:block\_placer" item component network data to fix bug where clients did not render the block item correctly.
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Fixed rendering of Wardens in the Deferred Technical Preview. ([MCPE-180140](https://bugs.mojang.com/browse/MCPE-180140))
+    
+-   Fixed TextureSets for multi-textured mobs, such as llamas in the Deferred Technical Preview.
+    
+-   Fixed the orientation of normal maps for mobs on Android in the Deferred Technical Preview.
+    
+-   End Portals now cast shadows in the Deferred Technical Preview.
+    
+-   Improved the visibility of reflective surfaces when underground in the Deferred Technical Preview.
+    
+-   Slightly reduced the intensity of the wrapping effect of sub surface scattering in the Deferred Technical Preview.
+    
+
+## Molang
+
+-   Added `query.last_input_mode_is_any`. It takes one or more arguments ('keyboard\_and\_mouse', 'touch', 'gamepad', or 'motion\_controller'). If the last input used is any of the specified string values, returns 1.0. Otherwise returns 0.0. Available on the Client (Resource Packs) only. Added `query.touch_only_affects_hotbar`. It returns 1.0 if the touch input only affects the touchbar, otherwise returns 0.0. Available on the Client (Resource Packs) only.
+
+## Scripting
+
+-   Added enum `InputMode`. export enum InputMode \{ Gamepad = 'Gamepad', KeyboardAndMouse = 'KeyboardAndMouse', MotionController = 'MotionController', Touch = 'Touch', Undetermined = 'Undetermined', \}
+-   Added class `InputInfo`.
+    -   Field `touchOnlyAffectsHotbar`. Whether the player touch input only affects the touchbar or not.
+    -   Field `lastInputModeUsed`. The last input mode used by the player.
+    -   Added field `inputInfo`.
+-   Added class `PlayerInputModeChangeAfterEvent`.
+    -   Field `newInputModeUsed`, the new input mode used by the player.
+    -   Field `player`, the player that had the input mode change.
+    -   Field `previousInputModeUsed`, the previous input mode used by the player.
+-   Added class `PlayerInputModeChangeAfterEventSignal`.
+
+## User Interface
+
+-   Toggle renderer is now a bindable action under Keyboard and Mouse settings menu.
+
+## Camera
+
+-   Added 'minecraft:fixed\_boom' preset to the 'Creator Cameras: New Third Person Presets' experimental toggle

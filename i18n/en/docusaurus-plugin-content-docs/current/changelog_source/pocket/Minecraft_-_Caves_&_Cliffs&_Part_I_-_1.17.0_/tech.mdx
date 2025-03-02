@@ -1,0 +1,78 @@
+import Switcher from '../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.17 are available for download with new resources, behaviors, and documentation
+    -   Resource Pack Template: [aka.ms/ResourcePackTemplate](https://aka.ms/ResourcePackTemplate)
+    -   Behavior Pack Template (Includes documentation): [aka.ms/BehaviorPackTemplate](https://aka.ms/BehaviorPackTemplate)
+
+## **General**
+
+-   Added two new variables to the 'biomes\_client.json' file: "remove\_all\_prior\_fog" and "inherit\_from\_prior\_fog", which control fog merging and/or inheritance
+-   "remove\_all\_prior\_fog", when true, will clear all previous fog definitions stored on the stack, making the current pack the new "starting point" for fogs
+-   "inherit\_from\_prior\_fog", when true, will merge a biome's fog definition with matching biomes on the stack then create a new merged definition for it
+-   "transparentattachable" tag should only affect rendering in first person camera perspective
+-   Added a MoLang query to get default bone pivots ([MCPE-116741](https://bugs.mojang.com/browse/MCPE-116741))
+-   Updated MoLang query to return normalized item use time remaining based off given parameters ([MCPE-116737](https://bugs.mojang.com/browse/MCPE-116737))
+-   Fixed various cases when ray tracing textures would not be reloaded (resolution switching, upscaling mode switching, ray tracing on/off toggling) ([MCPE-124562](https://bugs.mojang.com/browse/MCPE-124562))
+-   Fixed Enchanted Bow's textures being too dark ([MCPE-119701](https://bugs.mojang.com/browse/MCPE-119701))
+
+## **Actors** 
+
+-   Catmull-Rom animations will no longer glitch if the time for a keyframe matches its value
+-   All functions run using the '/schedule' command now run from the origin they are supposed to, instead of from the server
+-   Added a new field "transform\_to\_item" to the "minecraft:ageable" component. If the field is filled with an item name, the item will be given back when any of "feed\_items" are used. Similar to "transform\_to\_item" in the "minecraft:breedable" component
+-   Added a new optional flag "use\_simplified\_breeding" to "minecraft:genetics" component. When this flag is set to true, the offspring never inherits hidden alleles of parents as main alleles and main as hidden. This allows to implement simple breeding logic easier
+
+## **Other Fixes** 
+
+-   Replaced "Whitelist" language use to "AllowList". Dedicated server command "whitelist" changed to "allowlist". Dedicated server "whitelist.json" file changed to "allowlist.json" file. JSON format remains the same. Modified instructions are found in bedrock\_server\_how\_to.html
+-   Fixed 'query.is\_in\_ui' so that it is available to use when a data-driven mob is rendering in the UI ('query.is\_in\_ui' returns true when the mob is rendering in the UI, such as in the inventory window)
+-   Fixed a crash that could occur when an entity with a scoreboard value was removed from the world
+-   Fixed a bug with the summonable property of overridden Vanilla mobs pre-JSON version 1.8.0, which caused Bees to not be summonable ([MCPE-58557](https://bugs.mojang.com/browse/MCPE-58557))
+-   The "ImpactDamageSubcomponent" once again only prevents damage from being dealt to fire immune mobs if the 'catchFire' field is true and the projectile is on fire
+-   The "has\_equipment" filter now properly evaluates custom entity spawn eggs
+
+## **Volume Driven Fog (Experimental)**
+
+-   Create volumes in your world: simply create a "volumes" folder in a saved world and put json files in there - one json file per volume. More information can be found in the Behavior Pack documentation
+-   Can be enabled using the "Upcoming Creator Features" experimental feature toggle
+-   Currently, you can attach a fog - Minecraft or your own custom fog - to a volume. When the player enters the volume, the fog will take effect
+-   Added AddVolumeEntityPacket that contains information of a volume entity including its net ID and NBT containing information about the volume's definition and components, which will be added to the client's registry
+-   Added RemoveVolumeEntityPacket that contains a volume entity's net ID to remove it from the client's registry
+
+## **GameTest Framework (Experimental)**
+
+-   Renamed '/gametest runall' to '/gametest runset'
+-   The default value for the tag parameter is now "suite:default"
+-   Added Dimension class
+-   Added World.getDimension
+-   Updated the GameTest Framework interface
+    -   assertContainerContains - ItemIdentifier parameter changed to ItemStack
+    -   assertItemEntityNotPresent and assertItemEntityPresent APIs - ItemStack parameter changed to ItemType 
+    -   assertEntityNotTouching(entityIdentifier: string, position : Location) - Asserts that there is no entity of the given type at the given position
+    -   assertEntityTouching(entityIdentifier: string, position : Location) - Asserts that there is an entity of the given type at the given position
+    -   assertItemEntityCountIs(itemType : ItemType, position : BlockLocation, searchDistance : number, count : number) - Asserts that the entity item count in the given search area matches the expected count
+    -   pulseRedstone(position : BlockLocation, duration : number) - Creates a Redstone block at the given position and destroys it after "duration" ticks
+    -   function assertEntityPresentInArea(entityIdentifier : string) - Throws an Error if an entity matching the given identifier does not exist in the test region
+    -   function print(text : string) - Prints the given text to the chat
+    -   function assertEntityInstancePresent(entity : Entity, position : BlockLocation) - Throws an Error if the given entity is not present in the given block location
+    -   \[Removed\] function setEntityTamed(entityIdentifier : string, position : BlockLocation) - Replaced by component function setTamed(showParticles : bool)
+    -   function assertEntityData(position : BlockLocation, entityIdentifier : string, callback : function(entity: Entity)) - Asserts that the given condition is true for all entities of the given type at the given location
+    -   function spawnItem(itemType : ItemStack, position : Location) - Spawns an item at the given location
+    -   function assertIsWaterlogged(position : BlockLocation, isWaterlogged : bool) - Asserts that the block at the given location is waterlogged
+    -   function assertRedstonePower(position : BlockLocation, power : number) - Asserts the redstone power level at the given location
+-   Added Commands.run
+-   Entity
+    -   function getComponents() - Returns an array of supported components
+    -   function getComponent(componentIdentifier : string) - Returns the component matching the given identifier
+    -   function hasComponent(componentIdentifier : string) - Returns true if the given component exists on the entity and is supported
+    -   function getName() - Returns the name of the entity (e.g. "Horse")
+-   Add new enumerations: Minecraft.Effects & Minecraft.Items
+-   Components
+    -   Added additional component interfaces. movement, navigation, healable, breathable, ageable, and tameable components
+-   Container - New interface for interacting with entity containers. Can be referenced via entity.getComponent("inventory").container
+

@@ -1,0 +1,277 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **General**
+
+-   Removed the "Holiday Creator Features" experiment
+    -   Content that uses the experimental features may no longer function correctly
+    -   Please check out Custom Components which replicates most of the functionality: [https://learn.microsoft.com/en-us/minecraft/creator/documents/customcomponents](https://learn.microsoft.com/en-us/minecraft/creator/documents/customcomponents)
+-   Fixed an instance where input could stop working as expected when using Touch Controls and Custom Cameras
+-   Updated documentation for Feature Rules' schema
+-   Biome components "minecraft:forced\_features" and "minecraft:ignore\_automatic\_features" are now deprecated
+-   “minecraft:scatter\_feature” now has a “distribution” field like “minecraft:feature\_rules” to define the scattering settings. Features now use schema version “1.21.10”
+-   Updated schema documentation for Filter Groups
+-   Modified _ItemUseInventoryTransaction_packet by adding _Trigger Type_. This new value tells us if the packet is sent from a direct player input or the simulation tick from the button being held down
+-   Using 'minecraft:wearable' with slot set to 'slot.weapon.offhand' in combination with 'minecraft:allow\_off\_hand' set to false will now cause a content error
+
+## **Add-Ons and Script Engine**
+
+-   Added a content error when ‘snow\_accumulation’ array in a biome JSON has the minimum value set higher than the maximum value
+-   Fixed Camera sometimes having a visible easing motion after a non-eased camera set command ([MCPE-181364](https://bugs.mojang.com/browse/MCPE-181364))
+-   Fixed an issue that caused sideloaded .mcpack files to fail to apply when uploading to Realms
+-   Deprecated Entity Permutations
+    -   Permutations can no longer be parsed and applied to entities via their JSON file under the flag permutations
+-   Deprecated Volume and /volumearea command
+-   Entity Aliases is deprecated when a format\_version of 1.21.10 or higher is specified
+-   Fixed an issue where particle effect lifetime event timeline did not trigger events as expected
+-   Fixed a bug where having an Add-On applied to a dedicated server would force players to download all resource packs applied to that server in order to join. Note: If you downloaded unwanted packs as a result of this issue, you may have to delete them locally from your device to avoid having them apply when joining a world ([MCPE-180344](https://bugs.mojang.com/browse/MCPE-180344))
+-   Updated the "minecraft:geometry" block component to validate whether geometries fit within the 30/16 unit bounds and have at least 1/16 of their length within the unit cube on each axis. This validation occurs for all geometry components on all blocks using json version 1.21.0 or later ([MCPE-178607](https://bugs.mojang.com/browse/MCPE-178607))
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Blocks**
+
+-   Fixed a bug where interacting, while sneaking, with Command, Jigsaw, and Structure blocks could cause the UI to open/close multiple times
+-   Top Snow/snow\_layer block now falls when placed using the /setblock command
+-   "double\_stone\_block\_slab" block is now split into unique instances "smooth\_stone\_double\_slab", "sandstone\_double\_slab", "oak\_double\_slab", "cobblestone\_double\_slab", "brick\_double\_slab", "stone\_brick\_double\_slab", "quartz\_double\_slab", and "nether\_brick\_double\_slab"
+    -   The id "oak\_double\_slab" had already been split from "double\_wooden\_slab", as a result, any "double\_stone\_block\_slab:2" will be turned into the already existing "oak\_double\_slab" id
+-   "monster\_egg" block is now split into unique instances: "infested\_stone", "infested\_cobblestone", "infested\_stone\_bricks", "infested\_mossy\_stone\_bricks", "infested\_cracked\_stone\_bricks", and "infested\_chiseled\_stone\_bricks"
+-   "infested\_cobblestone" block destroy time has been changed to match Java Edition
+-   "stonebrick" block is now split into unique instances: "stone\_bricks", "mossy\_stone\_bricks", "cracked\_stone\_bricks", and "chiseled\_stone\_bricks"
+-   "Smooth Stone Bricks" block can no longer be obtained through commands and existing "Smooth Stone Bricks" will be converted to "Stone Bricks"
+-   "stone\_block\_slab3" block is now split into unique instances "end\_stone\_brick\_slab", "smooth\_red\_sandstone\_slab", "polished\_andesite\_slab", "andesite\_slab", "diorite\_slab", "polished\_diorite\_slab", "granite\_slab" and "polished\_granite\_slab"
+-   "prismarine\_slab", "dark\_prismarine\_slab", "prismarine\_brick\_slab", "andesite\_slab", "polished\_andesite\_slab", "diorite\_slab", "polished\_diorite\_slab", "granite\_slab" and "polished\_granite\_slab" now have a destruction time of 1.5
+-   "end\_stone\_brick\_slab" now has a destruction time of 3.0
+-   "stone\_block\_slab2" block is now split into unique instances "red\_sandstone\_slab", "purpur\_slab", "prismarine\_slab", "dark\_prismarine\_slab", "prismarine\_brick\_slab", "mossy\_cobblestone\_slab", "smooth\_sandstone\_slab", and "red\_nether\_brick\_slab"
+-   The "blocks.json" files found in resource packs are now versioned
+    -   Overriding the block "stone" with a format\_version of 1.20.50 or higher will assume the texture data in terrain\_texture.json is flattened and not using an array
+    -   Overriding the block "prismarine" with a format\_version of 1.21.10 or higher will assume the texture data in terrain\_texture.json is flattened and not using an array
+    -   Overriding the block "anvil", "quartz\_block", "red\_sandstone", "sand" and "sandstone" with a format\_version of 1.21.20 or higher will assume the texture data in terrain\_texture.json is flattened and not using an array
+-   "infested\_stone" and its derivatives now have their block sound defined ([MCPE-182290](https://bugs.mojang.com/browse/MCPE-182290))
+-   Texture overrides that intended to target all block variants no longer only override the default variant
+-   "light\_block" block is now split into unique instances: "light\_block\_0", "light\_block\_1", "light\_block\_2", "light\_block\_3", "light\_block\_4", "light\_block\_5", "light\_block\_6", "light\_block\_7", "light\_block\_8", "light\_block\_9", "light\_block\_10", "light\_block\_11", "light\_block\_12", "light\_block\_13", "light\_block\_14", and "light\_block\_15"
+-   "coral\_fan\_hang" block is now split into unique instances "tube\_coral\_wall\_fan", "brain\_coral\_wall\_fan", "dead\_tube\_coral\_wall\_fan", and "dead\_brain\_coral\_wall\_fan"
+-   "coral\_fan\_hang2" block is now split into unique instances "bubble\_coral\_wall\_fan", "fire\_coral\_wall\_fan", "dead\_bubble\_coral\_wall\_fan", and "dead\_fire\_coral\_wall\_fan"
+-   "coral\_fan\_hang3" block is now split into unique instances "horn\_coral\_wall\_fan" and "dead\_horn\_coral\_wall\_fan"
+-   "stone\_block\_slab4" block is now split into unique instances "mossy\_stone\_brick\_slab", "smooth\_quartz\_slab", "normal\_stone\_slab", "cut\_sandstone\_slab" and "cut\_red\_sandstone\_slab"
+-   "mossy\_stone\_brick\_slab" now has a destruction time of 1.5
+-   The "minecraft:yellow\_flower" block has been renamed to "minecraft:dandelion"
+    -   The old name is still understood from commands and data
+-   "sandstone" block is now split into unique instances "sandstone", "chiseled\_sandstone", "cut\_sandstone", and "smooth\_sandstone"
+    -   "smooth\_sandstone" destroy time changed from 0.8 to 2.0, and explosion resistance from 0.8 to 6.0
+-   “double\_stone\_block\_slab2” block is now split into unique instances “red\_sandstone\_double\_slab”, “purpur\_double\_slab”, “prismarine\_double\_slab”, “dark\_prismarine\_double\_slab”, “prismarine\_brick\_double\_slab”, “mossy\_cobblestone\_double\_slab”, “smooth\_sandstone\_double\_slab” and “red\_nether\_brick\_double\_slab”
+-   “prismarine\_double\_slab”, “dark\_prismarine\_double\_slab” and “prismarine\_brick\_double\_slab” now have a destruction time of 1.5
+-   Fixed Ancient City entrance using a single Deepslate tile slab instead of a double slab
+-   “double\_stone\_block\_slab3” block is now split into unique instances “end\_stone\_brick\_double\_slab”, “smooth\_red\_sandstone\_double\_slab”, “polished\_andesite\_double\_slab”, “andesite\_double\_slab”, “diorite\_double\_slab”, “polished\_diorite\_double\_slab”, “granite\_double\_slab”, and “polished\_granite\_double\_slab”
+-   “end\_stone\_brick\_double\_slab” now has a destruction time of 3.0
+-   “andesite\_double\_slab”, “polished\_andesite\_double\_slab”, “diorite\_double\_slab”, “polished\_diorite\_double\_slab”, “granite\_double\_slab”, and “polished\_granite\_double\_slab” now have a destruction time of 1.5
+-   “double\_stone\_block\_slab4” block is now split into unique instances “mossy\_stone\_brick\_double\_slab”, “smooth\_quartz\_double\_slab”, “normal\_stone\_double\_slab”, “cut\_sandstone\_double\_slab”, and “cut\_red\_sandstone\_double\_slab”
+-   “mossy\_stone\_brick\_double\_slab” now has a destruction time of 1.5
+-   “prismarine” block is now split into unique instances “prismarine”, “dark\_prismarine”, and “prismarine\_bricks”
+-   Added VanillaBlockTag "one\_way\_collidable" that can be used to emulate the one way collision of Doors, Trapdoors, and Fence Gates that don't push out a mob when inside their collision box
+-   "anvil" block is now split into unique instances: "anvil", "chipped\_anvil", "damaged\_anvil", and "deprecated\_anvil"
+-   "quartz\_block" is now split into unique instances "quartz\_block", "chiseled\_quartz\_block", "quartz\_pillar", and "smooth\_quartz"
+-   Smooth Quartz has had its destroy-time adjusted to match Java Edition ([MCPE-101893](https://bugs.mojang.com/browse/MCPE-101893))
+-   Pillar Quartz Block has been renamed to Quartz Pillar
+-   "red\_sandstone" block is now split into unique instances "red\_sandstone", "chiseled\_red\_sandstone", "cut\_red\_sandstone", and "smooth\_red\_sandstone"
+    -   "smooth\_red\_sandstone" destroy time changed from 0.8 to 2.0
+-   "dirt" block is now split into unique instances: "dirt" and "coarse\_dirt"
+-   "sand" block is now split into unique instances "sand" and "red\_sand"
+-   _minecraft:custom\_components_ no longer requires the Beta APIs experiment
+-   _minecraft:entity\_fall\_on_ no longer requires the Beta APIs experiment
+-   _minecraft:tick_ no longer requires the Beta APIs experiment
+-   Fixed a recipe bug where "chiseled\_sandstone" and "cut\_sandstone" sandstone variants could be used in a furnace to craft "smooth\_sandstone". It can now only accept normal "sandstone" and no other types of sandstone
+-   Fixed Vanilla recipes involving "red\_sandstone\_slab" as an ingredient or result item, they would incorrectly use "red\_sandstone" instead
+    -   "red\_sandstone\_slab" can now be crafted again with 3 horizontal "red\_sandstone:0"
+    -   "red\_sandstone\_slab" can now be crafted again with 3 horizontal "red\_sandstone:1"
+    -   "red\_sandstone:1" can now be crafted again with 2 vertical "red\_sandstone\_slab"
+
+## **Camera**
+
+-   Two new 3rd person camera experiments are now available!
+-   Added the 'Creator Cameras: New Third Person Presets' experimental toggle which contains:
+    -   New 'minecraft:follow\_orbit' preset that is accessible by the /camera command and can have a view offset
+-   Added the Creator Cameras: Focus Target Camera experiment. This functionality can be applied to the free camera preset
+    -   A new free camera command that pivots the camera to track a target entity
+        -   Includes option to add an offset from the center of the entity
+        -   Includes option to remove the target
+-   Added the view offset to the 3rd person camera for the experimental _follow\_orbit_ preset
+    -   The view offset is anchored to a pivot point at the center of the screen. When applied to the follow\_orbit preset, the player is shifted to be at a distance from center specified by the the offset
+    -   The range for this offset is -100 to 100
+    -   This can be set by both commands and JSON
+        -   /camera @s set minecraft:follow\_orbit view\_offset viewX viewY
+    -   A new learning portal article detailing the 3rd person camera, including JSON syntax, will be published soon
+-   Added starting radius and rotation to the _follow\_orbit_ and 3rd person boom camera presets
+    -   The starting radius (distance from player) is fixed right now at 10 blocks from the player position
+    -   The starting rotation (pitch and yaw) are fixed right now at 45X and 45Y
+    -   The follow orbit camera is the only preset available, the 3rd person boom preset will be coming in a future release
+-   Exposed radius component to behavior packs to be overwritten by creator cameras. Also added ‘minecraft:third\_person’ and ‘minecraft:third\_person\_front’ to the allow list of presets that can be inherited from
+    -   This allows you to make a 3rd person camera based on the vanilla 3rd person cameras but with a variable radius.  
+        The radius (distance from player) is not limited but render distance and other constraints still exist.
+    -   This does **_not_** allow modifications to the vanilla cameras
+
+## **Commands**
+
+-   Music will no longer be stopped by the '/stopsound' command
+-   Fixed a bug where the /spreadplayers command could result in the target being teleported one block below the intended location
+-   Added a Max Height parameter to the /spreadplayers command, which allows you to specify a maximum height that the spreading is done underneath
+-   The /locate structure command now uses namespaced structure names. Structure names provided without a namespace will assume the “minecraft” namespace ([MCPE-151807](https://bugs.mojang.com/browse/MCPE-151807))
+
+## **Entities**
+
+-   Improved "behavior.follow\_owner" teleportation logic:
+    -   Entities now seamlessly resume navigation after teleporting to their owner
+    -   Added the "post\_teleport\_distance" field, allowing to specify how far from its owner an entity will be placed after teleporting
+        -   If no value is specified, "stop\_distance" increased by one will be used
+    -   These changes only affect entities with format version of 1.21.20 or above
+-   Armor equipped to the second slot of "minecraft:equippable" is now applied to "slot.armor.body" instead of "slot.armor.torso"
+    -   To retrieve information about it, "query.armor\_texture\_slot", "query.armor\_color\_slot" and "query.armor\_damage\_slot" should now be used with a value of 4
+    -   This change only affects entities with a format version equal to or greater than _1.21.10_
+-   Added a wind\_burst\_on\_hit subcomponent for Projectiles which creates a wind burst upon collision with an entity or block before being removed from the world
+-   Wind Charges no longer burst when removed by command
+-   Exposed "minecraft:behavior.swim\_up\_for\_breath" AI goal component, which allows a mob to try to move to a location where it can breathe air once it is close to running out of its breathable supply
+    -   In Vanilla, this is used by the Dolphin
+    -   Any custom content built off of the Vanilla dolphin at or above version 1.21.20 will need to manually add this component to enable this AI behavior
+-   Added the "behavior.teleport\_to\_owner" goal, which allows an entity to teleport to its owner
+    -   This goal is designed for emergency situations where "behavior.follow\_owner" could be too slow or too low priority
+    -   The "filters" field allows defining the conditions for teleportation using entity filters
+    -   The "cooldown" field allows defining how often the entity should attempt to teleport
+-   _minecraft:behavior.move\_away\_from\_target_ has been renamed to _minecraft:behavior.move\_around\_target_ to better describe what the goal does, since it can be used both for moving away from the target, but also to move towards a random position around the target
+-   Added new entity filter "owner\_distance", which checks the distance of an entity from its owner
+
+## **Graphical**
+
+-   Particle Emitters that use the "minecraft:particle\_appearance\_lighting" component now use the correct light level instead of the world's origin light level
+-   2 Channel textures in resource packs are now properly supported. When loaded they will always use the first channel to represent all three color channels and the second channel for alpha (I.E A normal texture would be _(R, G, B, A)_where a 2 channel texture will always be treated as _(R, R, R, A)_)
+-   Fixed fog JSON validation to allow for _max\_density\_height_ and _zero\_density\_height_ values to range from (-64,320)
+
+## **Items**
+
+-   Trimmed custom armor item icons now appear correctly when their icon texture name includes a namespace or does not match the item name
+-   \[BETA\] Introduced "slot.armor.body" as an extra armor slot for entities like Horses, limited to a single armor item but needing the effects of a full armor set
+    -   "slot.armor.body" is supported by:
+        -   Commands (even if no suitable item is currently available for manipulation)
+        -   "minecraft:attachable"
+        -   "minecraft:interact"
+        -   "query.armor\_texture\_slot" (with value 4)
+        -   "query.armor\_color\_slot" (with value 4)
+        -   "query.armor\_damage\_slot" (with value 4)
+        -   "query.equipment\_count"
+        -   "has\_equipment" entity filter (with domain "body")
+        -   "all\_slots\_empty" entity filter (with domain "body")
+        -   "any\_slot\_empty" entity filter (with domain "body")
+    -   "slot.armor.body" is not supported by:
+        -   "minecraft:wearable"
+    -   Future adjustments may alter how items equipped to "slot.armor.body" affect entity visibility (intended as how easy an entity is detected by other entities), enchantments, and armor protection
+-   Released minecraft:custom\_components item component out of experimental in json formats 1.21.10 and higher
+-   Introduced “slot.armor.body” as an extra armor slot for entities, like horses, limited to a single armor item but needing the effects of a full armor set
+-   Introduced the “minecraft:damage\_absorption” item component, enabling items to absorb damage intended for their wearer
+    -   The “absorbable\_causes” field allows to specify which damage causes to absorb
+    -   Absorbed damage depletes the item’s durability, and surplus damage is ignored
+    -   Requires equipping the item in an armor slot for damage to be absorbed
+    -   When multiple damage absorbing items are equipped, a suitable one is selected at random to absorb incoming damage
+-   Introduced the “minecraft:durability\_sensor” item component, enabling items to emit sounds and particles when damage causes them to lose durability
+    -   The “durability\_thresholds” field allows to define a list of both durability thresholds and the effects to emit when they are met
+    -   When the item receives enough damage to meet multiple thresholds at the same time, only the one corresponding to the lowest durability is considered
+-   Learning portal documents on these features and how to use them are being written and will be available soon
+
+## **Molang**
+
+-   Released _state\_time_ which no longer requires the 'Upcoming Creator Features' toggle
+-   Fixed Molang content errors to include the expression in the logged message
+
+## **Petrified Oak Slab**
+
+-   The Oak-Slab-looking variation of "stone\_block\_slab" (aux value 2) is now flattened into its own new block "minecraft:petrified\_oak\_slab" ([MCPE-180964](https://bugs.mojang.com/browse/MCPE-180964))
+    -   Will behave like other Stone Slabs, eg. cannot be destroyed by fire, but will look like an ordinary oak slab
+    -   "minecraft:petrified\_oak\_slab" can only be obtained and placed through commands
+-   The Oak-Slab-looking variation of "double\_stone\_block\_slab" (aux value 2) is now flattened into its own new block "minecraft:petrified\_oak\_double\_slab" ([MCPE-180964](https://bugs.mojang.com/browse/MCPE-180964))
+    -   Will behave like other stone double slabs, eg. cannot be destroyed by fire, but will look like an ordinary oak double slab
+    -   "minecraft:petrified\_oak\_double\_slab" can only be placed through commands
+
+## **Structure Block**
+
+-   Fixed issue where player ID was not being saved on structure blocks when saving and exiting the level ([MCPE-149183](https://bugs.mojang.com/browse/MCPE-149183))
+-   From versions 1.21.20, the player ID given to tamed mobs loaded from a Structure Block will always be the original owner's ID  
+      
+    
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Blocks**
+
+-   Added "item\_display\_transforms" control to the block geometry file. This controls the way a block is visually represented in the UI, on the player, and floating on the ground. It exists inside minecraft:geometry, and requires format\_version 1.21.20
+    -   Default values example:
+        -   "item\_display\_transforms": \{  
+            "gui" : \{  
+                            "translation": \[0, 0, 0\],  
+                            "rotation": \[30, 225, 0\],  
+                            "scale": \[0.625, 0.625, 0.625\]  
+              \},  
+              "firstperson\_righthand": \{  
+                            "translation": \[0, 0, 0\],  
+                            "rotation": \[0, 45, 0\],  
+                            "scale": \[0.4, 0.4, 0.4\]  
+              \},  
+              "firstperson\_lefthand": \{  
+                "translation": \[0, 0, 0\],  
+                "rotation": \[0, -135, 0\],  
+                "scale": \[0.4, 0.4, 0.4\]  
+              \},  
+              "thirdperson\_righthand": \{  
+                "translation": \[0, 2.5, 0\],  
+                "rotation": \[75, 45, 0\],  
+                "scale": \[0.375, 0.375, 0.375\]  
+              \},  
+              "thirdperson\_lefthand": \{  
+                "translation": \[0, 2.5, 0\],  
+                "rotation": \[75, 45, 0\],  
+                "scale": \[0.375, 0.375, 0.375\]  
+              \},  
+              "ground": \{  
+                "translation": \[0, 3.0, 0\],  
+                "rotation": \[0, 0, 0\],  
+                "scale": \[0.25, 0.25, 0.25\]  
+              \},  
+              "fixed": \{  
+                "translation": \[0, 0, 0\],  
+                "rotation": \[0, 0, 0\],  
+                "scale": \[0.5, 0.5, 0.5\]  
+              \},  
+              "head": \{  
+                "translation": \[0, 0, 0\],  
+                "rotation": \[0, 0, 0\],  
+                "scale": \[1, 1, 1\]  
+              \}  
+            \}
+
+## **Entity Components**
+
+-   EntityLeashableComponent
+    -   Added property _canBeStolen: boolean_
+    -   Added property _hardDistance: number_
+    -   Added property _leashHolder: Entity_
+    -   Added property _leashHolderEntityId: string_
+    -   Added property _maxDistance: number_
+    -   Added property _isLeashed: boolean_
+    -   Renamed function _leash(leashHolder: Entity): void_ to _leashTo(leashHolder: Entity): void_

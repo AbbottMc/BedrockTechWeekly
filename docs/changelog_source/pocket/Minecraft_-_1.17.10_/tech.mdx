@@ -1,0 +1,95 @@
+import Switcher from '../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.17.10 are available for download with new resources, behaviors, and documentation
+    -   Resource Pack Template: [aka.ms/resourcepacktemplate](https://aka.ms/resourcepacktemplate)
+    -   Behavior Pack Template (Includes documentation): [aka.ms/behaviorpacktemplate](https://aka.ms/behaviorpacktemplate)
+
+## **Stability and Performance**
+
+-   Added better error handling for JSON parsing. Also added several new content errors for item parsing as well as for loot tables
+
+## **General**
+
+-   Players are given a content error when custom recipes are invalid
+-   Renamed "minecraft:scaffolding\_climber" to "minecraft:block\_climber". It now processes climbing both Scaffolding and Powder Snow
+
+## **Gameplay**
+
+-   Loot chests with Seed=0 now correctly randomize if placed on the same coordinates. Note that Pick Blocking a Vanilla loot chest before opening it will now result in identical loot in each copy unless the seed is set to 0 in the NBT
+
+## **Dedicated Server**
+
+-   Added back missing symbols for Bedrock Dedicated Server on Linux ([BDS-13482](https://bugs.mojang.com/browse/BDS-13482))
+
+## **NPC Dialogue**
+
+-   Content creators can now create multi-page dialogues with branching narrative for NPCs using the '/dialogue' command and dialogue JSON files
+
+## **Data-Driven Mobs**
+
+-   The Ender Dragon rendering and animations are now fully data-driven
+-   The Ender Crystal rendering and animations are now fully data-driven
+-   The Horse rendering and animations are now fully data-driven
+-   This work supports all Horse variants (Horse, Mule, Donkey, Zombie Horse, Skeleton Horse) and all Horse versions including:
+    -   v1 (engine version 1.2.5 and earlier)
+    -   v2 (engine version 1.2.6 to 1.17.0)
+    -   v3 (engine version 1.17.10 and onward). This will be a cleaner version of the v2 model, with less confusing bone naming
+
+## **Data-Driven Items**
+
+-   Updated documentation for 'DisplayNameItemComponent'
+
+## **Data-Driven Blocks**
+
+-   Updated documentation for 'BlockUnwalkableComponent'
+
+## **Actors**
+
+-   Incoming client-sync properties for newly seen types will properly register with client-side Actor Property Manager groups
+
+## **MoLang**
+
+-   "query.wing\_flap\_position" now works with the Ender Dragon
+-   Added "query.show\_bottom" - a query for determining whether or not the entity's bottom is rendered
+-   Added "query.death\_time" - a query for determining the elapsed ticks since a mob started dying
+-   Added "math.min\_angle" - a math expression for minimizing the angle magnitude (in degrees) into the range \[-180, 180\]
+-   Fixed experimental 'query.target' to work on client-side queries
+
+## **Chunk Loading**
+
+-   Limits writing of chunks unless necessary. Chunks upgraded from older formats will not automatically save when loaded, but when modified (Through blocks or actors, for example) they will be marked for saving
+
+## **GameTest Framework (Experimental)**
+
+-   Updated the '/clearall' command to also clear tests outside of loaded areas
+-   Dimension
+    -   getEntitiesAtBlockLocation(location : BlockLocation) : Entity\[\] - Returns an array of all entities at the given block location
+    -   spawnEntity(identifier : String, location : BlockLocation) : Entity - Spawns an entity with the given identifier at the given block location
+    -   \[Removed\] function getName()
+    -   property id : String - Gets the entity's identifier
+    -   property nameTag : String - Gets or sets the entity's name tag
+-   Player
+    -   property name : String - Gets the player's name
+-   method getPlayers() : Player\[\] - Returns all players in the server
+-   Updates to how blocks are handled in APIs:
+    -   BlockType, BlockPermutation, and Block instances replace BlockState-based updating
+-   Exposed chest block component and Container
+-   Added location and velocity read-only properties to Entity
+-   function createExplosion(location : Location, radius : number, explosionOptions : ExplosionOptions) - Creates an explosion
+    -   ExplosionOptions : class - Provides additional configuration parameters for createExplosion
+-   method triggerEvent(eventName : string) - Triggers an event on an entity
+-   Added 'thenExecuteFor' to 'GameTestSequence', which repeatedly calls the callback for the specified number of ticks
+-   Events
+    -   Renamed 'World.event.weatherChanged' to 'World.event.changeWeather'
+    -   Added event 'World.event.addEffect' - Fires when an effect is applied to an entity.
+    -   Added event 'World.event.createEntity' - Fires when an entity is added to the world.
+    -   Removed function 'World.addEventListener'
+    -   Changed function 'getDuration()' to property 'duration'
+    -   Changed function 'getAmplifier()' to property 'amplifier'
+    -   Added property 'displayName' - Gets the display name of the effect
+

@@ -1,0 +1,123 @@
+# New Features:
+
+-   Added basic Scoreboard functionality - More Scoreboard features will be coming in later releases
+-   Food can now be eaten in Creative mode and Peaceful difficulty
+
+# Changes:
+
+-   Mentions of player names are now highlighted yellow in chat
+-   Typing "@" in chat will show an autocomplete list of player names
+-   Command Block functionality can now be toggled using the 'commandblocksenabled' game rule
+-   Made it easier to find purchased content, search, and go home from the top of the Marketplace screen
+-   You can now send links to your favourite Marketplace content using the share button
+-   Improved search results, sorting, and filtering in the Marketplace
+
+# Fixes:
+
+-   **Crashes/Performance**
+    -   Fixed the cause of over 20 crashes that could occur during gameplay 
+    -   Fixed a crash that occurred when a Trident with Channeling was shot from a Dispenser and hit a mob or player during a thunderstorm 
+    -   Fixed a crash that occurred when breaking a door that many Villagers were trying to open or enter ([MCPE-34742](https://bugs.mojang.com/browse/MCPE-34742))
+    -   Fixed a crash that occurred when using a 128x Resource Pack on Nintendo Switch 
+    -   Fixed a crash that occurred when attempting to stack Explorer Maps when trading with a Cartographer Villager
+    -   Fixed a crash that occurred when loading the settings screen right after loading a resource pack
+    -   Fixed a crash that occurred when backing out of a Realm's edit menu after attempting to download a world but not having enough free space 
+
+-   **General**
+    -   Fixed an exploit that allowed custom skins with custom and invisible geometry, causing unfair advantages in multiplayer sessions ([MCPE-37343](https://bugs.mojang.com/browse/MCPE-37343))
+    -   Added additional messaging to disable Multiplayer in world settings to play split-screen without a Nintendo Switch Online membership 
+    -   Guests rejoining in a different order than they joined for the first time no longer generate different progress during split-screen gameplay 
+    -   Synced cloud worlds on Xbox One now display the proper date on the Worlds list 
+    -   Fixed player permission issues that prevented players from building or mining 
+    -   Fixed Super Mario Mash-up Pack worlds not opening if created before version 1.6.0 ([MCPE-37327](https://bugs.mojang.com/browse/MCPE-37327))
+    -   Fixed textures not applying on Nintendo Switch when the world is hosted on another platform 
+    -   Fixed split-screen players not being able to join Local Network games on Nintendo Switch 
+    -   Fixed Microsoft Account sign-in failures on Nintendo Switch 
+
+-   **Gameplay**
+    -   Crouching on ladders will no longer stop when opening the pause menu or inventory screen ([MCPE-33209](https://bugs.mojang.com/browse/MCPE-33209))
+    -   Swimming while moving the camera with touch controls no longer breaks blocks ([MCPE-33470](https://bugs.mojang.com/browse/MCPE-33470))
+    -   Items can once again be dropped while in a boat 
+    -   The Looting III enchantment once again increases mob loot drop chances ([MCPE-35307](https://bugs.mojang.com/browse/MCPE-35307))
+    -   When a player equips a carved pumpkin as a helmet, that player's marker now disappears from the Locator Maps of other players 
+    -   Players no longer teleport to vehicles/mobs that are hit by an Ender Pearl when the vehicle/mob is in the player's render distance 
+    -   Fixed players getting stuck in the edges of Old Worlds at 128 or in the Void 
+    -   When dealing a killing blow to mobs using Knockback, they now actually get knocked back! ([MCPE-19222](https://bugs.mojang.com/browse/MCPE-19222))
+
+-   **Items**
+    -   Enchantment Books are no longer lost after using an Anvil to rename an item and adding an incompatible enchantment 
+    -   Tridents with Loyalty no longer get lost in the void when used in the End 
+    -   Raw Cod and Cooked Cod items are now properly named 
+    -   Phantom spawn eggs can now be obtained using Pick Block
+    -   Players using controllers can again drop held items while in a minecart 
+    -   Leads no longer detach and disappear when reentering a world ([MCPE-33263](https://bugs.mojang.com/browse/MCPE-33263))
+    -   Infinity Bow arrows are no longer picked up immediately after being fired when the Bow is slightly drawn ([MCPE-35821](https://bugs.mojang.com/browse/MCPE-35821))
+    -   Renamed spawn eggs now produce renamed mobs 
+    -   Flaming arrows once again ignite Minecarts with TNT ([MCPE-35776](https://bugs.mojang.com/browse/MCPE-35776))
+
+-   **Mobs**
+    -   If a pet forgets what player is their owner after updating the game, it will sit down and wait for someone to interact with them & this player becomes the new owner of the pet. The pet doesn't need to be re-tamed with items ([MCPE-33152](https://bugs.mojang.com/browse/MCPE-33152))
+    -   Mobs can now walk through Soul Sand with Nether Wart ([MCPE-12719](https://bugs.mojang.com/browse/MCPE-12719))
+    -   Skeleton Horses and Zombie Horses no longer die after a certain amount of time ([MCPE-35215](https://bugs.mojang.com/browse/MCPE-35215))
+    -   Horses in the same boat as you no longer get hit when targeted by blocks in front of you ([MCPE-30299](https://bugs.mojang.com/browse/MCPE-30299))
+    -   Releasing a Tropical Fish from a Bucket of Fish no longer releases a random fish but the one that was originally caught 
+    -   Armored Withers can no longer be damaged with thrown Tridents 
+    -   Drowned no longer have swimming animation while riding in boat 
+    -   The inventory of ridden mounts can no longer be accessed by another player while you are riding it 
+    -   Mobs can no longer spawn in small gaps unless they can fit ([MCPE-31193](https://bugs.mojang.com/browse/MCPE-31193))
+    -   Enderman can no longer spawn in two block high gaps with Slabs above ([MCPE-28626](https://bugs.mojang.com/browse/MCPE-28626))
+    -   Cured Zombie Villagers spawned from Zombie Villages can now be traded with ([MCPE-34603](https://bugs.mojang.com/browse/MCPE-34603))
+    -   Pigs with Saddles now throw players off their back when they start moving though 2-block-high bodies of water 
+
+-   **Blocks**
+    -   Fixed a bug where it was sometimes not possible for a player to place a block in the same block space where they are standing ([MCPE-31030](https://bugs.mojang.com/browse/MCPE-31030))
+    -   Sea Pickles now break instantly in Survival mode ([MCPE-36250](https://bugs.mojang.com/browse/MCPE-36250))
+    -   Barrier Blocks can no longer be destroyed by the Ender Dragon ([MCPE-34410](https://bugs.mojang.com/browse/MCPE-34410))
+    -   Monster Spawners no longer drop as items after an explosion ([MCPE-32657](https://bugs.mojang.com/browse/MCPE-32657))
+    -   Rails are once again broken by flowing water
+
+-   **Realms**
+    -   A message now appears on the Realms list if Xbox Live privileges are preventing Realms from being played
+    -   Clarified the text that appears when replacing a world on a Realm 
+
+-   **World Generation**
+    -   Ladders no longer generate in midair on village church structures 
+    -   Fixed structures generating inside Ocean Monuments 
+
+-   **Graphical**
+    -   Fixed entities missing body parts on various Android devices ([MCPE-34385](https://bugs.mojang.com/browse/MCPE-34385))
+    -   It is now easier to see through water in Flat worlds ([MCPE-36078](https://bugs.mojang.com/browse/MCPE-36078), [MCPE-35244](https://bugs.mojang.com/browse/MCPE-35244))
+    -   Adjusted in-hand placement of Bows and Tridents in split-screen 
+    -   Fixed visual effects not appearing when using an enchanted Trident with Riptide ([MCPE-34448](https://bugs.mojang.com/browse/MCPE-34448))
+
+-   **Audio**
+    -   Sound once again resumes after receiving a notification on iOS devices ([MCPE-15841](https://bugs.mojang.com/browse/MCPE-15841))
+    -   The proper sound now plays when the Wither is spawned ([MCPE-35179](https://bugs.mojang.com/browse/MCPE-35179))
+    -   Banners now have the correct placing and breaking sounds ([MCPE-31188](https://bugs.mojang.com/browse/MCPE-31188))
+    -   Land-based mobs now play sounds underwater 
+
+-   **User Interface**
+    -   Fixed several items not stacking properly in inventory and chests when using touch input ([MCPE-32347](https://bugs.mojang.com/browse/MCPE-32347))
+    -   Using the Quick Move option now properly stacks the taken items with stacks of the same item in the player inventory when there is an empty hotbar slot 
+    -   Cursor D-pad input no longer gets stuck on the inventory screen or pause menu ([MCPE-33895](https://bugs.mojang.com/browse/MCPE-33895))
+    -   Removed the "Take Half" tooltip when highlighting the Anvil's output slot 
+    -   Item tooltips that display "Can break" and "Can be placed on" now show the proper translation for the given blocks 
+    -   Fixed incorrect button focus on the chat screen 
+    -   Fixed formatted text getting cut off on the HUD 
+    -   Fixed overlapping text on the Enchantment Table screen
+
+-   **Commands**
+    -   Fixed input on Minecarts with Command Block not saving between game sessions 
+    -   Fixed trapdoors losing their orientation after being cloned 
+    -   Autofill commands now recognize a player name in brackets and places it between quotes ([MCPE-34913](https://bugs.mojang.com/browse/MCPE-34913))
+    -   The '/teleport' command now reliably teleports riders with entities
+    -   The '/subtitle' command can now run whilst a title is visible on screen ([MCPE-25685](https://bugs.mojang.com/browse/MCPE-25685))
+
+# Add-Ons:
+
+-   Updated templates for 1.7.0 with new assets and behaviors can be downloaded from [minecraft.net/addons](https://minecraft.net/addons)
+-   Using behavior files to change the shooting location of a projectile no longer makes the projectile shoot and miss the target
+-   Mobs now stop moving when all movement components are removed from their behavior 
+-   The 'can\_float' component now works properly with 'minecraft:navigation.float' on flying mobs
+
+If you missed a previous update, check out [aka.ms/MCChangelogs](https://aka.ms/MCChangelogs) for a full list of updates.

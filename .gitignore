@@ -34,3 +34,4 @@ yarn-error.log*
 /docs/sapi/stable/server-gametest/
 /docs/sapi/stable/server-net/
 /docs/sapi/stable/server-ui/
+/auto-gen/.idea/

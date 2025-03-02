@@ -1,0 +1,89 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Fixed a bug where having an Add-On applied to a dedicated server would force players to download all resource packs applied to that server in order to join. Note: If you downloaded unwanted packs as a result of this issue, you may have to delete them locally from your device to avoid having them apply when joining a world ([MCPE-180344](https://bugs.mojang.com/browse/MCPE-180344))
+-   Updated the "minecraft:geometry" block component to validate whether geometries fit within the 30/16 unit bounds and have at least 1/16 of their length within the unit cube on each axis. This validation occurs for all geometry components on all blocks using json version 1.21.0 or later. ([MCPE-178607](https://bugs.mojang.com/browse/MCPE-178607))
+
+## AI Goals
+
+-   Exposed "minecraft:behavior.swim\_up\_for\_breath" AI goal component which allows a mob to try to move to a location where it can breathe air once it is close to running out of its breathable supply. In Vanilla, this is used by the Dolphin. Any custom content built off of the Vanilla dolphin at or above version 1.21.20 will need to manually add this component to enable this AI behavior.
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   2 Channel textures in resource packs are now properly supported. When loaded they will always use the first channel to represent all three color channels and the second channel for alpha (I.E A normal texture would be _(R, G, B, A)_ where a 2 channel texture will always be treated as _(R, R, R, A)_)
+-   Fixed bug where culling rules for data driven blocks did not rotate with the transformation component
+
+# Technical Experimental Features
+
+## API
+
+-   EntityBreathableComponent
+    -   Changed function _setAirSupply(value: number): void_ to property _airSupply: number_ in beta
+    -   Added property _readonly canBreathe: boolean_ to beta
+-   Added _isHardcore_ to _1.14.0 beta_.
+
+## Graphical
+
+-   Custom skyboxes are now supported in Deferred Technical Preview ([MCPE-174200](https://bugs.mojang.com/browse/MCPE-174200))
+-   Fixed a bug where blank white thumbnails were being generated for worlds with the Deferred Technical Preview enabled ([MCPE-178373](https://bugs.mojang.com/browse/MCPE-178373))
+-   Fixed a bug where certain objects from the world would be visible through the gamma calibration menu in the Deferred Technical Preview
+-   The extension EXT\_texture\_cube\_map\_array is now required to run Deferred Technical Preview on Android devices that support GLES 3.1. Some devices will lose support, however most devices should be unaffected
+
+## Blocks
+
+-   Added "item\_display\_transforms" control to the block geometry file. This controls the way a block is visually represented in the UI, on the player, and floating on the ground. It exists inside minecraft:geometry, and requires format\_version 1.21.20
+    -   Default values example:
+        -   "item\_display\_transforms": \{  
+            "gui" : \{  
+                            "translation": \[0, 0, 0\],  
+                            "rotation": \[30, 225, 0\],  
+                            "scale": \[0.625, 0.625, 0.625\]  
+              \},  
+              "firstperson\_righthand": \{  
+                            "translation": \[0, 0, 0\],  
+                            "rotation": \[0, 45, 0\],  
+                            "scale": \[0.4, 0.4, 0.4\]  
+              \},  
+              "firstperson\_lefthand": \{  
+                "translation": \[0, 0, 0\],  
+                "rotation": \[0, -135, 0\],  
+                "scale": \[0.4, 0.4, 0.4\]  
+              \},  
+              "thirdperson\_righthand": \{  
+                "translation": \[0, 2.5, 0\],  
+                "rotation": \[75, 45, 0\],  
+                "scale": \[0.375, 0.375, 0.375\]  
+              \},  
+              "thirdperson\_lefthand": \{  
+                "translation": \[0, 2.5, 0\],  
+                "rotation": \[75, 45, 0\],  
+                "scale": \[0.375, 0.375, 0.375\]  
+              \},  
+              "ground": \{  
+                "translation": \[0, 3.0, 0\],  
+                "rotation": \[0, 0, 0\],  
+                "scale": \[0.25, 0.25, 0.25\]  
+              \},  
+              "fixed": \{  
+                "translation": \[0, 0, 0\],  
+                "rotation": \[0, 0, 0\],  
+                "scale": \[0.5, 0.5, 0.5\]  
+              \},  
+              "head": \{  
+                "translation": \[0, 0, 0\],  
+                "rotation": \[0, 0, 0\],  
+                "scale": \[1, 1, 1\]  
+              \}  
+            \}
+

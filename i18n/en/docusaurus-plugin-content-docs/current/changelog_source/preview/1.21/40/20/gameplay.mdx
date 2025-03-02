@@ -1,0 +1,101 @@
+**Posted:** 4th September 2024
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ)
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta) for detailed instructions
+
+![A Villager standing in a village. There is a chicken behind, and in the background a flower forest can be seen.](https://feedback.minecraft.net/hc/article_attachments/29937458426637)
+
+It's time for a new Minecraft Preview and Beta! We’d love your feedback on bundles, so please let us know what you think at [https://aka.ms/mcbundlesfeedback](https://aka.ms/mcbundlesfeedback) , and report any bugs at [bugs.mojang.com](http://bugs.mojang.com/) .
+
+## **Known Issue:** In this Beta and Preview, you might spot some graphical rendering issues. Our team is on it and we aim to have this sorted out soon. Thanks for your patience!
+
+# Experimental Features
+
+## Bundles
+
+-   The "Use" button hint is now shown when a Bundle is selected in the hotbar and using a game controller input ([MCPE-185504](https://bugs.mojang.com/browse/MCPE-185504))
+    -   Using this button throws items out of the Bundle
+-   Bundles now display the bar showing their fullness level when placed in the hotbar
+-   Using a Bundle from the hotbar now plays a sound and triggers an animation when emptying items ([MCPE-185460](https://bugs.mojang.com/browse/MCPE-185460))
+-   Bundle tooltip placement now takes Screen Safe Area into account 
+-   When a Bundle is used in the hotbar, one group of items is emptied at a time instead of everything being emptied at once
+-   The "Clear Hotbar" button hint is now shown when hovering the cursor over a Bundle, with the "Clear Hotbar" toggle enabled and using a game controller ([MCPE-185504](https://bugs.mojang.com/browse/MCPE-185504))
+-   The "Swap" button hint is now shown when hovering an item over another item with a game controller
+-   The "Place" button hint is now shown on all screens when holding an item on the cursor with a game controller
+
+# Features and Bug Fixes
+
+-   Made a change on Nintendo Switch which may help neighboring chunks to load quicker when player has maximum framerate set ([MCPE-120971](https://bugs.mojang.com/browse/MCPE-120971))
+
+## Blocks
+
+-   Vines placed with commands are now visible ([MCPE-131854](https://bugs.mojang.com/browse/MCPE-131854))
+-   "mushroom\_stem" is now its own block and is no longer a variant of "red\_mushroom\_block" and "brown\_mushroom\_block" 
+-   "skull" has been split into 7 unique instances: "skeleton\_skull", "wither\_skeleton\_skull", "zombie\_head", "player\_head", "creeper\_head", "dragon\_head", "piglin\_head"
+
+## Commands
+
+-   Game rule ShowRecipeMessages is no longer considered a cheat ([MCPE-177299](https://bugs.mojang.com/browse/MCPE-177299)) 
+-   Added the 'entity\_offset' parameter to the camera command
+
+## Gameplay
+
+-   Wind Charges can't be hit and redirected shortly after throwing them 
+    
+-   Interacting with a Bed now sets it as the respawn point regardless of nearby enemies ([MCPE-152134](https://bugs.mojang.com/browse/MCPE-152134))
+    
+-   Players hitting the edge of the generated world will keep their velocity. Example: While flying with the Elytra, the player will stay floating instead of losing all speed instantly
+
+## Graphical
+
+-   Addressed an issue where the game would show pink on iOS when using Large Zoom ([MCPE-174398](https://bugs.mojang.com/browse/MCPE-174398)) ([MCPE-185373](https://bugs.mojang.com/browse/MCPE-185373))
+
+## Mobs
+
+-   Polar bear now drops Cooked Fish when killed by fire or lava ([MCPE-122488](https://bugs.mojang.com/browse/MCPE-122488))
+-   Pillager's 'celebrate3' sound now works ([MCPE-121058](https://bugs.mojang.com/browse/MCPE-121058))
+-   Wolves, Cats, and Parrots trying to catch up to their owner now seamlessly resume navigation after teleporting to them
+-   Wolves, Cats, and Parrots now teleport to their owner when panicking and far enough away
+-   Wolves now teleport to their owner when in a fight and far enough away, preventing them from being left behind ([MCPE-151765](https://bugs.mojang.com/browse/MCPE-151765))
+
+## Realms
+
+-   Added a new Realm Event. Can you discover it?
+-   Fixed a bug that would prevent activation of addon for a Realm via Marketplace
+
+## User Interface
+
+-   Hint about dismounting an entity no longer appears when changing dimensions and re-entering the world ([MCPE-182876](https://bugs.mojang.com/browse/MCPE-182876))
+-   Armor HUD now updates properly when the player's equipped armor breaks ([MCPE-103592](https://bugs.mojang.com/browse/MCPE-103592)) 
+-   Fixed a bug where the close button subpanel in the Stonecutter panel was empty instead of hidden while using controller
+-   Added a new message to explain when a Marketplace Template is not available on a specific platform
+-   Aligned the hunger and health bars with the experience bar in Classic UI on mobile devices ([MCPE-177192](https://bugs.mojang.com/browse/MCPE-177192))
+-   Air bubbles now line up properly with hunger bar ([MCPE-185268](https://bugs.mojang.com/browse/MCPE-185268))
+-   Position of player paper doll in the UI is now consistent between Classic and Pocket UI settings ([MCPE-57498](https://bugs.mojang.com/browse/MCPE-57498))
+-   Potions with percentage-based effects now show the percentage sign correctly on their tooltips (on mobile devices) ([MCPE-28531](https://bugs.mojang.com/browse/MCPE-28531))
+-   When dying by the thorns of a Guardian, the death message now reads "'Player' was killed trying to hurt 'Mob'" ([MCPE-114752](https://bugs.mojang.com/browse/MCPE-114752))
+-   Chat messages no longer overlap with one pixel ([MCPE-119761](https://bugs.mojang.com/browse/MCPE-119761))
+-   Item text no longer jumps up when looking at a non-interactable entity ([MCPE-161140](https://bugs.mojang.com/browse/MCPE-161140)) 
+-   Close and help button visuals for Smithing Table and Loom changed to match visuals for Cartography Table ([MCPE-166008](https://bugs.mojang.com/browse/MCPE-166008))
+-   "Hide Controller Hints" now properly hides all control hints in the Villager trading menu ([MCPE-167134](https://bugs.mojang.com/browse/MCPE-167134))
+
+## Vanilla Parity
+
+-   Creepers now drop a Music Disc upon being killed by a Bogged ([MCPE-179008](https://bugs.mojang.com/browse/MCPE-179008))
+-   Bogged now drops Poison Arrows when killed by Mobs tamed by a Player
+-   Dyeing Sheep and collars on Cats and Dogs now plays the dyeing sound as in Java Edition ([MCPE-150684](https://bugs.mojang.com/browse/MCPE-150684))
+-   Mushroom Stems used on the Composter have had their fill chance adjusted from 85% to 65% 
+-   The all-sided pore mushroom block has been removed from the creative inventory
+-   Enchanted Golden Apples now give Regeneration II instead of Regeneration V, matching Java Edition ([MCPE-103061](https://bugs.mojang.com/browse/MCPE-103061))
+-   Added infinite duration option to Effect command. `/effect \<player: target\> \<effect: Effect\> infinite [amplifier: int] [hideParticles: Boolean]`
+-   Added specific effect removal option to Effect command. `/effect \<player: target\> clear \<effect: Effect\>`
+-   Placing Cocoa Beans now plays a sound ([MCPE-49126](https://bugs.mojang.com/browse/MCPE-49126))
+-   Beehive and Bee Nest can no longer be used as fuel in Furnaces ([MCPE-128393](https://bugs.mojang.com/browse/MCPE-128393)) 
+
+### Mobs
+
+-   Piglins will no longer pick up and admire Powered Rail items ([MCPE-91187](https://bugs.mojang.com/browse/MCPE-91187)) 
+

@@ -1,0 +1,90 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Block
+
+-   Added content warning when "carried\_textures" or "blockshape" are incorrectly written in blocks.json
+
+## Components
+
+-   Renamed the "minecraft:lookat" component to "minecraft:looked\_at" to better reflect its functionality
+    -   Its "look\_event" field was also renamed to "looked\_at\_event"
+    -   Its "look\_cooldown" field was also renamed to "looked\_at\_cooldown"
+-   Expanded the "minecraft:looked\_at" component functionality with the addition of six new \[Beta\] fields: 
+    -   "find\_players\_only" restricts the search for entities looking at the owner entity to Players only, ensuring that the closest Player satisfying the specified "filters" is selected
+    -   "look\_at\_locations" defines the parts of the owner entity that are targeted for being looked at
+        -   For these parts, a line-of-sight check is performed to ensure no blocks obstruct the view
+        -   Supported values are "head", "body", and "feet"
+    -   "not\_looked\_at\_event" specifies the event to trigger when no suitable entity is looking at the owner entity
+    -   "field\_of\_view" defines the width of the field of view, in degrees, for entities looking at the owner entity:
+        -   If "scale\_fov\_by\_distance" is set to true, this value corresponds to the field of view at a distance of one block between the entities
+    -   "scale\_fov\_by\_distance" determines if the field of view narrows as the distance between the owner entity and the entity looking at it increases
+        -   This ensures that the width of the view cone at the owner entity position remains relatively constant, regardless of distance
+    -   "line\_of\_sight\_obstruction\_type" defines which block shape is considered when checking for line-of-sight obstructions
+        -   Supported values are "outline," "collision," and "collision\_for\_camera"
+    -   Moreover, "set\_target" now supports three different values:
+        -   "never", looking entities are never set as targets, but events are emitted
+        -   "once\_and\_stop\_scanning", the first detected looking entity is set as target, but scanning and event emission is suspended if and until the owner entity has a target
+        -   \[Beta\] "once\_and\_keep\_scanning", the first detected looking entity is set as target, but scanning and event emission continues
+    -   All these fields are planned to be taken out of \[Beta\] and fully released at a later date
+
+## Editor
+
+-   Added an initial Editor Settings panel with options for 'Show Invisible Blocks' and 'Show Chunk Boundaries'
+
+## Entity Event Responses
+
+-   Added the "reset\_target" entity event response, which allows an entity to reset its target 
+
+## Feature
+
+-   Using unsupported feature placement in "pregeneration\_pass" will now throw a content error instead of crash
+
+## Graphical
+
+-   Add new the\_end.client\_biome.json as the first new type of file to contain per-biome rendering and audio settings in resource packs 
+
+## Items
+
+-   The `"minecraft:item"` object is parsed with a strict loader from 1.21.40
+    -   Numbers and booleans are no longer interchangeable in the JSON input
+    -   Floating point numbers are no longer accepted where an integer is expected
+
+## Resource and Behavior Packs
+
+-   Fixed an issue where packs were not downloaded or applied when joining a server that had CDN enabled
+-   Fixed an issue where user choice for downloading/applying resource packs during server join was ignored when CDN is enabled on the server
+
+## Trading
+
+-   Fixed an issue where trades with negative 'max\_use' values could not be traded
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## Graphical
+
+-   Improved lighting for maps when held in hand and when placed in frames in the Deferred Technical Preview 
+-   Fixed water surface shaking that would occur when upscaling was enabled in the Deferred Technical Preview 
+-   Added a slider in the Deferred Technical Preview video settings for controlling the upscaling resolution factor 
+
+## Molang
+
+-   Adding under upcoming creator features:
+    -   `query.client_memory_tier`. Returns a number representing the client RAM memory tier, 0 = 'Undetermined', 1 = 'SuperLow', 2 = 'Low', 3 = 'Mid', 4 = 'High', or 5 = 'SuperHigh'. Available on the Client (Resource Packs) only
+    -   `query.server_memory_tier`. Returns a number representing the server RAM memory tier, 0 = 'Undetermined', 1 = 'SuperLow', 2 = 'Low', 3 = 'Mid', 4 = 'High', or 5 = 'SuperHigh'. Available on the server side (Behavior Packs) only
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+

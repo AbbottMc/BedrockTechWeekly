@@ -1,0 +1,95 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   Removed "Upcoming Creator Feature" toggle requirement for `minecraft:item_visual` component.
+-   Updated `"minecraft:material_instances"` component
+    -   Removed **UpcomingCreatorFeatures** experiment requirement for `"abmient_occlusion"` field to be float type 
+-   Re-added new field `"ambient_occlusion_exponent"` to **blocks.json** file schema in resource packs, replaces broken `"brightness_gamma"` field. ([MCPE-188216](https://bugs.mojang.com/browse/MCPE-188216) , [MCPE-188221](https://bugs.mojang.com/browse/MCPE-188221)) 
+
+## Components
+
+-   The Strider now makes use of the minecraft:movement\_sound\_distance\_offset component for its movement sound distance offset
+
+## Editor
+
+-   Added Roughen brush to terrain tool
+-   Added color picker hue gradient selector works for monochromatic values 
+-   Updated Editor Compass body to toggle between NSEW directions and Axis directions (Z, -Z, X, -X) on click
+-   Updated block picker to a floating window and made the viewport behind it clearer for middle-click 
+-   Updated Flatten Brush to a Native Brush, increased maximum Height and Radius
+-   Updated export and play test pane to now include beds work and required sleeping players as export options 
+-   Updated hot bar item to open block picker when shortcut key is pressed and block is already selected
+-   Fixed a number of missing block icon thumbnails for block:// image resource
+-   Fixed error sound triggered by pressing the number 9 key
+
+## Entity Components
+
+-   The "minecraft:breedable" component now has a field that enables the offspring's "minecraft:color" attribute to be a blend of the parents' "minecraft:color"
+    -   "combine\_parent\_colors", If a color mutation will not happen, the baby will get a combination of the parents' colors if the colors are compatible. Color combinations follow the rules of DyeItem combinations. If the colors are not compatible the baby will get one of the parents colors chosen randomly
+        -   Valid values: "true", "false"
+
+## Entity Filters
+
+-   Added new entity filter "home\_distance", which checks the distance of an entity from its home 
+    -   Requires the subject entity to have a "minecraft:home" component
+    -   Returns false if the subject has no home or if the home is in a different dimension
+-   Added new entity filter "is\_bound\_to\_creaking\_heart", which checks if the Creaking Heart that spawned the subject Creaking still exists 
+
+## Graphical
+
+-   Improved logic for handling very large textures within atlases. Textures that are guaranteed to overflow the maximum atlas size will now have mips dropped individually rather than forcing the entire atlas to drop mips.
+
+## Items
+
+-   Added a content warning to the "minecraft:durability\_sensor" item component's "particle\_type" when an invalid value is provided 
+
+## Sounds
+
+-   Added "base" parameter to block sounds specifying another block sound they should use sounds for if they do not define a sound themselves
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Updated Aim Assist, now it can only be used in third person camera perspectives. Switching to a unsupported camera type will disable aim assist
+
+## Commands
+
+-   Added support for input glyph replacement for `/me` and `/tell` commands. For example, using input string ":\_input\_key.jump:" will be replaced with "JUMP" when using keyboard, or an emoji in case of using a gamepad.
+
+## Gameplay
+
+-   Added easing between two moving cameras when "Creator Camera: New Third Person Presets" experiment is enabled 
+
+### Components
+
+-   Removing a waterlogged custom block using the `minecraft:liquid_detection` component with `stopsLiquidFlowingFromDirection` enabled for all directions now results in flowing water rather than a stagnant block of water. 
+
+## Graphical
+
+-   Fixed a bug that caused a black screen on some PowerVR-based Android devices when using the Deferred Technical Preview. Some PowerVR devices are still known to experience issues. 
+-   Fixed a bug that caused blocks moved by a piston to flicker with the Deferred Technical Preview enabled
+-   Sub Surface Scattering is now affected by point lights in the Deferred Technical Preview. 
+-   Fixed a bug where the seams of certain cubemap faces would be visible in sky reflections in the Deferred Technical Preview
+
+## User Interface
+
+-   Added a new radio button to allow players to select if they want Deferred Video Settings to favor performance or favor visuals.
+-   Added support for input glyph replacement for signs, signed books, and NPC dialogs. For example, using input string ":\_input\_key.jump:" will be replaced with "JUMP" when using keyboard, or an emoji in case of using a gamepad.

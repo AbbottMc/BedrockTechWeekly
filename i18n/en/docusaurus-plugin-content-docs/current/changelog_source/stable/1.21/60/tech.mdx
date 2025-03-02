@@ -1,0 +1,396 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Added the ability to define the order for the items for the creative inventory & recipe book, called the crafting item catalog, for new items added by packs. New items can either merge with existing groups, create new groups with your own item for the icon, or just become added as loose items without a group. This catalog should be saved as `item_catalog/crafting_item_catalog.json` in your behavior pack
+
+Example:
+
+    \{
+       "format_version": "1.21.60",
+       "minecraft:crafting_items_catalog": \{
+          "categories": [
+             \{
+                // Valid values are construction, equipment, nature, and items
+                "category_name": "construction",
+                "groups": [
+                   \{
+                      // This will add the items to the end of the
+                      // existing planks group
+                      "group_identifier": \{
+                         "icon": "minecraft:oak_planks",
+                         "name": "minecraft:itemGroup.name.planks"
+                      \},
+                      "items": [
+                         "mynamespace:my_planks1",
+                         "mynamespace:my_planks2"
+                      ]
+                   \},
+                   \{
+                      // This will create a new group
+                      "group_identifier": \{
+                         "icon": "mynamespace:my_item",
+                         // This is the name of your group which doubles as
+                         // the localization string. The namespace is required
+                         "name": "mynamespace:my_group_name"
+                      \},
+                      "items": [
+                         "mynamespace:my_item"
+                      ]
+                   \},
+                   \{
+                      // This adds items without being part of a
+                      // group as loose items
+                      "items": [
+                         "mynamespace:my_loose_item"
+                      ]
+                   \}
+                ]
+             \}
+          ]
+       \}
+    \}
+    
+
+-   Item and Block json files now require a namespace for group names in the "menu\_category" object.
+    
+-   Added new Creator toggle setting \`Show Content Log GUI On Error During Load.
+    
+    -   This setting with make the Content Log GUI automatically open and display after loading into a world and there was either warnings or errors found during the loading process.
+    -   This setting is disabled in the Editor.
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Biomes
+
+-   Add creature spawn probability JSON component for spawning related experiments
+
+## Blocks
+
+-   Removed "Upcoming Creator Feature" toggle requirement for `minecraft:item_visual` component.
+    
+-   Removed **UpcomingCreatorFeatures** experiment requirement for `"ambient_occlusion"` field to be float type
+-   Re-added new field `"ambient_occlusion_exponent"` to **blocks.json** file schema in resource packs, replaces broken `"brightness_gamma"` field. ([MCPE-188216](https://bugs.mojang.com/browse/MCPE-188216) , [MCPE-188221](https://bugs.mojang.com/browse/MCPE-188221))
+    
+-   Fixed issue where legacy data driven block didn't apply the render layer from the material instances component
+    
+-   Fix spurious content log error: 'trying to override the Geometry component with blocks.json settings for a custom block'
+    
+-   Door blocks use state `minecraft:cardinal_direction` instead of `minecraft:direction`. Uses string values ("north, south, east, west")
+    
+-   Removed content log error: 'Block needs both a geometry and material instances component'
+    
+
+## Cameras
+
+-   Focus Target Camera is released. Its associated experimental toggle is removed ("Creator Cameras: Focus Target Camera")
+-   Focus Target Camera has vertical\_rotation\_limits of \[0.0, 180.0\] by default to reflect world space changes
+-   Focus Target camera now stops targeting when either \`clear\` from the camera command is used, or when the target is over 64 chunks away from the camera
+-   Focus Target Camera now displays a command output error when trying to target an entity when not on a free camera or custom camera that inherits from free camera.
+-   Focus Target Camera \`vertical\_rotation\_limits\` are now in world space. 0 degrees is straight down, 90 degrees is horizontal and 180 degrees is straight up. The limits for the values are \[0, 180\] inclusive.
+
+## Commands
+
+-   Fixed a bug that would cause messages to report double the items that match the criteria when using the clear command with a max count of 0
+    
+-   the "mine" overload of the /loot command has been moved to outside of Upcoming Creator Features experiments:
+    
+-   The /kick command now allows use of target selectors on Realms.
+    
+-   `wsserver` command disabled by default. Enable in General Settings.
+    
+-   Websocket encryption default enabled for all platforms
+    
+-   Added support for input glyph replacement for `/me` and `/tell` commands. For example, using input string ":\_input\_key.jump:" will be replaced with "JUMP" when using keyboard, or an emoji in case of using a gamepad.
+
+## Components
+
+-   The Strider now makes use of the minecraft:movement\_sound\_distance\_offset component for its movement sound distance offset
+    
+-   Added the "minecraft:renders\_when\_invisible" component, which enables entities to render even when invisible
+    
+    -   Appropriate rendering behavior can then be specified in the corresponding "minecraft:client\_entity"
+-   Moved the `minecraft:liquid_detection` component out of the Upcoming Creator Features experiment for format\_versions 1.21.60 and above
+    
+-   Expand the `minecraft:breedable` component to allow inheriting properties to child entities
+    
+    -   Adds the new "property\_inheritance" field which takes property name keyed objects
+    -   The objects in property\_inheritance can contain a "mutation\_chance" which give the chance it should not inherit from either parent
+    -   They can also contain the "mutation\_values" array of values to select from if mutating and the component has random mutation set
+-   Added "min\_looked\_at\_duration" field to "minecraft:looked\_at" component to specify how long a stare has to be maintained before the target and cooldown logic is set
+    
+-   The Strider now makes use of the minecraft:movement\_sound\_distance\_offset component for its movement sound distance offset
+    
+-   Two values on the minecraft:storage\_item component have been split off into separate components:
+    
+    -   max\_weight\_limit has been moved to the new minecraft:storage\_weight\_limit component
+    -   weight\_in\_storage\_item has been moved to the new minecraft:storage\_weight\_modifier component
+-   Moved the "minecraft:compostable" item component out of experimental and to Release. Moved the related scripting apis out of Beta to Release
+    
+
+## Collisions
+
+-   Entities with no collision box but with the `minecraft:custom_hit_test` component are no longer sometimes unable to be interacted with
+
+## Dedicated Server
+
+-   The movement mode authority chosen settings will now be displayed in the command window on dedicated server launch.
+
+## Editor
+
+-   Added Roughen brush to terrain tool
+    
+-   Added a new Workbench tool which allows for quickly changing block states for blocks with modifiable properties (doors, fences, etc)
+    
+-   Added new Vertical Fly Speed ability.
+    
+-   Added a night vision setting to the view settings pane. This enables night vision within the editor for the user and is enabled by default.
+    
+-   Added `ContinuousAction` to supported key binding actions that simulate key repeats at set tick intervals
+    
+-   Added 'Test World', 'Export', and 'Settings' to the ActionBar
+    
+-   Added missing image for 'Navigation Panel' in the ActionBar
+    
+-   Added color picker hue gradient selector works for monochromatic values
+    
+-   Added right click on action bar items to toggle selector menus
+    
+-   Added data-driven rendering to editor block images
+    
+    -   Added block name aliasing for signs
+    -   Added support for namespace block names for `block://` protocol
+-   Added a new `BlockTable` UI element to Property Pane API.
+    
+-   Added an optional CursorPosition property to the CursorPropertiesChangeAfterEvent. Using this new property, developers can track when the block or block face under the mouse cursor changes.
+    
+-   Updated Editor Compass body to toggle between NSEW directions and Axis directions (Z, -Z, X, -X) on click
+    
+-   Updated block picker to a floating window and made the viewport behind it clearer for middle-click
+    
+-   Updated Flatten Brush to a Native Brush, increased maximum Height and Radius
+    
+-   Updated export and play test pane to now include beds work and required sleeping players as export options
+    
+-   Updated hot bar item to open block picker when shortcut key is pressed and block is already selected
+    
+-   Updated daylight cycle and multiplayer options to now be respected in an exported world
+    
+-   Updated Bedrock Dedicated Server to correctly load an existing Editor project regardless if the `Editor=true` command line argument is used
+    
+-   Updated Fly Speed Multiplier Global Hotkeys.
+    
+    -   Q, E, Shift + Q and Shift + E have been added as viewport keyboard shortcuts for increasing and decreasing fly speed
+-   Updated rotation slider to be an integer
+    
+-   Updated `/reload` (and the `Reload Scripts` action bar item) to now work in the editor when hosting a session, or connected to a remote session (when only a single player is connected).
+    
+-   Updated player model to now be fully hidden while in tool mode
+    
+-   Updated farm generator to use transactions allowing for undo and redo functionality
+    
+-   Updated the summon tool nudge operation to remain active as long as the key binding is held down.
+    
+-   Fixed an assert/crash that occurs when changing dimensions
+    
+-   Fixed an assert/crash when saving world and re-entering a world multiple times
+    
+-   Fixed a bug that occasionally made panel scrollbars unresponsive.
+    
+-   Fixed a bug that caused action bar items to change positions when scrollbar is visible
+    
+-   Fixed a bug where game menus are shown in the tool mode viewport
+    
+-   Fixed incorrect maximum value for fixed distance mode
+    
+-   Fixed a bug that caused text field to lose focus when another UI element is hovered
+    
+-   Fixed a number of missing block icon thumbnails for block:// image resource
+    
+-   Fixed error sound triggered by pressing the number 9 key
+    
+-   Fixed block thumbnail images to be centered in hotbar, block picker and lists
+    
+
+## Entities
+
+-   Fixed issue where `No more entities` assert failure occurred when flying through biomes during a storm
+
+## Entity Components
+
+-   The "minecraft:breedable" component now has a field that enables the offspring's "minecraft:color" attribute to be a blend of the parents' "minecraft:color"
+    
+    -   "combine\_parent\_colors", If a color mutation will not happen, the baby will get a combination of the parents' colors if the colors are compatible. Color combinations follow the rules of DyeItem combinations. If the colors are not compatible the baby will get one of the parents colors chosen randomly
+        -   Valid values: "true", "false"
+
+## Entity Filters
+
+-   Added new entity filter "home\_distance", which checks the distance of an entity from its home
+    
+    -   Requires the subject entity to have a "minecraft:home" component
+    -   Returns false if the subject has no home or if the home is in a different dimension
+-   Added new entity filter "is\_bound\_to\_creaking\_heart", which checks if the Creaking Heart that spawned the subject Creaking still exists
+    
+
+## Fog
+
+-   Fixed issue where "inherit\_from\_prior\_fog" field in biomes\_client.json was ignored on first content on resource pack stack ([MCPE-187805](https://bugs.mojang.com/browse/MCPE-187805))
+
+## Gameplay
+
+-   Fixed a bug where opening a chest while the clone command is spamming could crash the server.
+
+## Graphical
+
+-   Improved logic for handling very large textures within atlases. Textures that are guaranteed to overflow the maximum atlas size will now have mips dropped individually rather than forcing the entire atlas to drop mips.
+    
+-   Single-channel textures in resource packs are now interpreted as grayscale, rather than red. This change does not apply to single-channel UI textures, which were already interpreted as such
+    
+-   client\_biome JSON files now support a "surface\_opacity" field in the "minecraft:water\_appearance" component
+    
+    -   This change also restores swampland and warm\_ocean surface opacity to what they were until recently when the client\_biome JSON files were introduced
+
+## Items
+
+-   Added a content warning to the "minecraft:durability\_sensor" item component's "particle\_type" when an invalid value is provided
+    
+-   Fixed an issue where non-host clients joining multiplayer sessions would be missing an icon for packs that had duplicate items
+    
+-   The following legacy item (pre 1.16.100) components are now synced to the client:
+    
+    -   `minecraft:camera`
+    -   `minecraft:seed`
+    -   `minecraft:max_damage`
+    -   `minecraft:hand_equipped`
+    -   `minecraft:stacked_by_data`
+    -   `minecraft:foil`
+    -   `minecraft:block`
+    -   `minecraft:use_duration`
+    -   `minecraft:max_stack_size`
+-   Removed "Upcoming Creator Feature" toggle requirement for `minecraft:block_placer` item component
+    
+-   Migrated ItemData from `StartGamePacket` into `ItemRegistryPacket` (renamed from `ItemComponentPacket`)
+    
+
+## Network Protocol
+
+-   Added ActorFlags::RENDERS\_WHEN\_INVISIBLE
+
+## Scripting
+
+-   Fixed `Entity.getComponent` and `Entity.getComponents` from crashing when called within `EntityDieAfterEvent` callback.
+
+## Sounds
+
+-   Added "base" parameter to block sounds specifying another block sound they should use sounds for if they do not define a sound themselves
+
+## Stability and Performance
+
+-   Fixed an issue where optional and required resource packs couldn't be downloaded when joining a multiplayer game if it was cancelled on the first download and join attempt
+    
+-   Players on Switch should remain signed into their Microsoft Account after putting Minecraft app to sleep and resuming it.
+    
+-   Removed redundant biome data from chunks and improved World Template generation stability.
+    
+-   Made changes to add up to 4% CPU performance improvement on Switch
+    
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## Aim Assist
+
+-   Updated Aim Assist, now it can only be used in third person camera perspectives. Switching to a unsupported camera type will disable aim assist
+-   Changed aim-assist preset item settings to reference categories by unique namespace Ids globally instead of via name in a 'categories' list.
+    
+-   Aim assist will no longer get automatically enabled when switch to vanilla third-person-behind camera by default ([MCPE-188005](https://bugs.mojang.com/browse/MCPE-188005))
+    
+-   Aim assist will now only allow interactions within player's interact distance
+    
+-   Aim Assist can now properly detect entities have hitbox partially inside detection area
+    
+-   Block and entity targeting of Aim assist will now apply to touch control modes: 'Joystick & tap to interact' and 'D-Pad & tap to interact'
+    
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Commands
+
+-   Place: Entities saved within structures will now be placed unless specified
+-   Added two subcommands to the `/place` command behind the Upcoming Creator Features Experiment toggle
+    
+    -   `/place feature`
+    -   `/place featurerule`
+-   `RegistrationBuilder.structureLocation` method in @minecraft/server-gametest
+    
+    -   Added optional argument `structureDimension: DimensionTye | string` to specify which dimension the gametest should spawn in. If not provided, it will default to whichever dimension the test is ran from.
+-   `system.scriptEvent()` no longer returns `ScriptEventMessageSizeError` but instead an `InvalidArgumentError` for the message size exceeding 2048 characters in size in Beta
+    
+-   Removed `ScriptEventMessageSizeError` from Beta
+    
+-   Moved CameraTargetOptions from beta to `v1.16.0`
+    
+
+## Cameras
+
+-   Added easing between two moving cameras when "Creator Camera: New Third Person Presets" experiment is enabled
+-   Added the option to limit yaw rotations on all cameras with an orbit component
+
+## Creator
+
+-   Added support for ItemTags in match\_tool loot table conditions behind the Upcoming Creator Features Experiment toggle
+
+### Components
+
+-   Removing a waterlogged custom block using the `minecraft:liquid_detection` component with `stopsLiquidFlowingFromDirection` enabled for all directions now results in flowing water rather than a stagnant block of water.
+
+## Molang
+
+-   Moved `query.last_input_mode_is_any` to stable. It takes one or more arguments ('keyboard\_and\_mouse', 'touch', 'gamepad', or 'motion\_controller'). If the last input used is any of the specified string values, returns 1.0. Otherwise returns 0.0. Available on the Client (Resource Packs) only.
+-   Moved `query.touch_only_affects_hotbar` to stable. It returns 1.0 if the touch input only affects the touchbar, otherwise returns 0.0. Available on the Client (Resource Packs) only.
+
+## Scripting API
+
+-   Moved enum `InputMode` from `beta` to `1.17.0`.
+-   Moved class `InputInfo` from `beta` to `1.17.0`.
+    -   Moved property `lastInputModeUsed` from `beta` to `1.17.0`.
+    -   Moved property `touchOnlyAffectsHotbar` from `beta` to `1.17.0`.
+-   Class `Player`.
+    -   Moved property `inputInfo` from `beta` to `1.17.0`.
+-   Moved class `PlayerInputModeChangeAfterEvent` from `beta` to `1.17.0`.
+-   Moved class `PlayerInputModeChangeAfterEventSignal` from `beta` to `1.17.0`.
+-   Class `WorldAfterEvents`.
+    -   Moved property `playerInputModeChange` from `beta` to `1.17.0`.
+-   Moved class `InvalidEntityError` from `beta` to `1.17.0`.
+-   `system.scriptEvent` updated to return a new error for exceeding the message size
+-   Structure
+    -   Added `waterlogged: boolean` parameter to `setBlockPermutation`. This can be used to set whether the specified block within a structure is waterlogged.
+-   Removed `ScriptBlockType.canBeWaterlogged` from Beta - instead, `ScriptBlock.canContainLiquid` or `ScriptBlockPermutation.canContainLiquid` can be used to check if a block can be waterlogged.
+
+## Stability and Performance
+
+-   Resolved a crash that could occur when using top\_layer\_modification in custom jigsaw structures
+-   Resolved a crash that could occur when entering the nether with a custom jigsaw structure in the nether
+-   Experimental support for applying a service-driven texture memory budget in low memory situations. When enabled, memory will be conserved by progressively reducing resolution of some textures as usage approaches the budgeted limit.
+
+## User Interface
+
+-   Added a new radio button to allow players to select if they want Deferred Video Settings to favor performance or favor visuals.

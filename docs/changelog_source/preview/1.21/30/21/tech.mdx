@@ -1,0 +1,183 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Removed deprecated behavior pack download related code from packets in the world join flow
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   Fixed `minecraft:repeating_command_block` to not execute when changing to `needs redstone` from `automatic`.
+-   Added the 'minecraft:redstone\_conductivity' component which controls the basic Redstone properties of a custom block
+
+## Commands
+
+-   The /locate structure command output now displays the identifier of the found structure instead of its name
+
+## Editor
+
+-   Revamped Client Widget System
+    -   Refactored the Client Widget system to use components for base widget functionality
+    -   Added Editor Client Renderer Helper Service to aid with Editor in-world widget rendering
+    -   Changed Gizmo movement to be completely free moving and snap to grid on release
+    -   Added new widget components for Entities, Text, Gizmos, Height Guide, and basic Render Primitives
+-   Additional updates to the PropertyPane API
+    -   Removed IPropertyPane addBlockPicker and addEntityPicker methods in favor of addComboBox API that leverages type safe IObservableProp\<string\> value
+        -   Added interfaces IComboBoxPropertyItem and IComboBoxPropertyItemOptions
+        -   Combo box supports different data types for additional validation with ComboBoxPropertyItemDataType. Entity and Block types work similarly to the old component, Custom type allows user defined list and it's the default
+    -   Added an alternative Property Pane addNumberAPI that leverages type safe IObservableProp\<number\> value API
+        -   Added interfaces INumberPropertyItemand INumberPropertyItemOptions for the new property item
+        -   Renamed function to create property bag number item to addNumber\_deprecated
+    -   Updated theme colors for input fields, and center aligned number input field values
+    -   Added an alternative Property Pane addDropdownAPI that leverages type safe IObservableProp\<number\> value
+        -   Added interfaces IDropdownPropertyItem, IDropdownPropertyItemOptions and IDropdownPropertyItemEntry for the new property item. Each dropdown entry now supports imageData?: ImageResourceData property to render an image
+        -   Renamed function to create property bag number item to addDropdown\_deprecated
+    -   Fixed theming and content alignment issues for the dropdown UI elements
+    -   Added an alternative Property Pane addColorPicker API that leverages type safe IObservableProp\<RGBA\> value API
+        -   Added interfaces IColorPickerPropertyItemand IColorPickerPropertyItemOptions for the new property item
+        -   Renamed function to create property bag color picker item to addColorPicker\_deprecated
+    -   Added an alternative Property Pane addString API that leverages type safe IObservableProp\<string\> value API
+        -   Added interfaces IStringPropertyItemand IStringPropertyItemOptions for the new property item
+        -   Renamed function to create property bag string item to addString\_deprecated
+    -   Fixed missing Summon Tool icon
+    -   Added the following functions to "ExtensionContext.settings.theme": addNewTheme(name: string): void, deleteTheme(name: string): void, getCurrentTheme(): string, and updateThemeColor(name: string, key: ThemeSettingsColorKey, newColor: minecraftserver.RGBA): void. These functions will throw if "minecraft:default" or any other built-in theme is passed to them. updateThemeColor and deleteTheme will also throw if the theme does not exist
+    -   Added block image support to block picker modal
+    -   Fixed a bug where typing certain characters in the block or entity picker caused an error
+    -   Added validation to prevent adding already existing block in a probability palette item
+    -   Added the following functions to "ExtensionContext.settings.theme": addNewTheme(name: string): void, deleteTheme(name: string): void, getCurrentTheme(): string, and updateThemeColor(name: string, key: ThemeSettingsColorKey, newColor: minecraftserver.RGBA): void. These functions will throw if "minecraft:default" or any other built-in theme is passed to them. updateThemeColor and deleteTheme will also throw if the theme does not exist.
+
+## Entity Components
+
+-   "behavior.fire\_at\_target" is no longer restricted to Vanilla content
+    -   This goal allows an entity to attack by firing a shot with a delay
+-   "behavior.jump\_around\_target" is no longer restricted to Vanilla content
+    -   This goal allows an entity to jump over and around a target
+-   "behavior.move\_around\_target" is no longer restricted to Vanilla content
+    -   This goal allows an entity to move around a target
+
+## Gameplay
+
+-   Exposed the entity offset so the user can change the camera's pivot point from the entity's center for third person boom cameras
+
+## General
+
+-   Updated Feature Rules documentation
+-   Added GUI Log Level option to the Creator section of settings which changes which level of content logs are displayed on-screen when content logs are enabled
+
+## Items
+
+-   Adds a content error for if an icon can't be found with icon\_namefrom minecraft:icon in 1.10 data
+-   Fixed an issue where item components would not initialize on remote clients ()
+-   Added "minecraft:rarity" item component which allows specifying the rarity of an item
+    -   It has a single field "value" which accepts the following values:
+        -   "common"
+        -   "uncommon"
+        -   "rare"
+        -   "epic"
+    -   Can also be written as an inlined value like so: "minecraft:rarity": "uncommon"
+    -   The rarity of the item will determine which color it uses for its name
+        -   If the item has a "minecraft:hover\_text\_color" component specified, that hover text color will take priority and be used instead of the rarity color
+
+## Loot Tables
+
+-   Added "set\_potion" item function for loot tables which can set the potion type of compatible items with a potion id
+    -   It has a single field "id" which accepts the following potion id values:
+        -   "water"
+        -   "mundane"
+        -   "long\_mundane"
+        -   "thick"
+        -   "awkward"
+        -   "nightvision"
+        -   "long\_nightvision"
+        -   "invisibility"
+        -   "long\_invisibility"
+        -   "leaping"
+        -   "long\_leaping"
+        -   "strong\_leaping"
+        -   "fire\_resistance"
+        -   "long\_fire\_resistance"
+        -   "swiftness"
+        -   "long\_swiftness"
+        -   "strong\_swiftness"
+        -   "slowness"
+        -   "long\_slowness"
+        -   "strong\_slowness"
+        -   "water\_breathing"
+        -   "long\_water\_breathing"
+        -   "healing"
+        -   "strong\_healing"
+        -   "harming"
+        -   "strong\_harming"
+        -   "poison"
+        -   "long\_poison"
+        -   "strong\_poison"
+        -   "regeneration"
+        -   "long\_regeneration"
+        -   "strong\_regeneration"
+        -   "strength"
+        -   "long\_strength"
+        -   "strong\_strength"
+        -   "weakness"
+        -   "long\_weakness"
+        -   "wither"
+        -   "turtle\_master"
+        -   "long\_turtle\_master"
+        -   "strong\_turtle\_master"
+        -   "slow\_falling"
+        -   "long\_slow\_falling"
+        -   "wind\_charged"
+        -   "weaving"
+        -   "oozing"
+        -   "infested"
+    -   The following types of items are compatible with the "set\_potion" function:
+        -   Potion
+        -   Lingering Potion
+        -   Splash Potion
+        -   Arrow
+
+## Structures
+
+-   Fixed minecraft:structure\_blockdebug bounding box rendering when clients initially load server worlds containing one
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Added "item\_display\_transforms" control to the block geometry file. This controls the way a block is visually represented in the UI, on the player, and floating on the ground. It exists inside the minecraft:geometry json object and requires geometry format\_version 1.21.0 and the "Upcoming Creator Features" toggle
+    -   Default values example:
+        -   "item\_display\_transforms": \{ "gui" : \{ "translation": \[0, 0, 0\], "rotation": \[30, 225, 0\], "scale": \[0.625, 0.625, 0.625\], "rotation\_pivot" : \[0, 0, 0\], "scale\_pivot" : \[0, 0, 0\], "fit\_to\_frame" : true \}, "firstperson\_righthand": \{ "translation": \[0, 0, 0\], "rotation": \[0, 45, 0\], "scale": \[0.4, 0.4, 0.4\], "rotation\_pivot" : \[0, 0, 0\], "scale\_pivot" : \[0, 0, 0\] \}, "firstperson\_lefthand": \{ "translation": \[0, 0, 0\], "rotation": \[0, -135, 0\], "scale": \[0.4, 0.4, 0.4\], "rotation\_pivot" : \[0, 0, 0\], "scale\_pivot" : \[0, 0, 0\] \}, "thirdperson\_righthand": \{ "translation": \[0, 2.5, 0\], "rotation": \[75, 45, 0\], "scale": \[0.375, 0.375, 0.375\], "rotation\_pivot" : \[0, 0, 0\], "scale\_pivot" : \[0, 0, 0\] \}, "thirdperson\_lefthand": \{ "translation": \[0, 2.5, 0\], "rotation": \[75, 45, 0\], "scale": \[0.375, 0.375, 0.375\], "rotation\_pivot" : \[0, 0, 0\], "scale\_pivot" : \[0, 0, 0\] \}, "ground": \{ "translation": \[0, 3.0, 0\], "rotation": \[0, 0, 0\], "scale": \[0.25, 0.25, 0.25\], "rotation\_pivot" : \[0, 0, 0\], "scale\_pivot" : \[0, 0, 0\] \}, "fixed": \{ "translation": \[0, 0, 0\], "rotation": \[0, 0, 0\], "scale": \[0.5, 0.5, 0.5\], "rotation\_pivot" : \[0, 0, 0\], "scale\_pivot" : \[0, 0, 0\] \}, "head": \{ "translation": \[0, 0, 0\], "rotation": \[0, 0, 0\], "scale": \[1, 1, 1\], "rotation\_pivot" : \[0, 0, 0\], "scale\_pivot" : \[0, 0, 0\] \} \}
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Fixed a variety of issues on the Mali device family of Android, most notably the "striped shadows" bug, in the Deferred Technical Preview ([MCPE-175207](https://bugs.mojang.com/browse/MCPE-175207))
+-   Removed an incorrect offset when interpolating keyframe values for the sun illuminance and sun color. Keyframe values for sun illuminance and sun color are now consistent with other time-based keyframe values. Creators will need to shift any sun illuminance and color keyframes by 0.5. Documentation on the Creator portal has been updated accordingly
+-   Added the ability to data-drive Sub Surface Scattering via Texture Sets in the Deferred Technical Preview. This effect allows light to penetrate the surface of objects up to a certain amount, similar to wax, leaves or skin. The default sub surface effect previously on leaves has been removed in favor of packs providing their own textures. Creators can use "metalness\_emissive\_roughness\_subsurface"instead of "metalness\_emissive\_roughness" in their texture set JSONs to activate the effect on specific blocks, mobs, etc... Sub surface values are pulled from the alpha channel of the supplied texture. See updated documentation on the Creator portal for more information
+    -   Note that this new field is only available in texture set JSONs with a format version of "1.21.30"
+-   Changed the color grading JSON schema for the Deferred Technical Preview to now require explicit enabling of highlight and shadow specific color grading settings. See updated documentation on the Creator portal for more information
+-   Added highlight and shadow color grading controls to the Editor's Deferred Graphics Settings
+-   Added the ability to data-drive emissive desaturation in the Deferred Technical Preview. See updated documentation on the Creator portal for more information
+-   Added support for enchanted items in the Deferred Technical Preview
+-   Reduced the smudging or “ghosting” artifacts that would occur when swinging the item in the player’s hand with Upscaling enabled in the Deferred Technical Preview
+-   Fixed a variety of issues that caused certain objects to not cast shadows from point lights, and modified point light sources such that their geometry can no longer cast shadows in the Deferred Technical Preview

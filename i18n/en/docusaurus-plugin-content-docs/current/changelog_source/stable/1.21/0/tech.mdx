@@ -1,0 +1,81 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## **Updated Add-On Template Packs**
+
+-   Updated Add-On templates for 1.21.0 with new resources, behaviors, and documentation are available to download at [aka.ms/MCAddonPacks](https://aka.ms/MCAddonPacks)
+
+## **General**
+
+-   Fixed a crash when an entity identifier was too complex
+-   Removed 'server-authoritative-block-breaking' from the default server.properties
+-   Removed 'server-authoritative-sound' from server.properties
+-   Fixed a problem where teleporting while using an item with a long use duration could leave it in an unresponsive state until the use duration elapsed
+-   Documentation for version 1.13.0 of "Decoration Features" is now up to date
+-   Changed Biome documentation to generate with a different system, which will cause the layout and order of those documentation elements to change
+-   Fixed a bug where, if a block and item are registered with the same identifier, the block returns a null item when 'picked'
+-   Fixed an issue where particle effect lifetime event timeline did not trigger events as expected
+-   Removed Free camera preset experiment as the Free camera preset is available in retail
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## **Blocks**
+
+-   The "tallgrass" block is now split into unique instances "short\_grass" and "fern"
+-   "double\_plant" block is now split into unique instances "sunflower", "lilac", "tall\_grass", "large\_fern", "rose\_bush" and "peony"
+-   "coral\_block" block is now split into unique instances: "tube\_coral\_block", "brain\_coral\_block", "bubble\_coral\_block", "fire\_coral\_block", "horn\_coral\_block", "dead\_tube\_coral\_block", "dead\_brain\_coral\_block", "dead\_bubble\_coral\_block", "dead\_fire\_coral\_block" and "dead\_horn\_coral\_block"
+-   "stone\_block\_slab" block is now split into unique instances "smooth\_stone\_slab", "sandstone\_slab", "petrified\_oak\_slab", "cobblestone\_slab", "brick\_slab", "stone\_brick\_slab", "quartz\_slab", and "nether\_brick\_slab"
+-   Updated block geometry to allow uv rotations
+    -   This allows you to rotate the specified uv rect in 90 degree increments before applying it to a block face
+    -   Supported from _minecraft:geometry_ format version 1.21.0 and up
+-   Added pivot for scale in the Block Transformation Component
+-   Added pivot for rotation in the Block Transformation Component
+
+## **Commands**
+
+-   Fixed hunger element so that its visibility can be changed with the /hud command
+
+## **Components**
+
+-   The default values for the "damage\_sources" field of "behavior.panic" have been updated
+    -   For the complete list of the new default values, refer to the "Vanilla Parity" section of the changelog
+    -   This change only affects entities with a format version of 1.21.0 or higher
+-   Multiple items with the same custom component will now correctly trigger custom component logic
+
+## **Entities**
+
+-   Updated entity geometry to allow UV rotations. This allows you to rotate the specified UV rect in 90 degree increments before applying it to a cube face of an entity model. Supported from _minecraft:geometry_format version 1.21.0 and up
+
+## **Items**
+
+-   Unlocking requirements are now sent to clients for "minecraft:recipe\_shapeless" and "minecraft:recipe\_shaped"
+    -   It allows the UI to suggest recipes that are always unlocked when the game rule "dolimitedcrafting" is enabled  
+          
+        
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## **Molang**
+
+-   Added Molang _state\_time -\> number_for animation controllers, which returns the time in seconds spent in the current controller state (inclusive of blend time)
+    -   Requires the 'Upcoming Creator Features' experimental toggle

@@ -1,0 +1,75 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Biomes
+
+-   Fixed an issue where chunks created before 1.17.40 could behave as Ocean biomes, with ocean-like fog, sky color, and mob spawning ([MCPE-186928](https://bugs.mojang.com/browse/MCPE-186928 "https://bugs.mojang.com/browse/MCPE-186928"))
+
+## Editor
+
+-   Added new Locate tool to help find biomes
+    
+-   Time of day is fixed to Noon at Editor startup
+    
+-   Improved viewport focus visibility with an animated outline on focus and added focused state as a step for Toggle Mode (CTRL + TAB)
+    
+-   Added `focusToolInputContext` function to `IModalToolContainer` which will try to set modal input focus (e.g. viewport for tool rail)
+    
+
+## Entity Components
+
+-   Removed the 'minecraft:can\_attack\_ghast' component and replaced it with a new component 'minecraft:cannot\_be\_attacked'. When added to an entity it prevents other entities from attacking it unless they fulfill an exception filter, in vanilla it is added to Ghasts, creators can add their entities to the exception filter allowing them to then attack Ghasts.
+
+## Entity Event Responses
+
+-   The "execute\_event\_on\_home\_block" entity event response is now marked as \[Beta\] and requires "use\_beta\_features" to be specified in the root JSON object
+    
+    -   The current implementation doesn't fully align with our internal standards, so it will remain unavailable for Creator content until we can develop a more robust technical solution
+    -   This approach allows us to iterate on the feature without risking backward compatibility
+-   Added the "emit\_particle" entity event response, allowing particles to be emitted at the center of the entity's bounding box
+    
+    -   The "particle" field allows to specify the type of particle to emit
+
+## Network Protocol
+
+-   Level event removed: ParticleCreakingTeardown
+-   New particle type added: CreakingCrumble
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## Camera
+
+-   Added experimental toggle "Aim Assist" to allow easy targeting while using custom camera perspectives.
+    
+    -   Aim Assist currently targets blocks. Entites will be enabled in a future release.
+-   Aim Assist can be enabled through "/aimassist" command.
+    
+    -   Aim Assist's targeting behavior (distance, width, and height) can be configured through the settings under "aim\_assist" folder using a behavior pack.
+    -   Aim Assist will highlight the selected target. The highlighting textures are customizable through textures under "textures\\ui" folder using a resource pack
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Creator Options
+
+-   Added section "Device Info Settings".
+    -   Added option to allow override memory tier used in Scripting and Molang.

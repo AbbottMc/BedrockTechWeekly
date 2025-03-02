@@ -1,0 +1,143 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Added a content error when ‘snow\_accumulation’ array in a biome JSON has the minimum value set higher than the maximum value
+-   Fixed Camera sometimes having a visible easing motion after a non-eased camera set command ([MCPE-181364](https://bugs.mojang.com/browse/MCPE-181364)) 
+-   Fixed an issue that caused sideloaded .mcpack files to fail to apply when uploading to Realms 
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   Fixed a bug where interacting, while sneaking, with Command, Jigsaw, and Structure blocks could cause the UI to open/close multiple times
+-   The Scaffolding block no longer flickers when moving at far distances ([MCPE-120910](https://bugs.mojang.com/browse/MCPE-120910))
+-   Top Snow/snow\_layer block now falls when placed using the /setblock command 
+-   "double\_stone\_block\_slab" block is now split into unique instances "smooth\_stone\_double\_slab", "sandstone\_double\_slab", "oak\_double\_slab", "cobblestone\_double\_slab", "brick\_double\_slab", "stone\_brick\_double\_slab", "quartz\_double\_slab", and "nether\_brick\_double\_slab"
+    -   The id "oak\_double\_slab" had already been split from "double\_wooden\_slab", as a result, any "double\_stone\_block\_slab:2" will be turned into the already existing "oak\_double\_slab" id. 
+-   "monster\_egg" block is now split into unique instances: "infested\_stone", "infested\_cobblestone", "infested\_stone\_bricks", "infested\_mossy\_stone\_bricks", "infested\_cracked\_stone\_bricks", and "infested\_chiseled\_stone\_bricks" 
+-   "infested\_cobblestone" block destroy time has been changed to match Java Edition
+-   "stonebrick" block is now split into unique instances: "stone\_bricks", "mossy\_stone\_bricks", "cracked\_stone\_bricks", and "chiseled\_stone\_bricks" 
+-   "Smooth Stone Bricks" block can no longer be obtained through commands and existing "Smooth Stone Bricks" will be converted to "Stone Bricks"
+-   "stone\_block\_slab3" block is now split into unique instances "end\_stone\_brick\_slab", "smooth\_red\_sandstone\_slab", "polished\_andesite\_slab", "andesite\_slab", "diorite\_slab", "polished\_diorite\_slab", "granite\_slab" and "polished\_granite\_slab"
+-   "prismarine\_slab", "dark\_prismarine\_slab", "prismarine\_brick\_slab", "andesite\_slab", "polished\_andesite\_slab", "diorite\_slab", "polished\_diorite\_slab", "granite\_slab" and "polished\_granite\_slab" now have a destruction time of 1.5
+-   "end\_stone\_brick\_slab" now has a destruction time of 3.0
+-   "stone\_block\_slab2" block is now split into unique instances "red\_sandstone\_slab", "purpur\_slab", "prismarine\_slab", "dark\_prismarine\_slab", "prismarine\_brick\_slab", "mossy\_cobblestone\_slab", "smooth\_sandstone\_slab", and "red\_nether\_brick\_slab"
+
+## Editor
+
+The Editor and its corresponding API are in early development, and available for keyboard/mouse on Windows PC Bedrock Preview builds. Tag us on social channels with **#BedrockEditor.**
+
+Learn [how to use](https://aka.ms/LearnEditor) the Editor, join the [GitHub Discussion](https://github.com/Mojang/minecraft-editor/discussions) forum to engage with the team, and get started building extensions via the [starter kit](https://github.com/Mojang/minecraft-editor-extension-starter-kit) and [samples](https://github.com/Mojang/minecraft-editor-extension-samples).
+
+Updates this week:
+
+-   Added a new Paste Preview tool which supports preview visualization of the clipboard contents and enables rotate and mirror. Additional functionality has also been added to keyboard bindings
+    -   SHIFT+CTRL+V - Activate Paste Preview Mode (if there's content in the clipboard)
+    -   CTRL+C - Copy Selection to Clipboard
+    -   CTRL+V - Immediate paste to cursor position (no preview)
+    -   Arrows/Pg UP/Pg DN - manually nudge the 3D block cursor in a camera relative direction
+    -   CTRL + Arrows/Pg UP/Pg DN - Manually nudge the pivot location inside the bounds of the clipboard item, in a camera relative direction
+    -   SHIFT+CTRL + Arrows/Pg UP/Pg DN - Manually nudge the placement offset, in a camera relative direction
+    -   CTRL+D or ESC - Deselect Preview Mode
+    -   Left Mouse Click, ENTER or CTRL+F - Place paste preview in the world at the 3D block cursor position
+    -   CTRL + Mouse Click - Remove blocks in the shape of the clipboard item (Note: Current implementation will only use the bounding box... complex shape removal is still in development)
+    -   B - Cursor Block Mode
+    -   F - Cursor Adjacent (Face) Mode
+    -   R - Rotate Cycle CW (0, 90, 180, 270) around Y axis at pivot location
+    -   SHIFT+R - Rotate Cycle CCW (270, 180, 90, 0) around Y at pivot location
+    -   X - Mirror X Axis around pivot
+    -   Z - Mirror Z Axis around pivot
+    -   C - Toggle Cursor Control Mode between "Keyboard & Mouse" or "Keyboard Only"
+    -   D - Change Cursor Control mode to "Fixed Distance"
+    -   Scroll Wheel - Adjust Fixed Cursor distance (only when Fixed distance is enabled)
+-   Fixed a bug where clicking repeatedly on the "Uniform" checkbox in brush tool settings could cause a crash 
+-   Add _enabled_ property to _IMenu_ and _IMenuCreationParams_
+-   Added customization and pagination support for the Action bar. Action selector can be opened from plus button to add new items or from bottom right arrow of existing items to modify them 
+-   Updated documentation for SimpleTool classes
+-   Snow layer now falls when placed with a brush
+
+## Entities
+
+-   Armor equipped to the second slot of "minecraft:equippable" is now applied to "slot.armor.body" instead of "slot.armor.torso"
+    -   To retrieve information about it, "query.armor\_texture\_slot", "query.armor\_color\_slot" and "query.armor\_damage\_slot" should now be used with a value of 4
+    -   This change only affects entities with a format version equal to or greater than _21.10_
+
+## General
+
+-   Updated documentation for Feature Rules' schema 
+
+## Graphical
+
+-   Level screenshot thumbnails now support RTX and Deferred Technical Preview worlds
+-   Particle Emitters that use the "minecraft:particle\_appearance\_lighting" component now use the correct light level instead of the world's origin light level
+
+## Items
+
+-   Trimmed custom armor item icons now appear correctly when their icon texture name includes a namespace or does not match the item name
+-   \[BETA\] Introduced "slot.armor.body" as an extra armor slot for entities like Horses, limited to a single armor item but needing the effects of a full armor set 
+    -   "slot.armor.body" is supported by:
+        -   Commands (even if no suitable item is currently available for manipulation)
+        -   "minecraft:attachable"
+        -   "minecraft:interact"
+        -   "query.armor\_texture\_slot" (with value 4)
+        -   "query.armor\_color\_slot" (with value 4)
+        -   "query.armor\_damage\_slot" (with value 4)
+        -   "query.equipment\_count"
+        -   "has\_equipment" entity filter (with domain "body")
+        -   "all\_slots\_empty" entity filter (with domain "body")
+        -   "any\_slot\_empty" entity filter (with domain "body")
+    -   "slot.armor.body" is not supported by:
+        -   "minecraft:wearable"
+    -   Future adjustments may alter how items equipped to "slot.armor.body" affect entity visibility (intended as how easy an entity is detected by other entities), enchantments, and armor protection
+
+## Molang
+
+-   Released _state\_time_ which no longer requires the 'Upcoming Creator Features' toggle 
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Components
+
+-   EntityLeashableComponent
+    -   Added property _canBeStolen: boolean_
+    -   Added property _hardDistance: number_
+    -   Added property _leashHolder: Entity_
+    -   Added property _leashHolderEntityId: string_
+    -   Added property _maxDistance: number_
+    -   Added property _isLeashed: boolean_
+    -   Renamed function _leash(leashHolder: Entity): void_ to _leashTo(leashHolder: Entity): void_
+
+## General
+
+-   Updated the Hide Paperdoll toggle to default to false for Chromebooks
+-   Added the 'Creator Cameras: New Third Person Presets' experiment and toggle which contains:
+    -   New 'minecraft:follow\_orbit' preset that is accessible by the /camera command and can have a view offset
+
+## Graphical
+
+-   Removed an errant 10 times multiplier in atmospheric scattering in the Deferred Technical Preview
+    -   This is expected to cause skies in existing packs to become darker and will require content creators to multiply their Rayleigh Strength, Mie Sun Strength, and Mie Moon Strength each by a factor of 10 to achieve the same visual result as before
+-   Corrected an issue with the ACES tonemapper in the Deferred Technical Preview on Android. ACES tonemapping should now provide the expected results on Android. This should cause no changes on other platforms 
+-   Volumetric fog density settings are now supported for weather when a format\_version of 1.21.0 or higher is specified in the Deferred Technical Preview

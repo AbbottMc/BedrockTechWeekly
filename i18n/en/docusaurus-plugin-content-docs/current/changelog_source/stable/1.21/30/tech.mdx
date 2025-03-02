@@ -1,0 +1,307 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## AI Goals
+
+-   Removed the `minecraft:behavior.peek` AI goal component that was never used 
+
+## Add-Ons and Script Engine
+
+-   Removed deprecated behavior pack download related code from packets in the world join flow 
+-   Fixed a bug where all custom blocks were rotated 180 degrees in the UI
+-   The default for the "gui" "item\_display\_transforms" "rotation" field is `[30, 45, 0]` instead of `[30, 225, 0]`
+    -   "item\_display\_transforms": \{  
+        "gui" : \{  
+        "translation": \[0, 0, 0\],  
+        "rotation": \[30, 45, 0\],  
+        "scale": \[0.625, 0.625, 0.625\],  
+        "rotation\_pivot" : \[0, 0, 0\],  
+        "scale\_pivot" : \[0, 0, 0\],  
+        "fit\_to\_frame" : true  
+        \}  
+        \}
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   Fixed `minecraft:repeating_command_block` to not execute when changing to `needs redstone` from `automatic` 
+-   The "item\_display\_transforms" field in block geometries no longer requires the "Upcoming Creator Features" toggle
+-   "tnt" block is now split into unique instances: "tnt" and "underwater\_tnt" 
+-   Parsing blocks.json now produces a Content Error if its format\_version is greater or equal than the block names it overrides
+-   The following block names are now considered outdated in "blocks.json" from format\_version 1.21.30 onward ([MCPE-100267](https://bugs.mojang.com/browse/MCPE-100267))
+    -   `minecraft:carpet`
+    -   `minecraft:colored_torch_bp`
+    -   `minecraft:colored_torch_rg`
+    -   `minecraft:concrete`
+    -   `minecraft:concrete_powder`
+    -   `minecraft:coral`
+    -   `minecraft:coral_block`
+    -   `minecraft:coral_fan`
+    -   `minecraft:coral_fan_dead`
+    -   `minecraft:coral_fan_hang`
+    -   `minecraft:coral_fan_hang2`
+    -   `minecraft:coral_fan_hang3`
+    -   `minecraft:double_plant`
+    -   `minecraft:double_stone_block_slab`
+    -   `minecraft:double_stone_block_slab2`
+    -   `minecraft:double_stone_block_slab3`
+    -   `minecraft:double_stone_block_slab4`
+    -   `minecraft:double_wooden_slab`
+    -   `minecraft:fence`
+    -   `minecraft:hard_stained_glass`
+    -   `minecraft:hard_stained_glass_pane`
+    -   `minecraft:leaves`
+    -   `minecraft:leaves2`
+    -   `minecraft:light_block`
+    -   `minecraft:log`
+    -   `minecraft:log2`
+    -   `minecraft:monster_egg`
+    -   `minecraft:planks`
+    -   `minecraft:red_flower`
+    -   `minecraft:sapling`
+    -   `minecraft:shulker_box`
+    -   `minecraft:stained_glass`
+    -   `minecraft:stained_glass_pane`
+    -   `minecraft:stone_block_slab`
+    -   `minecraft:stone_block_slab2`
+    -   `minecraft:stone_block_slab3`
+    -   `minecraft:stone_block_slab4`
+    -   `minecraft:stonebrick`
+    -   `minecraft:tallgrass`
+    -   `minecraft:terracotta`
+    -   `minecraft:wood`
+    -   `minecraft:wooden_slab`
+    -   `minecraft:wool`
+-   "chemistry\_table" has been split into 4 unique instances: "compound\_creator", "material\_reducer", "element\_constructor", and "lab\_table"
+    -   Requires the Education Edition toggle
+-   Added new experimental field "item\_specific\_speeds" to "minecraft:destructible\_by\_mining" block componentCommands
+
+-   The `/locate structure` command output now displays the identifier of the found structure instead of its name
+-   Added `all` parameter to `/reload` command. This causes players to quit the world and rejoin, as well as reloading all behavior and resource packs
+
+## Entity Components
+
+-   "behavior.fire\_at\_target" is no longer restricted to Vanilla content 
+    -   This goal allows an entity to attack by firing a shot with a delay
+-   "behavior.jump\_around\_target" is no longer restricted to Vanilla content
+    -   This goal allows an entity to jump over and around a target
+-   "behavior.move\_around\_target" is no longer restricted to Vanilla content
+    -   This goal allows an entity to move around a target
+
+## General
+
+-   Updated Feature Rules auto-generated documentation
+
+## Graphical
+
+-   Fixed a bug that caused moon to appear darker ([MCPE-172971](https://bugs.mojang.com/browse/MCPE-172971)) 
+-   Fixed a bug where culling rules for data driven blocks did not rotate with the transformation component 
+
+## Items
+
+-   Added a content error for if an icon can't be found with `icon_name` from `minecraft:icon` in 1.10 data
+-   Fixed an issue where item components would not initialize on remote clients 
+-   Added "minecraft:rarity" item component which allows specifying the rarity of an item 
+    -   It has a single field "value" which accepts the following values:
+        -   "common"
+        -   "uncommon"
+        -   "rare"
+        -   "epic"
+    -   Can also be written as an inlined value like so: "minecraft:rarity": "uncommon"
+    -   The rarity of the item will determine which color it uses for its name
+        -   If the item has a "minecraft:hover\_text\_color" component specified, that hover text color will take priority and be used instead of the rarity color
+-   Item data versioned 1.16.100+ can now be overridden by item data versioned 1.16.100+ higher in the pack stack 
+-   Enables Creators to override 1.16.100+ data driven Vanilla items with 1.16.100+ data
+-   Added "minecraft:storage\_item" item component to allow an item to store data of the dynamic container associated with it
+    -   This component requires that the Bundles toggle is enabled
+    -   A dynamic container is a container for storing items that is linked to an item instead of a block or an entity
+    -   To use this component the item must have "minecraft:max\_stack\_size" set to 1
+    -   The "max\_slots" field (1 to 64) defines the number of slots of the dynamic container
+    -   The "max\_weight\_limit" field defines the maximum allowed sum of the weight of the items in all slots of the dynamic container
+        -   Items that stack to 64 weigh 1 each, those that stack to 16 weigh 4 each and unstackable items weigh 64
+    -   The "allow\_nested\_storage\_items" field allows for other items with a "minecraft:storage\_item" component to be put inside it
+    -   The "weight\_in\_storage\_item" (0 to 64) defines the additional weight the item adds when inside another storage item
+        -   A value of 0 means that this item is not allowed inside another storage item
+    -   The "banned\_items" field defines the items that are not allowed in the item's dynamic container
+    -   The "allowed\_items" field defines the items that are exclusively allowed in the item's dynamic container
+        -   If empty all items are allowed in the item's dynamic container
+-   Added "minecraft:bundle\_interaction" item component to enable bundle-specific interaction scheme and tooltip
+    -   This component requires that the Bundles toggle is enabled
+    -   To use this component the item must have a "minecraft:storage\_item" component defined
+    -   The "minecraft:bundle\_interaction" component interacts with the container created by the "minecraft:storage\_item" component
+    -   The "num\_viewable\_slots" field (1 to 64) defines the maximum number of item stacks accessible from the top of the bundle, while other slots are hidden
+    -   Textures named \[item\_name\]\_open\_front and \[item\_name\]\_open\_back must be added to textures/textures\_list.json
+-   The minecraft:dyeable component is now exposed to creators
+
+## Trade Tables
+
+-   The Trade Table files are now versioned
+    -   TradeTier's "total\_exp\_required" is a required member from version 1.21.30
+    -   TradeTier's "groups" is a required member from version 1.21.30
+    -   TradeItem's quantity "min" cannot be lower than "max" from version 1.21.30
+
+## Loot Tables
+
+-   Added "set\_potion" item function for loot tables which can set the potion type of compatible items with a potion id
+    -   It has a single field "id" which accepts the following potion id values:
+        -   "water"
+        -   "mundane"
+        -   "long\_mundane"
+        -   "thick"
+        -   "awkward"
+        -   "nightvision"
+        -   "long\_nightvision"
+        -   "invisibility"
+        -   "long\_invisibility"
+        -   "leaping"
+        -   "long\_leaping"
+        -   "strong\_leaping"
+        -   "fire\_resistance"
+        -   "long\_fire\_resistance"
+        -   "swiftness"
+        -   "long\_swiftness"
+        -   "strong\_swiftness"
+        -   "slowness"
+        -   "long\_slowness"
+        -   "strong\_slowness"
+        -   "water\_breathing"
+        -   "long\_water\_breathing"
+        -   "healing"
+        -   "strong\_healing"
+        -   "harming"
+        -   "strong\_harming"
+        -   "poison"
+        -   "long\_poison"
+        -   "strong\_poison"
+        -   "regeneration"
+        -   "long\_regeneration"
+        -   "strong\_regeneration"
+        -   "strength"
+        -   "long\_strength"
+        -   "strong\_strength"
+        -   "weakness"
+        -   "long\_weakness"
+        -   "wither"
+        -   "turtle\_master"
+        -   "long\_turtle\_master"
+        -   "strong\_turtle\_master"
+        -   "slow\_falling"
+        -   "long\_slow\_falling"
+        -   "wind\_charged"
+        -   "weaving"
+        -   "oozing"
+        -   "infested"
+    -   The following types of items are compatible with the "set\_potion" function:
+        -   Potion
+        -   Lingering Potion
+        -   Splash Potion
+        -   Arrow
+
+## Resource and Behavior Packs
+
+-   The player's "helmet\_layer\_visible" variable is now based on the result of the `has_head_gear` Molang query and the player and persona render controller's part visibility for the helmet layer no longer checks for the existence of head gear. This fixes attachable scripts setting the "helmet\_layer\_visible" to 1.0 to now properly work and maintains a fix that prevents persona hair and head gear from clipping outside of mob and Pumpkin heads ([MCPE-183058](https://bugs.mojang.com/browse/MCPE-183058)) 
+
+## Sounds
+
+-   Specifying an invalid sound event in a sounds.json file will now trigger a content error 
+
+## Structures
+
+-   Fixed `minecraft:structure_block` debug bounding box rendering when clients initially load server worlds containing one 
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Added "item\_display\_transforms" control to the block geometry file. This controls the way a block is visually represented in the UI, on the player, and floating on the ground. It exists inside the minecraft:geometry json object and requires geometry format\_version 1.21.0 and the "Upcoming Creator Features" toggle
+    -   Default values example:
+        -   "item\_display\_transforms": \{  
+            "gui" : \{  
+            "translation": \[0, 0, 0\],  
+            "rotation": \[30, 225, 0\],  
+            "scale": \[0.625, 0.625, 0.625\],  
+            "rotation\_pivot" : \[0, 0, 0\],  
+            "scale\_pivot" : \[0, 0, 0\],  
+            "fit\_to\_frame" : true  
+            \},  
+            "firstperson\_righthand": \{  
+            "translation": \[0, 0, 0\],  
+            "rotation": \[0, 45, 0\],  
+            "scale": \[0.4, 0.4, 0.4\],  
+            "rotation\_pivot" : \[0, 0, 0\],  
+            "scale\_pivot" : \[0, 0, 0\]  
+            \},  
+            "firstperson\_lefthand": \{  
+            "translation": \[0, 0, 0\],  
+            "rotation": \[0, -135, 0\],  
+            "scale": \[0.4, 0.4, 0.4\],  
+            "rotation\_pivot" : \[0, 0, 0\],  
+            "scale\_pivot" : \[0, 0, 0\]  
+            \},  
+            "thirdperson\_righthand": \{  
+            "translation": \[0, 2.5, 0\],  
+            "rotation": \[75, 45, 0\],  
+            "scale": \[0.375, 0.375, 0.375\],  
+            "rotation\_pivot" : \[0, 0, 0\],  
+            "scale\_pivot" : \[0, 0, 0\]  
+            \},  
+            "thirdperson\_lefthand": \{  
+            "translation": \[0, 2.5, 0\],  
+            "rotation": \[75, 45, 0\],  
+            "scale": \[0.375, 0.375, 0.375\],  
+            "rotation\_pivot" : \[0, 0, 0\],  
+            "scale\_pivot" : \[0, 0, 0\]  
+            \},  
+            "ground": \{  
+            "translation": \[0, 3.0, 0\],  
+            "rotation": \[0, 0, 0\],  
+            "scale": \[0.25, 0.25, 0.25\],  
+            "rotation\_pivot" : \[0, 0, 0\],  
+            "scale\_pivot" : \[0, 0, 0\]  
+            \},  
+            "fixed": \{  
+            "translation": \[0, 0, 0\],  
+            "rotation": \[0, 0, 0\],  
+            "scale": \[0.5, 0.5, 0.5\],  
+            "rotation\_pivot" : \[0, 0, 0\],  
+            "scale\_pivot" : \[0, 0, 0\]  
+            \},  
+            "head": \{  
+            "translation": \[0, 0, 0\],  
+            "rotation": \[0, 0, 0\],  
+            "scale": \[1, 1, 1\],  
+            "rotation\_pivot" : \[0, 0, 0\],  
+            "scale\_pivot" : \[0, 0, 0\]  
+            \}  
+            \}
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   Fixed an issue with 'minecraft:redstone\_conductivity' support for custom blocks ([MCPE-178339](https://bugs.mojang.com/browse/MCPE-178339)) 
+
+## Camera
+
+-   Exposed the entity offset so the user can change the camera's pivot point from the entity's center for third person boom cameras 
+-   Focus Target Camera: Added rotation\_speed in the free camera preset JSON to control the speed of rotation for targeting an entity. This value will be a float that represents degrees turned per second 
+-   Focus Target Camera: Added snap\_to\_target bool in the free camera preset JSON to enable snapping to the target entity on the first tick

@@ -1,0 +1,90 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Blocks
+
+-   Fixed issue where legacy data driven block didn't apply the render layer from the material instances component
+-   Fix spurious content log error: 'trying to override the Geometry component with blocks.json settings for a custom block'
+-   Door blocks use state `minecraft:cardinal_direction` instead of `minecraft:direction`. Uses string values ("north, south, east, west")
+
+### Components
+
+-   Moved the `minecraft:liquid_detection` component out of the Upcoming Creator Features experiment for format\_versions 1.21.60 and above
+
+## Collisions
+
+-   Entities with no collision box but with the `minecraft:custom_hit_test` component are no longer sometimes unable to be interacted with
+
+## Components
+
+-   Expand the `minecraft:breedable` component to allow inheriting properties to child entities  
+    -   Adds the new "property\_inheritance" field which takes property name keyed objects
+    -   The objects in property\_inheritance can contain a "mutation\_chance" which give the chance it should not inherit from either parent
+    -   They can also contain the "mutation\_values" array of values to select from if mutating and the component has random mutation set
+
+## Editor
+
+-   Centers block thumbnail images in hotbar, block picker and lists
+-   Adds data-driven rendering to editor block images
+    -   Adds block name aliasing for signs
+    -   Adds support for namespace block names for `block://` protocol
+-   Player model is now fully hidden while in tool mode
+
+## Fog
+
+-   Fixed issue where "inherit\_from\_prior\_fog" field in biomes\_client.json was ignored on first content on resource pack stack ([MCPE-187805](https://bugs.mojang.com/browse/MCPE-187805))
+
+## Gameplay
+
+-   Fixed a bug where opening a chest while the clone command is spamming could crash the server
+
+## Graphical
+
+-   Single-channel textures in resource packs are now interpreted as grayscale, rather than red. This change does not apply to single-channel UI textures, which were already interpreted as such
+
+## Graphics
+
+-   client\_biome JSON files now support a "surface\_opacity" field in the "minecraft:water\_appearance" component  
+    -   This change also restores swampland and warm\_ocean surface opacity to what they were until recently when the client\_biome JSON files were introduced
+
+## Items
+
+-   Fixed an issue where non-host clients joining multiplayer sessions would be missing an icon for packs that had duplicate items
+-   The following legacy item (pre 1.16.100) components are now synced to the client:
+    -   `minecraft:camera`
+    -   `minecraft:seed`
+    -   `minecraft:max_damage`
+    -   `minecraft:hand_equipped`
+    -   `minecraft:stacked_by_data`
+    -   `minecraft:foil`
+    -   `minecraft:block`
+    -   `minecraft:use_duration`
+    -   `minecraft:max_stack_size`
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Camera
+
+-   Aim assist will no longer get automatically enabled when switched to vanilla third-person-behind camera by default ([MCPE-188005](https://bugs.mojang.com/browse/MCPE-188005))

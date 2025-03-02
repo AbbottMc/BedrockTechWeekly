@@ -1,0 +1,240 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Fixed a bug where using "bone\_visibility" for a block geometry would cause the "item\_display\_transforms" not to be applied properly ([MCPE-185868](https://bugs.mojang.com/browse/MCPE-185868))
+-   Fixed issue which prevented the new 1.21.30 trade table format from loading in-game 
+-   New Beta options in "minecraft:looked\_at" and "minecraft:home" entity components now properly require that "use\_beta\_features" is specified in the root JSON object 
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+## Blocks
+
+-   Added content warning when "carried\_textures" or "blockshape" are incorrectly written in blocks.json
+-   Updated the Jigsaw Block
+    -   Fixed a bug where block data would not be saved when pressing "Done" ([MCPE-181405](https://bugs.mojang.com/browse/MCPE-181405))
+    -   Updated the Jigsaw Block UI
+    -   Added Selection Priority and Placement Priority fields
+
+## Camera
+
+-   The `minecraft:follow_orbit` preset is no longer behind the experimental toggle 
+
+## Commands
+
+-   Added new overloads for the `schedule` command which allows you to clear a queued function 
+    -   `/schedule clear \<function name\>` - Clears all queued functions matching the given name
+    -   `/schedule on_area_loaded clear function \<function name\>` - Clears all queued functions that are scheduled as `on_area_load` by name
+    -   `/schedule on_area_loaded clear tickingarea \<tickingarea name\> [function name]` - Clears all queued functions that are scheduled as `on_area_load` by ticking area name (and optionally also checks function name too)
+
+## Components
+
+-   The "restriction\_type" field has been added to the "minecraft:home" component, allowing to define how an entity is restricted to its home position:
+    -   Its values are:
+        -   "none", which poses no restriction
+        -   "random\_movement", which restricts randomized movement around the home position
+        -   "all\_movement", which restricts any kind of movement around the home position
+    -   The "all\_movement" value is currently in \[Beta\] and is planned to be fully released at a later date
+    -   Entities that have moved too far from their home will always be able to move closer to it if prompted
+    -   The radius of the restriction is still specified with "restriction\_radius"
+    -   Entities with a format version prior to 1.21.40 will be upgraded to use the new field in a way that preserves their existing behavior
+-   Added the "minecraft:dimension\_bound" component, which prevents entities from changing dimension through portals 
+    -   In Vanilla content, this is used by the Ender Dragon, the Fishing Hook, and some projectiles
+-   Added the "minecraft:transient" component, entities with this component will never be saved. In Vanilla content, this is currently used for the Fishing Hook
+-   Renamed the "minecraft:lookat" component to "minecraft:looked\_at" to better reflect its functionality
+    -   Its "look\_event" field was also renamed to "looked\_at\_event"
+    -   Its "look\_cooldown" field was also renamed to "looked\_at\_cooldown"
+-   Expanded the "minecraft:looked\_at" component functionality with the addition of six new \[Beta\] fields: 
+    -   "find\_players\_only" restricts the search for entities looking at the owner entity to Players only, ensuring that the closest Player satisfying the specified "filters" is selected
+    -   "look\_at\_locations" defines the parts of the owner entity that are targeted for being looked at
+        -   For these parts, a line-of-sight check is performed to ensure no blocks obstruct the view
+        -   Supported values are "head", "body", and "feet"
+    -   "not\_looked\_at\_event" specifies the event to trigger when no suitable entity is looking at the owner entity
+    -   "field\_of\_view" defines the width of the field of view, in degrees, for entities looking at the owner entity:
+        -   If "scale\_fov\_by\_distance" is set to true, this value corresponds to the field of view at a distance of one block between the entities
+    -   "scale\_fov\_by\_distance" determines if the field of view narrows as the distance between the owner entity and the entity looking at it increases
+        -   This ensures that the width of the view cone at the owner entity position remains relatively constant, regardless of distance
+    -   "line\_of\_sight\_obstruction\_type" defines which block shape is considered when checking for line-of-sight obstructions
+        -   Supported values are "outline," "collision," and "collision\_for\_camera"
+    -   Moreover, "set\_target" now supports three different values:
+        -   "never", looking entities are never set as targets, but events are emitted
+        -   "once\_and\_stop\_scanning", the first detected looking entity is set as target, but scanning and event emission is suspended if and until the owner entity has a target
+        -   \[Beta\] "once\_and\_keep\_scanning", the first detected looking entity is set as target, but scanning and event emission continues
+    -   All these fields are planned to be taken out of \[Beta\] and fully released at a later date
+-   Moved the "minecraft:redstone\_conductivity" component out of the Upcoming Creator Features experiment for format\_versions 1.21.30 and above 
+-   The "minecraft:damage\_sensor" component's "deals\_damage" field now supports three values: 
+    -   "yes", received damage is applied to the entity
+    -   "no", received damage is not applied to the entity
+    -   "no\_but\_side\_effects\_apply", received damage is not applied to the entity, but the side effects of the attack are
+        -   This means that the attacker's weapon loses durability, enchantment side effects are applied, etc.
+    -   Pre-existing content will be automatically updated to maintain its original behavior
+-   Removed support for the "allow\_invulnerable" field from the "minecraft:looked\_at component" 
+    -   This field never had any functionality, so this change won't affect pre-existing or future content in any way
+    -   The field will be ignored for any content with a format version lower than 1.21.40
+    -   A content error will be emitted for any content with a format version equal to or higher than 1.21.40 that still uses this field
+
+## Entities
+
+-   Horse armor now correctly renders on horses when using resource packs with a minimum engine version of 1.17.0 or lower ([MCPE-185316](https://bugs.mojang.com/browse/MCPE-185316))
+
+## Entity Components
+
+-   "behavior.fire\_at\_target" is no longer usable if it is missing a projectile definition and will now throw a content error if so
+
+## Entity Event Responses
+
+-   Added the "execute\_event\_on\_home\_block" entity event response, which allows the entity to execute an event on the block at its home position
+    -   The "event" field allows to specify the event to execute
+    -   For this to work properly, the entity must have a "minecraft:home" component with a set home position
+-   Added the "reset\_target" entity event response, which allows an entity to reset its target 
+-   The "behavior.jump\_around\_target" can no longer be used by an Entity on top of a Honey Block ([MCPE-176991](https://bugs.mojang.com/browse/MCPE-176991)) 
+-   Jump Boost now increases how high an Entity can jump when using "behavior.jump\_around\_target" ([MCPE-176922](https://bugs.mojang.com/browse/MCPE-176922))
+-   Wind Charges now use the `minecraft:explode` component instead of `minecraft:wind_burst`
+-   Expanded `minecraft:explode` with the following new fields:
+    -   `damage_scaling`: A scale factor applied to the explosion's damage to entities. A value of 0 prevents the explosion from dealing any damage. Negative values cause the explosion to heal entities instead
+    -   `toggles_blocks`: If true, the explosion will toggle blocks in the explosion radius
+    -   `knockback_scaling`: A scale factor applied to the knockback force caused by the explosion
+    -   `particle_effect`: The name of the particle effect to use. The accepted strings are `wind_burst` or `breeze_wind_burst`. All other inputs will use the default explosion particles
+    -   `sound_effect`: The name of the sound effect played when the explosion triggers
+    -   `negates_fall_damage`: Defines whether the explosion should apply fall damage negation to Players above the point of collision
+    -   `allow_underwater`: If true, the explosion will affect blocks and entities underwater
+
+## Feature
+
+-   Using unsupported feature placement in "pregeneration\_pass" will now throw a content error instead of crash
+
+## General
+
+-   Made the following changes to 'minecraft:single\_block\_feature'
+    -   'places\_block' now supports a list of weighted block specifiers
+    -   New 'randomize\_rotation' property
+    -   New 'may\_not\_attach\_to' placement conditions
+    -   Added 'diagonal' as a new option for 'may\_attach\_to' conditions
+    -   File format version increased to 1.21.40
+
+## Graphical
+
+-   Fixed bug where the tessellation of Redstone dust does not match the powered state of the dust for the following blocks: 
+    -   minecraft:\*\_slab
+    -   minecraft:chain
+    -   minecraft:chorus\_flower
+    -   minecraft:chorus\_plant
+    -   minecraft:farmland
+    -   minecraft:grass\_path
+    -   minecraft:heavy\_core
+    -   minecraft:jigsaw
+    -   minecraft:sea\_lantern
+    -   minecraft:sniffer\_egg
+    -   minecraft:structure\_block
+-   Add new the\_end.client\_biome.json as the first new type of file to contain per-biome rendering and audio settings in resource packs 
+-   Starting with base game version 1.21.40, built-in biomes\_client.json files will no longer be loaded. That file from other packs will continue to be loaded. Water and fog settings are now in individual client\_biome.json files in resource packs. When both biomes\_client.json and the individual client\_biome.json file specify competing values, the loaded biomes\_client.json from creator content will have priority
+
+## Blocks
+
+-   Fixed a bug where old block IDs were incorrectly overwriting data of new block IDs from blocks.json format\_version 1.21.20 or higher ([MCPE-186255](https://bugs.mojang.com/browse/MCPE-186255)) 
+-   Updated references to old block names in behavior pack color recipe files 
+-   Updated references to old block names in behavior pack feature files
+-   Updated references to old block names in biome definition files
+
+## Items
+
+-   The `"minecraft:item"` object is parsed with a strict loader from 1.21.40
+    -   Numbers and booleans are no longer interchangeable in the JSON input
+    -   Floating point numbers are no longer accepted where an integer is expected
+
+## Molang
+
+-   Molang queries "wing\_flap\_position" and "wing\_flap\_speed" now work for the Chicken 
+
+## Resource and Behavior Packs
+
+-   Built-in packs now include archive files for improved load performance on some platforms 
+
+## Stability and Performance
+
+-   Increased the size of biome ids in saved chunk data from 8 bit to 16 bit values 
+-   Fixed a bug where extremely fast moving entities would cause the game to crash. Entities can now no longer move more than 16 blocks in a single tick. (For reference, an entity with Speed 255 will move ~11 blocks in a single tick.)
+-   Game will no longer crash when loading a world near an End City
+-   Worlds created with Experimental Custom Biomes before Caves & Cliffs update will have their Custom Biomes in Chunks replaced with a default Biome (Ocean for Overworld)
+-   Custom biome ids are now assigned with values starting at 30,000 and are stored in 'BiomeIdsTable' in world data so their id assignments persist for the duration of the world 
+-   Made a change on Nintendo Switch which may help neighboring chunks to load quicker when player has maximum framerate set ([MCPE-120971](https://bugs.mojang.com/browse/MCPE-120971))
+
+## Resource and Behavior Packs
+
+-   Fixed an issue where packs were not downloaded or applied when joining a server that had CDN enabled
+-   Fixed an issue where user choice for downloading/applying resource packs during server join was ignored when CDN is enabled on the server
+
+## Trading
+
+-   Fixed an issue where trades with negative 'max\_use' values could not be traded
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Add support for custom items with the "minecraft:block\_placer" item component to use the referenced "block" as the icon for the item
+    -   If the "minecraft:icon" component is specified, it will override the "block" icon
+    -   Requires the "Upcoming Creator Features" toggle. Must use item json version `1.21.40` or higher
+-   Added "replace\_block\_item" field to the "minecraft:block\_placer" item component. This field allows you to specify that this item should replace the default item created for the data-driven block it places. To use this field, the identifier of the item must match the identifier of the block it places. This field is optional and defaults to false. 
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Cameras
+
+-   Fixed an issue where `rider_rotation_lock` of `minecraft:rideable` had no effect when using the `minecraft:follow_orbit` camera
+-   Added `minecraft:camera_attach_to_player` to `minecraft:follow_orbit` 
+-   Added `align_target_and_camera_forward` option to the camera preset behavior pack JSON which can be used when the third person camera preset experiment is enabled 
+-   3rd person camera experiment - The radius property of the creator cameras is now constrained to a value between 0.1 and 100
+-   Third person boom camera will now reset to the starting rotation values specified in json when the 'default' parameter is passed in the camera command
+-   Added camera relative movement to the "New Third Person Presets" experimental toggle 
+    -   Camera relative movement is enabled on any camera that inherits from `minecraft:follow_orbit` and sets `align_camera_and_target_forward` to `false`
+-   Added horizontal and vertical rotation limits to the Focus Target Camera experimental toggle 
+-   Added "continue\_targeting" bool to the Focus Target Camera experimental toggle for tracking entities outside of set rotation limits 
+
+## Molang
+
+-   Adding under upcoming creator features:
+    -   `query.client_memory_tier`. Returns a number representing the client RAM memory tier, 0 = 'Undetermined', 1 = 'SuperLow', 2 = 'Low', 3 = 'Mid', 4 = 'High', or 5 = 'SuperHigh'. Available on the Client (Resource Packs) only
+    -   `query.server_memory_tier`. Returns a number representing the server RAM memory tier, 0 = 'Undetermined', 1 = 'SuperLow', 2 = 'Low', 3 = 'Mid', 4 = 'High', or 5 = 'SuperHigh'. Available on the server side (Behavior Packs) only
+
+## Scripting
+
+-   Added enum `MemoryTier`
+
+        export enum MemoryTier \{
+            Undetermined = 0,
+            SuperLow = 1,
+            Low = 2,
+            Mid = 3,
+            High = 4,
+            SuperHigh = 5
+        \}
+    
+
+-   Added base class `SystemInfo`
+    -   Field `MemoryTier`
+-   Added class `ClientSystemInfo`.
+    -   Field `MemoryTier`
+-   Class `Player`
+    -   Added property `clientSystemInfo`
+-   Class `System`
+    -   Added property `serverSystemInfo`

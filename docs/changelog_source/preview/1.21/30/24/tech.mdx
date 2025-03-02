@@ -1,0 +1,48 @@
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Add-Ons and Script Engine
+
+-   Fixed bug where all custom blocks were rotated 180 degrees in the UI
+-   The default for the "gui" "item\_display\_transforms" "rotation" field is `[30, 45, 0]` instead of `[30, 225, 0]`
+    -   "item\_display\_transforms": \{  
+        "gui" : \{  
+        "translation": \[0, 0, 0\],  
+        "rotation": \[30, 45, 0\],  
+        "scale": \[0.625, 0.625, 0.625\],  
+        "rotation\_pivot" : \[0, 0, 0\],  
+        "scale\_pivot" : \[0, 0, 0\],  
+        "fit\_to\_frame" : true  
+        \}  
+        \}
+
+## Editor
+
+-   Removed screenshot and profile buttons from editor project pause menu
+
+## Items
+
+-   The minecraft:dyeable component is now exposed to creators
+
+## Sounds
+
+-   Specifying an invalid sound event in a sounds.json file will now trigger a content error 
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+## Gameplay
+
+-   Focus Target Camera: Added rotation\_speed in the free camera preset JSON to control the speed of rotation for targeting an entity. This value will be a float that represents degrees turned per second 
+-   Focus Target Camera: Added snap\_to\_target bool in the free camera preset JSON to enable snapping to the target entity on the first tick 
+
+## Graphical
+
+-   SSR no longer leaks in wrong direction on Android devices with the Deferred Technical Preview enabled

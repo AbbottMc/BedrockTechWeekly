@@ -1,0 +1,113 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Biomes
+
+### Client Biome Components
+
+-   Add `minecraft:dry_foliage_color` component to override color for `dry_foliage` tint method
+
+## Blocks
+
+-   Empty Bell blocks no longer crash the game when moved by a sticky piston ([MCPE-188687](https://bugs.mojang.com/browse/MCPE-188687))
+-   Updated the /fill, /clear and /testforblock Commands
+    -   Fixed a bug where these commands would recognize IDs of some flattened blocks as block group names and affect all variants under those groups
+-   Add `dry_foliage` tint method which uses the `textures/colormap/dry_foliage.png` color map
+-   Exposed the Block component minecraft:destruction\_particles as a JSON object. This represents the particles used when the Block is destroyed
+    -   There is two fields for it:
+        -   "texture" is a required string field to set the texture used by the particles
+        -   "tint\_method" is an optional string field that multiplies the texture color with a predefined tint. Default to "none". Supported values are "none", "default\_foliage", "birch\_foliage", "evergreen\_foliage", "dry\_foliage", "grass" and "water".
+    -   Block format before 1.21.70 will be upgraded to have the component added using the texture from the "down" or "\*" of the minecraft:material\_instances component if present and "none" for tint\_method. This was the old behavior.
+    -   Block format from 1.21.70 without the component will not be upgraded and uses the invalid texture  
+        Examples:
+        
+             "minecraft:destruction_particles": \{
+              "texture": "my_particles_texture",
+              "tint_method": "grass"
+             \}
+            
+        
+        or
+        
+            "minecraft:destruction_particles": \{
+             "texture": "my_particles_texture"
+            \}
+            
+        
+
+## Bug
+
+-   Fixed issue that occurs when cancelling world resource pack download
+-   Fixed crash that occurs when initializing `minecraft:decorated_pot` renderer
+
+## Commands
+
+-   Removed set\_movement\_authority command.
+
+## Dedicated Server
+
+-   Exposed a new parameter for dedicated server. This will make the server more strict on entity interactions. Look in server.properties for more information on what these do
+    -   server-authoritative-entity-interactions-strict default to false and can be set to true. Will affect Entity interaction acceptance
+-   Removed server-authoritative-movement parameter. It will now always use server-auth-with-rewind.
+
+## Editor
+
+-   Added Realms integration
+    -   Users can now publish their Editor project directly to Realms
+    -   Users can download their Realms world
+    -   **NOTE**: Users must be signed in and have an active Realms subscription. For Preview builds, they must have a Preview Realms first. This can be created in non-Editor mode of Bedrock on Preview builds.
+-   Added better management of Structures:
+    -   Added the ability to rename a structure
+    -   Added the ability to delete a structure
+    -   Added the ability to duplicate a structure
+    -   Added the ability to rename the file/unique name
+    -   Added the ability to change the namespace
+    -   **NOTE**: Project structures will be exported to the `editor/structuredb` subdirectory in the world folder
+-   Added the Grid Repeat feature to the Repeater tool, which includes both Uniform and Separate repeat types
+-   Added visualization for the first layer added/removed in the extrude tool
+-   Updated the default flyspeed to 4.0 while using Editor
+-   Updated `IPropertyPane.addTable` API function to `IPropertyPane.addDataTable`
+-   Updated `IBlockListPropertyItem` and rename `ITablePropertyItem` to `IDataTablePropertyItem` APIs
+-   Fixed missing Air and Sugarcane block images
+-   Fixed a bug that would sometimes cause the refresh button to crash Editor
+-   Fixed a bug that caused farms to be placed near unloaded areas
+-   Fixed a bug that prevented slider to be visually updated for `INumberPropertyItem.updateLimits` API function
+
+## Gameplay
+
+-   CommandBlock hover name now shown in GUI messages generated from commands ([MCPE-190606](https://bugs.mojang.com/browse/MCPE-190606))
+
+## General
+
+-   Server Authoritative movement is now turned on by default
+
+## Particles
+
+-   Multiple controllers transitioning out of a state at the same time will now properly expire all intended particles instead of just the last one
+
+## Structures
+
+-   Fixed mirroring and rotation of crafter blocks when part of a structure that is being placed
+
+
+
+
+<h2 className="experimental_divider">Experimental Features</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+## Graphical
+
+-   Reduced emissive intensity by a factor of 15 in the Deferred Technical Preview, creators will likely need to adjust their emissive texture values
+-   Adjusted air and fog densities for volumetric scattering for more visible light rays in Deferred Technical Preview
+-   Made slight adjustments to auto exposure and eye adaptation in the Deferred Technical Preview
