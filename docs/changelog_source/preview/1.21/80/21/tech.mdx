@@ -1,0 +1,83 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+### Blocks
+
+-   Blocks using the `minecraft:block_placer` component now can get added as loose items in the creative inventory and recipe book again
+
+### Components
+
+-   Content errors will log missing texture references in the "minecraft:icon" item component
+-   The "minecraft:rideable" component's Seat definition now has two additional fields:
+    -   "third\_person\_camera\_radius" can be used to set a different camera radius when in third person or third person front camera. The value needs to be in the range \[1.0, 64.0\]. Value 0.0 is ignored
+    -   "camera\_relax\_distance\_smoothing" adds springiness to the camera movement when the camera moves back to its radius after being pushed closer to the player by and obstacle. A higher value means a stiffer spring. The value needs to be in the range \[1.0, 32.0\]. Value 0.0 is ignored
+-   The "minecraft:leashable" component now support multiple presets:
+    -   A list of presets can be defined in the new "presets" field
+    -   Each preset determines how the entity behaves when leashed to another entity
+    -   A preset is selected when the entity is leashed and remains active until it is leashed to something else
+    -   The first preset whose "filter" conditions are met will be applied
+    -   If no presets match, a default configuration is used instead
+    -   The following fields are now part of each preset:
+        -   "filter": Defines the condition that selects this preset out of all the presets upon leashing
+        -   "soft\_distance": Distance at which the spring effect begins
+        -   "hard\_distance": Distance at which the leash stiffens
+        -   "max\_distance": Distance at which the leash breaks
+        -   "can\_be\_stolen": Determines if a player can steal the leashed entity using a Lead
+
+### Editor
+
+-   Added a new toggle group for `Trim Actions`
+-   Added 2 new trim actions `Trim` (shrink the selection bounding volume to include only the specified non-air blocks) and `Remove Air`(remove all air blocks (and specified blocks) from the selection to create a new selection containing only the specified blocks)
+-   Added a new `editorConstants` object to the player context. This provides access to a number of constant values and methods that are commonly used across Editor (both in TypeScript and Native code)
+-   Added game rules to Export: Limited Crafting, Show Death Message, Show Item Tags, Command Block Output, Send Command Feedback, Max Command Chain Length, Fire Damage, Freeze Damage, Fall Damage, Drowning Damage, Insomnia, Show Border Effect, Function Command Limit
+-   Fixed a bug where visualizations beyond 100x100x100 in the Repeater tool would appear
+-   Fixed Crash on exit editor when selection volume is visible
+-   Fixed the brush visualization reset when jumping from matches to no matches (artifacts of the old match state were left attached to the visualization)
+
+### Mobs
+
+-   Spawn Eggs from Custom Mobs from Behavior Packs now show up again in the spawn eggs group ([MCPE-190620](https://bugs.mojang.com/browse/MCPE-190620))
+
+### Molang
+
+-   Added the "query.leashed\_entity\_count" Molang query, which allows querying how many entities have the given entity as their leash holder
+
+### Stability and Performance
+
+-   Make friends drawer and play screen more performant using a cached view.
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+### Blocks
+
+-   Block using the minecraft:destruction\_particles component will now correctly be sent to player connecting to a host
+-   Always add a missing Destruction Particles component to blocks that have a Material Instances component, using the "down" material as reference
+    -   The "texture" field in "minecraft:destruction\_particles" is now optional; if not provided or empty, it will be populated from the Material Instances component
+
+### Graphical
+
+-   Enforced minimum Android and iOS requirements for devices running the Deferred Technical Preview for maintained performance, stability, and visuals moving forward. For Android, a Adreno 640, Mali-G68, Mali-G77, or Xclipse 530 GPU or higher is required. On iOS devices, an A12 or M1 or higher device is required
+-   Disabled local exposure on all platforms while we investigate a bug that can cause massive visual corruption in the Deferred Technical Preview. We will re-enable the technology in a future update once the issue has been resolved
+-   Fixed a bug that caused the Editor to crash when the Deferred Technical Preview was enabled

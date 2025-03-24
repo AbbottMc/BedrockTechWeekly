@@ -1,0 +1,48 @@
+**Posted:** 18 March 2025
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ) 
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta)  for detailed instructions
+
+It's time for another Preview and Beta! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback on these new features at [feedback.minecraft.net](http://feedback.minecraft.net/), and you can report any bugs at [bugs.mojang.com](http://bugs.mojang.com/).
+
+## Experimental Features
+
+### User Interface
+
+-   Player Dots on the Locator Bar now show correctly regardless of Simulation Distance
+
+## Features and Bug Fixes
+
+-   Due to unexpected codebase issues identified during Preview, we have reverted a recent change that caused "invincible pet" mobs to despawn ([MCPE-188731](https://bugs.mojang.com/browse/MCPE-190466))
+    
+    -   Mobs in worlds opened during Preview may have despawned, but players updating to the upcoming 1.21.70 release should be unaffected
+    -   As always, remember to keep backups of your worlds before major updates
+-   Removed access to Virtual and Mixed Reality gameplay
+    
+
+### Blocks
+
+-   Fix ambient occlusion issue for non 1x1x1 blocks
+    -   When a block around any of these smaller non 1x1x1 blocks is broken, the AO computation is correctly applied to the face in the direction of that broken block. Previously the wrong face could be seen getting lightened/darkened.
+    -   A list of blocks affected: stairs, walls, gates, buttons, cakes, plates, fences, anvil, grindstone, hopper, bell, lectern, eggs, brewing stand
+
+### Gameplay
+
+-   Fixed server client desync issue during portal travel on Realms ([MCPE-188731](https://bugs.mojang.com/browse/MCPE-188731))
+-   Added 'music\_definition' field to 'minecraft:biome\_music' component in client\_biome json files to control the music played in the biome. The default music will be determined by the dimension if the biome\_music component or music\_definition property is left off. An empty string can be used if the biome is intended to be silent
+
+### Mobs
+
+-   Farm animal spawn eggs used in the Mangrove Swamp biome will now spawn the same variants of Chicken, Cow, and Pig as seen in the Java Edition ([MCPE-190750](https://bugs.mojang.com/browse/MCPE-190750))
+
+### User Interface
+
+-   Worlds are no longer missing from the Storage menu
+-   Bundle tooltip no longer sometimes renders as if having a different amount of items
+-   Adding "Manage Storage" button if download fails due to lack of space with instructions on what needs to be cleared out
+-   Adding "Clear Download Cache" button to storage for clearing files that got stuck due to a downloading error
+-   Auto clearing the download cache on startup if it detects that it is running out of space
+

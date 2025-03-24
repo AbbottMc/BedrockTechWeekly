@@ -1,0 +1,127 @@
+**Posted:** 11 March 2025
+
+**Information on Minecraft Preview and Beta:**
+
+-   These work-in-progress versions can be unstable and may not be representative of final version quality
+-   Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at [aka.ms/PreviewFAQ](https://aka.ms/PreviewFAQ) 
+-   The beta is available on Android (Google Play). To join or leave the beta, see [aka.ms/JoinMCBeta](https://aka.ms/JoinMCBeta)  for detailed instructions
+
+![Players in a cherry blossom biome, showing up on the new locator bar feature](https://feedback.minecraft.net/hc/article_attachments/34919849738765)
+
+Now that all of the features for the first game drop of 2025 are in testing, we thought we'd get started on our next game drop, starting with… the Player Locator bar! If your friends are always wandering off in multiplayer, this new bar will help you track them down! This bar replaces the XP bar in multiplayer mode and indicates other players' location using colorful icons. If you're a stealth player who likes to surprise your friends, then you can stay off your friends' radars by sneaking, disguising yourself, or by drinking a potion of Invisibility. Test the locator bar now in Bedrock Preview and Beta, and don't forget to send in your feedback at [feedback.minecraft.net](https://feedback.minecraft.net/)! You can also report any bugs at [bugs.mojang.com](https://bugs.mojang.com/). The Player Locator bar is coming to Java snapshot soon.
+
+## Experimental Features
+
+### Locator Bar
+
+The Locator Bar is a new UI element on the Player HUD that displays the direction of other Players in the World.
+
+When the Locator Bar Experiment is enabled and there are multiple Players in a World, the Locator Bar will appear on-screen for each Player, replacing the Experience Bar. The Player Level number will still be visible as before above the Locator Bar.
+
+The Locator Bar will display colored indicators when the camera is facing within 120 degrees towards another Player. If another Player is 30 degrees above or below the camera's viewport (the screen) an up or down arrow will be displayed.
+
+Crouching will hide the Player, preventing their indicator from appearing on the Locator Bar of other Players.
+
+Players in Spectator Mode are not visible on the Locator Bar.
+
+A Mob Head or a Carved Pumpkin will similarly hide Players from the Locator Bar when worn in the head slot.
+
+Using a Potion of Invisibility will also hide players from the Locator Bar.
+
+\> **Developer's note:** When the Locator Bar moves out of experimental, we plan on making it a feature that Players can toggle on and off.
+
+#### Known Issues
+
+-   The Locator Bar has the following known issue, so we recommend testing it with a Simulation Distance of 4 chunks
+    -   If the Simulation Distance is set to greater than 4 chunks then the Locator Bar may not show players in between 4 chunks and the Simulation Distance
+
+## Features and Bug Fixes
+
+### Blocks
+
+-   Sapling "age\_bit" no longer regresses after an unsuccessful growth attempt, preventing nearby Observers from activating incorrectly ([MCPE-190286](https://bugs.mojang.com/browse/MCPE-190286))
+
+### Gameplay
+
+-   Players will no longer pass through Blocks placed around x or z coordinates that are a power of 2. (Example 256, 512, 1024 ...) ([MCPE-173843](https://bugs.mojang.com/browse/MCPE-173843))
+
+### Items
+
+-   Fixed a bug where most usable items could not be used while targeting a Mob Spawner ([MCPE-58999](https://bugs.mojang.com/browse/MCPE-58999))
+    
+-   Mangrove Roots can now be used as fuel in Furnaces ([MCPE-155605](https://bugs.mojang.com/browse/MCPE-155605))
+    
+-   Fixed an issue where adding items to a slot in a Chest while it is being updated by a Hopper might remove the items ([MCPE-166390](https://bugs.mojang.com/browse/MCPE-166390))
+    
+
+### Mobs
+
+-   Fixed a bug where named Slimes and Magma Cubes lose their names when splitting ([MCPE-14975](https://bugs.mojang.com/browse/MCPE-14975))
+    
+-   Creakings no longer despawn on world reload ([MCPE-190845](https://bugs.mojang.com/browse/MCPE-190845))
+    
+-   Parrots can now imitate Phantoms, Zoglins, Guardians, Ravagers, Pillagers, and Blazes ([MCPE-164404](https://bugs.mojang.com/browse/MCPE-164404))
+    
+-   Wither Skeletons and Zombified Piglins can now walk in lava ([MCPE-46806](https://bugs.mojang.com/browse/MCPE-46806))
+    
+
+### Sound
+
+-   Fixed an issue where all sound in Windows stops working after 40-41% loading ([MCPE-175138](https://bugs.mojang.com/browse/MCPE-175138))
+
+### Stability and Performance
+
+-   Fixed a bug that occasionally caused an error when creating a Realm on an empty slot
+    
+-   Fixed a crash that could sometimes occur when certain foliage textures fail to load
+    
+
+### User Interface
+
+-   Fixed a bug that could prevent Minecraft from loading the main menu, after cancelling a server transfer request from another server. ([MCPE-189096](https://bugs.mojang.com/browse/MCPE-189096))
+    
+-   Potion of Slowness IV (standard, splash, lingering) is no longer separated from other slowness potions in Creative Menu ([MCPE-101923](https://bugs.mojang.com/browse/MCPE-101923))
+    
+-   Touch Controls: Updated icons for Dismount and Jump buttons (when mounted) to be clearer and consistent between the touch control schemes ([MCPE-184403](https://bugs.mojang.com/browse/MCPE-184403))
+    
+-   Suspending/minimizing the game with Screen Animations disabled no longer resets the world seed in the Create New World screen. ([MCPE-188975](https://bugs.mojang.com/browse/MCPE-188975))
+    
+-   Touch Controls: Spectators can now also customize controls ([MCPE-184704](https://bugs.mojang.com/browse/MCPE-184704))
+-   Touch Controls: Fixed a bug that could cause issues when customizing touch controls during the death animation in Hardcore mode ([MCPE-186584](https://bugs.mojang.com/browse/MCPE-186584))
+-   Added modal to handle Not Enough Disc Space error in Edit World screen, Resource Packs tab
+-   Fixed "Download all missing packs" button not working under specific conditions
+    
+-   Fixed a bug where the bed screen would display the wrong message when sleeping during a thunderstorm ([MCPE-190178](https://bugs.mojang.com/browse/MCPE-190178))
+    
+-   Stopped main menu background rotation when entering new player flow
+    
+-   Stopped main menu background rotation and logo text movement when the "screen animations" option is disabled.
+    
+
+### Vanilla Parity
+
+#### General
+
+-   Add magic crit particles for enchanted weapons, to better match the Java edition ([MCPE-18704](https://bugs.mojang.com/browse/MCPE-18704))
+
+#### Items
+
+-   Cut Sandstone Slabs can now be crafted in the Stonecutter using Cut Sandstone ([MCPE-42734](https://bugs.mojang.com/browse/MCPE-42734))
+    
+-   Cut Red Sandstone Slabs can now be crafted in the Stonecutter using Cut Red Sandstone ([MCPE-42734](https://bugs.mojang.com/browse/MCPE-42734))
+    
+-   Totem of Undying now gives the same 45 second regeneration as Java ([MCPE-90716](https://bugs.mojang.com/browse/MCPE-90716))
+    
+-   Shears now consume durability when used on Beehives and Bee Nests with full Honey level ([MCPE-63995](https://bugs.mojang.com/browse/MCPE-63995))
+    
+
+#### Mobs
+
+-   The maximum amount of Raw Rabbits dropped from Rabbits is now increased by 1 for each level of Looting ([MCPE-47125](https://bugs.mojang.com/browse/MCPE-47125))
+
+#### Structures
+
+##### Woodland Mansion
+
+-   Iron Axe with Efficiency I now always generates in a Chest inside Woodland Mansion's tree-chopping room ([MCPE-109048](https://bugs.mojang.com/browse/MCPE-109048))
+
