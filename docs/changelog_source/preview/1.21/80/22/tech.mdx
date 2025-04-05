@@ -1,0 +1,113 @@
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+## Block Components
+
+-   Removed UpcomingCreatorFeatures experiment requirement for field `"isotropic"` in `"minecraft:material_instances"` component
+
+## Blocks
+
+-   From 1.21.80 onward, when using a minecraft:geometry component or minecraft:material\_instances component, you must include both
+
+## Commands
+
+-   Released `/place structure` and `/place jigsaw` out of the `Data-Driven Jigsaw Structures` experiment
+
+## Components
+
+-   Added validation for block asset references in components
+    
+    -   Content errors will log missing block references for the following components:
+        -   item component "minecraft:digger"
+        -   item component "minecraft:entity\_placer"
+        -   item component "minecraft:block\_placer"
+        -   spawn rules component "minecraft:spawns\_on\_block\_filter"
+        -   spawn rules component "minecraft:spawns\_on\_block\_prevented\_filter"
+        -   spawn rules component "minecraft:spawns\_above\_block\_filter"
+-   "can\_be\_stolen" has been moved from "presets" back to being a direct sub-field of the "minecraft:leashable" component
+    
+
+## Documentation
+
+-   Include biome and client\_biome JSON files in generated documentation
+
+## Editor
+
+-   Added "Magic Select" to selection modes. This mode allows users to quickly select non-air blocks at and above a selected block. This is extremely useful when working with structures. The current implementation is prototype and only has an 8-block search radius, upwards from the point of click. Holding SHIFT while clicking will make the selection additive to any existing selections
+-   Added a missing string when there is an empty slot in the Realms Slot dropdown
+-   Fixed Publish to Realms bug by cleaning up local world copy that's created during publish process
+-   Fixed a bug where passing a complex volume with non-contiguous voxels was copying only the contents of the bounding rectangle to the clipboard. Only the specified voxels should have been copied. This now allows us to create structures where air and structure voids are stripped out
+-   The Structure Panel now has the ability to create a new Structure from an existing selection
+-   The Structure Panel now allows the editing of the origin field
+    
+
+## Goals
+
+-   Added fields to "minecraft:behavior.tempt" goal
+    
+    -   The "stop\_distance" field specifies a custom distance for when the tempted mob should stop moving towards the player
+    -   The "on\_start" field specifies the event to trigger when the goal starts
+    -   The "on\_end" field specifies the event to trigger when the goal ends
+-   Added "minecraft:behavior.float\_tempt" goal, which allows a tempted mob to move in a line towards the player
+    
+    -   This goal is a variant of the "minecraft:behavior.tempt" goal and shares the same fields
+    -   Requires the mob to be in a floating state (e.g. use the "minecraft:navigation.float" component)
+
+## Structures
+
+-   Exposed new fields to data driven jigsaw structures: start\_height, dimensional\_padding, pool\_aliases, max\_distance\_from\_center
+-   made height\_map\_projection optional and changed anchor to start\_jigsaw\_name
+
+## User Interface
+
+-   Fixed a bug where worlds set to Creative would be created with cheats turned on
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+### `@minecraft/server` 2.0.0-beta
+
+-   `EntitySkinIdComponent` has been changed to read-only in version 2.0 beta
+    
+-   Added property `localizationKey` to `Entity`, `Block`, and `ItemStack` which returns the key used for finding the localized names of these objects
+    
+
+#### Added new `Container` APIs:
+
+-   `contains(ItemStack)`: Attempts to find an instance of an item inside the container
+-   `firstEmptySlot()`: Finds the index of the first empty slot inside the container
+-   `firstItem()`: Finds the index of the first item inside the container
+-   `find(ItemStack)`: Find the index of the first instance of an item inside the container
+-   `reverseFind(ItemStack)`: Find the index of the last instance of an item inside the container
+
+#### Custom Commands
+
+Added support for custom commands authored in script. The new `CustomCommandRegistry` is provided when listening to `ModuleStartupEvent`. More APIs in the area will come in the coming weeks.
+
+Additional types added:
+
+-   `CustomCommandRegistry`
+-   `CustomCommandPermissionLevel`
+-   `CustomCommandParamType`
+-   `CustomCommandResult` and `CustomCommandStatus`
+-   `CustomCommandParameter`
+
+## Graphical
+
+-   Fixed an issue with Android GPU identification causing Deferred Technical Preview to be disabled on certain supported devices.
+    
+-   Disabled split screen for the Deferred Technical Preview. Deferred/Ray Tracing modes are not available in the video menu during split screen sessions, and starting a split screen session while in one of these modes will force the game back to Fancy mode.

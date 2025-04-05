@@ -14,7 +14,7 @@ export const Config = {
   startPage: 1,
   // endPage: 4,
   // startVersion: '1.19.80.22',
-  startSortFromTitle: 'Minecraft Beta - 1.2.20.1 (Xbox One/Windows 10/Android)',
+  startSortFromTitle: 'Minecraft Beta & Preview - 1.21.80.21',
   forceSortTitleParts: ['New Nintendo', 'Education'],
   ignoreTitleParts: ['Bedrock Add-On Templates', 'Old Worlds Types in Minecraft: Bedrock Edition - FAQ', ],
   titles: {

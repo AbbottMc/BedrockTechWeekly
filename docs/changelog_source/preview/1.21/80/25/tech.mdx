@@ -1,0 +1,150 @@
+import TechSapiStable from './tech_sapi_stable.md';
+import TechSapiExp from './tech_sapi_exp.md';
+import TechSapiStableDiff from './tech_sapi_stable_diff.md';
+import TechSapiExpDiff from './tech_sapi_exp_diff.md';
+import Switcher from '../../../../../components/TechChangelogSwitcher.mdx';
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiStable/>} techSapiDiff={undefined}/>
+
+### Biomes
+
+-   Removed remainder of support for unused "minecraft:consolidated\_features" and "minecraft:legacy\_world\_generation\_rules" JSON components
+
+### Blocks
+
+-   New render\_method type available for minecraft:material\_instances. They are meant to support the same behavior of block turning opaque in the far rendering like Leaves in contrast to other disappearing like Bamboo Stalk.
+    
+    -   "render\_method": "blend\_to\_opaque"
+    -   "render\_method": "alpha\_test\_to\_opaque"
+    -   "render\_method": "alpha\_test\_single\_sided\_to\_opaque"
+-   The field "tint\_method" in the "minecraft:map\_color" component no longer requires the "upcoming creator features" toggle
+    
+-   The field "tint\_method" in the "minecraft:destruction\_particles" component no longer requires the "upcoming creator features" toggle
+    
+-   The field "tint\_method" in the "minecraft:material\_instances" component no longer requires the "upcoming creator features" toggle
+    
+
+### Components
+
+-   Fixed a bug where incorrect Json errors would appear for valid item texture references
+    
+-   Introduced a "drop\_item\_y\_offset" parameter to the "minecraft:interact" component
+    
+    -   Defines a custom y-axis offset for when an item is dropped
+    -   Requires "drop\_item\_slot" to be specified
+-   The "minecraft:leashable" component's "on\_unleash" trigger triggers on the leash breaking with format version 1.21.80 and later
+    
+    -   The old behavior is still available to opt in to by setting "on\_unleash\_interact\_only" to true
+
+### Editor
+
+-   Added unbound keybindings for Trim and Remove Air from Selection
+    
+-   Fixed an issue with Freehand select near or outside of dimension bounds that could cause selection to become unusable
+    
+-   Fixed issues with selection volumes being able to translate or resize past world bounds. This also fixes using large brush shapes with freehand selection (and magic select) close to a world boundary
+    
+-   Fixed a bug that caused Extrude Axis options to be incorrect for Pyramid brush shape
+    
+-   Fixed an issue related to files and folders being permanently deleted when deleting structures in the structure panel
+    
+
+### Entity Filters
+
+-   Added new entity filter "has\_equipment\_tag", works like "has\_equipment" but takes an item tag instead of an item name
+
+### Graphical
+
+-   Added support for multiple locators for use with leashes for rendering multiple ropes between two entities.
+    -   "multi\_lead\_n":
+        -   where n = \{1, 2, 3, 4\} defines locators when the entity is leashed to a different entity.
+        -   Used if and only if it has a corresponding "multi\_lead\_hold\_n" and the number n is equal on the two entites.
+    -   "multi\_lead\_hold\_n"
+        -   Where n = \{1, 2, 3, 4\} defines locators where the entity is leashing a different entity.
+        -   Used if and only if it has a corresponding "multi\_lead\_n" and the number n is equal on the two entites.
+    -   "lead"
+        -   is set to origin if it is not defined in the geo.
+    -   "lead\_hold"
+        -   is set to origin if it is not defined in the geo.
+
+### Items
+
+-   Bundles' open icons are now specified via IconItemComponent. This addresses the issue where a missing texture would appear for an opened custom Bundle. Bundle icon paths have also now be separated into unique keys in item\_texture.json.
+
+### Molang
+
+-   Added 'query.has\_any\_leashed\_entity\_of\_type' which takes a list of entity identities and checks if the actor has any of the listed entities leashed. Available on both the client and the server.
+    -   Usage: "query.has\_any\_leashed\_entity\_of\_type( 'minecraft:sheep', 'minecraft:creeper' )"
+
+
+
+
+<h2 className="experimental_divider">实验性特性</h2>
+
+
+
+
+
+## **Script API**
+
+<Switcher techSapi={<TechSapiExp/>} techSapiDiff={undefined}/>
+
+#### @minecraft/server 2.0.0-beta
+
+-   Added CustomCommandOrigin to custom command script callback.
+-   Added CustomCommandSource enum.
+-   Renamed CustomCommandPermissionLevel to CommandPermissionLevel.
+-   Renamed CustomCommandParamType.Position to CustomCommandParamType.Location
+-   BlockCustomComponent now take an optional CustomComponentParameters object for Custom Components V2 experiment as a second argument to event callbacks in 2.0.0-beta
+-   CustomComponentParameters added to 2.0.0-beta
+    -   params property added to CustomComponentparameters to 2.0.0-beta
+-   ItemCustomComponent now take an optional CustomComponentParameters object for Custom Components V2 experiment as a second argument to event callbacks in 2.0.0-beta
+-   EntityFrictionModifierComponent has been changed to read-only in version 2.0.0-beta
+
+#### @mincraft/server-admin
+
+-   Added AsyncPlayerJoinBeforeEvent
+    -   Added beforeEvents.asyncPlayerJoin, AsyncPlayerJoinBeforeEvent, and AsyncPlayerJoinBeforeEventSignal to allow creators to delay players joining the world.
+    -   AsyncPlayerJoinBeforeEventSignal.subscribe is different than other events because the callback it accepts returns a promise. Once the promise is resolved, the player will join the world, or if the promise is rejected the player will be disconnected without joining the server. The player will be at the loading screen while the promise is pending.
+
+### Blocks
+
+-   When Custom Components V2 experiment is enabled, minecraft:custom\_components component is deprecated in 1.21.80 and higher format versions
+-   When Custom Components V2 experiment is enabled, custom components are flattened inline with other components and allow parameters in 1.21.80 and higher format versions. Example:
+
+    "components": \{    "example_namespace:example_component": \{        "someParam": 3,        "anotherParam": "test"    \}\}
+
+### Cameras
+
+-   Changed approach for the easing between moving targets under the Experimental Creator Camera Features toggle
+
+### Experiments
+
+-   Added Custom Components V2 experiment
+
+### Graphical
+
+-   Added a new lighting model for clouds in the Deferred Technical Preview. The lighting parameters can not be configured at this time.
+    
+-   Increased the range of cloud rendering in the Deferred Technical Preview.
+    
+-   Added pixelated reflections to the Deferred Technical Preview. This new effect will cause reflections to align to the texel grid of textures in the world.
+    
+-   Added pixelated shadows to the Deferred Technical Preview.  
+    This new effect can be controlled with the new shadows JSON schema, "shadows/global.json". This file adds new settings that control the style of shadows in the game. Available parameters are "shadow\_stlye", which can be "soft\_shadows" or "blocky\_shadows", and "texel\_size". "soft\_shadows" are the default style, while "blocky\_shadows" results in shadows that are pixelated in appearance. When "blocky\_shadows" are enabled, "texel\_size" controls the size of the pixelation effect. "texel\_size" should be equivalent to the block texture size in order to achieve a one to one mapping between the pixels in a texture and the pixelated effect created by enabling "blocky\_shadows", but this is not required. An example version of what "shadows/global.json" could look like is as follows:
+    
+
+    \{  "format_version": "1.21.80",  "minecraft:shadow_settings": \{    "shadow_style": "blocky_shadows",    "texel_size": 16  \}\}
+
+### Items
+
+-   When Custom Components V2 experiment is enabled, minecraft:custom\_components component is deprecated in 1.21.80 and higher format versions
+-   When Custom Components V2 experiment is enabled, custom components are flattened inline with other components and allow parameters in 1.21.80 and higher format versions. Example:
+
+    "components": \{    "example_namespace:example_component": \{        "someParam": 3,        "anotherParam": "test"    \}\}
